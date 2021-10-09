@@ -1,0 +1,42 @@
+{
+  "name": "pb-oct-22",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/line-clamp": "^0.2.2",
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.16",
+    "vite": "^2.6.4"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "esbuild": "^0.13.4",
+    "esbuild-darwin-64": "^0.13.4",
+    "fsevents": "^2.3.2",
+    "function-bind": "^1.1.1",
+    "has": "^1.0.3",
+    "is-core-module": "^2.7.0",
+    "nanoid": "^3.1.29",
+    "path-parse": "^1.0.7",
+    "picocolors": "^0.2.1",
+    "resolve": "^1.20.0",
+    "rollup": "^2.58.0",
+    "source-map-js": "^0.6.2"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "description": ""
+}
