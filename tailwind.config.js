@@ -17,10 +17,8 @@ module.exports = {
           dark: "#0c87b8",
         },
         pb: {
-          blue: {
-            DEFAULT: "rgba(110, 195, 220, 1)",    //#6EC3DC
-            dark: "rgba(4, 81, 113, 1)",          //#045171
-          },
+          blue: "rgba(102, 204, 255, 1)",
+          darkblue: "rgba(4, 81, 113, 1)",
           peach: "rgba(237, 105, 112, 1)",        //#ED6969
           yellow: "rgba(245, 215, 122, 1)",       //#F5D77A
           pink: "rgba(242, 168, 202, 1)",         //#F2A8CA
