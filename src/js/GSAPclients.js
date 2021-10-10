@@ -26,7 +26,7 @@ var wrap = gsap.utils.wrap(wrapOffsetTop,wrapOffsetBottom);
 const yheight = "-=" + totalHeight;
 
 
-
+ 
 let tl = gsap.timeline();
 tl.to(".box", {
   duration: 40,
