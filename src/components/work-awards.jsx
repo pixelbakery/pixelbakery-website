@@ -11,16 +11,16 @@ import React from 'react';
 
 export default () => {
   return (
-    <section className="bg-pb-blue px-4  mx-auto py-8 max-h-screen" id="awards">
+    <section className=" mb-4 px-4  mx-auto py-8 max-h-screen bg-blue" id="awards">
         <div className="container grid grid-cols-1 md:grid-cols-3 mx-auto py-4 max-w-7xl">
             <div className="col-span-1">
-                <h2 className="text-pb-darkblue">awards and recognition</h2>
-                <h4 className=" text-2xl text-pb-whipped font-extrabold">swoosh.</h4>
+                <h2 className="text-blue-dark">awards and recognition</h2>
+                <h4 className=" text-2xl text-cream font-extrabold">swoosh.</h4>
             </div>
             <div className="col-span-2 flex flex-col justify-between mx-auto w-full gap-12">
                 <div className="mx-4 px-4">
                     <div>
-                        <ul className="text-pb-whipped font-body font-extrabold text-xl relative awardslist" id="awardslist1">
+                        <ul className="text-cream font-body font-extrabold text-xl relative awardslist" id="awardslist1">
                             <li className="my-2 relative award"><a href="">SoulPancake / Price of Free Animation / Silver AIGA Show</a></li>
                             <li className="my-2 award"><a href="">KANEKO / Reality Animation / Gold ADDY</a></li>
                             <li className="my-2 award"><a href=""> Lincoln Calling / Space Traffic Original Song / Silver ADDY</a></li>

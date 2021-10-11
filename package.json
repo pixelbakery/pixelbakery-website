@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build ",
     "serve": "vite preview"
   },
   "devDependencies": {
@@ -21,6 +21,9 @@
   },
   "main": "main.js",
   "dependencies": {
+    "@heroicons/react": "^1.0.4",
+    "core-js": "^3.18.2",
+    "debug": "^4.3.2",
     "esbuild": "^0.13.4",
     "esbuild-darwin-64": "^0.13.4",
     "fsevents": "^2.3.2",
@@ -31,6 +34,7 @@
     "nanoid": "^3.1.29",
     "path-parse": "^1.0.7",
     "picocolors": "^0.2.1",
+    "react-router-dom": "^5.3.0",
     "resolve": "^1.20.0",
     "rollup": "^2.58.0",
     "source-map-js": "^0.6.2",

@@ -9,10 +9,10 @@ export default function App(){
 
 
 
-        <div><section className=" my-4 py-8 bg-pb-whipped flex justify-around overflow-hidden mx-auto clients">
+        <div><section className=" my-4 py-8 bg-cream flex justify-around overflow-hidden mx-auto clients">
             <div className="px-12 mx-auto lg:px-24 py-4 lg:py-16 grid  grid-cols-6">
                 <div className="col-span-2">
-                    <h1 className="text-pb-peach inline-block align-text-bottom">Our lovely clients</h1>
+                    <h1 className="text-peach inline-block align-text-bottom">Our lovely clients</h1>
                 </div>
                 <div className="col-span-4  flex justify-between">
                     <div className=" w-auto wrapper-clients overflow-hidden">
@@ -21,37 +21,37 @@ export default function App(){
 
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_daake.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_daake.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                         
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_firsthoney.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_firsthoney.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                       
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_hudl.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_hudl.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                      
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_kaneko.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_kaneko.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
               
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_kelty.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_kelty.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
             
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="assets/clientlogos/pixelbakery_client_pupbox.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/pixelbakery_client_pupbox.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                         </div>
