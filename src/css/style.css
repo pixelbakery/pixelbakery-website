@@ -11,21 +11,10 @@
     @apply text-8xl;
   }
   h2{
-      @apply text-6xl font-extrabold  text-pb-peach my-8;
+      @apply text-6xl font-extrabold  text-peach my-8;
   }
   p.lead{ 
       @apply mt-2 text-2xl pb-6 leading-relaxed;
-  }
-  .btn{
-      @apply inline-block rounded-lg focus:outline-none focus:ring focus:ring-offset-2 focus:ring-opacity-50 uppercase tracking-wider font-semibold text-sm sm:text-base  px-5 py-3;
-  }
-  .btn-primary{
-      @apply  bg-pb-peach hover:bg-brand-light  focus:ring-brand active:bg-brand-dark text-white;
-
-  }
-  .btn-secondary{
-      @apply  bg-gray-300 hover:bg-gray-200  focus:ring-gray-300  active:bg-gray-400 text-gray-800 px-5 hover:text-gray-600;
-
   }
   
 }
@@ -52,7 +41,6 @@
   top:-50px;
   position: relative;
   z-index: 80;
-  background: green;
 }
 .box{
   /* height:200px; */
