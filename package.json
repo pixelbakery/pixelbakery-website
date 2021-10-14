@@ -22,6 +22,7 @@
   "main": "main.js",
   "dependencies": {
     "@heroicons/react": "^1.0.4",
+    "@material-ui/core": "^4.12.3",
     "core-js": "^3.18.2",
     "debug": "^4.3.2",
     "esbuild": "^0.13.4",
@@ -30,6 +31,7 @@
     "gsap": "^3.8.0",
     "has": "^1.0.3",
     "is-core-module": "^2.7.0",
+    "isotope-layout": "^3.0.6",
     "nanoid": "^3.1.29",
     "path-parse": "^1.0.7",
     "picocolors": "^0.2.1",

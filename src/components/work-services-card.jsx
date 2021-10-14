@@ -4,7 +4,7 @@ import { ChevronRightIcon } from '@heroicons/react/solid'
 export default function ServiceCard({service}){
     return(
         
-            <article className="relative m-2 w-full md:w-2/5 flex-stretch hover:opacity-90">
+            <article className="relative m-2 w-full md:w-2/5 flex-stretch hover:opacity-90 hover:scale-95">
                 <div className="items-stretch bg-pink-light overflow-hidden rounded-lg flex-grow flex flex-row md:flex-col md:justify-between px-8 py-2 h-32 md:h-56 ">
                     <h2 className="my-auto md:mt-2 md:mb-4 font-bold text-2xl font-Heading text-pink">
                     {service.service}

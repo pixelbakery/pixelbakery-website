@@ -8,11 +8,13 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
 
+
+
 function App() {
   return (
     <BrowserRouter>
     <div className="pt-20">
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={About} exact />
