@@ -45,8 +45,11 @@
     "type": "",
     "url": ""
   },
-  "author": "",
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "author": "Jordan D Lambrecht",
   "license": "ISC",
-  "homepage": "",
-  "description": ""
+  "homepage": "https://pixelbakery.com",
+  "description": "React staging ground for the new pixel bakery website design"
 }
