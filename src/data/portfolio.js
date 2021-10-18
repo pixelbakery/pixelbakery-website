@@ -5,7 +5,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
-
+        isotopeTag: "animation concepting",
     },
     {
         client: "SOLA:",
@@ -13,6 +13,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2020/04/SOLA_NathanEating_Compressed.gif",
         previewImgAlt: "Sola: Less Carbs, Less Worries",
         url: "/",
+        isotopeTag: ".film .concepting",
 
     },
     {
@@ -21,6 +22,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2020/03/PupBox_Promo_7.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
+        isotopeTag: ".film .social",
 
     },
     {
@@ -29,6 +31,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2020/03/oxbow_haw_intro.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
+        isotopeTag: ".animation .concepting",
 
     },
     {
@@ -37,6 +40,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2019/10/SP_USA2ME_Norms_v9.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
+        isotopeTag: ".animation",
 
     },
     {
@@ -45,6 +49,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2019/11/First_Honey_Chap_2_Bumper.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
+        isotopeTag: ".animation .concepting",
 
     },
     {
@@ -53,6 +58,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2019/10/doane_AT_onahill-1.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
+        isotopeTag: ".film .concepting",
     },
     {
         client: "Morgan AFR:",
@@ -60,6 +66,6 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2019/04/MorganAFR_HappyFirefighters.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
-
+        isotopeTag: ".animation .concepting",
     },
 ]
