@@ -25,8 +25,6 @@
     "@material-ui/core": "^4.12.3",
     "core-js": "^3.18.2",
     "debug": "^4.3.2",
-    "esbuild": "^0.13.4",
-    "esbuild-darwin-64": "^0.13.4",
     "function-bind": "^1.1.1",
     "gsap": "^3.8.0",
     "has": "^1.0.3",
@@ -44,9 +42,6 @@
   "repository": {
     "type": "",
     "url": ""
-  },
-  "optionalDependencies": {
-    "fsevents": "*"
   },
   "author": "Jordan D Lambrecht",
   "license": "ISC",
