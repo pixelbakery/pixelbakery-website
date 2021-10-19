@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 function Home() {
   return (
@@ -14,6 +15,12 @@ function Home() {
           </div>
           <div className="col-lg-5">
             <h1 className="font-weight-light">Home</h1>
+            <ul>
+              <li><Link to="/" className="text-gray-400 hover:text-gray-100">Home</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-gray-100">About</Link></li>
+              <li><Link to="/work" className="text-gray-400 hover:text-gray-100">Work</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-gray-100">Contact</Link></li>
+            </ul>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
