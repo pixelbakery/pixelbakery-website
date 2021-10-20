@@ -4,3 +4,7 @@ dist
 dist-ssr
 *.local
 package-lock.json
+vscode
+.vscode
+/.vscode/
+/.vscode/*
