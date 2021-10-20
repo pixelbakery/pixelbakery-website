@@ -1,8 +1,10 @@
 import React from "react";
 import roster from "../data/team";
-
+import FAQ from "../components/about-faq";
+// import TwitchStream from "../components/about-twitch";
 function About() {
   return (
+    <>
     <section className="" id="about">
       {roster.map((value, index) => {        
         return <div className="h-64 w-64 m-8">
@@ -11,6 +13,9 @@ function About() {
          
       })}
     </section>
+    <FAQ/>
+    </>
+
   );
 }
 
