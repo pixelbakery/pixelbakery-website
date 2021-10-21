@@ -5,6 +5,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'xclass'
   theme: {
     colors: {
+      white: "#ffffff",
+      egg: "#F3F4F6",
       blue: {
         light: "rgba(204, 238, 255,1)",
         DEFAULT: "rgba(102, 204, 255, 1)",
