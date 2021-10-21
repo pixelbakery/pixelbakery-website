@@ -16,7 +16,7 @@ export default function App(){
             <Work_Services /> 
             <Work_Clients />
             <Work_Awards />
-           
+           <script src="./src/js/stickysidebar.jsx"></script>
 
         </div> 
     

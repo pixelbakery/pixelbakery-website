@@ -6,7 +6,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Team from './pages/Bio';
-
+import Services from './pages/Services';
 
 const ErrorPage = () => {
   return (
@@ -20,8 +20,9 @@ const ErrorPage = () => {
 function App() {
   return (
     <BrowserRouter>
-    <div className="pt-20">
+    <div className=""> 
       <Switch>
+        <Route path="/services" component={Services} exact />
         <Route path="/" component={Home} exact />
         <Route path="/work" component={Work} exact />
         <Route path="/contact" component={Contact} exact />

@@ -18,6 +18,9 @@
   }
   
 }
+.lander{
+  height:calc(100vh - 2rem)!important;
+}
 .clients{
   height: 80vh;
   max-height: 900px;
