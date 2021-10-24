@@ -20,37 +20,37 @@ export default function App(){
 
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_daake.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_daake.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                         
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_firsthoney.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_firsthoney.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                       
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_hudl.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_hudl.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                      
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_kaneko.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_kaneko.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
               
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_kelty.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_kelty.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
             
                             <div className="box absolute w-full ">
                                 <div className="client-box-img h-full overflow-hidden ">
-                                    <img src="./src/img/cclients/pixelbakery_client_pupbox.png" className="object-contain object-center h-full mx-auto" />
+                                    <img src="./src/img/clients/pixelbakery_client_pupbox.png" className="object-contain object-center h-full mx-auto" />
                                 </div>
                             </div>
                         </div>
