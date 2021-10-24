@@ -1,7 +1,7 @@
 import React from "react";
 import RelatedCard from "./services-related-card";
 import relatedProjects from "../data/services-animation-related";
-import ButtonFilled from "./button-filled";
+import ButtonFilled from "../components/parts/button-filled";
 
 function shuffleArray(array) {
     let i = array.length - 1;

@@ -1,36 +1,40 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+
+// import InstagramFeed from "../components/instagramFeed";
+
+import blogPosts from "../data/blogPosts";
+import BlogCard from "../components/blogCard";
+import HomeLanding from "../components/homeLanding";
+import HomeWhoTheHeck from "../components/homeWhoTheHeck";
+import HomeWhatWeMake from "../components/homeWhatWeMake";
 
 function Home() {
   return (
-    <div className="home">
-      <div className="container">
-        <div className="row align-items-center my-5">
-          <div className="col-lg-7">
-            <img
-              className="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div className="col-lg-5">
-            <h1 className="font-weight-light">Home</h1>
-            <ul>
-              <li><Link to="/" className="text-gray-400 hover:text-gray-100">Home</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-gray-100">About</Link></li>
-              <li><Link to="/work" className="text-gray-400 hover:text-gray-100">Work</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-gray-100">Contact</Link></li>
-            </ul>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
+    <div>
+    <HomeLanding />
+    <HomeWhoTheHeck />
+    <HomeWhatWeMake />
+    
+
+    
+
+    
+    
+    
+    {/* OUR BEST HITS */}
+    <section id="besthits" className="bg-white grid text-pb-blue lg:grid-cols-2 2xl:grid-cols-5">
+        <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2">
+           
+            <h2 className="text-pb-wine text-xl lg:text-2xl font-bold  text-gray-900 my-3"> Our Best Hits</h2>
+            <p className="my-3">Professionally coordinate real-time mindshare whereas cross functional "outside the box" thinking. Dynamically reintermediate revolutionary "outside the box" thinking without.</p>
         </div>
-      </div>
-    </div>
+        <div className="w-full bg-pb-peach "> 
+       
+        </div>
+    </section>
+   
+
+</div>
   );
 }
 
