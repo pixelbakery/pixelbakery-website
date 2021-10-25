@@ -1,27 +1,27 @@
 export default[
     {
         text: "Work",
-        url: "#",
+        url: "/work",
     },
     {
         text: "About",
-        url: "#",
+        url: "/about",
     },
     {
-        text: "Careers",
-        url: "#",
+        text: "Services",
+        url: "/services",
     },
     {
         text: "Education",
-        url: "#",
+        url: "/education",
     },
     {
-        text: "Contact US",
-        url: "#",
+        text: "Contact Us",
+        url: "/contact",
     },
     {
         text: "Mom's Recipes",
-        url: "#",
+        url: "/recipess",
     },
     
 

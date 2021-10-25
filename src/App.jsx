@@ -7,6 +7,7 @@ import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Team from './pages/Bio';
 import Services from './pages/Services';
+import Nav from './components/Navigation';
 
 const ErrorPage = () => {
   return (
@@ -21,6 +22,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className=""> 
+      <Nav />
       <Switch>
         <Route path="/services" component={Services} exact />
         <Route path="/" component={Home} exact />

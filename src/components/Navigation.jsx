@@ -1,40 +1,46 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import StartButton from './parts/button-filled';
 
-function Button({text, bg, padding}) {
-  return (
-    <div>
-      <button
-        className={`
-          ${padding || 'px-6 py-2'} text-sm font-semibold uppercase 
-          rounded-sm text-white transition ${bg}`}
-      >
-        <span>{text}</span>
-      </button>
-    </div>
-  );
+function hamToggle() {
+    var element = document.getElementById("ham");
+    element.classList.toggle("active");
 }
-
 
 function Navbar() {
   return (
-    <div className="fixed left-0 right-0 top-0 h-16 shadow-md border-b-2 border-gray-100 bg-gray-900">
-      <nav className="flex items-center container mx-auto h-full justify-between">
-        <h1 className="font-semibold uppercase text-lg text-gray-200">
-          🔄 Demo App
-        </h1>
-        <div>
-          <ul className="flex items-center space-x-10 text-sm">
-            <li><Link to="/" className="text-gray-400 hover:text-gray-100">Home</Link></li>
-            <li><Link to="/about" className="text-gray-400 hover:text-gray-100">About Us</Link></li>
-            <li><Link to="/docs" className="text-gray-400 hover:text-gray-100">Docs</Link></li>
-          </ul>
+   <div className="fixed w-screen top-0 z-20 mt-8 px-4 flex justify-between">
+     <div>
+      <Link to="/">
+          <div className="bg-cream text-peach text-center font-extrabold rounded-md px-4 py-4 text-5xl leading-none inline-block">
+            <p className="tracking-normal">pb</p>
+            <p className="tracking-wide -mt-2 -ml-1">ds</p>
+          </div>
+      </Link>
+     </div>
+     <div className="mr-8">
+       <Link className="mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/work">Our Work</Link>
+       <Link className="mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/about">Who We Are</Link>
+       
+       <Link to="/contact" className="mx-3 my-2 py-3 rounded-sm px-6 w-full text-center bg-peach" >
+            <span className="text-cream font-extrabold text-md lowercase tracking-wide">Start a Project</span>
+        </Link>
+        <div className="inline-block">
+          <svg className="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onClick={hamToggle} id="ham">
+            <path
+                  className="line top stroke-current text-peach"
+                  d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+            <path
+                  className="line middle stroke-current text-peach"
+                  d="m 30,50 h 40" />
+            <path
+                  className="line bottom stroke-current text-peach"
+                  d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+          </svg>
         </div>
-        <div>
-          <Button text="Login" bg="bg-gradient-to-r from-purple-500 to-blue-500"/>
-        </div>
-      </nav>
-    </div>
+     </div>
+    
+   </div>
   );
 }
 
