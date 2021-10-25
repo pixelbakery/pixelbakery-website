@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function FooterNav({ navitem }){
     return (
         <li className="my-1 flex-grow" >
-            <a className="text-cream" href={navitem.url}>{navitem.text}</a>
+            <Link className="text-cream" to={navitem.url}>{navitem.text}</Link>
         </li>
     );
 }
