@@ -27,8 +27,6 @@
     "core-js": "^3.18.2",
     "corss": "^2.8.5",
     "debug": "^4.3.2",
-    "esbuild": "^0.13.4",
-    "esbuild-darwin-64": "^0.13.4",
     "function-bind": "^1.1.1",
     "gsap": "^3.8.0",
     "has": "^1.0.3",
