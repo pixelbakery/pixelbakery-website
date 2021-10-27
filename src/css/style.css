@@ -11,23 +11,15 @@
     @apply text-8xl;
   }
   h2{
-      @apply text-6xl font-extrabold  text-pb-peach my-8;
+      @apply text-6xl font-extrabold  text-peach my-8;
   }
   p.lead{ 
       @apply mt-2 text-2xl pb-6 leading-relaxed;
   }
-  .btn{
-      @apply inline-block rounded-lg focus:outline-none focus:ring focus:ring-offset-2 focus:ring-opacity-50 uppercase tracking-wider font-semibold text-sm sm:text-base  px-5 py-3;
-  }
-  .btn-primary{
-      @apply  bg-pb-peach hover:bg-brand-light  focus:ring-brand active:bg-brand-dark text-white;
-
-  }
-  .btn-secondary{
-      @apply  bg-gray-300 hover:bg-gray-200  focus:ring-gray-300  active:bg-gray-400 text-gray-800 px-5 hover:text-gray-600;
-
-  }
   
+}
+.lander{
+  height:calc(100vh - 2rem)!important;
 }
 .clients{
   height: 80vh;
@@ -52,7 +44,6 @@
   top:-50px;
   position: relative;
   z-index: 80;
-  background: green;
 }
 .box{
   /* height:200px; */
@@ -75,4 +66,48 @@
   left:0;
   bottom:0;
   top:0;
+}
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
 }
