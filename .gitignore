@@ -8,5 +8,9 @@ vscode
 .vscode
 /.vscode/
 /.vscode/*
+<<<<<<< HEAD
+launch.json
+=======
 launch.json
 .vscode/launch.json
+>>>>>>> main
