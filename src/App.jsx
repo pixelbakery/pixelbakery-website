@@ -7,6 +7,7 @@ import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Team from './pages/Bio';
 import Services from './pages/Services';
+import SinglePost from './pages/Singlepost';
 import Nav from './components/Navigation';
 
 const ErrorPage = () => {
@@ -29,7 +30,9 @@ function App() {
         <Route path="/work" component={Work} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/about" component={About} exact />
+        <Route path="/post" component={SinglePost} exact />
         <Route path='/:id' component={Team} exact /> 
+
         <Route component={ErrorPage} />   
       </Switch>
       <Footer />

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // import Swiper core and required modules
 
@@ -10,6 +12,32 @@ import React from 'react';
 // import 'swiper/css/scrollbar';
 
 export default () => {
+    useEffect(() => {
+        const awards = gsap.timeline();
+        awards.from('.awardslist .award', {
+          overwrite: 'auto',
+          ease: 'power3.out',
+          stagger: .08,
+          opacity: 0,
+          y: -15
+          
+      })
+      
+      ScrollTrigger.create({
+          trigger: '#awards',
+          toggleActions: "play reverse play reverse",
+        start: 'top center',
+        end: 'bottom center',
+          // start: 'top 60%',
+      
+          animation: awards,
+      
+      })
+
+    }, [])
+
+
+
   return (
     <section className=" mb-4 px-4  mx-auto py-8 max-h-screen bg-blue" id="awards">
         <div className="container grid grid-cols-1 md:grid-cols-3 mx-auto py-4 max-w-7xl">
