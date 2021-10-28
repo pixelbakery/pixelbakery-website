@@ -4,6 +4,13 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
+
+
+
+
+export default function gsapClients(){
+
 gsap.registerPlugin(ScrollTrigger);
 
 //Setup Variables
@@ -38,7 +45,7 @@ tl.to(".box", {
   repeat: -1
 });
 
-function setup(){
+
   // console.log(boxesArray.length);
   for (let i = 0; i < boxesArray.length; i++) {
     let thisBox = boxesArray[i];
@@ -56,4 +63,3 @@ function setup(){
     });
  }
 }
-setup();
