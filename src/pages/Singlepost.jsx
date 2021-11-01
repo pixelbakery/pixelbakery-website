@@ -76,9 +76,9 @@ export default function Recipes(){
                     
                
                     <h3 className="text-pink text-4xl">Related Posts</h3>
-                    <div className="grid grid-cols-3 gap-8 my-8">
+                    <div className="grid grid-cols-3 gap-8 my-8 ">
                         <Link to={"/"}>
-                            <article className="bg-white w-full aspect-h-4 pb-6 rounded ">
+                            <article className="bg-white w-full aspect-h-4 pb-6 rounded transform hover:scale-95">
                                 <div className=" w-full aspect-h-9 p-2 mb-4 rounded-md overflow-hidden">
                                     <img src="./src/img/blogheader.png" className="w-full h-full object-cover object-center rounded" />
                                 </div>
