@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-
+  .pb-pattern{
+    @apply bg-blue;
+    background-image: url("../img/pixelbakery_pattern_blue.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   h1,h2,h3,h4{
     @apply font-pbheading font-extrabold lowercase;
   }
@@ -16,11 +22,15 @@
   p.lead{ 
       @apply mt-2 text-2xl pb-6 leading-relaxed;
   }
-  
+  .socialIcons{
+    @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
+  }
 }
+
 .lander{
   height:calc(100vh - 2rem)!important;
 }
+
 .clients{
   height: 80vh;
   max-height: 900px;

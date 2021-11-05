@@ -25,6 +25,14 @@ module.exports = {
       pbheading: "Gilroy, Poppins, sans-serif",
       body: "Poppins, sans-serif",
     },
+    fill: {
+             current: 'currentColor',
+           },
+           fill: theme => ({
+             'red': theme('colors.cream'),
+             'green': theme('colors.peach'),
+              'blue': theme('colors.blue'),
+          })
     
   },
     extend: {
