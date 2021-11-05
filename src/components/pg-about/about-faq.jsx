@@ -1,5 +1,5 @@
 import React from "react";
-import faq from "../data/faq";
+import faq from "../../data/faq";
 import FAQbox from "./about-faq-card";
 
 export default function FAQ(){

@@ -26,7 +26,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import team from "../data/team";
-import TeamBio from "../components/about-bios";
+import TeamBio from "../components/pg-about/about-bios";
 
 function Team() {  
       const [id, setId] = useState(useParams().id);    
