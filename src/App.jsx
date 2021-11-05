@@ -21,23 +21,33 @@ const ErrorPage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className=""> 
-      <Nav />
-      <Switch>
-        <Route path="/services" component={Services} exact />
-        <Route path="/" component={Home} exact />
-        <Route path="/work" component={Work} exact />
-        <Route path="/contact" component={Contact} exact />
-        <Route path="/about" component={About} exact />
-        <Route path="/post" component={SinglePost} exact />
-        <Route path='/:id' component={Team} exact /> 
 
-        <Route component={ErrorPage} />   
-      </Switch>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="">
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+              <Footer />
+            </Route>
+            <Route >
+              <Nav />
+              <Switch>
+                <Route path="/services" component={Services} exact />
+                <Route path="/work" component={Work} exact />
+                <Route path="/contact" component={Contact} exact />
+                <Route path="/about" component={About} exact />
+                <Route path="/post" component={SinglePost} exact />
+                <Route path='/:id' component={Team} exact /> 
+
+                <Route component={ErrorPage} />   
+              </Switch>
+              <Footer />
+            </Route>
+            </Switch>
+        </div>
     </BrowserRouter>
+
+    
   )
 }
 

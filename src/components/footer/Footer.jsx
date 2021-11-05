@@ -65,7 +65,7 @@ function Footer() {
                     </div>
                     <div className="w-full py-4 my-3">
                         <div className="w-full" id="footer-social">
-                            <SocialList />
+                            <SocialList color={"text-cream"}/>
                         </div>
                         <div className="w-full flex justify-center">
                             <span className="text-cream italic font-bold text-center text-lg">fresh puns and nice buns</span>
