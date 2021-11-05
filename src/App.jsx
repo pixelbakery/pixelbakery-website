@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
