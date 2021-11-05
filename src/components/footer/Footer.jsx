@@ -1,14 +1,14 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import footerMenu from "../data/footerMenu";
-import FooterNav from "../components/footerNav";
-import footerMenuMore from "../data/footerMenuMore";
-import FooterNavMoreCard from "../components/footerNavMoreCard";
-import wordsOfEncouragement from "../data/wordsOfEncouragement";
-import HappyCard from "../components/happyCard";
-import TextLogo from "../components/parts/textlogo";
-import ButtonFilled from "./parts/button-filled";
-import SocialList from "./parts/socialOptions";
+import footerMenu from "../../data/footerMenu";
+import FooterNav from "./footerNav";
+import footerMenuMore from "../../data/footerMenuMore";
+import FooterNavMoreCard from "./footerNavMoreCard";
+import wordsOfEncouragement from "../../data/wordsOfEncouragement";
+import HappyCard from "./happyCard";
+import TextLogo from "../parts/textlogo";
+import ButtonFilled from "../parts/button-filled";
+import SocialList from "../parts/socialOptions";
 
 function Footer() {
   return (
