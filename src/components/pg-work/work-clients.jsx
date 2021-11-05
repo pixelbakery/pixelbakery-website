@@ -1,15 +1,12 @@
 import React, {useEffect} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GsapClients from "../js/GSAPclients";
+import GsapClients from "../../js/GSAPclients";
 
 
 export default function App(){
-
-    
     useEffect(() => {
         GsapClients();
-
     },[])
 
 

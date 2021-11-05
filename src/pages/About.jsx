@@ -1,6 +1,6 @@
 import React from "react";
 import roster from "../data/team";
-import FAQ from "../components/about-faq";
+import FAQ from "../components/pg-about/about-faq";
 // import TwitchStream from "../components/about-twitch";
 function About() {
   return (
