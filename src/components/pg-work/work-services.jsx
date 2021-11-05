@@ -1,6 +1,6 @@
 import React from "react";
-import ServiceCard from "../components/work-services-card";
-import serviceOfferings from "../data/services";
+import ServiceCard from "./work-services-card";
+import serviceOfferings from "../../data/services";
 
 export default function Services(){
     return(

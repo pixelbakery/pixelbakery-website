@@ -1,6 +1,6 @@
 import React from "react";
-import PortfolioCard from "../components/work-portfolio-card";
-import projects from "../data/portfolio"
+import PortfolioCard from "./work-portfolio-card";
+import projects from "../../data/portfolio"
 
 
 export default function Portfolio(){

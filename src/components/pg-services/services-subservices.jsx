@@ -1,6 +1,6 @@
 import React from "react";
-import SubservicesBox from "../components/services-subservices-box";
-import subservice from "../data/services-animation";
+import SubservicesBox from "./services-subservices-box";
+import subservice from "../../data/services-animation";
 
 export default function Subservices(){
     return(

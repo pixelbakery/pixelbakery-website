@@ -1,6 +1,6 @@
 import React from "react";
 import ServicesCard from "./services-allservices-card";
-import services from "../data/services";
+import services from "../../data/services";
 
 export default function AllServices(){
     return(

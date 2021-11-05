@@ -1,9 +1,9 @@
 import React from "react"
-import Header from "../components/services-header";
-import Subservices from "../components/services-subservices"; 
-import RelatedServices from "../components/services-related";
-import AllServices from "../components/services-allservices";
-import Process from "../components/services-ourprocess";
+import Header from "../components/pg-services/services-header";
+import Subservices from "../components/pg-services/services-subservices"; 
+import RelatedServices from "../components/pg-services/services-related";
+import AllServices from "../components/pg-services/services-allservices";
+import Process from "../components/pg-services/services-ourprocess";
 // import StickySidebarJS from "../js/stickysidebar";
 
 export default function Services(){

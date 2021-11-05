@@ -4,9 +4,9 @@ import React from "react";
 
 import blogPosts from "../data/blogPosts";
 import BlogCard from "../components/blogCard";
-import HomeLanding from "../components/homeLanding";
-import HomeWhoTheHeck from "../components/homeWhoTheHeck";
-import HomeWhatWeMake from "../components/homeWhatWeMake";
+import HomeLanding from "../components/pg-home/homeLanding";
+import HomeWhoTheHeck from "../components/pg-home/homeWhoTheHeck";
+import HomeWhatWeMake from "../components/pg-home/homeWhatWeMake";
 
 function Home() {
   return (

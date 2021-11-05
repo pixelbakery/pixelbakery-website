@@ -1,6 +1,6 @@
 import React from "react";
-import servicesList from "../data/services";
-import ServiceCard from "../components/serviceCard";
+import servicesList from "./src/data/services";
+import ServiceCard from "../components/pg-services/serviceCard";
 
 
 export default function Services(){
