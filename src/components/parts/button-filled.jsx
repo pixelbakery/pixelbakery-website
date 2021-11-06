@@ -1,10 +1,19 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import { ChevronRightIcon } from '@heroicons/react/solid'
 
 export default function ButtonFilled({text, link, color}){
     return(
-        <Link to={link} className={"my-3 py-6 rounded-sm px-8 w-full text-center " + (color)} >
-            <span className="text-cream font-extrabold text-xl lowercase">{text}</span>
+        <Link to={link} className={"my-3 py-6 rounded-sm px-6 w-full text-center " + (color)} >
+            <div className="text-cream font-extrabold text-xl lowercase flex">
+              
+                <div className="flex-grow flex flex-col justify-center">{text}</div>
+                   
+                <i className="h-12 w-12 flex flex-col justify-center">
+                    <ChevronRightIcon className="  text-color"/>
+                </i>
+        
+            </div>
         </Link>
     );
 }

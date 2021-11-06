@@ -16,3 +16,13 @@ Link to XD Mockups: [HERE](https://xd.adobe.com/view/a95dc4ca-cea6-4af3-be90-78a
 | Blue – Light | #CCEEFF | 204, 238, 255 | 200°, 100%, 90% | [Link](https://convertingcolors.com/hex-color-CCEEFF.html)
 | Blue – Default | #66CCFF | 102, 204, 255 | 200°, 100%, 70% | [Link](https://convertingcolors.com/hex-color-66CCFF.html)
 | Blue – Dark | #045171 | 4, 81, 113 | 198°, 93%, 23% | [Link](https://convertingcolors.com/hex-color-045171.html)
+
+## Iconography
+
+there are two icon folders containing PB's iconographic assets. One called Abs (absolute) and one called Rel (relative).
+
+*Absolute*
+All icons are set to 270x270px, regardless of their relation to other icons. Good for using as individual elements
+
+*Relative*
+All icons are sized relative to the other icons. This gives the line thickness a consistant weight
