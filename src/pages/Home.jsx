@@ -7,6 +7,7 @@ import BlogCard from "../components/parts/blogCard";
 import HomeLanding from "../components/pg-home/homeLanding";
 import HomeWhoTheHeck from "../components/pg-home/homeWhoTheHeck";
 import HomeWhatWeMake from "../components/pg-home/homeWhatWeMake";
+import HomeServices from "../components/pg-home/homeServices";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
     <HomeLanding />
     <HomeWhoTheHeck />
     <HomeWhatWeMake />
+    <HomeServices />
     
 
     
