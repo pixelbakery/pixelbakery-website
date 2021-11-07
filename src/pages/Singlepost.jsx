@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Btn from "../components/parts/button-filled";
+import Pill from "../components/parts/pill";
 
 export default function Recipes(){
     return(
@@ -9,7 +10,7 @@ export default function Recipes(){
                 <section className="md:max-w-3xl mx-auto ">
                 <div className="" id="blog-body-intro">
                         <div className="mb-6">
-                            <div className="bg-blue-light text-wine font-bold my-6 py-2 px-6 inline-block rounded-sm ">Announcements</div>
+                            <Pill text={"Announcements"} className=" my-6"/>
                             <h1 className="text-blue-dark text-6xl">Recipe for Success: Mix Adaptability and Confidence (together, in a medium sized bowl)</h1>
                             <div className="my-3 inline-block text-xl font-semibold text-wine opacity-80" role="doc-subtitle ">a guide to becoming an after effects master</div>
                         </div>
