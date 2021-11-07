@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   .pb-pattern{
     @apply bg-blue;
     background-image: url("../img/pixelbakery_pattern_blue.svg");
@@ -25,11 +26,80 @@
   .socialIcons{
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
+  #home-logo{
+    fill: red !important;
+    text: red !important;
+  }
+  #home-sifter{
+    top: -10%;
+    right: -10%;
+  }
+  #home-sifter img{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .home-portfolio.block-right:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    right: -12%;
+    bottom: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -12%;
+    bottom: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left-2:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -24%;
+    bottom: -4%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-right-up:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    right: -12%;
+    top: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left-up:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -12%;
+    top: -6%;
+    border-radius: 3px;
+  }
 }
 
 .lander{
   height:calc(100vh - 2rem)!important;
 }
+
 
 .clients{
   height: 80vh;

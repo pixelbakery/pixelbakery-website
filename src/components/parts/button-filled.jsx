@@ -4,7 +4,7 @@ import { ChevronRightIcon } from '@heroicons/react/solid'
 
 export default function ButtonFilled({text, link, color}){
     return(
-        <Link to={link} className={"my-3 py-6 rounded-sm px-6 w-full text-center " + (color)} >
+        <Link to={link} className={"py-3 rounded-sm px-6 w-full text-center " + (color)} >
             <div className="text-cream font-extrabold text-xl lowercase flex">
               
                 <div className="flex-grow flex flex-col justify-center">{text}</div>
