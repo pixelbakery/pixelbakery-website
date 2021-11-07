@@ -26,17 +26,14 @@
   .socialIcons{
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
-  #home-logo{
-    fill: red !important;
-    text: red !important;
-  }
-  #home-sifter{
-    top: -10%;
-    right: -10%;
+
+  #home-mixer{
+    top: 8%;
+    right: 2.5%;
   }
   #home-sifter img{
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
   }
 
   .home-portfolio.block-right:before{
@@ -190,4 +187,72 @@
 }
 .ham8.active .bottom {
   stroke-dashoffset: -64px;
+}
+
+
+/* FAQ  */
+
+.closed .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+  }
+.closed .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+
+.opened {
+  opacity: 1;
+}
+.opened  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+  }
+ .opened  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+.circle-plus {
+  height: 4em;
+  width: 4em;
+  font-size: 1em;
+}
+
+.circle-plus .circle {
+  position: relative;
+  width: 2.55em;
+  height: 2.5em;
+}
+.circle-plus .circle .horizontal {
+  /* position: absolute; */
+  width: 30px;
+  height: 5px;
+  left: 50%;
+  margin-left: -15px;
+  top: 50%;
+  margin-top: -2.5px;
+}
+.circle-plus .circle .vertical {
+  /* position: absolute; */
+  width: 5px;
+  height: 30px;
+  left: 50%;
+  margin-left: -2.5px;
+  top: 50%;
+  margin-top: -15px;
+}
+.answer{
+  transition: max-height 0.2s ease-out;
+  display: none;
+  overflow: hidden;
+}
+.answer.opened{
+  display:block;
+}
+
+.logo-pink{
+  filter: invert(77%) sepia(11%) saturate(1984%) hue-rotate(294deg) brightness(100%) contrast(104%);
 }
