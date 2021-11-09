@@ -215,11 +215,7 @@
     opacity: 0;
   }
 
-.circle-plus {
-  height: 4em;
-  width: 4em;
-  font-size: 1em;
-}
+
 
 .circle-plus .circle {
   position: relative;
@@ -245,12 +241,14 @@
   margin-top: -15px;
 }
 .answer{
-  transition: max-height 0.2s ease-out;
   display: none;
   overflow: hidden;
+  transition: all 1s ease-in-out;
+  opacity: 0;
 }
 .answer.opened{
   display:block;
+  opacity: 1;
 }
 
 .logo-pink{
