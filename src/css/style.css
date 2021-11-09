@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   .pb-pattern{
     @apply bg-blue;
     background-image: url("../img/pixelbakery_pattern_blue.svg");
@@ -25,11 +26,77 @@
   .socialIcons{
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
+
+  #home-mixer{
+    top: 8%;
+    right: 2.5%;
+  }
+  #home-sifter img{
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+  }
+
+  .home-portfolio.block-right:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    right: -12%;
+    bottom: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -12%;
+    bottom: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left-2:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -24%;
+    bottom: -4%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-right-up:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    right: -12%;
+    top: -6%;
+    border-radius: 3px;
+  }
+  .home-portfolio.block-left-up:before{
+    content: '';
+    background-color: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    left: -12%;
+    top: -6%;
+    border-radius: 3px;
+  }
 }
 
 .lander{
   height:calc(100vh - 2rem)!important;
 }
+
 
 .clients{
   height: 80vh;
@@ -120,4 +187,70 @@
 }
 .ham8.active .bottom {
   stroke-dashoffset: -64px;
+}
+
+
+/* FAQ  */
+
+.closed .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+  }
+.closed .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+
+.opened {
+  opacity: 1;
+}
+.opened  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+  }
+ .opened  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+
+
+.circle-plus .circle {
+  position: relative;
+  width: 2.55em;
+  height: 2.5em;
+}
+.circle-plus .circle .horizontal {
+  /* position: absolute; */
+  width: 30px;
+  height: 5px;
+  left: 50%;
+  margin-left: -15px;
+  top: 50%;
+  margin-top: -2.5px;
+}
+.circle-plus .circle .vertical {
+  /* position: absolute; */
+  width: 5px;
+  height: 30px;
+  left: 50%;
+  margin-left: -2.5px;
+  top: 50%;
+  margin-top: -15px;
+}
+.answer{
+  display: none;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+.answer.opened{
+  display:block;
+  opacity: 1;
+}
+
+.logo-pink{
+  filter: invert(77%) sepia(11%) saturate(1984%) hue-rotate(294deg) brightness(100%) contrast(104%);
 }
