@@ -3,7 +3,7 @@ import React from "react";
 
 export default function WhoTheHeck(){
     return(
-        <section  className="bg-cream py-8" id="whoweare">
+        <section  className="bg-pink-light py-8" id="whoweare">
             <div className="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto">
                 <div className="px-8 lg:px-12 py-8 lg:py-16">
                     <h2 className="text-peach my-8">who the heck</h2>

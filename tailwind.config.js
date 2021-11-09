@@ -8,18 +8,20 @@ module.exports = {
       white: "#ffffff",
       egg: "#F3F4F6",
       blue: {
-        light: "rgba(204, 238, 255,1)",
-        DEFAULT: "rgba(102, 204, 255, 1)",
-        dark: "rgba(4, 81, 113, 1)",
+        light: "rgb(204, 238, 255)",
+        // DEFAULT: "rgba(102, 204, 255, 1)",
+        DEFAULT: "rgb(56, 204, 255)",
+        dark: "rgb(0, 81, 116)",
       },
-      peach: "rgba(237, 105, 112, 1)",        //#ED6969
-      yellow: "rgba(245, 215, 122, 1)",       //#F5D77A
+      // peach: "rgba(237, 105, 112, 1)",        //#ED6969
+      peach: "rgb(255, 94, 100)", 
+      yellow: "rgb(250, 216, 105)",       //#F5D77A
       pink:{ 
-        light: "RGBA(255, 224, 255,1)",					 
-        DEFAULT: "rgba(242, 168, 202, 1)",         //#F2A8CA
+        light: "rgb(241, 231, 243)",					 
+        DEFAULT: "rgb(255, 163, 204)",         //#F2A8CA
       },
-      wine: "rgba(80, 78, 87, 1)",            //#504E57
-      cream: "rgba(239, 232, 242, 1) ",     //#EFE8F2
+      wine: "rgb(80, 78, 87)",            //#504E57
+      cream: "rgb(243, 244, 246) ",     //#EFE8F2
     },
     fontFamily: {
       pbheading: "Gilroy, Poppins, sans-serif",
@@ -29,9 +31,21 @@ module.exports = {
              current: 'currentColor',
            },
            fill: theme => ({
-             'red': theme('colors.cream'),
-             'green': theme('colors.peach'),
-              'blue': theme('colors.blue'),
+            pink:{ 
+              light:  theme('colors.pink-light'),	 
+              DEFAULT: "rgba(255, 163, 204, 1)",         //#F2A8CA
+            },
+            blue: {
+              light: theme('colors.blue-light'),
+              DEFAULT: theme('colors.blue'),
+              dark: theme('colors.blue-dark'),
+            },
+             'wine': theme('colors.wine'),
+             'cream': theme('colors.cream'),
+             'yellow': theme('colors.yellow'),
+             'peach': theme('colors.peach'),
+
+             
           })
     
   },

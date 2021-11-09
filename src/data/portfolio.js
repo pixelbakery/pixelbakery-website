@@ -5,7 +5,7 @@ export default[
         previewImg: "https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif",
         previewImgAlt: "Karma Nuts: Get Your Nut",
         url: "/",
-        isotopeTag: "animation concepting",
+        tags: ["animation", "creative concepting", "art direction"]
     },
     {
         client: "SOLA:",
