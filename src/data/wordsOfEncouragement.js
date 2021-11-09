@@ -29,6 +29,11 @@ export default[
         url: "#",
         nameCity: "yo",
     },
+    {
+        text: "🖖 live long and prosper",
+        url: "#",
+        nameCity: "yo",
+    },
     
 
 ]
