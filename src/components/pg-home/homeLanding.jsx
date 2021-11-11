@@ -2,6 +2,8 @@ import React from "react";
 import {Link, NavLink} from 'react-router-dom';
 import SocialLinks from "../parts/socialOptions";
 import ButtonFilled from "../parts/button-filled";
+import logoPrimary from '../../assets/img/pixelbakery-logo-primary.svg'
+import boxLogo from '../../assets/img/pixelbakery_boxlogo.svg'
 // import MainLogo from "../parts/main-logo";
 
 export default function homeLanding(){
@@ -14,7 +16,7 @@ export default function homeLanding(){
                             <div className="logo-wrapper px-20 w-full text-blue fill-current">
                                 <img 
                                     className=" object-center block m-auto object-contain w-full logo-pink"
-                                    src="./src/assets/img/pixelbakery-logo-primary.svg" 
+                                    src={logoPrimary}
                                     
                                     id="home-logo"
                                     alt="pixel bakery is an animation and video production studio" 
@@ -44,7 +46,7 @@ export default function homeLanding(){
                 <div className="flex-grow pb-pattern " id="homepage-lander">
                     <div className=" flex flex-col mx-auto h-1/3 ">
                         <img 
-                            src="./src/assets/img/pixelbakery_boxlogo.svg"
+                            src={boxLogo}
                             alt=""
                             className="object-center block m-auto "
                         />
