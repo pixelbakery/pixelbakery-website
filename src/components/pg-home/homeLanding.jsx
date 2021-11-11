@@ -14,7 +14,7 @@ export default function homeLanding(){
                             <div className="logo-wrapper px-20 w-full text-blue fill-current">
                                 <img 
                                     className=" object-center block m-auto object-contain w-full logo-pink"
-                                    src="./src/img/pixelbakery-logo-primary.svg" 
+                                    src="./src/assets/img/pixelbakery-logo-primary.svg" 
                                     
                                     id="home-logo"
                                     alt="pixel bakery is an animation and video production studio" 
@@ -44,7 +44,7 @@ export default function homeLanding(){
                 <div className="flex-grow pb-pattern " id="homepage-lander">
                     <div className=" flex flex-col mx-auto h-1/3 ">
                         <img 
-                            src="./src/img/pixelbakery_boxlogo.svg"
+                            src="./src/assets/img/pixelbakery_boxlogo.svg"
                             alt=""
                             className="object-center block m-auto "
                         />
