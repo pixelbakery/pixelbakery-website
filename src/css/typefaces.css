@@ -4,7 +4,7 @@
     @font-face {
         font-family: Gilroy;
         font-weight: 300;
-        src: url(./src/assets/fonts/Gilroy/gilroy-light.woff2) format("woff2");
+        src: url(../assets/fonts/Gilroy/gilroy-light.woff2) format("woff2");
     }
     @font-face {
         font-family: Gilroy;
