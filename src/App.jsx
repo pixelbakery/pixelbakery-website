@@ -6,7 +6,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
 import Team from './pages/Bio';
-import Services from './pages/Services';
+import ServicesAnimation from './pages/Services/Services-Animation';
 import SinglePost from './pages/Singlepost';
 import Nav from './components/Navigation';
 
@@ -32,7 +32,8 @@ function App() {
             <Route >
               <Nav />
               <Switch>
-                <Route path="/services" component={Services} exact />
+                <Route path="/services/animation" component={ServicesAnimation} exact />
+                <Route path="/services" component={Work} exact />
                 <Route path="/work" component={Work} exact />
        
                 <Route path="/contact" component={Contact} exact />

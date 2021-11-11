@@ -6,7 +6,7 @@
 
   .pb-pattern{
     @apply bg-blue;
-    background-image: url("../img/pixelbakery_pattern_blue.svg");
+    background-image: url("../assets/img/pixelbakery_pattern_blue.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

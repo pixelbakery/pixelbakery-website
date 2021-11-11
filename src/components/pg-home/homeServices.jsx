@@ -41,7 +41,7 @@ export default function Services(){
                 </div>
                 <div className="absolute w-full max-w-md z-0 top-14 right-10" id="home-mixer">
                     <img
-                        src="./src/img/icons/abs/pixelbakery_icon_mixer_abs.svg"
+                        src="./src/assets/img/icons/abs/pixelbakery_icon_mixer_abs.svg"
                         id=""
                         className=""
 
