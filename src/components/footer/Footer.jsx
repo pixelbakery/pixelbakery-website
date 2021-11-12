@@ -73,7 +73,7 @@ function Footer() {
                     </div>
                     <div className="flex flex-center w-full my-3 ">
                         
-                            <ButtonFilled text={"Start something wonderful"} link={"/contact"} color={"bg-pink"}/>
+                            <ButtonFilled text={"Start something wonderful"} link={"/onboarding"} color={"bg-pink"}/>
                        
                     </div>
                     <div className="text-center mt-3">
