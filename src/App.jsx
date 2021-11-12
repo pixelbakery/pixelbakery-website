@@ -9,6 +9,7 @@ import Team from './pages/Bio';
 import ServicesAnimation from './pages/Services/Services-Animation';
 import SinglePost from './pages/Singlepost';
 import Nav from './components/Navigation';
+import BecomeAClient from './pages/BecomeAClient';
 
 const ErrorPage = () => {
   return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/services/animation" component={ServicesAnimation} exact />
                 <Route path="/services" component={Work} exact />
                 <Route path="/work" component={Work} exact />
+                <Route path="/onboarding" component={BecomeAClient} exact />
        
                 <Route path="/contact" component={Contact} exact />
                 <Route path="/about" component={About} exact />
