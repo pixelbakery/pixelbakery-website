@@ -4,6 +4,13 @@ module.exports = {
   purge: ['./src//index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'xclass'
   theme: {
+    extend: {
+      fontSize: {
+        '18xl': '18rem',
+      },
+      
+      
+    },
     colors: {
       white: "#ffffff",
       egg: "#F3F4F6",
@@ -27,6 +34,8 @@ module.exports = {
       pbheading: "Gilroy, Poppins, sans-serif",
       body: "Poppins, sans-serif",
     },
+    
+    
     fill: {
              current: 'currentColor',
            },
@@ -49,11 +58,7 @@ module.exports = {
           })
     
   },
-    extend: {
-      
-      
-      
-    },
+
   variants: {
     extend: {
       backgroundColor: ["active"]

@@ -2,8 +2,8 @@ import React from "react";
 import {Link, NavLink} from 'react-router-dom';
 import SocialLinks from "../parts/socialOptions";
 import ButtonFilled from "../parts/button-filled";
-import logoPrimary from '../../assets/img/pixelbakery-logo-primary.svg'
-import boxLogo from '../../assets/img/pixelbakery_boxlogo.svg'
+import logoPrimary from '../../img/pixelbakery-logo-primary.svg'
+import boxLogo from '../../img/pixelbakery_boxlogo.svg'
 // import MainLogo from "../parts/main-logo";
 
 export default function homeLanding(){
@@ -36,7 +36,7 @@ export default function homeLanding(){
                     <div className="">
                         <div className="text-blue font-bold text-2xl text-center w-full mb-0 pb-0">fresh puns & nice buns</div>
                         <div className="flex flex-center w-full my-3 ">
-                            <ButtonFilled text={"Start something wonderful"} link={"/contact"} color={"bg-pink"}/>
+                            <ButtonFilled text={"Start something wonderful"} link={"/onboarding"} color={"bg-pink"}/>
                         </div>
                         <div className="block">
                         <SocialLinks color={"text-blue"} />

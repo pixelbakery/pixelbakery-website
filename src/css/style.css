@@ -26,6 +26,34 @@
   .socialIcons{
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
+  .expectations-number{
+    font-family: 'Poppins', sans-serif;
+  }
+  .expectations-number span:nth-child(2){
+    top: 2%;
+    left:-2%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number span:nth-child(3){
+    top: 4%;
+    left:-4%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number span:nth-child(4){
+    top: 6%;
+    left:-6%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number span:nth-child(4){
+    top: 8%;
+    left:-8%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number span:nth-child(4){
+    top: 10%;
+    left:-10%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
 
   #home-mixer{
     top: 8%;
