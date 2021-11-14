@@ -1,0 +1,10 @@
+Icon-behance.svg
+Icon-discord.svg
+Icon-instagram.svg
+Icon-minecraft.svg
+Icon-twitch.svg
+Icon-vimeo.svg
+Icon-youtube.svg
+abs
+iconList.txt
+rel
