@@ -69,6 +69,7 @@ function Navbar() {
 
   console.log("adfs");
   return (
+    <div>
    <div className="fixed w-full top-0 z-20 mt-8 px-4 flex justify-between">
      <div id="logo" className="opacity-0 origin-top-left">
       <Link to="/" className="block relative  h-full w-full z-50 px-4 py-4">
@@ -123,7 +124,13 @@ function Navbar() {
         
         
      </div>
-    
+     </div>
+     <nav className=" fixed w-full flex justify-center"><h4 className="text-md font-semibold">Dev Navigation</h4>
+      <ul className="inline-block">
+        <li className="inline-block mx-3"><Link className="underline" to={"/icons"}>Icon Referrence</Link></li>
+
+      </ul>
+    </nav>
    </div>
   );
 }
