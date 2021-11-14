@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build ",
     "serve": "vite preview",
-    "svgr": "svgr --icon --replace-attr-values '#efe8f2=currentColor' --ext 'jsx' --title-prop -d src/components/icons/* src/img/icons"
+    "svgr": "svgr --icon --replace-attr-values '#efe8f2=currentColor' --ext 'jsx' --title-prop -d src/components/icons/* src/img/icons",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "module": "dist/index.esm.js",
   "devDependencies": {
@@ -19,6 +20,7 @@
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.2.2",
     "@tailwindcss/typography": "^0.4.1",
+    "auto-changelog": "^2.3.0",
     "autoprefixer": "^10.3.7",
     "postcss": "^8.3.9",
     "react": "^17.0.2",
@@ -46,6 +48,8 @@
     "path-parse": "^1.0.7",
     "picocolors": "^0.2.1",
     "react-bootstrap-icons": "^1.5.0",
+    "react-helmet": "^6.1.0",
+    "react-player": "^2.9.0",
     "react-router-dom": "^5.3.0",
     "resolve": "^1.20.0",
     "rollup": "^2.58.0",

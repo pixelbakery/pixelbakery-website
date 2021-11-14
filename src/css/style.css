@@ -217,7 +217,12 @@
   stroke-dashoffset: -64px;
 }
 
-
+/* Twitch */
+#twitch-title{
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* FAQ  */
 
 .closed .vertical {
