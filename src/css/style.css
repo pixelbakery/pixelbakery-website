@@ -26,32 +26,32 @@
   .socialIcons{
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
-  .expectations-number{
+  .expectations-number-wrapper{
     font-family: 'Poppins', sans-serif;
   }
-  .expectations-number span:nth-child(2){
-    top: 2%;
-    left:-2%;
-    /* -webkit-text-stroke: 3px darkgrey; */
-  }
-  .expectations-number span:nth-child(3){
-    top: 4%;
-    left:-4%;
-    /* -webkit-text-stroke: 3px darkgrey; */
-  }
-  .expectations-number span:nth-child(4){
-    top: 6%;
+  .expectations-number-wrapper span:nth-child(2){
+    top: -3%;
     left:-6%;
     /* -webkit-text-stroke: 3px darkgrey; */
   }
-  .expectations-number span:nth-child(4){
-    top: 8%;
+  .expectations-number-wrapper span:nth-child(3){
+    top: -5%;
     left:-8%;
     /* -webkit-text-stroke: 3px darkgrey; */
   }
-  .expectations-number span:nth-child(4){
-    top: 10%;
+  .expectations-number-wrapper span:nth-child(4){
+    top: -7%;
     left:-10%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number-wrapper span:nth-child(4){
+    top: -9%;
+    left:-12%;
+    /* -webkit-text-stroke: 3px darkgrey; */
+  }
+  .expectations-number-wrapper span:nth-child(5){
+    top: -11%;
+    left:-14%;
     /* -webkit-text-stroke: 3px darkgrey; */
   }
 
