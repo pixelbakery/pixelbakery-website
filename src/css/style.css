@@ -426,10 +426,6 @@ https://flickity.metafizzy.co
   z-index: 50;
 }
 
-.flickity-rtl .flickity-page-dots {
-  direction: rtl;
-}
-
 .flickity-page-dots .dot {
   display: inline-block;
   width: 55px;
