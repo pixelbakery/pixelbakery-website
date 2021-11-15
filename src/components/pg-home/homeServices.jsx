@@ -44,7 +44,7 @@ export default function Services(){
                         src="./src/img/icons/abs/pixelbakery_icon_mixer_abs.svg"
                         id=""
                         className=""
-
+                        alt=""
                     />
                 </div>
         </section>
