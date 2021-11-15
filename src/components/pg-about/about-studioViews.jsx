@@ -54,8 +54,6 @@ class Carousel extends React.Component {
                     </div>
 
                </div>
-
-           
          </section>
        )
      }
