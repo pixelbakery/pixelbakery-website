@@ -46,7 +46,7 @@ function TwitchStream(){
                     <ReactPlayer
                             url="https://www.twitch.tv/pixelbakery"
                             controls
-                            autoplay={true}
+                            autoPlay={true}
                             muted={true}
                             width={"100%"}
                             height={"100%"}
