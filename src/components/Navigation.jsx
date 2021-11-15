@@ -69,9 +69,10 @@ function Navbar() {
 
   console.log("adfs");
   return (
-   <div className="fixed w-full top-0 z-20 mt-8 px-4 flex justify-between">
+    <div>
+   <div className="pointer-events-none fixed w-full top-0 z-20 mt-8 px-4 flex justify-between">
      <div id="logo" className="opacity-0 origin-top-left">
-      <Link to="/" className="block relative  h-full w-full z-50 px-4 py-4">
+      <Link to="/" className="pointer-events-auto block relative  h-full w-full z-50 px-4 py-4">
           <div  id="logo-wrapper" className="relative z-20 top-0 bg-none text-peach text-center font-extrabold rounded-md  text-5xl leading-none inline-block">
             <p id="logo-line-1" className="opacity-0 tracking-normal text-left">
               <span id="p" className="inline-block">p</span>
@@ -93,12 +94,12 @@ function Navbar() {
      <div className="pr-8  h-full flex">
       
       <div id="nav-link-1" className="opacity-0 self-center relative z-20">
-      <Link  className=" mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/work">Our Work</Link>
+      <Link  className="pointer-events-auto mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/work">Our Work</Link>
       </div>
        
-       <div id="nav-link-2" className="opacity-0 self-center relative z-20"><Link className="  mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/about">Who We Are</Link></div>
+       <div id="nav-link-2" className="opacity-0 self-center relative z-20"><Link className="pointer-events-auto  mx-3 text-xl tracking-wide lowercase text-peach font-bold" to="/about">Who We Are</Link></div>
        <div id="nav-link-3" className="opacity-0 self-center relative z-30">
-         <Link to="/contact" className=" mx-3 my-2 py-3 rounded-sm px-6 w-full text-center bg-peach" >
+         <Link to="/contact" className="pointer-events-auto  mx-3 my-2 py-3 rounded-sm px-6 w-full text-center bg-peach" >
               <span className="text-cream font-extrabold text-md lowercase tracking-wide">Start a Project</span>
           </Link>
        </div>
@@ -107,7 +108,7 @@ function Navbar() {
   
          
             <div id="nav-ham" className="self-center w-16 h-16">
-            <svg className="ham hamRotate ham8" viewBox="0 0 100 100" width="" onClick={hamToggle} id="ham">
+            <svg className="ham hamRotate ham8 pointer-events-auto" viewBox="0 0 100 100" width="" onClick={hamToggle} id="ham">
 <path
       className="line top stroke-current text-peach"
       d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -123,7 +124,13 @@ function Navbar() {
         
         
      </div>
-    
+     </div>
+     <nav className=" fixed w-full flex justify-center"><h4 className="text-md font-semibold">Dev Navigation</h4>
+      <ul className="inline-block">
+        <li className="inline-block mx-3"><Link className="underline pointer-events-auto" to={"/icons"}>Icon Referrence</Link></li>
+
+      </ul>
+    </nav>
    </div>
   );
 }
