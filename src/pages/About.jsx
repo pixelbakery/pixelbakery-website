@@ -1,7 +1,10 @@
 import React from "react";
 import roster from "../data/team";
-import FAQ from "../components/pg-about/about-faq";
+
+import StudioViews from "../components/pg-about/about-studioViews";
 import Twitch from "../components/pg-about/about-twitch";
+import FAQ from "../components/pg-about/about-faq";
+
 // import TwitchStream from "../components/about-twitch";
 function About() {
   return (
@@ -15,6 +18,7 @@ function About() {
       })}
     </section>
     <section className="h-screen bg-blue"></section>
+    <StudioViews />
     <Twitch />
     <FAQ/>
     </main>
