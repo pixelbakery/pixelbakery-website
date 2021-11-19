@@ -35,7 +35,7 @@
     "@babel/runtime": "^7.16.3",
     "@heroicons/react": "^1.0.4",
     "@material-ui/core": "^4.12.3",
-    "bootstrap-icons": "^1.6.1",
+    "bootstrap-icons": "^1.7.0",
     "core-js": "^3.18.2",
     "corss": "^2.8.5",
     "debug": "^4.3.2",
