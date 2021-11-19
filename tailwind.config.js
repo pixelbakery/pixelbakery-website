@@ -31,38 +31,30 @@ module.exports = {
       wine: "rgb(80, 78, 87)",            //#504E57
       cream: "rgb(243, 244, 246) ",     //#EFE8F2
     },
+
+    stroke: theme => theme('colors'),
+    fill: theme => theme('colors'),
+    fill: {
+      current: 'currentColor',
+      none: 'none',
+    },
+
+
+
     fontFamily: {
       pbheading: "Gilroy, Poppins, sans-serif",
       body: "Poppins, sans-serif",
     },
     
     
-    fill: {
-             current: 'currentColor',
-           },
-           fill: theme => ({
-            pink:{ 
-              light:  theme('colors.pink-light'),	 
-              DEFAULT: "rgba(255, 163, 204, 1)",         //#F2A8CA
-            },
-            blue: {
-              light: theme('colors.blue-light'),
-              DEFAULT: theme('colors.blue'),
-              dark: theme('colors.blue-dark'),
-            },
-             'wine': theme('colors.wine'),
-             'cream': theme('colors.cream'),
-             'yellow': theme('colors.yellow'),
-             'peach': theme('colors.peach'),
 
-             
-          })
     
   },
 
   variants: {
     extend: {
-      backgroundColor: ["active"]
+      stroke: ['hover', 'focus'],
+      fill: ['hover', 'focus'],
     },
   },
   plugins: [
