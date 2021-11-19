@@ -9,7 +9,7 @@ let len =  happyitem.length;
 let randitem =  Math.floor(Math.random()  * len);
   return (
     <div >
-        <p className="text-6xl font-black text-cream">{happyitem[randitem].text}</p>
+        <p className="text-6xl italic font-black text-cream">{happyitem[randitem].text}</p>
     </div>
   );
 }
