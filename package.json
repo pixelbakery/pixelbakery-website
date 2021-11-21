@@ -1,12 +1,12 @@
 {
   "name": "pb-oct-22",
-  "version": "0.0.5",
+  "version": "0.0.10",
   "scripts": {
     "dev": "vite",
     "build": "vite build ",
     "serve": "vite preview",
     "svgr": "svgr --icon --replace-attr-values '#efe8f2=currentColor' --ext 'jsx' --title-prop -d src/components/icons/* src/img/icons",
-    "version": "auto-changelog -p --commit-limit false --template keepachangelog --sort-commits subject-desc --prepend -o README.md "
+    "version": "auto-changelog -p --commit-limit false --template keepachangelog --sort-commits date"
   },
   "module": "dist/index.esm.js",
   "devDependencies": {
