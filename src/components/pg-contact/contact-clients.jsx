@@ -6,7 +6,7 @@ function Onboarding(){
      return(
 
 
-          <section className=" my-4 bg-pink py-32  " id="onboarding">
+          <section className=" my-4 bg-pink py-32 border-t-16 " id="onboarding">
                <div className="max-w-5xl mx-auto ">
                     <h2 className=" text-pink-light">Become a client</h2>
                     <div className="w-full py-6 flex justify-end ">
@@ -17,8 +17,10 @@ function Onboarding(){
                          
                        
                     </div>
-                    <div className="my-3 w-full flex justify-end">
-                              <Link className="bg-pink-light py-4 px-12 font-bold text-3xl text-peach rounded-md"to={"/onboarding"}>start a project</Link>
+                    <div className="group my-3 w-full flex justify-end">
+                              <Link className=" group bg-pink-light py-4 px-12 font-bold text-3xl rounded-md transform transition-y duration-500 ease-in-out hover:-translate-y-1"to={"/onboarding"}>
+                                   <span className="inline-block text-peach transform transition-skew duration-500 ease-in-out group-hover:-skew-x-12 group-hover:opacity-95">start a project</span>
+                              </Link>
                          </div>
                </div>
           </section>
