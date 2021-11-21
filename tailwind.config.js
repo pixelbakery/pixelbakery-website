@@ -55,6 +55,7 @@ module.exports = {
     extend: {
       stroke: ['hover', 'focus'],
       fill: ['hover', 'focus'],
+      skew: ['group-hover'],
     },
   },
   plugins: [
