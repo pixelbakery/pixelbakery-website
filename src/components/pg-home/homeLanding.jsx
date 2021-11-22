@@ -28,6 +28,7 @@ export default function homeLanding(){
                                 <li className="my-1"><NavLink to={"/work"} className="text-pink font-bold lowercase text-4xl">work</NavLink></li>
                                 <li className="my-1"><NavLink to={"/about"} className="text-pink font-bold lowercase text-4xl">bakery</NavLink></li>
                                 <li className="my-1"><NavLink to={"/education"} className="text-pink font-bold lowercase text-4xl">education</NavLink></li>
+                                <li className="my-1"><NavLink to={"/contact"} className="text-pink font-bold lowercase text-4xl">contact us</NavLink></li>
                                 <li className="my-1"><NavLink to={"/recipesss"} className="text-pink font-bold lowercase text-4xl">mom's recipes</NavLink></li>
                                 <li className="my-2"><NavLink to={"/store"} className="text-pink font-bold lowercase text-4xl">company store</NavLink></li>
                             </ul>
