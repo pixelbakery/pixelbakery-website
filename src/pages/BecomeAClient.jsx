@@ -113,6 +113,12 @@ function BecomeAClient(){
                          header={"Your success is our success."}
                          bodyCopy={" We believe it is possible to create thoughtful and purposeful design while hitting deadlines and turning projects around on time. Our team of planners and designers work together to execute creative ideas with an intense concentration and attention to detail. "}
                     />
+                    <ExpectationsRow 
+                         flip={false}
+                         number={"4"}
+                         header={"Your success is our success."}
+                         bodyCopy={" We believe it is possible to create thoughtful and purposeful design while hitting deadlines and turning projects around on time. Our team of planners and designers work together to execute creative ideas with an intense concentration and attention to detail. "}
+                    />
                    </div>
                </section>
                <section id="onboarding-process" className="bg-yellow h-16">Here's where we talk about our process</section>

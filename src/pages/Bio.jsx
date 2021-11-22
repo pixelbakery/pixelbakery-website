@@ -86,7 +86,7 @@ function Team() {
    }); 
       
     return (    
-       <div className="content">    
+       <main className="content">    
             <TeamBio 
                id={id}
                name={name} 
@@ -111,7 +111,7 @@ function Team() {
                details_aesthetic={details_aesthetic}
                bio={bio}
             />         
-       </div>  
+       </main>  
     )}
 
     export default Team;
