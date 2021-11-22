@@ -4,8 +4,8 @@ import React from "react";
 export default function TeamBio({id,name,title,email, phone, color_text, social_instagram,social_linkedin,social_spotify,image_headshot,image_blunder,details_college,details_pronoun,details_mostfavorite,details_leastfavorite,details_signs_rising,details_signs_sun,details_signs_moon,details_hiredate,details_book,details_aesthetic,bio}){
     return(
         <>
-        <section className="container mx-auto mb-4" id={id}>
-           <div className="grid grid-cols-2 gap-16">
+        <section className=" lander mx-auto flex flex-col justify-center mb-4" id={id}>
+           <div className="self-center max-w-6xl grid grid-cols-2 gap-16">
                <div className="">
                    <div className="px-12">
                         <img src={image_headshot} />
