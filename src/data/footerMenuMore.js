@@ -4,6 +4,10 @@ export default[
         url: "#",
     },
     {
+        text: "Careers",
+        url: "/careers",
+    },
+    {
         text: "Bakery Login",
         url: "#",
     },
