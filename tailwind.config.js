@@ -22,7 +22,10 @@ module.exports = {
         dark: "rgb(0, 81, 116)",
       },
       // peach: "rgba(237, 105, 112, 1)",        //#ED6969
-      peach: "rgb(255, 94, 100)", 
+      peach:{
+        light: "#FFD9D3",
+        DEFAULT: "rgb(255, 94, 100)", 
+      },
       yellow: "rgb(250, 216, 105)",       //#F5D77A
       pink:{ 
         light: "rgb(241, 231, 243)",					 
