@@ -1,24 +1,19 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import {Redirect, BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+import CareersCreativeDirector from './pages/careers/careers-creative-director';
 import Team from './pages/Bio';
 import ServicesAnimation from './pages/Services/Services-Animation';
 import SinglePost from './pages/Singlepost';
 import Nav from './components/Navigation';
 import BecomeAClient from './pages/BecomeAClient';
-import IconRef from './pages/IconRef'
-
-const ErrorPage = () => {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <h1> 404: Page Not Found</h1>
-    </div>
-  );
-};
+import IconRef from './pages/IconRef';
+import NotFound from './pages/404';
 
 
 function App() {
@@ -40,11 +35,13 @@ function App() {
                 <Route path="/onboarding" component={BecomeAClient} exact />
                 <Route path="/icons" component={IconRef} exact />
                 <Route path="/contact" component={Contact} exact />
+                <Route path="/careers" component={Careers} exact />
+                <Route path="/careers/creative-director" component={CareersCreativeDirector} exact />
                 <Route path="/about" component={About} exact />
                 <Route path="/recipes" component={SinglePost} exact />
-                <Route path='/:id' component={Team} exact /> 
-
-                <Route component={ErrorPage} />   
+                {/* <Route path='/:id' component={Team} exact />  */}
+                <Route path="/404" component={NotFound} />
+                <Redirect to="/404" />
               </Switch>
               <Footer />
             </Route>
