@@ -1,7 +1,7 @@
 export default[
     {
         text: "Privacy Policy",
-        url: "#",
+        url: "/privacy-policy",
     },
     {
         text: "Careers",
@@ -9,27 +9,27 @@ export default[
     },
     {
         text: "Bakery Login",
-        url: "#",
+        url: "/login",
     },
     {
         text: "Press Kit",
-        url: "#",
+        url: "/press-kit",
     },
     {
         text: "Cookbook",
-        url: "#",
+        url: "/cookbook",
     },
     {
         text: "Motion Mixer",
-        url: "#",
+        url: "/motion-mixer",
     },
     {
         text: "Company Store",
-        url: "#",
+        url: "/store",
     },
     {
         text: "Pay-What-Ya-Want Web Hosting",
-        url: "#",
+        url: "/web-hosting",
     },
     
 
