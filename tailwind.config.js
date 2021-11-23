@@ -21,18 +21,25 @@ module.exports = {
         DEFAULT: "rgb(56, 204, 255)",
         dark: "rgb(0, 81, 116)",
       },
-      // peach: "rgba(237, 105, 112, 1)",        //#ED6969
+      // peach: "rgba(237, 105, 112, 1)",   //#ED6969
       peach:{
         light: "#FFD9D3",
         DEFAULT: "rgb(255, 94, 100)", 
       },
-      yellow: "rgb(250, 216, 105)",       //#F5D77A
+      yellow: "rgb(250, 216, 105)",         //#F5D77A
       pink:{ 
         light: "rgb(241, 231, 243)",					 
-        DEFAULT: "rgb(255, 163, 204)",         //#F2A8CA
+        DEFAULT: "rgb(255, 163, 204)",      //#F2A8CA
       },
-      wine: "rgb(80, 78, 87)",            //#504E57
-      cream: "rgb(243, 244, 246) ",     //#EFE8F2
+      wine: {
+        100: "rgb(210, 207, 218)",  
+        200: "rgb(182, 180, 190)",  
+        300: "rgb(155, 153, 163)",  
+        400: "rgb(129, 127, 137)",  
+        500: "rgb(104, 102, 111)",  
+        DEFAULT: "rgb(80, 78, 87)",         //#504E57
+      },         
+      cream: "rgb(243, 244, 246) ",         //#EFE8F2
     },
 
     stroke: theme => theme('colors'),
