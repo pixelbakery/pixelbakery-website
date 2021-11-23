@@ -95,5 +95,5 @@ function CreativeDirectorPost(){
      )
 }
  
-export default (CreativeDirectorPost)
+export default CreativeDirectorPost
  
