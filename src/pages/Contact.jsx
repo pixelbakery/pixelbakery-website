@@ -7,11 +7,10 @@ import Hang from "../components/pg-contact/contact-hang";
 function Contact() {
   return (
     <main className="" id="contact-page">
-    
-     <Onboarding/>
-     <ContactForm/>
-     <Jobs/>
-     <Hang/>
+      <Onboarding />
+      <ContactForm />
+      <Jobs />
+      <Hang />
     </main>
   );
 }
