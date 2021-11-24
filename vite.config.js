@@ -1,14 +1,18 @@
 // vite.config.js
 
+import { build } from "esbuild";
+
 /**
  * @type {import('vite').UserConfig}
  */
 
-server: {
-  host: true;
-}
-
 // import babel from 'babel'
 export default {
   plugins: [],
+  build: {
+    manifest: true,
+  },
+  server: {
+    host: true,
+  },
 };
