@@ -8,6 +8,15 @@
     "svgr": "svgr --icon --replace-attr-values '#efe8f2=currentColor' --ext 'jsx' --title-prop -d src/components/icons/* src/img/icons",
     "version": "auto-changelog -p --commit-limit false --template keepachangelog --sort-commits date"
   },
+  "engines": {
+    "node": ">=8.1.4 <15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "android",
+    "windows"
+  ],
   "module": "dist/index.esm.js",
   "devDependencies": {
     "@svgr/cli": "^3.1.0",
