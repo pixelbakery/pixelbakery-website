@@ -111,4 +111,18 @@ export default [
     category: "utility",
     active: true,
   },
+  {
+    page: "Careers - Job Posting Example",
+    path: "/careers/creative-director",
+    component: "/careers/careers-creative-director.jsx",
+    category: "secondary",
+    active: true,
+  },
+  {
+    page: "Store - Single Product Example",
+    path: "/store/product",
+    component: "/store/Store-Product.jsx",
+    category: "secondary",
+    active: true,
+  },
 ];
