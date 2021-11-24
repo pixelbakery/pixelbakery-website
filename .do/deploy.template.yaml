@@ -1,0 +1,9 @@
+spec:
+  name: pb-oct-22
+  services:
+    - build_command: npm build
+      environment_slug: node-js
+      git:
+        branch: main
+        repo_clone_url: https://github.com/jordanlambrecht/pb-oct-22.git
+      name: pb-oct-22
