@@ -5,9 +5,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
+import Store from "./pages/Store";
 import Careers from "./pages/Careers";
 import ApplicationSubmitted from "./pages/careers/Careers-Submitted";
 import CareersCreativeDirector from "./pages/careers/careers-creative-director";
+import ProjectFile from "./pages/education/Edu-Project-File";
 import Team from "./pages/Bio";
 import ServicesAnimation from "./pages/services/Services-Animation";
 import SinglePost from "./pages/Singlepost";
@@ -16,8 +18,10 @@ import BecomeAClient from "./pages/BecomeAClient";
 import IconRef from "./pages/IconRef";
 import PrivacyPolicy from "./pages/Privacy";
 import NotFound from "./pages/404";
+import Login from "./pages/Login";
 import SiteMap from "./pages/Sitemap";
-import SingleProductExample from "./pages/store/Store-Product";
+import BlackMug from "./pages/store/Store-Product-Mug-Black";
+import WhiteMug from "./pages/store/Store-Product-Mug-White";
 import OrderConfirmation from "./pages/store/Store-Order-Confirmation";
 
 function App() {
@@ -54,11 +58,15 @@ function App() {
                 exact
               />
               <Route path='/about' component={About} exact />
+
+              <Route path='/login' component={Login} exact />
               <Route path='/recipes' component={SinglePost} exact />
-              <Route path='/recipes' component={SinglePost} exact />
+              <Route path='/store/black-mug' component={BlackMug} exact />
+              <Route path='/store/white-mug' component={WhiteMug} exact />
+              <Route path='/store' component={Store} exact />
               <Route
-                path='/store/product'
-                component={SingleProductExample}
+                path='/education/project-file'
+                component={ProjectFile}
                 exact
               />
               <Route path='/sitemap' component={SiteMap} exact />
