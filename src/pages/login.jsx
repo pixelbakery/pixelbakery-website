@@ -13,7 +13,7 @@ function Login() {
       <div className='col-span-2 '>
         <div className='max-w-md mx-auto pt-32'>
           <h1 className='text-blue leading-none text-7xl mb-16'>
-            Welcome back, you beautiful baker{" "}
+            Welcome back, you beautiful baker
           </h1>
           <form className='flex flex-col'>
             <input className='my-3' type='text' value='username or email' />
