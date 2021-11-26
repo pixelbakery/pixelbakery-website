@@ -63,6 +63,13 @@ export default [
     active: true,
   },
   {
+    page: "Store - All Products",
+    path: "/store",
+    component: "/store/Store-Product.jsx",
+    category: "primary",
+    active: true,
+  },
+  {
     page: "Careers",
     path: "/careers",
     component: "Careers.jsx",
@@ -88,7 +95,7 @@ export default [
     path: "/login",
     component: "Login.jsx",
     category: "utility",
-    active: false,
+    active: true,
   },
   {
     page: "Team Bio",
@@ -119,9 +126,16 @@ export default [
     active: true,
   },
   {
-    page: "Store - Single Product Example",
-    path: "/store/product",
-    component: "/store/Store-Product.jsx",
+    page: "Store - Black Mug",
+    path: "/store/black-mug",
+    component: "/store/Store-Product-Mug-Black.jsx",
+    category: "secondary",
+    active: true,
+  },
+  {
+    page: "Store - White Mug",
+    path: "/store/white-mug",
+    component: "/store/Store-Product-Mug-White.jsx",
     category: "secondary",
     active: true,
   },

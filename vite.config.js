@@ -11,6 +11,7 @@ export default {
   plugins: [],
   build: {
     manifest: true,
+    sourcemap: true,
   },
   server: {
     host: true,
