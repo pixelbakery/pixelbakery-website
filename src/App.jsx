@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect, BrowserRouter, Switch, Route } from "react-router-dom";
+
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -22,6 +23,7 @@ import Login from "./pages/Login";
 import SiteMap from "./pages/Sitemap";
 import BlackMug from "./pages/store/Store-Product-Mug-Black";
 import WhiteMug from "./pages/store/Store-Product-Mug-White";
+import Checkout from "./pages/store/Checkout";
 import OrderConfirmation from "./pages/store/Store-Order-Confirmation";
 
 function App() {
@@ -70,11 +72,13 @@ function App() {
                 exact
               />
               <Route path='/sitemap' component={SiteMap} exact />
+
               <Route
-                path='/store/checkout/order-confirmed'
-                component={OrderConfirmation}
+                path='/store/checkout/order-confirmation'
                 exact
+                component={OrderConfirmation}
               />
+
               {/* <Route path='/:id' component={Team} exact />  */}
 
               <Route path='/privacy-policy' component={PrivacyPolicy} exact />
