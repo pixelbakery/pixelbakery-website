@@ -36,6 +36,9 @@
   "main": "main.js",
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@heroicons/react": "^1.0.4",
     "@material-ui/core": "^4.12.3",
     "bootstrap-icons": "^1.7.0",
