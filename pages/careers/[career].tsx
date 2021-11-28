@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { gsap } from 'gsap'
+import { NextPage } from 'next'
+import Link from 'next/link'
+import PageSection from '../../components/PageSection'
 import Button from '../../components/parts/button-filled'
 
-function CreativeDirectorPost() {
-  useEffect(() => {
-    ComponentName
-    return () => {}
-  }, [])
-
+let CareerPage: NextPage<{ career: string }> = ({ career }) => {
   return (
-    <main id='' className=' '>
-      <section className='my-4 lander'>
+    <main className='bg-egg p-4'>
+      <PageSection className='lander flex items-center'>
         <div className='mx-auto max-w-6xl'>
           <h1 className='text-4xl text-peach'>job position</h1>
           <h2 className='text-6xl text-blue'> creative director</h2>
@@ -37,8 +32,8 @@ function CreativeDirectorPost() {
             </p>
           </div>
         </div>
-      </section>
-      <section className='bg-white py-12 my-4'>
+      </PageSection>
+      <PageSection className='bg-white my-4'>
         <div className='mx-auto flex gap-8'>
           <div className='w-1/2 h-full flex flex-col justify-center'>
             <h2 className='text-peach'>Responsibilities</h2>
@@ -58,14 +53,14 @@ function CreativeDirectorPost() {
             </ul>
           </div>
         </div>
-      </section>
-      <section className='bg-pink py-12 my-4'>
+      </PageSection>
+      <PageSection className='bg-pink my-4'>
         <div className='mx-auto flex gap-8'>
           <div className='w-1/2 h-full flex flex-col justify-center'>
             <h2 className='text-pink-light mb-0 pb-0'>What we're lookin' for</h2>
             <p className='text-peach font-bold text-lg'>This is a subheader.</p>
           </div>
-          <div className='w-1/2 text-blue text-lg'>
+          <div className='w-1/2 text-white text-lg'>
             <p>
               As an integral part of a small studio with 7 people, we all wear multiple hats, you
               will too!
@@ -91,8 +86,8 @@ function CreativeDirectorPost() {
             </ul>
           </div>
         </div>
-      </section>
-      <section className='bg-blue-dark py-12 my-4'>
+      </PageSection>
+      <PageSection className='bg-blue-dark my-4'>
         <div className='mx-auto flex gap-8'>
           <div className='w-1/2 flex flex-col justify-center px-8'>
             <h2 className='text-pink-light'>Additional Information</h2>
@@ -105,13 +100,11 @@ function CreativeDirectorPost() {
             </p>
           </div>
         </div>
-      </section>
-      <section>
+      </PageSection>
+      <PageSection innerClassName='flex items-end justify-center'>
         <Button text='apply for position' link='/' color='bg-pink' />
-        <Link to={'/careers'} className='text-sm underline float-right text-blue' />
-      </section>
+      </PageSection>
     </main>
   )
 }
-
-export default CreativeDirectorPost
+export default CareerPage
