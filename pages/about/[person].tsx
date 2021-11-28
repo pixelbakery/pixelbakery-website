@@ -12,6 +12,7 @@ export async function getStaticPaths() {
     fallback: true,
   }
 }
+
 export function getStaticProps(context: any) {
   const { person } = context.params
   return {
@@ -20,6 +21,7 @@ export function getStaticProps(context: any) {
     },
   }
 }
+
 let AboutPerson: NextPage = ({ data }) => {
   return (
     <div className='bg-egg p-8'>
