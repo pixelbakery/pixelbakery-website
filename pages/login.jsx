@@ -6,15 +6,15 @@ import Image from 'next/image'
 import Submit from '../components/parts/form-submit'
 function Login() {
   return (
-    <main className='my-4 lander grid grid-cols-6'>
+    <main className='my-4 lander grid grid-cols-5 overflow-hidden'>
       <div className='col-span-2 '>
         <div className='max-w-md mx-auto pt-32'>
           <h1 className='text-blue leading-none text-7xl mb-16'>
             Welcome back, you beautiful baker!
           </h1>
           <form className='flex flex-col'>
-            <input className='my-3' type='text' value='username or email' />
-            <input className='my-3' type='password' value='password' />
+            <input className='my-3' type='text' placeholder='username or email' />
+            <input className='my-3' type='password' placeholder='password' />
             <input className='my-3' name='remember' type='checkbox' value='' />
             <label className='my-3' htmlFor='remember'>
               remember me?
@@ -32,7 +32,7 @@ function Login() {
           </Link>
         </div>
       </div>
-      <div className='col-span-4 relative'>
+      <div className='col-span-3 relative overflow-hidden'>
         <Image
           src='/img/pixel-bakery-samee-dan.webp'
           className='object-cover object-center inset-o'
