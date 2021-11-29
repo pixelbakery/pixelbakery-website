@@ -53,7 +53,7 @@ function Navbar() {
       .to('#ixel', { opacity: 0, duration: 0.4 }, '<25%')
       .to('#akery', { opacity: 0, duration: 0.4 }, '<25%')
       .to('#b', { x: -92, ease: 'sine.inOut', duration: 0.25 }, '<25%')
-      .from('#design-studio', { scale: 0.75, x: -26, y: -3, duration: 0.25 }, '<25%')
+      .from('#logo-line-2', { scale: 0.75, x: -26, y: -3, duration: 0.25 }, '<25%')
       .to('#d', { x: 3, ease: 'sine.inOut', duration: 0.25 }, '<')
       .to('#s', { x: -140, scaleY: 1.25, y: -4, ease: 'sine.inOut', duration: 0.25 }, '<33%')
       .to('#logo-bg', { height: 124, width: 90, ease: 'sine.inOut', duration: 0.25 }, '<')
@@ -96,11 +96,7 @@ function Navbar() {
                   akery
                 </span>
               </p>
-              <p
-                id='logo-line-2'
-                className='tracking-wide -mt-2 -ml-1 text-left'
-                id='design-studio'
-              >
+              <p id='logo-line-2' className='tracking-wide -mt-2 -ml-1 text-left'>
                 <span id='d' className='inline-block'>
                   d
                 </span>
