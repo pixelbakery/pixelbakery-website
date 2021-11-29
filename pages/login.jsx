@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
-import LoginImage from '../img/pixel-bakery-samee-dan.webp'
-import Link from 'next'
-import Image from 'next'
-import Submit from '../components/parts/form-submit/'
+// import LoginImage from '../img/pixel-bakery-samee-dan.webp'
+import Link from 'next/link'
+import Image from 'next/image'
+import Submit from '../components/parts/form-submit'
 function Login() {
-  useEffect(() => {
-    return () => {}
-  }, [])
-
   return (
-    <main id='' className='my-4 lander grid grid-cols-6'>
+    <main className='my-4 lander grid grid-cols-6'>
       <div className='col-span-2 '>
         <div className='max-w-md mx-auto pt-32'>
           <h1 className='text-blue leading-none text-7xl mb-16'>
@@ -24,7 +20,7 @@ function Login() {
               remember me?
               <small className='text-wine text-opacity-40 italic'>of course i remember you.</small>
             </label>
-            <Submit text={'let’s goooooo'} color={'blue'} chevronColor={'wine'} />
+            {/* <Submit text={'let’s goooooo'} color={'blue'} chevronColor={'wine'} /> */}
             <input
               className='border-blue border-2 py-4 font-semibold bg-transparent text-blue text-xl rounded-md'
               type='submit'
@@ -36,12 +32,11 @@ function Login() {
           </Link>
         </div>
       </div>
-      <div className='col-span-4'>
+      <div className='col-span-4 relative'>
         <Image
-          src={LoginImage}
-          className='object-cover object-center w-full h-full'
-          width='100%'
-          height='100%'
+          src='/img/pixel-bakery-samee-dan.webp'
+          className='object-cover object-center inset-o'
+          layout='fill'
           alt='samee callahan and dan hintz at pixel bakery'
         />
       </div>
