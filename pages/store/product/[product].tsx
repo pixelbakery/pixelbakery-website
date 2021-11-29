@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../../../components/Navigation'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
@@ -17,6 +17,8 @@ export async function getServerSideProps(context) {
 
 let StoreProduct: NextPage = ({ product }) => {
   console.log({ product })
+  const [price, setPrice] = useState(product.price.raw)
+  const onPriceChange = (evt) => setPrice(evt.target.value)
   return (
     <>
       {/* <Navigation /> */}
@@ -34,7 +36,12 @@ let StoreProduct: NextPage = ({ product }) => {
             </div>
             <div className='col-span-1 flex flex-col gap-6  justify-center'>
               <h3 className='text-5xl font-light text-blue-dark'>{product.name}</h3>
-              <p className='text-blue text-lg'>{product.price.formatted_with_symbol}</p>
+
+              <div>
+                <p className='text-blue text-lg'>{product.price.formatted_with_symbol}</p>
+                <input type='range' min='1' max='100' value={price} onChange={onPriceChange} />
+                <input type='number' value={price} onChange={onPriceChange} />
+              </div>
               <div dangerouslySetInnerHTML={{ __html: product.description }} />
             </div>
           </div>
