@@ -9,7 +9,7 @@ import FAQ from '../../components/pg-about/about-faq'
 // import TwitchStream from "../components/about-twitch";
 function About() {
   return (
-    <main className='bg-egg px-4'>
+    <main className='bg-egg'>
       <section className='lander my-4 bg-blue'>lander</section>
       <Team />
       <Values />
