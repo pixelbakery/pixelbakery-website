@@ -1,14 +1,14 @@
 import React, { useEffect, useLayoutEffect } from 'react'
 import Link from 'next/link'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import gsap from 'gsap/dist/gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 function hamToggle() {
   var element = document.getElementById('ham')
   element.classList.toggle('active')
 }
 
-function Navbar() {
+export default function Navbar() {
   gsap.registerPlugin(ScrollTrigger)
   useLayoutEffect(() => {
     gsap.set('#logo', { y: -50 })
@@ -69,63 +69,65 @@ function Navbar() {
       .addLabel('end')
   })
 
-  console.log('adfs')
   return (
     <div>
       <div className='pointer-events-none fixed w-full top-0 z-20 mt-8 px-4 flex justify-between'>
         <div id='logo' className='opacity-0 origin-top-left'>
           <Link
             href='/'
+            passHref
             className='pointer-events-auto block relative  h-full w-full z-50 px-4 py-4'
           >
-            <div
-              id='logo-wrapper'
-              className='relative z-20 top-0 bg-none text-peach text-center font-extrabold rounded-md  text-5xl leading-none inline-block'
-            >
-              <p id='logo-line-1' className='opacity-0 tracking-normal text-left'>
-                <span id='p' className='inline-block'>
-                  p
-                </span>
-                <span id='ixel' className='inline-block'>
-                  ixel{' '}
-                </span>
-                <span id='b' className='inline-block ml-3'>
-                  b
-                </span>
-                <span id='akery' className='inline-block'>
-                  akery
-                </span>
-              </p>
-              <p
-                id='logo-line-2'
-                className='tracking-wide -mt-2 -ml-1 text-left'
-                id='design-studio'
+            <>
+              <div
+                id='logo-wrapper'
+                className='relative z-20 top-0 bg-none text-peach text-center font-extrabold rounded-md  text-5xl leading-none inline-block'
               >
-                <span id='d' className='inline-block'>
-                  d
-                </span>
-                <span id='esign' className='inline-block'>
-                  esign{' '}
-                </span>
-                <span id='s' className='inline-block ml-3'>
-                  s
-                </span>
-                <span id='tudio' className='inline-block'>
-                  tudio
-                </span>
-              </p>
-            </div>
-            <div
-              id='logo-bg'
-              className='absolute z-10 top-0 left-0 bg-cream block rounded-md'
-            ></div>
+                <p id='logo-line-1' className='opacity-0 tracking-normal text-left'>
+                  <span id='p' className='inline-block'>
+                    p
+                  </span>
+                  <span id='ixel' className='inline-block'>
+                    ixel{' '}
+                  </span>
+                  <span id='b' className='inline-block ml-3'>
+                    b
+                  </span>
+                  <span id='akery' className='inline-block'>
+                    akery
+                  </span>
+                </p>
+                <p
+                  id='logo-line-2'
+                  className='tracking-wide -mt-2 -ml-1 text-left'
+                  id='design-studio'
+                >
+                  <span id='d' className='inline-block'>
+                    d
+                  </span>
+                  <span id='esign' className='inline-block'>
+                    esign{' '}
+                  </span>
+                  <span id='s' className='inline-block ml-3'>
+                    s
+                  </span>
+                  <span id='tudio' className='inline-block'>
+                    tudio
+                  </span>
+                </p>
+              </div>
+              <div
+                id='logo-bg'
+                className='absolute z-10 top-0 left-0 bg-cream block rounded-md'
+              ></div>
+            </>
           </Link>
         </div>
         <div className='pr-8  h-full flex'>
           <div id='nav-link-1' className='opacity-0 self-center relative z-20'>
             <Link
               className='pointer-events-auto mx-3 text-xl tracking-wide lowercase text-peach font-bold'
-              to='/work'
+              href='/work'
             >
               Our Work
             </Link>
@@ -134,14 +136,14 @@ function Navbar() {
           <div id='nav-link-2' className='opacity-0 self-center relative z-20'>
             <Link
               className='pointer-events-auto  mx-3 text-xl tracking-wide lowercase text-peach font-bold'
-              to='/about'
+              href='/about'
             >
               Who We Are
             </Link>
           </div>
           <div id='nav-link-3' className='opacity-0 self-center relative z-30'>
             <Link
-              to='/contact'
+              href='/contact'
               className='pointer-events-auto  mx-3 my-2 py-3 rounded-sm px-6 w-full text-center bg-peach'
             >
               <span className='text-cream font-extrabold text-md lowercase tracking-wide'>
@@ -171,13 +173,11 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <nav className=' fixed w-full flex justify-center'>
-        <Link className='underline pointer-events-auto' to={'/sitemap'}>
+      <nav className='fixed w-full flex justify-center'>
+        <Link className='underline pointer-events-auto' href={'/sitemap'}>
           Sitemap
         </Link>
       </nav>
     </div>
   )
 }
-
-export default Navbar
