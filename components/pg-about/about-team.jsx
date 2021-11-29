@@ -1,5 +1,5 @@
 import React from 'react'
-import roster from '../../data/team'
+import roster from '../../data/roster'
 
 function Team() {
   return (

@@ -1,6 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-
-export default [
+const roster = [
   {
     url: 'dan_hintz',
     name: 'Dan Hintz',
@@ -234,3 +233,7 @@ export default [
   //     bio:"",
   // },
 ]
+
+export type RosterBio = typeof roster[0]
+
+export default roster
