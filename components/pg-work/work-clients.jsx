@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
+import { NextPage } from 'next'
 import clientList from '../../data/work-client-list'
+
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import GsapClients from "../../js/GSAPclients";
