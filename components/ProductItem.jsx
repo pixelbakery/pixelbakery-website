@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Image from 'next/image'
 
 class ProductItem extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class ProductItem extends Component {
     return (
       <article className='col-span-1 w-full '>
         <div className=' rounded-lg overflow-hidden aspect-w-4 aspect-h-3'>
-          <img className='product__image' src={product.image.url} alt={product.name} />
+          <Image className='product__image' src={product.image.url} alt={product.name} />
         </div>
         <div className='product__info'>
           <h2 className='text-pink-light mt-3 text-2xl'>
