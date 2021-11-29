@@ -4,6 +4,7 @@ import Navigation from '../../../components/Navigation'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
+import useCart from '../../../hooks/useCart'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -16,25 +17,21 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
-  console.log({ product })
-  const [cart, setCart] = useState(null)
   const [price, setPrice] = useState(product.price.raw)
   const onPriceChange = (evt) => setPrice(evt.target.value)
+
+  const { data: cart, refetch } = useCart()
   const addToCart = async () => {
-    const result = await commerce.cart.add(product.id, 1)
-    console.log(result)
-    commerce.cart.retrieve().then(setCart)
+    await commerce.cart.add(product.id, 1)
+    refetch()
   }
 
-  useEffect(() => {
-    commerce.cart.retrieve().then(setCart)
-  }, [])
   return (
     <>
       {/* <Navigation /> */}
       <main id='' className='lander bg-white relative'>
         <PageSection className='inset-0'>
-          Cart items: {cart.total_items}
+          Cart items: {cart?.total_items}
           <div className='grid grid-cols-1 items-center md:grid-cols-2 gap-16'>
             <div className='col-span-1 relative' style={{ minHeight: '50vh' }}>
               <Image
