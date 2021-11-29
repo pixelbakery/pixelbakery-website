@@ -1,6 +1,7 @@
 import type { NextPage, NextPageContext } from 'next'
 import { useRouter } from 'next/router'
 import roster from '../../data/team'
+import TeamBio from '../../components/pg-about/about-bios'
 
 export async function getStaticPaths() {
   return {
@@ -25,8 +26,10 @@ export function getStaticProps(context: any) {
 let AboutPerson: NextPage = ({ data }) => {
   return (
     <div className='bg-egg p-8'>
-      <h1>{data.name}</h1>
-      <h3>{data.bio}</h3>
+      {/* <h1>{data.name}</h1>
+      <h3>{data.bio}</h3> */}
+      <TeamBio {...data}
+            />         
       {/* {JSON.stringify(data)} */}
     </div>
   )
