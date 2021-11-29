@@ -76,7 +76,6 @@ export default function Navbar() {
             href='/'
             passHref
             className='pointer-events-auto block relative  h-full w-full z-50 px-4 py-4'
-            passHref
           >
             <>
               <div
@@ -97,11 +96,7 @@ export default function Navbar() {
                     akery
                   </span>
                 </p>
-                <p
-                  id='logo-line-2'
-                  className='tracking-wide -mt-2 -ml-1 text-left'
-                  id='design-studio'
-                >
+                <p id='logo-line-2' className='tracking-wide -mt-2 -ml-1 text-left'>
                   <span id='d' className='inline-block'>
                     d
                   </span>
