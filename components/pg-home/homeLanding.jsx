@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Link from 'next/link'
 import SocialLinks from '../parts/socialOptions'
@@ -7,11 +9,11 @@ import Image from 'next/image'
 export default function homeLanding() {
   //localhost:3000/assets/img/pixelbakery_pattern_blue.svg
   http: return (
-    <div>
+    <main>
       <section className='lander overflow-hidden w-full my-4 flex'>
         <nav className='w-1/3 max-w-lg bg-pink-light h-full flex flex-col justify-between py-10 px-12 '>
           <div className='logo-wrapper px-20 w-full text-blue fill-current'>
-            <Image
+            <img
               className=' object-center block m-auto object-contain w-full logo-pink'
               src={'/img/pixelbakery-logo-primary.svg'}
               id='home-logo'
@@ -72,14 +74,14 @@ export default function homeLanding() {
         </nav>
         <div className='flex-grow pb-pattern ' id='homepage-lander'>
           <div className=' flex flex-col mx-auto h-1/3 '>
-            <Image
+            <img
               src={'/img/pixelbakery_boxlogo.svg'}
-              alt=''
+              alt='Pixel Bakery Design Studio'
               className='object-center block m-auto '
             />
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

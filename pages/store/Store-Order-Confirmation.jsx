@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 
 function SubmissionConfirmation() {
@@ -46,13 +46,13 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link to={'/store'} className='text-blue underline text-md'>
+              <Link href={'/store'} className='text-blue underline text-md'>
                 ← Back to the company store
               </Link>
             </li>
             <li className='my-2'>
               {' '}
-              <Link to={'/about'} className='text-blue underline text-md'>
+              <Link href={'/about'} className='text-blue underline text-md'>
                 Daydream about us →
               </Link>
             </li>
