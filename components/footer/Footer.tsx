@@ -1,24 +1,18 @@
 import React from 'react'
-import type { NextPage } from 'next'
-
 import FooterNav from './footerNav'
 import FooterNavMoreCard from './footerNavMoreCard'
 import HappyCard from './happyCard'
 import TextLogo from '../parts/textlogo'
 import ButtonFilled from '../parts/button-filled'
 import SocialList from '../parts/socialOptions'
-
-
+import { NextPage } from 'next'
 import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
 import wordsOfEncouragement from '../../data/wordsOfEncouragement'
 
-
 export let getServerSideProps = () => {}
 
-export let Footer: NextPage = ({
-  
-}) => {
+export let Footer: NextPage = ({}) => {
   return (
     <footer className='bg-peach px-12 py-24 max-h-screen mb-4' id='footer'>
       <div className='mx-auto max-w-6xl'>
@@ -53,7 +47,7 @@ export let Footer: NextPage = ({
                     </a>
                   </li>
                   <li className='mt-3 text-xl text-cream'>
-                    <a href='tel:4024138366' target='_blank'>
+                    <a href='tel:4024138366' target='_blank' rel='noreferrer'>
                       402 413 8366
                     </a>
                   </li>
@@ -100,6 +94,7 @@ export let Footer: NextPage = ({
                 className='text-cream  text-2xl font-extrabold'
                 href='mailto:hello@pixelbakery.com'
                 target='_blank'
+                rel='noreferrer'
               >
                 hello@pixelbakery.com
               </a>
