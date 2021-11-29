@@ -1,4 +1,5 @@
 import React from 'react'
+import { RosterBio } from '../../data/roster'
 
 export default function TeamBio({
   id,
@@ -23,7 +24,7 @@ export default function TeamBio({
   details_book,
   details_aesthetic,
   bio,
-}) {
+}: RosterBio) {
   return (
     <>
       <section className=' lander mx-auto flex flex-col justify-center mb-4' id={id}>
