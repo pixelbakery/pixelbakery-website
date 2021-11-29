@@ -41,9 +41,10 @@ let StoreProduct: NextPage = ({ product }) => {
         <div className='col-span-1 flex flex-col justify-top '>
           <h1 className='mt-0 pt-0 mb-3 text-blue-dark leading-none'>{product.name}</h1>
           <div className='my-3 text-blue font-bold text-3xl'> $14</div>
-          <p className='my-3 text-wine text-xl text-opacity-90 leading-relaxed'>
-            {product.description}
-          </p>
+          <div
+            className='my-3 text-wine text-xl text-opacity-90 leading-relaxed'
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          ></div>
           <form>
             <input type='number' value='' />
             <input type='submit' value='Add to Cart' />
