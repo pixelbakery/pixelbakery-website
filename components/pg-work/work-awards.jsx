@@ -42,8 +42,8 @@ function WorkAwards() {
           <div className='mx-4 px-4'>
             <div>
               <ul
-                className='text-cream font-body font-extrabold text-xl relative awardslist'
-                id='awardslist1'
+                className='text-cream font-body font-extrabold text-xl relative awardsList'
+                id='awardsList1'
               >
                 <li className='my-2 relative award'>
                   <a href=''>SoulPancake / Price of Free Animation / Silver AIGA Show</a>
@@ -89,31 +89,9 @@ function WorkAwards() {
               </ul>
             </div>
           </div>
-          <div className='mx-auto'>
-            <input type='radio' id='awards1' name='awardstab' value='1' />
-            <input type='radio' id='awards1' name='awardstab' value='2' />
-          </div>
         </div>
       </div>
     </section>
-    // <Swiper
-    //   // install Swiper modules
-
-    //   modules={[ Pagination, Navigation, Scrollbar, A11y]}
-    //   spaceBetween={50}
-    //   slidesPerView={3}
-    //   navigation
-    //   pagination={{ clickable: true }}
-    //   scrollbar={{ draggable: true }}
-    //   onSwiper={(swiper) => console.log(swiper)}
-    //   onSlideChange={() => console.log('slide change')}
-    // >
-    //   <SwiperSlide>Slide 1</SwiperSlide>
-    //   <SwiperSlide>Slide 2</SwiperSlide>
-    //   <SwiperSlide>Slide 3</SwiperSlide>
-    //   <SwiperSlide>Slide 4</SwiperSlide>
-    //   ...
-    // </Swiper>
   )
 }
 
