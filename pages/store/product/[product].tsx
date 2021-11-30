@@ -1,10 +1,12 @@
 import { GetServerSideProps, NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import Navigation from '../../../components/Navigation'
+import Maintenance from '../../../components/pg-store/maintenance'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
 import useCart from '../../../hooks/useCart'
+import VariantPicker from '../../../components/pg-store/store-variant-picker'
 import Link from 'next/link'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
@@ -25,11 +27,12 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
     await commerce.cart.add(product.id, 1)
     refetch()
   }
+
+  // check to see if it's a name your own price product
   let prependPrice = ''
   if (product.conditionals.is_pay_what_you_want) {
     prependPrice = 'minimum price '
   }
-  console.log(product.assets[0].file_extension)
 
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
@@ -38,7 +41,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
         <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
           <div
             className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-95'
+hover:opacity-90 hover:scale-97 active:scale-90'
           >
             {cart?.total_items}
             <svg
@@ -119,7 +122,7 @@ hover:opacity-90 hover:scale-95'
                 <span className='font-medium text-xl text-wine mr-1'>$</span>
                 {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
                 <input
-                  className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2'
+                  className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
                   type='number'
                   min={product.price.raw}
                   value={price}
@@ -127,25 +130,33 @@ hover:opacity-90 hover:scale-95'
                 />
               </span>
             </div>
-            {/* TODO: Disable button if sold out */}
+
+            {/* TODO: 
+              - Disable button if sold out 
+              - price does not update with slider. it remains the default minimum price 
+              */}
             <button
               onClick={addToCart}
-              className='bg-blue rounded-lg text-xl font-bold my-8 py-4 block w-full text-cream focus-within:sr-only lowercase  cursor-pointer'
+              className='bg-blue rounded-lg text-xl font-bold my-8 py-4 block w-full text-cream focus-within:sr-only lowercase  cursor-pointer transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach'
             >
               Get At It
             </button>
-            {/* TODO: Figure out why it doesn't like using Link here */}
             <div className='flex justify-between'>
-              <a href={'/store'} className='font-semibold text-blue text-xl'>
-                ← more good good
-              </a>
-              <a href={'/store/cart'} className='font-semibold text-blue text-xl'>
-                check out →
-              </a>
+              <Link href={'/store'} passHref>
+                <a className='font-semibold text-blue text-xl'>← more good good</a>
+              </Link>
+              <Link href={'/store/cart'} passHref>
+                <a className='font-semibold text-blue text-xl hover:opacity-90 active:scale-90 active:opacity-60'>
+                  {' '}
+                  check out →
+                </a>
+              </Link>
             </div>
           </div>
         </div>
       </PageSection>
+      <Maintenance />
     </main>
   )
 }
