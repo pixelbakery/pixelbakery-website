@@ -77,15 +77,21 @@ let CheckoutPage: NextPage = () => {
     refetch()
   }
 
-  function addQuantity() {
-    console.log("ADDED ITEM: idk what i'm doing")
+  const addQuantity = async (item: any) => {
+    await commerce.cart.update(item.id, { quantity: item.quantity + 1 })
+    refetch()
+    console.log('ADDED ITEM')
   }
-  const subtractQuantity = () => {
-    console.log("SUBTRACTED ITEM: idk what i'm doing")
+  const subtractQuantity = async (item: any) => {
+    await commerce.cart.update(item.id, { quantity: item.quantity - 1 })
+
+    console.log('SUBTRACTED ITEM')
     refetch()
   }
-  const removeLineItem = () => {
-    console.log("REMOVED ITEM: idk what i'm doing")
+  const removeLineItem = async (item: any) => {
+    await commerce.cart.update(item.id, { quantity: 0 })
+
+    console.log('REMOVED ITEM')
     refetch()
   }
 
@@ -107,12 +113,14 @@ let CheckoutPage: NextPage = () => {
         <h2 className='text-3xl mt-20 mb-4'>💁‍♀️ What you're buyin' </h2>
 
         <div className='bg-cream px-16 pb-16 pt-8 my-2'>
-          <button
-            onClick={clearCart}
-            className='text-blue border rounded-md text-md font-light px-3 py-1'
-          >
-            clear cart
-          </button>
+          {cart.line_items?.length > 0 ? (
+            <button
+              onClick={clearCart}
+              className='text-blue border rounded-md text-md font-light px-3 py-1'
+            >
+              clear cart
+            </button>
+          ) : null}
           {/* TODO: 
                 - wrap item name and item photo in a Link and redirect back to product page 
                 - remove item button and/or quantity selector 
@@ -142,7 +150,7 @@ let CheckoutPage: NextPage = () => {
                     <button
                       className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-98 active:scale-97'
-                      onClick={subtractQuantity}
+                      onClick={() => subtractQuantity(item)}
                     >
                       –
                     </button>
@@ -150,14 +158,14 @@ hover:opacity-90 hover:scale-98 active:scale-97'
                     <button
                       className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-98    active:scale-97'
-                      onClick={addQuantity}
+                      onClick={() => addQuantity(item)}
                     >
                       +
                     </button>
                   </div>
                   <button
                     className='text-center w-full mt-2 text-blue text-opacity-60 text-sm italic'
-                    onClick={removeLineItem}
+                    onClick={() => removeLineItem(item)}
                   >
                     {' '}
                     Remove Item{' '}
@@ -172,9 +180,20 @@ hover:opacity-90 hover:scale-98    active:scale-97'
           </div>
           {/* {JSON.stringify(cart)} */}
 
-          <div className='text-right font-semibold text-2xl text-opacity-80 py-4 my-6  text-wine'>
-            <span className='lg:mr-20'>subtotal:</span> {cart?.subtotal.formatted_with_symbol}
-          </div>
+          {cart.line_items?.length > 0 ? (
+            <div className='text-right font-semibold text-2xl text-opacity-80 py-4 my-6  text-wine'>
+              <span className='lg:mr-20'>subtotal:</span> {cart?.subtotal.formatted_with_symbol}
+            </div>
+          ) : (
+            <div>
+              {/* 
+              
+                TODO: Style empty state
+              
+              */}
+              Empty
+            </div>
+          )}
         </div>
         <div className=' flex justify-end'>
           <button
