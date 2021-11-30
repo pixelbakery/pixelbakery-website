@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import useCart from '../../hooks/useCart'
 import Navigation from '../../components/Navigation'
 import PageSection from '../../components/PageSection'
+import Maintenance from '../../components/pg-store/maintenance'
 import Link from 'next/link'
 import commerce from '../../lib/commerce'
 import { ChevronRightIcon } from '@heroicons/react/solid'
@@ -42,7 +43,7 @@ let CheckoutPage: NextPage = () => {
           <br /> checkout
         </h1>
 
-        <h2 className='text-3xl mt-20 mb-4'>💁‍♀️ What you're buyin' </h2>
+        <h2 className='text-3xl mt-20 mb-4'>💁‍♀️ What you&apos;re buyin&apos; </h2>
 
         <div className='bg-cream px-16 pb-16 pt-8 my-2'>
           <button
@@ -124,6 +125,7 @@ hover:opacity-90 hover:scale-99 active:scale-97'
           </button>
         </div>
       </PageSection>
+      <Maintenance />
     </main>
   )
 }
