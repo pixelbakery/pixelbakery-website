@@ -180,7 +180,7 @@ hover:opacity-90 hover:scale-98    active:scale-97'
           </div>
           {/* {JSON.stringify(cart)} */}
 
-          {cart.line_items?.length > 0 ? (
+          {cart?.line_items?.length > 0 ? (
             <div className='text-right font-semibold text-2xl text-opacity-80 py-4 my-6  text-wine'>
               <span className='lg:mr-20'>subtotal:</span> {cart?.subtotal.formatted_with_symbol}
             </div>
