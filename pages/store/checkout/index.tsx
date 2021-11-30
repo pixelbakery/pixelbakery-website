@@ -1,13 +1,8 @@
 import { NextPage } from 'next'
-import React, { useEffect } from 'react'
-import { Formik } from 'formik'
-import useCart from '../../../hooks/useCart'
-import useShippingOptions from '../../../hooks/useShippingOptions'
-import useCheckoutToken from '../../../hooks/useCheckoutToken'
-import { useState } from 'react'
-import cs from 'classnames'
+import React, { useEffect, useState } from 'react'
 import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
-import ShippingOptions from '../../../components/pg-store/ShippingOptions'
+import useCart from '../../../hooks/useCart'
+import useCheckoutToken from '../../../hooks/useCheckoutToken'
 
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
@@ -34,7 +29,14 @@ let Checkout: NextPage = () => {
             {furthestStep >= 2 && step !== 2 && <button onClick={() => setStep(2)}>Edit</button>}
             {step === 2 && (
               <div>
-                <ShippingOptions />
+                <select className='block'>
+                  {token?.shipping_methods?.map((opt) => (
+                    <option value={opt.id} key={opt.id}>
+                      {opt.description} {opt.price.formatted_with_symbol}
+                    </option>
+                  ))}
+                </select>
+                {/* <ShippingOptions /> */}
                 <button onClick={() => setStep(3)}>Next</button>
               </div>
             )}
