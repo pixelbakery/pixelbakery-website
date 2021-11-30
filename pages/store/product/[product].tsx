@@ -67,10 +67,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
       >
         <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24'>
-          <div
-            className='mt-0 col-span-1 relative flex flex-col justify-start'
-            // style={{ minHeight: '50vh' }}
-          >
+          <div className='mt-0 col-span-1 relative flex flex-col justify-start'>
             {product.assets[0].file_extension === 'mp4' ? (
               <video
                 src={product.assets[0].url}
@@ -88,11 +85,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 alt={'pixel bakery ' + product.name}
               />
             )}
-
-            {/*  */}
           </div>
-
-          {}
           <div className='col-span-1  gap-6  '>
             <h1 className='text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
               {product.name}
