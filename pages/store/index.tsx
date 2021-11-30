@@ -1,7 +1,7 @@
 import React from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '../../components/PageSection'
-import Maintenance from '../../components/pg-store/maintenance'
+// import Maintenance from '../../components/pg-store/maintenance'
 import commerce from '../../lib/commerce'
 import Link from 'next/link'
 import useCart from '../../hooks/useCart'
@@ -123,7 +123,7 @@ hover:opacity-90 hover:scale-99 active:scale-97'
           ))}
         </div>
       </PageSection>
-      <Maintenance />
+      {/* <Maintenance /> */}
     </main>
   )
 }

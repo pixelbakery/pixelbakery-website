@@ -30,6 +30,7 @@
     "bootstrap-icons": "^1.7.1",
     "classnames": "^2.3.1",
     "flickity": "^2.2.2",
+    "formik": "^2.2.9",
     "gsap": "^3.8.0",
     "next": "12.0.4",
     "react": "17.0.2",
@@ -38,7 +39,8 @@
     "react-player": "^2.9.0",
     "react-query": "^3.33.7",
     "react-spring": "^9.3.2",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
