@@ -183,7 +183,7 @@ hover:opacity-90 hover:scale-98    active:scale-97'
           ) : (
             <div>
               <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
-                well, that's a sad looking cart.{' '}
+                well, that&apos;s a sad looking cart.{' '}
                 <Link href='/store' passHref>
                   <a className='underline text-blue'>make it less sad</a>
                 </Link>
