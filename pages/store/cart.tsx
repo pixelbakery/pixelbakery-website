@@ -11,7 +11,6 @@ import React, { useState } from 'react'
 import { useQueryClient } from 'react-query'
 
 function CartItem({ item }) {
-  // const [quantity, setQuantity] = useState(item.quantity)
   const client = useQueryClient()
   const increment = async () => {
     await commerce.cart.update(item.id, { quantity: item.quantity + 1 })
@@ -124,9 +123,6 @@ let CheckoutPage: NextPage = () => {
           ) : null}
           {/* TODO: 
                 - wrap item name and item photo in a Link and redirect back to product page 
-                - remove item button and/or quantity selector 
-                - fix vertical alignment so quantity and price are top aligned
-                - add a message if cart is empty
                 */}
           <div className='mt-4 grid grid-cols-1 w-full gap-12'>
             {cart?.line_items.map((item) => (
@@ -179,7 +175,6 @@ hover:opacity-90 hover:scale-98    active:scale-97'
               </div>
             ))}
           </div>
-          {/* {JSON.stringify(cart)} */}
 
           {cart?.line_items?.length > 0 ? (
             <div className='text-right font-semibold text-2xl text-opacity-80 py-4 my-6  text-wine'>
@@ -187,11 +182,6 @@ hover:opacity-90 hover:scale-98    active:scale-97'
             </div>
           ) : (
             <div>
-              {/* 
-              
-                TODO: Style empty state
-              
-              */}
               <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                 well, that's a sad looking cart.{' '}
                 <Link href='/store' passHref>
@@ -208,7 +198,7 @@ hover:opacity-90 hover:scale-98    active:scale-97'
               className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
   hover:opacity-90 hover:scale-99 active:scale-97'
             >
-              <span className='font-medium text-center'>pay up</span>
+              <span className='font-medium text-center'>pony up</span>
               <ChevronRightIcon className=' text-pink-light text-2xl inline-block w-12 ' />
             </button>
           </Link>
