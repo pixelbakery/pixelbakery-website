@@ -44,7 +44,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           </div>
         </div>
       </Link>
-      <section className='mt-4 lander bg-blue-dark py-12 px-8'>
+      <section className='mt-4 bg-blue-dark py-12 px-8'>
         <div className='max-w-xl md:max-w-6xl mx-auto md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
           <div className='cols-span-1 lg:col-span-3'>
             <h1 className='text-pink-light mt-0 pt-0 leading-none'>Company Shop</h1>
@@ -68,15 +68,15 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               abuse they've suffered and give them a pathway to healing. We just sit here and click
               buttons and move things around on a computer.
             </p>
-            <p className=' my-9'>
+            {/* <p className=' my-9'>
               While there are many amazing nonprofits in nebraska that are worthy of your donations,
               the unrelenting work that the Child Advocacy Center does makes them our choice for
               this Giving Tuesday.
-            </p>
+            </p> */}
             <p className='my-9 italic'>
               <span className='text-pink font-bold'>
-                Also, why not make it a week instead of a day?
-              </span>{' '}
+                Also, why not make it a week instead of a day?{' '}
+              </span>
               No need to conform to social constructs, ya kno?
             </p>
           </div>
@@ -98,7 +98,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 className='overflow-hidden transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-99 active:scale-97'
               >
-                <div className='relative rounded-lg overflow-hidden'>
+                <div className='relative rounded-md overflow-hidden'>
                   <img
                     src={product.media.source}
                     alt={product.name}
