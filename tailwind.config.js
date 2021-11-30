@@ -6,6 +6,14 @@ module.exports = {
         '18xl': '18rem',
         '20xl': '20rem',
       },
+      scale: {
+        97: '.97',
+        98: '.98',
+        99: '.99',
+        101: '1.01',
+        102: '1.02',
+        103: '1.03',
+      },
     },
     colors: {
       transparent: 'transparent',
@@ -55,7 +63,9 @@ module.exports = {
     extend: {
       stroke: ['hover', 'focus'],
       fill: ['hover', 'focus'],
-      skew: ['group-hover'],
+      skew: ['group-hover', 'active'],
+      scale: ['active'],
+      backgroundColor: ['active'],
     },
   },
   plugins: [
