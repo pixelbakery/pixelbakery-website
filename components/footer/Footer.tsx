@@ -14,7 +14,7 @@ export let getServerSideProps = () => {}
 
 export let Footer: NextPage = ({}) => {
   return (
-    <footer className='bg-peach px-12 py-24 max-h-screen mb-4' id='footer'>
+    <footer className='bg-peach px-12 py-24 lg:max-h-screen mb-4' id='footer'>
       <div className='mx-auto max-w-6xl'>
         <div className='grid grid-cols-1 lg:grid-cols-3 mb-12 gap-8 h-full'>
           <div className='h-full flex flex-col justify-between'>
@@ -23,7 +23,7 @@ export let Footer: NextPage = ({}) => {
             </div>
 
             <nav className=' pt-5 mt-3'>
-              <ul className='grid grid-cols-2 md:grid-cols-1 text-center lg:text-left text-4xl font-black'>
+              <ul className='grid grid-cols-1 text-center lg:text-left text-4xl font-black'>
                 {footerMenu.map((navitem) => (
                   <FooterNav navitem={navitem} key={navitem.text} />
                 ))}
@@ -31,13 +31,15 @@ export let Footer: NextPage = ({}) => {
             </nav>
           </div>
 
-          <div className='flex flex-col justify-between h-full pr-6'>
-            <div className=''>
-              <div className=' border-b-4 border-cream text-bold max-w-xs pr-4 mr-4'>
-                <h3 className='font-extrabold text-3xl text-cream'>studio</h3>
+          <div className='flex flex-col justify-between h-full md:pr-6'>
+            <div className='self-center w-full'>
+              <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
+                <h3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
+                  studio
+                </h3>
               </div>
               <div>
-                <ul className='mt-3'>
+                <ul className='mt-3 text-center md:text-left'>
                   <li>
                     {' '}
                     <a className='text-cream text-xl' href='#'>
@@ -54,9 +56,11 @@ export let Footer: NextPage = ({}) => {
                 </ul>
               </div>
             </div>
-            <div className='pt-4 pr-4'>
-              <div className='mt-4 border-b-4 border-cream mb-4 max-w-xs pr-4'>
-                <h3 className='font-extrabold text-3xl  text-cream 3'>more stuff</h3>
+            <div className='pt-4 md:pr-4'>
+              <div className='mx-auto mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
+                <h3 className='text-center md:text-left font-extrabold text-3xl  text-cream'>
+                  more stuff
+                </h3>
               </div>
               <nav>
                 <ul className='mt-3'>
@@ -82,7 +86,7 @@ export let Footer: NextPage = ({}) => {
                 </span>
               </div>
             </div>
-            <div className='flex flex-center w-full my-3 '>
+            <div className='flex justify-center w-full my-3'>
               <ButtonFilled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
