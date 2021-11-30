@@ -11,13 +11,14 @@ import ShippingOptions from '../../../components/pg-store/ShippingOptions'
 
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
+  const { data: token } = useCheckoutToken(cart?.id)
+
+  console.log({ token })
   const [step, setStep] = useState(1)
   const [furthestStep, setFurthest] = useState(1)
   useEffect(() => {
     setFurthest(Math.max(furthestStep, step))
   }, [step])
-
-  console.log(cart)
 
   return (
     <main className='lander p-4'>
@@ -56,7 +57,7 @@ let Checkout: NextPage = () => {
               <p>{item?.line_total?.formatted_with_symbol}</p>
             </div>
           ))}
-          <h3>{cart.subtotal.formatted_with_symbol}</h3>
+          <h3>{cart?.subtotal.formatted_with_symbol}</h3>
         </div>
       </div>
     </main>
