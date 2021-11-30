@@ -30,11 +30,11 @@ let CheckoutPage: NextPage = () => {
   return (
     <main id='page-checkout' className='relative'>
       <PageSection
-        className={'bg-pink-light inset-0 pt-40 my-4'}
+        className={'bg-pink-light inset-0 lg:pt-20 my-4'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-6xl'}
       >
         <Link href='/store' passHref>
-          <span className='text-blue text-md cursor-pointer py-2'>← Back to store </span>
+          <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
         </Link>
         <h1 className='text-pink text-7xl'>
           Chikity
@@ -64,7 +64,7 @@ let CheckoutPage: NextPage = () => {
                 className='py-4 border-b border-pink-light col-span-1 grid grid-cols-5 font-medium  text-xl text-opacity-90 text-wine'
               >
                 <div className='col-span-1'>
-                  <div className='w-32 h-32 mr-16'>
+                  <div className='w-20 h-20 lg:w-32 lg:h-32 lg:mr-16'>
                     <img
                       src={item.media.source}
                       className='rounded-md w-full h-full object-center object-cover'
@@ -72,20 +72,22 @@ let CheckoutPage: NextPage = () => {
                     />
                   </div>
                 </div>
-                <div className='col-span-2  '>
+                <div className='pb-4 col-span-5 lg:col-span-2 order-first lg:order-2 '>
                   <p className=''>{item.name}</p>
                 </div>
-                <div className='col-span-1 flex flex-col'>
+                <div className='col-span-3 lg:col-span-1 flex flex-col'>
                   <div className='self-center'>
                     <button
-                      className='leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-lg'
+                      className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-98 active:scale-97'
                       onClick={subtractQuantity}
                     >
                       –
                     </button>
                     {item.quantity}
                     <button
-                      className='leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-lg'
+                      className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-98    active:scale-97'
                       onClick={addQuantity}
                     >
                       +
@@ -99,7 +101,7 @@ let CheckoutPage: NextPage = () => {
                     Remove Item{' '}
                   </button>
                 </div>
-                <div className='col-span-1 text-right'>
+                <div className='lg:col-span-1 text-right order-last'>
                   {' '}
                   <p> {item.line_total.formatted_with_symbol}</p>
                 </div>
@@ -108,12 +110,15 @@ let CheckoutPage: NextPage = () => {
           </div>
           {/* {JSON.stringify(cart)} */}
 
-          <div className='text-right font-bold text-3xl text-opacity-90 py-4 my-6 mr-24 text-wine'>
-            <span className='mr-20'>subtotal:</span> {cart?.subtotal.formatted_with_symbol}
+          <div className='text-right font-semibold text-2xl text-opacity-80 py-4 my-6  text-wine'>
+            <span className='lg:mr-20'>subtotal:</span> {cart?.subtotal.formatted_with_symbol}
           </div>
         </div>
         <div className=' flex justify-end'>
-          <button className='text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl'>
+          <button
+            className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-99 active:scale-97'
+          >
             <span className='font-medium text-center'>checkout</span>
             <ChevronRightIcon className=' text-pink-light text-2xl inline-block w-12 ' />
           </button>

@@ -122,7 +122,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 <span className='font-medium text-xl text-wine mr-1'>$</span>
                 {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
                 <input
-                  className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60'
+                  className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
                   type='number'
                   min={product.price.raw}
                   value={price}
@@ -130,12 +130,11 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 />
               </span>
             </div>
-            {/* <VariantPicker
-              variantGroups={variantGroups}
-              defaultValues={initialVariants}
-              onChange={handleVariantChange}
-            /> */}
-            {/* TODO: Disable button if sold out */}
+
+            {/* TODO: 
+              - Disable button if sold out 
+              - price does not update with slider. it remains the default minimum price 
+              */}
             <button
               onClick={addToCart}
               className='bg-blue rounded-lg text-xl font-bold my-8 py-4 block w-full text-cream focus-within:sr-only lowercase  cursor-pointer transform transition-all duration-600 ease-in-out scale-100 opacity-100
@@ -143,7 +142,6 @@ hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach'
             >
               Get At It
             </button>
-            {/* TODO: Figure out why it doesn't like using Link here */}
             <div className='flex justify-between'>
               <Link href={'/store'} passHref>
                 <a className='font-semibold text-blue text-xl'>← more good good</a>
