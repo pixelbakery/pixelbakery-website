@@ -14,9 +14,9 @@ export default function PageSection({
   ...rest
 }: React.PropsWithChildren<Props>) {
   return (
-    <section className={cs('py-8 lg:py-16', className)} id={id}>
+    <section className={cs('py-8 px-8 lg:py-16', className)} id={id}>
       <div className={'mx-auto ' + innerMaxWidth}>
-        <div className={cs('px-8 lg:px-12 py-8 ', innerClassName)}>{children}</div>
+        <div className={cs('lg:px-12 py-8 ', innerClassName)}>{children}</div>
       </div>
     </section>
   )

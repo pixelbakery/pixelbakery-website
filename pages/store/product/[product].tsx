@@ -5,6 +5,7 @@ import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
 import useCart from '../../../hooks/useCart'
+import Link from 'next/link'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -28,50 +29,83 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
   if (product.conditionals.is_pay_what_you_want) {
     prependPrice = 'minimum price '
   }
+  console.log(product.assets[0].file_extension)
 
-  // console.log('HERE YA GO: ' + product.assets[0].url)
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
-      Cart items: {cart?.total_items}
+      {/* TODO: Move this to store-cart-nav */}
+      <Link href='/store/cart' passHref>
+        <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
+          <div
+            className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-95'
+          >
+            {cart?.total_items}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-7 w-7'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2.5'
+                d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
+              />
+            </svg>
+          </div>
+        </div>
+      </Link>
       {/* {JSON.stringify(product)} */}
       <PageSection
-        className='inset-0 pt-40'
+        className={'bg-cream lander my-4 inset-0 '}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
       >
-        <div className='grid grid-cols-1 items-center pt-20 md:grid-cols-2 gap-24'>
+        <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24'>
           <div
             className='mt-0 col-span-1 relative flex flex-col justify-start'
-            style={{ minHeight: '50vh' }}
+            // style={{ minHeight: '50vh' }}
           >
-            <video
-              src={product.assets[0].url}
-              loop
-              muted
-              autoPlay
-              className='my-0 px-0 object-cover inset-0 w-full h-full'
-            />
-            {/* <Image
+            {product.assets[0].file_extension === 'mp4' ? (
+              <video
+                src={product.assets[0].url}
+                loop
+                muted
+                autoPlay
+                className='my-0 px-0 object-cover inset-0 w-full rounded-md'
+              />
+            ) : (
+              <Image
                 layout='fill'
                 src={product.media.source}
                 objectFit='cover'
                 className='inset-0'
-              /> */}
+                alt={'pixel bakery ' + product.name}
+              />
+            )}
+
+            {/*  */}
           </div>
 
           {}
-          <div className='col-span-1 flex flex-col gap-6  justify-start'>
+          <div className='col-span-1  gap-6  '>
             <h1 className='text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
               {product.name}
             </h1>
-            <p className='text-blue text-3xl font-bold mt-3'>
+            <p className='text-blue text-3xl font-bold mt-3 pb-0 mb-0'>
               {prependPrice} {product.price.formatted_with_symbol}
             </p>
-            <p className='my-1 py-0 text-wine italic '>available: {product.inventory.available}</p>
+            <p className='mt-1 py-0 text-wine italic text-opacity-70'>
+              remaining: {product.inventory.available}
+            </p>
             <div
-              className='my-b mt-3 text-lg text-wine leading-relaxed'
+              className='my-16 text-lg text-wine leading-relaxed'
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            <div>
+            {/* TODO: Add variant support */}
+            <div className='my-4 '>
               <p>{product.filename}</p>
               <input
                 type='range'
@@ -83,6 +117,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
               />
               <span className='ml-8'>
                 <span className='font-medium text-xl text-wine mr-1'>$</span>
+                {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
                 <input
                   className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2'
                   type='number'
@@ -92,13 +127,22 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
                 />
               </span>
             </div>
-
+            {/* TODO: Disable button if sold out */}
             <button
               onClick={addToCart}
-              className='bg-blue rounded-lg text-xl font-bold py-4 block text-cream focus-within:sr-only lowercase  cursor-pointer'
+              className='bg-blue rounded-lg text-xl font-bold my-8 py-4 block w-full text-cream focus-within:sr-only lowercase  cursor-pointer'
             >
               Get At It
             </button>
+            {/* TODO: Figure out why it doesn't like using Link here */}
+            <div className='flex justify-between'>
+              <a href={'/store'} className='font-semibold text-blue text-xl'>
+                ← more good good
+              </a>
+              <a href={'/store/cart'} className='font-semibold text-blue text-xl'>
+                check out →
+              </a>
+            </div>
           </div>
         </div>
       </PageSection>
