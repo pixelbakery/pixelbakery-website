@@ -1,8 +1,10 @@
 import React from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '../../components/PageSection'
+import Maintenance from '../../components/pg-store/maintenance'
 import commerce from '../../lib/commerce'
 import Link from 'next/link'
+import useCart from '../../hooks/useCart'
 import Image from 'next'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
@@ -15,17 +17,42 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 let StorePage: NextPage = ({ products }) => {
+  const { data: cart, refetch } = useCart()
   return (
     <main id='page-store'>
-      <section className='mt-4 lander bg-blue-dark py-12 px-8'>
-        <div className='md:max-w-6xl mx-auto md:my-20 grid grid-cols-1 md:grid-cols-9 gap-30'>
-          <div className='cols-span-1 md:col-span-3'>
+      <Link href='/store/cart' passHref>
+        <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
+          <div
+            className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-97 active:scale-90'
+          >
+            {cart?.total_items}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-7 w-7'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2.5'
+                d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
+              />
+            </svg>
+          </div>
+        </div>
+      </Link>
+      <section className='mt-4 bg-blue-dark py-12 px-8'>
+        <div className='max-w-xl md:max-w-6xl mx-auto md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
+          <div className='cols-span-1 lg:col-span-3'>
             <h1 className='text-pink-light mt-0 pt-0 leading-none'>Company Shop</h1>
             <p className='pb-8  mt-1 italic text-3xl font-bold text-pink'>
               2021 giving <span className='line-through'>tuesday</span> week
             </p>
           </div>
-          <div className='md:pl-32 mt-16 md:mt-0 cols-span-1 md:col-span-6  text-pink-light font-bold text-2xl'>
+          <div className='lg:pl-32 mt-16 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
             <p className=' mb-9'>
               In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases
               made from our shop to our friends at the
@@ -37,21 +64,19 @@ let StorePage: NextPage = ({ products }) => {
               .{' '}
             </p>{' '}
             <p className='my-9'>
-              They tirelessly show up to work every day and stare the most vile acts a human can
-              commit upon another human right in the face. Each year, the CAC shields thousands of
-              Nebraskan children from the sexual/physical abuse they've suffered and give them a
-              pathway to healing. We just sit here and click buttons and move things around on a
-              computer.
+              Each year, the CAC shields thousands of Nebraskan children from the sexual/physical
+              abuse they've suffered and give them a pathway to healing. We just sit here and click
+              buttons and move things around on a computer.
             </p>
-            <p className=' my-9'>
+            {/* <p className=' my-9'>
               While there are many amazing nonprofits in nebraska that are worthy of your donations,
               the unrelenting work that the Child Advocacy Center does makes them our choice for
               this Giving Tuesday.
-            </p>
+            </p> */}
             <p className='my-9 italic'>
               <span className='text-pink font-bold'>
-                Also, why not make it a week instead of a day?
-              </span>{' '}
+                Also, why not make it a week instead of a day?{' '}
+              </span>
               No need to conform to social constructs, ya kno?
             </p>
           </div>
@@ -69,8 +94,11 @@ let StorePage: NextPage = ({ products }) => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {products.data.map((product) => (
             <Link key={product.id} href={`/store/product/${product.permalink}`}>
-              <a className='overflow-hidden'>
-                <div className='relative rounded-lg overflow-hidden'>
+              <a
+                className='overflow-hidden transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-99 active:scale-97'
+              >
+                <div className='relative rounded-md overflow-hidden'>
                   <img
                     src={product.media.source}
                     alt={product.name}
@@ -95,18 +123,7 @@ let StorePage: NextPage = ({ products }) => {
           ))}
         </div>
       </PageSection>
-      <section className='my-4 bg-yellow py-16 px-8'>
-        <div className='max-w-6xl mx-auto'>
-          <h2>Mind the dust</h2>
-          <p className='my-4 text-blue-dark text-3xl font-bold md:max-w-3xl'>
-            This is a development preview of our new website ~~see ya in Q1 of 2022 😉~~. This means
-            that a lot of links are going to be broken outside of our shop pages.
-          </p>
-          <p className='my-4 text-peach font-bold italic text-2xl '>
-            please don't tell the health inspector.
-          </p>
-        </div>
-      </section>
+      <Maintenance />
     </main>
   )
 }
