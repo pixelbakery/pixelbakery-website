@@ -113,7 +113,7 @@ let CheckoutPage: NextPage = () => {
         <h2 className='text-3xl mt-20 mb-4'>💁‍♀️ What you're buyin' </h2>
 
         <div className='bg-cream px-16 pb-16 pt-8 my-2'>
-          {cart.line_items?.length > 0 ? (
+          {cart?.line_items?.length > 0 ? (
             <button
               onClick={clearCart}
               className='text-blue border rounded-md text-md font-light px-3 py-1'
