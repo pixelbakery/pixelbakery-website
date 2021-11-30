@@ -1,7 +1,7 @@
 import React from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '../../components/PageSection'
-// import Maintenance from '../../components/pg-store/maintenance'
+import Maintenance from '../../components/pg-store/maintenance'
 import commerce from '../../lib/commerce'
 import Link from 'next/link'
 import useCart from '../../hooks/useCart'
@@ -68,11 +68,11 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               abuse they&apos;ve suffered and give them a pathway to healing. We just sit here and
               click buttons and move things around on a computer.
             </p>
-            {/* <p className=' my-9'>
+            <p className=' my-9 hidden lg:block'>
               While there are many amazing nonprofits in nebraska that are worthy of your donations,
               the unrelenting work that the Child Advocacy Center does makes them our choice for
               this Giving Tuesday.
-            </p> */}
+            </p>
             <p className='my-9 italic'>
               <span className='text-pink font-bold'>
                 Also, why not make it a week instead of a day?{' '}
@@ -123,7 +123,7 @@ hover:opacity-90 hover:scale-99 active:scale-97'
           ))}
         </div>
       </PageSection>
-      {/* <Maintenance /> */}
+      <Maintenance />
     </main>
   )
 }

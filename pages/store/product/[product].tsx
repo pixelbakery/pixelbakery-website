@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import Navigation from '../../../components/Navigation'
-// import Maintenance from '../../../components/pg-store/maintenance'
+import Maintenance from '../../../components/pg-store/maintenance'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
@@ -29,10 +29,6 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
     await commerce.cart.add(product.id, 1)
     refetch()
   }
-
-  // const variants = product.options.map(({ options, group }) => ({
-  //   options: options.map((option) => option.name),
-  // }))
 
   // check to see if it's a name your own price product
   let prependPrice = ''
@@ -68,7 +64,6 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           </div>
         </div>
       </Link>
-      {/* {JSON.stringify(product)} */}
       <PageSection
         className={'bg-cream lander my-4 inset-0 '}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
@@ -101,7 +96,11 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               {prependPrice} {product.price.formatted_with_symbol}
             </p>
             <p className='mt-1 py-0 text-wine italic text-opacity-70'>
-              remaining: {product.inventory.available}
+              {product.inventory.available === 0 ? (
+                <span>remaining: SOLD OUT</span>
+              ) : (
+                <span>remaining: {product.inventory.available}</span>
+              )}
             </p>
             <div
               className='my-8 text-lg text-wine leading-relaxed'
@@ -109,8 +108,6 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             />
             {/* TODO: Hook variant support */}
             <VariantPicker className='mb-3' variantGroups={product.variant_groups} />
-            {/* {product.variants ? <h1>TRUE</h1> : ''} */}
-            {/* <VariantPicker variants={product.variants} /> */}
             <div className='my-4 flex justify-between'>
               <input
                 type='range'
@@ -158,7 +155,7 @@ hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach'
           </div>
         </div>
       </PageSection>
-      {/* <Maintenance /> */}
+      <Maintenance />
     </main>
   )
 }
