@@ -3,10 +3,10 @@ import { useRouter } from 'next/router'
 import roster, { RosterBio } from '../../data/roster'
 import TeamBio from '../../components/pg-about/about-bios'
 
-
 type Props = {
   data: RosterBio
 }
+
 export let getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: roster.map((person) => ({
