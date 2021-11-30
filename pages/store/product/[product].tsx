@@ -11,7 +11,9 @@ import Link from 'next/link'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
+
   const product = await commerce.products.retrieve(permalink, { type: 'permalink ' })
+
   return {
     props: {
       product,
@@ -28,14 +30,19 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
     refetch()
   }
 
+  // const variants = product.options.map(({ options, group }) => ({
+  //   options: options.map((option) => option.name),
+  // }))
+
   // check to see if it's a name your own price product
   let prependPrice = ''
   if (product.conditionals.is_pay_what_you_want) {
-    prependPrice = 'minimum price '
+    prependPrice = 'minimum price: '
   }
 
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
+      <div className='d-sm-block'></div>
       {/* TODO: Move this to store-cart-nav */}
       <Link href='/store/cart' passHref>
         <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
@@ -97,19 +104,21 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               remaining: {product.inventory.available}
             </p>
             <div
-              className='my-16 text-lg text-wine leading-relaxed'
+              className='my-8 text-lg text-wine leading-relaxed'
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            {/* TODO: Add variant support */}
-            <div className='my-4 '>
-              <p>{product.filename}</p>
+            {/* TODO: Hook variant support */}
+            <VariantPicker className='mb-3' variantGroups={product.variant_groups} />
+            {/* {product.variants ? <h1>TRUE</h1> : ''} */}
+            {/* <VariantPicker variants={product.variants} /> */}
+            <div className='my-4 flex justify-between'>
               <input
                 type='range'
                 min={product.price.raw}
                 max='100'
                 value={price}
                 onChange={onPriceChange}
-                className='bg-blue slider'
+                className='bg-blue slider self-center flex-grow'
               />
               <span className='ml-8'>
                 <span className='font-medium text-xl text-wine mr-1'>$</span>

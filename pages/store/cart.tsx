@@ -192,18 +192,26 @@ hover:opacity-90 hover:scale-98    active:scale-97'
                 TODO: Style empty state
               
               */}
-              Empty
+              <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
+                well, that's a sad looking cart.{' '}
+                <Link href='/store' passHref>
+                  <a className='underline text-blue'>make it less sad</a>
+                </Link>
+                .
+              </h3>
             </div>
           )}
         </div>
         <div className=' flex justify-end'>
-          <button
-            className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-99 active:scale-97'
-          >
-            <span className='font-medium text-center'>checkout</span>
-            <ChevronRightIcon className=' text-pink-light text-2xl inline-block w-12 ' />
-          </button>
+          <Link href='/store/checkout' passHref>
+            <button
+              className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+  hover:opacity-90 hover:scale-99 active:scale-97'
+            >
+              <span className='font-medium text-center'>pay up</span>
+              <ChevronRightIcon className=' text-pink-light text-2xl inline-block w-12 ' />
+            </button>
+          </Link>
         </div>
       </PageSection>
       <Maintenance />
