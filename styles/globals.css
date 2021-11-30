@@ -156,7 +156,12 @@
 }
 
 .lander {
-  height: calc(100vh - 2rem) !important;
+  height: calc(100vh - 2rem);
+}
+@media (max-width: 1023px) {
+  .lander {
+    height: auto;
+  }
 }
 
 .clients {
