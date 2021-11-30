@@ -65,8 +65,8 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             </p>{' '}
             <p className='my-9'>
               Each year, the CAC shields thousands of Nebraskan children from the sexual/physical
-              abuse they've suffered and give them a pathway to healing. We just sit here and click
-              buttons and move things around on a computer.
+              abuse they&apos;ve suffered and give them a pathway to healing. We just sit here and
+              click buttons and move things around on a computer.
             </p>
             {/* <p className=' my-9'>
               While there are many amazing nonprofits in nebraska that are worthy of your donations,
@@ -86,8 +86,8 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         <div className='max-w-7xl mx-auto mb-20 '>
           <h2>The Goods</h2>
           <p className='md:max-w-2xl pb-4 my-6 text-wine text-2xl font-semibold text-opacity-60 leading-tight'>
-            All products are marked as 'pay what you want'. This means you get to decide how much
-            our stuff is worth to you. The minimum price is the cost it takes for us to
+            All products are marked as &apos;pay what you want&apos;. This means you get to decide
+            how much our stuff is worth to you. The minimum price is the cost it takes for us to
             print/produce the product– nothing more. No margins, no upmarking.{' '}
           </p>
         </div>
