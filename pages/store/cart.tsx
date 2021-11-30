@@ -6,7 +6,69 @@ import Maintenance from '../../components/pg-store/maintenance'
 import Link from 'next/link'
 import commerce from '../../lib/commerce'
 import { ChevronRightIcon } from '@heroicons/react/solid'
-import Image from 'next'
+import Image from 'next/image'
+import React, { useState } from 'react'
+import { useQueryClient } from 'react-query'
+
+function CartItem({ item }) {
+  // const [quantity, setQuantity] = useState(item.quantity)
+  const client = useQueryClient()
+  const increment = async () => {
+    await commerce.cart.update(item.id, { quantity: item.quantity + 1 })
+    client.refetchQueries('cart')
+  }
+  const decrement = async () => {
+    await commerce.cart.update(item.id, { quantity: item.quantity - 1 })
+    client.refetchQueries('cart')
+  }
+  const remove = async () => {
+    await commerce.cart.update(item.id, { quantity: 0 })
+    client.refetchQueries('cart')
+  }
+
+  return (
+    <div className='flex flex-row w-full py-8 gap-16 border-b border-wine-100 '>
+      <div className='w-32 h-32 relative '>
+        <Link href={`/store/product/${item.permalink}`}>
+          <a>
+            <Image
+              src={item.media.source}
+              layout='fill'
+              className='w-full h-full object-center object-cover'
+              alt={'pixel bakery shop: ' + item.name}
+            />
+          </a>
+        </Link>
+      </div>
+      <div className='flex-1 flex flex-col items-start text-wine'>
+        <Link href={`/store/product/${item.permalink}`}>
+          <a>
+            <p className='font-medium text-xl'>{item.name}</p>
+          </a>
+        </Link>
+        <div className='flex-1' />
+        <div className='flex flex-row items-center'>
+          <button className='px-3 text-xl text-wine text-opacity-80' onClick={decrement}>
+            -
+          </button>
+          <p className='text-xl text-opacity-80 '>{item.quantity}</p>
+          <button className='px-3 text-xl text-wine text-opacity-80' onClick={increment}>
+            +
+          </button>
+        </div>
+      </div>
+      <div className='flex flex-col items-end'>
+        <p className='font-medium text-xl text-opacity-80 text-wine'>
+          {item.line_total.formatted_with_symbol}
+        </p>
+        <div className='flex-1' />
+        <button className='text-wine text-opacity-80 underline' onClick={remove}>
+          remove
+        </button>
+      </div>
+    </div>
+  )
+}
 
 let CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
