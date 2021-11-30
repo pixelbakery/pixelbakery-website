@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import Navigation from '../../../components/Navigation'
-import Maintenance from '../../../components/pg-store/maintenance'
+// import Maintenance from '../../../components/pg-store/maintenance'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
@@ -156,7 +156,7 @@ hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach'
           </div>
         </div>
       </PageSection>
-      <Maintenance />
+      {/* <Maintenance /> */}
     </main>
   )
 }
