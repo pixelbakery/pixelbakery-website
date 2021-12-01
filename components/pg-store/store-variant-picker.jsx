@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VariantSelector = ({ variantGroups, ...passthrough }) => (
+const VariantSelector = ({ variantGroups, value, onChange, ...passthrough }) => (
   <div {...passthrough}>
     {variantGroups.map((group) => (
       <div key={group.id}>
@@ -11,6 +11,11 @@ const VariantSelector = ({ variantGroups, ...passthrough }) => (
           name='variantPicker'
           id='variantPicker'
           className='border border-blue rounded-md bg-transparent'
+          value={value}
+          onChange={(evt) => {
+            console.log(group.id, evt.target.value)
+            onChange(group.id, evt.target.value)
+          }}
         >
           {group.options.map((option) => (
             <option value={option.id} key={option.id}>
