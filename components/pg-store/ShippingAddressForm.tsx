@@ -51,7 +51,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         placeholder='Address'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.billing.address}
+        value={values.shipping.address}
       />
 
       <div className='flex flex-row gap-4'>
@@ -61,7 +61,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           placeholder='City'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.billing.city}
+          value={values.shipping.city}
         />
         <select
           placeholder='state'
