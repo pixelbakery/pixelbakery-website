@@ -31,6 +31,22 @@ export default function ShippingAddressForm({ onSubmit }) {
       </div>
       <input
         type='text'
+        name='email'
+        placeholder='Email Address'
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values.billing.email}
+      />
+      <input
+        type='text'
+        name='phoneNumber'
+        placeholder='Phone Number'
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values.billing.phoneNumber}
+      />
+      <input
+        type='text'
         name='shipping.address'
         placeholder='Address'
         onChange={handleChange}
@@ -63,7 +79,7 @@ export default function ShippingAddressForm({ onSubmit }) {
       </div>
       <input
         type='text'
-        name='shipping.'
+        name='shipping.postalCode'
         placeholder='Zip Code'
         onChange={handleChange}
         onBlur={handleBlur}
