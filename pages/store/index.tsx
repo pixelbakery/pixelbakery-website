@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '../../components/PageSection'
 import Maintenance from '../../components/pg-store/maintenance'
@@ -6,6 +6,7 @@ import commerce from '../../lib/commerce'
 import Link from 'next/link'
 import useCart from '../../hooks/useCart'
 import Image from 'next'
+import gsap from 'gsap'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const products = await commerce.products.list()
@@ -18,6 +19,34 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 
 let StorePage: NextPage = ({ products }) => {
   const { data: cart, refetch } = useCart()
+  // BEGIN GSAP
+  useEffect(() => {
+    gsap.set('.anim-header .anim-span', { y: 20 })
+    let tl_loadingModal = gsap.timeline({
+      defaults: {
+        stagger: 0.1,
+        ease: 'power1.inOut',
+      },
+      repeat: -1,
+      repeatDelay: 0.62,
+    })
+
+    tl_loadingModal.to('.anim-header .anim-span', {
+      y: -20,
+      duration: 0.66,
+    })
+    tl_loadingModal.to(
+      '.anim-header .anim-span',
+      {
+        y: 20,
+        duration: 0.66,
+      },
+      '+=.62',
+    )
+    tl_loadingModal.play
+    return () => {}
+  }, [])
+  // END GSAP
 
   console.log(products)
 
@@ -86,8 +115,18 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         </div>
       </section>
       <PageSection className='bg-egg my-4'>
-        <div className='max-w-7xl mx-auto mb-20 '>
-          <h2>The Goods</h2>
+        <div className='max-w-7xl mx-auto mb-30 '>
+          <div className='text-6xl text-peach font-black anim-header block pb-12'>
+            <span className='px-1 anim-span relative inline-block text-peach'>t</span>
+            <span className='px-1 anim-span relative inline-block text-yellow'>h</span>
+            <span className='px-1 anim-span relative inline-block mr-8 text-blue'>e</span>
+
+            <span className='px-1 anim-span relative inline-block text-pink'>g</span>
+            <span className='px-1 anim-span relative inline-block text-blue-dark'>o</span>
+            <span className='px-1 anim-span relative inline-block text-blue'>o</span>
+            <span className='px-1 anim-span relative inline-block text-peach'>d</span>
+            <span className='px-1 anim-span relative inline-block text-yellow'>s</span>
+          </div>
           <p className='md:max-w-2xl pb-4 my-6 text-wine text-2xl font-semibold text-opacity-60 leading-tight'>
             All products are marked as &apos;pay what you want&apos;. This means you get to decide
             how much our stuff is worth to you. The minimum price is the cost it takes for us to
