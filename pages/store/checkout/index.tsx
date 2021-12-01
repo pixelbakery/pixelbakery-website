@@ -1,41 +1,85 @@
+import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+import { Formik } from 'formik'
 import { NextPage } from 'next'
-import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect, useMemo, useState } from 'react'
+import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
 import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
 import useCart from '../../../hooks/useCart'
 import useCheckoutToken from '../../../hooks/useCheckoutToken'
-import Link from 'next/link'
-import {
-  PaymentElement,
-  useStripe,
-  useElements,
-  Elements,
-  CardElement,
-} from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import { Formik } from 'formik'
-import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
-import { Stripe } from 'stripe'
 import commerce from '../../../lib/commerce'
-import { useRouter } from 'next/router'
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE)
+function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod }: any) {
+  const shippingAddress = {
+    name: 'Shipping',
+    country: 'US',
+    street: values.shipping.address,
+    street_2: '',
+    town_city: values.shipping.city,
+    county_state: values.shipping.state,
+    postal_zip_code: values.shipping.postalCode,
+  }
 
+  const newOrder = {
+    line_items: token.live.line_items,
+    customer: {
+      firstname: values.firstName,
+      lastname: values.lastName,
+      email: values.email,
+      phone: values.phoneNumber,
+    },
+    billing: billingSameAsShipping
+      ? shippingAddress
+      : {
+          name: 'Billing',
+          country: 'US',
+          street: values.billing.address,
+          street_2: '',
+          town_city: values.billing.city,
+          county_state: values.billing.state,
+          postal_zip_code: values.billing.postalCode,
+        },
+    shipping: shippingAddress,
+    fulfillment: {
+      shipping_method: shippingMethod,
+    },
+    pay_what_you_want: cost,
+  }
+  return newOrder
+}
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
   const { data: token } = useCheckoutToken(cart?.id)
   const router = useRouter()
-  const [shippingMethod, setShippingMethod] = useState(
-    token?.shipping_methods ? token?.shipping_methods[0] : null,
-  )
+  const [shippingMethod, setShippingMethod] = useState()
   const onShippingChange = (evt: any) => {
-    console.log(evt.target.value)
     setShippingMethod(evt.target.value)
   }
 
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const stripe = useStripe()
   const elements = useElements()
+
+  const [cost, setCost] = useState(cart?.subtotal?.raw ?? 0)
+  const maxCost = cart?.line_items?.reduce((prev, curr) => {
+    return prev + curr.quantity * (curr.price.raw * 10)
+  }, 0)
+  const onCostChange = (evt) => {
+    setCost(Math.max(cart?.subtotal?.raw, evt.target.value))
+  }
+
+  useEffect(() => {
+    if (token?.shipping_methods?.length) {
+      setShippingMethod(token?.shipping_methods[0].id)
+    }
+  }, token?.shipping_methods?.length)
+
+  useEffect(() => {
+    setCost(cart?.subtotal?.raw)
+  }, [cart?.id])
 
   return (
     <Formik
@@ -61,11 +105,45 @@ let Checkout: NextPage = () => {
         if (!stripe || !elements) {
           return
         }
+
+        const cardElement = elements.getElement('card') //PaymentElement)
+        if (!cardElement) {
+          return
+        }
         setLoading(true)
         try {
+          // Create a PaymentIntent with the order amount and currency
+
+          // const { error } = await stripe.confirmPayment({
+          //   elements,
+          //   confirmParams: {
+          //     // Make sure to change this to your payment completion page
+          //     return_url: 'http://localhost:3000/store/checkout',
+          //   },
+          // })
+
+          const newOrder = makeOrder({
+            cost,
+            token,
+            values,
+            billingSameAsShipping,
+            shippingMethod,
+          })
+
           const { paymentMethod, error } = await stripe.createPaymentMethod({
             type: 'card',
-            card: elements.getElement(CardElement),
+            card: cardElement,
+            billing_details: {
+              name: `${newOrder.customer.firstname} ${newOrder.customer.lastname}`,
+              email: newOrder.customer.email,
+              address: {
+                line1: newOrder.billing.street,
+                city: newOrder.billing.town_city,
+                state: newOrder.billing.county_state,
+                country: 'US',
+                postal_code: newOrder.billing.postal_zip_code,
+              },
+            },
           })
 
           if (error) {
@@ -74,57 +152,32 @@ let Checkout: NextPage = () => {
             return
           }
 
-          const shippingAddress = {
-            name: 'Shipping',
-            country: 'US',
-            street: values.shipping.address,
-            street_2: '',
-            town_city: values.shipping.city,
-            county_state: values.shipping.state,
-            postal_zip_code: values.shipping.postalCode,
-          }
-          console.log({ shippingAddress })
-
-          const newOrder = {
-            line_items: cart.line_items,
-            customer: {
-              firstname: values.firstName,
-              lastname: values.lastName,
-              email: values.email,
-              phone: values.phoneNumber,
-            },
-            billing: billingSameAsShipping
-              ? shippingAddress
-              : {
-                  name: 'Billing',
-                  country: 'US',
-                  street: values.billing.address,
-                  street_2: '',
-                  town_city: values.billing.city,
-                  county_state: values.billing.state,
-                  postal_zip_code: values.billing.postalCode,
-                },
-            shipping: shippingAddress,
-            fulfillment: {
-              shipping_method: shippingMethod,
-            },
-            pay_what_you_want: 40,
-          }
-
-          console.log({ newOrder })
           const res = await commerce.checkout.capture(token.id, {
             ...newOrder,
             payment: {
-              gateway: 'stripe',
+              gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
               stripe: {
                 payment_method_id: paymentMethod.id,
               },
             },
           })
-          console.log({ res })
+
           router.push('/store/checkout/success')
-        } catch (e) {
-          console.log(e)
+        } catch (res) {
+          // if (
+          //   res.statusCode !== 402 ||
+          //   res.data.error.type !== "requires_verification"
+          // ) {
+          //   setCheckoutError(res.data.error.message);
+          //   setProcessing(false);
+          //   return;
+          // }
+
+          // const { error, paymentIntent } = await stripe.handleCardAction(
+          //   res.data.error.param
+          // );
+
+          console.log(res)
         }
         setLoading(false)
       }}
@@ -132,7 +185,11 @@ let Checkout: NextPage = () => {
       {({ values, handleChange, handleSubmit }) => (
         <main className='min-h-screen my-4 p-4 bg-egg'>
           <section className='mx-auto max-w-6xl px-12'>
-            {loading && <div>Loading...</div>}
+            {loading && (
+              <div className='fixed inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
+                <h3 className='text-white'>Loading...</h3>
+              </div>
+            )}
             <header className='mb-6 pb-8 mt-12'>
               <div id='breadcrumbs' className='w-full text-blue  text-sm '>
                 <Link href='/store' passHref>
@@ -189,7 +246,9 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
-                  <div></div>
+                  <div>
+                    <CardElement className='text-2xl h-full' />
+                  </div>
                 </div>
               </div>
 
@@ -206,8 +265,30 @@ let Checkout: NextPage = () => {
                     <p>{item?.line_total?.formatted_with_symbol}</p>
                   </div>
                 ))}
+                <div className='my-4 flex flex-row gap-6 items-center mt-4'>
+                  <input
+                    type='range'
+                    min={cart?.subtotal.raw}
+                    max={maxCost}
+                    value={cost}
+                    onChange={onCostChange}
+                    className='bg-blue slider flex-1'
+                  />
+                  <span>
+                    <span className='font-medium text-xl text-wine mr-1'>$</span>
+                    {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
+                    <input
+                      className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
+                      type='number'
+                      min={cart?.subtotal.raw}
+                      value={cost}
+                      onChange={onCostChange}
+                    />
+                  </span>
+                </div>
                 <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
-                  {cart?.subtotal.formatted_with_symbol}
+                  ${(cost ?? 0).toFixed(2)}
+                  {/* {cart?.subtotal.formatted_with_symbol} */}
                 </h3>
               </div>
             </div>
@@ -221,40 +302,26 @@ let Checkout: NextPage = () => {
               submit
             </button>
           </section>
-          <CardElement className='text-2xl h-full' />
         </main>
       )}
     </Formik>
   )
 }
+
 export default function CheckoutPage() {
-  const [clientSecret, setClientSecret] = useState('')
-
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch('/api/create-payment-intent', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: [{ id: 'xl-tshirt' }] }),
-    })
-      .then(async (res) => {
-        const a = await res.json()
-        console.log('asdf', a)
-        return a
-      })
-      .then((data) => setClientSecret(data.clientSecret))
-  }, [])
-
-  if (!clientSecret) {
-    return null
+  const stripePromise = useMemo(() => loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE), [])
+  const options = {
+    //   clientSecret,
   }
+
+  console.log({ NEXT_PUBLIC_STRIPE_PUBLISHABLE: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE })
+
+  // if (!clientSecret) {
+  // return null
+  // }
+
   return (
-    <Elements
-      options={{
-        clientSecret,
-      }}
-      stripe={stripePromise}
-    >
+    <Elements options={options} stripe={stripePromise}>
       <Checkout />
     </Elements>
   )

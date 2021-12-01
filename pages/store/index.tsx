@@ -18,6 +18,9 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 
 let StorePage: NextPage = ({ products }) => {
   const { data: cart, refetch } = useCart()
+
+  console.log(products)
+
   return (
     <main id='page-store'>
       <Link href='/store/cart' passHref>
@@ -100,7 +103,7 @@ hover:opacity-90 hover:scale-99 active:scale-97'
               >
                 <div className='relative rounded-md overflow-hidden'>
                   <img
-                    src={product.media.source}
+                    src={product?.media?.source ?? product?.image?.url}
                     alt={product.name}
                     className='object-cover object-center w-full h-full'
                   />
