@@ -81,7 +81,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           <div className='cols-span-1 lg:col-span-3'>
             <h1 className='text-pink-light mt-0 pt-0 leading-none'>Company Shop</h1>
             <p className='pb-8  mt-1 italic text-3xl font-bold text-pink'>
-              2021 giving <span className='line-through'>tuesday</span> week
+              2021 giving <span className='line-through'>tuesday</span> month
             </p>
           </div>
           <div className='lg:pl-32 mt-16 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
@@ -92,8 +92,8 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 <a target='_blank' rel='noreferrer' className='text-pink underline ml-1'>
                   <span>Child Advocacy Center</span>
                 </a>
-              </Link>
-              .{' '}
+              </Link>{' '}
+              for the entire month of December.{' '}
             </p>{' '}
             <p className='my-9'>
               Each year, the CAC shields thousands of Nebraskan children from the sexual/physical
@@ -101,7 +101,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               click buttons and move things around on a computer.
             </p>
             <p className=' my-9 hidden lg:block'>
-              While there are many amazing nonprofits in nebraska that are worthy of your donations,
+              While there are many amazing nonprofits in Nebraska that are worthy of your donations,
               the unrelenting work that the Child Advocacy Center does makes them our choice for
               this Giving Tuesday.
             </p>
@@ -133,7 +133,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             print/produce the product– nothing more. No margins, no upmarking.{' '}
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div className='pt-8 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8'>
           {products.data.map((product) => (
             <Link key={product.id} href={`/store/product/${product.permalink}`}>
               <a
