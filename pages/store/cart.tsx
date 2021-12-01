@@ -67,8 +67,6 @@ let CheckoutPage: NextPage = () => {
                 */}
           <div className='mt-4 grid grid-cols-1 w-full gap-12'>
             {cart?.line_items.map((item) => {
-              console.log(item)
-
               const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
               return (
                 <div
