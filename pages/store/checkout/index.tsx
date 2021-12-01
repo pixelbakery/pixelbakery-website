@@ -25,8 +25,9 @@ let Checkout: NextPage = () => {
   }, [step])
 
   const [clientSecret, setClientSecret] = useState('')
-
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(false)
+
+  const [shippingAddress, setShippingAddress] = useState({})
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch('/api/create-payment-intent', {
