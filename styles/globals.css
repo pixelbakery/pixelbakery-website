@@ -33,6 +33,12 @@
   .socialIcons {
     @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
   }
+  input.form-border-b,
+  select.form-border-b,
+  .form-border-b input,
+  .form-border-b select {
+    @apply rounded-md border-blue bg-transparent my-1 py-4  text-wine text-opacity-70 cursor-pointer;
+  }
 
   .slider {
     @apply bg-blue w-1/2 h-1 opacity-70;
