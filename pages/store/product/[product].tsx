@@ -75,11 +75,11 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         </div>
       </Link>
       <PageSection
-        className={'bg-cream lander my-4 inset-0 '}
+        className={'bg-cream  my-4 inset-0 min-h-screen '}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
       >
         <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24'>
-          <div className='mt-0 col-span-1 relative flex flex-col justify-start'>
+          <div className='mt-0 col-span-1 relative flex flex-col self-start'>
             {product.assets[0].file_extension === 'mp4' ? (
               <video
                 src={product.assets[0].url}
