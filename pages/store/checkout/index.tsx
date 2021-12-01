@@ -4,12 +4,13 @@ import { Formik } from 'formik'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useLayoutEffect, useEffect, useMemo, useState } from 'react'
 import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
 import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
 import useCart from '../../../hooks/useCart'
 import useCheckoutToken from '../../../hooks/useCheckoutToken'
 import commerce from '../../../lib/commerce'
+import gsap from 'gsap'
 
 function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod }: any) {
   const shippingAddress = {
@@ -71,6 +72,26 @@ let Checkout: NextPage = () => {
     setCost(Math.max(cart?.subtotal?.raw, evt.target.value))
   }
 
+  // BEGIN GSAP
+  useEffect(() => {
+    gsap.set('.modal-loading .modal-loading-span', { y: 20 })
+    let tl_loadingModal = gsap.timeline({
+      defaults: {
+        stagger: 0.1,
+      },
+      repeat: -1,
+      repeatDelay: 0.1,
+      yoyo: true,
+    })
+
+    tl_loadingModal.to('.modal-loading .modal-loading-span', {
+      y: -20,
+      duration: 0.66,
+    })
+    tl_loadingModal.play
+    return () => {}
+  }, [])
+  // END GSAP
   useEffect(() => {
     if (token?.shipping_methods?.length) {
       setShippingMethod(token?.shipping_methods[0].id)
@@ -187,7 +208,38 @@ let Checkout: NextPage = () => {
           <section className='mx-auto max-w-6xl px-12'>
             {loading && (
               <div className='fixed z-50 inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
-                <h3 className='text-white'>Loading...</h3>
+                <div className='text-4xl font-black  uppercase modal-loading block '>
+                  <span className='text-peach px-2 modal-loading-span relative inline-block w-10 h-10'>
+                    L
+                  </span>
+                  <span className='text-yellow px-2 modal-loading-span relative inline-block'>
+                    O
+                  </span>
+                  <span className='text-blue px-2 modal-loading-span  relative inline-block'>
+                    A
+                  </span>
+                  <span className='text-pink-light px-2 modal-loading-span  relative inline-block'>
+                    D
+                  </span>
+                  <span className='text-blue-dark px-2 modal-loading-span  relative inline-block'>
+                    I
+                  </span>
+                  <span className='text-pink px-2 modal-loading-span  relative inline-block'>
+                    N
+                  </span>
+                  <span className='text-peach px-2 modal-loading-span  relative inline-block'>
+                    G
+                  </span>
+                  <span className='text-yellow px-2 modal-loading-span  relative inline-block'>
+                    .
+                  </span>
+                  <span className='text-blue px-2 modal-loading-span  relative inline-block'>
+                    .
+                  </span>
+                  <span className='text-pink-light px-2 modal-loading-span  relative inline-block'>
+                    .
+                  </span>
+                </div>
               </div>
             )}
             <header className='mb-6 pb-8 mt-12'>
