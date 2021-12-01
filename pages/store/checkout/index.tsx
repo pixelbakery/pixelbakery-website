@@ -1,3 +1,5 @@
+// CHECKOUT PAGE
+
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
@@ -115,7 +117,7 @@ let Checkout: NextPage = () => {
           const res = await commerce.checkout.capture(token.id, {
             ...newOrder,
             payment: {
-              gateway: 'stripe',
+              gateway: 'gway_ywMZDKyD0vGzo7',
               stripe: {
                 payment_method_id: paymentMethod.id,
               },
@@ -174,12 +176,8 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-12 border-b-4 border-blue-dark'>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping Options</h2>
-                  <select
-                    className='block form-border-b'
-                    value={shippingMethod}
-                    onChange={onShippingChange}
-                  >
-                    <option selected>-- select an option -- </option>
+                  <select className='block' value={shippingMethod} onChange={onShippingChange}>
+                    <option></option>
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
@@ -193,24 +191,33 @@ let Checkout: NextPage = () => {
                 </div>
               </div>
 
+              {/* Cart Details */}
               <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-8 py-8 bg-blue-light order-first lg:order-last'>
                 <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
                   your cart
                 </p>
-                {cart?.line_items.map((item) => (
-                  <div key={item.id} className='text-wine text-md my-4 flex flex-row items-center'>
-                    <p>
-                      {item.name} x{item.quantity}
-                    </p>
-                    <div className='flex-1'></div>
-                    <p>{item?.line_total?.formatted_with_symbol}</p>
-                  </div>
-                ))}
+                {cart?.line_items.map((item) => {
+                  const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
+                  console.log(opt?.option_name)
+                  return (
+                    <div
+                      key={item.id}
+                      className='text-wine text-md my-4 flex flex-row items-center'
+                    >
+                      <p>
+                        {item.name} {opt ? `(${opt?.option_name})` : ''} x{item.quantity}
+                      </p>
+                      <div className='flex-1'></div>
+                      <p>{item?.line_total?.formatted_with_symbol}</p>
+                    </div>
+                  )
+                })}
                 <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
                   {cart?.subtotal.formatted_with_symbol}
                 </h3>
               </div>
             </div>
+            {/* End Cart Details */}
 
             <button
               type='submit'
