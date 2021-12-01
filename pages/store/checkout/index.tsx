@@ -186,7 +186,7 @@ let Checkout: NextPage = () => {
         <main className='min-h-screen my-4 p-4 bg-egg'>
           <section className='mx-auto max-w-6xl px-12'>
             {loading && (
-              <div className='fixed inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
+              <div className='fixed z-50 inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
                 <h3 className='text-white'>Loading...</h3>
               </div>
             )}
