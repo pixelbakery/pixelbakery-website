@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function ShippingAddressForm({ onSubmit }) {
+export default function BillingAddressForm({ onSubmit }) {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
@@ -11,27 +11,9 @@ export default function ShippingAddressForm({ onSubmit }) {
   const { values, handleChange, handleBlur } = useFormikContext()
   return (
     <div className='flex flex-col gap-4'>
-      <div className='flex flex-row gap-4'>
-        <input
-          type='text'
-          name='firstName'
-          placeholder='First Name'
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values.billing.firstName}
-        />
-        <input
-          type='text'
-          name='lastName'
-          placeholder='Last Name'
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values.billing.lastName}
-        />
-      </div>
       <input
         type='text'
-        name='shipping.address'
+        name='billing.address'
         placeholder='Address'
         onChange={handleChange}
         onBlur={handleBlur}
@@ -41,19 +23,13 @@ export default function ShippingAddressForm({ onSubmit }) {
       <div className='flex flex-row gap-4'>
         <input
           type='text'
-          name='shipping.city'
+          name='billing.city'
           placeholder='City'
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.billing.city}
         />
-        <select
-          placeholder='state'
-          className='flex-1'
-          value={values.shipping.state}
-          name='shipping.state'
-          onChange={handleChange}
-        >
+        <select placeholder='state' className='flex-1'>
           {Object.keys(states).map((s) => (
             <option key={s} value={s}>
               {states[s]}
@@ -63,11 +39,11 @@ export default function ShippingAddressForm({ onSubmit }) {
       </div>
       <input
         type='text'
-        name='shipping.'
+        name='billing.postalCode'
         placeholder='Zip Code'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.postalCode}
+        value={values.billing.postalCode}
       />
     </div>
   )
