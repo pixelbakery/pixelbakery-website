@@ -1,11 +1,13 @@
 import React from 'react'
+import Link from 'next/link'
+import { NextPage } from 'next'
 import FooterNav from './footerNav'
 import FooterNavMoreCard from './footerNavMoreCard'
 import HappyCard from './happyCard'
 import TextLogo from '../parts/textlogo'
 import ButtonFilled from '../parts/button-filled'
-import SocialList from '../parts/socialOptions'
-import { NextPage } from 'next'
+import SocialLinks from '../parts/socialOptions'
+
 import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
 import wordsOfEncouragement from '../../data/wordsOfEncouragement'
@@ -78,7 +80,7 @@ export let Footer: NextPage = ({}) => {
             </div>
             <div className='w-full py-4 my-3'>
               <div className='w-full' id='footer-social'>
-                <SocialList color={'text-cream'} />
+                <SocialLinks color={'text-cream'} />
               </div>
               <div className='w-full flex justify-center'>
                 <span className='text-cream italic font-bold text-center text-lg'>
