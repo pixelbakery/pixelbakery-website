@@ -80,7 +80,7 @@ let CheckoutPage: NextPage = () => {
                       <Link href='/store/product/[product]' as={`/store/product/${item.permalink}`}>
                         <a>
                           <img
-                            src={item.media.source}
+                            src={item?.media?.source ?? item?.image?.url}
                             className='rounded-md w-full h-full object-center object-cover'
                             alt={'pixel bakery shop: ' + item.name}
                           />

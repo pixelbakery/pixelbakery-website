@@ -23,10 +23,8 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
-
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
-
-  const onPriceChange = (evt) => setPrice(evt.target.value)
+  const onPriceChange = (evt) => setPrice(Math.max(evt.target.value, product.price.raw))
 
   const [variant, setVariant] = useState({})
   const onVariantChange = (groupId, variantId) => {
