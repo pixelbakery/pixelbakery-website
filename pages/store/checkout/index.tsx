@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
 import useCart from '../../../hooks/useCart'
 import useCheckoutToken from '../../../hooks/useCheckoutToken'
+import Link from 'next/link'
 import {
   PaymentElement,
   useStripe,
@@ -13,7 +14,6 @@ import {
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
 import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
-import Link from 'next/link'
 import { Stripe } from 'stripe'
 import commerce from '../../../lib/commerce'
 import { useRouter } from 'next/router'
@@ -131,8 +131,8 @@ let Checkout: NextPage = () => {
     >
       {({ values, handleChange, handleSubmit }) => (
         <main className='min-h-screen my-4 p-4 bg-egg'>
-          {loading && <div>Loading...</div>}
           <section className='mx-auto max-w-6xl px-12'>
+            {loading && <div>Loading...</div>}
             <header className='mb-6 pb-8 mt-12'>
               <div id='breadcrumbs' className='w-full text-blue  text-sm '>
                 <Link href='/store' passHref>
@@ -148,27 +148,37 @@ let Checkout: NextPage = () => {
               <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment & Shipping</h1>
             </header>
             <div className='w-full grid grid-cols-5 items-start gap-12 '>
-              <div className='col-span-5 lg:col-span-3 order-last lg:order-first'>
-                <div className='p-4 border-b'>
-                  <h2 className='text-2xl text-blue-dark'>Shipping</h2>
+              <div className='col-span-5 lg:col-span-3'>
+                <div className='px-4 pb-12 border-b-4 border-blue-dark '>
+                  <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping</h2>
                   <ShippingAddressForm />
                 </div>
-                <div className='p-4 border-b'>
-                  <h2 className='text-2xl text-blue-dark'>Billing</h2>
+                <div className='py-12 border-b-4 border-blue-dark'>
+                  <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Billing</h2>
                   <div>
-                    <label>Same as shipping</label>
-                    <input
-                      type='checkbox'
-                      checked={billingSameAsShipping}
-                      onChange={() => {
-                        setBillingSameAsShipping(!billingSameAsShipping)
-                      }}
-                    />
+                    <div className='my-4'>
+                      <input
+                        type='checkbox'
+                        className=' mr-3 border-blue text-blue p-2 cursor-pointer rounded-sm'
+                        checked={billingSameAsShipping}
+                        onChange={() => {
+                          setBillingSameAsShipping(!billingSameAsShipping)
+                        }}
+                      />
+                      <label className='text-wine align-middle'>Same as shipping</label>
+                    </div>
+                    <div className='my-4'>
+                      {billingSameAsShipping ? null : <BillingAddressForm />}
+                    </div>
                   </div>
-                  {billingSameAsShipping ? null : <BillingAddressForm />}
-
-                  <select className='block' value={shippingMethod} onChange={onShippingChange}>
-                    <option>None</option>
+                </div>
+                <div className='py-12 border-b-4 border-blue-dark'>
+                  <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping Options</h2>
+                  <select
+                    className='block form-border-b'
+                    value={shippingMethod}
+                    onChange={onShippingChange}
+                  >
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
@@ -176,20 +186,20 @@ let Checkout: NextPage = () => {
                     ))}
                   </select>
                 </div>
-              </div>
-              <div className='p-4'>
-                <h2 className='text-2xl text-blue-dark'>Payment</h2>
-                <div>
-                  {/*
-                   */}
-                  <CardElement />
+                <div className='py-4-12'>
+                  <h2 className='text-2xl text-blue-dark'>payment</h2>
+                  <div>
+                    <CardElement className='text-2xl h-full' />
+                  </div>
                 </div>
               </div>
 
-              <div className='col-span-5 lg:col-span-2 lg:sticky flex-1 top-12 p-4 bg-blue-light'>
-                <p>Cart info here</p>
+              <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-8 py-8 bg-blue-light order-first lg:order-last'>
+                <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
+                  your cart
+                </p>
                 {cart?.line_items.map((item) => (
-                  <div key={item.id} className='flex flex-row items-center'>
+                  <div key={item.id} className='text-wine text-md my-4 flex flex-row items-center'>
                     <p>
                       {item.name} x{item.quantity}
                     </p>
@@ -197,11 +207,19 @@ let Checkout: NextPage = () => {
                     <p>{item?.line_total?.formatted_with_symbol}</p>
                   </div>
                 ))}
-                <h3>{cart?.subtotal.formatted_with_symbol}</h3>
+                <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
+                  {cart?.subtotal.formatted_with_symbol}
+                </h3>
               </div>
             </div>
-            <button type='submit' onClick={handleSubmit}>
-              Submit
+
+            <button
+              type='submit'
+              onClick={handleSubmit}
+              className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+  hover:opacity-90 hover:scale-99 active:scale-97'
+            >
+              submit
             </button>
           </section>
         </main>
