@@ -179,6 +179,7 @@ let Checkout: NextPage = () => {
                     value={shippingMethod}
                     onChange={onShippingChange}
                   >
+                    <option selected>-- select an option -- </option>
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
@@ -188,9 +189,7 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
-                  <div>
-                    <CardElement className='text-2xl h-full' />
-                  </div>
+                  <div></div>
                 </div>
               </div>
 
@@ -222,6 +221,7 @@ let Checkout: NextPage = () => {
               submit
             </button>
           </section>
+          <CardElement className='text-2xl h-full' />
         </main>
       )}
     </Formik>
