@@ -24,9 +24,19 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
   const onPriceChange = (evt) => setPrice(evt.target.value)
+
+  const [variant, setVariant] = useState({})
+  const onVariantChange = (groupId, variantId) => {
+    setVariant({
+      [groupId]: variantId,
+    })
+  }
+
   const { data: cart, refetch } = useCart()
   const addToCart = async () => {
-    await commerce.cart.add(product.id, 1)
+    await commerce.cart.add(product.id, 1, {
+      ...variant,
+    })
     refetch()
   }
 
@@ -107,7 +117,12 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
             {/* TODO: Hook variant support */}
-            <VariantPicker className='mb-3' variantGroups={product.variant_groups} />
+            <VariantPicker
+              className='mb-3'
+              variantGroups={product.variant_groups}
+              value={variant}
+              onChange={onVariantChange}
+            />
             <div className='my-4 flex justify-between'>
               <input
                 type='range'
