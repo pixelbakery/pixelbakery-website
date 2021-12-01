@@ -23,6 +23,9 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
 
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
+
+  const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
+
   const onPriceChange = (evt) => setPrice(evt.target.value)
 
   const [variant, setVariant] = useState({})
@@ -39,6 +42,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
     })
     refetch()
   }
+  console.log('checkout button enabled? ' + soldOut)
 
   // check to see if it's a name your own price product
   let prependPrice = ''
@@ -53,7 +57,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
       <Link href='/store/cart' passHref>
         <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
           <div
-            className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+            className='relative  text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-97 active:scale-90'
           >
             {cart?.total_items}
@@ -122,6 +126,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               value={variant}
               onChange={onVariantChange}
             />
+
             <div className='my-4 flex justify-between'>
               <input
                 type='range'
@@ -150,8 +155,13 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               */}
             <button
               onClick={addToCart}
-              className='bg-blue rounded-lg text-xl font-bold my-8 py-4 block w-full text-cream focus-within:sr-only lowercase  cursor-pointer transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach'
+              disabled={soldOut}
+              className={
+                'rounded-lg text-xl font-bold my-8 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out checkoutButton-disabled-' +
+                soldOut
+              }
+              //               className={'
+              //'
             >
               Get At It
             </button>
