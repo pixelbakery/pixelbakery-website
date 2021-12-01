@@ -183,7 +183,7 @@ let Checkout: NextPage = () => {
             },
           })
 
-          router.push('/store/checkout/success')
+          router.push('/store/checkout/order-confirmed')
         } catch (res) {
           // if (
           //   res.statusCode !== 402 ||
@@ -320,7 +320,24 @@ let Checkout: NextPage = () => {
                     </div>
                   )
                 })}
-                <div className='my-4 flex flex-row gap-6 items-center mt-4'>
+                <div className='border-t-2 my-2 pt-2  border-blue-dark'>
+                  <p className='text-right text-wine text-sm italic'>
+                    minimum amount: {cart?.subtotal.formatted_with_symbol}
+                  </p>
+                </div>
+                <div>
+                  <p className='text-blue text-2xl font-semibold py-3'>Pay what you want</p>
+                  <p className='text-left text-wine text-md'>
+                    Adjust the slider below to change the price. All proceeds go to the{' '}
+                    <Link href='https://smallvoices.org' passHref>
+                      <a target='_blank' ref='noopener' className='text-peach underline'>
+                        Child Advocacy Center
+                      </a>
+                    </Link>
+                    .
+                  </p>
+                </div>
+                <div className='my-4 flex flex-row gap-6 items-center mt-8'>
                   <input
                     type='range'
                     min={cart?.subtotal.raw}
