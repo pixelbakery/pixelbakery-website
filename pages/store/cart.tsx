@@ -144,7 +144,10 @@ hover:opacity-90 hover:scale-98    active:scale-97'
             </div>
           )}
         </div>
-        <div className=' flex justify-end'>
+        <div className=' flex justify-between'>
+          <Link href='/store' passHref>
+            <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
+          </Link>
           <Link href='/store/checkout' passHref>
             <button
               className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
