@@ -37,6 +37,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         type='text'
         name='email'
         placeholder='Email Address'
+        autoComplete='email'
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.billing.email}
@@ -45,6 +46,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         type='text'
         name='phoneNumber'
         placeholder='Phone Number'
+        autoComplete='tel-national'
         onChange={handleChange}
         onBlur={handleBlur}
         value={values.billing.phoneNumber}
