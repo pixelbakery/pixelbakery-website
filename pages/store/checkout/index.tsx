@@ -15,13 +15,14 @@ import { Formik } from 'formik'
 import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
 import { Stripe } from 'stripe'
 import commerce from '../../../lib/commerce'
+import { useRouter } from 'next/router'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE)
 
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
   const { data: token } = useCheckoutToken(cart?.id)
-
+  const router = useRouter()
   const [shippingMethod, setShippingMethod] = useState(
     token?.shipping_methods ? token?.shipping_methods[0] : null,
   )
@@ -30,7 +31,7 @@ let Checkout: NextPage = () => {
     setShippingMethod(evt.target.value)
   }
 
-  const [billingSameAsShipping, setBillingSameAsShipping] = useState(false)
+  const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
   const [loading, setLoading] = useState(false)
   const stripe = useStripe()
   const elements = useElements()
@@ -63,7 +64,6 @@ let Checkout: NextPage = () => {
         try {
           const { paymentMethod, error } = await stripe.createPaymentMethod({
             type: 'card',
-            // card: elements.getElement(PaymentElement),
             card: elements.getElement(CardElement),
           })
 
@@ -82,6 +82,7 @@ let Checkout: NextPage = () => {
             county_state: values.shipping.state,
             postal_zip_code: values.shipping.postalCode,
           }
+          console.log({ shippingAddress })
 
           const newOrder = {
             line_items: cart.line_items,
@@ -91,13 +92,6 @@ let Checkout: NextPage = () => {
               email: values.email,
               phone: values.phoneNumber,
             },
-
-            // collected 'order notes' data for extra field configured in the Chec Dashboard
-            // extrafields: {
-            //   extr_j0YnEoqOPle7P6: this.state.orderNotes,
-            // },
-            // Add more to the billing object if you're collecting a billing address in the
-            // checkout form. This is just sending the name as a minimum.
             billing: billingSameAsShipping
               ? shippingAddress
               : {
@@ -111,25 +105,23 @@ let Checkout: NextPage = () => {
                 },
             shipping: shippingAddress,
             fulfillment: {
-              shipping_method: shippingMethod.id,
+              shipping_method: shippingMethod,
             },
             pay_what_you_want: 40,
           }
 
-          try {
-            const res = await commerce.checkout.capture(token.id, {
-              ...newOrder,
-              payment: {
-                gateway: 'stripe',
-                stripe: {
-                  payment_method_id: paymentMethod.id,
-                },
+          console.log({ newOrder })
+          const res = await commerce.checkout.capture(token.id, {
+            ...newOrder,
+            payment: {
+              gateway: 'stripe',
+              stripe: {
+                payment_method_id: paymentMethod.id,
               },
-            })
-            console.log({ res })
-          } catch (e) {
-            console.log(e)
-          }
+            },
+          })
+          console.log({ res })
+          router.push('/store/checkout/success')
         } catch (e) {
           console.log(e)
         }
@@ -152,7 +144,7 @@ let Checkout: NextPage = () => {
                     <label>Same as shipping</label>
                     <input
                       type='checkbox'
-                      value={billingSameAsShipping}
+                      checked={billingSameAsShipping}
                       onChange={() => {
                         setBillingSameAsShipping(!billingSameAsShipping)
                       }}
@@ -161,6 +153,7 @@ let Checkout: NextPage = () => {
                   {billingSameAsShipping ? null : <BillingAddressForm />}
 
                   <select className='block' value={shippingMethod} onChange={onShippingChange}>
+                    <option>None</option>
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
