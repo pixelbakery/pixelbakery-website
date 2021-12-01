@@ -10,8 +10,8 @@ export default function ShippingAddressForm({ onSubmit }) {
 
   const { values, handleChange, handleBlur } = useFormikContext()
   return (
-    <div className='flex flex-col gap-4'>
-      <div className='w-full flex flex-row gap-4'>
+    <div className='flex flex-col gap-4 form-border-b'>
+      <div className='w-full flex flex-row gap-4 '>
         <input
           type='text'
           name='firstName'
@@ -20,7 +20,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.billing.firstName}
-          className='w-1/2'
+          className='w-1/2  active:outline-none focus:outline-none '
         />
         <input
           type='text'
@@ -61,7 +61,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         value={values.shipping.address}
       />
 
-      <div className='flex flex-row gap-4'>
+      <div className='w-full flex flex-row gap-4'>
         <input
           type='text'
           name='shipping.city'
@@ -70,6 +70,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.shipping.city}
+          className='w-2/3'
         />
         <select
           placeholder='state'
@@ -78,6 +79,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           value={values.shipping.state}
           name='shipping.state'
           onChange={handleChange}
+          className='w-1/3'
         >
           {Object.keys(states).map((s) => (
             <option key={s} value={s}>

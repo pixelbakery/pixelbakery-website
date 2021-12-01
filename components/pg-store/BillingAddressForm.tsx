@@ -10,7 +10,7 @@ export default function BillingAddressForm({ onSubmit }) {
 
   const { values, handleChange, handleBlur } = useFormikContext()
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4 form-border-b'>
       <input
         type='text'
         name='billing.address'
