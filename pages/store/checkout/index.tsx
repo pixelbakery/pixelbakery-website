@@ -60,7 +60,7 @@ let Checkout: NextPage = () => {
   }
 
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const stripe = useStripe()
   const elements = useElements()
 
