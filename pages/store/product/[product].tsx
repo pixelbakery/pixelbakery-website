@@ -116,7 +116,6 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               className='my-8 text-lg text-wine leading-relaxed'
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            {/* TODO: Hook variant support */}
             <VariantPicker
               className='mb-3'
               variantGroups={product.variant_groups}
