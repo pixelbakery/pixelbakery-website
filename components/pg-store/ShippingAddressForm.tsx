@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik } from 'formik'
+import commerce from '../../lib/commerce'
 
 export default function ShippingAddressForm({ onSubmit }) {
+  const [states, setStates] = useState({})
+  useEffect(() => {
+    commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
+  }, [])
+
+  console.log(states)
   return (
     <Formik
       initialValues={{
@@ -56,7 +63,12 @@ export default function ShippingAddressForm({ onSubmit }) {
                 value={values.city}
               />
               <select placeholder='state' className='flex-1'>
-                <option value='NE'>Nebraska</option>
+                {Object.keys(states).map((s) => (
+                  <option key={s} value={s}>
+                    {states[s]}
+                  </option>
+                ))}
+                {/* // <option value='NE'>Nebraska</option> */}
               </select>
               {/* <input
                 type='text'
