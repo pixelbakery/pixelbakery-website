@@ -51,7 +51,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
       <div className='d-sm-block'></div>
-      {/* TODO: Move this to store-cart-nav */}
+
       <Link href='/store/cart' passHref>
         <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
           <div
@@ -77,7 +77,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         </div>
       </Link>
       <PageSection
-        className={'bg-cream  my-4 inset-0 min-h-screen '}
+        className={'bg-cream  my-4 inset-0 py-20'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
       >
         <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24'>
@@ -125,7 +125,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               onChange={onVariantChange}
             />
 
-            <div className='my-4 flex justify-between'>
+            {/* <div className='my-4 flex justify-between'>
               <input
                 type='range'
                 min={product.price.raw}
@@ -136,7 +136,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               />
               <span className='ml-8'>
                 <span className='font-medium text-xl text-wine mr-1'>$</span>
-                {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
+
                 <input
                   className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
                   type='number'
@@ -145,7 +145,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                   onChange={onPriceChange}
                 />
               </span>
-            </div>
+            </div> */}
 
             {/* TODO: 
               - Disable button if sold out 
