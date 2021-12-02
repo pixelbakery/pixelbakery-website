@@ -1,9 +1,0 @@
-name: pb-oct-22
-services:
-  - build_command: npm build
-    environment_slug: node-js
-    github:
-      branch: main
-      deploy_on_push: true
-      repo: jordanlambrecht/pb-oct-22
-    name: pb-oct-22
