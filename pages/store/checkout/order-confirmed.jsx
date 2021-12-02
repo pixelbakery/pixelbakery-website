@@ -2,12 +2,15 @@
 import React from 'react'
 import next from 'next'
 import Link from 'next/link'
-
+import Head from 'next/head'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 
 function SubmissionConfirmation() {
   return (
     <main>
+      <Head>
+        <title>PBDS – Order Confirmed</title>
+      </Head>
       <section
         id=''
         className='px-12 my-4 min-h-screen pt-20 bg-pink-light flex flex-col justify-center'

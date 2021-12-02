@@ -7,7 +7,7 @@ import Link from 'next/link'
 import useCart from '../../hooks/useCart'
 import Image from 'next'
 import gsap from 'gsap'
-
+import Head from 'next/head'
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const products = await commerce.products.list()
   return {
@@ -52,6 +52,24 @@ let StorePage: NextPage = ({ products }) => {
 
   return (
     <main id='page-store'>
+      <Head>
+        <title>PBDS – Store</title>
+        <meta
+          name='description'
+          content='In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases made from our shop to our friends at the Child Advocacy Center.'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://shop.pixelbakery.com' />
+        <meta property='og:title' content='PBDS – Company Store' />
+        <meta
+          property='og:description'
+          content='In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases made from our shop to our friends at the Child Advocacy Center.'
+        />
+        <meta property='og:image' content='/img/pixel-bakery-header.png' />
+        <meta name='twitter:site' content='@pixelbakerylnk'></meta>
+        <meta name='twitter:card' content='summary_large_image'></meta>
+        <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
+      </Head>
       <Link href='/store/cart' passHref>
         <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
           <div
