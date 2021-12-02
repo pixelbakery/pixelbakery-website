@@ -9,7 +9,12 @@ export function makeOrder({ live, values, billingSameAsShipping }: any) {
     postal_zip_code: values.shipping.postalCode,
   }
 
-  console.log(live)
+  
+  const pwyw = live?.pay_what_you_want?.customer_set_price?.raw
+  const pay_what_you_want = pwyw && pwyw > 0 ? pwyw : live?.subtotal.raw
+  
+  
+  
   const newOrder = {
     line_items: live.line_items,
     customer: {
@@ -33,7 +38,7 @@ export function makeOrder({ live, values, billingSameAsShipping }: any) {
     fulfillment: {
       shipping_method: live.shipping.id,
     },
-    pay_what_you_want: live?.pay_what_you_want?.customer_set_price?.raw ?? live?.subtotal.raw,
+    pay_what_you_want
   }
   console.log(values, newOrder)
 
