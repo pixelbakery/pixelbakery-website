@@ -13,8 +13,10 @@ import useCheckoutToken from '../../../hooks/useCheckoutToken'
 import commerce from '../../../lib/commerce'
 import gsap from 'gsap'
 import Head from 'next/head'
+import { useDebounce } from 'use-debounce'
+import useCheckoutLive from '../../../hooks/useCheckoutLive'
 
-function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod }: any) {
+function makeOrder({ cost, token, live, values, billingSameAsShipping, shippingMethod }: any) {
   const shippingAddress = {
     name: 'Shipping',
     country: 'US',
@@ -26,10 +28,10 @@ function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod 
   }
 
   const newOrder = {
-    line_items: token.live.line_items,
+    line_items: live.line_items,
     customer: {
-      firstName: values.firstName,
-      lastName: values.lastName,
+      firstname: values.firstName,
+      lastname: values.lastName,
       email: values.email,
       phone: values.phoneNumber,
     },
@@ -48,14 +50,20 @@ function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod 
     fulfillment: {
       shipping_method: shippingMethod,
     },
-    pay_what_you_want: cost,
+    pay_what_you_want: live?.pay_what_you_want?.customer_set_price?.raw ?? live?.subtotal.raw,
   }
+  console.log(values, newOrder)
+
   return newOrder
 }
 let Checkout: NextPage = () => {
+  const router = useRouter()
+
   const { data: cart } = useCart()
   const { data: token } = useCheckoutToken(cart?.id as string)
-  const router = useRouter()
+  // const { data: live, refetch } = useCheckoutLive(token?.id)
+
+  const [live, setLive] = useState()
   const [shippingMethod, setShippingMethod] = useState()
   const onShippingChange = (evt: any) => {
     setShippingMethod(evt.target.value)
@@ -70,9 +78,37 @@ let Checkout: NextPage = () => {
   const maxCost = cart?.line_items?.reduce((prev, curr) => {
     return prev + curr.quantity * (curr.price.raw * 10)
   }, 0)
+
+  const cartMin = token?.live.pay_what_you_want.minimum.raw
   const onCostChange = (evt) => {
-    setCost(Math.max(cart?.subtotal?.raw!, evt.target.value))
+    setCost(Math.max(cartMin, evt.target.value))
   }
+
+  const [pwyw] = useDebounce(cost, 300)
+
+  useEffect(() => {
+    if (token && token.live && !live) {
+      setLive(token.live)
+    }
+  }, [token?.id])
+  useEffect(() => {
+    if (!token?.id) {
+      return
+    }
+
+    commerce.checkout
+      .checkPayWhatYouWant(token.id, {
+        customer_set_price: pwyw.toFixed(2),
+      })
+      .then((resp) => {
+        setLive(resp.live)
+      })
+    // .then(() => refetch())
+  }, [pwyw])
+
+  useEffect(() => {
+    console.log(live)
+  }, [live])
 
   // BEGIN GSAP
   useEffect(() => {
@@ -148,6 +184,7 @@ let Checkout: NextPage = () => {
           const newOrder = makeOrder({
             cost,
             token,
+            live,
             values,
             billingSameAsShipping,
             shippingMethod,
@@ -358,7 +395,7 @@ let Checkout: NextPage = () => {
                 <div className='my-4 flex flex-row gap-6 items-center mt-8'>
                   <input
                     type='range'
-                    min={cart?.subtotal.raw}
+                    min={cartMin}
                     max={maxCost}
                     value={cost}
                     onChange={onCostChange}
@@ -370,15 +407,16 @@ let Checkout: NextPage = () => {
                     <input
                       className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
                       type='number'
-                      min={cart?.subtotal.raw}
+                      min={cartMin}
                       value={cost}
                       onChange={onCostChange}
                     />
                   </span>
                 </div>
                 <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
-                  ${(cost ?? 0).toFixed(2)}
+                  {/* ${(cost ?? 0).toFixed(2)} */}
                   {/* {cart?.subtotal.formatted_with_symbol} */}
+                  {live?.pay_what_you_want.customer_set_price.formatted_with_symbol}
                 </h3>
               </div>
             </div>
