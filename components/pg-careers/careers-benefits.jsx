@@ -1,28 +1,28 @@
 import React, { useEffect } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 function Benefit() {
-  useEffect(() => {
-    const benefits = gsap.timeline()
-    benefits.from('.benefitslist .benefit', {
-      overwrite: 'auto',
-      ease: 'power3.out',
-      stagger: 0.08,
-      opacity: 0,
-      y: -15,
-    })
+  // useEffect(() => {
+  //   const benefits = gsap.timeline()
+  //   benefits.from('.benefitslist .benefit', {
+  //     overwrite: 'auto',
+  //     ease: 'power3.out',
+  //     stagger: 0.08,
+  //     opacity: 0,
+  //     y: -15,
+  //   })
 
-    ScrollTrigger.create({
-      trigger: '#benefits',
-      toggleActions: 'play reverse play reverse',
-      start: 'top center',
-      end: 'bottom center',
-      // start: 'top 60%',
+  //   ScrollTrigger.create({
+  //     trigger: '#benefits',
+  //     toggleActions: 'play reverse play reverse',
+  //     start: 'top center',
+  //     end: 'bottom center',
+  //     // start: 'top 60%',
 
-      animation: benefits,
-    })
-  }, [])
+  //     animation: benefits,
+  //   })
+  // }, [])
 
   return (
     <section className=' mb-4 px-4 py-40  mx-auto max-h-screen bg-pink-light' id='benefits'>
