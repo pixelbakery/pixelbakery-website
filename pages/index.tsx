@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
 import React from 'react'
 
 // import InstagramFeed from "../components/instagramFeed";
@@ -13,16 +12,19 @@ import HomeServices from '../components/pg-home/homeServices'
 import HomePortfolio from '../components/pg-home/home-portfolio'
 import Footer from '../components/footer/Footer'
 
-
 const Home: NextPage = () => {
   return (
-      <div>
-        <HomeLanding />
-        <HomeWhoTheHeck />
-        <HomeWhatWeMake />
-        <HomeServices />
-        <HomePortfolio />
-      </div> 
+    <div>
+      <Head>
+        <title>Pixel Bakery</title>
+        <link rel='icon' href='/favicon.svg' />
+      </Head>
+      <HomeLanding />
+      <HomeWhoTheHeck />
+      <HomeWhatWeMake />
+      <HomeServices />
+      <HomePortfolio />
+    </div>
   )
 }
 

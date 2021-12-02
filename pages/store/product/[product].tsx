@@ -8,7 +8,7 @@ import Image from 'next/image'
 import useCart from '../../../hooks/useCart'
 import VariantPicker from '../../../components/pg-store/store-variant-picker'
 import Link from 'next/link'
-
+import Head from 'next/head'
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -50,6 +50,18 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
 
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
+      <Head>
+        <title>{'PBDS – Store – ' + product.name}</title>
+        <meta name='description' content={product.description} />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://shop.pixelbakery.com' />
+        <meta property='og:title' content={'PBDS – ' + product.name} />
+        <meta property='og:description' content={product.description} />
+        <meta property='og:image' content={product.assets[0].url} />
+        <meta name='twitter:site' content='@pixelbakerylnk'></meta>
+        <meta name='twitter:card' content='summary_large_image'></meta>
+        <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
+      </Head>
       <div className='d-sm-block'></div>
 
       <Link href='/store/cart' passHref>
