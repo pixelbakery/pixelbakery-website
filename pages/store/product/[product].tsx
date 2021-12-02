@@ -11,6 +11,9 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 import ButtonOutlined from '../../../components/parts/button-outline'
+import cs from 'classnames'
+
+
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -187,7 +190,10 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             <button
               onClick={addToCart}
               disabled={soldOut}
-              className={'checkoutButton checkoutButton-disabled-' + soldOut}
+              className={cs('checkoutButton', {
+                ['checkoutButton-disabled-true']: soldOut,
+                ['checkoutButton-disabled-false']: !soldOut,
+              })}
               //               className={'
               //'
             >
