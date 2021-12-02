@@ -18,10 +18,8 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
   //   }, 0)
   //   .toFixed(2)
   console.log(live, live?.subtotal?.raw)
-  const pwyw =
-    live?.pay_what_you_want?.customer_set_price?.raw > 0
-      ? live?.pay_what_you_want?.customer_set_price?.raw
-      : undefined
+  const val = live?.pay_what_you_want?.customer_set_price?.raw
+  const pwyw = val && val > 0 ? live?.pay_what_you_want?.customer_set_price?.raw : undefined
   const price = pwyw ?? live?.subtotal.raw
   // const tax = price * taxRate
   const tax = live?.tax.amount.formatted_with_symbol

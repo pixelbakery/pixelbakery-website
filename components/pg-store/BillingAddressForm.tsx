@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function BillingAddressForm({ onSubmit }) {
+export default function BillingAddressForm({}) {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))

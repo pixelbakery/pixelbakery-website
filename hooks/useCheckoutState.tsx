@@ -34,7 +34,7 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
     if (!cart) {
       return
     }
-    const token = await commerce.checkout.generateToken(get().cart.id, { type: 'cart' })
+    const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' })
     const live = token.live
     set({ token, live })
   },
@@ -42,11 +42,12 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
     if (!get().token) {
       return
     }
-
-    let amount = Math.max(
-      get().live?.pay_what_you_want.minimum.raw || get().cart?.subtotal.raw,
-      pwyw,
-    )
+    const cart = get().cart
+    const live = get().live
+    if (!cart || !live) {
+      return
+    }
+    let amount = Math.max(live?.pay_what_you_want?.minimum?.raw || cart?.subtotal.raw, pwyw)
     const resp = await commerce.checkout.checkPayWhatYouWant(get().token.id, {
       customer_set_price: amount.toFixed(2),
     })
@@ -56,7 +57,7 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
         live: {
           ...get().live,
           pay_what_you_want: resp.live.pay_what_you_want,
-        },
+        } as Live,
       })
     }
     // .then((resp) => {
