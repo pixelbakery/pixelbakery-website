@@ -1,3 +1,4 @@
+/* eslint-disable react/no-string-refs */
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
@@ -27,8 +28,8 @@ function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod 
   const newOrder = {
     line_items: token.live.line_items,
     customer: {
-      firstname: values.firstName,
-      lastname: values.lastName,
+      firstName: values.firstName,
+      lastName: values.lastName,
       email: values.email,
       phone: values.phoneNumber,
     },
@@ -53,7 +54,7 @@ function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod 
 }
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
-  const { data: token } = useCheckoutToken(cart?.id)
+  const { data: token } = useCheckoutToken(cart?.id as string)
   const router = useRouter()
   const [shippingMethod, setShippingMethod] = useState()
   const onShippingChange = (evt: any) => {
@@ -70,7 +71,7 @@ let Checkout: NextPage = () => {
     return prev + curr.quantity * (curr.price.raw * 10)
   }, 0)
   const onCostChange = (evt) => {
-    setCost(Math.max(cart?.subtotal?.raw, evt.target.value))
+    setCost(Math.max(cart?.subtotal?.raw!, evt.target.value))
   }
 
   // BEGIN GSAP
@@ -95,12 +96,12 @@ let Checkout: NextPage = () => {
   // END GSAP
   useEffect(() => {
     if (token?.shipping_methods?.length) {
-      setShippingMethod(token?.shipping_methods[0].id)
+      setShippingMethod(token?.shipping_methods[0].id as any)
     }
-  }, token?.shipping_methods?.length)
+  }, token?.shipping_methods.length as any)
 
   useEffect(() => {
-    setCost(cart?.subtotal?.raw)
+    setCost(cart?.subtotal?.raw!)
   }, [cart?.id])
 
   return (
@@ -152,11 +153,11 @@ let Checkout: NextPage = () => {
             shippingMethod,
           })
 
-          const { paymentMethod, error } = await stripe.createPaymentMethod({
+          const { paymentMethod, error } = await stripe.createPaymentMethod!({
             type: 'card',
             card: cardElement,
             billing_details: {
-              name: `${newOrder.customer.firstname} ${newOrder.customer.lastname}`,
+              name: `${newOrder.customer.firstName} ${newOrder.customer.lastName}`,
               email: newOrder.customer.email,
               address: {
                 line1: newOrder.billing.street,
@@ -174,12 +175,12 @@ let Checkout: NextPage = () => {
             return
           }
 
-          const res = await commerce.checkout.capture(token.id, {
+          const res = await commerce.checkout.capture(token!.id, {
             ...newOrder,
             payment: {
               gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
               stripe: {
-                payment_method_id: paymentMethod.id,
+                payment_method_id: paymentMethod?.id,
               },
             },
           })
@@ -296,8 +297,12 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-12 border-b-4 border-blue-dark'>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping Options</h2>
-                  <select className='block' value={shippingMethod} onChange={onShippingChange}>
-                    <option></option>
+                  <select
+                    className='block form-border-b'
+                    value={shippingMethod}
+                    onChange={onShippingChange}
+                  >
+                    <option value={''}>select</option>
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
@@ -307,7 +312,7 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
-                  <div>
+                  <div className='py-8 px-4 my-6 border border-blue rounded-md'>
                     <CardElement className='text-2xl h-full' />
                   </div>
                 </div>
@@ -343,7 +348,7 @@ let Checkout: NextPage = () => {
                   <p className='text-left text-wine text-md'>
                     Adjust the slider below to change the price. All proceeds go to the{' '}
                     <Link href='https://smallvoices.org' passHref>
-                      <a target='_blank' ref='noopener' className='text-peach underline'>
+                      <a target='_blank' ref='noOpener' className='text-peach underline'>
                         Child Advocacy Center
                       </a>
                     </Link>

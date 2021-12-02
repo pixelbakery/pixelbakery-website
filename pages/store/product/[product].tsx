@@ -57,7 +57,7 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
         <meta property='og:url' content='https://shop.pixelbakery.com' />
         <meta property='og:title' content={'PBDS – ' + product.name} />
         <meta property='og:description' content={product.description} />
-        <meta property='og:image' content={product.assets[0].url} />
+        <meta property='og:image' content={product.assets[0].source} />
         <meta name='twitter:site' content='@pixelbakerylnk'></meta>
         <meta name='twitter:card' content='summary_large_image'></meta>
         <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
