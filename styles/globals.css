@@ -40,10 +40,10 @@
     @apply rounded-md border-blue bg-transparent my-1 py-4  text-wine text-opacity-70;
   }
 
-  .checkoutButton .checkoutButton-disabled-false {
+  .checkoutButton.checkoutButton-disabled-false {
     @apply rounded-lg text-xl font-bold mt-8 mb-2 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-500 ease-in-out bg-blue  text-cream cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-peach;
   }
-  .checkoutButton .checkoutButton-disabled-true {
+  .checkoutButton.checkoutButton-disabled-true {
     @apply rounded-lg text-xl font-bold mt-8 mb-2 py-4 block w-full lowercase scale-100 bg-wine-100 text-wine-200 cursor-not-allowed opacity-60;
   }
 
