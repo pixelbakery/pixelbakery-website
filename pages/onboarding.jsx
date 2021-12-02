@@ -1,81 +1,81 @@
 import React, { useLayoutEffect } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ExpectationsRow from '../components/onboarding/expectationsRow'
 
 function BecomeAClient() {
-  gsap.registerPlugin(ScrollTrigger)
+  // gsap.registerPlugin(ScrollTrigger)
 
-  useLayoutEffect(() => {
-    gsap.set('#expectation-1 .expect-numb', { y: -200, rotation: gsap.utils.random(0, 15) })
-    gsap.set('#expectation-2 .expect-numb', { x: -100, rotation: 5 })
-    gsap.set('#expectation-3 .expect-numb', {
-      y: -100,
-      rotation: gsap.utils.random(0, 15),
-      delay: 0.5,
-    })
-    let tl_ExpectationOne = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'power1.inOut',
-      },
-      repeat: -1,
-      repeatDelay: 0.44,
-      yoyo: true,
-    })
+  // useLayoutEffect(() => {
+  //   gsap.set('#expectation-1 .expect-numb', { y: -200, rotation: gsap.utils.random(0, 15) })
+  //   gsap.set('#expectation-2 .expect-numb', { x: -100, rotation: 5 })
+  //   gsap.set('#expectation-3 .expect-numb', {
+  //     y: -100,
+  //     rotation: gsap.utils.random(0, 15),
+  //     delay: 0.5,
+  //   })
+  //   let tl_ExpectationOne = gsap.timeline({
+  //     defaults: {
+  //       stagger: 0.1,
+  //       ease: 'power1.inOut',
+  //     },
+  //     repeat: -1,
+  //     repeatDelay: 0.44,
+  //     yoyo: true,
+  //   })
 
-    let tl_ExpectationTwo = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'power1.inOut',
-      },
-      repeat: -1,
-    })
+  //   let tl_ExpectationTwo = gsap.timeline({
+  //     defaults: {
+  //       stagger: 0.1,
+  //       ease: 'power1.inOut',
+  //     },
+  //     repeat: -1,
+  //   })
 
-    let tl_ExpectationThree = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'power1.inOut',
-      },
-      repeat: -1,
-      repeatDelay: 0.66,
-      yoyo: true,
-    })
+  //   let tl_ExpectationThree = gsap.timeline({
+  //     defaults: {
+  //       stagger: 0.1,
+  //       ease: 'power1.inOut',
+  //     },
+  //     repeat: -1,
+  //     repeatDelay: 0.66,
+  //     yoyo: true,
+  //   })
 
-    tl_ExpectationOne.to('#expectation-1   .expect-numb', {
-      y: -100,
-      rotation: gsap.utils.random(-15, 15),
-      duration: 1,
-    })
+  //   tl_ExpectationOne.to('#expectation-1   .expect-numb', {
+  //     y: -100,
+  //     rotation: gsap.utils.random(-15, 15),
+  //     duration: 1,
+  //   })
 
-    tl_ExpectationTwo
-      .to(
-        '#expectation-2   .expect-numb',
-        {
-          x: 100,
-          rotation: -5,
-          duration: 1.22,
-        },
-        '<+=1',
-      )
-      .to(
-        '#expectation-2   .expect-numb',
-        {
-          x: -100,
-          rotation: 5,
-          duration: 1.22,
-        },
-        '<+=3',
-      )
+  //   tl_ExpectationTwo
+  //     .to(
+  //       '#expectation-2   .expect-numb',
+  //       {
+  //         x: 100,
+  //         rotation: -5,
+  //         duration: 1.22,
+  //       },
+  //       '<+=1',
+  //     )
+  //     .to(
+  //       '#expectation-2   .expect-numb',
+  //       {
+  //         x: -100,
+  //         rotation: 5,
+  //         duration: 1.22,
+  //       },
+  //       '<+=3',
+  //     )
 
-    tl_ExpectationThree.to('#expectation-3   .expect-numb', {
-      y: 50,
-      rotation: gsap.utils.random(-15, 15),
-      duration: 1,
-    })
+  //   tl_ExpectationThree.to('#expectation-3   .expect-numb', {
+  //     y: 50,
+  //     rotation: gsap.utils.random(-15, 15),
+  //     duration: 1,
+  //   })
 
-    return () => {}
-  }, [])
+  //   return () => {}
+  // }, [])
 
   return (
     <main className=''>
