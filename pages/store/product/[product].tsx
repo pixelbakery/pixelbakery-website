@@ -13,7 +13,6 @@ import { ChevronRightIcon } from '@heroicons/react/solid'
 import ButtonOutlined from '../../../components/parts/button-outline'
 import cs from 'classnames'
 
-
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -113,13 +112,16 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           <div className='mt-0 col-span-1 relative flex flex-col self-start'>
             {product.assets[0].file_extension === 'mp4' ? (
               <video
-                src={product.assets[0].url}
                 loop
                 muted
                 autoPlay
+                playsInline
+                id={product.name + '-video'}
                 controls={false}
                 className='my-0 px-0 object-cover inset-0 w-full rounded-md'
-              />
+              >
+                <source src={product.assets[0].url} type='video/mp4' />
+              </video>
             ) : (
               <Image
                 layout='fill'

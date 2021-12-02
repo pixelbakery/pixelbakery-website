@@ -110,7 +110,9 @@
     /* -webkit-transform: scaleX(-1);
     transform: scaleX(-1); */
   }
-
+  video::-webkit-media-controls {
+    display: none;
+  }
   .home-portfolio.block-right:before {
     content: '';
     background-color: inherit;
