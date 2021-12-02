@@ -53,7 +53,7 @@ function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod 
 }
 let Checkout: NextPage = () => {
   const { data: cart } = useCart()
-  const { data: token } = useCheckoutToken(cart?.id)
+  const { data: token } = useCheckoutToken(cart?.id as string)
   const router = useRouter()
   const [shippingMethod, setShippingMethod] = useState()
   const onShippingChange = (evt: any) => {

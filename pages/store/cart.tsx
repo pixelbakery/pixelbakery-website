@@ -78,7 +78,7 @@ let CheckoutPage: NextPage = () => {
                 - wrap item name and item photo in a Link and redirect back to product page 
                 */}
           <div className='mt-4 grid grid-cols-1 w-full gap-12'>
-            {cart?.line_items.map(({ item }: { item: any }) => {
+            {cart?.line_items.map((item) => {
               const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
               return (
                 <div
