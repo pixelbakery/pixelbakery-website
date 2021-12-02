@@ -9,7 +9,7 @@ import { ChevronRightIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useQueryClient } from 'react-query'
-
+import Head from 'next/head'
 let CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
 
@@ -42,6 +42,18 @@ let CheckoutPage: NextPage = () => {
         className={'bg-pink-light inset-0 lg:pt-20 my-4'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-6xl'}
       >
+        <Head>
+          <title>PBDS – Store – Cart</title>
+          <meta name='description' content='Pixel Bakery store cart' />
+          <meta property='og:type' content='website' />
+          <meta property='og:url' content='https://shop.pixelbakery.com' />
+          <meta property='og:title' content='Pixel Bakery – Cart' />
+          <meta property='og:description' content='Pixel Bakery store cart' />
+          <meta property='og:image' content='/img/pixel-bakery-header.png' />
+          <meta name='twitter:site' content='@pixelbakerylnk'></meta>
+          <meta name='twitter:card' content='summary_large_image'></meta>
+          <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
+        </Head>
         <Link href='/store' passHref>
           <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
         </Link>

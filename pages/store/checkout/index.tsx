@@ -11,6 +11,7 @@ import useCart from '../../../hooks/useCart'
 import useCheckoutToken from '../../../hooks/useCheckoutToken'
 import commerce from '../../../lib/commerce'
 import gsap from 'gsap'
+import Head from 'next/head'
 
 function makeOrder({ cost, token, values, billingSameAsShipping, shippingMethod }: any) {
   const shippingAddress = {
@@ -205,6 +206,18 @@ let Checkout: NextPage = () => {
     >
       {({ values, handleChange, handleSubmit }) => (
         <main className='min-h-screen my-4 p-4 bg-egg'>
+          <Head>
+            <title>PBDS – Store – Checkout</title>
+            <meta name='description' content='Pixel Bakery store checkout' />
+            <meta property='og:type' content='website' />
+            <meta property='og:url' content='https://shop.pixelbakery.com' />
+            <meta property='og:title' content='Pixel Bakery – Checkout' />
+            <meta property='og:description' content='Pixel Bakery store checkout' />
+            <meta property='og:image' content='/img/pixel-bakery-header.png' />
+            <meta name='twitter:site' content='@pixelbakerylnk'></meta>
+            <meta name='twitter:card' content='summary_large_image'></meta>
+            <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
+          </Head>
           <section className='mx-auto max-w-6xl px-12'>
             {loading && (
               <div className='fixed z-50 inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
