@@ -55,10 +55,11 @@ let Checkout: NextPage = () => {
   }, [])
 
   const [shippingMethod, setShippingMethod] = useState<any>({})
-  const onShippingChange = (evt: any) => {
+  const onShippingChange = async (evt: any) => {
     const opt = token.shipping_methods.find((m) => m.id === evt.target.value)
     setShippingMethod(opt?.id ?? null)
-    setStateShipping(opt)
+    await setStateShipping(opt)
+    checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
   }
 
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
@@ -66,15 +67,22 @@ let Checkout: NextPage = () => {
   const stripe = useStripe()
   const elements = useElements()
 
-  const [cost, setCost] = useState(cart?.subtotal?.raw ?? 0)
+  const [cost, setCost] = useState(cart?.total?.raw ?? 0)
   const maxCost = cart?.line_items?.reduce((prev, curr) => {
     return prev + curr.quantity * (curr.price.raw * 10)
   }, 0)
 
-  const cartMin = token?.live.subtotal.raw
+  const cartMin = live?.pay_what_you_want.minimum.raw // token?.live.total.raw
   const onCostChange = (evt) => {
     setCost(evt.target.value)
   }
+
+  useEffect(() => {
+    const raw = live?.pay_what_you_want.customer_set_price?.raw
+    if (!!raw && raw !== 0) {
+      setCost(raw)
+    }
+  }, [live?.pay_what_you_want.customer_set_price?.raw])
 
   const [pwyw] = useDebounce(cost, 300)
 
@@ -133,17 +141,17 @@ let Checkout: NextPage = () => {
         return
       }
 
-      const res = await commerce.checkout.capture(token!.id, {
-        ...newOrder,
-        payment: {
-          gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
-          stripe: {
-            payment_method_id: paymentMethod?.id,
-          },
-        },
-      })
+      // const res = await commerce.checkout.capture(token!.id, {
+      //   ...newOrder,
+      //   payment: {
+      //     gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
+      //     stripe: {
+      //       payment_method_id: paymentMethod?.id,
+      //     },
+      //   },
+      // })
 
-      router.push('/store/checkout/order-confirmed')
+      // router.push('/store/checkout/order-confirmed')
     } catch (res) {
       // if (
       //   res.statusCode !== 402 ||
@@ -171,10 +179,14 @@ let Checkout: NextPage = () => {
   }) => {
     if (JSON.stringify(prevValues.shipping) !== JSON.stringify(nextValues.shipping)) {
       console.log({ prevValues, nextValues })
-      setTaxZone({
+      const valid = await setTaxZone({
         state: nextValues.shipping.state,
         postalCode: nextValues.shipping.postalCode,
       })
+      console.log({ valid })
+      if (valid) {
+        checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
+      }
     }
   }
 

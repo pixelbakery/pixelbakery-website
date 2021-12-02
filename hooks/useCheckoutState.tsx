@@ -15,6 +15,7 @@ type CheckoutState = {
   setShippingMethod: any // () => Promise<void>
   setTaxZone: any //(taxZone: { state: string; postal_zip_code: string }) => Promise<void>
 }
+
 export const useCheckoutState = create<CheckoutState>((set, get) => ({
   token: null,
   cart: undefined,
@@ -39,34 +40,47 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
     set({ token, live })
   },
   checkPWYW: async (pwyw: number) => {
-    if (!get().token) {
+    if (!get().token || (!pwyw && pwyw !== 0)) {
+      console.log('returning no token or pwyw', get().token, pwyw)
       return
     }
     const cart = get().cart
     const live = get().live
     if (!cart || !live) {
+      console.log('returning')
       return
     }
-    let amount = Math.max(live?.pay_what_you_want?.minimum?.raw || cart?.subtotal.raw, pwyw)
+    let amount = Math.max(Number(pwyw), live?.pay_what_you_want?.minimum?.raw ?? 0) // Number(pwyw) + live?.shipping?.price?.raw ?? 0 // ?? live?.total?.raw ?? 0 //Math.max(live.total.raw, pwyw)
+
+    console.log(
+      '---------------------------',
+      'set',
+      {
+        amount,
+      },
+      live,
+    )
     const resp = await commerce.checkout.checkPayWhatYouWant(get().token.id, {
-      customer_set_price: amount.toFixed(2),
+      customer_set_price: (amount + 0.01).toString(), //Number(amount).toFixed(2),
     })
     if (resp.valid) {
-      console.log(resp.live)
+      const c = resp.live.pay_what_you_want.customer_set_price
       set({
         live: {
           ...get().live,
-          pay_what_you_want: resp.live.pay_what_you_want,
+          pay_what_you_want: {
+            ...resp.live.pay_what_you_want,
+            customer_set_price: c
+              ? {
+                  raw: c.raw - 0.01,
+                  formatted: c.raw.toFixed(2),
+                  formatted_with_symbol: `$${c.raw.toFixed(2)}`,
+                }
+              : undefined,
+          },
         } as Live,
       })
     }
-    // .then((resp) => {
-    //   setLive({
-    //     ...live,
-    //     ...resp.live,
-    //   })
-    // })
-    // await Promise.resolve([])
   },
   setShippingMethod: async (shippingMethod) => {
     if (!get().token || !shippingMethod) {
@@ -76,8 +90,13 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
       shipping_option_id: shippingMethod.id,
       country: 'US',
     })
+
     const live: Live = {
       ...(get().live as any),
+      pay_what_you_want: {
+        ...get().live.pay_what_you_want,
+        minimum: resp.live.pay_what_you_want.minimum,
+      },
       shipping: resp.live.shipping,
     }
     set({
@@ -96,16 +115,19 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
       postal_zip_code: taxZone.postalCode,
     })
 
-    console.log(resp)
     if (resp.valid) {
       set({
         live: {
           ...get().live,
-          // ...resp.live,
+          pay_what_you_want: {
+            ...get().live.pay_what_you_want,
+            minimum: resp.live.pay_what_you_want.minimum,
+          },
           tax: resp.live.tax,
         },
       })
     }
+    return resp.valid
   },
   //   increasePopulation: () => set(state => ({ bears: state.bears + 1 })),
   //   removeAllBears: () => set({ bears: 0 })
