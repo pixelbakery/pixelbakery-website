@@ -3,70 +3,62 @@ import { CardElement, Elements, useElements, useStripe } from '@stripe/react-str
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
 import { NextPage } from 'next'
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useLayoutEffect, useEffect, useMemo, useState } from 'react'
-import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
-import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
-import useCart from '../../../hooks/useCart'
-import useCheckoutToken from '../../../hooks/useCheckoutToken'
-import commerce from '../../../lib/commerce'
-import gsap from 'gsap'
-import Head from 'next/head'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useDebounce } from 'use-debounce'
-import useCheckoutLive from '../../../hooks/useCheckoutLive'
+import FormikEffect from '../../../components/FormikEffect'
+import LoadingModal from '../../../components/LoadingModal'
+import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
+import CartDetails from '../../../components/pg-store/CartDetails'
+import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
+import { useCheckoutState } from '../../../hooks/useCheckoutState'
+import commerce from '../../../lib/commerce'
+import { makeOrder } from '../../../lib/makeOrder'
 
-function makeOrder({ cost, token, live, values, billingSameAsShipping, shippingMethod }: any) {
-  const shippingAddress = {
-    name: 'Shipping',
-    country: 'US',
-    street: values.shipping.address,
-    street_2: '',
-    town_city: values.shipping.city,
-    county_state: values.shipping.state,
-    postal_zip_code: values.shipping.postalCode,
+export type CheckoutSchema = {
+  firstName: string
+  lastName: string
+  email: string
+  phoneNumber: string
+  shipping: {
+    address: string
+    city: string
+    state: string
+    postalCode: string
   }
-
-  const newOrder = {
-    line_items: live.line_items,
-    customer: {
-      firstname: values.firstName,
-      lastname: values.lastName,
-      email: values.email,
-      phone: values.phoneNumber,
-    },
-    billing: billingSameAsShipping
-      ? shippingAddress
-      : {
-          name: 'Billing',
-          country: 'US',
-          street: values.billing.address,
-          street_2: '',
-          town_city: values.billing.city,
-          county_state: values.billing.state,
-          postal_zip_code: values.billing.postalCode,
-        },
-    shipping: shippingAddress,
-    fulfillment: {
-      shipping_method: shippingMethod,
-    },
-    pay_what_you_want: live?.pay_what_you_want?.customer_set_price?.raw ?? live?.subtotal.raw,
+  billing: {
+    address: string
+    city: string
+    state: string
+    postalCode: string
   }
-  console.log(values, newOrder)
-
-  return newOrder
 }
 let Checkout: NextPage = () => {
   const router = useRouter()
+  const {
+    token,
+    cart,
+    live,
+    fetchCart,
+    fetchToken,
+    setShippingMethod: setStateShipping,
+    checkPWYW,
+    setTaxZone,
+  } = useCheckoutState()
 
-  const { data: cart } = useCart()
-  const { data: token } = useCheckoutToken(cart?.id as string)
-  // const { data: live, refetch } = useCheckoutLive(token?.id)
+  useEffect(() => {
+    fetchCart()
+      .then(fetchToken)
+      .then(() => {})
+  }, [])
 
-  const [live, setLive] = useState()
-  const [shippingMethod, setShippingMethod] = useState()
+  const [shippingMethod, setShippingMethod] = useState<any>({})
   const onShippingChange = (evt: any) => {
-    setShippingMethod(evt.target.value)
+    const opt = token.shipping_methods.find((m) => m.id === evt.target.value)
+    setShippingMethod(opt?.id ?? null)
+    setStateShipping(opt)
   }
 
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
@@ -79,69 +71,115 @@ let Checkout: NextPage = () => {
     return prev + curr.quantity * (curr.price.raw * 10)
   }, 0)
 
-  const cartMin = token?.live.pay_what_you_want.minimum.raw
+  const cartMin = token?.live.subtotal.raw
   const onCostChange = (evt) => {
-    setCost(Math.max(cartMin, evt.target.value))
+    setCost(evt.target.value)
   }
 
   const [pwyw] = useDebounce(cost, 300)
 
+  // On change of our slider, update PWYW
   useEffect(() => {
-    if (token && token.live && !live) {
-      setLive(token.live)
-    }
-  }, [token?.id])
-  useEffect(() => {
-    if (!token?.id) {
-      return
-    }
-
-    commerce.checkout
-      .checkPayWhatYouWant(token.id, {
-        customer_set_price: pwyw.toFixed(2),
-      })
-      .then((resp) => {
-        setLive(resp.live)
-      })
-    // .then(() => refetch())
+    checkPWYW(pwyw)
   }, [pwyw])
 
+  // On shipping change, update our live object with it
   useEffect(() => {
-    console.log(live)
-  }, [live])
-
-  // BEGIN GSAP
-  useEffect(() => {
-    gsap.set('.modal-loading .modal-loading-span', { y: 20 })
-    let tl_loadingModal = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-      },
-      repeat: -1,
-      repeatDelay: 0.1,
-      yoyo: true,
-    })
-
-    tl_loadingModal.to('.modal-loading .modal-loading-span', {
-      y: -20,
-      duration: 0.66,
-    })
-    tl_loadingModal.play
-    return () => {}
-  }, [])
-  // END GSAP
-  useEffect(() => {
-    if (token?.shipping_methods?.length) {
-      setShippingMethod(token?.shipping_methods[0].id as any)
+    if (!shippingMethod || !token?.id) {
+      return
     }
-  }, token?.shipping_methods.length as any)
-
+    setShippingMethod(shippingMethod)
+  }, [shippingMethod])
   useEffect(() => {
     setCost(cart?.subtotal?.raw!)
   }, [cart?.id])
 
+  const onSubmit = async (values) => {
+    if (!stripe || !elements) {
+      return
+    }
+
+    const cardElement = elements.getElement('card') //PaymentElement)
+    if (!cardElement) {
+      return
+    }
+    setLoading(true)
+    try {
+      const newOrder = makeOrder({
+        live,
+        values,
+        billingSameAsShipping,
+      })
+
+      const { paymentMethod, error } = await stripe.createPaymentMethod!({
+        type: 'card',
+        card: cardElement,
+        billing_details: {
+          name: `${newOrder.customer.firstname} ${newOrder.customer.lastname}`,
+          email: newOrder.customer.email,
+          address: {
+            line1: newOrder.billing.street,
+            city: newOrder.billing.town_city,
+            state: newOrder.billing.county_state,
+            country: 'US',
+            postal_code: newOrder.billing.postal_zip_code,
+          },
+        },
+      })
+
+      if (error) {
+        setLoading(false)
+        alert('An error occurred while processing your payment: ' + error.message)
+        return
+      }
+
+      const res = await commerce.checkout.capture(token!.id, {
+        ...newOrder,
+        payment: {
+          gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
+          stripe: {
+            payment_method_id: paymentMethod?.id,
+          },
+        },
+      })
+
+      router.push('/store/checkout/order-confirmed')
+    } catch (res) {
+      // if (
+      //   res.statusCode !== 402 ||
+      //   res.data.error.type !== "requires_verification"
+      // ) {
+      //   setCheckoutError(res.data.error.message);
+      //   setProcessing(false);
+      //   return;
+      // }
+
+      // const { error, paymentIntent } = await stripe.handleCardAction(
+      //   res.data.error.param
+      // );
+      console.log(res)
+    }
+    setLoading(false)
+  }
+
+  const handleFormChange = async ({
+    prevValues,
+    nextValues,
+  }: {
+    prevValues: CheckoutSchema
+    nextValues: CheckoutSchema
+  }) => {
+    if (JSON.stringify(prevValues.shipping) !== JSON.stringify(nextValues.shipping)) {
+      console.log({ prevValues, nextValues })
+      setTaxZone({
+        state: nextValues.shipping.state,
+        postalCode: nextValues.shipping.postalCode,
+      })
+    }
+  }
+
   return (
-    <Formik
+    <Formik<CheckoutSchema>
       initialValues={{
         firstName: '',
         lastName: '',
@@ -160,90 +198,11 @@ let Checkout: NextPage = () => {
           postalCode: '',
         },
       }}
-      onSubmit={async (values) => {
-        if (!stripe || !elements) {
-          return
-        }
-
-        const cardElement = elements.getElement('card') //PaymentElement)
-        if (!cardElement) {
-          return
-        }
-        setLoading(true)
-        try {
-          // Create a PaymentIntent with the order amount and currency
-
-          // const { error } = await stripe.confirmPayment({
-          //   elements,
-          //   confirmParams: {
-          //     // Make sure to change this to your payment completion page
-          //     return_url: 'http://localhost:3000/store/checkout',
-          //   },
-          // })
-
-          const newOrder = makeOrder({
-            cost,
-            token,
-            live,
-            values,
-            billingSameAsShipping,
-            shippingMethod,
-          })
-
-          const { paymentMethod, error } = await stripe.createPaymentMethod!({
-            type: 'card',
-            card: cardElement,
-            billing_details: {
-              name: `${newOrder.customer.firstName} ${newOrder.customer.lastName}`,
-              email: newOrder.customer.email,
-              address: {
-                line1: newOrder.billing.street,
-                city: newOrder.billing.town_city,
-                state: newOrder.billing.county_state,
-                country: 'US',
-                postal_code: newOrder.billing.postal_zip_code,
-              },
-            },
-          })
-
-          if (error) {
-            setLoading(false)
-            alert('An error occurred while processing your payment: ' + error.message)
-            return
-          }
-
-          const res = await commerce.checkout.capture(token!.id, {
-            ...newOrder,
-            payment: {
-              gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
-              stripe: {
-                payment_method_id: paymentMethod?.id,
-              },
-            },
-          })
-
-          router.push('/store/checkout/order-confirmed')
-        } catch (res) {
-          // if (
-          //   res.statusCode !== 402 ||
-          //   res.data.error.type !== "requires_verification"
-          // ) {
-          //   setCheckoutError(res.data.error.message);
-          //   setProcessing(false);
-          //   return;
-          // }
-
-          // const { error, paymentIntent } = await stripe.handleCardAction(
-          //   res.data.error.param
-          // );
-
-          console.log(res)
-        }
-        setLoading(false)
-      }}
+      onSubmit={onSubmit}
     >
       {({ values, handleChange, handleSubmit }) => (
         <main className='min-h-screen my-4 p-4 bg-egg'>
+          <FormikEffect onChange={handleFormChange} />
           <Head>
             <title>PBDS – Store – Checkout</title>
             <meta name='description' content='Pixel Bakery store checkout' />
@@ -257,42 +216,7 @@ let Checkout: NextPage = () => {
             <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
           </Head>
           <section className='mx-auto max-w-6xl px-12'>
-            {loading && (
-              <div className='fixed z-50 inset-0 bg-wine bg-opacity-80 flex items-center justify-center'>
-                <div className='text-4xl font-black  uppercase modal-loading block '>
-                  <span className='text-peach px-2 modal-loading-span relative inline-block w-10 h-10'>
-                    L
-                  </span>
-                  <span className='text-yellow px-2 modal-loading-span relative inline-block'>
-                    O
-                  </span>
-                  <span className='text-blue px-2 modal-loading-span  relative inline-block'>
-                    A
-                  </span>
-                  <span className='text-pink-light px-2 modal-loading-span  relative inline-block'>
-                    D
-                  </span>
-                  <span className='text-blue-dark px-2 modal-loading-span  relative inline-block'>
-                    I
-                  </span>
-                  <span className='text-pink px-2 modal-loading-span  relative inline-block'>
-                    N
-                  </span>
-                  <span className='text-peach px-2 modal-loading-span  relative inline-block'>
-                    G
-                  </span>
-                  <span className='text-yellow px-2 modal-loading-span  relative inline-block'>
-                    .
-                  </span>
-                  <span className='text-blue px-2 modal-loading-span  relative inline-block'>
-                    .
-                  </span>
-                  <span className='text-pink-light px-2 modal-loading-span  relative inline-block'>
-                    .
-                  </span>
-                </div>
-              </div>
-            )}
+            <LoadingModal visible={loading} />
             <header className='mb-6 pb-8 mt-12'>
               <div id='breadcrumbs' className='w-full text-blue  text-sm '>
                 <Link href='/store' passHref>
@@ -309,10 +233,21 @@ let Checkout: NextPage = () => {
             </header>
             <div className='w-full grid grid-cols-5 items-start gap-12 '>
               <div className='col-span-5 lg:col-span-3'>
+                {/* 
+
+                  Shipping info
+
+                 */}
                 <div className='px-4 pb-12 border-b-4 border-blue-dark '>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping</h2>
                   <ShippingAddressForm />
                 </div>
+
+                {/* 
+
+                  Billing info
+
+                */}
                 <div className='py-12 border-b-4 border-blue-dark'>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Billing</h2>
                   <div>
@@ -332,6 +267,12 @@ let Checkout: NextPage = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* 
+
+                  Shipping method
+
+                 */}
                 <div className='py-12 border-b-4 border-blue-dark'>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping Options</h2>
                   <select
@@ -347,6 +288,12 @@ let Checkout: NextPage = () => {
                     ))}
                   </select>
                 </div>
+
+                {/* 
+
+                  Stripe
+
+                 */}
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
                   <div className='py-8 px-4 my-6 border border-blue rounded-md'>
@@ -355,70 +302,15 @@ let Checkout: NextPage = () => {
                 </div>
               </div>
 
-              {/* Cart Details */}
-              <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-8 py-8 bg-blue-light order-first lg:order-last'>
-                <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
-                  your cart
-                </p>
-                {cart?.line_items.map((item) => {
-                  const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
-                  return (
-                    <div
-                      key={item.id}
-                      className='text-wine text-md my-4 flex flex-row items-center'
-                    >
-                      <p>
-                        {item.name} {opt ? `(${opt?.option_name})` : ''} x{item.quantity}
-                      </p>
-                      <div className='flex-1'></div>
-                      <p>{item?.line_total?.formatted_with_symbol}</p>
-                    </div>
-                  )
-                })}
-                <div className='border-t-2 my-2 pt-2  border-blue-dark'>
-                  <p className='text-right text-wine text-sm italic'>
-                    minimum amount: {cart?.subtotal.formatted_with_symbol}
-                  </p>
-                </div>
-                <div>
-                  <p className='text-blue text-2xl font-semibold py-3'>Pay what you want</p>
-                  <p className='text-left text-wine text-md'>
-                    Adjust the slider below to change the price. All proceeds go to the{' '}
-                    <Link href='https://smallvoices.org' passHref>
-                      <a target='_blank' ref='noOpener' className='text-peach underline'>
-                        Child Advocacy Center
-                      </a>
-                    </Link>
-                    .
-                  </p>
-                </div>
-                <div className='my-4 flex flex-row gap-6 items-center mt-8'>
-                  <input
-                    type='range'
-                    min={cartMin}
-                    max={maxCost}
-                    value={cost}
-                    onChange={onCostChange}
-                    className='bg-blue slider flex-1'
-                  />
-                  <span>
-                    <span className='font-medium text-xl text-wine mr-1'>$</span>
-                    {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
-                    <input
-                      className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
-                      type='number'
-                      min={cartMin}
-                      value={cost}
-                      onChange={onCostChange}
-                    />
-                  </span>
-                </div>
-                <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
-                  {/* ${(cost ?? 0).toFixed(2)} */}
-                  {/* {cart?.subtotal.formatted_with_symbol} */}
-                  {live?.pay_what_you_want.customer_set_price.formatted_with_symbol}
-                </h3>
-              </div>
+              {/* 
+                Cart Details 
+              */}
+              <CartDetails
+                cartMin={cartMin}
+                cartMax={maxCost}
+                cost={cost}
+                onCostChange={onCostChange}
+              />
             </div>
             {/* End Cart Details */}
 
@@ -439,18 +331,9 @@ let Checkout: NextPage = () => {
 
 export default function CheckoutPage() {
   const stripePromise = useMemo(() => loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE), [])
-  const options = {
-    //   clientSecret,
-  }
-
-  console.log({ NEXT_PUBLIC_STRIPE_PUBLISHABLE: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE })
-
-  // if (!clientSecret) {
-  // return null
-  // }
 
   return (
-    <Elements options={options} stripe={stripePromise}>
+    <Elements stripe={stripePromise}>
       <Checkout />
     </Elements>
   )
