@@ -45,7 +45,8 @@
     "stripe": "^8.191.0",
     "tailwindcss": "^2.2.19",
     "use-debounce": "^7.0.1",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "zustand": "^3.6.5"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
