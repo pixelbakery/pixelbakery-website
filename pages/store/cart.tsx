@@ -57,15 +57,15 @@ let CheckoutPage: NextPage = () => {
         <Link href='/store' passHref>
           <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
         </Link>
-        <h1 className='text-pink text-7xl'>
+        <h1 className='text-pink text-4xl md:text-6xl lg:text-7xl'>
           Chikity
           <br /> chikity
           <br /> checkout
         </h1>
 
-        <h2 className='text-3xl mt-20 mb-4'>💁‍♀️ What you&apos;re buyin&apos; </h2>
+        <h2 className='text-3xl mt-10 lg:mt-20 mb-4'>💁‍♀️ What you&apos;re buyin&apos; </h2>
 
-        <div className='bg-cream px-16 pb-16 pt-8 my-2'>
+        <div className='bg-cream px-3 md:px-16 pb-16 pt-8 my-2'>
           {cart?.line_items?.length! > 0 ? (
             <button
               onClick={clearCart}
@@ -77,15 +77,15 @@ let CheckoutPage: NextPage = () => {
           {/* TODO: 
                 - wrap item name and item photo in a Link and redirect back to product page 
                 */}
-          <div className='mt-4 grid grid-cols-1 w-full gap-12'>
+          <div className='mt-4 grid grid-cols-1 w-full gap-4 md:gap-12'>
             {cart?.line_items.map((item) => {
               const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
               return (
                 <div
                   key={item.id}
-                  className='py-4 border-b border-pink-light col-span-1 grid grid-cols-5 font-medium  text-xl text-opacity-90 text-wine'
+                  className='py-4 border-b border-pink-light col-span-1 grid grid-cols-5 font-medium  text-lg md:text-xl text-opacity-90 text-wine'
                 >
-                  <div className='col-span-1'>
+                  <div className='xs:col-span-1 sm:col-span-1'>
                     <div className='w-20 h-20 lg:w-32 lg:h-32 lg:mr-16'>
                       <Link href='/store/product/[product]' as={`/store/product/${item.permalink}`}>
                         <a>
@@ -106,13 +106,13 @@ let CheckoutPage: NextPage = () => {
                   <div className='col-span-3 lg:col-span-1 flex flex-col'>
                     <div className='self-center'>
                       <button
-                        className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
+                        className='inline-block leading-none text-blue text-sm md:text-md  mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-98 active:scale-97'
                         onClick={() => subtractQuantity(item)}
                       >
                         –
                       </button>
-                      {item.quantity}
+                      <span className='text-sm md:text-lg'>{item.quantity}</span>
                       <button
                         className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-98    active:scale-97'

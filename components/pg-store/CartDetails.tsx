@@ -23,10 +23,11 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
   const price = pwyw ?? live?.subtotal.raw
   // const tax = price * taxRate
   const tax = live?.tax.amount.formatted_with_symbol
+
   const shipping = live?.shipping?.price?.raw ?? 0
   const total = shipping + (price || 0) // + tax
   return (
-    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-8 py-8 bg-blue-light order-first lg:order-last'>
+    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last'>
       <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
         your cart
       </p>
@@ -59,14 +60,14 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
           .
         </p>
       </div>
-      <div className='my-4 flex flex-row gap-6 items-center mt-8'>
+      <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>
         <input
           type='range'
           min={cartMin}
           max={cartMax}
           value={cost}
           onChange={onCostChange}
-          className='bg-blue slider flex-1'
+          className='bg-blue slider w-full md:w-auto md:flex-grow'
         />
         <span>
           <span className='font-medium text-xl text-wine mr-1'>$</span>
@@ -81,10 +82,13 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
         </span>
       </div>
       <p className='text-wine text-right'>shipping {live?.shipping?.price.formatted_with_symbol}</p>
-      <p className='text-wine text-right'>
+      <p className='text-wine text-right italic py-2'>
         tax {tax}
         {/* <br />
         {JSON.stringify(live?.tax)} */}
+      </p>
+      <p className='text-wine text-right italic py-2 text-opacity-60'>
+        taxes will be calculated after you enter a billing address
       </p>
       <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
         {total.toFixed(2)}
