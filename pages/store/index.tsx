@@ -51,7 +51,7 @@ let StorePage: NextPage = ({ products }: any) => {
   console.log(products)
 
   return (
-    <main id='page-store'>
+    <main id='page-store' className='min-w-screen'>
       <Head>
         <title>PBDS – Store</title>
         <meta
@@ -94,15 +94,17 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           </div>
         </div>
       </Link>
-      <section className='mt-4 bg-blue-dark py-12 px-8'>
-        <div className='max-w-xl md:max-w-6xl mx-auto md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
+      <section className='mt-4 bg-blue-dark py-12 px-8 min-w-screen'>
+        <div className='max-w-xl md:max-w-6xl mx-auto my-16 md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
           <div className='cols-span-1 lg:col-span-3'>
-            <h1 className='text-pink-light mt-0 pt-0 leading-none'>Company Shop</h1>
+            <h1 className='text-4xl lg:text-8xl text-pink-light mt-0 mb-0 pt-0 leading-none'>
+              Company Shop
+            </h1>
             <p className='pb-8  mt-1 italic text-3xl font-bold text-pink'>
               2021 giving <span className='line-through'>tuesday</span> month
             </p>
           </div>
-          <div className='lg:pl-32 mt-16 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
+          <div className='lg:pl-32 mt-12 lg:mt-16 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
             <p className=' mb-9'>
               In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases
               made from our shop to our friends at the
@@ -134,7 +136,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
       </section>
       <PageSection className='bg-egg my-4'>
         <div className='max-w-7xl mx-auto mb-30 '>
-          <div className='text-6xl text-peach font-black anim-header block pb-12'>
+          <div className='text-center md:text-left text-4xl md:text-6xl text-peach font-black anim-header block pb-12'>
             <span className='px-1 anim-span relative inline-block text-peach'>t</span>
             <span className='px-1 anim-span relative inline-block text-yellow'>h</span>
             <span className='px-1 anim-span relative inline-block mr-8 text-blue'>e</span>
