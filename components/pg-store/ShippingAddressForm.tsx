@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
+export default function ShippingAddressForm() {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
   }, [])
 
-  const { values, handleChange, handleBlur } = useFormikContext()
+  const { values, handleChange, handleBlur } = useFormikContext<any>()
   return (
     <div className='flex flex-col gap-4 form-border-b'>
       <div className='w-full flex flex-row gap-4 '>
@@ -19,7 +19,7 @@ export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
           autoComplete='given-name'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={(values as any).billing.firstName}
+          value={values.firstName}
           className='w-1/2  active:outline-none focus:outline-none '
         />
         <input
@@ -29,7 +29,7 @@ export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
           autoComplete='family-name'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={(values as any).billing.lastName}
+          value={values.lastName}
           className='w-1/2'
         />
       </div>
@@ -40,7 +40,7 @@ export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
         autoComplete='email'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={(values as any).billing.email}
+        value={values.email}
       />
       <input
         type='text'
@@ -49,7 +49,7 @@ export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
         autoComplete='tel-national'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={(values as any).billing.phoneNumber}
+        value={values.phoneNumber}
       />
       <input
         type='text'
