@@ -7,10 +7,10 @@ import Hang from '../components/pg-contact/contact-hang'
 function Contact() {
   return (
     <main className='' id='contact-page'>
-      <Onboarding />
+      {/* <Onboarding />
       <ContactForm />
       <Jobs />
-      <Hang />
+      <Hang /> */}
     </main>
   )
 }

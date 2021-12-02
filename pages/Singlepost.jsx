@@ -3,10 +3,10 @@ import Link from 'next'
 import Btn from '../components/parts/button-filled'
 import Pill from '../components/parts/pill'
 
-export default function Recipes() {
+export default function Recipe() {
   return (
     <main className=' mt-44'>
-      <article className='' id='blog-body'>
+      {/* <article className='' id='blog-body'>
         <section className='md:max-w-3xl mx-auto '>
           <div className='' id='blog-body-intro'>
             <div className='mb-6'>
@@ -170,7 +170,7 @@ export default function Recipes() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }
