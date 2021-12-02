@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 const roster = [
   {
+    id: 0,
     url: 'dan_hintz',
     name: 'Dan Hintz',
     title: 'Director + Founder',
@@ -23,10 +24,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 1,
     url: 'jordan_lambrecht',
     name: 'Jordan D Lambrechasdgasgt',
     title: 'Director + Founder',
@@ -49,10 +50,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 2,
     url: 'maria_smal',
     name: 'Maria Smal',
     title: 'Director + Founder',
@@ -75,10 +76,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 3,
     url: 'olivia_boldt',
     name: 'Olivia Boldt',
     title: 'Director + Founder',
@@ -101,10 +102,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 4,
     url: 'rebecca_cook',
     name: 'Rebeccca Cook',
     title: 'Director + Founder',
@@ -127,10 +128,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 5,
     url: 'sam',
     name: 'Sam',
     title: 'Director + Founder',
@@ -153,10 +154,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 6,
     url: 'samee_callahan',
     name: 'Samee Callahan',
     title: 'Director + Founder',
@@ -179,10 +180,10 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
   {
+    id: 7,
     url: 'sophia_stueven',
     name: 'Sophia Stueven',
     title: 'Director + Founder',
@@ -205,8 +206,7 @@ const roster = [
     details_hiredate: '2015',
     details_book: 'The Sirens of Titan, Kurt Vonnegut',
     details_aesthetic: 'Unkempt',
-    bio:
-      'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
+    bio: 'Jordan founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.',
   },
 
   // {

@@ -27,7 +27,7 @@ export default function TeamBio({
 }: RosterBio) {
   return (
     <>
-      <section className=' lander mx-auto flex flex-col justify-center mb-4' id={id}>
+      <section className=' lander mx-auto flex flex-col justify-center mb-4' id={'bio-' + { id }}>
         <div className='self-center max-w-6xl grid grid-cols-2 gap-16'>
           <div className=''>
             <div className='px-12'>
@@ -38,10 +38,10 @@ export default function TeamBio({
             <h1>{name}</h1>
             <p className='my-3 text-lg text-wine font-semibold italic opacity-80'>{title}</p>
             <div className='flex justify-between text-peach italic mb-8'>
-              <a href={'mailto:' + email} target='_blank'>
+              <a href={'mailto:' + email} target='_blank' rel='noreferrer'>
                 {email}
               </a>
-              <a href={'tel:' + phone} target='_blank'>
+              <a href={'tel:' + phone} target='_blank' rel='noreferrer'>
                 {phone}
               </a>
             </div>
