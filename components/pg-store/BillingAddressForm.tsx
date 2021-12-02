@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function BillingAddressForm({ onSubmit }) {
+export default function BillingAddressForm({ onSubmit }: { onSubmit: any }) {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
@@ -17,7 +17,7 @@ export default function BillingAddressForm({ onSubmit }) {
         placeholder='Address'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.billing.address}
+        value={(values as any).billing.address}
       />
 
       <div className='flex flex-row gap-4'>
@@ -27,12 +27,12 @@ export default function BillingAddressForm({ onSubmit }) {
           placeholder='City'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.billing.city}
+          value={(values as any).billing.city}
         />
         <select placeholder='state' className='flex-1'>
           {Object.keys(states).map((s) => (
             <option key={s} value={s}>
-              {states[s]}
+              {(states as any)[s]}
             </option>
           ))}
         </select>
@@ -43,7 +43,7 @@ export default function BillingAddressForm({ onSubmit }) {
         placeholder='Zip Code'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.billing.postalCode}
+        value={(values as any).billing.postalCode}
       />
     </div>
   )
