@@ -9,6 +9,8 @@ import useCart from '../../../hooks/useCart'
 import VariantPicker from '../../../components/pg-store/store-variant-picker'
 import Link from 'next/link'
 import Head from 'next/head'
+import { ChevronRightIcon } from '@heroicons/react/solid'
+import ButtonOutlined from '../../../components/parts/button-outline'
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -92,7 +94,19 @@ hover:opacity-90 hover:scale-97 active:scale-90'
         className={'bg-cream  my-4 inset-0 py-20'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
       >
-        <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24'>
+        <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-4 md:gap-12 lg:gap-24'>
+          <div className='block md:hidden col-span-1 mt-0 gap-6  '>
+            <div className='w-full  flex flex-row justify-start text-left mt-0 pb-3 '>
+              <div>
+                <Link href={'/store'} passHref>
+                  <a className='font-semibold text-blue text-xl'>← more good good</a>
+                </Link>
+              </div>
+            </div>
+            <h1 className=' text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
+              {product.name}
+            </h1>
+          </div>
           <div className='mt-0 col-span-1 relative flex flex-col self-start'>
             {product.assets[0].file_extension === 'mp4' ? (
               <video
@@ -100,6 +114,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 loop
                 muted
                 autoPlay
+                controls={false}
                 className='my-0 px-0 object-cover inset-0 w-full rounded-md'
               />
             ) : (
@@ -111,12 +126,18 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 alt={'pixel bakery ' + product.name}
               />
             )}
+
+            <div className='hidden w-full  md:flex flex-row justify-start text-left py-4 '>
+              <Link href={'/store'} passHref>
+                <a className='font-semibold text-blue text-xl'>← more good good</a>
+              </Link>
+            </div>
           </div>
           <div className='col-span-1  gap-6  '>
-            <h1 className='text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
+            <h1 className=' hidden md:block text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
               {product.name}
             </h1>
-            <p className='text-blue text-3xl font-bold mt-3 pb-0 mb-0'>
+            <p className='text-blue text-3xl font-bold mt-1 md:mt-3 pb-0 mb-0'>
               {prependPrice} {product.price.formatted_with_symbol}
             </p>
             <p className='mt-1 py-0 text-wine italic text-opacity-70'>
@@ -167,7 +188,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               onClick={addToCart}
               disabled={soldOut}
               className={
-                'rounded-lg text-xl font-bold my-8 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out checkoutButton-disabled-' +
+                'rounded-lg text-xl font-bold mt-8 mb-2 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out checkoutButton-disabled-' +
                 soldOut
               }
               //               className={'
@@ -175,16 +196,22 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             >
               Get At It
             </button>
-            <div className='flex justify-between'>
-              <Link href={'/store'} passHref>
-                <a className='font-semibold text-blue text-xl'>← more good good</a>
-              </Link>
-              <Link href={'/store/cart'} passHref>
-                <a className='font-semibold text-blue text-xl hover:opacity-90 active:scale-90 active:opacity-60'>
-                  {' '}
-                  check out →
-                </a>
-              </Link>
+            <Link href='/store/cart' passHref>
+              <a
+                className={
+                  'border text-center border-blue text-blue rounded-lg cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-blue text-xl font-bold mb-8 mt-2 md:mt-4 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out '
+                }
+              >
+                check out →
+              </a>
+            </Link>
+
+            <div className=' md:hidden w-full  flex flex-row justify-start text-left  '>
+              <div>
+                <Link href={'/store'} passHref>
+                  <a className='font-semibold text-blue text-xl'>← more good good</a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
