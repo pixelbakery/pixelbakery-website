@@ -187,10 +187,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             <button
               onClick={addToCart}
               disabled={soldOut}
-              className={
-                'rounded-lg text-xl font-bold mt-8 mb-2 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out checkoutButton-disabled-' +
-                soldOut
-              }
+              className={'checkoutButton checkoutButton-disabled-' + soldOut}
               //               className={'
               //'
             >
