@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function ShippingAddressForm({ onSubmit }) {
+export default function ShippingAddressForm({ onSubmit }: { onSubmit: any }) {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
@@ -19,7 +19,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           autoComplete='given-name'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.billing.firstName}
+          value={(values as any).billing.firstName}
           className='w-1/2  active:outline-none focus:outline-none '
         />
         <input
@@ -29,7 +29,7 @@ export default function ShippingAddressForm({ onSubmit }) {
           autoComplete='family-name'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.billing.lastName}
+          value={(values as any).billing.lastName}
           className='w-1/2'
         />
       </div>
@@ -40,7 +40,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         autoComplete='email'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.billing.email}
+        value={(values as any).billing.email}
       />
       <input
         type='text'
@@ -49,7 +49,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         autoComplete='tel-national'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.billing.phoneNumber}
+        value={(values as any).billing.phoneNumber}
       />
       <input
         type='text'
@@ -58,7 +58,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         autoComplete='street-address'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.shipping.address}
+        value={(values as any).shipping.address}
       />
 
       <div className='w-full flex flex-row gap-4'>
@@ -69,21 +69,20 @@ export default function ShippingAddressForm({ onSubmit }) {
           autoComplete='address-level2'
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.shipping.city}
+          value={(values as any).shipping.city}
           className='w-2/3'
         />
         <select
           placeholder='state'
-          className='flex-1'
+          className='w-1/3'
           autoComplete='address-level1'
-          value={values.shipping.state}
+          value={(values as any).shipping.state}
           name='shipping.state'
           onChange={handleChange}
-          className='w-1/3'
         >
           {Object.keys(states).map((s) => (
             <option key={s} value={s}>
-              {states[s]}
+              {(states as any)[s]}
             </option>
           ))}
         </select>
@@ -95,7 +94,7 @@ export default function ShippingAddressForm({ onSubmit }) {
         autoComplete='postal-code'
         onChange={handleChange}
         onBlur={handleBlur}
-        value={values.postalCode}
+        value={(values as any).postalCode}
       />
     </div>
   )

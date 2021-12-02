@@ -296,8 +296,12 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-12 border-b-4 border-blue-dark'>
                   <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping Options</h2>
-                  <select className='block' value={shippingMethod} onChange={onShippingChange}>
-                    <option></option>
+                  <select
+                    className='block form-border-b'
+                    value={shippingMethod}
+                    onChange={onShippingChange}
+                  >
+                    <option value={''}>select</option>
                     {token?.shipping_methods?.map((opt) => (
                       <option value={opt.id} key={opt.id}>
                         {opt.description} {opt.price.formatted_with_symbol}
@@ -307,7 +311,7 @@ let Checkout: NextPage = () => {
                 </div>
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
-                  <div>
+                  <div className='py-8 px-4 my-6 border border-blue rounded-md'>
                     <CardElement className='text-2xl h-full' />
                   </div>
                 </div>
