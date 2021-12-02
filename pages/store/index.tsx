@@ -17,7 +17,7 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-let StorePage: NextPage = ({ products }) => {
+let StorePage: NextPage = ({ products }: any) => {
   const { data: cart, refetch } = useCart()
   // BEGIN GSAP
   useEffect(() => {

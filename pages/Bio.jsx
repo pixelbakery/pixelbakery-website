@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 // import team from '../data/team'
 import TeamBio from '../components/pg-about/about-bios'
 
 function Team() {
-  const [id, setId] = useState(useParams().id)
+  const [id, setId] = useState()
+  // const [id, setId] = useState(useParams().id)
   const [name, setName] = useState('')
   const [title, setTitle] = useState('')
   const [email, setEmail] = useState('')
