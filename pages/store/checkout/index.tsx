@@ -141,17 +141,17 @@ let Checkout: NextPage = () => {
         return
       }
 
-      // const res = await commerce.checkout.capture(token!.id, {
-      //   ...newOrder,
-      //   payment: {
-      //     gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
-      //     stripe: {
-      //       payment_method_id: paymentMethod?.id,
-      //     },
-      //   },
-      // })
+      const res = await commerce.checkout.capture(token!.id, {
+        ...newOrder,
+        payment: {
+          gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
+          stripe: {
+            payment_method_id: paymentMethod?.id,
+          },
+        },
+      })
 
-      // router.push('/store/checkout/order-confirmed')
+      router.push('/store/checkout/order-confirmed')
     } catch (res) {
       // if (
       //   res.statusCode !== 402 ||
