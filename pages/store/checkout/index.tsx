@@ -165,6 +165,7 @@ let Checkout: NextPage = () => {
       // const { error, paymentIntent } = await stripe.handleCardAction(
       //   res.data.error.param
       // );
+      alert('An error occurred while processing your payment: ' + res?.message)
       console.log(res)
     }
     setLoading(false)
