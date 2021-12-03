@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
-
+import Link from 'next/link'
 // import InstagramFeed from "../components/instagramFeed";
 // import blogPosts from '../data/blogPosts'
 import BlogCard from '../components/parts/blogCard'
