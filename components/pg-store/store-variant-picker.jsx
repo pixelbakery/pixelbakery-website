@@ -11,9 +11,7 @@ const VariantSelector = ({ variantGroups, value, onChange, ...passthrough }) => 
           name='variantPicker'
           id='variantPicker'
           className='border border-blue rounded-md bg-transparent'
-          value={value}
           onChange={(evt) => {
-            console.log(group.id, evt.target.value)
             onChange(group.id, evt.target.value)
           }}
         >
