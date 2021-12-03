@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import Footer from '../components/footer/Footer'
-export const GA_ANALYTICS_MEASUREMENT_ID = '<INSERT_MEASUREMENT_ID>'
+export const GA_ANALYTICS_MEASUREMENT_ID = 'PC8M8GG'
 const isProd = process.env.NODE_ENV === 'production'
 
 class MyDocument extends Document {
