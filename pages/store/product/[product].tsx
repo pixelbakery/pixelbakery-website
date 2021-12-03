@@ -9,9 +9,9 @@ import useCart from '../../../hooks/useCart'
 import VariantPicker from '../../../components/pg-store/store-variant-picker'
 import Link from 'next/link'
 import Head from 'next/head'
-import { ChevronRightIcon } from '@heroicons/react/solid'
-import ButtonOutlined from '../../../components/parts/button-outline'
 import cs from 'classnames'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -37,14 +37,19 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
     })
   }
 
+  const renderHTML = (rawHTML: string) =>
+    React.createElement('div', { dangerouslySetInnerHTML: { __html: rawHTML } })
+  const toastMessage = () => renderHTML('🥳   &#8194;    added to cart  &#8194;  🎉')
+  const notify = () => toast(toastMessage)
   const { data: cart, refetch } = useCart()
   const addToCart = async () => {
     await commerce.cart.add(product.id, 1, {
       ...variant,
     })
+    notify()
     refetch()
   }
-  console.log('checkout button enabled? ' + soldOut)
+  // console.log('checkout button enabled? ' + soldOut)
 
   // check to see if it's a name your own price product
   let prependPrice = ''
@@ -162,33 +167,6 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               value={variant}
               onChange={onVariantChange}
             />
-
-            {/* <div className='my-4 flex justify-between'>
-              <input
-                type='range'
-                min={product.price.raw}
-                max='100'
-                value={price}
-                onChange={onPriceChange}
-                className='bg-blue slider self-center flex-grow'
-              />
-              <span className='ml-8'>
-                <span className='font-medium text-xl text-wine mr-1'>$</span>
-
-                <input
-                  className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
-                  type='number'
-                  min={product.price.raw}
-                  value={price}
-                  onChange={onPriceChange}
-                />
-              </span>
-            </div> */}
-
-            {/* TODO: 
-              - Disable button if sold out 
-              - price does not update with slider. it remains the default minimum price 
-              */}
             <button
               onClick={addToCart}
               disabled={soldOut}
@@ -196,11 +174,20 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 ['checkoutButton-disabled-true']: soldOut,
                 ['checkoutButton-disabled-false']: !soldOut,
               })}
-              //               className={'
-              //'
             >
               Get At It
             </button>
+            <ToastContainer
+              position='bottom-center'
+              autoClose={1400}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
             <Link href='/store/cart' passHref>
               <a
                 className={
