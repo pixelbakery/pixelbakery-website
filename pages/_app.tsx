@@ -1,6 +1,7 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../styles/typography.css'
 import '../styles/globals.css'
+import TagManager from 'react-gtm-module'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const handleRouteChange = (url) => {
       ga.pageview(url as any)
     }
+    TagManager.initialize({ gtmId: 'GTM-PC8M8GG' })
     return () => {}
   }, [])
 
