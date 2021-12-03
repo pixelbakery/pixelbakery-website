@@ -163,7 +163,9 @@ hover:opacity-90 hover:scale-98    active:scale-97'
               className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
   hover:opacity-90 hover:scale-99 active:scale-97'
             >
-              <span className='self-center inline-block font-medium text-center'>pony up</span>
+              <span className='self-center inline-block font-medium text-center px-12'>
+                pony up
+              </span>
 
               <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-light text-xl md:text-2xl  w-12 ' />
             </button>
