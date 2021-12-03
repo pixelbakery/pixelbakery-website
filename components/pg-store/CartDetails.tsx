@@ -69,7 +69,7 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
           type='range'
           min={live?.pay_what_you_want.minimum?.raw}
           max={cartMax}
-          value={Number(cost?.toFixed(2) ?? 0)}
+          value={Number(cost ?? 0).toFixed(2)}
           onChange={onCostChange}
           className='bg-blue slider w-full md:w-auto md:flex-grow'
         />
@@ -80,7 +80,7 @@ export default function CartDetails({ cartMin, cartMax, cost, onCostChange }: Pr
             className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
             type='number'
             min={cartMin}
-            value={Number(cost?.toFixed(2) ?? 0)}
+            value={Number(cost ?? 0).toFixed(2)}
             onChange={onCostChange}
           />
         </span>
