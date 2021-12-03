@@ -16,6 +16,7 @@ import ShippingAddressForm from '../../../components/pg-store/ShippingAddressFor
 import { useCheckoutState } from '../../../hooks/useCheckoutState'
 import commerce from '../../../lib/commerce'
 import { makeOrder } from '../../../lib/makeOrder'
+import Maintenance from '../../../components/pg-store/maintenance'
 
 export type CheckoutSchema = {
   firstName: string
@@ -336,6 +337,7 @@ let Checkout: NextPage = () => {
               submit
             </button>
           </section>
+          <Maintenance />
         </main>
       )}
     </Formik>

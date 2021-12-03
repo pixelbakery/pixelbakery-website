@@ -7,7 +7,7 @@ import { ChevronRightIcon } from '@heroicons/react/solid'
 
 function SubmissionConfirmation() {
   return (
-    <main>
+    <main className='max-w-screen'>
       <Head>
         <title>PBDS – Order Confirmed</title>
       </Head>
