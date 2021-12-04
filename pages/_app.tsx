@@ -1,13 +1,12 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import '../styles/typography.css'
-import '../styles/globals.css'
-import TagManager from 'react-gtm-module'
-
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import * as ga from '../lib/ga'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import * as ga from '../lib/ga'
+import '../styles/globals.css'
+import '../styles/typography.css'
 
 const client = new QueryClient()
 
