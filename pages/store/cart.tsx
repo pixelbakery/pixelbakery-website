@@ -79,7 +79,8 @@ let CheckoutPage: NextPage = () => {
                 */}
           <div className='mt-4 grid grid-cols-1 w-full gap-4 md:gap-12'>
             {cart?.line_items.map((item) => {
-              const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
+              // const opt = item.selected_options?.length > 0 ? item.selected_options[0] : null
+              const opt = item.selected_options[0]
               return (
                 <div
                   key={item.id}
@@ -114,8 +115,8 @@ hover:opacity-90 hover:scale-98 active:scale-97'
                       </button>
                       <span className='text-sm md:text-lg'>{item.quantity}</span>
                       <button
-                        className='inline-block leading-none text-blue text-md font-md mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-98    active:scale-97'
+                        className='inline-block leading-none text-blue text-sm md:text-md  mx-3 px-2 py-1 border border-blue rounded-md transform transition-all duration-600 ease-in-out scale-100 opacity-100
+hover:opacity-90 hover:scale-98 active:scale-97'
                         onClick={() => addQuantity(item)}
                       >
                         +
@@ -158,18 +159,22 @@ hover:opacity-90 hover:scale-98    active:scale-97'
           <Link href='/store' passHref>
             <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
           </Link>
-          <Link href='/store/checkout' passHref>
-            <button
-              className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+          {cart?.line_items?.length! > 0 ? (
+            <Link href='/store/checkout' passHref>
+              <button
+                className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
   hover:opacity-90 hover:scale-99 active:scale-97'
-            >
-              <span className='self-center inline-block font-medium text-center px-12'>
-                pony up
-              </span>
+              >
+                <span className='self-center inline-block font-medium text-center px-12'>
+                  pony up
+                </span>
 
-              <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-light text-xl md:text-2xl  w-12 ' />
-            </button>
-          </Link>
+                <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-light text-xl md:text-2xl  w-12 ' />
+              </button>
+            </Link>
+          ) : (
+            ''
+          )}
         </div>
       </PageSection>
       <Maintenance />
