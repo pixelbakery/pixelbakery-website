@@ -218,7 +218,7 @@ let Checkout: NextPage = () => {
       onSubmit={onSubmit}
     >
       {({ values, handleChange, handleSubmit }) => (
-        <main className='min-w-screen min-h-screen my-4 p-2 md:p-4 bg-egg'>
+        <main className='min-w-screen min-h-screen my-4 p-1 md:p-4 bg-egg'>
           <FormikEffect onChange={handleFormChange} />
           <Head>
             <title>PBDS – Store – Checkout</title>
@@ -233,7 +233,7 @@ let Checkout: NextPage = () => {
             <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
           </Head>
           {cart?.total_items > 0 ? (
-            <section className='mx-auto max-w-6xl px-6 md:px-12'>
+            <section className='mx-auto max-w-6xl px-3 md:px-12'>
               <LoadingModal visible={loading} />
               <header className='mb-6 pb-8 mt-12'>
                 <div id='breadcrumbs' className='w-full text-blue  text-sm '>
