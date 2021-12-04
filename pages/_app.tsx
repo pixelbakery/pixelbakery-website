@@ -2,6 +2,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../styles/typography.css'
 import '../styles/globals.css'
 import TagManager from 'react-gtm-module'
+import { CommerceContext } from '@chec/react-commercejs-hooks'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -22,9 +23,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <QueryClientProvider client={client}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <CommerceContext debug publicKey={process.env.NEXT_PUBLIC_CHEC_PUBLIC_KEY}>
+      <QueryClientProvider client={client}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </CommerceContext>
   )
 }
 
