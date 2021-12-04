@@ -205,6 +205,17 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 Select options first plz
               </button>
             )}
+            {cart?.total_items > 0 ? (
+              <Link href='/store/cart' passHref>
+                <a
+                  className={
+                    'border text-center border-blue text-blue rounded-lg cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-blue text-xl font-bold mb-8 mt-2 md:mt-4 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out '
+                  }
+                >
+                  check out →
+                </a>
+              </Link>
+            ) : null}
 
             <ToastContainer
               position='bottom-center'
