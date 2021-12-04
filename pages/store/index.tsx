@@ -48,8 +48,6 @@ let StorePage: NextPage = ({ products }: any) => {
   }, [])
   // END GSAP
 
-  console.log(products)
-
   return (
     <main id='page-store' className='min-w-screen'>
       <Head>
