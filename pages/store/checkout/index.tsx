@@ -17,6 +17,10 @@ import { useCheckoutState } from '../../../hooks/useCheckoutState'
 import commerce from '../../../lib/commerce'
 import { makeOrder } from '../../../lib/makeOrder'
 import Maintenance from '../../../components/pg-store/maintenance'
+import useShippingOptions from '../../../hooks/useShippingOptions'
+import useSetShippingOption from '../../../hooks/useSetShippingOption'
+import useSetTaxZone from '../../../hooks/useSetTaxZone'
+import useCheckPwyw from '../../../hooks/useCheckPwyw'
 
 export type CheckoutSchema = {
   firstName: string
@@ -38,16 +42,7 @@ export type CheckoutSchema = {
 }
 let Checkout: NextPage = () => {
   const router = useRouter()
-  const {
-    token,
-    cart,
-    live,
-    fetchCart,
-    fetchToken,
-    setShippingMethod: setStateShipping,
-    checkPWYW,
-    setTaxZone,
-  } = useCheckoutState()
+  const { checkout, cart, live, fetchCart, fetchToken } = useCheckoutState()
 
   useEffect(() => {
     fetchCart()
@@ -55,56 +50,53 @@ let Checkout: NextPage = () => {
       .then(() => {})
   }, [])
 
-  const [shippingMethod, setShippingMethod] = useState<any>({})
-  const onShippingChange = async (evt: any) => {
-    const opt = token.shipping_methods.find((m) => m.id === evt.target.value)
-    setShippingMethod(opt?.id ?? null)
-    await setStateShipping(opt)
-    checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
-  }
+  const [shippingDetails, setShippingDetails] = useState<CheckoutSchema['shipping']>()
 
+  const [shippingMethod, setShippingMethod] = useState<any>({})
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
   const [loading, setLoading] = useState(false)
+
   const stripe = useStripe()
   const elements = useElements()
 
-  const [cost, setCost] = useState(cart?.total?.raw ?? 0)
-  const maxCost = cart?.line_items?.reduce((prev, curr) => {
-    return prev + curr.quantity * (curr.price.raw * 10)
-  }, 0)
+  const setShippingOption = useSetShippingOption()
+  const setTaxZone = useSetTaxZone()
+  const checkPwyw = useCheckPwyw()
+  const shippingOptions = useShippingOptions('US', shippingDetails?.state ?? 'US-NE')
 
-  const cartMin = live?.pay_what_you_want.minimum.raw // token?.live.total.raw
-  const onCostChange = (evt) => {
-    setCost(evt.target.value)
+  const onShippingChange = async (evt: any) => {
+    // const opt = shippingOptions?.find((m) => m.id === evt.target.value)
+    setShippingMethod(evt.target.value ?? null)
+    setShippingOption(evt.target.value, 'US', shippingDetails?.state ?? 'US-NE')
   }
 
-  useEffect(() => {
-    const raw = live?.pay_what_you_want.customer_set_price?.raw
-    if (!!raw && raw !== 0) {
-      setCost(raw)
-    }
-  }, [live?.pay_what_you_want.customer_set_price?.raw])
+  const [pwyw, setPwyw] = useState(live?.pay_what_you_want?.minimum?.raw ?? 0)
 
-  useEffect(() => {
-    checkPWYW(live?.pay_what_you_want?.minimum?.raw)
-  }, [live?.pay_what_you_want?.minimum?.raw])
-  const [pwyw] = useDebounce(cost, 300)
+  const pwywMax = cart?.line_items?.reduce((prev, curr) => {
+    return prev + curr.quantity * (curr.price.raw * 10)
+  }, 0)
+  const pwywMin = live?.pay_what_you_want.minimum.raw
+
+  const onPwywChange = (evt) => {
+    setPwyw(evt.target.value)
+  }
+
+  const [customer_set_price] = useDebounce(pwyw, 300)
 
   // On change of our slider, update PWYW
   useEffect(() => {
-    checkPWYW(pwyw)
-  }, [pwyw])
-
-  // On shipping change, update our live object with it
-  useEffect(() => {
-    if (!shippingMethod || !token?.id) {
-      return
+    if (customer_set_price) {
+      checkPwyw({ customer_set_price: customer_set_price.toString() })
     }
-    setShippingMethod(shippingMethod)
-  }, [shippingMethod])
+  }, [customer_set_price])
+
   useEffect(() => {
-    setCost(cart?.subtotal?.raw!)
-  }, [cart?.id])
+    let raw = live?.pay_what_you_want?.customer_set_price?.raw
+    // if (raw !== 0) {
+    setPwyw(raw)
+    //   checkPwyw({ customer_set_price: raw.toString() })
+    // }
+  }, [live?.pay_what_you_want?.customer_set_price?.raw])
 
   const onSubmit = async (values) => {
     if (!stripe || !elements) {
@@ -145,7 +137,7 @@ let Checkout: NextPage = () => {
         return
       }
 
-      const res = await commerce.checkout.capture(token!.id, {
+      const res = await commerce.checkout.capture(checkout!.id, {
         ...newOrder,
         payment: {
           gateway: process.env.NEXT_PUBLIC_STRIPE_GATEWAY,
@@ -182,17 +174,23 @@ let Checkout: NextPage = () => {
     prevValues: CheckoutSchema
     nextValues: CheckoutSchema
   }) => {
+    setShippingDetails(nextValues.shipping)
     if (JSON.stringify(prevValues.shipping) !== JSON.stringify(nextValues.shipping)) {
-      console.log({ prevValues, nextValues })
-      const valid = await setTaxZone({
-        state: nextValues.shipping.state,
-        postalCode: nextValues.shipping.postalCode,
-      })
-      console.log({ valid })
-      if (valid) {
-        checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
+      if (nextValues.shipping.postalCode.toString().length === 5) {
+        const { valid } = await setTaxZone({
+          country: 'US',
+          region: nextValues.shipping.state,
+          postal_zip_code: nextValues.shipping.postalCode,
+        })
+        // if (valid) {
+        //   checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
+        // }
       }
     }
+  }
+
+  if (!checkout) {
+    return null
   }
 
   return (
@@ -297,7 +295,7 @@ let Checkout: NextPage = () => {
                       onChange={onShippingChange}
                     >
                       <option value={''}>select</option>
-                      {token?.shipping_methods?.map((opt) => (
+                      {shippingOptions?.map((opt) => (
                         <option value={opt.id} key={opt.id}>
                           {opt.description} {opt.price.formatted_with_symbol}
                         </option>
@@ -312,8 +310,7 @@ let Checkout: NextPage = () => {
                   {/* <h1>
                   asdcvbnm {live?.pay_what_you_want.customer_set_price?.raw} {cartMin}
                 </h1> */}
-
-                  <h1>{token?.shipping} </h1>
+                  {/* <h1>{live?.shipping} </h1> */}
                   <div className='py-4-12'>
                     <h2 className='text-2xl text-blue-dark'>payment</h2>
                     <div className='py-8 px-4 my-6 border border-blue rounded-md'>
@@ -326,10 +323,10 @@ let Checkout: NextPage = () => {
                 Cart Details 
               */}
                 <CartDetails
-                  cartMin={cartMin}
-                  cartMax={maxCost}
-                  cost={cost}
-                  onCostChange={onCostChange}
+                  pwywMin={pwywMin}
+                  pwywMax={pwywMax}
+                  pwyw={pwyw}
+                  onPwywChange={onPwywChange}
                 />
               </div>
               {/* End Cart Details */}
