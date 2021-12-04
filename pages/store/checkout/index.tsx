@@ -312,9 +312,9 @@ let Checkout: NextPage = () => {
 
                  */}
 
-                <h1>
+                {/* <h1>
                   asdcvbnm {live?.pay_what_you_want.customer_set_price?.raw} {cartMin}
-                </h1>
+                </h1> */}
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
                   <div className='py-8 px-4 my-6 border border-blue rounded-md'>
