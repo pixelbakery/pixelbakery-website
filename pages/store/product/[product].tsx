@@ -175,7 +175,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
                 ['checkoutButton-disabled-false']: !soldOut,
               })}
             >
-              Get At It
+              Add To Cart
             </button>
             <ToastContainer
               position='bottom-center'
