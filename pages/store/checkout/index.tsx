@@ -85,6 +85,9 @@ let Checkout: NextPage = () => {
     }
   }, [live?.pay_what_you_want.customer_set_price?.raw])
 
+  useEffect(() => {
+    checkPWYW(live?.pay_what_you_want?.minimum?.raw)
+  }, [live?.pay_what_you_want?.minimum?.raw])
   const [pwyw] = useDebounce(cost, 300)
 
   // On change of our slider, update PWYW
@@ -308,6 +311,10 @@ let Checkout: NextPage = () => {
                   Stripe
 
                  */}
+
+                <h1>
+                  asdcvbnm {live?.pay_what_you_want.customer_set_price?.raw} {cartMin}
+                </h1>
                 <div className='py-4-12'>
                   <h2 className='text-2xl text-blue-dark'>payment</h2>
                   <div className='py-8 px-4 my-6 border border-blue rounded-md'>

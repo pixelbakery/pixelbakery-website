@@ -106,6 +106,10 @@ export const useCheckoutState = create<CheckoutState>((set, get) => ({
   },
   setTaxZone: async (taxZone) => {
     const token = get().token
+
+    if (taxZone?.toString()?.length !== 5) {
+      // return
+    }
     if (!token) {
       return
     }
