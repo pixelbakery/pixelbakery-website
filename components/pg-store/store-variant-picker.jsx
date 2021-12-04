@@ -15,6 +15,7 @@ const VariantSelector = ({ variantGroups, value, onChange, ...passthrough }) => 
             onChange(group.id, evt.target.value)
           }}
         >
+          <option value={null}>select</option>
           {group.options.map((option) => (
             <option value={option.id} key={option.id}>
               {option.name}
