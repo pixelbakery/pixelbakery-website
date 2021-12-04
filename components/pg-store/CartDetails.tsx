@@ -35,7 +35,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
   // const shipping = live?.shipping?.price?.raw ?? 0
 
   return (
-    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last'>
+    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last rounded-lg'>
       <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
         your cart
       </p>
