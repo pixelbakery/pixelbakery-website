@@ -24,17 +24,35 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
     },
   }
 }
-
+let currentVariant = 'select'
+function Test(one) {
+  currentVariant = one
+  console.log(currentVariant)
+}
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
   const onPriceChange = (evt) => setPrice(Math.max(evt.target.value, product.price.raw))
 
   const [variant, setVariant] = useState({})
+
+  // TESTING
+  // configuring objects for React context providers
+
+  // console.log(currentVariant.name)
+  // END TESTING
+
+  // function chosenVariant(groupId, variantId) {
+  //   console.log('GROUP ID: ' + groupId)
+  //   console.log(numbers)
+  // }
+
   const onVariantChange = (groupId, variantId) => {
     setVariant({
       [groupId]: variantId,
     })
+    Test(variantId)
+    // chosenVariant(groupId, variantId)
   }
 
   const renderHTML = (rawHTML: string) =>
@@ -167,16 +185,27 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               value={variant}
               onChange={onVariantChange}
             />
-            <button
-              onClick={addToCart}
-              disabled={soldOut}
-              className={cs('checkoutButton', {
-                ['checkoutButton-disabled-true']: soldOut,
-                ['checkoutButton-disabled-false']: !soldOut,
-              })}
-            >
-              Add To Cart
-            </button>
+            {currentVariant != 'select' || product.variant_groups.length === 0 ? (
+              <button
+                onClick={addToCart}
+                disabled={soldOut}
+                className={cs('checkoutButton', {
+                  ['checkoutButton-disabled-true']: soldOut,
+                  ['checkoutButton-disabled-false']: !soldOut,
+                })}
+              >
+                Add To Cart {}
+              </button>
+            ) : (
+              <button
+                onClick={addToCart}
+                disabled={soldOut}
+                className='rounded-lg text-xl font-bold mt-8 mb-2 py-4 block w-full lowercase scale-100 bg-wine-100 text-wine-200 cursor-not-allowed opacity-60'
+              >
+                Select options first plz
+              </button>
+            )}
+
             <ToastContainer
               position='bottom-center'
               autoClose={1400}
@@ -188,19 +217,6 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               draggable
               pauseOnHover
             />
-            {cart?.total_items > 0 ? (
-              <Link href='/store/cart' passHref>
-                <a
-                  className={
-                    'border text-center border-blue text-blue rounded-lg cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-blue text-xl font-bold mb-8 mt-2 md:mt-4 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out '
-                  }
-                >
-                  check out →
-                </a>
-              </Link>
-            ) : (
-              ''
-            )}
 
             <div className=' md:hidden w-full  flex flex-row justify-start text-left  '>
               <div>
