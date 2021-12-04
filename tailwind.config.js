@@ -32,6 +32,7 @@ module.exports = {
       },
       yellow: 'rgb(250, 216, 105)', //#F5D77A
       pink: {
+        extralight: '#FFEFFF',
         light: 'rgb(241, 231, 243)',
         DEFAULT: 'rgb(255, 163, 204)', //#F2A8CA
       },

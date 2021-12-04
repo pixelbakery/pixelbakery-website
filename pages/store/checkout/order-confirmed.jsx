@@ -62,8 +62,11 @@ function SubmissionConfirmation() {
             </li>
             <li className='my-2'>
               {' '}
-              <Link href={'/about'} passHref>
-                <a className='text-blue underline text-md'> Daydream about us →</a>
+              <Link href={'https://twitch.tv/pixelbakery'} passHref>
+                <a className='text-blue underline text-md' target='_blank' rel='noreferrer'>
+                  {' '}
+                  Daydream about us →
+                </a>
               </Link>
             </li>
             <li className='my-2'>
