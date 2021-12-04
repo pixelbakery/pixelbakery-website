@@ -15,6 +15,7 @@ export default function BillingAddressForm({}) {
         type='text'
         name='billing.address'
         placeholder='Address'
+        autoComplete='street-address'
         onChange={handleChange}
         onBlur={handleBlur}
         value={(values as any).billing.address}
@@ -27,9 +28,11 @@ export default function BillingAddressForm({}) {
           placeholder='City'
           onChange={handleChange}
           onBlur={handleBlur}
+          autoComplete='address-level2'
           value={(values as any).billing.city}
+          className='w-2/3'
         />
-        <select placeholder='state' className='flex-1'>
+        <select placeholder='state' autoComplete='address-level1' className='w-1/3  '>
           {Object.keys(states).map((s) => (
             <option key={s} value={s}>
               {(states as any)[s]}
@@ -44,6 +47,7 @@ export default function BillingAddressForm({}) {
         onChange={handleChange}
         onBlur={handleBlur}
         value={(values as any).billing.postalCode}
+        autoComplete='postal-code'
       />
     </div>
   )
