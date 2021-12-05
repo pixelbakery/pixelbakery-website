@@ -61,7 +61,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
         <p className='text-left text-wine text-md'>
           Adjust the slider below to change the price. All proceeds go to the{' '}
           <Link href='https://smallvoices.org' passHref>
-            <a target='_blank' ref='noOpener' className='text-peach underline'>
+            <a target='_blank' className='text-peach underline'>
               Child Advocacy Center
             </a>
           </Link>

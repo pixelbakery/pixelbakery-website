@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { GetServerSideProps, NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import Navigation from '../../../components/Navigation'
@@ -12,6 +13,8 @@ import Head from 'next/head'
 import cs from 'classnames'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ReactGA from 'react-ga4'
+ReactGA.send('pageview')
 
 export let getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -25,9 +28,10 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 let currentVariant = 'select'
-function Test(one) {
-  currentVariant = one
-  console.log(currentVariant)
+
+// Lets the Add  to Cart button know if it needs to wait for a variant to be selected, and if there's a variant at all.
+function CanIAddToCart(variantId) {
+  currentVariant = variantId
 }
 let StoreProduct: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
@@ -36,22 +40,11 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
 
   const [variant, setVariant] = useState({})
 
-  // TESTING
-  // configuring objects for React context providers
-
-  // console.log(currentVariant.name)
-  // END TESTING
-
-  // function chosenVariant(groupId, variantId) {
-  //   console.log('GROUP ID: ' + groupId)
-  //   console.log(numbers)
-  // }
-
   const onVariantChange = (groupId, variantId) => {
     setVariant({
       [groupId]: variantId,
     })
-    Test(variantId)
+    CanIAddToCart(variantId)
     // chosenVariant(groupId, variantId)
   }
 
@@ -65,7 +58,9 @@ let StoreProduct: NextPage = ({ product }: { product: any }) => {
       ...variant,
     })
     notify()
+
     refetch()
+    CanIAddToCart('select')
   }
   // console.log('checkout button enabled? ' + soldOut)
 
