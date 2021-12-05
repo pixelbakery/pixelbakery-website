@@ -341,7 +341,12 @@ let Checkout: NextPage = () => {
                   pwyw={pwyw}
                   cost={pwyw}
                   onPwywChange={onPwywChange}
+<<<<<<< HEAD
                   onCostChange={onPwywChange}
+=======
+                  cost={0}
+                  onCostChange={undefined}
+>>>>>>> 4136ff08ede5cdbd44a16165a83267a769ad8a4d
                 />
               </div>
               {/* End Cart Details */}
