@@ -1,12 +1,12 @@
 /* eslint-disable react/no-string-refs */
-import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import { Formik } from 'formik'
+import React, { useEffect, useMemo, useState } from 'react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useMemo, useState } from 'react'
+import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+import { Formik } from 'formik'
 import { useDebounce } from 'use-debounce'
 import FormikEffect from '../../../components/FormikEffect'
 import LoadingModal from '../../../components/LoadingModal'
@@ -27,6 +27,19 @@ export type CheckoutSchema = {
   lastName: string
   email: string
   phoneNumber: string
+  selected_options: [
+    {
+      group_id: string
+      group_name: string
+      option_id: string
+      option_name: string
+    },
+  ]
+  variant: {
+    id: string
+    options: string
+  }
+
   shipping: {
     address: string
     city: string
@@ -326,7 +339,9 @@ let Checkout: NextPage = () => {
                   pwywMin={pwywMin}
                   pwywMax={pwywMax}
                   pwyw={pwyw}
+                  cost={pwyw}
                   onPwywChange={onPwywChange}
+                  onCostChange={onPwywChange}
                 />
               </div>
               {/* End Cart Details */}
