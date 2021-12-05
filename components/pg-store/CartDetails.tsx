@@ -22,7 +22,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
 
   let actualTotal = totalDue.raw + tax?.amount?.raw
 
-  console.log({ subtotal, total, totalWithTax, totalDue, tax })
+  // console.log({ subtotal, total, totalWithTax, totalDue, tax })
 
   // if (customer_set_price && customer_set_price > 0) {
   //   actualTotal = customer_set_price + tax.amount.raw
@@ -61,7 +61,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
         <p className='text-left text-wine text-md'>
           Adjust the slider below to change the price. All proceeds go to the{' '}
           <Link href='https://smallvoices.org' passHref>
-            <a target='_blank' ref='noOpener' className='text-peach underline'>
+            <a target='_blank' className='text-peach underline'>
               Child Advocacy Center
             </a>
           </Link>
@@ -90,7 +90,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
         </span>
       </div>
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
-      <p className='text-wine text-right italic py-2'>tax {tax.amount.formatted_with_symbol}</p>
+      <p className='text-wine text-right italic py-2'>tax {tax?.amount.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2 text-opacity-60'>
         taxes will be calculated after you enter a billing address
       </p>
