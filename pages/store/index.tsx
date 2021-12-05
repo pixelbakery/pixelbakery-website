@@ -125,7 +125,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             </p>
             <p className='my-9 italic'>
               <span className='text-pink font-bold'>
-                Also, why not make it a week instead of a day?{' '}
+                Also, why not make it a month instead of a day?{' '}
               </span>
               No need to conform to social constructs, ya kno?
             </p>
