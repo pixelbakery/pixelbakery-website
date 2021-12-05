@@ -74,19 +74,22 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           min={pwywMin}
           max={pwywMax}
           value={Number(pwyw ?? 0).toFixed(2)}
+          // value={16}
           onChange={onPwywChange}
           className='bg-blue slider w-full md:w-auto md:flex-grow'
         />
         <span>
-          <span className='font-medium text-xl text-wine mr-1'>$</span>
-          {/* TODO: if a user manually enters a number less than 8, it'll accept that price */}
-          <input
+          <span className='font-medium text-xl text-wine mr-1'>
+            ${Number(pwyw ?? 0).toFixed(2)}
+          </span>
+
+          {/* <input
             className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
             type='number'
             min={pwywMin}
             value={Number(pwyw ?? 0).toFixed(2)}
             onChange={onPwywChange}
-          />
+          /> */}
         </span>
       </div>
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
