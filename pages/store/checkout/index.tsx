@@ -101,7 +101,7 @@ let Checkout: NextPage = () => {
     if (customer_set_price) {
       checkPwyw({ customer_set_price: customer_set_price.toString() })
     }
-  }, [customer_set_price])
+  }, [checkPwyw, customer_set_price])
 
   useEffect(() => {
     let raw = live?.pay_what_you_want?.customer_set_price?.raw
