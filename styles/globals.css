@@ -62,13 +62,14 @@
   }
 
   .slider::-webkit-slider-thumb {
-    @apply bg-blue cursor-pointer h-4 w-4 appearance-none rounded-full;
+    @apply bg-blue cursor-pointer h-8 w-4 appearance-none rounded-lg;
     -webkit-appearance: none;
   }
 
   .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+    @apply w-4 h-4;
+    /* width: 25px;
+    height: 25px; */
     background: #04aa6d;
     cursor: pointer;
   }
