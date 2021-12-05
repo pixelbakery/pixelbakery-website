@@ -5,6 +5,11 @@ module.exports = {
       {
         source: '/',
         destination: '/store',
+        permanent: false,
+      },
+      {
+        source: '/store/product',
+        destination: '/store',
         permanent: true,
       },
     ]
