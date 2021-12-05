@@ -5,8 +5,8 @@ import { useCheckoutState } from './useCheckoutState'
 export default function useTotals(): {
   subtotal: Price
   total: Price
-  totalWithTax: Price
   totalDue: Price
+  totalWithTax: Price
   tax: OrderTax
 } {
   const { checkout, live } = useCheckoutState()
@@ -20,8 +20,8 @@ export default function useTotals(): {
   return {
     subtotal,
     total,
-    totalWithTax,
     totalDue,
+    totalWithTax,
     tax,
   }
 }
