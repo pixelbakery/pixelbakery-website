@@ -22,7 +22,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
 
   let actualTotal = totalDue.raw + tax?.amount?.raw
 
-  console.log({ subtotal, total, totalWithTax, totalDue, tax })
+  // console.log({ subtotal, total, totalWithTax, totalDue, tax })
 
   // if (customer_set_price && customer_set_price > 0) {
   //   actualTotal = customer_set_price + tax.amount.raw
@@ -35,7 +35,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
   // const shipping = live?.shipping?.price?.raw ?? 0
 
   return (
-    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last'>
+    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last rounded-lg'>
       <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
         your cart
       </p>
@@ -90,7 +90,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
         </span>
       </div>
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
-      <p className='text-wine text-right italic py-2'>tax {tax.amount.formatted_with_symbol}</p>
+      <p className='text-wine text-right italic py-2'>tax {tax?.amount.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2 text-opacity-60'>
         taxes will be calculated after you enter a billing address
       </p>
