@@ -20,7 +20,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
 
   const shipping = useShippingSummary()
 
-  let actualTotal = totalDue?.raw + tax?.amount?.raw
+  let actualTotal = totalDue?.raw + live.tax?.amount?.raw
 
   // console.log({ subtotal, total, totalWithTax, totalDue, tax })
 
@@ -67,6 +67,12 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           </Link>
           .
         </p>
+        <p className='font-semibold text-md mt-4'>
+          NOTE: Currently, you have to move the slider a little bit to successfully check out. If
+          you'd like to pay the minimum price, simply slide it back all the way to the left.
+          Additionally, if you change any of the information above, you'll have to re-slide your
+          amount. idk man this is hard.
+        </p>
       </div>
       <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>
         <input
@@ -74,7 +80,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           min={pwywMin}
           max={pwywMax}
           // defaultValue={pwywMin + 1}
-          value={Number(pwywMin)}
+          value={Number(pwyw ?? 0).toFixed(2)}
           // value={16}
           onChange={onPwywChange}
           className='bg-blue slider w-full md:w-auto md:flex-grow'
@@ -101,6 +107,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
       <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
         ${actualTotal.toFixed(2)}
       </h3>
+      {/* <h3> {totalWithTax.raw}</h3> */}
     </div>
   )
 }
