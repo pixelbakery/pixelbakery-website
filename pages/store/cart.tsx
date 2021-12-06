@@ -10,8 +10,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { useQueryClient } from 'react-query'
 import Head from 'next/head'
-import Slider, { Range } from 'rc-slider'
-import 'rc-slider/assets/index.css'
 let CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
 

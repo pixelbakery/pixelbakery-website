@@ -20,7 +20,7 @@ export default function useShippingSubdivisions(countryCode: string) {
     commerce.services
       .localeListShippingSubdivisions(checkout.id, countryCode)
       .then((response: any) => setSubdivisions(response.subdivisions))
-  }, [countryCode])
+  }, [checkout, countryCode])
 
   return subdivisions
 }
