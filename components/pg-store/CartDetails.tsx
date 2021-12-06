@@ -20,7 +20,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
 
   const shipping = useShippingSummary()
 
-  let actualTotal = totalDue.raw + tax?.amount?.raw
+  let actualTotal = totalDue?.raw + tax?.amount?.raw
 
   // console.log({ subtotal, total, totalWithTax, totalDue, tax })
 
@@ -35,7 +35,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
   // const shipping = live?.shipping?.price?.raw ?? 0
 
   return (
-    <div className='col-span-5 lg:col-span-2 lg:sticky top-12 px-4 md:px-8 py-8 bg-blue-light order-first lg:order-last rounded-lg'>
+    <div className='mx-auto col-span-5 lg:col-span-5 lg:max-w-2xl lg:sticky top-12 px-4 md:px-20 py-8 lg:py-20 bg-blue-light order-last lg:order-last rounded-lg'>
       <p className='text-blue-dark text-2xl font-bold mb-12 border-b-4 border-blue-dark pb-2 px-2 '>
         your cart
       </p>
@@ -73,7 +73,8 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           type='range'
           min={pwywMin}
           max={pwywMax}
-          value={Number(pwyw ?? 0).toFixed(2)}
+          // defaultValue={pwywMin + 1}
+          value={Number(pwywMin)}
           // value={16}
           onChange={onPwywChange}
           className='bg-blue slider w-full md:w-auto md:flex-grow'
