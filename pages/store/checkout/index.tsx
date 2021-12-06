@@ -101,7 +101,7 @@ let Checkout: NextPage = () => {
     if (customer_set_price) {
       checkPwyw({ customer_set_price: customer_set_price.toString() })
     }
-  }, [checkPwyw, customer_set_price])
+  }, [customer_set_price])
 
   useEffect(() => {
     let raw = live?.pay_what_you_want?.customer_set_price?.raw
@@ -244,7 +244,7 @@ let Checkout: NextPage = () => {
             <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
           </Head>
           {cart?.total_items > 0 ? (
-            <section className='mx-auto max-w-6xl px-3 md:px-12'>
+            <section className='mx-auto max-w-4xl px-3 md:px-12'>
               <LoadingModal visible={loading} />
               <header className='mb-6 pb-8 mt-12'>
                 <div id='breadcrumbs' className='w-full text-blue  text-sm '>
@@ -261,7 +261,7 @@ let Checkout: NextPage = () => {
                 <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment & Shipping</h1>
               </header>
               <div className='w-full grid grid-cols-5 items-start gap-12 '>
-                <div className='col-span-5 lg:col-span-3'>
+                <div className='col-span-5 lg:col-span-5'>
                   {/* 
 
                   Shipping info
@@ -332,16 +332,14 @@ let Checkout: NextPage = () => {
                   </div>
                 </div>
 
-                {/* 
-                Cart Details 
-              */}
                 <CartDetails
+                  value={pwywMin}
                   pwywMin={pwywMin}
                   pwywMax={pwywMax}
                   pwyw={pwyw}
                   cost={pwyw}
                   onPwywChange={onPwywChange}
-                  onCostChange={undefined}
+                  onCostChange={onPwywChange}
                 />
               </div>
               {/* End Cart Details */}
