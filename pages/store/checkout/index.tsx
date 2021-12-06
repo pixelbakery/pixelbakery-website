@@ -61,8 +61,17 @@ let Checkout: NextPage = () => {
     fetchCart()
       .then(fetchToken)
       .then(() => {})
-  }, [])
+  }, [fetchCart, fetchToken])
 
+  useEffect(() => {
+    let raw = live?.pay_what_you_want?.customer_set_price?.raw
+    // if (raw !== 0) {
+    setPwyw(raw)
+    //   checkPwyw({ customer_set_price: raw.toString() })
+    // }
+  }, [live?.pay_what_you_want?.customer_set_price?.raw])
+
+  const checkPwyw = useCheckPwyw()
   const [shippingDetails, setShippingDetails] = useState<CheckoutSchema['shipping']>()
 
   const [shippingMethod, setShippingMethod] = useState<any>({})
@@ -72,28 +81,26 @@ let Checkout: NextPage = () => {
   const stripe = useStripe()
   const elements = useElements()
 
-  const setShippingOption = useSetShippingOption()
-  const setTaxZone = useSetTaxZone()
-  const checkPwyw = useCheckPwyw()
-  const shippingOptions = useShippingOptions('US', shippingDetails?.state ?? 'US-NE')
-
-  const onShippingChange = async (evt: any) => {
-    // const opt = shippingOptions?.find((m) => m.id === evt.target.value)
-    setShippingMethod(evt.target.value ?? null)
-    setShippingOption(evt.target.value, 'US', shippingDetails?.state ?? 'US-NE')
-  }
-
-  const [pwyw, setPwyw] = useState(live?.pay_what_you_want?.minimum?.raw ?? 0)
-
   const pwywMax = cart?.line_items?.reduce((prev, curr) => {
     return prev + curr.quantity * (curr.price.raw * 10)
   }, 0)
   const pwywMin = live?.pay_what_you_want.minimum.raw
 
+  const [pwyw, setPwyw] = useState(live?.pay_what_you_want?.minimum?.raw ?? 0)
   const onPwywChange = (evt) => {
     setPwyw(evt.target.value)
   }
 
+  const setShippingOption = useSetShippingOption()
+  const setTaxZone = useSetTaxZone()
+
+  const shippingOptions = useShippingOptions('US', shippingDetails?.state ?? 'US-NE')
+
+  const onShippingChange = async (evt) => {
+    // const opt = shippingOptions?.find((m) => m.id === evt.target.value)
+    setShippingMethod(evt.target.value ?? null)
+    setShippingOption(evt.target.value, 'US', shippingDetails?.state ?? 'US-NE')
+  }
   const [customer_set_price] = useDebounce(pwyw, 300)
 
   // On change of our slider, update PWYW
@@ -101,15 +108,7 @@ let Checkout: NextPage = () => {
     if (customer_set_price) {
       checkPwyw({ customer_set_price: customer_set_price.toString() })
     }
-  }, [customer_set_price])
-
-  useEffect(() => {
-    let raw = live?.pay_what_you_want?.customer_set_price?.raw
-    // if (raw !== 0) {
-    setPwyw(raw)
-    //   checkPwyw({ customer_set_price: raw.toString() })
-    // }
-  }, [live?.pay_what_you_want?.customer_set_price?.raw])
+  }, [checkPwyw, customer_set_price])
 
   const onSubmit = async (values) => {
     if (!stripe || !elements) {
@@ -146,7 +145,8 @@ let Checkout: NextPage = () => {
 
       if (error) {
         setLoading(false)
-        alert('An error occurred while processing your payment: ' + error.message)
+        if (error.customer.phone)
+          alert('An error occurred while processing your payment: ' + error.message)
         return
       }
 
@@ -162,18 +162,20 @@ let Checkout: NextPage = () => {
 
       router.push('/store/checkout/order-confirmed')
     } catch (res) {
-      // if (
-      //   res.statusCode !== 402 ||
-      //   res.data.error.type !== "requires_verification"
-      // ) {
-      //   setCheckoutError(res.data.error.message);
-      //   setProcessing(false);
-      //   return;
-      // }
+      if (res.data.error.type === 'unprocessable_entity') {
+        alert(
+          'An error occurred while processing your payment. Please double check that you entered everything correctly',
+        )
+        setLoading(false)
+        return
+      }
+      if (res.statusCode !== 402 || res.data.error.type !== 'requires_verification') {
+        return
+      }
 
       // const { error, paymentIntent } = await stripe.handleCardAction(
       //   res.data.error.param
-      // );
+      // );s
       alert('An error occurred while processing your payment: ' + res?.message)
       console.log(res)
     }
@@ -196,7 +198,7 @@ let Checkout: NextPage = () => {
           postal_zip_code: nextValues.shipping.postalCode,
         })
         // if (valid) {
-        //   checkPWYW(live?.pay_what_you_want?.customer_set_price?.raw)
+        //   checkPwyw(Number(live?.pay_what_you_want?.customer_set_price?.raw))
         // }
       }
     }
@@ -337,9 +339,9 @@ let Checkout: NextPage = () => {
                   pwywMin={pwywMin}
                   pwywMax={pwywMax}
                   pwyw={pwyw}
-                  cost={pwyw}
+                  // cost={pwyw}
                   onPwywChange={onPwywChange}
-                  onCostChange={onPwywChange}
+                  // onCostChange={onPwywChange}
                 />
               </div>
               {/* End Cart Details */}
