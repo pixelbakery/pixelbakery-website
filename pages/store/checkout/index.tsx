@@ -312,7 +312,8 @@ let Checkout: NextPage = () => {
                       <option value={''}>select</option>
                       {shippingOptions?.map((opt) => (
                         <option value={opt.id} key={opt.id}>
-                          {opt.description} {opt.price.formatted_with_symbol}
+                          {opt.description}
+                          {/* {opt.description} {opt.price.formatted_with_symbol} */}
                         </option>
                       ))}
                     </select>
