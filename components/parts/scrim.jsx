@@ -3,7 +3,9 @@ import next from 'next'
 
 function ComponentName() {
   return (
-    <div className='absolute w-100 h-100 bg-gradient-to-t  from-wine via-transparent opacity-25'></div>
+    <div
+      className={'absolute w-100 h-100 bg-gradient-to-t from-wine via-transparent opacity-100'}
+    ></div>
   )
 }
 
