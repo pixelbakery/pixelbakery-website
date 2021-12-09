@@ -35,7 +35,7 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className='px-4'>
+        <body className='px-4 bg-egg'>
           <Main />
           <Footer />
           <NextScript />
