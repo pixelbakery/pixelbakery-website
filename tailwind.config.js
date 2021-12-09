@@ -14,6 +14,10 @@ module.exports = {
         102: '1.02',
         103: '1.03',
       },
+      borderWidth: {
+        5: '5px',
+        6: '6px',
+      },
     },
     colors: {
       transparent: 'transparent',
