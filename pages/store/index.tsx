@@ -102,7 +102,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               2021 giving <span className='line-through'>tuesday</span> month
             </p>
           </div>
-          <div className='lg:pl-32 mt-12 lg:mt-16 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
+          <div className='lg:pl-32 mt-12 lg:mt-0 cols-span-1 lg:col-span-6  px-4 text-pink-light font-bold text-lg lg:text-2xl'>
             <p className=' mb-9'>
               In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases
               made from our shop to our friends at the
