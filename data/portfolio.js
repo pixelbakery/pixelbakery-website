@@ -1,0 +1,137 @@
+/* eslint-disable import/no-anonymous-default-export */
+
+export default [
+  {
+    client: 'Karma Nuts',
+    name: 'Get Your Nut',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'SOLA:',
+    name: 'Less Carbs, Less Worries',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Sola: Less Carbs, Less Worries',
+    url: '/',
+    isotopeTag: '.film .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Pupbox:',
+    name: 'Social Media Promos',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.film .social',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Oxbow Animal Health:',
+    name: 'Hay Any Way',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'SoulPancake:',
+    name: 'America to Me',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'First Honey:',
+    name: 'Bee Better',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Doane University:',
+    name: 'College on a Hill',
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.film .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+  {
+    client: 'Morgan AFR:',
+    name: 'The Firefighting Robot Bear',
+
+    previewImg: '/img/work/KN_ECommPromo_End.gif',
+    previewImgAlt: 'Karma Nuts: Get Your Nut',
+    url: '/',
+    isotopeTag: '.animation .concepting',
+    tags: ['animation', 'creative concepting', 'art direction'],
+  },
+]
