@@ -4,8 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PortfolioCard from './work-portfolio-card'
 import projects from '../../data/portfolio'
-import Pill from '../../components/parts/pill'
-import Scrim from '../../components/parts/scrim'
 
 export default function Portfolio() {
   const featuredProjNo = 4
@@ -54,9 +52,9 @@ export default function Portfolio() {
         <button data-filter='.social'>Social Media Kitouts</button>
       </div>
 
-      <div className='grid grid-cols-2 gap-4'>{getFeaturedWork()}</div>
+      <div className='grid grid-cols-2 gap-8'>{getFeaturedWork()}</div>
 
-      <div className='my-4 grid grid-cols-3 gap-4'>{getOtherWork()}</div>
+      <div className='my-4 grid grid-cols-3 gap-8'>{getOtherWork()}</div>
     </section>
   )
 }
