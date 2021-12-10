@@ -12,7 +12,7 @@ const FormikEffect = ({ onChange = noop }: any) => {
     if (prevValues) {
       onChange({ prevValues, nextValues: values })
     }
-  }, [values])
+  }, [onChange, prevValues, values])
 
   return null
 }
