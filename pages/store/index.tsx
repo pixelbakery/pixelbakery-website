@@ -44,7 +44,9 @@ let StorePage: NextPage = ({ products }: any) => {
       '+=.62',
     )
     tl_loadingModal.play
-    return () => {}
+    return () => {
+      tl_loadingModal.kill()
+    }
   }, [])
   // END GSAP
 
