@@ -43,7 +43,7 @@ export default function Pill({ text, bgColor, textColor, size }) {
   }
 
   let getSize = setSize(size)
-  console.log('x: ' + px + '  ' + 'y: ' + py + ' weight:' + fontWeight + ' size:' + textSize)
+  // console.log('x: ' + px + '  ' + 'y: ' + py + ' weight:' + fontWeight + ' size:' + textSize)
 
   const addSize = ' ' + px + ' ' + py
   const addBgColor = ' bg-' + bgColor
