@@ -5,7 +5,7 @@ import Pill from '../../components/parts/pill'
 import Scrim from '../../components/parts/scrim'
 
 export default function ServiceCard(props) {
-  console.log('assdfgassfgasdg')
+  // console.log('assdfgassfgasdg')
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
   return (
