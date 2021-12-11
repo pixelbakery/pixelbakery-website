@@ -24,6 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@heroicons/react": "^1.0.5",
+    "@netlify/plugin-nextjs": "^3.9.2",
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.21.1",
     "@tailwindcss/aspect-ratio": "^0.3.0",
