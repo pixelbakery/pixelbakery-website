@@ -71,9 +71,9 @@ export default function Navbar() {
       <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-between'>
         <NavLogo />
         <div className='pr-8  h-full flex'>
-          <NavTextLink id={'nav-link-1'} url={'work'} text={'what we do'} />
-          <NavTextLink id={'nav-link-2'} url={'about'} text={'who we are'} />
-          <NavButton id={'nav-link-3'} url={'onboarding'} text={'start a project'} />
+          <NavTextLink id={'nav-link-1'} url={'/work'} text={'what we do'} />
+          <NavTextLink id={'nav-link-2'} url={'/about'} text={'who we are'} />
+          <NavButton id={'nav-link-3'} url={'/onboarding'} text={'start a project'} />
           <HamburgerNav />
         </div>
       </div>

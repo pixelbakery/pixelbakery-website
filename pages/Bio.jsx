@@ -55,7 +55,7 @@ function Team() {
         setBio(obj.bio)
       }
     }
-  })
+  }, [id])
 
   return (
     <main className='content'>

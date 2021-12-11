@@ -10,7 +10,6 @@ import SocialLinks from '../parts/socialOptions'
 
 import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
-import wordsOfEncouragement from '../../data/wordsOfEncouragement'
 
 export let getServerSideProps = () => {}
 
@@ -76,7 +75,7 @@ export let Footer: NextPage = ({}) => {
 
           <div className='flex flex-col justify-between h-full'>
             <div className='text-center mb-4'>
-              <HappyCard happyitem={wordsOfEncouragement} />
+              <HappyCard />
             </div>
             <div className='w-full py-4 my-3'>
               <div className='w-full' id='footer-social'>

@@ -1,11 +1,18 @@
 import React from 'react'
+import next from 'next'
+import happyItem from '../../data/wordsOfEncouragement'
 
-export default function HappyCard({ happyitem }) {
-  let len = happyitem.length
-  let randItem = Math.floor(Math.random() * len)
+export default function HappyCard() {
+  const randomQuote = () => {
+    let randomIndex = Math.floor(Math.random() * happyItem.length)
+    return happyItem[randomIndex].text
+  }
+
   return (
-    <div>
-      <p className='text-6xl italic font-black text-cream'>{happyitem[randItem].text}</p>
+    <div suppressHydrationWarning>
+      <p suppressHydrationWarning className='text-6xl italic font-black text-cream'>
+        {randomQuote()}
+      </p>
     </div>
   )
 }
