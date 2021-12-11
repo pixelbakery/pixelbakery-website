@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import faq from '../../data/faq'
-import GSAP from 'gsap'
+
 import FAQbox from './about-faq-card'
 import PageSection from '../PageSection'
 

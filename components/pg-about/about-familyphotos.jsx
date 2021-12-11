@@ -41,7 +41,13 @@ class Carousel extends React.Component {
                   key={photo.name}
                 >
                   <div>
-                    <Image className='object-center object-cover w-full h-full' src={photo.url} />
+                    <Image
+                      alt={photo.name}
+                      layout='fill'
+                      objectFit='cover'
+                      className='object-center object-cover w-full h-full'
+                      src={photo.url}
+                    />
                   </div>
                 </div>
               ))}
