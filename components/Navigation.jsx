@@ -5,6 +5,7 @@ import gsap from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import HamburgerNav from './nav/Nav-HamburgerMenu'
 import NavLogo from './nav/Nav-NavLogo'
+import FullscreenMenu from './nav/nav-FullscreenMenu'
 import { NavButton, NavTextLink } from './nav/Nav-NavLinks'
 export default function Navbar() {
   gsap.registerPlugin(ScrollTrigger)
@@ -66,17 +67,17 @@ export default function Navbar() {
   })
 
   return (
-    <div>
-      <div className='pointer-events-none fixed w-full top-0 z-20 mt-8 px-4 flex justify-between'>
+    <div className=''>
+      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-between'>
         <NavLogo />
         <div className='pr-8  h-full flex'>
           <NavTextLink id={'nav-link-1'} url={'work'} text={'what we do'} />
           <NavTextLink id={'nav-link-2'} url={'about'} text={'who we are'} />
           <NavButton id={'nav-link-3'} url={'onboarding'} text={'start a project'} />
-
           <HamburgerNav />
         </div>
       </div>
+
       <nav className=' fixed w-full flex justify-center'>
         <Link href={'/sitemap'}>
           <a className='underline pointer-events-auto'>Sitemap</a>
