@@ -1,6 +1,6 @@
 import React from 'react'
 import { RosterBio } from '../../data/roster'
-
+import Image from 'next/image'
 export default function TeamBio({
   id,
   name,
@@ -31,7 +31,14 @@ export default function TeamBio({
         <div className='self-center max-w-6xl grid grid-cols-2 gap-16'>
           <div className=''>
             <div className='px-12'>
-              <img src={image_headshot} />
+              <Image
+                blurDataURL='true'
+                layout='fill'
+                objectFit='cover'
+                alt={name}
+                quality={80}
+                src={image_headshot}
+              />
             </div>
           </div>
           <div className='max-w-lg'>

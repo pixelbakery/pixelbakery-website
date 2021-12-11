@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from 'next'
-import Btn from '../components/parts/button-filled'
-import Pill from '../components/parts/pill'
+import Link from 'next/link'
+import Btn from '../../components/parts/button-filled'
+import Pill from '../../components/parts/pill'
+import Image from 'next/image'
 
 export default function Recipe() {
   return (
@@ -23,11 +24,15 @@ export default function Recipe() {
               </div>
             </div>
             <div className='w-full flex mt-12 mb-8'>
-              <Link href={'/jordan_lambrecht'}>
-                <img
-                  className='rounded-full h-16 w-16 flex items-center justify-center'
-                  src='./src/img/author2.png'
+              <Link href={'/jordan_lambrecht'} passHref>
+                <Image
+                  blurDataURL='true'
+                  layout='fill'
+                  objectFit='cover'
                   alt=''
+                  quality={80}
+                  className='rounded-full h-16 w-16 flex items-center justify-center'
+                  src='/img/author2.png'
                 />
               </Link>
               <div className='ml-8 h-16 flex flex-col justify-center'>
@@ -36,8 +41,8 @@ export default function Recipe() {
                 </div>
                 <div className='text-sm text-wine'>
                   Written by the one and only{' '}
-                  <Link href='/' className='text-peach'>
-                    Bergen Johnston
+                  <Link href='/' passHref>
+                    <a className='text-peach'> Bergen Johnston</a>
                   </Link>
                 </div>
               </div>
@@ -46,7 +51,7 @@ export default function Recipe() {
         </section>
 
         <div className=' mb-24 md:max-w-6xl mx-auto  '>
-          <img className='apsect-w-16 aspect-h-9' src='./src/img/blogheader.png' alt='' />
+          <Image className='apsect-w-16 aspect-h-9' src='/img/blogheader.png' alt='' />
         </div>
 
         <section className='my-12 md:max-w-3xl mx-auto' id='blog-body-guts '>
@@ -123,11 +128,16 @@ export default function Recipe() {
         <div className='md:max-w-6xl mx-auto'>
           <h3 className='text-pink text-4xl'>Related Posts</h3>
           <div className='grid grid-cols-3 gap-8 my-8 '>
-            <Link href={'/'}>
+            <Link href={'/'} passHref>
               <article className='bg-white w-full aspect-h-4 pb-6 rounded transform hover:scale-95'>
                 <div className=' w-full aspect-h-9 p-2 mb-4 rounded-md overflow-hidden'>
-                  <img
-                    src='./src/img/blogheader.png'
+                  <Image
+                    blurDataURL='true'
+                    layout='fill'
+                    objectFit='cover'
+                    alt=''
+                    quality={80}
+                    src='img/blogheader.png'
                     className='w-full h-full object-cover object-center rounded'
                   />
                 </div>
@@ -138,11 +148,16 @@ export default function Recipe() {
                 </p>
               </article>
             </Link>
-            <Link href={'/'}>
+            <Link href={'/'} passHref>
               <article className='bg-white w-full aspect-h-4 pb-6 rounded '>
                 <div className=' w-full aspect-h-9 p-2 mb-4 rounded-md overflow-hidden'>
-                  <img
-                    src='./src/img/blogheader.png'
+                  <Image
+                    blurDataURL='true'
+                    layout='fill'
+                    objectFit='cover'
+                    alt=''
+                    quality={80}
+                    src='/img/blogheader.png'
                     className='w-full h-full object-cover object-center rounded'
                   />
                 </div>
@@ -153,11 +168,14 @@ export default function Recipe() {
                 </p>
               </article>
             </Link>
-            <Link href={'/'}>
+            <Link href={'/'} passHref>
               <article className='bg-white w-full aspect-h-4 pb-6 rounded '>
                 <div className=' w-full aspect-h-9 p-2 mb-4 rounded-md overflow-hidden'>
-                  <img
-                    src='./src/img/blogheader.png'
+                  <Image
+                    alt={'blog header karley johnson'}
+                    src='/img/blogheader.png'
+                    layout='fill'
+                    objectFit='cover'
                     className='w-full h-full object-cover object-center rounded'
                   />
                 </div>
