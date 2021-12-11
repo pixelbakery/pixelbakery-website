@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function EducationProject() {
   useEffect(() => {
@@ -11,7 +12,11 @@ function EducationProject() {
     <main id='' className=''>
       <section className='lander my-4 grid grid-cols-2'>
         <div className='col-span-1 h-full w-full overflow-hidden'>
-          <img
+          <Image
+            blurDataURL='true'
+            quality={90}
+            layout='fill'
+            objectFit='cover'
             src='/img/polaroid.png'
             className='object-cover object-center w-full h-full'
             alt='polaroid 3d model made in cinema 4d'
@@ -35,14 +40,16 @@ function EducationProject() {
                 intermandated niche markets with equity invested infomediaries. Intrinsicly pursue
                 orthogonal growth strategies after multimedia based innovation.{' '}
               </p>
-              <Link href={'/'} className={'py-3 rounded-sm px-6 w-full text-center bg-blue'}>
-                <div className='text-cream font-extrabold text-xl lowercase flex '>
-                  <div className='flex-grow flex flex-col justify-center'>download</div>
+              <Link href={'/'} passHref>
+                <a className={'py-3 rounded-sm px-6 w-full text-center bg-blue'}>
+                  <div className='text-cream font-extrabold text-xl lowercase flex '>
+                    <div className='flex-grow flex flex-col justify-center'>download</div>
 
-                  <i className='h-12 w-12 flex flex-col justify-center'>
-                    <ChevronRightIcon className='  text-color' />
-                  </i>
-                </div>
+                    <i className='h-12 w-12 flex flex-col justify-center'>
+                      <ChevronRightIcon className='  text-color' />
+                    </i>
+                  </div>
+                </a>
               </Link>
 
               <a className='block text-blue underline'>

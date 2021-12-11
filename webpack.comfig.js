@@ -9,7 +9,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
         query: {
@@ -22,6 +22,6 @@ module.exports = {
     alias: {
       myApp: path.resolve(__dirname, 'src'),
     },
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.tsx'],
   },
 }
