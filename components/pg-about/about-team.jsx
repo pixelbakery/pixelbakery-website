@@ -1,5 +1,8 @@
 import React from 'react'
 import roster from '../../data/roster'
+import next from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
 
 function Team() {
   return (
@@ -7,11 +10,19 @@ function Team() {
       <div className='grid gap-4 grid-cols-4'>
         {roster.map((value, index) => {
           return (
-            <div key={index} className='w-full aspect-w-3 aspect-h-4'>
-              <a href={`/about/${value['url']}`}>
-                <img className='w-full h-full object-cover' src={value['image_headshot']} />
+            <Link href={`/about/${value['url']}`} key={value.id} passHref>
+              <a className='relative w-full  aspect-w-3 aspect-h-4'>
+                <Image
+                  layout='fill'
+                  objectFit='cover'
+                  blurDataURL={true}
+                  className='w-full h-full object-cover '
+                  quality={60}
+                  alt={value.name}
+                  src={value['image_headshot']}
+                />
               </a>
-            </div>
+            </Link>
           )
         })}
       </div>
