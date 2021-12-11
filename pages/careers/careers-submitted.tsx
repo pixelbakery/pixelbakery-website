@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import Link from 'next'
+import Link from 'next/link'
 
 function SubmissionConfirmation() {
   return (
@@ -46,24 +46,26 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link href={'/careers'} className='text-blue underline text-md'>
-                Back to all job postings →
+              <Link href={'/careers'} passHref>
+                <a className='text-blue underline text-md'> Back to all job postings →</a>
               </Link>
             </li>
             <li className='my-2'>
               {' '}
-              <Link href={'/about'} className='text-blue underline text-md'>
-                Daydream about us →
+              <Link href={'/about'}>
+                <a className='text-blue underline text-md'>Daydream about us →</a>
               </Link>
             </li>
             <li className='my-2'>
               {' '}
-              <a
+              <Link
                 href={'https://youtube.com/playlist?list=PLR7uWMos1NkvOhSzaTR8-0vwc8MDBuylm'}
-                className='text-blue underline text-md hover:text-opacity-80'
+                passHref
               >
-                Watch a playlist of trippy music videos we've curated →
-              </a>
+                <a className='text-blue underline text-md hover:text-opacity-80'>
+                  Watch a playlist of trippy music videos we've curated →
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
