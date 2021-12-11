@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Flickity from 'react-flickity-component'
+import Image from 'next/image'
 import photos from '../../data/about-studioviews'
 
 const flickityOptions = {
@@ -42,7 +43,13 @@ class Carousel extends React.Component {
                   key={photo.name}
                 >
                   <div>
-                    <img className='object-center object-cover w-full h-full' src={photo.url} />
+                    <Image
+                      alt={photo.name}
+                      layout='fill'
+                      objectFit={'cover'}
+                      className='object-center w-full h-full'
+                      src={photo.url}
+                    />
                   </div>
                 </div>
               ))}

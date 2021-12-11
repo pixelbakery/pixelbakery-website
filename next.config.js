@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  productionBrowserSourceMaps: true,
   async redirects() {
     return [
       // {
