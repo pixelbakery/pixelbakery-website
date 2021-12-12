@@ -10,7 +10,7 @@ import recentlyAdded from '../../data/edu-reccentlyAdded'
 //parts
 import Part__RecentlyAdded from '../parts/card-rounded'
 
-function EducationL() {
+function Education_Recent() {
   const getRecentlyAdded = () => {
     return recentlyAdded.map((content) => {
       return (
@@ -43,4 +43,4 @@ function EducationL() {
   )
 }
 
-export default EducationL
+export default Education_Recent

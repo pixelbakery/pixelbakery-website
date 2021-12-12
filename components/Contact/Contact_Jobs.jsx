@@ -1,14 +1,14 @@
 import React from 'react'
 import Button from '../parts/button-filled'
 
-function Jobs() {
+function Contact_Jobs() {
   return (
     <section className='my-4 bg-wine mx-auto py-6'>
       <div className='max-w-6xl mx-auto'>
         <div className='flex flex-wrap'>
           <h2>Looking for a job?</h2>
           <div>
-            <h3>We’re always searching for new family members</h3>
+            <h3>We&apos;re always searching for new family members</h3>
             <p>
               Got what it takes to rise with us? Great! Send us a link to your résumé or portfolio
               to become part of our talent pool.
@@ -24,4 +24,4 @@ function Jobs() {
     </section>
   )
 }
-export default Jobs
+export default Contact_Jobs

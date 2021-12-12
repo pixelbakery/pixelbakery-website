@@ -1,18 +1,11 @@
 import React from 'react'
-import Onboarding from '../components/pg-contact/contact-clients'
-import ContactForm from '../components/pg-contact/contact-contact-form'
-import Jobs from '../components/pg-contact/contact-jobs'
-import Hang from '../components/pg-contact/contact-hang'
+import Onboarding from '../components/Contact/Contact_Clients'
+import ContactForm from '../components/Contact/Contact_ContactForm'
+import Jobs from '../components/Contact/Contact_Jobs'
+import Hang from '../components/Contact/Contact_HangOut'
 
 function Contact() {
-  return (
-    <main className='' id='contact-page'>
-      {/* <Onboarding />
-      <ContactForm />
-      <Jobs />
-      <Hang /> */}
-    </main>
-  )
+  return <main className='' id='contact-page'></main>
 }
 
 export default Contact

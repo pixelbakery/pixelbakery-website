@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
-import { gsap } from 'gsap'
+import React from 'react'
+
 import Link from 'next/link'
 
-function Breadwinners() {
-  useEffect(() => {
-    return () => {}
-  }, [])
-
+function Careers_Breadwinners() {
   return (
-    <Link href={'/'}>
+    <Link href={'/'} passHref>
       <section id='' className='my-4 bg-blue-dark py-12 px-6'>
         <div className='mx-auto max-w-6xl py-4'>
           <h2 className='text-cream text-2xl'>breadwinner program</h2>
@@ -22,4 +18,4 @@ function Breadwinners() {
   )
 }
 
-export default Breadwinners
+export default Careers_Breadwinners

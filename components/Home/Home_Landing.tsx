@@ -1,19 +1,19 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Link from 'next/link'
 import SocialLinks from '../parts/socialOptions'
 import ButtonFilled from '../parts/button-filled'
 import Image from 'next/image'
-
-export default function homeLanding() {
-  //localhost:3000/assets/img/pixelbakery_pattern_blue.svg
-  http: return (
+function Home_Landing() {
+  return (
     <main>
       <section className='lander overflow-hidden w-full my-4 flex'>
         <nav className='w-1/3 max-w-lg bg-pink-light h-full flex flex-col justify-between py-10 px-12 '>
-          <div className='logo-wrapper px-20 w-full text-blue fill-current'>
-            <img
+          <div className='logo-wrapper px-20 w-full aspect-w-1 aspect-w-1 text-blue fill-current'>
+            <Image
+              layout='fill'
+              objectFit='contain'
+              quality={66}
+              blurDataURL={'true'}
               className=' object-center block m-auto object-contain w-full logo-pink'
               src={'/img/pixelbakery-logo-primary.svg'}
               id='home-logo'
@@ -45,7 +45,7 @@ export default function homeLanding() {
                 </li>
                 <li className='my-1'>
                   <Link href={'/recipes'}>
-                    <a className='text-pink font-bold lowercase text-4xl'>mom's recipes</a>
+                    <a className='text-pink font-bold lowercase text-4xl'>mom&apos;s recipes</a>
                   </Link>
                 </li>
                 <li className='my-2'>
@@ -72,16 +72,24 @@ export default function homeLanding() {
             </div>
           </div>
         </nav>
-        <div className='flex-grow pb-pattern ' id='homepage-lander'>
-          <div className=' flex flex-col mx-auto h-1/3 '>
-            <img
-              src={'/img/pixelbakery_boxlogo.svg'}
-              alt='Pixel Bakery Design Studio'
-              className='object-center block m-auto '
-            />
+        <div className='flex-grow pb-pattern h-full' id='homepage-lander'>
+          <div className=' flex flex-col justify-center w-100'>
+            <div className='mx-auto  w-full  h-1/3'>
+              <Image
+                layout='fill'
+                height={'100%'}
+                width={'100%'}
+                quality={66}
+                blurDataURL='true'
+                src={'/img/pixelbakery_boxlogo.svg'}
+                alt='Pixel Bakery Design Studio'
+                className='object-center m-auto '
+              />
+            </div>
           </div>
         </div>
       </section>
     </main>
   )
 }
+export default Home_Landing

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import servicesList from '../../data/services'
-import ServiceCard from './home-services-card'
+import Home_Services_Card from './Home_Services_Card'
 import gsap from 'gsap'
 // import { PbIconMixerAbs } from "../icons/abs/index";
 
-export default function Services() {
+function Home_Services() {
   useEffect(() => {
     let mixerTL = gsap.timeline({
       defaults: {
@@ -35,7 +35,7 @@ export default function Services() {
           </div>
           <div className='mx-auto w-full flex flex-wrap justify-between  -mt-2 mb-16'>
             {servicesList.map((services) => (
-              <ServiceCard service={services} key={services.service} />
+              <Home_Services_Card service={services} key={services.service} />
             ))}
           </div>
         </div>
@@ -46,3 +46,5 @@ export default function Services() {
     </section>
   )
 }
+
+export default Home_Services
