@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  productionBrowserSourceMaps: true,
   async redirects() {
     return [
-      {
-        source: '/',
-        destination: '/store',
-        permanent: false,
-      },
+      // {
+      //   source: '/',
+      //   destination: '/store',
+      //   permanent: false,
+      // },
       {
         source: '/store/product',
         destination: '/store',
@@ -29,6 +30,6 @@ module.exports = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['cdn.chec.io'],
+    domains: ['cdn.chec.io', 'pixelbakery.co', 'media.pixelbakery.com', 'pixelbakery.com'],
   },
 }

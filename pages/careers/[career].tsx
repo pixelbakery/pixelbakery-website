@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
-import Link from 'next/link'
+
 import PageSection from '../../components/PageSection'
-import Button from '../../components/parts/button-filled'
+import Button_Filled from '../../components/parts/Button_Filled'
 
 let CareerPage: NextPage<{ career: string }> = ({ career }) => {
   return (
@@ -48,7 +48,7 @@ let CareerPage: NextPage<{ career: string }> = ({ career }) => {
               <li>Maintaining all client relationships</li>
               <li>Master of pitching and proposals</li>
               <li>Acting as a leader to your team</li>
-              <li>Attending networking events on Pixel Bakery’s behalf</li>
+              <li>Attending networking events on Pixel Bakery&apos;s behalf</li>
               <li>Breadwinners (referral) program specialist</li>
             </ul>
           </div>
@@ -57,7 +57,7 @@ let CareerPage: NextPage<{ career: string }> = ({ career }) => {
       <PageSection className='bg-pink my-4'>
         <div className='mx-auto flex gap-8'>
           <div className='w-1/2 h-full flex flex-col justify-center'>
-            <h2 className='text-pink-light mb-0 pb-0'>What we're lookin' for</h2>
+            <h2 className='text-pink-light mb-0 pb-0'>What we&apos;re lookin&apos; for</h2>
             <p className='text-peach font-bold text-lg'>This is a subheader.</p>
           </div>
           <div className='w-1/2 text-white text-lg'>
@@ -95,14 +95,14 @@ let CareerPage: NextPage<{ career: string }> = ({ career }) => {
           </div>
           <div className='w-1/2 flex flex-col justify-center px-8'>
             <p className='text-pink text-lg font-bold'>
-              We’d love to have you join the team. To apply, skip the cover letter and shoot us your
-              resume and sales portfolio.
+              We&apos;d love to have you join the team. To apply, skip the cover letter and shoot us
+              your resume and sales portfolio.
             </p>
           </div>
         </div>
       </PageSection>
       <PageSection innerClassName='flex items-end justify-center'>
-        <Button text='apply for position' link='/' color='bg-pink' />
+        <Button_Filled text='apply for position' link='/' color='bg-pink' />
       </PageSection>
     </main>
   )
