@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 
 import PageSection from '../../components/PageSection'
-import Button from '../../components/parts/button-filled'
+import Button_Filled from '../../components/parts/Button_Filled'
 
 let CareerPage: NextPage<{ career: string }> = ({ career }) => {
   return (
@@ -102,7 +102,7 @@ let CareerPage: NextPage<{ career: string }> = ({ career }) => {
         </div>
       </PageSection>
       <PageSection innerClassName='flex items-end justify-center'>
-        <Button text='apply for position' link='/' color='bg-pink' />
+        <Button_Filled text='apply for position' link='/' color='bg-pink' />
       </PageSection>
     </main>
   )
