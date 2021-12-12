@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import SitemapTable from '../components/parts/sitemap-table'
+import Sitemap_Table from '../components/Sitemap/Sitemap_Table'
 
-function SiteMap() {
+function Sitemap() {
   return (
     <main id='' className='my-4 py-24 bg-pink-light'>
       <div className='mx-auto pt-14 max-w-5xl'>
@@ -27,11 +27,11 @@ function SiteMap() {
         </div>
         <h1 className='text-6xl text-wine-200'>Sitemap</h1>
       </div>
-      <SitemapTable category={'primary'} />
-      <SitemapTable category={'secondary'} />
-      <SitemapTable category={'utility'} />
+      <Sitemap_Table category={'primary'} />
+      <Sitemap_Table category={'secondary'} />
+      <Sitemap_Table category={'utility'} />
     </main>
   )
 }
 
-export default SiteMap
+export default Sitemap
