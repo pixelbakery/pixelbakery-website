@@ -1,14 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Pill from '../parts/pill'
-import Scrim from '../parts/scrim'
+import Pill from '../parts/Pill'
+import Scrim from '../parts/Scrim'
 
 function Work_Portfolio_Card(props) {
   return (
     <Link href={props.url} passHref>
       <article className='bg-blue aspect-h-9 aspect-w-16 cursor-pointer'>
-        {/* <Image src={previewImg} layout='fill' alt={previewImgAlt} /> */}
         <Image
           alt={props.previewImgAlt}
           src={props.previewImg}

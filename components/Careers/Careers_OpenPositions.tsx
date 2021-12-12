@@ -1,7 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { ChevronRightIcon } from '@heroicons/react/solid'
-import Pill from '../parts/pill'
 
 function Careers_OpenPositions() {
   return (

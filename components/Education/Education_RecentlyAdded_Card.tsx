@@ -1,5 +1,5 @@
 import React from 'react'
-import Pill from '../parts/pill'
+import Pill from '../parts/Pill'
 import Link from 'next/link'
 import Image from 'next/image'
 
