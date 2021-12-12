@@ -1,26 +1,26 @@
 import type { NextPage } from 'next'
 
 import React from 'react'
-import Lander from '../../components/pg-careers/careers-lander'
-import Breadwinners from '../../components/pg-careers/careers-breadwinner'
-import OpenPositions from '../../components/pg-careers/careers-open-positions'
-import Apprenticeships from '../../components/pg-careers/careers-apprenticeships'
-import Casting from '../../components/pg-careers/careers-casting'
-import Vendors from '../../components/pg-careers/careers-vendors'
-import Benefits from '../../components/pg-careers/careers-benefits'
-import Culture from '../../components/pg-careers/careers-culture'
+import Careers_Lander from '../../components/Careers/Careers_Lander'
+import Careers_Breadwinners from '../../components/Careers/Careers_Breadwinners'
+import Careers_OpenPositions from '../../components/Careers/Careers_OpenPositions'
+import Careers_Apprenticeships from '../../components/Careers/Careers_Apprenticeships'
+import Careers_Casting from '../../components/Careers/Careers_Casting'
+import Careers_Vendors from '../../components/Careers/Careers_Vendors'
+import Careers_Benefits from '../../components/Careers/Careers_Benefits'
+import Careers_Culture from '../../components/Careers/Careers_Culture'
 
 let Careers: NextPage = () => {
   return (
-    <main className='' id='careers-page'>
-      <Lander /> 
-      <Breadwinners />
-      <OpenPositions />
-       <Apprenticeships />
-      <Casting />
-      <Vendors />
-      {/*<Benefits /> */}
-      <Culture />
+    <main id='careers-page'>
+      <Careers_Lander />
+      <Careers_Breadwinners />
+      <Careers_OpenPositions />
+      <Careers_Apprenticeships />
+      <Careers_Casting />
+      <Careers_Vendors />
+      <Careers_Benefits />
+      <Careers_Culture />
     </main>
   )
 }

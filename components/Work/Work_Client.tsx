@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { NextPage } from 'next'
 import clientList from '../../data/work-client-list'
 
 // import { gsap } from "gsap";
