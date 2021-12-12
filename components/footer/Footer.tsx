@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { NextPage } from 'next'
-import FooterNav from './footerNav'
-import FooterNavMoreCard from './footerNavMoreCard'
-import HappyCard from './happyCard'
+import Footer_Nav from './Footer_Nav'
+import Footer_Nav_SubNav from './Footer_Nav_SubNav'
+import Footer_HappyCard from './Footer_HappyCard'
 import TextLogo from '../parts/textlogo'
 import ButtonFilled from '../parts/button-filled'
 import SocialLinks from '../parts/socialOptions'
@@ -26,7 +26,7 @@ export let Footer: NextPage = ({}) => {
             <nav className=' pt-5 mt-3'>
               <ul className='grid grid-cols-1 text-center lg:text-left text-4xl font-black'>
                 {footerMenu.map((navitem) => (
-                  <FooterNav navitem={navitem} key={navitem.text} />
+                  <Footer_Nav navitem={navitem} key={navitem.text} />
                 ))}
               </ul>
             </nav>
@@ -66,7 +66,7 @@ export let Footer: NextPage = ({}) => {
               <nav>
                 <ul className='mt-3'>
                   {footerMenuMore.map((navitem) => (
-                    <FooterNavMoreCard navitem={navitem} key={navitem.text} />
+                    <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
                   ))}
                 </ul>
               </nav>
@@ -75,7 +75,7 @@ export let Footer: NextPage = ({}) => {
 
           <div className='flex flex-col justify-between h-full'>
             <div className='text-center mb-4'>
-              <HappyCard />
+              <Footer_HappyCard />
             </div>
             <div className='w-full py-4 my-3'>
               <div className='w-full' id='footer-social'>

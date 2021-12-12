@@ -1,24 +1,25 @@
 import React from 'react'
+import next from 'next'
 
-import Intro from '../../components/pg-about/about-intro'
-import Team from '../../components/pg-about/about-team'
-import Values from '../../components/pg-about/about-values'
-import StudioViews from '../../components/pg-about/about-studioViews'
+import About_Intro from '../../components/About/About_Intro'
+import About_Team from '../../components/About/About_Team'
+import About_Values from '../../components/About/About_Valuess'
+import About_StudioViews from '../../components/About/About_StudioViews'
 
-import Twitch from '../../components/pg-about/about-twitch'
-import FAQ from '../../components/pg-about/about-faq'
+import About_Twitch from '../../components/About/About_Twitch'
+import About_Faq from '../../components/About/About_Faq'
 
 // import TwitchStream from "../components/about-twitch";
 function About() {
   return (
     <main className='bg-egg'>
       <section className='lander my-4 bg-blue'>lander</section>
-      <Intro />
-      <Team />
-      <Values />
-      <StudioViews />
-      <Twitch />
-      <FAQ />
+      <About_Intro />
+      <About_Team />
+      <About_Values />
+      <About_StudioViews />
+      <About_Twitch />
+      <About_Faq />
     </main>
   )
 }

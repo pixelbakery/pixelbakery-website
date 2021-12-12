@@ -10,7 +10,7 @@ import HomeWhoTheHeck from '../components/pg-home/homeWhoTheHeck'
 import HomeWhatWeMake from '../components/pg-home/homeWhatWeMake'
 import HomeServices from '../components/pg-home/homeServices'
 import HomePortfolio from '../components/pg-home/home-portfolio'
-import Footer from '../components/footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 const Home: NextPage = () => {
   return (
