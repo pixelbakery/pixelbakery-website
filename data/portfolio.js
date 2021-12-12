@@ -66,7 +66,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear 6',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -76,7 +76,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear 7',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -86,7 +86,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear asfasg',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -96,7 +96,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear  2',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -106,7 +106,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear 3',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -116,7 +116,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear4',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',
@@ -126,7 +126,7 @@ export default [
   },
   {
     client: 'Morgan AFR:',
-    name: 'The Firefighting Robot Bear',
+    name: 'The Firefighting Robot Bear 5',
 
     previewImg: '/img/work/KN_ECommPromo_End.gif',
     previewImgAlt: 'Karma Nuts: Get Your Nut',

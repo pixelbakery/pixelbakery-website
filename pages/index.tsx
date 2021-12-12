@@ -1,16 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
-import Link from 'next/link'
 // import InstagramFeed from "../components/instagramFeed";
 // import blogPosts from '../data/blogPosts'
-import BlogCard from '../components/parts/blogCard'
-import HomeLanding from '../components/pg-home/homeLanding'
-import HomeWhoTheHeck from '../components/pg-home/homeWhoTheHeck'
-import HomeWhatWeMake from '../components/pg-home/homeWhatWeMake'
-import HomeServices from '../components/pg-home/homeServices'
-import HomePortfolio from '../components/pg-home/home-portfolio'
-import Footer from '../components/footer/Footer'
+import HomeLanding from '../components/Home/Home_Landing'
+import HomeWhoTheHeck from '../components/Home/Home_WhoTheHeck'
+import HomeWhatWeMake from '../components/Home/Home_WhatWeMake'
+import HomeServices from '../components/Home/Home_Services'
+import HomePortfolio from '../components/Home/Home_Portfolio'
 
 const Home: NextPage = () => {
   return (
