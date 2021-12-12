@@ -10,13 +10,13 @@ import { Formik } from 'formik'
 import { useDebounce } from 'use-debounce'
 import FormikEffect from '../../../components/FormikEffect'
 import LoadingModal from '../../../components/LoadingModal'
-import BillingAddressForm from '../../../components/pg-store/BillingAddressForm'
-import CartDetails from '../../../components/pg-store/CartDetails'
-import ShippingAddressForm from '../../../components/pg-store/ShippingAddressForm'
+import Store_BillingAddressForm from '../../../components/Store/Store_BillingAddressForm'
+import Store_CartDetails from '../../../components/Store/Store_CartDetails'
+import Store_ShippingAddressForm from '../../../components/Store/Store_ShippingAddressForm'
 import { useCheckoutState } from '../../../hooks/useCheckoutState'
 import commerce from '../../../lib/commerce'
 import { makeOrder } from '../../../lib/makeOrder'
-import Maintenance from '../../../components/pg-store/maintenance'
+import Store_Maintenance from '../../../components/Store/Store_Maintenance'
 import useShippingOptions from '../../../hooks/useShippingOptions'
 import useSetShippingOption from '../../../hooks/useSetShippingOption'
 import useSetTaxZone from '../../../hooks/useSetTaxZone'
@@ -145,9 +145,6 @@ let Checkout: NextPage = () => {
 
       if (error) {
         setLoading(false)
-        if (error.customer.phone)
-          alert('An error occurred while processing your payment: ' + error.message)
-        return
       }
 
       const res = await commerce.checkout.capture(checkout!.id, {
@@ -221,6 +218,18 @@ let Checkout: NextPage = () => {
           state: '',
           postalCode: '',
         },
+        variant: {
+          id: '',
+          options: '',
+        },
+        selected_options: [
+          {
+            group_id: '',
+            group_name: '',
+            option_id: '',
+            option_name: '',
+          },
+        ],
         billing: {
           address: '',
           city: '',
@@ -271,7 +280,7 @@ let Checkout: NextPage = () => {
                  */}
                   <div className='px-4 pb-12 border-b-4 border-blue-dark '>
                     <h2 className='mt-0 pt-0 text-2xl text-blue-dark'>Shipping</h2>
-                    <ShippingAddressForm />
+                    <Store_ShippingAddressForm />
                   </div>
                   {/* 
 
@@ -293,7 +302,7 @@ let Checkout: NextPage = () => {
                         <label className='text-wine align-middle'>Same as shipping</label>
                       </div>
                       <div className='my-4'>
-                        {billingSameAsShipping ? null : <BillingAddressForm />}
+                        {billingSameAsShipping ? null : <Store_BillingAddressForm />}
                       </div>
                     </div>
                   </div>
@@ -335,14 +344,15 @@ let Checkout: NextPage = () => {
                   </div>
                 </div>
 
-                <CartDetails
+                <Store_CartDetails
                   value={pwywMin}
                   pwywMin={pwywMin}
                   pwywMax={pwywMax}
                   pwyw={pwyw}
                   // cost={pwyw}
                   onPwywChange={onPwywChange}
-                  // onCostChange={onPwywChange}
+                  cost={0}
+                  onCostChange={undefined} // onCostChange={onPwywChange}
                 />
               </div>
               {/* End Cart Details */}
@@ -369,7 +379,7 @@ let Checkout: NextPage = () => {
               </div>
             </section>
           )}
-          <Maintenance />
+          <Store_Maintenance />
         </main>
       )}
     </Formik>

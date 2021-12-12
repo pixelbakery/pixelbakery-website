@@ -1,13 +1,13 @@
 /* eslint-disable react/no-children-prop */
 import { GetServerSideProps, NextPage } from 'next'
-import React, { useEffect, useState } from 'react'
-import Navigation from '../../../components/Navigation'
-import Maintenance from '../../../components/pg-store/maintenance'
+import React, { useState } from 'react'
+
+import Store_Maintenance from '../../../components/Store/Store_Maintenance'
 import PageSection from '../../../components/PageSection'
 import commerce from '../../../lib/commerce'
 import Image from 'next/image'
 import useCart from '../../../hooks/useCart'
-import VariantPicker from '../../../components/pg-store/store-variant-picker'
+import Store_VariantPicker from '../../../components/Store/Store_VariantPicker'
 import Link from 'next/link'
 import Head from 'next/head'
 import cs from 'classnames'
@@ -33,7 +33,7 @@ let currentVariant = 'select'
 function CanIAddToCart(variantId) {
   currentVariant = variantId
 }
-let StoreProduct: NextPage = ({ product }: { product: any }) => {
+let Store_Product: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
   const onPriceChange = (evt) => setPrice(Math.max(evt.target.value, product.price.raw))
@@ -174,7 +174,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
               className='my-8 text-lg text-wine leading-relaxed'
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            <VariantPicker
+            <Store_VariantPicker
               className='mb-3'
               variantGroups={product.variant_groups}
               value={variant}
@@ -234,9 +234,9 @@ hover:opacity-90 hover:scale-97 active:scale-90'
           </div>
         </div>
       </PageSection>
-      <Maintenance />
+      <Store_Maintenance />
     </main>
   )
 }
 
-export default StoreProduct
+export default Store_Product
