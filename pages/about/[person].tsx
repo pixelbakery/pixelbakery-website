@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage, NextPageContext } from 'next'
 import { useRouter } from 'next/router'
 import roster, { RosterBio } from '../../data/roster'
-import TeamBio from '../../components/pg-about/about-bios'
+import TeamBio from '../../components/About/About_TeamBio'
 
 type Props = {
   data: RosterBio
@@ -30,7 +30,7 @@ export let getStaticProps: GetStaticProps<Props, any> = (context) => {
 let AboutPerson: NextPage<Props> = ({ data }) => {
   return (
     <div className='bg-egg p-8'>
-      <TeamBio {...data} />         
+      <TeamBio {...data} />
     </div>
   )
 }

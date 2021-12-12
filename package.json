@@ -1,6 +1,7 @@
 {
   "name": "pixelbakery",
   "private": true,
+  "license": "GNU General Public License version 3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
