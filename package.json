@@ -18,6 +18,7 @@
     "printWidth": 100
   },
   "dependencies": {
+    "@babel/core": "^7.16.0",
     "@chec/commerce.js": "^2.8.0",
     "@chec/react-commercejs-hooks": "^0.3.1",
     "@heroicons/react": "^1.0.5",
