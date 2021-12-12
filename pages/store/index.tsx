@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '../../components/PageSection'
-import Maintenance from '../../components/pg-store/maintenance'
+import Maintenance from '../../components/Store/Store_Maintenance'
 import commerce from '../../lib/commerce'
 import Link from 'next/link'
 import useCart from '../../hooks/useCart'
@@ -44,7 +44,9 @@ let StorePage: NextPage = ({ products }: any) => {
       '+=.62',
     )
     tl_loadingModal.play
-    return () => {}
+    return () => {
+      tl_loadingModal.kill()
+    }
   }, [])
   // END GSAP
 
