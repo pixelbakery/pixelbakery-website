@@ -1,11 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Pill from '../../components/parts/pill'
-import Scrim from '../../components/parts/scrim'
+import Pill from './Pill'
 
-export default function ServiceCard(props) {
-  // console.log('assdfgassfgasdg')
+function Card_Rounded(props) {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
   return (
@@ -13,13 +11,12 @@ export default function ServiceCard(props) {
       <article
         className={'bg-blue  cursor-pointer rounded-lg overflow-hidden ' + aspectW + aspectH}
       >
-        {/* <Image src={previewImg} layout='fill' alt={previewImgAlt} /> */}
         <Image
           alt={props.imgAlt}
           src={props.img}
           layout='fill'
           objectFit='cover'
-          blurDataURL={true}
+          blurDataURL='true'
           quality={100}
           className=''
         />
@@ -50,3 +47,4 @@ export default function ServiceCard(props) {
     </Link>
   )
 }
+export default Card_Rounded

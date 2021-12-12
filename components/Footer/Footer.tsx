@@ -4,9 +4,9 @@ import { NextPage } from 'next'
 import Footer_Nav from './Footer_Nav'
 import Footer_Nav_SubNav from './Footer_Nav_SubNav'
 import Footer_HappyCard from './Footer_HappyCard'
-import TextLogo from '../parts/textlogo'
-import ButtonFilled from '../parts/button-filled'
-import SocialLinks from '../parts/socialOptions'
+import Logo_Type from '../parts/Logo_Type'
+import Button_Filled from '../parts/Button_Filled'
+import SocialLinks from '../parts/SocialLinks'
 
 import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
@@ -20,7 +20,7 @@ export let Footer: NextPage = ({}) => {
         <div className='grid grid-cols-1 lg:grid-cols-3 mb-12 gap-8 h-full'>
           <div className='h-full flex flex-col justify-between'>
             <div className='flex justify-center lg:justify-start'>
-              <TextLogo />
+              <Logo_Type />
             </div>
 
             <nav className=' pt-5 mt-3'>
@@ -88,7 +88,7 @@ export let Footer: NextPage = ({}) => {
               </div>
             </div>
             <div className='flex justify-center w-full my-3'>
-              <ButtonFilled
+              <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 color={'bg-pink'}

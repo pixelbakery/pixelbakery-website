@@ -8,7 +8,7 @@ import Image from 'next/image'
 import recentlyAdded from '../../data/edu-reccentlyAdded'
 
 //parts
-import Part__RecentlyAdded from '../parts/card-rounded'
+import Part__RecentlyAdded from '../parts/Card_Rounded'
 
 function Education_Recent() {
   const getRecentlyAdded = () => {

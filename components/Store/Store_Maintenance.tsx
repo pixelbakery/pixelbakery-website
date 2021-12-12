@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Maintenance() {
+function Store_Maintenance() {
   return (
     <section className='my-4 bg-yellow py-16 px-8'>
       <div className='max-w-6xl mx-auto'>
@@ -17,4 +17,4 @@ function Maintenance() {
   )
 }
 
-export default Maintenance
+export default Store_Maintenance

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../parts/button-filled'
+import Button_Filled from '../parts/Button_Filled'
 
 function Contact_Jobs() {
   return (
@@ -17,9 +17,9 @@ function Contact_Jobs() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <Button link={'/'} text={'get to work'} />
-        <Button link={'/'} text={"get to freelancin'"} />
-        <Button link={'/'} text={"get to actin'"} />
+        <Button_Filled link={'/'} text={'get to work'} color={undefined} />
+        <Button_Filled link={'/'} text={"get to freelancin'"} color={undefined} />
+        <Button_Filled link={'/'} text={"get to actin'"} color={undefined} />
       </div>
     </section>
   )

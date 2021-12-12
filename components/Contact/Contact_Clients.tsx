@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next'
+import Link from 'next/link'
 
 function Contct_Clients() {
   return (

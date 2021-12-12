@@ -12,7 +12,7 @@ type Props = {
   cart?: Cart
   [key: string]: any
 }
-export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
+function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
   const { cart, live } = useCheckoutState()
   const { subtotal, total, totalWithTax, totalDue, tax } = useTotals()
 
@@ -21,18 +21,6 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
   const shipping = useShippingSummary()
 
   let actualTotal = totalDue?.raw + live.tax?.amount?.raw
-
-  // console.log({ subtotal, total, totalWithTax, totalDue, tax })
-
-  // if (customer_set_price && customer_set_price > 0) {
-  //   actualTotal = customer_set_price + tax.amount.raw
-  // }
-
-  // const val = live?.pay_what_you_want?.customer_set_price?.raw
-  // const pwyw = val && val > 0 ? val : undefined
-  // const price = pwyw ?? live?.subtotal.raw
-  // console.log(live, live?.subtotal?.raw, val, pwyw, price)
-  // const shipping = live?.shipping?.price?.raw ?? 0
 
   return (
     <div className='mx-auto col-span-5 lg:col-span-5 lg:max-w-2xl lg:sticky top-12 px-4 md:px-20 py-8 lg:py-20 bg-blue-light order-last lg:order-last rounded-lg'>
@@ -79,9 +67,7 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           type='range'
           min={pwywMin}
           max={pwywMax}
-          // defaultValue={pwywMin + 1}
           value={Number(pwyw ?? 0).toFixed(2)}
-          // value={16}
           onChange={onPwywChange}
           className='bg-blue slider w-full md:w-auto md:flex-grow'
         />
@@ -89,14 +75,6 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
           <span className='font-medium text-xl text-wine mr-1'>
             ${Number(pwyw ?? 0).toFixed(2)}
           </span>
-
-          {/* <input
-            className='rounded-md border-blue bg-transparent font-medium font-wine w-24 text-left pl-2 hover:opacity-60 focus:ring-blue-dark focus:ring-1'
-            type='number'
-            min={pwywMin}
-            value={Number(pwyw ?? 0).toFixed(2)}
-            onChange={onPwywChange}
-          /> */}
         </span>
       </div>
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
@@ -107,7 +85,8 @@ export default function CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Pr
       <h3 className='mt-8 text-right font-semibold text-2xl text-wine'>
         ${actualTotal.toFixed(2)}
       </h3>
-      {/* <h3> {totalWithTax.raw}</h3> */}
     </div>
   )
 }
+
+export default Store_CartDetails

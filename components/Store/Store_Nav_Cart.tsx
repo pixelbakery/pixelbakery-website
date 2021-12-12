@@ -1,7 +1,7 @@
 import React from 'react'
-import Link from 'next'
+import Link from 'next/link'
 
-function CartNav() {
+function Store_Nav_Cart() {
   return (
     <Link href='/store/cart' passHref>
       <div className='absolute right-0 top-0 mr-8 mt-8 '>
@@ -30,4 +30,4 @@ hover:opacity-90 hover:scale-95'
   )
 }
 
-export default CartNav
+export default Store_Nav_Cart

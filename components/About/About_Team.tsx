@@ -15,7 +15,7 @@ function About_Team() {
                 <Image
                   layout='fill'
                   objectFit='cover'
-                  blurDataURL={true}
+                  blurDataURL='true'
                   className='w-full h-full object-cover '
                   quality={60}
                   alt={value.name}

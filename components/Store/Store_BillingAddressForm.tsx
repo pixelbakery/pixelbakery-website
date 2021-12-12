@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Formik, useFormik, useFormikContext } from 'formik'
 import commerce from '../../lib/commerce'
 
-export default function BillingAddressForm({}) {
+function Store_BillingAddressForm({}) {
   const [states, setStates] = useState({})
   useEffect(() => {
     commerce.services.localeListSubdivisions('US').then((res) => setStates(res.subdivisions))
@@ -52,3 +52,4 @@ export default function BillingAddressForm({}) {
     </div>
   )
 }
+export default Store_BillingAddressForm

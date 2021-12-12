@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { gsap } from 'gsap'
+
 import Link from 'next/link'
 
-function ProductCard({ product, price, url, previewImg }) {
+function Store_Product_Card({ product, price, url, previewImg }) {
   useEffect(() => {
     return () => {}
   }, [])
 
   return (
-    <Link href={url} className=''>
+    <Link href={url}>
       <article className='col-span-1 w-full '>
         <div className=' rounded-lg overflow-hidden aspect-w-4 aspect-h-3'>
           <img
@@ -25,4 +25,4 @@ function ProductCard({ product, price, url, previewImg }) {
   )
 }
 
-export default ProductCard
+export default Store_Product_Card

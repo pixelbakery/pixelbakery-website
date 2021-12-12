@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import Education_Header_Link from '../../components/Education/Education_Header_Link'
+import Education_Header_Link from './Education_Header_Link'
 
-function Education_Lander() {
+function Education_Header() {
   return (
     <section className='relative lander my-4 grid grid-cols-2'>
       <div className='absolute lg:relative top-0 left-0 w-full h-full col-span-1 z-0  '>
@@ -11,7 +11,7 @@ function Education_Lander() {
           alt='polaroid 3d model made in cinema 4d'
           objectFit='cover'
           layout='fill'
-          placeholder='blurDataUrl'
+          blurDataURL='true'
           className='filter blur-lg lg:blur-none'
         />
       </div>
@@ -45,4 +45,4 @@ function Education_Lander() {
   )
 }
 
-export default Education_Lander
+export default Education_Header

@@ -1,7 +1,6 @@
 import React from 'react'
-import next from 'next'
 
-function ComponentName() {
+function Scrim() {
   return (
     <div
       className={'absolute w-100 h-100 bg-gradient-to-t from-wine via-transparent opacity-100'}
@@ -9,4 +8,4 @@ function ComponentName() {
   )
 }
 
-export default ComponentName
+export default Scrim

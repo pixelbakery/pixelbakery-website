@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VariantSelector = ({ variantGroups, value, onChange, ...passthrough }) => (
+const Store_VariantPicker = ({ variantGroups, value, onChange, ...passthrough }) => (
   <div {...passthrough}>
     {variantGroups.map((group) => (
       <div key={group.id}>
@@ -27,4 +27,4 @@ const VariantSelector = ({ variantGroups, value, onChange, ...passthrough }) => 
   </div>
 )
 
-export default VariantSelector
+export default Store_VariantPicker
