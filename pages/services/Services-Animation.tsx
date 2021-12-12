@@ -1,20 +1,18 @@
-import React from "react"
-import Header from "../../components/pg-services/services-header";
-import Subservices from "../../components/pg-services/services-subservices"; 
-import RelatedServices from "../../components/pg-services/services-related";
-import AllServices from "../../components/pg-services/services-allservices";
-import Process from "../../components/pg-services/services-ourprocess";
-// import StickySidebarJS from "../js/stickysidebar";
+import React from 'react'
+import Services_Header from '../../components/Services/Services_Header'
+import Services_Subservices from '../../components/Services/Services_Subservices'
+import Services_Related from '../../components/Services/Services_Related'
+import Services_AllServices from '../../components/Services/Services_AllServices'
+import Services_OurProcess from '../../components/Services/Services_OurProcess'
 
-export default function Services(){
-    return(
-        <div>
-            <Header/>
-            <Subservices />
-            <RelatedServices />
-            <AllServices />
-            <Process />
-          
-        </div>
-    );
+export default function Services() {
+  return (
+    <div>
+      <Services_Header />
+      <Services_Subservices />
+      <Services_Related />
+      <Services_AllServices />
+      <Services_OurProcess />
+    </div>
+  )
 }
