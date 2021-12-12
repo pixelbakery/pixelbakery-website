@@ -1,15 +1,13 @@
 import { NextPage } from 'next'
 import useCart from '../../hooks/useCart'
-import Navigation from '../../components/Navigation'
 import PageSection from '../../components/PageSection'
-import Maintenance from '../../components/pg-store/maintenance'
+import Store_Maintenance from '../../components/Store/Store_Maintenance'
 import Link from 'next/link'
 import commerce from '../../lib/commerce'
 import { ChevronRightIcon } from '@heroicons/react/solid'
-import Image from 'next/image'
-import React, { useState } from 'react'
-import { useQueryClient } from 'react-query'
+import React from 'react'
 import Head from 'next/head'
+
 let CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
 
@@ -177,7 +175,7 @@ hover:opacity-90 hover:scale-98 active:scale-97'
           )}
         </div>
       </PageSection>
-      <Maintenance />
+      <Store_Maintenance />
     </main>
   )
 }

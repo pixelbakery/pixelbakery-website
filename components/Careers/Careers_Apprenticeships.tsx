@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
-import { gsap } from 'gsap'
-import { ChevronRightIcon } from '@heroicons/react/solid'
-import Pill from '../parts/pill'
 
 function Careers_Apprenticeships() {
   return (

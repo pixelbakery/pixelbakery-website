@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
-import SocialLinks from '../parts/socialOptions'
-import ButtonFilled from '../parts/button-filled'
+import SocialLinks from '../parts/SocialLinks'
+import Button_Filled from '../parts/Button_Filled'
 import Image from 'next/image'
 function Home_Landing() {
   return (
     <main>
       <section className='lander overflow-hidden w-full my-4 flex'>
-        <nav className='w-1/3 max-w-lg bg-pink-light h-full flex flex-col justify-between py-10 px-12 '>
+        <nav className='w-1/3 max-w-lg bg-pink-light hidden h-full md:flex flex-col justify-between py-10 px-12 '>
           <div className='logo-wrapper px-20 w-full aspect-w-1 aspect-w-1 text-blue fill-current'>
             <Image
               layout='fill'
@@ -61,7 +61,7 @@ function Home_Landing() {
               fresh puns & nice buns
             </div>
             <div className='flex flex-center w-full my-3 '>
-              <ButtonFilled
+              <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 color={'bg-pink'}

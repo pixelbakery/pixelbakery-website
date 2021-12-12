@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import socialLinks from '../../data/socialLinks'
-import StrokeText from '../parts/strokeText'
+import StrokeText from '../parts/StrokeText'
 import Link from 'next/link'
 
 function Contact_HangOut() {

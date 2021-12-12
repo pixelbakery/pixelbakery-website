@@ -4,8 +4,8 @@ import React from 'react'
 
 import Link from 'next/link'
 
-import SocialLinks from '../parts/socialOptions'
-import ButtonFilled from '../parts/button-filled'
+import SocialLinks from '../parts/SocialLinks'
+import Button_Filled from '../parts/Button_Filled'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
 function Nav_FullscreenMenu(props: any) {
@@ -127,7 +127,7 @@ function Nav_FullscreenMenu(props: any) {
               </Link>
             </div>
             <div className='flex flex-center w-full my-3 '>
-              <ButtonFilled
+              <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 color={'bg-pink'}
