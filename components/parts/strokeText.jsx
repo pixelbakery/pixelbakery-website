@@ -4,7 +4,6 @@ const StrokeText = ({ text, fontSize, strokeWidth, color, fontWeight }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='auto'
       width='100%'
       height='100%'
       className='social-link transform transition-all duration-1000 ease-in-out text-blue-dark hover:fill-current hover:text-blue-dark motion-safe:hover:-skew-x-12'

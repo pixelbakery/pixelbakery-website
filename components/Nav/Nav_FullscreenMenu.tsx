@@ -1,15 +1,15 @@
 /* eslint-disable react/no-string-refs */
 // eslint-disable-next-line react/no-string-refs
-import React, { useState, useEffect } from 'react'
-import next from 'next'
+import React from 'react'
+
 import Link from 'next/link'
-import gsap from 'gsap'
+
 import SocialLinks from '../parts/socialOptions'
 import ButtonFilled from '../parts/button-filled'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
-function Nav_FullscreenMenu(props) {
-  function handleHamToggle(event) {
+function Nav_FullscreenMenu(props: any) {
+  function handleHamToggle(event: any) {
     props.onClick(event.target.value)
   }
   return (

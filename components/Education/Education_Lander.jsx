@@ -1,9 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import HeaderLink from '../../components/pg-education/edu-part-headerLink'
+import Education_Header_Link from '../../components/Education/Education_Header_Link'
 
-function EducationL() {
+function Education_Lander() {
   return (
     <section className='relative lander my-4 grid grid-cols-2'>
       <div className='absolute lg:relative top-0 left-0 w-full h-full col-span-1 z-0  '>
@@ -24,17 +23,17 @@ function EducationL() {
             distinctive convergence for stand-alone alignments.{' '}
           </div>
           <div>
-            <HeaderLink
+            <Education_Header_Link
               header={'from  scratch'}
               subheader={'complete a to z tutorials'}
               inpageLink={'#fromScratch'}
             />
-            <HeaderLink
+            <Education_Header_Link
               header={'made to order'}
               subheader={'one-off tutorials on specific somethings'}
               inpageLink={'#madeToOrder'}
             />
-            <HeaderLink
+            <Education_Header_Link
               header={'project files'}
               subheader={'open-source work we’ve made'}
               inpageLink={'#projectFiles'}
@@ -46,4 +45,4 @@ function EducationL() {
   )
 }
 
-export default EducationL
+export default Education_Lander

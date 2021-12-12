@@ -3,9 +3,16 @@ import Pill from '../parts/pill'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import Scrim from '../../components/parts/scrim'
-
-function RecentlyAddedCard({ props }) {
+function Home_Portfolio_Card({
+  bgColor,
+  bgPosition,
+  client,
+  title,
+  tags,
+  description,
+  image,
+  link,
+}) {
   return (
     <article className='  w-3/5 '>
       <div
@@ -15,15 +22,17 @@ function RecentlyAddedCard({ props }) {
       >
         <div className='absolute w-full h-full rounded overflow-hidden'>
           <Link href={link} passHref>
-            <Image
-              src={image}
-              layout='fill'
-              objectFit='cover'
-              className=' object-center '
-              placeholder='blurDataUrl'
-              quality={50}
-              alt=''
-            />
+            <a>
+              <Image
+                src={image}
+                layout='fill'
+                objectFit='cover'
+                quality={66}
+                blurDataURL='true'
+                className='w-full h-full object-center object-cover'
+                alt=''
+              />
+            </a>
           </Link>
         </div>
       </div>
@@ -35,13 +44,12 @@ function RecentlyAddedCard({ props }) {
           {description}
         </p>
         <div className='flex justify-start gap-4 flex-wrap mt-6'>
-          {tags.map((tag) => (
-            <Pill text={tag} key={tag} />
+          {tags.map((tag: React.Key) => (
+            <Pill text={tag} key={tag} bgColor={undefined} textColor={undefined} size={undefined} />
           ))}
         </div>
       </div>
     </article>
   )
 }
-
-export default RecentlyAddedCard
+export default Home_Portfolio_Card

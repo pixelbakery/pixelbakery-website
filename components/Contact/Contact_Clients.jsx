@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next'
 
-function Onboarding() {
+function Contct_Clients() {
   return (
     <section className=' my-4 bg-pink py-32 border-t-16 ' id='onboarding'>
       <div className='max-w-5xl mx-auto '>
@@ -16,17 +16,16 @@ function Onboarding() {
           </div>
         </div>
         <div className='group my-3 w-full flex justify-end'>
-          <Link
-            className=' group bg-pink-light py-4 px-12 font-bold text-3xl rounded-md transform transition-y duration-500 ease-in-out hover:-translate-y-1'
-            href={'/onboarding'}
-          >
-            <span className='inline-block text-peach transform transition-skew duration-500 ease-in-out group-hover:-skew-x-12 group-hover:opacity-95'>
-              start a project
-            </span>
+          <Link href={'/onboarding'} passHref>
+            <a className=' group bg-pink-light py-4 px-12 font-bold text-3xl rounded-md transform transition-y duration-500 ease-in-out hover:-translate-y-1'>
+              <span className='inline-block text-peach transform transition-skew duration-500 ease-in-out group-hover:-skew-x-12 group-hover:opacity-95'>
+                start a project
+              </span>
+            </a>
           </Link>
         </div>
       </div>
     </section>
   )
 }
-export default Onboarding
+export default Contct_Clients

@@ -1,32 +1,22 @@
 import React from 'react'
-import next from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 
 //sections
-import Section__Header from '../../components/pg-education/edu-section-header'
-import Section__Recent from '../../components/pg-education/edu-section-recent'
-import Section__MadeToOrder from '../../components/pg-education/edu-section-madeToOrder'
-import Section__FromScratch from '../../components/pg-education/edu-section-fromScratch'
-import Section__ProjectFiles from '../../components/pg-education/edu-section-projectFiles'
-import Section__TutorialRequests from '../../components/pg-education/edu-section-tutorialRequests'
+import Education_Header from '../../components/Education/Education_Header'
+import Education_Recent from '../../components/Education/Education_Recent'
+import Education_MadeToOrder from '../../components/Education/Education_MadeToOrder'
+import Education_FromScratch from '../../components/Education/Education_FromScratch'
+import Education_ProjectFiles from '../../components/Education/Education_ProjectFiles'
+import Education_TutorialRequests from '../../components/Education/Education_TutorialRequests'
 
 function EducationPage() {
   return (
-    <main
-      id='educationPage bg-peach
-    '
-    >
-      <Section__Header />
-      <Section__Recent />
-      <Section__FromScratch />
-      <Section__MadeToOrder />
-      <Section__ProjectFiles />
-      <Section__TutorialRequests />
-
-      <section id='fromScratch'></section>
-      <section id='madeToOrder'></section>
-      <section id='projectFiles'></section>
+    <main id='educationPagea'>
+      <Education_Header />
+      <Education_Recent />
+      <Education_FromScratch />
+      <Education_MadeToOrder />
+      <Education_ProjectFiles />
+      <Education_TutorialRequests />
     </main>
   )
 }
