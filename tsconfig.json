@@ -15,13 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/careers/index.tsx",
-    "components/Education/Education_Lander.jsx",
-    "components/Education/Education_RecentlyAdded_Card.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
