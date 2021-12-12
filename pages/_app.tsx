@@ -10,7 +10,7 @@ import '../styles/globals.css'
 import '../styles/typography.css'
 
 import Nav from '../components/Navigation'
-import Footer from '../components/footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 const client = new QueryClient()
 

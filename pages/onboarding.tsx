@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 // import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ExpectationsRow from '../components/onboarding/expectationsRow'
+import Onboarding_ExpectationsRow from '../components/Onboarding/Onboarding_ExpectationsRow'
 
 function BecomeAClient() {
   // gsap.registerPlugin(ScrollTrigger)
@@ -84,10 +84,11 @@ function BecomeAClient() {
           <h1 className='my-4 text-blue-dark'>Start something wonderful</h1>
 
           <p className='text-lg text-wine leading-loose max-w-xl'>
-            We don't do the pushy sales thing. We're here to make well-crafted, custom-tailored
-            pieces of work for clients that we have a deep-rooted connection with. This means that
-            we're highly selective when we take on a new client. We view it more as dating than
-            making a sale. It's just as important that you like us and it is we like you.
+            We don&apos;t do the pushy sales thing. We&apos;re here to make well-crafted,
+            custom-tailored pieces of work for clients that we have a deep-rooted connection with.
+            This means that we&apos;re highly selective when we take on a new client. We view it
+            more as dating than making a sale. It&apos;s just as important that you like us and it
+            is we like you.
           </p>
 
           <div className='hb-p-5d92c026f3a53e07975e0cea-2'></div>
@@ -110,7 +111,7 @@ function BecomeAClient() {
             <h2 className='my-8 py-4 w-3/5'> What you can expect from working with PBDS </h2>
           </div>
 
-          <ExpectationsRow
+          <Onboarding_ExpectationsRow
             flip={true}
             number={'1'}
             header={'We never asks for the keys to the kingdom right away.'}
@@ -118,7 +119,7 @@ function BecomeAClient() {
               " We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship afterall, and it's important to us that both parties are happy and healthy."
             }
           />
-          <ExpectationsRow
+          <Onboarding_ExpectationsRow
             flip={false}
             number={'2'}
             header={"We're not here to tell you what to do."}
@@ -126,7 +127,7 @@ function BecomeAClient() {
               " Sure, we're probably better at animating than you are, but we'll never know your brand more intimately than you will. We can advise, strategize, suggest, and execute– but we won't barge in thinking we know what's best."
             }
           />
-          <ExpectationsRow
+          <Onboarding_ExpectationsRow
             flip={true}
             number={'3'}
             header={'Your success is our success.'}
@@ -134,7 +135,7 @@ function BecomeAClient() {
               ' We believe it is possible to create thoughtful and purposeful design while hitting deadlines and turning projects around on time. Our team of planners and designers work together to execute creative ideas with an intense concentration and attention to detail. '
             }
           />
-          <ExpectationsRow
+          <Onboarding_ExpectationsRow
             flip={false}
             number={'4'}
             header={'Your success is our success.'}
@@ -145,7 +146,7 @@ function BecomeAClient() {
         </div>
       </section>
       <section id='onboarding-process' className='bg-yellow h-16'>
-        Here's where we talk about our process
+        Here&apos;s where we talk about our process
       </section>
     </main>
   )
