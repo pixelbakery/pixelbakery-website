@@ -1,17 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
-import Btn from '../../components/parts/button-filled'
-import Pill from '../../components/parts/pill'
+
+import Pill from '../../components/parts/Pill'
 import Image from 'next/image'
 
-export default function Recipe() {
+function Post() {
   return (
     <main className=' mt-44'>
       <article className='' id='blog-body'>
         <section className='md:max-w-3xl mx-auto '>
           <div className='' id='blog-body-intro'>
             <div className='mb-6'>
-              {/* <Pill text={'Announcements'} className=' my-6' /> */}
+              <Pill
+                text={'Announcements'}
+                bgColor={undefined}
+                textColor={undefined}
+                size={undefined}
+              />
               <h1 className='text-blue-dark text-6xl'>
                 Recipe for Success: Mix Adaptability and Confidence (together, in a medium sized
                 bowl)
@@ -116,7 +121,6 @@ export default function Recipe() {
           <li className='inline text-pink bg-pink-light px-2 py-2 rounded mx-2'>after effects</li>
           <li className='inline text-pink bg-pink-light px-2 py-2 rounded mx-2'>education</li>
         </ul>
-        {/* <Btn link={'/recipes'} text='we got more' color={'bg-blue'} className='my-6' /> */}
       </section>
       <section className='py-8' id='blog-comments '>
         <div className='max-w-3xl mx-auto p'>
@@ -192,3 +196,5 @@ export default function Recipe() {
     </main>
   )
 }
+
+export default Post
