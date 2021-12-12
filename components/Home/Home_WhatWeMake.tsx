@@ -1,7 +1,7 @@
 import React from 'react'
 import PageSection from '../PageSection'
 
-export default function WhatWeMake() {
+function Home_WhatWeMake() {
   return (
     <PageSection>
       <h2 className='text-pb-blue-dark mt-0 pt-0'>We build beautifuly immersive worlds </h2>
@@ -15,3 +15,4 @@ export default function WhatWeMake() {
     </PageSection>
   )
 }
+export default Home_WhatWeMake

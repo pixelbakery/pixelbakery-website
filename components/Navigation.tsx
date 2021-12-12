@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import next from 'next'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from './Nav/Nav_HamburgerMenu'
-import Nav_NavLogo from './Nav/Nav_NavLogo'
+import Nav_NavLogo from './Nav/Nav_Logo'
 
-import { Nav_Button, Nav_TextLink } from './Nav/Nav_NavLinks'
+import { Nav_Links_Button, Nav_Links_Text } from './Nav/Nav_Links'
 export default function Navbar() {
   gsap.registerPlugin(ScrollTrigger)
   useEffect(() => {
@@ -68,21 +67,21 @@ export default function Navbar() {
 
   return (
     <div className=''>
-      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-between'>
+      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-end md:justify-between'>
         <Nav_NavLogo />
         <div className='pr-8  h-full flex'>
-          <Nav_TextLink id={'nav-link-1'} url={'/work'} text={'what we do'} />
-          <Nav_TextLink id={'nav-link-2'} url={'/about'} text={'who we are'} />
-          <Nav_Button id={'nav-link-3'} url={'/onboarding'} text={'start a project'} />
+          <Nav_Links_Text id={'nav-link-1'} url={'/work'} text={'what we do'} />
+          <Nav_Links_Text id={'nav-link-2'} url={'/about'} text={'who we are'} />
+          <Nav_Links_Button id={'nav-link-3'} url={'/onboarding'} text={'start a project'} />
           <Nav_HamburgerNav />
         </div>
       </div>
 
-      <nav className=' fixed w-full flex justify-center'>
+      {/* <nav className=' fixed w-full flex justify-center'>
         <Link href={'/sitemap'}>
           <a className='underline pointer-events-auto'>Sitemap</a>
         </Link>
-      </nav>
+      </nav> */}
     </div>
   )
 }
