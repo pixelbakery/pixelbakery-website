@@ -1,4 +1,3 @@
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
@@ -9,9 +8,6 @@ import * as ga from '../lib/ga'
 import '../styles/globals.css'
 import '../styles/typography.css'
 
-import Nav from '../components/Navigation'
-import Footer from '../components/Footer/Footer'
-
 const client = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -21,7 +17,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       ga.pageview(url as any)
     }
     TagManager.initialize({ gtmId: 'GTM-PC8M8GG' })
-    return () => {}
   }, [])
 
   // Define the Layouts so we can use use them whenever
