@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import socialLinks from '../../data/socialLinks'
+import socialLinks from '../../data/SocialUrls'
 import StrokeText from '../parts/StrokeText'
 import Link from 'next/link'
 
