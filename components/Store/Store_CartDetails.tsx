@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 import { Cart } from '@chec/commerce.js/types/cart'
 import { Live } from '@chec/commerce.js/types/live'
 import Link from 'next/link'
@@ -16,11 +19,9 @@ function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
   const { cart, live } = useCheckoutState()
   const { subtotal, total, totalWithTax, totalDue, tax } = useTotals()
 
-  const customer_set_price = live?.pay_what_you_want?.customer_set_price?.raw
-
   const shipping = useShippingSummary()
 
-  let actualTotal = totalDue?.raw + live.tax?.amount?.raw
+  const actualTotal = totalDue?.raw + live.tax?.amount?.raw
 
   return (
     <div className='mx-auto col-span-5 lg:col-span-5 lg:max-w-2xl lg:sticky top-12 px-4 md:px-20 py-8 lg:py-20 bg-blue-light order-last lg:order-last rounded-lg'>
@@ -58,8 +59,6 @@ function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
         <p className='font-semibold text-md mt-4'>
           NOTE: Currently, you have to move the slider a little bit to successfully check out. If
           you'd like to pay the minimum price, simply slide it back all the way to the left.
-          Additionally, if you change any of the information above, you'll have to re-slide your
-          amount. idk man this is hard.
         </p>
       </div>
       <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>

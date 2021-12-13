@@ -30,9 +30,9 @@
   p.lead {
     @apply mt-2 text-2xl pb-6 leading-relaxed;
   }
-  .socialIcons {
-    @apply transform-gpu text-2xl transition duration-700 ease-in-out hover:-translate-y-2;
-  }
+  /* .socialIcons {
+    @apply transform-gpu transition duration-700 ease-in-out hover:-translate-y-2;
+  } */
   input.form-border-b,
   select.form-border-b,
   .form-border-b input,
