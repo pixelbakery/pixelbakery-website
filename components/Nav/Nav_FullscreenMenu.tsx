@@ -1,15 +1,16 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-string-refs */
 // eslint-disable-next-line react/no-string-refs
 import React from 'react'
-
+import Nav_SocialLinks from './Nav_SocialLinks'
 import Link from 'next/link'
 
-import SocialLinks from '../parts/SocialLinks'
+// import SocialLinks from '../Icons_Social/SocialLinks'
 import Button_Filled from '../parts/Button_Filled'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
-function Nav_FullscreenMenu(props: any) {
-  function handleHamToggle(event: any) {
+function Nav_FullscreenMenu(props) {
+  function handleHamToggle(event) {
     props.onClick(event.target.value)
   }
   return (
@@ -69,8 +70,8 @@ function Nav_FullscreenMenu(props: any) {
                 fresh puns & nice buns
               </div>
 
-              <div className='block'>
-                <SocialLinks color={'text-blue'} />
+              <div className='flex w-full'>
+                <Nav_SocialLinks />
               </div>
             </div>
           </div>
