@@ -1,19 +1,17 @@
 import React from 'react'
-import Link from 'next/link'
+
 import { NextPage } from 'next'
 import Footer_Nav from './Footer_Nav'
 import Footer_Nav_SubNav from './Footer_Nav_SubNav'
 import Footer_HappyCard from './Footer_HappyCard'
 import Logo_Type from '../parts/Logo_Type'
 import Button_Filled from '../parts/Button_Filled'
-import SocialLinks from '../parts/SocialLinks'
+import Footer_SocialLinks from './Footer_SocialLinks'
 
 import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
 
-export let getServerSideProps = () => {}
-
-export let Footer: NextPage = ({}) => {
+export const Footer: NextPage = () => {
   return (
     <footer className='bg-peach px-12 py-24 lg:max-h-screen mb-4' id='footer'>
       <div className='mx-auto max-w-6xl'>
@@ -79,7 +77,7 @@ export let Footer: NextPage = ({}) => {
             </div>
             <div className='w-full py-4 my-3'>
               <div className='w-full' id='footer-social'>
-                <SocialLinks color={'text-cream'} />
+                <Footer_SocialLinks />
               </div>
               <div className='w-full flex justify-center'>
                 <span className='text-cream italic font-bold text-center text-lg'>
