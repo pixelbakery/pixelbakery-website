@@ -7,7 +7,7 @@ import Image from 'next/image'
 function About_Team() {
   return (
     <section className='my-4' id='team'>
-      <div className='grid gap-4 grid-cols-4'>
+      <div className='grid gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {roster.map((value, index) => {
           return (
             <Link href={`/about/${value['url']}`} key={value.id} passHref>
