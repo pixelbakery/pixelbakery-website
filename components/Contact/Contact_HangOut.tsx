@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import socialLinks from '../../data/SocialUrls'
+// import socialLinks from '../../data/SocialUrls'
 import StrokeText from '../parts/StrokeText'
 import Link from 'next/link'
 
@@ -16,7 +16,7 @@ function Contact_HangOut() {
   }, [])
   return (
     <section className='my-4 mx-auto py-6'>
-      <div className='max-w-7xl  mx-auto'>
+      {/* <div className='max-w-7xl  mx-auto'>
         <h2 className='my-16 text-blue'>Let&apos;s hang out </h2>
         <ul className='my-8 flex gap-x-12 gap-y-6 flex-wrap'>
           {socialLinks.map((link) => (
@@ -35,7 +35,7 @@ function Contact_HangOut() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </section>
   )
 }
