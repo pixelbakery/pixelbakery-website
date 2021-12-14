@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Onboarding_ExpectationsRow from '../components/Onboarding/Onboarding_ExpectationsRow'
 
-function BecomeAClient() {
+function Onboarding() {
   // gsap.registerPlugin(ScrollTrigger)
 
   // useLayoutEffect(() => {
@@ -152,4 +152,4 @@ function BecomeAClient() {
   )
 }
 
-export default BecomeAClient
+export default Onboarding
