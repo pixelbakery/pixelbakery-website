@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 import { NextPage } from 'next'
 
 import PageSection from '../../components/PageSection'
 import Button_Filled from '../../components/parts/Button_Filled'
 
-let CareerPage: NextPage<{ career: string }> = ({ career }) => {
+const CareerPage: NextPage<{ career: string }> = ({ career }) => {
   return (
     <main className='bg-egg p-4'>
       <PageSection className='lander flex items-center'>

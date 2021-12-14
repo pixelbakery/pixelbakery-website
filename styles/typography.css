@@ -1,5 +1,5 @@
-@tailwind base;
-@layer base {
+@tailwind utilities;
+@layer utilities {
   /* Gilroy */
   @font-face {
     font-family: Gilroy;
