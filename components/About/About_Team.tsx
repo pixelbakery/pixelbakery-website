@@ -3,6 +3,7 @@ import roster from '../../data/roster'
 import next from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import About_Team_Headshot from './About_Team_Headshot'
 
 function About_Team() {
   return (
@@ -10,19 +11,13 @@ function About_Team() {
       <div className='grid gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {roster.map((value, index) => {
           return (
-            <Link href={`/about/${value['url']}`} key={value.id} passHref>
-              <a className='relative w-full  aspect-w-3 aspect-h-4'>
-                <Image
-                  layout='fill'
-                  objectFit='cover'
-                  blurDataURL='true'
-                  className='w-full h-full object-cover '
-                  quality={60}
-                  alt={value.name}
-                  src={value['image_headshot']}
-                />
-              </a>
-            </Link>
+            <About_Team_Headshot
+              key={index}
+              name={value.name}
+              headshot={value['image_headshot']}
+              headshotSmiling={value['image_headshot_smiling']}
+              url={value['url']}
+            />
           )
         })}
       </div>
