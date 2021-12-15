@@ -1,5 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
-
 export default [
   {
     text: 'hi, i love you.',
@@ -12,6 +10,9 @@ export default [
   },
   {
     text: 'you look great today - take a selfie.',
+  },
+  {
+    text: "it's good to have you with us, even if it's just for the day",
   },
   {
     text: "i can't imagine doing this without you.",
