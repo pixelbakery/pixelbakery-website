@@ -39,6 +39,12 @@ module.exports = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['cdn.chec.io', 'pixelbakery.co', 'media.pixelbakery.com', 'pixelbakery.com'],
+    domains: [
+      'cdn.chec.io',
+      'pixelbakery.co',
+      'media.pixelbakery.com',
+      'pixelbakery.com',
+      'placeimg.com',
+    ],
   },
 }

@@ -54,6 +54,7 @@
     "sharp": "^0.29.3",
     "stripe": "^8.191.0",
     "svg": "^0.1.0",
+    "swiper": "^7.3.3",
     "tailwindcss": "^3.0.2",
     "use-debounce": "^7.0.1",
     "vimeo": "^2.1.1",
