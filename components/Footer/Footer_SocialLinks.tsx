@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialLinks from '../../components/Icons_Social/SocialLinks'
+import SocialLinks from '../Images/Icons_Social/SocialLinks'
 
 function Footer_SocialLinks() {
   const color = 'text-egg'
