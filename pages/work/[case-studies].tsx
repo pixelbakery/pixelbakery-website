@@ -8,8 +8,9 @@ import Head from 'next/head'
 const CaseStudy: NextPage<{ caseStudy: string }> = ({ caseStudy }) => {
   return (
     <main id={'case-study-' + caseStudy}>
-      <Head></Head>
-      <section className='' id='caseStudy-lander'></section>
+      <section className='' id='caseStudy-lander'>
+        <h1>case studies</h1>
+      </section>
     </main>
   )
 }
