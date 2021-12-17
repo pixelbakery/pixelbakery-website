@@ -1,8 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // must pass a size: xl, lg, md, sm
 //must pass a color without tailwind vernacular
-
+Pill.propTypes = {
+  text: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+}
 export default function Pill({ text, bgColor, textColor, size }) {
   let px = '',
     py = '',
@@ -42,7 +48,7 @@ export default function Pill({ text, bgColor, textColor, size }) {
     return [px, py, fontWeight, textSize]
   }
 
-  let getSize = setSize(size)
+  const getSize = setSize(size)
   // console.log('x: ' + px + '  ' + 'y: ' + py + ' weight:' + fontWeight + ' size:' + textSize)
 
   const addSize = ' ' + px + ' ' + py
@@ -50,7 +56,11 @@ export default function Pill({ text, bgColor, textColor, size }) {
   const addTextColor = ' text-' + textColor
 
   return (
-    <div className={'rounded-md' + textSize + fontWeight + addBgColor + addTextColor + px + py}>
+    <div
+      className={
+        'whitespace-nowrap rounded-md' + textSize + fontWeight + addBgColor + addTextColor + px + py
+      }
+    >
       {text}
     </div>
   )
