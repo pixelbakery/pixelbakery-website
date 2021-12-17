@@ -1,33 +1,215 @@
-import React from 'react'
-import GridCols from '../../../components/Helpers/gridCols'
+import React, { useRef, useState } from 'react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+// import Swiper core and required modules
+import SwiperCore, { EffectCards } from 'swiper'
+SwiperCore.use([EffectCards])
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-cards'
+import 'swiper/css/scrollbar'
+// import GridCols from '../../../components/Helpers/gridCols'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import Vimeo from '@u-wave/react-vimeo'
-import { Sola } from '../../../components/Images/ClientLogos'
+
 import Pill from '../../../components/parts/Pill'
 import Card_Rounded from '../../../components/parts/Card_Rounded'
 import ButtonFilled from '../../../components/parts/Button_Filled'
 
+function Carousel() {
+  return (
+    <Swiper
+      pagination={{ clickable: true }}
+      slidesPerView={1}
+      autoHeight={true}
+      grabCursor={true}
+      className='max-w-md lg:max-w-5xl  aspect-22/17 '
+      navigation
+      //  loop={true}
+      effect={'cards'}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      //  onSlideChange={() => console.log('slide change')}
+      //  onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_01.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_02.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_03.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_04.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_05.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_06.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_07.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_08.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_09.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='relative'>
+          <Image
+            src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_10.jpg'
+            layout='responsive'
+            width={'2016px'}
+            height={'1224px'}
+            quality={100}
+            blurDataURL='true'
+            //   objectFit='contain'
+            alt='SOLA animation storyboards'
+          />
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  )
+}
+
 function SolaTinyChef() {
   return (
-    <main className=''>
-      <section className='pb-12 pt-48  my-4  bg-white' id=''>
+    <main className='overflow-x-hidden'>
+      <section className='pb-12 px-8 pt-40 pt-lg:pt-48  my-4  bg-white' id=''>
         <div className='mx-auto max-w-6xl'>
-          <div>Sola</div>
-          <h1>Tiny Chef Magic</h1>
-          <p>
+          <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>SOLA</div>
+          <h1 className='text-blue-dark text-6xl leading-none mb-5 mt-0 pt-0'>Tiny Chef Magic</h1>
+          <p className='py-6  mb-6 text-wine text-xl max-w-xs font-medium text-opacity-50'>
             How animation brought to life a Tiny Chef with the ability to create keto-friendly,
-            carb-conscious deliciousness that is SOLA bread.safas
+            carb-conscious deliciousness that is SOLA bread.
           </p>
           <div className='relative block'>
             <Vimeo video='640466563' autoplay={false} showPortrait responsive={true} />
           </div>
-          <div>
-            <Sola />
+          <div className='mx-auto w-40 opacity-75 mt-20 mb-6'>
+            <Image
+              src={'/img/client-logos/Black-Sola-Logo.png'}
+              layout='responsive'
+              width={'850px'}
+              blurDataURL='true'
+              height={'208px'}
+            />
           </div>
-          <h2>Bringing a Tiny Chef with big, keto-friendly ideas to life.</h2>
-          <p>
+          <h2 className='mt-0 pt-0 mx-auto text-4xl max-w-sm text-center'>
+            Bringing a Tiny Chef with big, keto-friendly ideas to life.
+          </h2>
+          <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
             The SOLA Company is a low-carb, low-sugar, keto-friendly brand that came to Pixel Bakery
             looking to make an animated explainer video showcasing their bread. We had previously
             worked with SOLA in the live-action realm and were extremely excited to see what we
@@ -36,60 +218,57 @@ function SolaTinyChef() {
         </div>
       </section>
 
-      <section className='my-4 py-12'>
+      <section className=' my-4 py-12'>
         <div className='mx-auto md:max-w-6'>
-          <h3>here&apos;s what we did</h3>
-          <ul className='relative block'>
-            <li>
+          <h3 className='text-center text-2xl text-pink mb-3'>here&apos;s what we did</h3>
+          <div className='flex flex-row justify-center gap-3 flex-wrap'>
+            <div className='flex-grow'>
               <Link href='/' passHref>
                 <Pill
                   text={'creative concepting'}
-                  bgColor={undefined}
-                  textColor={undefined}
-                  size={undefined}
+                  bgColor={'blue-light'}
+                  textColor={'blue-dark'}
+                  size={'md'}
                 />
               </Link>
-            </li>
-            <li>
+            </div>
+            <div className='flex-grow'>
               <Link href='/' passHref>
                 <Pill
                   text={'2d animation'}
-                  bgColor={undefined}
-                  textColor={undefined}
-                  size={undefined}
+                  bgColor={'blue-light'}
+                  textColor={'blue-dark'}
+                  size={'md'}
                 />
               </Link>
-            </li>
-            <li>
-              <Link href={'/'} passHref>
-                <Pill
-                  text={'scripting & storyboarding'}
-                  bgColor={undefined}
-                  textColor={undefined}
-                  size={undefined}
-                />
-              </Link>
-            </li>
+            </div>
 
-            <li>
-              <Link href='/' passHref>
-                <Pill
-                  text={'video production'}
-                  bgColor={undefined}
-                  textColor={undefined}
-                  size={undefined}
-                />
-              </Link>
-            </li>
-          </ul>
+            <Link href={'/'} passHref>
+              <Pill
+                text={'scripting & storyboarding'}
+                bgColor={'blue-light'}
+                textColor={'blue-dark'}
+                size={'md'}
+              />
+            </Link>
+
+            <Link href='/' passHref>
+              <Pill
+                text={'video production'}
+                bgColor={'blue-light'}
+                textColor={'blue-dark'}
+                size={'md'}
+              />
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className='my-4'>
-        <div className='mx-auto md:max-w-6xl'>
-          <GridCols columns={6} gap={4} />
-          <h2>Description 02 / pull quote /testimonial</h2>
-          <p>
+      <section className='bg-blue-dark py-16 my-4'>
+        <div className='mx-auto max-w-sm md:max-w-6xl'>
+          {/* <GridCols columns={6} gap={4} /> */}
+          <h2 className=' text-pink-light'>Description</h2>
+          <p className='mx-auto text-pink font-semibold text-xl'>
             The live-action portion of this project consisted of hiring a production crew to assist
             in bringing the Tiny Chef Magic to life. The video production team included a director,
             gaffer, grip, assistant camera, and a FOOD STYLIST (how legit). Maria Smal, Pixel
@@ -98,14 +277,17 @@ function SolaTinyChef() {
           </p>
         </div>
       </section>
+
       <section className='my-4 py-12'>
         <div className='mx-auto md:max-w-6xl'>
-          <div className='w-full  flex justify-between'>
-            <div className='w-2/5'>
-              <h2>connecting & pre-production</h2>
+          <div className='w-full  lg:flex justify-between'>
+            <div className='w-full lg:w-2/5'>
+              <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm '>
+                concepting & pre-production
+              </h2>
             </div>
-            <div className='w-1/2'>
-              <p className=''>
+            <div className='w-full lg:w-1/2'>
+              <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
                 Energistically deliver client-focused models with sustainable markets.
                 Enthusiastically maximize prospective networks and parallel value. Holisticly extend
                 error-free applications vis-a-vis corporate services. Interactively initiate
@@ -115,14 +297,18 @@ function SolaTinyChef() {
             </div>
           </div>
         </div>
-        <div className='w-full'>
-          <h2>STORYBOARDS GO HERE</h2>
+        <div className=''>
+          <Carousel />
         </div>
       </section>
+
       <section className='my-4 py-12'>
         <div className='mx-auto md:max-w-6xl'>
-          <h2 className='text-center'> Production</h2>
-          <p>
+          <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm r'>
+            {' '}
+            Production
+          </h2>
+          <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
             The live-action portion of this project consisted of hiring a production crew to assist
             in bringing the Tiny Chef Magic to life. The video production team included a director,
             gaffer, grip, assistant camera, and a FOOD STYLIST (how legit). Maria Smal, Pixel
@@ -139,6 +325,7 @@ function SolaTinyChef() {
                 layout='responsive'
                 width='2176px'
                 height='1632px'
+                blurDataURL='true'
                 className='object-center rounded-md '
               />
             </div>
@@ -151,6 +338,7 @@ function SolaTinyChef() {
                 width='2176px'
                 height='1632px'
                 className='object-center rounded-md drop-hadow-sm '
+                blurDataURL='true'
               />
             </div>
           </div>
@@ -161,6 +349,7 @@ function SolaTinyChef() {
                 layout='responsive'
                 width='2176px'
                 height='1632px'
+                blurDataURL={'true'}
                 className='object-center rounded-md shadow-lg'
               />
             </div>
@@ -178,11 +367,13 @@ function SolaTinyChef() {
           </div>
         </div>
       </section>
-      <section className='my-4'>
+      <section className='relative my-4'>
         <div className='absolute z-10 w-full h-full overflow-hidden saturate-200 blur-md'></div>
         <div className='mx-auto md:max-w-6xl'>
-          <h2>Post-Production</h2>
-          <p>
+          <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm '>
+            Post-Production
+          </h2>
+          <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
             Energistically reconceptualize accurate methods of empowerment and efficient platforms.
             Credibly envisioneer scalable solutions before team building action items. Rapidiously
             predominate magnetic convergence whereas efficient content. Intrinsicly streamline
