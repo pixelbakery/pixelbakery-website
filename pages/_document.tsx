@@ -1,3 +1,4 @@
+import React from 'react'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 // import Nav from '../components/Navigation'
 // import Footer from '../components/footer/Footer'
@@ -36,7 +37,7 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className='px-4 bg-egg'>
+        <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
           <Main />
 
           <NextScript />

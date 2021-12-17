@@ -34,7 +34,7 @@ export default function Navbar() {
     document.onload = function () {
       navTL.play()
     }
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.lander',
         start: 'top',
@@ -67,8 +67,20 @@ export default function Navbar() {
 
   return (
     <div className=''>
+      <div
+        className='lg:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
+        id='mobile-logo'
+      >
+        <Link href={'/'}>
+          <a className='text-4xl font-extrabold text-peach leading-none'>
+            <div>pb</div>
+            <div>ds</div>
+          </a>
+        </Link>
+      </div>
       <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-end md:justify-between'>
         <Nav_NavLogo />
+
         <div className='pr-8  h-full flex'>
           <Nav_Links_Text id={'nav-link-1'} url={'/work'} text={'what we do'} />
           <Nav_Links_Text id={'nav-link-2'} url={'/about'} text={'who we are'} />
