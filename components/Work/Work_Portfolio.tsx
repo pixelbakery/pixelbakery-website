@@ -5,7 +5,10 @@ import Image from 'next/image'
 import Work_Portfolio_Card from './Work_Portfolio_Card'
 import portfolio from '../../data/portfolio'
 
-export default function Work_Portfolio() {
+// return {
+//   props: { caseStudies: data },
+// }
+const Work_Portfolio = () => {
   const featuredProjNo = 4
 
   const getFeaturedWork = () => {
@@ -58,3 +61,4 @@ export default function Work_Portfolio() {
     </section>
   )
 }
+export default Work_Portfolio

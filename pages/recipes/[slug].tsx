@@ -1,10 +1,18 @@
 import React from 'react'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import ErrorPage from 'next/error'
 import Link from 'next/link'
-
 import Pill from '../../components/parts/Pill'
 import Image from 'next/image'
 
-function Post() {
+type Props = {
+  post: PostType
+  morePosts: PostType[]
+  preview?: boolean
+}
+
+const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <main className=' mt-44'>
       <article className='' id='blog-body'>
@@ -198,3 +206,46 @@ function Post() {
 }
 
 export default Post
+
+type Params = {
+  params: {
+    slug: string
+  }
+}
+
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage',
+  ])
+  const content = await markdownToHtml(post.content || '')
+
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
+    fallback: false,
+  }
+}

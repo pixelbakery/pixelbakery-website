@@ -5,6 +5,7 @@ import Work_Services from '../../components/Work/Work_Services'
 import Work_Portfolio from '../../components/Work/Work_Portfolio'
 import Work_Client from '../../components/Work/Work_Client'
 import Work_Awards from '../../components/Work/Work_Awards'
+import { GetServerSideProps } from 'next'
 
 // import Work_Portfolio from "../components/work-portfolio";
 // import Work_Filter from "../components/work-portfolio-filter";

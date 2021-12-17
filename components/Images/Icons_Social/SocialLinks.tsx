@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import Link from 'next/link'
-import socialLinks from '../../data/SocialUrls'
+import socialLinks from '../../../data/SocialUrls'
 import * as Icons from './Icons/index'
 
 const getLinks = socialLinks
