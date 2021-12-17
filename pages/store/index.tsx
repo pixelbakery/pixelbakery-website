@@ -7,8 +7,9 @@ import Link from 'next/link'
 import useCart from '../../hooks/useCart'
 import Image from 'next'
 import gsap from 'gsap'
+
 import Head from 'next/head'
-export let getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const products = await commerce.products.list()
   return {
     props: {
@@ -17,12 +18,12 @@ export let getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-let StorePage: NextPage = ({ products }: any) => {
+const StorePage: NextPage = ({ products }: any) => {
   const { data: cart, refetch } = useCart()
   // BEGIN GSAP
   useEffect(() => {
     gsap.set('.anim-header .anim-span', { y: 20 })
-    let tl_loadingModal = gsap.timeline({
+    const tl_loadingModal = gsap.timeline({
       defaults: {
         stagger: 0.1,
         ease: 'power1.inOut',
