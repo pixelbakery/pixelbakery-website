@@ -6,7 +6,7 @@ import gsap from 'gsap'
 function Nav_HamburgerMenu() {
   const [isActive, setActive] = useState(true)
 
-  const handleHamToggle = (e) => {
+  const handleHamToggle = () => {
     console.log('test')
     setActive(!isActive)
     if (isActive) {
@@ -38,7 +38,7 @@ function Nav_HamburgerMenu() {
     <div>
       <div
         id='nav-ham'
-        className='relative z-50 inline-block pointer-events-auto self-center w-12 md:w-16 w-12 md:h-16 '
+        className='relative z-50 inline-block pointer-events-auto self-center  md:w-16 w-12 md:h-16 '
       >
         <div
           className='group inline-block bg-cream rounded-lg transform transition-all duration-600 ease-in-out scale-100 opacity-100
