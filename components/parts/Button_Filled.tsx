@@ -1,18 +1,33 @@
 import React from 'react'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/solid'
+import PropTypes from 'prop-types'
 
-export default function ButtonFilled({ text, link, color }) {
+ButtonFilled.propTypes = {
+  text: PropTypes.string,
+  link: PropTypes.string,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
+}
+
+function ButtonFilled({ text, link, bgColor, textColor }) {
   return (
-    <Link href={link}>
-      <a className={' py-3 rounded-sm px-6 text-center ' + color}>
-        <div className='text-cream font-extrabold text-xl lowercase flex'>
-          <div className='flex-grow flex flex-col justify-center'>{text}</div>
+    <Link href={link} passHref>
+      <div
+        className={
+          bgColor + ' my-3 py-3 rounded-sm px-6 w-full max-w-sm text-center cursor-pointer '
+        }
+      >
+        <div className=' font-extrabold text-xl lowercase flex '>
+          <div className={'flex-grow flex flex-col justify-center ' + textColor}>{text}</div>
+
           <i className='h-12 w-12 flex flex-col justify-center'>
-            <ChevronRightIcon className='text-color' />
+            <ChevronRightIcon className={textColor} />
           </i>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
+
+export default ButtonFilled
