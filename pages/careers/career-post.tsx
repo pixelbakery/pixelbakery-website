@@ -104,7 +104,7 @@ const CareerPage: NextPage<{ career: string }> = ({ career }) => {
         </div>
       </PageSection>
       <PageSection innerClassName='flex items-end justify-center'>
-        <Button_Filled text='apply for position' link='/' color='bg-pink' />
+        {/* <Button_Filled text='apply for position' link={'/'} color={'bg-pink'} /> */}
       </PageSection>
     </main>
   )
