@@ -4,7 +4,7 @@ import gsap from 'gsap'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
 function Nav_HamburgerMenu() {
-  const [isActive, setActive] = useState(false)
+  const [isActive, setActive] = useState(true)
 
   const handleHamToggle = (e) => {
     console.log('test')
@@ -22,7 +22,6 @@ function Nav_HamburgerMenu() {
   }
   useEffect(() => {
     gsap.set('#fullscreenNav', { opacity: 0, autoAlpha: 0 })
-    return () => {}
   })
 
   function HandleHamOpen() {
