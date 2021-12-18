@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import Image from 'next/image'
 
 function EducationProject() {
-  useEffect(() => {
-    return () => {}
-  }, [])
-
   return (
     <main id='' className=''>
       <section className='lander my-4 grid grid-cols-2'>
