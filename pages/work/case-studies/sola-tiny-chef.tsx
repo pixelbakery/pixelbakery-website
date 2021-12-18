@@ -304,7 +304,7 @@ function SolaTinyChef() {
 
       <section className='my-4 py-12'>
         <div className='mx-auto md:max-w-6xl'>
-          <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm r'>
+          <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm '>
             {' '}
             Production
           </h2>
@@ -318,7 +318,7 @@ function SolaTinyChef() {
         </div>
 
         <div className='mx-auto max-w-6xl grid grid-cols-12 gap-4'>
-          <div className='col-span-8 col-start-3  drop-shadow-xl'>
+          <div className='col-span-10 col-start-2 lg:col-span-8 lg:col-start-3  drop-shadow-xl'>
             <div className='relative'>
               <Image
                 src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_01.png'
@@ -330,7 +330,7 @@ function SolaTinyChef() {
               />
             </div>
           </div>
-          <div className='col-span-6 mt-16 drop-shadow-lg'>
+          <div className='col-span-8 mt-8 lg:mt-16 drop-shadow-lg'>
             <div className='relative drop-shadow-lg'>
               <Image
                 src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_02.png'
@@ -342,7 +342,7 @@ function SolaTinyChef() {
               />
             </div>
           </div>
-          <div className='col-span-5 col-end-13 mt-16 pt-64'>
+          <div className='col-span-7 lg:col-span-6 col-end-12 lg:col-end-13 mt-8 lg:mt-16 lg:pt-64'>
             <div className='relative'>
               <Image
                 src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_03.png'
@@ -354,7 +354,7 @@ function SolaTinyChef() {
               />
             </div>
           </div>
-          <div className='col-span-6 col-start-3 mt-16 '>
+          <div className='col-span-7 lg:col-span-6 col-start-3 mt-10 lg:mt-16 '>
             <div className='relative'>
               <Image
                 src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_04.png'
@@ -367,12 +367,28 @@ function SolaTinyChef() {
           </div>
         </div>
       </section>
-      <section className='relative my-4'>
-        <div className='absolute z-10 w-full h-full overflow-hidden saturate-200 blur-md'></div>
-        <div className='mx-auto md:max-w-6xl'>
-          <h2 className='text-center lg:text-left mt-0 pt-0 mx-auto text-4xl max-w-sm '>
-            Post-Production
-          </h2>
+      <section className='relative my-4 bg-white pt-12 pb-8'>
+        <div className='mx-auto md:max-w-6xl h-full '>
+          <div className='pt-8 absolute top-0 left-0 w-full'>
+            <h2 className=' text-center lg:text-left mt-0  mx-auto text-6xl max-w-sm '>
+              Post-Production
+            </h2>
+          </div>
+
+          <div className='relative top-0'>
+            <video muted autoPlay loop preload='true' className='scale-110 '>
+              <source
+                type='video/mp4; codecs="hvc1"'
+                src='/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff-1.mov'
+              />
+              <source
+                type='video/webm'
+                src='/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff_VP9.webm'
+              />
+            </video>
+          </div>
+        </div>
+        <div className='mx-auto md:max-w-6xl h-full'>
           <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
             Energistically reconceptualize accurate methods of empowerment and efficient platforms.
             Credibly envisioneer scalable solutions before team building action items. Rapidiously
@@ -380,48 +396,119 @@ function SolaTinyChef() {
             interactive products via cross functional processes. Continually target excellent
             opportunities after customer directed.
           </p>
-          <video
-            controls={false}
-            autoPlay
-            muted
-            playsInline
-            className='aspect-w-16 aspect-h-9 w-full '
-          >
-            <source src='/img/case-studies/sola-tiny-chef/SOLA_TinyChefAlpha_v01.mp4' />
-          </video>
+          <div className='w-full mx-auto my-12'>
+            <video autoPlay playsInline muted loop className='mx-auto max-w-3xl'>
+              <source
+                src={'/img/case-studies/sola-tiny-chef/pixel-bakery_sola-tiny-chef-animation.mp4'}
+              />
+            </video>
+          </div>
         </div>
       </section>
-      <section className='my-4'>
-        <div className='mx-auto max-w-6xl'>
-          <h2> credits</h2>
-          <div className='grid grid-cols-12 '>
-            <div className='col-span-5 col-start-3'>
-              <ul className='list-none text-wine text-md text-opacity-75 '>
-                <li className='my-3'>Maria Smal - Main Actress </li>
+      <section className='my-4 py-12'>
+        <div className='mx-auto max-w-md   lg:max-w-6xl'>
+          <h2 className='text-left mt-0 pt-0 text-4xl max-w-md '> credits</h2>
+          <div className=' lg:mx-0 flex lg:grid lg:grid-cols-12 max-w-md lg:max-w-full '>
+            <div className='mx-auto  w-1/2 lg:w-full  lg:col-span-5 lg:col-start-3'>
+              <ul className='hidden lg:block list-none text-wine text-sm lg:text-md text-opacity-75 '>
+                <Link href={'https://www.imdb.com/name/nm10696864/'}>
+                  <a className='underline'>
+                    Maria Smal –<span className='italic '> Disgruntled Baker</span>{' '}
+                  </a>
+                </Link>
                 <li className='my-3'>Jordan Lambrecht - Director </li>
                 <li className='my-3'>Michael Hennings - Director of Photography </li>
                 <li className='my-3'> Karley Johnson - Producer </li>
                 <li className='my-3'>Cody Jones - First Assistant Camera </li>
                 <li className='my-3'> Madeline Christensen – scriptwriter</li>
               </ul>
+              <ul className='mx-auto lg:hidden w-content list-none text-wine text-sm lg:text-md text-opacity-75 '>
+                <li className='my-3'>
+                  <Link href={'https://www.imdb.com/name/nm10696864/'}>
+                    <a className='underline'>
+                      Maria Smal <br />
+                    </a>
+                  </Link>
+                  <span className='italic '> Disgruntled Baker</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Jordan Lambrecht <br /> <span className='italic'>Director</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Michael Hennings <br /> <span className='italic'>Director of Photography</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Karley Johnson <br /> <span className='italic'>Executive Producer</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Cody Jones <br /> <span className='italic'>First Camera Assistant</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Madeline Christensen <br /> <span className='italic'>Scriptwriter</span>{' '}
+                </li>
+              </ul>
             </div>
-            <div className='col-span-5'>
-              <ul className='list-none text-wine text-md text-opacity-75 '>
-                <li className='my-3'>Maria Smal - Main Actress </li>
-                <li className='my-3'>Jordan Lambrecht - Director </li>
-                <li className='my-3'>Michael Hennings - Director of Photography </li>
-                <li className='my-3'> Karley Johnson - Producer </li>
-                <li className='my-3'>Cody Jones - First Assistant Camera </li>
-                <li className='my-3'> Madeline Christensen – scriptwriter</li>
+            <div className='mx-auto flex-shrink w-1/2 lg:w-full lg:col-span-5 lg:col-start-3'>
+              <ul className='hidden lg:block list-none text-wine text-sm lg:text-md text-opacity-75 '>
+                <Link href={'https://www.imdb.com/name/nm10696864/'}>
+                  <a className='underline'>
+                    Maria Smal –<span className='italic '> Disgruntled Baker</span>{' '}
+                  </a>
+                </Link>
+                <li className='my-3'>
+                  Daniel Hinz - <span className='italic'>Animation Lead </span>
+                </li>
+                <li className='my-3'>
+                  Aaron Smith -<span className='italic'> Gaffer</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Scott Pittock - <span className='italic'>Grip</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Melissa Young - <span className='italic'>Food Stylist</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Hannah Klemme - <span className='italic'>Producction Asssistant</span>{' '}
+                </li>
+                <li className='my-3'>
+                  Miranda Hussey – <span className='italic'>Production Assisstant</span>
+                </li>
+              </ul>
+              <ul className='mx-auto w-fit lg:hidden list-none text-wine text-sm lg:text-md text-opacity-75 '>
+                <li className='my-3'>
+                  Daniel Hinz <br />
+                  <span className='italic'>Animation Lead </span>
+                </li>
+                <li className='my-3'>
+                  Aaron Smith <br />
+                  <span className='italic'>Gaffer </span>
+                </li>
+                <li className='my-3'>
+                  Scott Pittock <br />
+                  <span className='italic'>Grip</span>
+                </li>
+                <li className='my-3'>
+                  Melissa Young <br />
+                  <span className='italic'>Food Stylist</span>
+                </li>
+                <li className='my-3'>
+                  Hannah Klemme <br />
+                  <span className='italic'>Production Assistant</span>
+                </li>
+                <li className='my-3'>
+                  Miranda Hussey
+                  <br />
+                  <span className='italic'>Production Assistant</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section className='my-4 bg-yellow'>
-        <div className='mx-auto max-w-6xl'>
-          <h2> other sola projects</h2>
-          <div className='grid grid-cols-3 gap-24'>
+      <section className='my-4 bg-yellow pt-12'>
+        <div className='mx-auto max-w-md lg:max-w-6xl'>
+          <h2 className='text-left mt-0 pt-0 text-4xl max-w-md '> other sola projects</h2>
+          <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-24'>
             <div className='-mb-12 drop-shadow-md rounded-sm overflow-hidden'>
               <Card_Rounded
                 link={'/'}
@@ -439,15 +526,24 @@ function SolaTinyChef() {
           </div>
         </div>
       </section>
-      <section className='mb-4 mt-24 py-16 bg-pink'>
-        <div className='mx-auto max-w-6xl'>
-          <h2>Get your work on our site</h2>
-          <p>
+      <section className='mb-4 mt-24 py-16 bg-pink-light'>
+        <div className='mx-auto max-w-md lg:max-w-6xl'>
+          <h2 className='text-center lg:text-left mt-0 pt-0 text-4xl max-w-md '>
+            Get a fancy case study page like this
+          </h2>
+          <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
             Schedule a meeting with Jordan and he’ll buy you a beer or take you out for coffee. We
             believe in building long-term relationships with our clients, so we’re never pushy or
             “car salesman-y”.
           </p>
-          <ButtonFilled text={'Become a Client'} link={'/onboarding'} color={'pink-light'} />
+          <div className='my-8 py-3  flex flex-row justify-center'>
+            <ButtonFilled
+              text={'Become a Client'}
+              link={'/onboarding'}
+              textColor={'text-pink-light'}
+              bgColor={'bg-pink'}
+            />
+          </div>
         </div>
       </section>
     </main>
