@@ -15,11 +15,14 @@ function ButtonFilled({ text, link, bgColor, textColor }) {
     <Link href={link} passHref>
       <div
         className={
-          bgColor + ' my-3 py-3 rounded-sm px-6 w-full max-w-sm text-center cursor-pointer '
+          bgColor +
+          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm text-center cursor-pointer transform transition duration-400 hover:scale-102'
         }
       >
         <div className=' font-extrabold text-xl lowercase flex '>
-          <div className={'flex-grow flex flex-col justify-center ' + textColor}>{text}</div>
+          <div className={'text-center flex-grow flex flex-col justify-center ' + textColor}>
+            {text}
+          </div>
 
           <i className='h-12 w-12 flex flex-col justify-center'>
             <ChevronRightIcon className={textColor} />
