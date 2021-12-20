@@ -26,7 +26,7 @@ export default function About_TeamBio({
   bio,
 }: RosterBio) {
   return (
-    <>
+    <main id='topOfPage'>
       <section className=' lander mx-auto flex flex-col justify-center mb-4' id={'bio-' + { id }}>
         <div className='self-center max-w-6xl grid grid-cols-2 gap-16'>
           <div className=''>
@@ -100,7 +100,7 @@ export default function About_TeamBio({
           </div>
         </div>
       </section>
-    </>
+    </main>
   )
 }
 
