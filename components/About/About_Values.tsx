@@ -33,7 +33,7 @@ function About_Values() {
   }, [])
   return (
     <PageSection id='values'>
-      <section className='my-4 lander py-32'>
+      <section className='my-4 lander py-32' id='topOfPage'>
         <div className='mx-auto  max-w-6xl '>
           <h2 className='text-blue-dark mb-2'>Values we live by</h2>
           <p className='text-peach mb-4 text-xl max-w-lg'>
