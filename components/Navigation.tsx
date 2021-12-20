@@ -36,7 +36,7 @@ export default function Navbar() {
     }
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.lander',
+        trigger: '#topOfPage',
         start: 'top',
         end: 'top 50%',
         toggleActions: 'play none reverse none',
