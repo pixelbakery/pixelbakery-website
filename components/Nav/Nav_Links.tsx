@@ -6,7 +6,7 @@ export const Nav_Links_Text = ({ text, url, id }) => {
   return (
     <div id={id} className=' self-center relative z-20 hidden md:block'>
       <Link href={url} passHref>
-        <a className='pointer-events-auto mx-3 text-xl tracking-wide lowercase text-peach font-bold'>
+        <a className='bg-cream px-3 py-2 rounded-sm my-3 pointer-events-auto mx-3 text-md tracking-wide lowercase text-peach font-extrabold'>
           {text}
         </a>
       </Link>

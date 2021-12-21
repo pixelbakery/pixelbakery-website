@@ -58,7 +58,13 @@ export default function Pill({ text, bgColor, textColor, size }) {
   return (
     <div
       className={
-        'whitespace-nowrap rounded-md' + textSize + fontWeight + addBgColor + addTextColor + px + py
+        'inline whitespace-nowrap rounded-md' +
+        textSize +
+        fontWeight +
+        addBgColor +
+        addTextColor +
+        px +
+        py
       }
     >
       {text}

@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
-import Flickity from 'react-flickity-component'
+import React from 'react'
+
 import Image from 'next/image'
 import photos from '../../data/about-studioviews'
 
-const flickityOptions = {
-  wrapAround: true,
-  pageDots: true,
-  lazyLoad: true,
-  autoPlay: 5000,
-  pauseAutoPlayOnHover: false,
-}
+// const flickityOptions = {
+//   wrapAround: true,
+//   pageDots: true,
+//   lazyLoad: true,
+//   autoPlay: 5000,
+//   pauseAutoPlayOnHover: false,
+// }
 
 class Carousel extends React.Component {
   render() {
@@ -25,7 +25,7 @@ class Carousel extends React.Component {
             </div>
           </div>
           <div className=' col-span-3'>
-            <Flickity
+            {/* <Flickity
               options={flickityOptions}
               className={'carousel '} // default ''
               flickityRef={(c) => (this.flkty = c)}
@@ -46,7 +46,7 @@ class Carousel extends React.Component {
                   </div>
                 </div>
               ))}
-            </Flickity>
+            </Flickity> */}
           </div>
         </div>
       </section>

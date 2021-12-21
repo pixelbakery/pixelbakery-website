@@ -13,7 +13,11 @@ function Card_Rounded(props) {
   return (
     <Link href={props.link} passHref>
       <article
-        className={'bg-blue  cursor-pointer rounded-lg overflow-hidden ' + aspectW + aspectH}
+        className={
+          'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
+          aspectW +
+          aspectH
+        }
       >
         <Image
           alt={props.imgAlt}
