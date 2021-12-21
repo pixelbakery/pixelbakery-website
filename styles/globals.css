@@ -344,10 +344,6 @@
   opacity: 1;
 }
 
-.logo-pink {
-  filter: invert(77%) sepia(11%) saturate(1984%) hue-rotate(294deg) brightness(100%) contrast(104%);
-}
-
 /*! Flickity v2.1.2
 https://flickity.metafizzy.co
 ---------------------------------------------- */

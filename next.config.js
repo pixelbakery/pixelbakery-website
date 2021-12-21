@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+// eslint-disable-next-line no-undef
 module.exports = {
   webpack(config) {
     config.module.rules.push({
@@ -25,6 +26,11 @@ module.exports = {
       {
         source: '/services',
         destination: '/work',
+        permanent: true,
+      },
+      {
+        source: '/work/case-studies',
+        destination: '/work#projects',
         permanent: true,
       },
     ]

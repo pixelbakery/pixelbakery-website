@@ -1,12 +1,12 @@
 import React from 'react'
-import next from 'next'
+
 import Link from 'next/link'
 
 function Nav_NavLogo() {
   return (
-    <div id='logo' className=' origin-top-left hidden md:block'>
+    <div id='logo' className=' origin-top-left hidden xl:block  '>
       <Link href={'/'} passHref>
-        <a className='pointer-events-auto block relative  h-full w-full z-50 px-4 py-4'>
+        <a className='pointer-events-auto block relative  h-full w-full z-50 px-4 py-4 '>
           <div
             id='logo-wrapper'
             className='relative z-20 top-0 bg-none text-peach text-center font-extrabold rounded-md  text-5xl leading-none inline-block'

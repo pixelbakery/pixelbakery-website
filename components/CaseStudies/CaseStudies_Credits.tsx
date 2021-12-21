@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Link from 'next/link'
 import React from 'react'
 import PropTypes from 'prop-types'
