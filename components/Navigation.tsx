@@ -50,8 +50,8 @@ export default function Navbar() {
       .to('#akery', { opacity: 0, duration: 0.4 }, '<25%')
       .to('#b', { x: -92, ease: 'sine.inOut', duration: 0.25 }, '<25%')
       .from('#logo-line-2', { scale: 0.75, x: -26, y: -3, duration: 0.25 }, '<25%')
-      .to('#d', { x: 3, ease: 'sine.inOut', duration: 0.25 }, '<')
-      .to('#s', { x: -140, scaleY: 1.25, y: -4, ease: 'sine.inOut', duration: 0.25 }, '<33%')
+      .to('#d', { x: 3, ease: 'sine.inOut', y: 10, duration: 0.25 }, '<')
+      .to('#s', { x: -140, ease: 'sine.inOut', y: 10, duration: 0.25 }, '<33%')
       .to('#logo-bg', { height: 124, width: 90, ease: 'sine.inOut', duration: 0.25 }, '<')
       .from('#logo-wrapper', { y: -9, ease: 'sine.inOut', duration: 0.25 }, '<')
       .from('#logo', { scale: 0.8, ease: 'sine.inOut', duration: 0.25 }, '<')
@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <div className=''>
       <div
-        className='lg:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
+        className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
         <Link href={'/'}>
@@ -78,7 +78,7 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-end md:justify-between'>
+      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-end xl:justify-between'>
         <Nav_NavLogo />
 
         <div className='pr-8  h-full flex'>

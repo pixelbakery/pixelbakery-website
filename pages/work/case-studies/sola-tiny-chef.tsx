@@ -5,7 +5,7 @@ import SolaTinyChef_Description from '../../../components/CaseStudies/CaseStudie
 import SolaTinyChef_PreProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PreProduction'
 import SolaTinyChef_Production from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_Production'
 import SolaTinyChef_PostProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PostProduction'
-import SolaTinyChef_Credits from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_Credits'
+import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
 import SolaTinyChef_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
 
@@ -68,7 +68,7 @@ function SolaTinyChef() {
       <SolaTinyChef_PreProduction />
       <SolaTinyChef_Production />
       <SolaTinyChef_PostProduction />
-      <SolaTinyChef_Credits credits={credits} />
+      <CaseStudies_Credits credits={credits} />
       <SolaTinyChef_OtherProjects otherProjects={otherProjects} />
       <CaseStudies_BecomeAClient />
     </main>
