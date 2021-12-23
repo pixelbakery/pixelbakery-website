@@ -9,11 +9,13 @@ import Careers_Casting from '../../components/Careers/Careers_Casting'
 import Careers_Vendors from '../../components/Careers/Careers_Vendors'
 import Careers_Benefits from '../../components/Careers/Careers_Benefits'
 import Careers_Culture from '../../components/Careers/Careers_Culture'
+import PageHeader_VariableHeight from '../../components/PageHeader_VariableHeight'
 
 let Careers: NextPage = () => {
   return (
     <main id='careers-page'>
-      <Careers_Lander />
+      <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />
+
       <Careers_Breadwinners />
       <Careers_OpenPositions />
       <Careers_Apprenticeships />
