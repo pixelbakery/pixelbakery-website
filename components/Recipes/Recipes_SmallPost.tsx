@@ -10,7 +10,7 @@ function Recipes_SmallPost() {
         <div className='flex flex-row gap-4 md:gap-10'>
           <div className='w-2/5 '>
             <div className='w-full h-full md:aspect-4/3 relative'>
-              <Image src='/img/placeholder06.png' />
+              <Image layout='fill' src='/img/placeholder06.png' objectFit='cover' />
             </div>
           </div>
           <div className='w-3/5 flex flex-col '>
