@@ -1,6 +1,6 @@
 import React from 'react'
 import next from 'next'
-
+import PageHeader_VariableHeight from '../../components/PageHeader_VariableHeight'
 import About_Intro from '../../components/About/About_Intro'
 import About_Team from '../../components/About/About_Team'
 import About_Values from '../../components/About/About_Values'
@@ -11,8 +11,7 @@ import About_Faq from '../../components/About/About_Faq'
 function About() {
   return (
     <main className='bg-egg'>
-      <section className='lander my-4 bg-blue'>lander</section>
-      {/* <About_Intro /> */}
+      <PageHeader_VariableHeight header='About' subheader='copy copy copy ' />
       <About_Team />
       <About_Values />
       <About_StudioViews />

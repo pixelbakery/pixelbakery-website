@@ -5,13 +5,15 @@ import Card_Rounded from '../../components/parts/Card_Rounded'
 import Pill from '../../components/parts/Pill'
 import Button_Outlined from '../../components/parts/Button_Outlined'
 import Recipes_SmallPost from '../../components/Recipes/Recipes_SmallPost'
+import PageHeader_VariableHeight from '../../components/PageHeader_VariableHeight'
 
 function Recipes() {
   return (
     <main>
-      <section className='lander' id='topOfPage'>
-        This is a section <header></header>
-      </section>
+      <PageHeader_VariableHeight
+        header="Mom's Recipes"
+        subheader='No word yet on her spaghetti, though'
+      />
 
       <section id='blog'>
         <div id='blogFilter'>Filter</div>
