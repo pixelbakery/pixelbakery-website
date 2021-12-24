@@ -9,7 +9,7 @@ import Careers_Casting from '../../components/Careers/Careers_Casting'
 import Careers_Vendors from '../../components/Careers/Careers_Vendors'
 import Careers_Benefits from '../../components/Careers/Careers_Benefits'
 import Careers_Culture from '../../components/Careers/Careers_Culture'
-import PageHeader_VariableHeight from '../../components/PageHeader_VariableHeight'
+import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
 
 let Careers: NextPage = () => {
   return (

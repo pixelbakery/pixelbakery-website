@@ -5,7 +5,7 @@ import Card_Rounded from '../../components/parts/Card_Rounded'
 import Pill from '../../components/parts/Pill'
 import Button_Outlined from '../../components/parts/Button_Outlined'
 import Recipes_SmallPost from '../../components/Recipes/Recipes_SmallPost'
-import PageHeader_VariableHeight from '../../components/PageHeader_VariableHeight'
+import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
 
 function Recipes() {
   return (
