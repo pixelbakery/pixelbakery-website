@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PageHeader_VariableHeight from '../components/PageHeader_VariableHeight'
+import PageHeader_VariableHeight from '../components/PageHeader/PageHeader_VarH'
 import LogoAnimation_Descriptions from '../components/LogoAnimation/LogoAnimation_Descriptions'
 import LogoAnimation_PastClients from '../components/LogoAnimation/LogoAnimation_PastClients'
 import Vimeo from '@u-wave/react-vimeo'
