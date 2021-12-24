@@ -34,7 +34,7 @@ const PatternPeach = ({ pattern }) => {
 }
 
 function PageHeader_VariableHeight({ header, subheader }) {
-  let setPattern = Math.floor(Math.random() * 3)
+  const setPattern = Math.floor(Math.random() * 3)
 
   let headerClass = 'leading-none mb-0 pb-0 text-6xl lg:text-7xl'
   let sectionClass = 'relative overflow-hidden lander-variableHeight my-4'
@@ -45,23 +45,23 @@ function PageHeader_VariableHeight({ header, subheader }) {
 
   if (setPattern === 0) {
     pattern = Patterns_Peach
-    color = 'peach'
-    accentColor = 'pink-light'
-    subheaderColor = 'cream'
+    // color = 'peach'
+    // accentColor = 'blue-dark'
+    // subheaderColor = 'cream'
   } else if (setPattern === 1) {
-    pattern = Patterns_Blue
-    color = 'blue'
-    accentColor = 'pink-light'
-    subheaderColor = 'blue-dark'
+    pattern = Patterns_Blue_Dark
+    // color = 'blue-dark'
+    // accentColor = 'blue-light'
+    // subheaderColor = 'blue-dark'
   } else if (setPattern === 2) {
     pattern = Patterns_Pink
-    color = 'pink'
-    accentColor = 'pink-light'
-    subheaderColor = 'blue-dark'
+    // color = 'pink'
+    // accentColor = 'pink-light'
+    // subheaderColor = 'blue-dark'
   }
 
   // headerClass = classNames(headerClass, {
-  //   [`text-${accentColor}`]: true,
+  //   [`text-${  accentColor}`]: true,
   // })
 
   // sectionClass = classNames(sectionClass, {
@@ -78,9 +78,9 @@ function PageHeader_VariableHeight({ header, subheader }) {
     <main>
       <section
         className={classNames(sectionClass, {
-          ['bg-blue']: pattern === Patterns_Pink,
-          ['bg-pink-light']: pattern === Patterns_Peach,
-          ['bg-yellow']: pattern === Patterns_Blue,
+          ['bg-pink-light']: pattern === Patterns_Pink,
+          ['bg-blue-dark']: pattern === Patterns_Peach,
+          ['bg-blue']: pattern === Patterns_Blue_Dark,
         })}
         id='topOfPage'
       >
@@ -95,15 +95,15 @@ function PageHeader_VariableHeight({ header, subheader }) {
             className={classNames(textBoxClass, {
               'bg-pink': pattern === Patterns_Pink,
               'bg-peach': pattern === Patterns_Peach,
-              'bg-blue': pattern === Patterns_Blue,
+              'bg-blue-dark': pattern === Patterns_Blue_Dark,
             })}
           >
             <div className='w-fit px-6'>
               <h1
                 className={classNames(headerClass, {
-                  ['text-blue']: pattern === Patterns_Pink,
-                  ['text-pink-light']: pattern === Patterns_Peach,
-                  ['text-yellow']: pattern === Patterns_Blue,
+                  ['text-pink-light']: pattern === Patterns_Pink,
+                  ['text-blue-dark']: pattern === Patterns_Peach,
+                  ['text-blue']: pattern === Patterns_Blue_Dark,
                 })}
               >
                 {header}
