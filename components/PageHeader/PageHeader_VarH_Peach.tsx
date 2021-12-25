@@ -1,10 +1,7 @@
 import React from 'react'
 import Lottie from 'react-lottie-player'
-
 import classNames from 'classnames'
-
 import Pattern from '../../data/Patterns_Peach.json'
-
 import PropTypes from 'prop-types'
 
 PageHeader_VariableHeight.propTypes = {
