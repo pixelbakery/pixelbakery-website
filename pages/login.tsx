@@ -24,7 +24,7 @@ function Login() {
               bgColor={'blue'}
               textColor='blue-light'
               chevronDirection={'right'}
-              link={undefined}
+              link={'/'}
             />
             <input
               className='border-blue border-2 py-4 font-semibold bg-transparent text-blue text-xl rounded-md'
