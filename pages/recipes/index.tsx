@@ -40,7 +40,7 @@ const Index = ({ allPosts }: Props) => {
         header="Mom's Recipes"
         subheader='No word yet on her spaghetti, though'
       />
-      <Section id={'blogPosts'} color={'blue'}>
+      <Section>
         <div className='mx-auto max-w-6xl'>
           <h2>Recent</h2>
           <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
