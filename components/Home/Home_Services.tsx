@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 function Home_Services() {
   useEffect(() => {
-    let mixerTL = gsap.timeline({
+    const mixerTL = gsap.timeline({
       defaults: {
         y: -30,
         rotation: gsap.utils.random(0, -15),
@@ -22,8 +22,6 @@ function Home_Services() {
       rotation: gsap.utils.random(-1, 15),
       duration: 4,
     })
-
-    return () => {}
   }, [])
   return (
     <section className='relative py-16 bg-blue overflow-hidden' id='home-services'>
@@ -35,7 +33,12 @@ function Home_Services() {
           </div>
           <div className='mx-auto w-full flex flex-wrap justify-between  -mt-2 mb-16'>
             {servicesList.map((services) => (
-              <Home_Services_Card service={services} key={services.service} />
+              <Home_Services_Card
+                service={services.service}
+                link={services.url}
+                key={services.service}
+                color={'peach'}
+              />
             ))}
           </div>
         </div>

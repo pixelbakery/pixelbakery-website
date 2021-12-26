@@ -16,9 +16,10 @@ function CaseStudies_BecomeAClient() {
         <div className='my-8 py-3  flex flex-row justify-center'>
           <ButtonFilled
             text={'Become a Client'}
+            chevronDirection='right'
             link={'/onboarding'}
-            textColor={'text-pink-light'}
-            bgColor={'bg-pink'}
+            textColor={'pink-light'}
+            bgColor={'pink'}
           />
         </div>
       </div>

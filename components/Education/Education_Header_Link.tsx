@@ -1,7 +1,7 @@
 import React from 'react'
 import next from 'next'
 import Link from 'next/link'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '../Images/UI_Icons/index'
 
 function ComponentName({ header, subheader, inpageLink }) {
   return (

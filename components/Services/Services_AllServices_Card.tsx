@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '../Images/UI_Icons/index'
 
 function Services_AllServices_Card({ service }) {
   return (

@@ -17,9 +17,27 @@ function Contact_Jobs() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <Button_Filled link={'/'} text={'get to work'} color={undefined} />
-        <Button_Filled link={'/'} text={"get to freelancin'"} color={undefined} />
-        <Button_Filled link={'/'} text={"get to actin'"} color={undefined} />
+        <Button_Filled
+          link={'/'}
+          text={'get to work'}
+          textColor={'pink-light'}
+          bgColor={'blue'}
+          chevronDirection={'right'}
+        />
+        <Button_Filled
+          link={'/'}
+          text={"get to freelancin'"}
+          textColor={'pink-light'}
+          bgColor={'blue'}
+          chevronDirection={'right'}
+        />
+        <Button_Filled
+          link={'/'}
+          text={"get to actin'"}
+          textColor={'pink-light'}
+          bgColor={'blue'}
+          chevronDirection={'right'}
+        />
       </div>
     </section>
   )
