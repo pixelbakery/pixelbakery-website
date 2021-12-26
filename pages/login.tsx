@@ -2,7 +2,7 @@ import React from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
-import Form_Submit from '../components/parts/Form_Submit'
+import Form_Submit from '../components/parts/Button_Filled'
 function Login() {
   return (
     <main className='my-4 lander grid grid-cols-5 overflow-hidden'>
@@ -21,8 +21,9 @@ function Login() {
             </label>
             <Form_Submit
               text={'let’s goooooo'}
-              color={'blue'}
-              chevronColor={'wine'}
+              bgColor={'blue'}
+              textColor='blue-light'
+              chevronDirection={'right'}
               link={undefined}
             />
             <input
