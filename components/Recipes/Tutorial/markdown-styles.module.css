@@ -1,0 +1,23 @@
+.markdown {
+  @apply text-lg leading-relaxed;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply my-6;
+}
+.markdown h1 {
+  @apply text-blue-dark text-6xl mt-4;
+}
+.markdown h2 {
+  @apply text-wine text-4xl pt-6 leading-tight;
+}
+
+.markdown h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug;
+}
+.markdown p {
+  @apply text-lg text-wine my-3 pb-3;
+}
