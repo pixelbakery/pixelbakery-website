@@ -24,7 +24,7 @@ function Services_Related() {
       <div className=''>
         <div className='container max-w-xl ml-24 my-8 pb-4 pt-16'>
           <span className='text-peach text-2xl font-bold pb-0 mb-0'>Related Projects</span>
-          <h2 className='text-blue mt-0 pt-0'>Words are wind, so here's proof:</h2>
+          <h2 className='text-blue mt-0 pt-0'>Words are wind, so here&apos;s proof:</h2>
         </div>
         <div className='pt-8 grid grid-cols-3 gap-4 '>
           {shuffledPosts.map((project) => (
@@ -32,7 +32,13 @@ function Services_Related() {
           ))}
         </div>
         <div className=' py-8 mx-auto w-full'>
-          <Button_Filled text='test' link='#' color={undefined} />
+          <Button_Filled
+            text='test'
+            link='/'
+            bgColor={'pink'}
+            textColor={'peach'}
+            chevronDirection='right'
+          />
         </div>
       </div>
     </section>

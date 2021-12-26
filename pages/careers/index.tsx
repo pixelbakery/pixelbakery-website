@@ -1,7 +1,5 @@
-import type { NextPage } from 'next'
-
 import React from 'react'
-import Careers_Lander from '../../components/Careers/Careers_Lander'
+
 import Careers_Breadwinners from '../../components/Careers/Careers_Breadwinners'
 import Careers_OpenPositions from '../../components/Careers/Careers_OpenPositions'
 import Careers_Apprenticeships from '../../components/Careers/Careers_Apprenticeships'
@@ -11,7 +9,7 @@ import Careers_Benefits from '../../components/Careers/Careers_Benefits'
 import Careers_Culture from '../../components/Careers/Careers_Culture'
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
 
-let Careers: NextPage = () => {
+const Careers = () => {
   return (
     <main id='careers-page'>
       <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />

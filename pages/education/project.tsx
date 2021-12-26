@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '../../components/Images/UI_Icons/index'
 import Link from 'next/link'
 import Image from 'next/image'
 

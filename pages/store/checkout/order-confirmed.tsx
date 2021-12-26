@@ -3,7 +3,7 @@ import React from 'react'
 import next from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '../../../components/Images/UI_Icons/index'
 
 function SubmissionConfirmation() {
   return (
