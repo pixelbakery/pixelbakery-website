@@ -1,20 +1,25 @@
 import React from 'react'
 import Footer from './Footer/Footer'
 import Navbar from './Navigation'
-
+import Meta from './Meta'
+type Props = {
+  preview?: boolean
+  children: React.ReactNode
+}
 // Layout includes the standard navbar at the top
-export const Layout__HasNav = ({ children }) => {
+export const Layout__HasNav = ({ children }: Props) => {
   return (
-    <div className='content'>
+    <>
+      <Meta />
       <Navbar />
       {children}
       <Footer />
-    </div>
+    </>
   )
 }
 
 //Layout has no navbar on the top (useful for the home page and store page)
-export const Layout__NoNav = ({ children }) => {
+export const Layout__NoNav = ({ children }: Props) => {
   return (
     <div className='content'>
       {children}
