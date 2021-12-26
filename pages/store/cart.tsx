@@ -4,11 +4,11 @@ import PageSection from '../../components/PageSection'
 import Store_Maintenance from '../../components/Store/Store_Maintenance'
 import Link from 'next/link'
 import commerce from '../../lib/commerce'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '../../components/Images/UI_Icons/index'
 import React from 'react'
 import Head from 'next/head'
 
-let CheckoutPage: NextPage = () => {
+const CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
 
   const clearCart = async () => {

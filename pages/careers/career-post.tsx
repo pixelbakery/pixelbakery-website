@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-import { NextPage } from 'next'
+// import { NextPage } from 'next'
 
-import PageSection from '../../components/PageSection'
-import Button_Filled from '../../components/parts/Button_Filled'
+// import PageSection from '../../components/PageSection'
+// import Button_Filled from '../../components/parts/Button_Filled'
+// import Button_Filled from '../../components/parts/Button_Filled'
 
-const CareerPage: NextPage<{ career: string }> = ({ career }) => {
+function CareerPost() {
   return (
     <main className='bg-egg p-4'>
-      <PageSection className='lander flex items-center'>
+      {/* <PageSection className='lander flex items-center'>
         <div className='mx-auto max-w-6xl'>
           <h1 className='text-4xl text-peach'>job position</h1>
           <h2 className='text-6xl text-blue'> creative director</h2>
@@ -104,9 +105,14 @@ const CareerPage: NextPage<{ career: string }> = ({ career }) => {
         </div>
       </PageSection>
       <PageSection innerClassName='flex items-end justify-center'>
-        {/* <Button_Filled text='apply for position' link={'/'} color={'bg-pink'} /> */}
-      </PageSection>
+        <Button_Filled
+          text='apply for position'
+          bgColor={'pink'}
+          textColor={'peach'}
+          chevronDirection='right'
+        />
+      </PageSection> */}
     </main>
   )
 }
-export default CareerPage
+export default CareerPost

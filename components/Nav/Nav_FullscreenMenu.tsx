@@ -131,7 +131,9 @@ function Nav_FullscreenMenu(props) {
               <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
-                color={'bg-pink'}
+                bgColor={'pink'}
+                textColor={'pink-light'}
+                chevronDirection='right'
               />
             </div>
           </div>
