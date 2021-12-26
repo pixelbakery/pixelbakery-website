@@ -1,0 +1,59 @@
+---
+title: 'Recipe for Success: Mix Adaptability and Confidence (together, in a medium sized
+  bowl)'
+subtitle: 'a guide to becoming an after effects master'
+excerpt: ' When I decided at eighteen years old what I should probably do with the rest of my life,
+  I settled on a career as a journalist. Fast forward a year, and I decided that really
+  wasn’t the thing for me–I wanted to design, too. '
+coverImage: '/img/blogheader.png'
+date: '2022-01-11'
+categories: ['editorial', 'second cat', 'third cat']
+category: 'editioral'
+author:
+  name: Karley Johnson
+  picture: '/img/author2.png'
+  profileURL: '/'
+ogImage:
+  url: '/img/blogheader.png'
+---
+
+When I decided at eighteen years old what I should probably do with the rest of my life,
+I settled on a career as a journalist. Fast forward a year, and I decided that really
+wasn’t the thing for me–I wanted to design, too. Down the graphic design rabbit hole I
+blindly fell, but I drifted towards projects entailing ambient, (slightly weird)
+immersive video, music, and finally, my last semester of college, I took an Adobe After
+Effects introductory class. Only ten short months ago I applied at Pixel Bakery with
+very little experience animating, but something about motion design clicked with me. It
+felt like something I could obsessively throw myself into. That’s always a good feeling.
+
+Now, I work with motion design almost daily at our little studio. I animate for hours on
+end and only _sometimes_ want to pull my hair out and thwack my head against the desk in
+frustration. Trust me, it wasn’t always this way!
+
+Here are ten tips for anyone wanting to plunge into the daunting, fascinating,
+infuriating, yet always rewarding world of Adobe After Effects and motion design.
+
+## Set a Goal.
+
+This is easy if you’re learning on the job–you probably have a project you need to
+complete. But if you’re learning on your own time, it’s important to have a goal in
+mind. Something like animating a character you designed to walk across the screen and
+wave, or creating a moving logo reveal for your brand. Don’t give up until you’re
+satisfied with the end result!
+
+## Be Patient With Yourself.
+
+Learning something new takes time. Even if you’re a whiz at other Adobe programs, you
+might not intuitively understand everything right away when it comes to animating in
+Adobe After Effects. Let yourself be a beginner, and don’t let frustration or confusion
+overwhelm you from giving up on your goal.
+
+## Take things one step at a time.
+
+You’re going to have to start somewhere. Make a list of the things you need to learn or
+do in order to finish your goal project and start at the top. You might be surprised how
+quickly you can tick off each smaller task within the larger project–you can find a
+tutorial online for even the most specific questions. Tackling each element one by one
+is the best way to learn Adobe After Effects–you’ll start to notice that the skills you
+learn along the way will start building on each other, just like learning an instrument
+or a language.
