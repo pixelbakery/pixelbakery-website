@@ -13,24 +13,27 @@ type Props = {
   coverImage: string
   date: string
   author: Author
+  category: string
 }
 
-const PostHeader = ({ title, subtitle, coverImage, date, author }: Props) => {
+const PostHeader = ({ category, title, subtitle, coverImage, date, author }: Props) => {
   return (
     <main className='mt-44'>
-      <section className='md:max-w-3xl mx-auto '>
+      <section className='px-6 md:max-w-3xl mx-auto '>
         <div className='' id='blog-body-intro'>
           <div className='mb-6'>
-            <Pill text={'Announcements'} bgColor={'blue'} textColor={'cream'} size={'md'} />
-            <h1 className='text-blue-dark text-6xl mt-3'>{title}</h1>
+            <div className='mb-6'>
+              <Pill text={category} bgColor={'blue'} textColor={'cream'} size={'md'} />
+            </div>
+            <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{title}</h1>
             <div
-              className='my-3 inline-block text-xl font-semibold text-wine opacity-80'
+              className='my-3 inline-block text-lg md:text-xl font-bold md:font-semibold text-wine opacity-80 max-w-lg'
               role='doc-subtitle '
             >
               {subtitle}
             </div>
           </div>
-          <div className='flex mt-12 mb-8'>
+          <div className='flex mt-3 mb-16'>
             <Link href={author.profileURL} passHref>
               {/* <Avatar name={author.name} picture={author.picture} /> */}
               <Image
@@ -39,7 +42,7 @@ const PostHeader = ({ title, subtitle, coverImage, date, author }: Props) => {
                 width={'48px'}
                 height={'48px'}
                 alt={author.name}
-                quality={80}
+                quality={25}
                 className='rounded-full cursor-pointer'
                 src={author.picture}
               />
@@ -60,7 +63,7 @@ const PostHeader = ({ title, subtitle, coverImage, date, author }: Props) => {
         </div>
       </section>
       <div className=' md:max-w-6xl mx-auto'>
-        <div className='w-full  aspect-w-16 aspect-h-9 bg-peach mb-24 mx-auto'>
+        <div className='w-full  aspect-w-4 aspect-h-3 bg-peach mb-24 mx-auto'>
           <Image
             layout='fill'
             objectFit='cover'
@@ -75,25 +78,14 @@ const PostHeader = ({ title, subtitle, coverImage, date, author }: Props) => {
           <Image
             layout='fill'
             objectFit='cover'
-            className='object-center block'
+            blurDataURL='true'
+            quality={100}
+            className='object-top top-0 w-full h-full'
             src={coverImage}
             alt={title}
           />
         </div>
       </div>
-      {/* 
-      <div className='hidden md:block md:mb-12'>
-        <Avatar name={author.name} picture={author.picture} />
-      </div>
-      <div className='mb-8 md:mb-16 sm:mx-0'></div>
-      <div className='max-w-2xl mx-auto'>
-        <div className='block md:hidden mb-6'>
-          <Avatar name={author.name} picture={author.picture} />
-        </div>
-        <div className='mb-6 text-lg'>
-          <DateFormatter dateString={date} />
-        </div>
-      </div> */}
     </main>
   )
 }

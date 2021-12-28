@@ -8,6 +8,20 @@ excerpt: ' When I decided at eighteen years old what I should probably do with t
 coverImage: '/img/blogheader.png'
 date: '2022-01-11'
 categories: ['editorial', 'second cat', 'third cat']
+tags:
+  [
+    'lifestyle',
+    'lincoln nebraska',
+    'Meditation',
+    'New Hire',
+    'Post-Production Specialist',
+    'Production Internship',
+    'Sophia Stueven',
+    'University of Nebraska-Lincoln',
+    'video production',
+    'Videographer',
+    'Work/Life Balance',
+  ]
 category: 'editioral'
 author:
   name: Karley Johnson
