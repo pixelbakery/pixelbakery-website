@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { Layout__HasNav, Layout__NoNav } from '../components/Layout'
+import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/Layout'
 import TagManager from 'react-gtm-module'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import * as ga from '../lib/ga'
@@ -35,11 +35,19 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
   }
 
+  const LayoutHambOnly = () => {
+    return (
+      <Layout__NavMobile>
+        <Component {...pageProps} />
+      </Layout__NavMobile>
+    )
+  }
+
   // Define which pages get which specific layout
   const getLayout = (path) => {
     switch (true) {
       case path === '/':
-        return LayoutWithoutNav()
+        return LayoutHambOnly()
         break
       case path.startsWith('/store'):
         return LayoutWithoutNav()

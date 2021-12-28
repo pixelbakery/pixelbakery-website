@@ -38,7 +38,7 @@ function Button_Filled({ text, link, textColor, bgColor, chevronDirection }) {
           <div className={cn(' font-extrabold text-xl lowercase flex')}>
             <div
               className={cn(
-                'text-center flex-grow flex flex-col justify-center',
+                'text-center flex-grow flex flex-col justify-center leading-none',
                 `text-${textColor}`,
               )}
             >
