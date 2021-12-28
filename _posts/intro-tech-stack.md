@@ -1,0 +1,103 @@
+---
+title: An Introduction to our Technology Stack
+subtitle: A breakdown of the technology that we use every day
+excerpt: An internal process document that we provide to new hires. It outlines all of the different technologies, terminologies, apps, and programs that our employees will be using daily during their tenure with us.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/pixel-bakery-pattern.jpg
+date: '2021-06-29'
+categories: ['education', 'research']
+tags:
+  [
+    '1password',
+    'calendly',
+    ' google drive',
+    'gusto',
+    'harvest',
+    'honeybook',
+    'internal workflow',
+    'monday.com',
+    'process document',
+    'slack',
+    'technology stack',
+    'vimeo',
+    'wordpress',
+  ]
+author:
+  name: Jordan Lambrecht
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/pixel-bakery-pattern.jpg
+---
+
+> Note: This is an internal process document that we provide to new hires. It outlines all of the different technologies, terminologies, apps, and programs that our employees will be using daily during their tenure with us. Our industry is very niche and constantly evolving, so there's a lot of systems that we use. As previously mentioned, this document was originally intended for internal use only. However, we believe in open and free education and have thusly 'de-classified' the document. It's our intent to inspire and elevate other creative studios in our community, and we're thrilled at the idea of this document providing a springboard to do just that.
+
+Hello New Baker,
+
+You're about to receive a ton of different emails from the various platforms and systems that keep our ship moving forward. The role of these platforms and the connection between them and our mission can be slightly daunting and overwhelming at times. We'll go over all of these during your onboarding session, but we wanted to provide you a solidified list as a quick reference guide. Some will be obvious and familiar; some will not. Our processes are perpetually evolving, so let us know if there's something new you'd like to try.
+
+---
+
+## The Apps We Use
+
+### Slack
+
+This is our primary means of communication. You've probably heard of it. It's a messaging app and doesn't require a lot of training. We ask that you install it on your phone and your laptop. We do not expect you to respond to slack messages on the weekends or after 6:00 pm. Slack will ask you weekly what you intend to do with your four-day workweek -- please remember to respond. Our slack URL is [pixel-bakery.slack.com](https://pixel-bakery.slack.com/)
+
+### Monday.com
+
+this is the bridge of our ship (I make many Star Trek references, sorry in advance). It's how we manage projects, initiatives, people, and space. It's an intricate system, so I suggest you watch [a few YouTube tutorials](https://www.youtube.com/playlist?list=PLutcJfNEwNkQ13_Fra2PrPgy2VG-gI_1v) on it. Our Monday URL is [pixelbakery.monday.com](https://pixelbakery.monday.com/)
+
+### Gusto
+
+[Gusto](https://app.gusto.com/login)acts as our HR and payroll software. You'll interface with Gusto before you do anything else. We'll send your employment contract and offer letter through this system. It's how you track benefits, set up your 401k, and gather tax documents. You will ALWAYS have access to this software, even after your time with us is up -- in which it will switch your username over to your personal email. Gusto manages a unique benefit offered to all of our employees: Cashout. Cashout allows you to borrow against your future paychecks for free in case of emergency. Additionally, it automatically handles employment verification should a prospective employer ever ask for a reference.
+
+### Google Drive
+
+Self Explanatory. We're slowly moving away from this system. We use it mostly to make Google Docs and spreadsheets. We archive initial client assets that a client hands off to us here as well. Internal brand kit backups for quick reference and our internal photography and headshots are also stored here. There are many archived leadership documents like our US Trademark, articles of incorporation, and lots of other boring stuff you won't need to see. We require you use the Pixel Bakery letterhead If you create a google doc. You can do this by hitting the big plus button, Hovering over Document, clicking the > symbol, and selecting 'From Template.'
+
+This is how you track the hours you spend at Pixel Bakery. We use this information to gather business intelligence and historical data on past projects, establish budget baselines and know how much to pay our hourly employees. The desktop app is excellent. Please make sure that you update your timesheets and check them for accuracy by every Thursday EOD. our Harvest URL is [pixelbakery.harvestapp.com](https://pixelbakery.harvestapp.com/)
+
+### HoneyBook
+
+We refer to [HoneyBook](https://honeybook.com/) as our 'clerical' software to our clients. We use it to write estimates and proposals, send project contracts and master service agreements, and request invoice payments. You'll generally never need to see it unless you're on the Accounts Services team.
+
+> Note: If you're a photographer, freelancer, small business, or event coordinator. I HIGHLY recommend HoneyBook. The customer service is amazing, it's affordable, and it handles everything you could ever need it to. If you want to give it a try, we have a free trial link that you can use. If you end up liking it and sign up, we get a small kickback :D
+
+[share.honeybook.com/jordan62345](http://share.honeybook.com/jordan62345)
+
+### Calendly
+
+Calendly is an incredible scheduling platform that allows us to skip the back-and-forth of trying to find a time slot that works for both the client and us. You establish base meeting types, Calendly generates a link, and the recipient chooses a time slot. We use it primarily for job interviews, discovery meetings, project kickoff meetings, and creative concepting sessions. This is what the client experiences on the front-end: [calendly.com/pixelbakery](https://calendly.com/pixelbakery/)
+
+You can access our admin dashboard here: [calendly.com/event_types/user/me](https://calendly.com/event_types/user/me)
+
+### 1Password
+
+This is the gatekeeper to all of our passwords. We organize passwords into three vaults: Client Logins, PB Credentials, and Private. As the name suggests, you only need a single password to access the rest. 1Password generates random passwords for all of your accounts, which creates fewer vulnerabilities in your security chain. If someone hacks one of the websites you use, the rest of your internet accounts won't go down with it because of repeat passwords. 1Password will send you a master secret key -- we recommend you email that key to yourself and additionally slack it to yourself, pinning the slack message.
+
+Your passwords are encrypted, and leadership never, at any point, has the ability to access the passwords you store within your private vault. When your time with Pixel Bakery is over, you have the option to transform your private vault into a personal, free account. We require you to install 1Password on your browser and your phone.
+
+### WordPress
+
+WordPress is the CMS (content management system) that powers our website. Generally speaking, you'll do two main things with our WordPress -- Case studies and blog posts. You can log into our WordPress here: <https://pixelbakery.co/wp-admin>
+
+Your first introduction to WordPress will be to write a blog post introducing yourself.
+
+### Instagram
+
+It sounds silly, but Instagram is an integral part of how we obtain new business, connect with the community, and showcase the talent of our creatives. Pixel Bakery requires all employees to download the Instagram app on their phones and log into the [@pixelbakery](https://instagram.com/pixelbakery) account. It's a hefty load to carry alone, so all employees are encouraged to post to the story, respond to DMs, like/comment on relevant posts, and expand our brand's presence as they see fit. You can find the password on 1Password. You can find the content guidelines, along with our brand voice laws, inside your Cookbook.
+
+### Vimeo
+
+Last on the list is [Vimeo](https://vimeo.com/pixelbakery). Vimeo is how we deliver rough cuts (a work in progress version) and pic-locked distribution-ready versions (The 'final' version, if Pixel Bakery did not ban the word 'final') of our projects to the client. Clients can download different sizes and qualities automatically and leave detailed frame-by-frame feedback during the revision process.
+
+---
+
+As you begin to log into these platforms and get comfortable, please take ownership of them. Upload your headshot to your profile, fix mistakes as you see them, and organize/improve things at your discretion.
+
+All will begin trickling in shortly, but your first task is to create an email signature for your new, shiny pixelbakery.co email address: <https://pixelbakery.pbds.dev/email-generator.php>\
+
+<pre class="wp-block-preformatted mb-3">Note: If you'd like to use the code that we wrote to generate our email signatures, you can find the two PHP files <a href="https://gist.github.com/jordanlambrecht/7ea6da2ddcd1b1a6a6c8bb6bb49baf25" target="_blank" rel="noreferrer noopener">here</a>.</pre>
+
+Note: If you'd like to use the code that we wrote to generate our email signatures, you can find the two PHP files [here](https://gist.github.com/jordanlambrecht/7ea6da2ddcd1b1a6a6c8bb6bb49baf25).

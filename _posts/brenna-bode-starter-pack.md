@@ -1,0 +1,40 @@
+---
+title: 'The Brenna Bode Starter Pack'
+subtitle: Pixel Bakery's New Studio Manager
+excerpt: Hi friends! I’m Brenna- Pixel Bakery’s new ~Studio Manager~ and I’m so excited to be here. I’ll be making sure everything is running smoothly in the office and keeping Jordan sane.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/pixel-bakery-brenna-bode.jpg
+date: '2021-05-15'
+categories: ['announcements', 'new hires']
+tags: ['brenna bode', 'new hire', 'studio manager']
+author:
+  name: Brenna Bode
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/pixel-bakery-brenna-bode.jpg
+---
+
+Hi friends! I'm Brenna- Pixel Bakery's new ~Studio Manager~ and I'm so excited to be here. I'll be making sure everything is running smoothly in the office and keeping Jordan sane.
+
+I was born and raised here in good ol Lincoln, Nebraska, and have yet to make my escape. I'm finishing up my college career studying Advertising and Public Relations and Graphic Design with a minor in Textiles, Merchandising, and Fashion Design.
+
+Here are the key bullet points:
+
+-Taurus sun, Taurus moon, Virgo rising- I am grounded af
+
+-I'm already a crazy cat lady at the prime age of 22 (shoutout to my children Tims & Cleo <3) (See Exhibit A)
+
+![Brenna Bode's cats](/img/blog/brenna-bode-cats.jpeg)
+
+-Taylor Swift has been consuming my entire life since I was 9 years old and I have no shame about it (See Exhibit B)
+
+![Brenna Bode with Taylor Swift](/img/blog/brenna-bode-taylor-swift.jpeg)
+
+-You will either find me enjoying a glass of wine while putting together a 1000 piece puzzle then going to bed at 7 pm or white girl dancing at the Brass Rail (while obnoxiously trying to get the DJ to play Taylor Swift, of course) until the bars close and there is no in-between.
+
+-I've been running my small photography bizz for about three years now which has brought me some of the most amazing experiences and people into my life (like Pixel Bakery :')).
+
+If I've learned anything throughout my creative journey (and just life in general) it would be to trust the process. Focus on what you're passionate about and let the universe do its thing. Eventually you'll end up exactly where you're supposed to be. I started doing photography as a fun hobby to keep me and my friends entertained in high school and somehow it snowballed into a business that paid my bills and would later help me get a big girl job at Pixel Bakery.
+
+I'm just super stoked to get to surround myself and work with such talented and creative people. As my duties of being Studio Manager I'm mostly looking forward to taking over the aux in the office- hope you guys like Taylor Swift and Olivia Rodrigo <3

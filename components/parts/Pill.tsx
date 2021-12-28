@@ -28,15 +28,15 @@ export default function Pill({ text, bgColor, textColor, size }) {
 
         break
       case 'md':
-        py = ' py-2'
-        px = ' px-3'
-        fontWeight = ' font-medium'
+        py = ' py-3'
+        px = ' px-4'
+        fontWeight = ' font-semibold'
         break
 
       case 'sm':
-        py = ' py-1'
+        py = ' py-2'
         px = ' px-3'
-        fontWeight = ' font-normal'
+        fontWeight = ' font-medium'
         break
       default:
         py = ' py-1'

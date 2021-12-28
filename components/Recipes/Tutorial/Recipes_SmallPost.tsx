@@ -63,7 +63,7 @@ const Recipes_SmallPost = ({
                 <p className='line-clamp-2 md:line-clamp-3 text-wine '>{excerpt}</p>
               </div>
               <div className='justify-self-end  align-self-end mt-4'>
-                <Pill text={categories[0]} bgColor='blue-light' textColor='wine' size={'sm'} />
+                <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'sm'} />
               </div>
             </div>
           </div>

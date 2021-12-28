@@ -35,17 +35,22 @@ function Card_Rounded(props) {
           }
         ></div>
         <div className=' z-20 h-100 p-6 flex flex-col justify-between'>
-          <div className='-py-3 flex flex-wrap flex-row  gap-4'>
-            {props.tags.map((tag) => (
-              <Pill
-                text={tag}
-                bgColor={props.tagBgColor}
-                textColor={props.tagtextColor}
-                size='sm'
-                key={tag}
-              />
-            ))}
-          </div>
+          {props.tags ? (
+            <div className='-py-3 flex flex-wrap flex-row  gap-4'>
+              {props.tags.map((tag) => (
+                <Pill
+                  text={tag}
+                  bgColor={props.tagBgColor}
+                  textColor={props.tagtextColor}
+                  size='sm'
+                  key={tag}
+                />
+              ))}
+            </div>
+          ) : (
+            <div></div>
+          )}
+
           <div className=''>
             <div className='text-sm text-white'>{props.subhead}</div>
             <h3 className='text-2xl text-white'>{props.head}</h3>
