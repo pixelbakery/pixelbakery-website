@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import socialLinks from '../../../data/SocialUrls'
 import * as Icons from './Icons/index'
-
+import cn from 'classnames'
 const getLinks = socialLinks
 
 const Icon = ({ icon, title, titleId, className }) => {
@@ -20,17 +20,16 @@ const SocialLinks = ({ iconName, ...props }) => {
       <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
         <a rel='nofollow' className='mx-1 t'>
           <i
-            className={
-              'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ' +
-              props.color +
-              ' ' +
-              props.textSize
-            }
+            className={cn(
+              'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
+              props.color,
+              props.textSize,
+            )}
             role='img'
             aria-label={iconName}
           >
             <Icon
-              className={' ' + props.height + ' ' + props.width}
+              className={cn(props.height, props.width)}
               icon={Icons[iconName]}
               title={iconName}
               titleId={iconName}

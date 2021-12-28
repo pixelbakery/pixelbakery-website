@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d1e34172-42ec-4dd1-96ad-b2d28951a1af/deploy-status)](https://app.netlify.com/sites/distracted-tesla-082de9/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d1e34172-42ec-4dd1-96ad-b2d28951a1af/deploy-status)](https://app.netlify.com/sites/pixelbakery/deploys)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
