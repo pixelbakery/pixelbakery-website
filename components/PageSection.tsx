@@ -1,3 +1,4 @@
+import React from 'react'
 import cs from 'classnames'
 type Props = {
   className?: string

@@ -50,19 +50,19 @@ const Recipes_FeaturedPost = ({
         <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>
         <div
           className={
-            'absolute w-100 h-100 bg-gradient-to-t via-transparent from-blue-dark  opacity-25'
+            'absolute w-100 h-100 bg-gradient-to-t via-transparent from-blue-dark  opacity-50'
           }
         ></div>
         <div className=' z-20 h-100 p-6 flex flex-col justify-between'>
           <div className='-py-3 flex flex-wrap flex-row  gap-4'>
-            <Pill text={categories[0]} bgColor={'blue-light'} textColor={'wine'} size='sm' />
+            <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='md' />
           </div>
           <div className=''>
+            <h3 className='text-2xl md:text-3xl text-white leading-none drop-shadow-lg'>{title}</h3>
             <div className='text-sm text-white'>
               <span className='hidden md:inline'>{author.name} – </span>{' '}
               <DateFormatter dateString={date} />
             </div>
-            <h3 className='text-2xl text-white'>{title}</h3>
           </div>
         </div>
       </article>
