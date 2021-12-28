@@ -33,6 +33,27 @@ module.exports = {
         destination: '/work#projects',
         permanent: true,
       },
+      {
+        source: '/recipes/black-history-month-a-history-in-black-cinematography',
+        destination: '/recipes/2021-black-history-month-cinematography',
+        permanent: true,
+      },
+      {
+        source: '/recipes/the-brenna-bode-starter-pack',
+        destination: '/recipes/brenna-bode-starter-pack',
+        permanent: true,
+      },
+      {
+        source: '/recipes/pixel-bakery-goes-from-idea-to-solution-of-choice-in-motion-marketing',
+        destination: '/recipes/pixel-bakery-motion-marketing',
+        permanent: true,
+      },
+      {
+        source:
+          '/recipes/gmail-how-to-automatically-delete-or-archive-emails-after-a-certain-number-of-days',
+        destination: '/recipes/gmail-automatically-delete-or-archive-emails',
+        permanent: true,
+      },
     ]
   },
   reactStrictMode: true,

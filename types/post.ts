@@ -6,6 +6,7 @@ type PostType = {
   subtitle: string
   date: string
   categories: Array<string>
+  tags: Array<string>
   coverImage: string
   author: Author
   excerpt: string

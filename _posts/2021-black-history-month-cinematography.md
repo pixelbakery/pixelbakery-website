@@ -1,0 +1,44 @@
+---
+title: 'Black History Month: A History in Black Cinematography'
+subtitle: A history in Black cinematography
+excerpt: Last, but certainly not least, in our 3-part Black History Month series – a history in Black cinematography. While the rest of the year will be focused on highlighting modern creatives, we’re wrapping up BHM with another look into the past.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/oscar_micheaux.jpg
+date: '2021-02-26'
+categories: ['education']
+tags: ['Black History Month', 'Cinematagraphy', 'Oscar Micheaux']
+author:
+  name: Maria Smal
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/oscar_micheaux.jpg
+---
+
+Last, but certainly not least, in our 3-part Black History Month series -- a history in Black cinematography. While the rest of the year will be focused on highlighting modern creatives, we're wrapping up BHM with another look into the past.
+
+The cinema, like the theater, is where people go to spread messages and tell stories. However, shortly after their creation, movies became the more widely-accessible means to enjoy a theatrical performance. The development of cinematography meant that peoples' stories could finally be heard in every corner of the world. While the [first ever film](<https://headsup.scoutlife.org/what-was-the-first-movie-ever-made/#:~:text=Roundhay%20Garden%20Scene%20(1888)&text=It's%20a%20short%20film%20directed,oldest%20surviving%20film%20in%20existence.>) was created in 1888 by French director Louis Le Prince, it wasn't for another three decades in 1919 that Oscar Micheaux, child of former slaves in Kansas, became the world's first Black filmmaker.
+
+The Producers Guild of America called him "The most prolific black -- if not most prolific independent -- filmmaker in American cinema."
+
+In response to the racist stereotypes depicted in D.W. Griffith's infamous film, The Birth of a Nation, Oscar actively worked to attack the racist societal view of the African-American community through his films such as [Within Our Gates](https://www.youtube.com/watch?v=h1E0NrcnwAE). On top of it all, he was the first Black filmmaker to have his films shown in "white" movie theaters. While researching Oscar's story, I stumbled across this [short video](https://youtu.be/SwfDPc3a2PI) summarizing the achievements of Oscar Micheaux, created by University of Nebraska-Lincoln's graduate professor of film studies, Wheeler Winston Dixon.
+
+Micheaux argued that realism, and not some false idyll, was the key to the progress of the race: "I am too much imbued with the spirit of Booker T. Washington to engraft false virtues upon ourselves, to make ourselves that which we are not. Nothing could be a greater blow to our own progress. The recognition of our true situation will react in itself as a stimulus for self-advancement." The cinema gave race filmmakers an opportunity for self-representation and the ability to assert an identity for African Americans that was multifaceted while also defying the racist caricatures so prevalent in Hollywood.
+
+It isn't until decades later that we see a true resurgence of Black filmmakers in the popular media. Films are a direct representation of social climate, and in the 1970s Hollywood began exploiting Black culture in an era of "Blaxploitation Films". These were "Black" stories written and produced by white men, most often depicting Black characters as drug dealers, gang members, pimps, antiheroes, and distorted champions. Spike Lee's 1989 filmmaking debut of [Do The Right Thing ](https://www.google.com/search?q=watch+do+the+right+thing+online&oq=watch+do+the+right+thing+online&aqs=chrome..69i57j0l7.3334j0j4&sourceid=chrome&ie=UTF-8)depicted the true reality of Black life, with themes of police brutality that still ring deafeningly loud 32 years later today.
+
+![](https://media.pixelbakery.co/PB/2021/02/021816_do-the-right-thing-2-590x320-1.jpg)
+
+In 1991, Julie Dash paves the way as the first Black woman to have a full-length film released for public viewing in the United States. [Daughters in the Dust](https://www.amazon.com/Daughters-Dust-Cheryl-Lynn-Bruce/dp/B084DKNGF6) is so distinguished, that the film has been officially preserved and protected as a National Treasure. To be so accomplished in such a white male-dominated industry is no small feat, and Julie is truly an inspiration to us all.
+
+![](https://media.pixelbakery.co/PB/2021/02/julie-dash-queen-sugar-800x450.jpg)
+
+It's saddeningly clear that there are two versions of history -- and it's thanks to pioneering Black creatives that we are able to escape from the whitewashed retelling and finally hear the silenced narrative. Jordan Peele, Barry Jenkins, and Ryan Coogler have given us some of the most groundbreaking films of the past decade (Get Out, Us, Moonlight, Black Panther, etc.), but it's harrowing to think how recently these industry barriers have been broken by Oscar, Spike, Julie, and other historic Black filmmakers.
+
+They don't teach you this stuff in school -- and I'm no history professor, but I hope you've been able to learn a bit alongside me this month. The information is out there at our fingertips -- all you've gotta do is being willing to take it in. Thank you to all of the Black creatives who have shaped the industry that we're a part of. Your contributions are invaluable, and no number of blog posts could do you justice.
+
+And thank you to all of you for stopping by. Until next time.
+
+Love,
+
+–PB
