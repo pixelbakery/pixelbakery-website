@@ -32,7 +32,7 @@ function Button_Filled({ text, link, textColor, bgColor, chevronDirection }) {
         <div
           className={cn(
             ' my-3 py-3 rounded-sm px-6 w-full max-w-sm text-center cursor-pointer transform transition duration-400 hover:scale-102',
-            bgColor,
+            `bg-${bgColor}`,
           )}
         >
           <div className={cn(' font-extrabold text-xl lowercase flex')}>

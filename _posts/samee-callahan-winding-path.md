@@ -1,0 +1,32 @@
+---
+title: 'Samee Callahan: A Winding Path to Excitement'
+subtitle: An introduction to PBDS's new Associate Create Director
+excerpt: Hello, fellow Bakery fans. Welcome to this blog post about me, Samee Callahan, the new Associate Creative Director at Pixel Bakery. I’ve taken a short but winding journey to this seat. In my four years as a professional, I’ve worked as a graphic designer in-house, a small shop, and a large marketing agency.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/samee-callahan-pixel-bakery.jpg
+date: '2021-08-10'
+categories: ['announcements', 'new hire']
+tags:
+  ['Associate Creative Director', 'Lincoln', 'Nebraska Creatives', ' New Hire', 'Samee Callahan']
+author:
+  name: Samee Callahhan
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/samee-callahan-pixel-bakery.jpg
+---
+
+Hello, fellow Bakery fans. Welcome to this blog post about me, Samee Callahan, the new Associate Creative Director at Pixel Bakery. I’ve taken a short but winding journey to this seat. In my four years as a professional, I’ve worked as a graphic designer in-house, a small shop, and a large marketing agency. Pixel Bakery and I align in many ways, primarily in our shared passion for creating quality, innovative work for clients that value such a thing.
+
+If you read the following list, you'll know about everything there is to know about me:
+
+- First and foremost, I'm an avid cyclist. I took to the gravel roads three short years ago. In that time, I've raced in one 75-mile race and two 100-mile races. I coincidentally finished them all in the same amount of time---7 hours and 50 minutes.
+- As I traversed an incredibly steep, loose, rocky mountainside on a "bikepacking" trip through South Dakota, I realized I would be decent at mountain biking. The adrenaline and sense of badassery had me hooked. I bought a mountain bike shortly after.
+- One of the best vacations I've ever taken consisted of doing a three-night bikepacking adventure on the Maah Daah Hey Trail in the Badlands in North Dakota, followed by two days of mountain biking in Spearfish, then finished off the week with a 100-mile race in Scottsbluff. If you can't tell, I'm full of energy.
+- I have two kitty cats; Auggie is six years old, survived kidney failure, and is now considered retired because of the new kitty in town. The new kitty is Kimchi, and she's a one-year-old ball of sass. Most of my conversations with my friends consist of talking about our cats endlessly.
+
+Now that you know what I do, I'll give you a little bit of the why.
+
+I'm motivated by excitement and challenges in all areas of life. When presented with a problem, I always think, how can I amplify this? For example, riding my gravel bike is fun enough, but by adding a goal of completing a race in a decent amount of time, I'm adding a challenge and, therefore, excitement. Instead of checking the box and calling it done, I always try to find a way to push myself and my work a little bit more each time. Ensuring that I'm excited by a project almost guarantees that the client and the target audience will be excited too. Ultimately, if you're not providing an exciting experience for the audience, you'll be forgotten.
+
+So, look forward to lots more exciting things coming out of Pixel Bakery -- and know that, behind the scenes, we're pushing ourselves to the next level with every project.

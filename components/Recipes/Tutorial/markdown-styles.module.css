@@ -12,12 +12,33 @@
   @apply text-blue-dark text-6xl mt-4;
 }
 .markdown h2 {
-  @apply text-wine text-4xl pt-6 leading-tight;
+  @apply text-wine text-2xl md:text-4xl pt-6 leading-tight;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-xl md:text-2xl mt-8 mb-4 leading-snug;
 }
 .markdown p {
-  @apply text-lg text-wine my-3 pb-3;
+  @apply text-lg text-wine my-4 pb-3;
+}
+.markdown img {
+  @apply mx-auto my-4 mt-8;
+}
+
+.markdown img + em {
+  @apply max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium;
+}
+
+.markdown blockquote {
+  @apply border border-l-8 border-wine-100 px-16 py-3 my-20 italic;
+}
+
+.markdown a {
+  @apply underline text-peach underline-offset-4 hover:opacity-75;
+}
+.markdown ul {
+  @apply my-6;
+}
+.markdown li {
+  @apply text-lg text-wine my-3   list-inside list-disc;
 }
