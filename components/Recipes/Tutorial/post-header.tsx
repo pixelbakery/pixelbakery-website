@@ -6,17 +6,23 @@ import Author from '../../../types/author'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '../../parts/Pill'
-
+import PersonType from '../../../types/person'
+import { match } from 'assert'
+import cn from 'classnames'
 type Props = {
   title: string
   subtitle: string
   coverImage: string
-  date: string
   author: Author
+  date: string
+  matchingAuthor: PersonType[]
+  person: PersonType
   category: string
 }
 
-const PostHeader = ({ category, title, subtitle, coverImage, date, author }: Props) => {
+const PostHeader = ({ category, title, subtitle, coverImage, date, author, person }: Props) => {
+  // const test = matchingAuthor
+  console.log(person.title)
   return (
     <main className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
@@ -34,30 +40,45 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author }: Pro
             </div>
           </div>
           <div className='flex mt-3 mb-16'>
-            <Link href={author.profileURL} passHref>
-              {/* <Avatar name={author.name} picture={author.picture} /> */}
-              <Image
-                blurDataURL='true'
-                layout='fixed'
-                width={'48px'}
-                height={'48px'}
-                alt={author.name}
-                quality={25}
-                className='rounded-full cursor-pointer'
-                src={author.picture}
-              />
-            </Link>
-            <div className='ml-8 flex flex-col justify-center self-center'>
+            {/* <Avatar name={author.name} picture={author.picture} /> */}
+            {person.slug ? (
+              <Link href={'/about/' + person.slug} passHref>
+                <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+                  <Image
+                    blurDataURL='true'
+                    layout='fill'
+                    objectFit='cover'
+                    width={'48px'}
+                    height={'48px'}
+                    alt={author.name}
+                    quality={25}
+                    className='object-top scale-175 sc'
+                    src={person.headshotSmiling}
+                  />
+                </div>
+              </Link>
+            ) : null}
+
+            <div
+              className={cn('flex flex-col justify-center self-center', {
+                ['ml-8']: person.slug,
+              })}
+            >
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} /> <span className='mx-4'>|</span>Read Time: 4
                 minutes
               </div>
-              <div className='text-sm text-wine'>
-                Written by the one and only
-                <Link href='/' passHref>
-                  <a className='text-peach'> {author.name}</a>
-                </Link>
-              </div>
+
+              {person.slug ? (
+                <div className='text-sm text-wine'>
+                  Written by the one and only
+                  <Link href={'/about/' + person.slug} passHref>
+                    <a className='text-peach'> {author.name}</a>
+                  </Link>
+                </div>
+              ) : (
+                <div className='text-sm text-wine'>Written by {author.name}</div>
+              )}
             </div>
           </div>
         </div>
