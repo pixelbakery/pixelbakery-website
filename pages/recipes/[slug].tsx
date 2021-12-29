@@ -5,17 +5,21 @@ import PostBody from '../../components/Recipes/Tutorial/post-body'
 import PostHeader from '../../components/Recipes/Tutorial/post-header'
 import Recipes_Posts_Related from '../../components/Recipes/Tutorial/Recipes_Post_Related'
 import { getPostBySlug, getAllPosts } from '../../lib/api_post'
+import { getPersonBySlug, getAllPeople } from '../../lib/api_person'
+
 import PostTitle from '../../components/Recipes/Tutorial/post-title'
 import Head from 'next/head'
 
 import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
+import PersonType from '../../types/person'
 
 type Props = {
   post: PostType
   morePosts: PostType[]
   relatedPosts: PostType[]
-  preview?: boolean
+  matchingAuthor: PersonType[]
+  ourPerson: PersonType[]
 }
 
 function shuffleArray(array) {
@@ -29,13 +33,14 @@ function shuffleArray(array) {
   return array
 }
 
-const Post = ({ post, relatedPosts }: Props) => {
-  console.log(post.tags)
+const Post = ({ post, relatedPosts, ourPerson }: Props) => {
+  console.log(ourPerson.title)
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   // const allPosts
+  // console.log(matchingAuthor)
   return (
     <main>
       {router.isFallback ? (
@@ -54,6 +59,7 @@ const Post = ({ post, relatedPosts }: Props) => {
               coverImage={post.coverImage}
               date={post.date}
               author={post.author}
+              person={ourPerson}
             />
             <PostBody tags={post.tags} content={post.content} />
           </article>
@@ -70,6 +76,7 @@ export default Post
 type Params = {
   params: {
     slug: string
+    person: string
     categories: Array<string>
     allPosts: Array<object>
   }
@@ -88,6 +95,17 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage',
   ])
+  const allPeople = getAllPeople([
+    'name',
+    'slug',
+    'headshotSerious',
+    'headshotSmiling',
+    'active',
+    'title',
+    'phone',
+    'email',
+    'content',
+  ])
   const allPosts = getAllPosts([
     'title',
     'subtitle',
@@ -98,10 +116,23 @@ export async function getStaticProps({ params }: Params) {
     'coverImage',
     'excerpt',
   ])
+  // Get author bios
+  // console.log(post.author.name)
+  const matchingAuthor = allPeople.filter(
+    (person) => person.name.toUpperCase() === post.author.name.toUpperCase(),
+  )
 
+  // console.log(matchingAuthor.length)
+  // matchingAuthor.forEach((person) => {
+  // })
   const currentPost = post
+  const ourPerson = matchingAuthor[0]
+  // console.log(ourPerson.name, ' | ', ourPerson.title, ' | ', ourPerson.slug)
+
   // Map the currentPost categories array to a Set for lookup in the filter
   const searchCategories = new Set(currentPost.categories.map((category) => category.toUpperCase()))
+
+  // const temp = allPosts.filter((item) => item.author.name === 'Jordan Lambrecht')
 
   const matchingPosts = allPosts.filter((post) => {
     // If the currently iterated post title matches the currentPost return false (filter it out);
@@ -136,6 +167,7 @@ export async function getStaticProps({ params }: Params) {
   const content = await markdownToHtml(post.content || '')
   return {
     props: {
+      ourPerson: { ...ourPerson },
       relatedPosts: relatedPosts,
       post: {
         ...post,

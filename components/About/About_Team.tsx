@@ -1,8 +1,4 @@
 import React from 'react'
-import roster from '../../data/roster'
-import next from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
 import About_Team_Headshot from './About_Team_Headshot'
 import Person from '../../types/person'
 
@@ -13,7 +9,7 @@ function About_Team({ people }: Props) {
   return (
     <section className='my-4' id='team'>
       <div className='grid gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
-        {people.map((person, index) => {
+        {people.map((person) => {
           if (person.active === true) {
             return (
               <About_Team_Headshot
