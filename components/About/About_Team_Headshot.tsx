@@ -2,24 +2,40 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import cn from 'classnames'
 
 function About_Team_Headshot({ ...props }) {
   const headshot = props.headshot
   const headshotSmiling = props.headshotSmiling
 
-  const [hover, setHover] = useState(!false)
+  const [hover, setHover] = useState(false)
   const handleHover = () => setHover(!hover)
 
   return (
     <Link href={`/about/${props.url}`} passHref>
-      <a className='relative w-full  aspect-w-3 aspect-h-4'>
+      <a
+        className='relative w-full  aspect-w-3 aspect-h-4'
+        onMouseOver={handleHover}
+        onMouseLeave={handleHover}
+      >
         <Image
-          src={hover ? headshot : headshotSmiling}
+          src={headshot}
           layout={'fill'}
           objectFit='cover'
-          className='w-full h-full object-cover'
-          onMouseOver={handleHover}
-          onMouseLeave={handleHover}
+          className={cn('absolute top-0 left-0 w-full h-full object-cover z-20', {
+            ['opacity-0']: hover,
+          })}
+          alt={'pixel bakery ' + props.name}
+
+          // onMouseOver={(e) => console.log(props.headshotSmiling)}
+        />
+        <Image
+          src={headshotSmiling}
+          layout={'fill'}
+          objectFit='cover'
+          className='absolute top-0 left-0  w-full h-full object-cover z-10'
+          alt={'pixel bakery ' + props.name}
+
           // onMouseOver={(e) => console.log(props.headshotSmiling)}
         />
       </a>
