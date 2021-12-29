@@ -1,0 +1,22 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "_people",
+      "path": "[[workspace]]/_people"
+    },
+    {
+      "title": "_caseStudies",
+      "path": "[[workspace]]/_caseStudies"
+    },
+    {
+      "title": "_posts",
+      "path": "[[workspace]]/_posts"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [
+    "gmail"
+  ],
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.framework.id": "next"
+}
