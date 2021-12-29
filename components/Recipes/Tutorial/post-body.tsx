@@ -1,6 +1,7 @@
 import React from 'react'
 import Pill from '../../parts/Pill'
-import markdownStyles from './markdown-styles.module.css'
+import markdownStyles from '../../styles/markdown-styles.module.css'
+
 import Button_Filled from '../../parts/Button_Filled'
 type Props = {
   content: string
