@@ -2,7 +2,7 @@ import React from 'react'
 import Section from '../../components/Section'
 import MoreStories from '../../components/Recipes/Tutorial/more-stories'
 
-import { getAllPosts } from '../../lib/api'
+import { getAllPosts } from '../../lib/api_post'
 
 import Post from '../../types/post'
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
