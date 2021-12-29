@@ -1,7 +1,7 @@
 import React from 'react'
 
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-import About_Intro from '../../components/About/About_Intro'
+// import About_Intro from '../../components/About/About_Intro'
 import About_Team from '../../components/About/About_Team'
 import About_Values from '../../components/About/About_Values'
 import About_StudioViews from '../../components/About/About_StudioViews'

@@ -9,21 +9,14 @@ export function getPeopleSlugs() {
 }
 
 export function getPersonBySlug(slug: string, fields: string[] = []) {
-  console.log('debug')
   const realSlug = slug.replace(/\.md$/, '')
-  console.log('real slug:', realSlug)
-  console.log('debug2')
   const fullPath = join(peopleDirectory, `${realSlug}.md`)
-  console.log('debug3')
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  console.log('debug4')
   const { data, content } = matter(fileContents)
-  console.log('debug5')
 
   type Items = {
     [key: string]: string
   }
-  console.log('debug')
   const items: Items = {}
 
   // Ensure only the minimal needed data is exposed
