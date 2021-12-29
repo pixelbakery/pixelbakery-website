@@ -1,13 +1,13 @@
 import React from 'react'
-import SolaTinyChef_Header from '../../../components/CaseStudies/CaseStudies_Header'
-import CaseStudies_Tags from '../../../components/CaseStudies/CaseStudies_Tags'
-import SolaTinyChef_Description from '../../../components/CaseStudies/CaseStudies_Description'
-import SolaTinyChef_PreProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PreProduction'
-import SolaTinyChef_Production from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_Production'
-import SolaTinyChef_PostProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PostProduction'
-import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
-import SolaTinyChef_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
-import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
+import SolaTinyChef_Header from '../components/CaseStudies/CaseStudies_Header'
+import CaseStudies_Tags from '../components/CaseStudies/CaseStudies_Tags'
+import SolaTinyChef_Description from '../components/CaseStudies/CaseStudies_Description'
+import SolaTinyChef_PreProduction from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_PreProduction'
+import SolaTinyChef_Production from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_Production'
+import SolaTinyChef_PostProduction from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_PostProduction'
+import CaseStudies_Credits from '../components/CaseStudies/CaseStudies_Credits'
+import SolaTinyChef_OtherProjects from '../components/CaseStudies/CaseStudies_OtherProjects'
+import CaseStudies_BecomeAClient from '../components/CaseStudies/CaseStudies_BecomeAClient'
 
 const tags = [
   { name: 'Creative Concepting', url: '/' },
