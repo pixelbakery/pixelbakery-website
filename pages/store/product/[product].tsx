@@ -16,7 +16,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import ReactGA from 'react-ga4'
 ReactGA.send('pageview')
 
-export let getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
   const product = await commerce.products.retrieve(permalink, { type: 'permalink ' })
@@ -33,10 +33,9 @@ let currentVariant = 'select'
 function CanIAddToCart(variantId) {
   currentVariant = variantId
 }
-let Store_Product: NextPage = ({ product }: { product: any }) => {
+const Store_Product: NextPage = ({ product }: { product: any }) => {
   const [price, setPrice] = useState(product.price.raw)
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
-  const onPriceChange = (evt) => setPrice(Math.max(evt.target.value, product.price.raw))
 
   const [variant, setVariant] = useState({})
 
