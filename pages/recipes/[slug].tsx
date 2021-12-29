@@ -4,7 +4,7 @@ import PostBody from '../../components/Recipes/Tutorial/post-body'
 
 import PostHeader from '../../components/Recipes/Tutorial/post-header'
 import Recipes_Posts_Related from '../../components/Recipes/Tutorial/Recipes_Post_Related'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts } from '../../lib/api_post'
 import PostTitle from '../../components/Recipes/Tutorial/post-title'
 import Head from 'next/head'
 
@@ -14,7 +14,7 @@ import PostType from '../../types/post'
 type Props = {
   post: PostType
   morePosts: PostType[]
-  relatedPosts: PostType
+  relatedPosts: PostType[]
   preview?: boolean
 }
 
@@ -70,7 +70,7 @@ export default Post
 type Params = {
   params: {
     slug: string
-    categories: string
+    categories: Array<string>
     allPosts: Array<object>
   }
 }
