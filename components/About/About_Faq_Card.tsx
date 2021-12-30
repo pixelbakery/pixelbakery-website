@@ -1,18 +1,24 @@
-import React from 'react'
-import cs from 'classnames'
-
-function About_Faq_Card({ faq }) {
-  const [open, setOpen] = React.useState(false)
+import React, { useEffect, useState } from 'react'
+import cn from 'classnames'
+import { gsap } from 'gsap'
+type Props = {
+  faq: { a: string; q: string }
+  index: number
+}
+function About_Faq_Card({ faq, index }: Props) {
+  const btnClass = 'btn'
+  const [open, setOpen] = useState(false)
   const onClick = () => setOpen(!open)
 
   return (
     <div
       onClick={onClick}
-      className={cs('faqcard', {
+      className={cn(' h-full', {
         opened: open,
       })}
+      id={cn(`faq${index}`)}
     >
-      <button className='relative w-full border-2 rounded-md border-blue py-3 px-12 my-4 question flex justify-between'>
+      <button className='relative w-full border-2 rounded-md bg-pink-light border-blue py-3 px-12 my-4 question flex justify-between z-20'>
         <div className='self-center pr-9'>
           <p className='text-left text-pink font-bold text-lg '>{faq.q}</p>
         </div>
@@ -24,8 +30,16 @@ function About_Faq_Card({ faq }) {
           </div>
         </div>
       </button>
-      <div className='overflow-hidden opacity-0 answer my-3 d-none '>
-        <p className='px-12 md:px-24  text-blue-dark '>{faq.a}</p>
+      <div
+        className={cn(
+          'relative flex flex-col transform translate-all duration-500  overflow-hidden  my-3 d-none ',
+          {
+            ['opacity-100 h-full ']: open,
+            ['opacity-0  h-0 -translate-y-10']: !open,
+          },
+        )}
+      >
+        <p className='px-12 md:px-24  text-blue-dark text-md'>{faq.a}</p>
       </div>
     </div>
   )
