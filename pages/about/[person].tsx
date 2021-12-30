@@ -1,7 +1,7 @@
 import React, { useRouter } from 'next/router'
 
 import { getAllPeople, getPersonBySlug } from '../../lib/api_person'
-import { getAllPosts, getPostBySlug } from '../../lib/api_post'
+import { getAllPosts } from '../../lib/api_post'
 
 import Head from 'next/head'
 import markdownStyles from '../../styles/markdown-styles.module.css'
