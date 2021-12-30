@@ -14,12 +14,13 @@ import { getAllPosts } from '../lib/api_post'
 // import Home_Recipes from '../components/Home/Home_Recipes'
 
 import Link from 'next/link'
+import Home_Recipes from '../components/Home/Home_Recipes'
 type Props = {
   allPosts: Post[]
 }
 const Home = ({ allPosts }: Props) => {
   return (
-    <div>
+    <main className='max-w-screen overflow-x-hidden '>
       <Head>
         <title>Pixel Bakery</title>
         <link rel='icon' href='/favicon.svg' />
@@ -29,21 +30,8 @@ const Home = ({ allPosts }: Props) => {
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio />
-      <section id='test'>
-        <div>
-          slugs:
-          {allPosts.map((post) => {
-            return (
-              <div key={post.title}>
-                <Link href={'/recipes/' + post.slug}>
-                  <a>{'/recipes/' + post.title}</a>
-                </Link>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-    </div>
+      <Home_Recipes allPosts={allPosts} />
+    </main>
   )
 }
 

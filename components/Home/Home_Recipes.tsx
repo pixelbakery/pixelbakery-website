@@ -1,16 +1,40 @@
 import React from 'react'
-import { getAllPosts } from '../../lib/api_post'
-import fs from 'fs'
+
 import Post from '../../types/post'
 
 import { useRouter } from 'next/router'
-
-export default function Index({ allPosts }) {
-  //   const allPosts = getAllPosts()
-  return <></>
+import Link from 'next/link'
+import Recipes_SmallPost from '../Recipes/Tutorial/Recipes_SmallPost'
+type Props = {
+  allPosts: Post[]
 }
+function Home_Recipes({ allPosts }: Props) {
+  const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
+
+  return (
+    <section className='my-4 px-6'>
+      <div>
+        slugs:
+        {allPosts.map((post) => {
+          return (
+            <Recipes_SmallPost
+              key={post.slug}
+              title={post.title}
+              categories={post.categories}
+              coverImage={post.coverImage}
+              date={post.date}
+              author={post.author}
+              slug={post.slug}
+              excerpt={post.excerpt}
+            />
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+export default Home_Recipes
 // const Index = ({ allPosts }: Props) => {
-//   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
 
 //   const getFeaturedPosts = () => {
 //     return allPosts.slice(0, featuredPostNo).map((post) => {

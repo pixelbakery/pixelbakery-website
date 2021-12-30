@@ -5,7 +5,7 @@ function Home_WhoTheHeck() {
   return (
     <PageSection className='bg-pink-light'>
       <h2 className='text-peach my-8'>who the heck</h2>
-      <div className='text-4xl text-pink my-8 leading-snug font-bold'>
+      <div className='text-4xl text-pink my-8 leading-none lowercase font-bold'>
         <p className='py-3 '>
           we&apos;re an award-winning multidisciplinary production studio centered around animation,
           film, and design.
