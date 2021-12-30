@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import servicesList from '../../data/services'
-import Home_Services_Card from './Home_Services_Card'
+import Work_Services_Card from '../Work/Work_Services_Card'
+import services from '../../data/services'
 import gsap from 'gsap'
 // import { PbIconMixerAbs } from "../icons/abs/index";
 
@@ -24,20 +24,25 @@ function Home_Services() {
     })
   }, [])
   return (
-    <section className='relative py-16 bg-blue overflow-hidden' id='home-services'>
-      <div className='relative max-w-6xl mx-auto z-10'>
+    <section
+      className='my-4 px-6 relative py-8 lg:py-16 bg-blue overflow-hidden'
+      id='home-services'
+    >
+      <div className=' max-w-6xl mx-auto z-10'>
         <div className=' w-full flex flex-col '>
-          <div className='w-1/2 mb-16'>
-            <h2 className='text-blue-dark font-bold'>And w&apos;re the best at what we do. </h2>
-            <p className='lead text-cream'>This is our craft. Our hobbies are our profession.</p>
+          <div className=' mb-16'>
+            <h2 className='text-blue-dark font-bold'>And w&apos;re greats at what we do. </h2>
+            <p className='text-2xl font-medium text-cream'>
+              This is our craft.
+              <br /> Our hobbies are our profession.
+            </p>
           </div>
           <div className='mx-auto w-full flex flex-wrap justify-between  -mt-2 mb-16'>
-            {servicesList.map((services) => (
-              <Home_Services_Card
-                service={services.service}
-                link={services.url}
-                key={services.service}
-                color={'peach'}
+            {services.map((service) => (
+              <Work_Services_Card
+                service={service.service}
+                url={service.url}
+                key={service.service}
               />
             ))}
           </div>
