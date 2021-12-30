@@ -20,7 +20,7 @@ function Work_Services() {
         </div>
         <div className='col-span-2 md:col-span-1 flex flex-wrap -mt-2 '>
           {services.map((service) => (
-            <Work_Services_Card service={service} key={service.service} />
+            <Work_Services_Card service={service.service} url={service.url} key={service.service} />
           ))}
         </div>
         {/* <div class="col-span-1 flex flex-wrap -m-2">
