@@ -8,6 +8,8 @@ import SolaTinyChef_PostProduction from '../components/CaseStudies/SolaTinyChef/
 import CaseStudies_Credits from '../components/CaseStudies/CaseStudies_Credits'
 import SolaTinyChef_OtherProjects from '../components/CaseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '../components/CaseStudies/CaseStudies_BecomeAClient'
+import * as matter from 'gray-matter'
+import Project from '../types/project'
 
 const tags = [
   { name: 'Creative Concepting', url: '/' },
@@ -39,8 +41,11 @@ const otherProjects = [
     tag: 'Video Production',
   },
 ]
+type Props = {
+  project: Project
+}
 
-function SolaTinyChef() {
+function SolaTinyChef({ project }: Props) {
   return (
     <main className='overflow-x-hidden'>
       <SolaTinyChef_Header
