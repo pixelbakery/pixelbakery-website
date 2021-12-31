@@ -89,8 +89,8 @@ export const Footer: NextPage = () => {
               <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
-                bgColor={'bg-pink'}
-                textColor={'peach'}
+                bgColor={'pink'}
+                textColor={'pink-light'}
                 chevronDirection='right'
               />
             </div>
