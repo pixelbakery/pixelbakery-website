@@ -3,31 +3,31 @@
 export default [
   {
     service: 'Animation & Motion Design',
-    url: '#',
+    url: '/services/animation',
   },
   {
     service: '3D Modeling',
-    url: '#',
+    url: '/services/animation',
   },
   {
     service: 'Creative Concepting & Strategy',
-    url: '#',
+    url: 'services/creative',
   },
   {
     service: 'Commercial Video Production',
-    url: '#',
+    url: '/services/creative-concepting',
   },
   {
     service: 'Emerging Media',
-    url: '#',
+    url: 's/ervices/emerging-media',
   },
   {
     service: 'Social Media Kits',
-    url: '#',
+    url: '/services/social-media',
   },
   {
     service: 'Brand In Motion Kits',
-    url: '#',
+    url: '/logo-animation',
   },
   {
     service: 'Pay-What-Ya-Want Web Hosting',

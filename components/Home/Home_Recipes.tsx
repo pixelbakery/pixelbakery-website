@@ -5,17 +5,18 @@ import Post from '../../types/post'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Recipes_SmallPost from '../Recipes/Tutorial/Recipes_SmallPost'
+import Button_Filled from '../parts/Button_Filled'
 type Props = {
   allPosts: Post[]
 }
 function Home_Recipes({ allPosts }: Props) {
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
-
+  const postsToShhow = allPosts.slice(0, featuredPostNo)
   return (
-    <section className='my-4 px-6'>
-      <div>
-        slugs:
-        {allPosts.map((post) => {
+    <section className='my-4 px-6 pb-8 pt-12 '>
+      <div className='max-w-md md:max-w-2xl xl:max-w-4xl mx-auto'>
+        <h2 className='mb-20'>Mom&apos;s Recipes</h2>
+        {postsToShhow.map((post) => {
           return (
             <Recipes_SmallPost
               key={post.slug}
@@ -29,6 +30,15 @@ function Home_Recipes({ allPosts }: Props) {
             />
           )
         })}
+      </div>
+      <div className='mx-auto pt-16 pb-8 border-t border-wine-100 max-w-6xl'>
+        <Button_Filled
+          text='we got more'
+          link='/recipes'
+          chevronDirection='right'
+          bgColor='blue'
+          textColor='cream'
+        />
       </div>
     </section>
   )

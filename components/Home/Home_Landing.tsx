@@ -3,24 +3,41 @@ import Link from 'next/link'
 import Home_SocialLinks from './Home_SocialLinks'
 import Button_Filled from '../parts/Button_Filled'
 import Image from 'next/image'
+import Lottie from 'react-lottie-player'
+import classNames from 'classnames'
+import Pattern from '../../data/Patterns_Blue_Dark.json'
+import Logo_Primary from '../Images/logo_primary'
+const playFrames = [
+  [0, 23],
+  [24, 95],
+]
+const pattern1 = Pattern
+
+type Props = {
+  pattern: object
+}
 function Home_Landing() {
+  function Pattern({ pattern1 }) {
+    return (
+      <Lottie
+        animationData={pattern1}
+        loop
+        segments={playFrames}
+        play
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+        style={{ height: '100%' }}
+      />
+    )
+  }
   return (
     <main>
       <section className='lander overflow-hidden w-full my-4 flex'>
-        <nav className='w-1/3 max-w-lg bg-pink-light h-full hidden  md:flex flex-col justify-between py-10 px-12 '>
-          <div className='relative px-20 self-center w-64 h-64 text-blue fill-current'>
-            <Image
-              layout='fill'
-              objectFit='contain'
-              blurDataURL={'true'}
-              className=' object-center logo-pink'
-              src={'/img/pixelbakery-logo-primary.svg'}
-              id='home-logo'
-              alt='pixel bakery is an animation and video production studio'
-            />
+        <nav className='w-2/5 xl:w-1/3 max-w-lg bg-pink-light h-full hidden lg:flex flex-col py-10 px-16 '>
+          <div className=' w-full pr-40   text-pink fill-current'>
+            <Logo_Primary className='' />
           </div>
-          <div className='self-center w-full px-4'>
-            <div className='w-full mt-12' id='homepage-main-nav'>
+          <div className='flex-grow w-fit px-4'>
+            <div className='h-full w-full flex flex-col justify-center ' id='homepage-main-nav'>
               <ul className='mx-auto '>
                 <li className='my-1 '>
                   <Link href={'/work'}>
@@ -55,11 +72,11 @@ function Home_Landing() {
               </ul>
             </div>
           </div>
-          <div className='flex-grow'>
+          <div className=''>
             <div className='text-blue font-bold text-2xl text-center w-full mb-0 pb-0'>
               fresh puns & nice buns
             </div>
-            <div className='flex justify-center w-full my-3 '>
+            <div className='flex justify-center w-full my-2'>
               <Button_Filled
                 text={'Start something wonderful'}
                 link={'/onboarding'}
@@ -73,7 +90,13 @@ function Home_Landing() {
             </div>
           </div>
         </nav>
-        <div className='flex-grow pb-pattern h-full' id='homepage-lander'>
+        <div className='relative flex-grow bg-blue h-full overflow-hidden'>
+          <div
+            className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie'
+            id='lottie'
+          >
+            <Pattern pattern1={pattern1} />
+          </div>
           <div className=' flex flex-col justify-center h-full w-full '>
             <div className='relative  self-center w-full max-w-3xl h-full'>
               <div className=''>
