@@ -29,8 +29,8 @@ const Recipes_SmallPost = ({
       <a aria-label={title}>
         <article className='border-t border-wine-100 my-6 pb-4 pt-8 cursor-pointer transition-scale duration-500 hover:scale-98'>
           <div className='flex flex-row gap-4 md:gap-10'>
-            <div className='hidden sm:block sm:w-2/5 '>
-              <div className='w-full h-full md:aspect-4/3 relative'>
+            <div className='hidden sm:block sm:w-2/5 2xl:w-2/5 '>
+              <div className='w-full h-full md:aspect-4/3  relative'>
                 <Image
                   layout='fill'
                   src={coverImage}
@@ -42,7 +42,7 @@ const Recipes_SmallPost = ({
             </div>
             <div className='sm:w-3/5 flex flex-col '>
               <div className=' flex justify-start '>
-                <div className='relative overflow-hidden rpounded-full h-full aspect-1 mr-4'>
+                <div className='relative overflow-hidden rounded-full h-full aspect-1 mr-4'>
                   <Image
                     layout='fill'
                     objectFit='cover'
@@ -59,10 +59,10 @@ const Recipes_SmallPost = ({
               <h2 className='my-1 py-1 text-xl md:text-2xl font-semibold leading-none md:leading-tight text-blue-dark'>
                 {title}
               </h2>
-              <div className='flex-grow'>
+              <div className='flex-grow 2xl:flex-initial'>
                 <p className='line-clamp-2 md:line-clamp-3 text-wine '>{excerpt}</p>
               </div>
-              <div className='justify-self-end  align-self-end mt-4'>
+              <div className=' mt-4'>
                 <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'sm'} />
               </div>
             </div>

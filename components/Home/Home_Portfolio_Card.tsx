@@ -25,7 +25,7 @@ function Home_Portfolio_Card({
   link,
 }) {
   return (
-    <article className='w-full  lg:w-3/5 px-1'>
+    <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
       <div
         className={cn('relative home-portfolio aspect-w-16 aspect-h-9 z-10', bgColor, bgPosition)}
       >

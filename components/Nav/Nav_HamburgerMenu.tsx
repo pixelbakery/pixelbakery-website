@@ -26,11 +26,11 @@ function Nav_HamburgerMenu() {
 
   function HandleHamOpen() {
     // gsap.to('#fullscreenNav', { display: 'block' })
-    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 1, autoAlpha: 1, overwrite: true })
+    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 1, autoAlpha: 1 })
     //
   }
   const handleHamClose = () => {
-    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 0, autoAlpha: 0, overwrite: true })
+    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 0, autoAlpha: 0 })
     // gsap.set('#fullscreenNav', { display: 'none' })
   }
 

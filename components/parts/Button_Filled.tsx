@@ -28,35 +28,33 @@ function Button_Filled({ text, link, textColor, bgColor, chevronDirection }) {
   }
   return (
     <Link href={link} passHref>
-      <a>
-        <div
-          className={cn(
-            ' my-3 py-3 rounded-sm px-6 w-full max-w-sm text-center cursor-pointer transform transition duration-400 hover:scale-102',
-            `bg-${bgColor}`,
-          )}
-        >
-          <div className={cn(' font-extrabold text-xl lowercase flex')}>
-            <div
-              className={cn(
-                'text-center flex-grow flex flex-col justify-center leading-none',
-                `text-${textColor}`,
-              )}
-            >
-              {text}
-            </div>
-
-            <i
-              className={cn(
-                'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
-                chevronRotation,
-                `text-${textColor}`,
-              )}
-            >
-              <ChevronRightIcon />
-            </i>
+      <div
+        className={cn(
+          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm mx-auto text-center cursor-pointer transform transition duration-400 hover:scale-102',
+          `bg-${bgColor}`,
+        )}
+      >
+        <div className={cn(' font-extrabold text-xl lowercase flex')}>
+          <div
+            className={cn(
+              'text-center flex-grow flex flex-col justify-center leading-none',
+              `text-${textColor}`,
+            )}
+          >
+            {text}
           </div>
+
+          <i
+            className={cn(
+              'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
+              chevronRotation,
+              `text-${textColor}`,
+            )}
+          >
+            <ChevronRightIcon />
+          </i>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
