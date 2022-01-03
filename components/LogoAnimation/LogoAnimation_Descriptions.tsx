@@ -1,11 +1,13 @@
 import React from 'react'
 import LogoAnimation_Descriptions_Card from './LogoAnimation_Descriptions_Card'
+import InnerWrapper from '../InnerWrapper'
+import H2 from '../H2'
 
 function LogoAnimation_Descriptions() {
   return (
     <section className='my-4 px-12 py-12' id='descriptions'>
-      <div className='mx-auto max-w-6xl'>
-        <h2 className='pb-6'>Package Details</h2>
+      <InnerWrapper>
+        <H2 className='pb-6'>Package Details</H2>
         <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-8 gap-y-16'>
           <LogoAnimation_Descriptions_Card
             header='Concepts'
@@ -56,7 +58,7 @@ function LogoAnimation_Descriptions() {
             desc='.mogrt files are Adobe Premiere template files that you can load into your projects so you don’t have to hunt down and import your animation each time. They also include the ability to dynamically edit text, which is essential if you have lower thirds'
           />
         </div>
-      </div>
+      </InnerWrapper>
     </section>
   )
 }
