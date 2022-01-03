@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-Home_Portfolio_Card.PropTypes = {
+Home_Portfolio_Card.propTypes = {
   bgColor: PropTypes.string,
   bgPosition: PropTypes.string,
   client: PropTypes.string,
