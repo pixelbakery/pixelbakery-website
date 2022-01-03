@@ -34,6 +34,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/recipes/creativity-behind-closed-doors-pixel-bakerys-2021-addy-awards',
+        destination: '/recipes/2021-addy-awards',
+        permanent: true,
+      },
+      {
         source: '/recipes/black-history-month-a-history-in-black-cinematography',
         destination: '/recipes/2021-black-history-month-cinematography',
         permanent: true,
