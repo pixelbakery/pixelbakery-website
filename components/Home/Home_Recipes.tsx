@@ -2,8 +2,6 @@ import React from 'react'
 
 import Post from '../../types/post'
 
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Recipes_SmallPost from '../Recipes/Tutorial/Recipes_SmallPost'
 import Button_Filled from '../parts/Button_Filled'
 type Props = {
