@@ -14,10 +14,10 @@ const playFrames = [
 const pattern1 = Pattern
 
 type Props = {
-  pattern: object
+  pattern1: object
 }
 function Home_Landing() {
-  function Pattern({ pattern1 }) {
+  function Pattern({ pattern1 }: Props) {
     return (
       <Lottie
         animationData={pattern1}
