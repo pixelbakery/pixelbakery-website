@@ -34,8 +34,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/creativity-behind-closed-doors-pixel-bakerys-2021-addy-awards',
-        destination: '/recipes/2021-addy-awards',
+        source:'/recipes/black-history-month-a-history-in-black-photography',
+        destination: '/recipes/black-history-month-photography',
         permanent: true,
       },
       {
@@ -43,6 +43,7 @@ module.exports = {
         destination: '/recipes/2021-black-history-month-cinematography',
         permanent: true,
       },
+      
       {
         source: '/recipes/the-brenna-bode-starter-pack',
         destination: '/recipes/brenna-bode-starter-pack',
