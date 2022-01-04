@@ -170,6 +170,9 @@
     top: -6%;
     border-radius: 3px;
   }
+  iframe .form-wrapper-component {
+    @apply h-min bg-transparent !important;
+  }
 }
 
 .lander {
