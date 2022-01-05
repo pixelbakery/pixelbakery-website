@@ -34,6 +34,16 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/recipes/black-history-month-a-history-in-black-animation',
+        destination: '/recipes/black-history-month-a-history-in-black-animation',
+        permanent: true,
+      },
+      {
+        source: '/recipes/audrey-farnham-batter-late-than-never-a-non-traditional-pilgrimage-to-find-meaning-grit-and-satisfaction',
+        destination: '/recipes/audrey-farnham-batter-late-than-never',
+        permanent: true,
+      },
+      {
         source:'/recipes/black-history-month-a-history-in-black-photography',
         destination: '/recipes/black-history-month-photography',
         permanent: true,
