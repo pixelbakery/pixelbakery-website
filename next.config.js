@@ -34,8 +34,18 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/recipes/dan-the-man',
+        destination: '/recipes/dan-the-man',
+        permanent: true,
+      },
+      {
+        source: '/recipes/list-of-video-image-formats-in-2021-supporting-alpha-channels',
+        destination: 'recipes/video-image-formats-in-2021',
+        permanent: true,
+      },
+      {
         source: '/recipes/black-history-month-a-history-in-black-animation',
-        destination: '/recipes/black-history-month-a-history-in-black-animation',
+        destination: '/recipes/black-history-month-animation',
         permanent: true,
       },
       {
