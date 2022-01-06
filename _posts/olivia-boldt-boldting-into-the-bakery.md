@@ -9,8 +9,6 @@ categories: ['announcements', 'new hires']
 tags: ['Olivia Boldt', 'Project Manager', 'New Hire']
 author:
   name: Olivia Boldt
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pixel-bakery-olivia-boldt.jpg
 ---
