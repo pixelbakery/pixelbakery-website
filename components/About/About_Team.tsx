@@ -10,13 +10,14 @@ function About_Team({ people }: Props) {
     <section className='my-4' id='team'>
       <div className='grid gap-4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {people.map((person) => {
+          console.log(person.name)
           if (person.active === true) {
             return (
               <About_Team_Headshot
                 key={person.name}
                 name={person.name}
-                headshot={person.headshotSerious}
-                headshotSmiling={person.headshotSmiling}
+                headshot={person.photos.headshotSerious}
+                headshotSmiling={person.photos.headshotSmiling}
                 url={person.slug}
               />
             )
