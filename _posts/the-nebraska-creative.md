@@ -1,0 +1,25 @@
+---
+title: 'The Nebraska Creative'
+subtitle: I’m happy to announce the official launch of The Nebraska Creative.
+excerpt: The Nebraska Creative is your go-to resource for discovering design, advertising, and creative agencies in the heart of the Midwest – aka good ol’ Nebraska.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/NECR_TitleCard.jpeg
+date: '2020-04-28'
+categories: ['announcements']
+tags: ['Creative Community', 'DoMoreGood', 'Nebraska Creative']
+author:
+  name: Jordan Lambrecht
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/NECR_TitleCard.jpeg
+---
+If you've hung around me at all, you know that community is something that is super important to me. I use the phrase "The Rising Tide Lifts All Boats" so frequently that I might as well get it tattooed on my ass. Another thing I'm passionate about: uniting designers and creatives in Nebraska. Our industry has a tendency to condition us to mistrust other designers and view them as the enemy. I've tried to make it my life's work to put an end to that. Nebraska is home to a hell of a lot of creative studios, designers, and freelancers that can hold their own against the big guys. If we stand together we can collectively put ourselves on the map alongside other cities and states that are well-known creative hubs.
+
+It's a small step towards that goal, but I'm happy to announce the official launch of The Nebraska Creative. I've spent around 200 hours (most of them thanks to quarantine) building this site from scratch as a passion project. Huge shoutout to Hannah Klemme for helping me with the branding, Kaiti Hill for helping with copywriting, and Lindsey Stewart for helping with research.
+
+The Nebraska Creative is your go-to resource for discovering design, advertising, and creative agencies in the heart of the Midwest - aka good ol' Nebraska. With the mindset of collaboration over competition, The Nebraska Creative embraces a diverse range of creative shops to showcase the assets and skills each has to offer - helping you find the perfect team of individuals ready to refresh your business and bring new ideas to life.
+
+Check it out, pass it along to any business owners that are looking for a shop, and hit me with any feedback you have to make it better:
+
+[https://nebraska-creative.com](https://nebraska-creative.com/)
