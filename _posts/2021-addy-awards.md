@@ -9,8 +9,6 @@ categories: ['announcements', 'awards']
 tags: ['ADDYs awards', 'holly&apos;s healthy holes', 'work from home', 'covid']
 author:
   name: Maria Smal
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/HHH_ProductPhotos2020_Pixel-Bakery.jpg
 ---

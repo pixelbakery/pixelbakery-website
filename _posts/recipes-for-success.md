@@ -24,9 +24,7 @@ tags:
   ]
 category: 'editioral'
 author:
-  name: Karley Johnson
-  picture: '/img/author2.png'
-  profileURL: '/'
+  name: Karley Johnsons
 ogImage:
   url: '/img/blogheader.png'
 ---

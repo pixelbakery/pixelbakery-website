@@ -19,9 +19,7 @@ tags:
     'Tony Bertino',
   ]
 author:
-  name: Jordan Lambrecht
-  picture: /img/placeholder01.png
-  profileURL: '/'
+  name: Jordan Lambrechts
 ogImage:
   url: /img/blog/Pixel-Bakery-Employees-Jordan-Lambrecht.jpg
 ---

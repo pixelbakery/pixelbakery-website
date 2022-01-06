@@ -42,7 +42,7 @@ const Recipes_SmallPost = ({
             </div>
             <div className='sm:w-3/5 flex flex-col '>
               <div className=' flex justify-start '>
-                <div className='relative overflow-hidden rounded-full h-full aspect-1 mr-4'>
+                {/* <div className='relative overflow-hidden rounded-full h-full aspect-1 mr-4'>
                   <Image
                     layout='fill'
                     objectFit='cover'
@@ -50,7 +50,7 @@ const Recipes_SmallPost = ({
                     className=''
                     alt={`written by  ${author.name}`}
                   />
-                </div>
+                </div> */}
                 <span className='self-center  lg:mx-4 text-xs md:text-base text-wine-300  lg:order-1'>
                   {author.name} <br className=' md:hidden' />
                   <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />

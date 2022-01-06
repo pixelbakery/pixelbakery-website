@@ -23,8 +23,6 @@ tags:
   ]
 author:
   name: Jordan Lambrecht
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/Illustrator_export_pdf_presets.jpg
 ---

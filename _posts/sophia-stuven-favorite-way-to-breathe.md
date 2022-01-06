@@ -22,8 +22,6 @@ tags:
   ]
 author:
   name: Sophia Stueven
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pixelbakery_Sophia-Stueven.jpg
 ---
