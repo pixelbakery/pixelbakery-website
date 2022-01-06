@@ -39,8 +39,28 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/creativity-behind-closed-doors-pixel-bakerys-2021-addy-awards',
-        destination: '/recipes/2021-addy-awards',
+        source: '/recipes/dan-the-man',
+        destination: '/recipes/dan-the-man',
+        permanent: true,
+      },
+      {
+        source: '/recipes/list-of-video-image-formats-in-2021-supporting-alpha-channels',
+        destination: 'recipes/video-image-formats-in-2021',
+        permanent: true,
+      },
+      {
+        source: '/recipes/black-history-month-a-history-in-black-animation',
+        destination: '/recipes/black-history-month-animation',
+        permanent: true,
+      },
+      {
+        source: '/recipes/audrey-farnham-batter-late-than-never-a-non-traditional-pilgrimage-to-find-meaning-grit-and-satisfaction',
+        destination: '/recipes/audrey-farnham-batter-late-than-never',
+        permanent: true,
+      },
+      {
+        source:'/recipes/black-history-month-a-history-in-black-photography',
+        destination: '/recipes/black-history-month-photography',
         permanent: true,
       },
       {
@@ -48,6 +68,7 @@ module.exports = {
         destination: '/recipes/2021-black-history-month-cinematography',
         permanent: true,
       },
+      
       {
         source: '/recipes/the-brenna-bode-starter-pack',
         destination: '/recipes/brenna-bode-starter-pack',

@@ -1,0 +1,65 @@
+---
+title: 'Black History Month: A History in Black Animation'
+subtitle: A history in Black animation
+excerpt: Pixel Bakery is a design studio that specializes in animation, photography, videography, and graphic art. We couldn’t be more thankful to our community for letting us do what we love every single day. It’s Black History Month, and we figured we would explore the histories of our various crafts and spend the next few weeks highlighting the Black creatives that have shaped the industry we’re a part of.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/floyd-norman-at-the-board_apprentice-inbetweener_sleeping-beauty-1956_custom-66ced25d3ba90b55cb5392e8dbc58abda163e141-s1600-c85-800x517.jpg
+date: '2021-02-11'
+categories: ['amplify & educate']
+tags: ['Black History Month', 'Animation']
+author:
+  name: Maria Smal
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/floyd-norman-at-the-board_apprentice-inbetweener_sleeping-beauty-1956_custom-66ced25d3ba90b55cb5392e8dbc58abda163e141-s1600-c85-800x517.jpg
+---
+Pixel Bakery is a design studio that specializes in animation, photography, videography, and graphic art. We couldn't be more thankful to our community for letting us do what we love every single day. It's Black History Month, and we figured we would explore the histories of our various crafts and spend the next few weeks highlighting the Black creatives that have shaped the industry we're a part of.
+
+With the wildly positive reception of "Soul" (2020), it's easy to take the success for granted without taking a moment to recognize the people who paved the way. The animated film's director, Kemp Powers, is Pixar's first ever Black director.
+
+Yes. You read that right. Pixar's first EVER Black director.
+
+In 2020.
+
+On top of that, "Soul" depicts Pixar's first Black lead character.
+
+In the grand scheme of American cinema, "Soul" is only the 4th animated feature film that depicts a Black lead character at all, following "Bebe's Kids" (1992), "The Princess and the Frog" (2009), and "Spider-Man Into the Spiderverse" (2018). Not only does this present the problem of a lack of jobs for deserving Black creatives, but it also leaves BIPOC children feeling unseen & unrepresented in the media they consume -- which poses a slew of problems in their adult life.
+
+This [conversation](https://www.cartoonbrew.com/artist-rights/the-challenges-of-being-black-in-the-animation-industry-video-discussion-193165.html) with Wesley Louis (co-founder of The Line Animation Studio) & Mohamed Fadera (freelance animation artist/director) is an eye-opening discussion about the challenges of being Black in the animation industry that I, frankly, had not considered until now. It's a must-see video, and I encourage everyone to give it a watch this week. Education is everyone's personal responsibility.
+
+> "[Louis] and Fadera both worry that black artists are held to higher standards than their white counterparts..."
+>
+> "[Louis] also admits that he himself used to draw Black men in an "unflattering" way --- aggressive, ugly..."
+>
+> "Louis explains, he sometimes looks at Black colleagues as if they're "representing all of us. So it's almost like, if he messes up, I'm like, 'Agh... no!' There's so little of us, you can't drop the ball..."
+
+Since it's Black History Month, it's only appropriate to pay homage to the Black animators who have come before to break ground in a white-dominated industry.
+
+### Floyd Norman
+
+In 1957, [Floyd](https://en.wikipedia.org/wiki/Floyd_Norman) officially joined the Disney team as their first Black animator.
+
+![](/img/blog/floyd-norman-at-the-board_apprentice-inbetweener_sleeping-beauty-1956_custom-66ced25d3ba90b55cb5392e8dbc58abda163e141-s1600-c85-800x517.jpg)_Floyd Norman is shown above in 1956, working as an “apprentice” on Sleeping Beauty._
+
+His notable works include *Sleeping Beauty*, *101 Dalmatians*, *The Jungle Book*, *Mulan*, *Toy Story 2*, & *Monsters Inc*.
+
+He's currently 85 years old and has no intentions of retiring anytime soon. Apart from working at Disney, Floyd partnered with his friend [Leo D. Sullivan](https://www.imdb.com/name/nm0838214/) to create [AfroKids.com](http://afrokids.com/leodsullivan.html) providing "edutainment" to children and make it accessible for all, regardless of income.
+
+### Taylor K. Shaw
+
+[Taylor](https://taylorkshaw.com/) is the founder & CEO of [Black Women Animate](https://www.bwastudios.com/), a studio created to "build equity in the animation industry by consciously hiring Black women, women of color, and nonbinary POC."
+
+![](/img/blog/Screen-Shot-2021-02-09-at-1.03.29-PM-800x404.png)_[BWA] consciously hires BIPOC, women, LGTBQIA, and differently-abled people to make up 95-100% of [their] teams._
+
+Taylor has worked with giant companies such as Cartoon Network & Adult Swim, paving the way for Black females in animation.
+
+### Bruce W. Smith
+
+[Bruce](https://en.wikipedia.org/wiki/Bruce_W._Smith) created *The Proud Family* in 2001, marking the first Disney show with a Black female lead.
+
+![](/img/blog/Bruce_W._Smith.jpg)_Bruce W. Smith created Penny Proud, a young Black teenager going through the misadventures of junior high._
+
+He went on to work on *The Princess & the Frog*, *Frozen*, and *Wreck It Ralph*, to name a few.
+
+Bruce co-directed *Hair Love*, an Oscar-winning animated short about an African-American father learning to do his daughter's hair for the first time. This short was a fantastic success, telling a story so simple yet so meaningful. You can watch the stunning 6-minute short [here](https://www.youtube.com/watch?v=kNw8V_Fkw28).
