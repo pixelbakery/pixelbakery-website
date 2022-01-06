@@ -9,9 +9,7 @@ categories: ['announcements', 'new hire']
 tags:
   ['Associate Creative Director', 'Lincoln', 'Nebraska Creatives', ' New Hire', 'Samee Callahan']
 author:
-  name: Samee Callahhan
-  picture: /img/placeholder01.png
-  profileURL: '/'
+  name: Samee Callahhans
 ogImage:
   url: /img/blog/samee-callahan-pixel-bakery.jpg
 ---

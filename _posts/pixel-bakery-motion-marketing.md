@@ -22,8 +22,6 @@ tags:
   ]
 author:
   name: Jordan Lambrecht
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pixel-bakery-motion-marketing.jpg
 ---

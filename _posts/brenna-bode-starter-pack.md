@@ -9,8 +9,6 @@ categories: ['announcements', 'new hires']
 tags: ['brenna bode', 'new hire', 'studio manager']
 author:
   name: Brenna Bode
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pixel-bakery-brenna-bode.jpg
 ---

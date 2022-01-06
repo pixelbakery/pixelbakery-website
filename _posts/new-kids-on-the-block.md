@@ -18,8 +18,6 @@ tags:
 date: '2021-11-09'
 author:
   name: Lizzie Moore
-  picture: /img/placeholder03.png
-  profileURL: /
 ogImage:
   url: /img/placeholder03.png
 ---

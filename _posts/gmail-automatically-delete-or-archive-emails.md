@@ -9,8 +9,6 @@ categories: ['education']
 tags: ['automation', 'gmail', 'google scripts', 'gsuite', 'javascript', 'Tutorial']
 author:
   name: Jordan Lambrecht
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pixelbakery-auto-delete-arcive-gmail.jpg
 ---

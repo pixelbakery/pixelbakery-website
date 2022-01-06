@@ -9,8 +9,6 @@ categories: ['education']
 tags: ['Black History Month', 'Cinematagraphy', 'Oscar Micheaux']
 author:
   name: Maria Smal
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/oscar_micheaux.jpg
 ---
