@@ -46,7 +46,7 @@ Dope. So far so good. Now let's set things in motion. On your shape layer, twirl
 
 ![Add Trim Paths to your shape layer in After Effects](https://media.pixelbakery.co/PB/2020/04/Screen-Shot-2020-04-09-at-2.39.22-PM-1920x416.png)
 
-Scrub forward to your desired start time on the timeline (I would give yourself some breathing room -- don't start the animation immediately). Twirl down on the Trim Paths 1 selector in your shape layer. You'll see three attributes: Start, End, and Offset. This can be a bit confusing; even I still get this part messed up. The attributes are represented by a percentage. That percentage is how "complete" a path's line is from the attribute's name. Offset is the percentage the "completeness" is shifted on the path. I put together a gif to help better explain those attributes:
+Scrub forward to your desired start time on the timeline (I would give yourself some breathing room - don't start the animation immediately). Twirl down on the Trim Paths 1 selector in your shape layer. You'll see three attributes: Start, End, and Offset. This can be a bit confusing; even I still get this part messed up. The attributes are represented by a percentage. That percentage is how "complete" a path's line is from the attribute's name. Offset is the percentage the "completeness" is shifted on the path. I put together a gif to help better explain those attributes:
 
 Be sure to add Easy Ease onto the keyframes to give it a cleaner movement.
 
@@ -64,4 +64,4 @@ Yay. Good for you. We're all very proud of you.
 
 -   If you plan on keyframing the text at all, be sure to parent your mask to the text so it moves in lockstep with it.
 -   I recommend adding motion blur to your layers with keyframes.
--   I don't actually hate you -- I think you're great and I love you.
+-   I don't actually hate you - I think you're great and I love you.
