@@ -1,0 +1,27 @@
+---
+title: 'Bake It ‘Till You Make It: Why it’s Okay to Feel Like an Idiot Sometimes'
+subtitle: What’s up, I’m Lindsey Stewart, the newest bun in the Pixel Bakery oven! 
+excerpt: What’s up, I’m Lindsey Stewart, the newest bun in the Pixel Bakery oven! I’m super stoked to be joining the team as a multimedia designer, bread puns and all. 
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Blog-post-photo-2-1619x1080_(1).jpeg
+date: '2020-03-03'
+categories: ['from the desk of']
+tags: []
+author:
+  name: Audrey Farnham
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/Blog-post-photo-2-1619x1080_(1).jpeg
+---
+What's up, I'm Lindsey Stewart, the newest bun in the Pixel Bakery oven! I'm super stoked to be joining the team as a multimedia designer, bread puns and all.
+
+I'm currently in the latter half of my sophomore year studying Graphic Design at the University of Nebraska-Lincoln, but was born and raised in Minneapolis, Minnesota. As a non-Nebraskan, I have a LOT to learn about Lincoln, but I'm so excited to experience all the quirks NE has to offer. (Except for the cinnamon roll in the chili thing, that's just weird AF.)
+
+Moving to a new state has been a really great push for me to leave my comfort zone and to experience an environment where I can start building the foundations for my career in the creative field. While I lack extensive experience in "real-world" jobs, I've worked hard to make sure I can adapt to new environments, as well as try to make the best of any situation thrown my way. Working in both foodservice and retail since I was 15 has definitely encouraged me to deal with situations head-on rather than to ignore them or hope they go away on their own. It has also made me realize that looking like a big fat idiot sometimes is not as bad as you'd think. Sure, we all have that one embarrassing thing we did that makes us want to slam our head into a wall thinking about it, but those situations are exactly what makes us understand that what we did was wrong, and encourages us *NOT* to make the same mistake. Ever. Again. (I'm talking to you, DIY safety scissor bangs.)
+
+The best advice I can give as a newbie is to roll with the punches and be open to leaving your comfort zone. If there's anything I've learned from the few years of theatre I did in high school, (I was ensemble in "*Singin' in the Rain*," not to flex or anything,) it's that if you don't feel stupid sometimes, you're not doing it right. Making mistakes is what creates opportunities for us to learn and grow. Be kind, stay humble, and always take note of the lessons others are teaching you. Also, don't cut your bangs with safety scissors, I really can't stress that enough.
+
+Although I'm the baby of Pixel Bakery, I'm excited to learn all I can from my dope new colleagues and co-create with them in such a fun & chill environment. In the meantime, I'll try my best to not break anything, and try even harder not to cry next time we work with cute animals. 
+
+Oh, and remember kids, it's okay to feel like an idiot sometimes.
