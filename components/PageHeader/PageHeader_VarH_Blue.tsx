@@ -17,7 +17,7 @@ PageHeader_VariableHeight.propTypes = {
 
 const primaryColor1 = 'blue'
 const accentColor1 = 'blue-dark'
-const subheaderColor1 = 'cream '
+const subheaderColor1 = 'cream'
 
 const pattern1 = Pattern
 const playFrames = [
@@ -47,7 +47,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       id='topOfPage'
     >
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <Pattern pattern={pattern1} />
+        <Pattern pattern1={pattern1} />
       </div>
       <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
         <div
