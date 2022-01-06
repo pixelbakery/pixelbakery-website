@@ -16,6 +16,7 @@ type Props = {
   content: string
   post: PostType
   matchingAuthorPosts: PostType[]
+  author: Array<string>
 }
 
 const Person = ({ person, matchingAuthorPosts }: Props) => {
@@ -79,8 +80,8 @@ export async function getStaticProps({ params }: Params) {
   const person = getPersonBySlug(params.person, [
     'name',
     'active',
-    'headshotSerious',
-    'headshotSmiling',
+    'photos.headshotSerious',
+    'photos.headshotSmiling',
     'title',
     'phone',
     'email',
