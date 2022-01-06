@@ -1,10 +1,10 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d1e34172-42ec-4dd1-96ad-b2d28951a1af/deploy-status)](https://app.netlify.com/sites/pixelbakery/deploys)
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2f45400a-22ec-4fbf-a0e3-69be82b7aa1b/deploy-status)](https://app.netlify.com/sites/pixelbakery/deploys)
 
 # pb-oct-2022
 
 Link to XD Mockups: [HERE](https://xd.adobe.com/view/a95dc4ca-cea6-4af3-be90-78a0cef0a1dd-fc0e/)
+
+Link to Production Server: [pixelbakery.netlify.app](https://pixelbakery.netlify.app)
 
 ## Brand Colors
 
