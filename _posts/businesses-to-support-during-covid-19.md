@@ -1,0 +1,200 @@
+---
+title: 'Our Favorite Local Businesses to Support During COVID-19'
+subtitle: Who knew the new decade would begin like this?
+excerpt: Who knew the new decade would begin like this? Confined to our homes, communicating through screens, virtually no in-person gatherings, and an unimaginable amount of people struggling to survive without jobs that rely on human interaction. 2019, if you’re listening, we didn’t mean what we said about you. Take us back!
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/COVID_Blog_Header_v3-2048x1180_copy_copy.png
+date: '2020-03-20'
+categories: ['editorial', 'education']
+tags: ['covid-19', 'economy', 'lincoln nebraska', 'local business', 'Pixel Bakery', 'small business', 'work from home']
+author:
+  name: Madeline Christensen
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/COVID_Blog_Header_v3-2048x1180_copy_copy.png
+---
+Who knew the new decade would begin like this? Confined to our homes, communicating through screens, virtually no in-person gatherings, and an unimaginable amount of people struggling to survive without jobs that rely on human interaction. 2019, if you're listening, we didn't mean what we said about you. Take us back!
+
+You don't really appreciate the necessity of day-to-day human contact until it's suddenly gone.
+
+We're experiencing one of the most unprecedented, difficult times our world has seen in a while. And it's universal. More than ever we need to lean on each other for emotional and financial support. That's why we compiled a list of all our favorite local businesses and artists that you can support while we're all staying at home with way too much time to meditate.
+
+PB is here to remind you to check in on your friends, take care of yourself, and most importantly, support your community. Oh, and wash your damn hands.
+
+* * * * *
+
+![](/img/blog/Jordan_Headshot.jpeg)
+
+### Jordan's Recommendations
+
+#### [Iron Brush Tattoo](https://ironbrush.com/)
+
+While everyone is suffering during this, businesses whose services require human contact like Iron Brush are especially suffering. They closed their doors on March 16th with the following statement: *"part of the solution to this current situation, and follow the advice of the health professionals. Nothing is more important to us than protecting the health and safety of our clients, our crew and community."*
+
+As with a lot of these, definitely grab a gift card or make a future appointment with them, but also remember that emotional support is just as important as financial support. Show you care about them by leaving them a comment on their facebook page or email to <tyson@ironbrush.com>. If you already have a deposit down, leave it there. If you got a tattoo from them in the past, throw a photo of it on the 'gram and tag them. 
+
+#### [Relentless Merch](https://relentlessmerch.com/)
+
+Relentless has been with us since the very beginning. They're a screenprinting and merch shop that heavily relies on events, promos, and music shows for revenue. They're a bunch of great people, so I'd recommend supporting them any way you can.
+
+If you know anyone that needs merch printed, hit them up: <matt@relentlessmerch.com>. They're also hosting a fundraiser for Iron Brush and 1867 right now, where you can purchase merch and have all the proceeds go directly to the other companies: <https://ironbrush.itemorder.com/sale>
+
+#### [Selfishly: Pixel Bakery!](https://pixelbakery.co/)
+
+We work with a lot of small businesses and nonprofits. This means that when they're in a gridlock, so are we. I think one of the important life lessons that this whole situation should be teaching us is that it's okay to ask for help. I'm saying do the whole "GoFundMe-link-for-my-study-abroad-trip-in-my-Tinder-bio" thing, but if you want a couple free ways to support us:
+
+-   Rock our merch. Wear our shirts and tag us in photos of you in them. Put our stickers on your Hydroflask, laptop case, etc. If you DM us your address, I'll mail you a couple for free. We also sell our t-shirts at-cost (How much we pay Relentless to make them) on our website.
+-   Invite your friends to follow us on Instagram.
+-   DM us if PB or anyone on the PB team has made an impact in your life. We're all pretty down in the dumps right now, and I think our team would really appreciate any words of encouragement.
+-   Tell everyone you know about us! If you think there's a potentially awesome client relationship with a company, introduce us to them.
+
+![](/img/blog/karley_headshot.jpeg)
+
+### Karley's Recommendations
+
+#### [Rutabagas](http://eatrutabagas.com/)
+
+Rutabagas is a female-led vegan comfort food spot here in Lincoln. They have been working really hard and saving up money to be able to open up their own location on O Street. They are currently under construction for the new location that's supposed to open next month, so their team needs as much love and support that they can get now.
+
+Here's a statement from Sara: *"From the bottom of our Rutabagas hearts, we ask that you continue patronizing our business as long as you can for as long as the government allows us to operate. As a small business that has only been alive for 18 months, we do NOT have paid time off as a perk for our staff (as much as we wish we did!) and we love our staff like family and want to prevent as many economic hardships as we can."*
+
+-   They are currently offering take out options at their restaurant on 230 N 12th
+-   Order online at [eatrutabagas.com](http://eatrutabagas.com/?fbclid=IwAR0KG4ROsBA_maU-P9ZalPizZWPu2-bISwFMdJcLTUdCT-hhlS1jyH7kiUM)
+-   Call them at 402-440-7651 to order take out from our regular menu.
+-   Find them on [doordash.com](http://doordash.com/?fbclid=IwAR3vTPtUTEUSuPU3V35ScNqEKzpW899ryDu-SfK-qHVNufVGHKcORQec7BI) to get their regular menu delivered to you.
+
+#### [Goldenrod Pastries](http://www.goldenrodpastries.com/)
+
+There's no better way to social distance yourself than to sit on your couch with a box of sweet treats! Goldenrod Pastries has become a Lincoln favorite, and the recently opened up their second location at The Bay.
+
+With a team of almost 20, they want to weather this COVID-19 storm by still serving up tasty treats. They will be offering take out only orders, curbside pickup, and you can also pick up a gift card to use at a later date. Call their two locations to place your orders.
+
+-   Order Online at <http://www.goldenrodpastries.com/>
+-   The Bay: 402-486-4103 9 am - 4 pm
+-   48th Location: 402-327-1532 10 a.m. - 5 p.m.
+
+#### [Cycle Works & Moose's Tooth](https://www.cycleworksusa.com/articles/cycle-works-bike-shop-lincoln-ne-pg299.htm)
+
+Cycle Works & Moose's Tooth are mainstays in the Lincoln small business community, and with spring on the horizon they are anticipating people to get out and get active.
+
+In light of the recent pandemic, fewer people are wanting to leave their homes. Folks, nature is not canceled. Working out outside is actually great for you, as long as you are taking the proper precautions to keep you and the others on the trail healthy.
+
+Here's what they had to say: *"Cycling is the most fun form of social distancing we can think of!!! We are here to keep you rolling! Let us know if you need something brought to your car or delivered if necessary. Thank you for taking care of each other by keeping your distance."*
+
+![](/img/blog/hannah_headshot-2048x768.jpeg)
+
+### Hannah's Recommendations
+
+#### [Pepe's Bistro](https://pepesbistro.com/)
+
+I don't know another restaurant in Lincoln who is as committed to sourcing all of his food locally as Pepe's Bistro. Located at 1311 S 11th St, he relies on the support of his community to keep serving up the best vegetarian and vegan Mexican food in town.
+
+Right now Pepe is offering pre-order and takeout only options Monday-Friday from 11 a.m. - 2 p.m. You can also snag one of his gift certificates to use at a later date.
+
+-   Check out the takeout menu [here](https://www.facebook.com/80783326241/photos/a.125536216241/10157243420526242/?type=3&theater)
+-   Call (402) 470-7217 to order
+
+#### Local Artists
+
+Many young, local artists are unable to work the campus and service jobs that keep them afloat in order to pursue their passions and make art. This is a great time to support them by buying their art and merchandise, giving a shout out on social media, or simply providing funds for materials!
+
+Here is a list of just a few incredible artists here in Nebraska:
+
+-   Yvon (Instagram: @byyvon) - *Taking commissions*
+-   Chas Hyman (Instagram: @urweirdgf) - *Selling prints*
+-   Johnny Redd (Instagram: @johnny_redd.pdf) - *Selling buttons and merch*
+-   Lilli Marvin (Instagram: @lillimarvin) -- Album art commissions.
+-   Sara Cecetka (Instagram: @happyhelpart, DePop: @cecethrift) - *Jewelry, and accessories for sale*
+-   Abby Birkel (Instagram: @abigail.birkel.art) - *Taking commissions*
+
+![](/img/blog/tyler_headshot-2048x768.jpeg)
+
+### Ty's Recommendations
+
+#### [Lazlo's](http://www.lazlosbreweryandgrill.com/)
+
+I've worked at Lazlo's for nearly seven years, and I love these people like family. They have a huge staff that is deeply affected by this. Please show them your support by ordering curbside pick-up or delivery.
+
+You can call them at [402-434-5636](https://www.google.com/search?q=lazlos&oq=lazlos&aqs=chrome..69i57j0l7.1631j0j7&sourceid=chrome&ie=UTF-8&npsic=0&rflfq=1&rlha=0&rllag=40785243,-96675249,4455&tbm=lcl&rldimm=17935347973153642124&lqi=CgZsYXpsb3MiA4gBAUj2p7GF5oCAgAhaFAoGbGF6bG9zEAAYACIGbGF6bG9z&ved=2ahUKEwid8obv06foAhXDU80KHXLDCjIQvS4wB3oECAoQGw&rldoc=1&tbs=lrf:!1m5!1u8!2m3!8m2!1u8050!3e1!1m4!1u17!2m2!17m1!1e2!1m4!1u3!2m2!3m1!1e1!1m5!1u15!2m2!15m1!1shas_1wheelchair_1accessible_1entrance!4e2!2m4!1e17!4m2!17m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:4&rlst=f#) and see their menu [here.](http://www.lazlosbreweryandgrill.com/index.html)
+
+#### [Moran's](https://shopmoransliquor.com/#/home)
+
+What better way to get through our quarantine than casually consuming beverages?
+
+Moran's is a local liquor store with a quaint tap room in the back, and they are currently delivering orders directly to you as well as offering pick-up making drinking red wine in bed more socially acceptable than ever before!
+
+Check out their [website](https://shopmoransliquor.com/#/home) for more info about delivery services.
+
+#### [The Mill](https://millcoffee.com/)
+
+As an avid coffee connoisseur, The Mill will always and forever be my local go-to stop for my coffee fix. With school about to start back up remotely, make sure to stock up on coffee for all those late nights studying at home.
+
+You can select your nearest location here and order curbside pick-up so you can safely obtain your caffeine buzz.
+
+![](/img/blog/maddy_headshot-2048x768.jpeg)
+
+### Maddy's Recommendations
+
+#### [Lincoln Vintage Vinyl](http://www.lincolnvintagevinyl.com/)
+
+The world is slowing down. Music on the go is out, and dusting off the old record player is in. So support your local record stores! Lincoln Vintage Vinyl is one of the best.
+
+While the physical store is closed, you can support LVV by shopping online via their website, [LincolnVintageVinyl.com](http://www.lincolnvintagevinyl.com/), or their [Discogs site](http://discogs.com/seller/LincolnVintageVinyl/profile), and they'll ship directly to your door!
+
+#### [QuickDraw Caricatures](http://www.kwkdraw.com/)
+
+Full disclosure: this is my dad's caricature business and truly his passion project. He recently retired from a long-time radio career to take the biz full time.
+
+With so many of his live drawing events canceled, this is the perfect time to commission a full-color caricature for a gift or just for yourself. Contact him at [kwkdraw.com](http://full%20disclosure:%20this%20is%20my%20dad%E2%80%99s%20caricature%20business%20and%20truly%20his%20passion%20project.%20He%20recently%20retired%20from%20a%20long-time%20radio%20career%20to%20take%20the%20biz%20full%20time.%20With%20so%20many%20live%20drawing%20events%20being%20canceled,%20this%20is%20the%20perfect%20time%20to%20commission%20a%20full-color%20caricature%20for%20a%20gift%20or%20just%20for%20yourself.%20Hit%20him%20up%20at%20kwkdraw.com!/) or call 308-440-4815!
+
+![](/img/blog/lindsey_headshot-2048x768.jpeg)
+
+### Lindsey's Recommendations
+
+#### [Roots Collective](https://www.vagaro.com/us04/rootscollective)
+
+It's more important than ever to support local hair stylists, especially the rad ladies down at Roots Collective. Now's the perfect time to really go nuts with a DIY bang trim and then book a future appointment to fix it.
+
+The talented, passionate team down at Roots is ready to do what they can. Businesses like this that rely on in-person service are in need of a little extra love right now, and this place is no exception. To schedule appointments, head over to <https://www.vagaro.com/us04/rootscollective>.
+
+#### [Gomez Art Supply](http://www.gomezartsupply.com/)
+
+Oh, what we would do without Gomez. Home to the most supportive, friendly, helpful staff, Gomez is hoping to keep its doors open as long as possible.
+
+Go grab some paint, maybe a sketchbook or two, and give yourself the means to create while stuck inside. They have a huge selection, so why not make some art?
+
+Stop by at 120 N 14th Street in downtown Lincoln, or support them at home by ordering a gift certificate (of any amount!) online [here](http://www.gomezartsupply.com/).
+
+#### [Wax Buffalo](https://waxbuffalo.com/)
+
+With all of us stuck inside during quarantine, why not make sure it smells nice? Wax buffalo is currently offering free, site-wide shipping, including storefront goodies that weren't originally offered online.
+
+If you're already stocked up, grab a gift card, or buy one for a friend. The Wax Buffalo team is working crazy hard to fulfill all online orders, even with their physical storefront being closed.
+
+With a series dedicated to Lincoln landmarks, you can feel like you're hanging at your favorite spots around town without leaving the comfort of your quarantine! (Not to mention, they're cute AF.) Check out their online shop at[https://waxbuffalo.com](https://waxbuffalo.com/)
+
+[![](https://media.pixelbakery.co/PB/2020/03/KP_headshot.jpg)](/img/blog/KP_headshot.jpg)
+
+### KP's Recommendations
+
+#### [The Bay](https://www.thebay.org/lincoln/)
+
+Due to COVID-19, The Bay had to shut its doors. Not only is it a coffee shop (+[Goldenrod](http://www.goldenrodpastries.com/)), but it is a safe haven for youngsters in our community. Additionally, I have a few friends and a family member who are currently out of a job during this tough time.
+
+To help, consider promoting the programs they will be facilitating online in the interim on your social media channels! They'll be organizing at home skate contests, photo/art challenges, live-streamed music performances, social media takeovers, writing prompts, etc.
+
+#### [(402) Creamery](https://www.402creamery.com/)
+
+402 Creamery is a small, family-owned ice cream shop right here in Lincoln. They just announced that they are opening a new location (in addition to their Haymarket location). Winter months are difficult for a small ice cream store in general, but this pandemic has halted business completely.
+
+Have a craving for great ice cream? Order something sweet from (402) Creamery through GrubHub.
+
+#### [Hub Cafe](https://www.hubcafelincoln.com/)
+
+The Hub Cafe was created by a family-owned farm (Branched Oak Farm) just outside of Lincoln. All ingredients used in the restaurant come from local farmers. Due to COVID-19, they have closed their dining room.
+
+-   Show your support and follow their Instagram: @hubcafelincoln
+-   Instead of eating at chain restaurants, try to eat locally! The Hub Cafe is offering curbside pickup orders during this time.
+
+PB knows that artists, freelancers, creators, and makers are getting hit hard by COVID-19, and we want to do our part to support our local creative community. Find out how we're helping [here.](https://pixelbakery.co/covid)
