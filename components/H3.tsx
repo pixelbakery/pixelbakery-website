@@ -4,22 +4,20 @@ import cn from 'classnames'
 type Props = {
   children?: ReactNode
   color?: string
-  id: string
   className?: string
 }
 
-const InnerWrapper = ({ id, color, children, ...className }: PropsWithChildren<Props>) => {
+const InnerWrapper = ({ color, children, ...className }: PropsWithChildren<Props>) => {
   return (
-    <h2
-      id={id}
+    <h3
       className={cn(
-        ' font-bold max-w-md mt-0 2xl:text-6xl 2xl:max-w-4xl leading-none mb-12 2xl:mb-20 ',
+        'font-bold max-w-md text-xl lg:text-2xl 2xl:text-3xl 2xl:max-w-4xl mb-0 pb-0 leading-none ',
         [`text-${color}`],
-        [{ ...className }],
+        [className],
       )}
     >
       {children}
-    </h2>
+    </h3>
   )
 }
 

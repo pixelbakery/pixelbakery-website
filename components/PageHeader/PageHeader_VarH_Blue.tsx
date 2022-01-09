@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
-  pattern1: PropTypes.object,
+  thisPatern: PropTypes.object,
 }
 
 // Local Variables
@@ -19,17 +19,17 @@ const primaryColor1 = 'blue'
 const accentColor1 = 'blue-dark'
 const subheaderColor1 = 'cream'
 
-const pattern1 = Pattern
+const thisPatern = Pattern
 const playFrames = [
   [0, 23],
   [24, 95],
 ]
 
 function PageHeader_VariableHeight({ header, subheader }) {
-  function Pattern({ pattern1 }) {
+  function Pattern({ thisPatern }) {
     return (
       <Lottie
-        animationData={pattern1}
+        animationData={thisPatern}
         loop
         segments={playFrames}
         play
@@ -47,7 +47,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       id='topOfPage'
     >
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <Pattern pattern1={pattern1} />
+        <Pattern thisPatern={thisPatern} />
       </div>
       <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
         <div

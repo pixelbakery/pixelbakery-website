@@ -12,7 +12,7 @@ const InnerWrapper = ({ id, color, children, ...classNames }: PropsWithChildren<
   return (
     <div
       id={id}
-      className={cn('max-w-md md:max-w-2xl xl:max-w-6xl mx-auto', classNames, 'bg-', color)}
+      className={cn('max-w-md md:max-w-2xl xl:max-w-6xl mx-auto', `${classNames}`, 'bg-', color)}
     >
       {children}
     </div>
