@@ -24,6 +24,11 @@ module.exports = {
       //   permanent: false,
       // },
       {
+        source: '/education/project-files',
+        destination: '/education#project-files',
+        permanent: true,
+      },
+      {
         source: '/store/product',
         destination: '/store',
         permanent: true,
@@ -54,12 +59,13 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/audrey-farnham-batter-late-than-never-a-non-traditional-pilgrimage-to-find-meaning-grit-and-satisfaction',
+        source:
+          '/recipes/audrey-farnham-batter-late-than-never-a-non-traditional-pilgrimage-to-find-meaning-grit-and-satisfaction',
         destination: '/recipes/audrey-farnham-batter-late-than-never',
         permanent: true,
       },
       {
-        source:'/recipes/black-history-month-a-history-in-black-photography',
+        source: '/recipes/black-history-month-a-history-in-black-photography',
         destination: '/recipes/black-history-month-photography',
         permanent: true,
       },
@@ -68,7 +74,7 @@ module.exports = {
         destination: '/recipes/2021-black-history-month-cinematography',
         permanent: true,
       },
-      
+
       {
         source: '/recipes/the-brenna-bode-starter-pack',
         destination: '/recipes/brenna-bode-starter-pack',

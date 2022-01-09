@@ -4,16 +4,16 @@ import StrokeText from '../parts/StrokeText'
 import Link from 'next/link'
 
 function Contact_HangOut() {
-  useEffect(() => {
-    const socialLinks = document.querySelectorAll('svg.social-link')
-    socialLinks.forEach((svg) => {
-      let bbox = svg.getBBox()
-      svg.setAttribute('width', bbox.x + bbox.width + bbox.x)
-      svg.setAttribute('height', bbox.y / 3 + bbox.height)
-      svg.firstChild.setAttribute('y', '66%')
-    })
-    return () => {}
-  }, [])
+  // useEffect(() => {
+  //   const socialLinks = document.querySelectorAll('svg.social-link')
+  //   socialLinks.forEach((svg) => {
+  //     let bbox = svg.getBBox()
+  //     svg.setAttribute('width', bbox.x + bbox.width + bbox.x)
+  //     svg.setAttribute('height', bbox.y / 3 + bbox.height)
+  //     svg.firstChild.setAttribute('y', '66%')
+  //   })
+  //   return () => {}
+  // }, [])
   return (
     <section className='my-4 mx-auto py-6'>
       {/* <div className='max-w-7xl  mx-auto'>

@@ -4,31 +4,15 @@ import Home_SocialLinks from './Home_SocialLinks'
 import Button_Filled from '../parts/Button_Filled'
 import Image from 'next/image'
 import Lottie from 'react-lottie-player'
-import classNames from 'classnames'
-import Pattern from '../../data/Patterns_Blue_Dark.json'
+const Lottie_Blue_Dark = dynamic(() => import('../PageHeader/Lottie_Blue_Dark'), { ssr: true })
+
+import LandingPattern from '../../data/Patterns_Blue_Dark.json'
 import Logo_Primary from '../Images/logo_primary'
-const playFrames = [
-  [0, 23],
-  [24, 95],
-]
-const pattern1 = Pattern
 
 type Props = {
   pattern1: object
 }
 function Home_Landing() {
-  function Pattern({ pattern1 }: Props) {
-    return (
-      <Lottie
-        animationData={pattern1}
-        loop
-        segments={playFrames}
-        play
-        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-        style={{ height: '100%' }}
-      />
-    )
-  }
   return (
     <main>
       <section className='lander overflow-hidden w-full my-4 flex'>
@@ -95,7 +79,7 @@ function Home_Landing() {
             className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie'
             id='lottie'
           >
-            <Pattern pattern1={pattern1} />
+            <Lottie_Blue_Dark />
           </div>
           <div className=' flex flex-col justify-center h-full w-full '>
             <div className='relative  self-center w-full max-w-3xl h-full'>
