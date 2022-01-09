@@ -1,17 +1,21 @@
 import React from 'react'
+import H2 from '../H2'
+import InnerWrapper from '../InnerWrapper'
+import PageSection from '../PageSection'
 
-function EducationL() {
+function Education_FromScratch() {
   return (
-    <section className='bg-white pt-16 pb-24  my-4 ' id='recentlyAdded'>
-      <div className=' max-w-md lg:max-w-7xl  mx-auto px-4'>
-        <h2 className='text-blue mb-16'>from scratch</h2>
-        <p className='text-wine-200 font-semibold text-xl max-w-sm'>
-          Proactively repurpose premier leadership via sticky architectures. Uniquely predominate
-          distinctive convergence for stand-alone alignments.{' '}
+    <PageSection className='bg-white'>
+      <InnerWrapper>
+        <H2 id='from-scratch'>From Scratch</H2>
+        <p className='max-w-md text-xl text-blue-dark leading-none my-6'>
+          Dynamically deploy B2B customer service before next-generation niches. Synergistically
+          target standards compliant niches and client-centric.
         </p>
-      </div>
-    </section>
+        <p className='font-extrabold text-wine-100 italic text-4xl '>coming soon...</p>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 
-export default EducationL
+export default Education_FromScratch
