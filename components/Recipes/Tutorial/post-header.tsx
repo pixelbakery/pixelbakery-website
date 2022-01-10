@@ -15,14 +15,19 @@ type Props = {
   coverImage: string
   author: Author
   date: string
-  matchingAuthor: PersonType[]
+  matchingAuthor: PersonType
   person: PersonType
   category: string
 }
 
 const PostHeader = ({ category, title, subtitle, coverImage, date, author, person }: Props) => {
-  // const test = matchingAuthor
   console.log(person.title)
+  let profilePic
+  if (person.slug && person.photos.headshotSmiling != typeof undefined) {
+    profilePic = person.photos.headshotSmiling
+  } else {
+    profilePic = '/img/placeholder01.png'
+  }
   return (
     <main className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
@@ -40,7 +45,6 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
             </div>
           </div>
           <div className='flex mt-3 mb-16'>
-            {/* <Avatar name={author.name} picture={author.picture} /> */}
             {person.slug ? (
               <Link href={'/about/' + person.slug} passHref>
                 <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
@@ -53,17 +57,27 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
                     alt={author.name}
                     quality={25}
                     className='object-top scale-175 sc'
-                    src={person.headshotSmiling}
+                    src={profilePic}
                   />
                 </div>
               </Link>
-            ) : null}
+            ) : (
+              <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+                <Image
+                  blurDataURL='true'
+                  layout='fill'
+                  objectFit='cover'
+                  width={'48px'}
+                  height={'48px'}
+                  alt={author.name}
+                  quality={25}
+                  className='object-top scale-175 sc'
+                  src={profilePic}
+                />
+              </div>
+            )}
 
-            <div
-              className={cn('flex flex-col justify-center self-center', {
-                ['ml-8']: person.slug,
-              })}
-            >
+            <div className={cn('ml-8 flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} /> <span className='mx-4'>|</span>Read Time: 4
                 minutes

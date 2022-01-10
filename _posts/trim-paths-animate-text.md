@@ -6,14 +6,23 @@ excerpt: Today we’re going to talk about how to animate the illusion of text b
 coverImage: /img/blog/Dantheman.jpeg
 date: '2020-04-09'
 categories: ['education']
-tags: ['after effects', 'Animation', 'motion design', 'Track Matte', 'Trim Paths', 'Tutorial', 'Tutorial', 'UNL']
+tags:
+  [
+    'after effects',
+    'Animation',
+    'motion design',
+    'Track Matte',
+    'Trim Paths',
+    'Tutorial',
+    'Tutorial',
+    'UNL',
+  ]
 author:
   name: Jordan Lambrecht
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/Dantheman.jpeg
 ---
+
 Today we're going to talk about how to animate the illusion of text being drawn/painted onto the screen in After Effects using Trim Paths. It's a fairly straightforward process, so this will be a short tutorial. This tutorial assumes you already know how to [set up a composition](https://pixelbakery.co/recipes/tutorial-composition-settings-in-after-effects/) inside of After Effects and have already done so. Let's dive in.
 
 #### Step 1: Create a new text layer
@@ -62,6 +71,6 @@ Yay. Good for you. We're all very proud of you.
 
 #### Final Notes
 
--   If you plan on keyframing the text at all, be sure to parent your mask to the text so it moves in lockstep with it.
--   I recommend adding motion blur to your layers with keyframes.
--   I don't actually hate you - I think you're great and I love you.
+- If you plan on keyframing the text at all, be sure to parent your mask to the text so it moves in lockstep with it.
+- I recommend adding motion blur to your layers with keyframes.
+- I don't actually hate you - I think you're great and I love you.

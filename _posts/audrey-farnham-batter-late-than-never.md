@@ -9,11 +9,10 @@ categories: ['announcements']
 tags: ['Apprenticeship', 'Audrey Farnham', 'Brand Architecture', 'Graphic Designer', 'New Hire']
 author:
   name: Audrey Farnham
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/PB_Headshots_Audrey_BlogPost-2-edited-scaled.jpg
 ---
+
 Hi, friends! Audrey Farnham here. I'm the newest recipe in Pixel Bakery's cookbook!
 
 As a brand architect, I make sure everything from typography, iconography, and graphics are human-friendly, emotive, and aesthetically pleasing. I am primarily a visual designer with a budding interest in interactive and web design. I love creating design solutions that are clear, on-brand, and usable. If I had to distill myself down to recipe ingredients, I am equal parts illustrator, problem solver, and squirrel. Two cups of water and mix in just the right amount of saltiness. Honestly, I just really like playing with shapes for a living.

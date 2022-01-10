@@ -9,11 +9,10 @@ categories: ['amplify & educate']
 tags: ['Black History Month', 'Animation']
 author:
   name: Maria Smal
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/floyd-norman-at-the-board_apprentice-inbetweener_sleeping-beauty-1956_custom-66ced25d3ba90b55cb5392e8dbc58abda163e141-s1600-c85-800x517.jpg
 ---
+
 Pixel Bakery is a design studio that specializes in animation, photography, videography, and graphic art. We couldn't be more thankful to our community for letting us do what we love every single day. It's Black History Month, and we figured we would explore the histories of our various crafts and spend the next few weeks highlighting the Black creatives that have shaped the industry we're a part of.
 
 With the wildly positive reception of "Soul" (2020), it's easy to take the success for granted without taking a moment to recognize the people who paved the way. The animated film's director, Kemp Powers, is Pixar's first ever Black director.
@@ -42,7 +41,7 @@ In 1957, [Floyd](https://en.wikipedia.org/wiki/Floyd_Norman) officially joined t
 
 ![](/img/blog/floyd-norman-at-the-board_apprentice-inbetweener_sleeping-beauty-1956_custom-66ced25d3ba90b55cb5392e8dbc58abda163e141-s1600-c85-800x517.jpg)_Floyd Norman is shown above in 1956, working as an “apprentice” on Sleeping Beauty._
 
-His notable works include *Sleeping Beauty*, *101 Dalmatians*, *The Jungle Book*, *Mulan*, *Toy Story 2*, & *Monsters Inc*.
+His notable works include _Sleeping Beauty_, _101 Dalmatians_, _The Jungle Book_, _Mulan_, _Toy Story 2_, & _Monsters Inc_.
 
 He's currently 85 years old and has no intentions of retiring anytime soon. Apart from working at Disney, Floyd partnered with his friend [Leo D. Sullivan](https://www.imdb.com/name/nm0838214/) to create [AfroKids.com](http://afrokids.com/leodsullivan.html) providing "edutainment" to children and make it accessible for all, regardless of income.
 
@@ -56,10 +55,10 @@ Taylor has worked with giant companies such as Cartoon Network & Adult Swim, pav
 
 ### Bruce W. Smith
 
-[Bruce](https://en.wikipedia.org/wiki/Bruce_W._Smith) created *The Proud Family* in 2001, marking the first Disney show with a Black female lead.
+[Bruce](https://en.wikipedia.org/wiki/Bruce_W._Smith) created _The Proud Family_ in 2001, marking the first Disney show with a Black female lead.
 
 ![](/img/blog/Bruce_W._Smith.jpg)_Bruce W. Smith created Penny Proud, a young Black teenager going through the misadventures of junior high._
 
-He went on to work on *The Princess & the Frog*, *Frozen*, and *Wreck It Ralph*, to name a few.
+He went on to work on _The Princess & the Frog_, _Frozen_, and _Wreck It Ralph_, to name a few.
 
-Bruce co-directed *Hair Love*, an Oscar-winning animated short about an African-American father learning to do his daughter's hair for the first time. This short was a fantastic success, telling a story so simple yet so meaningful. You can watch the stunning 6-minute short [here](https://www.youtube.com/watch?v=kNw8V_Fkw28).
+Bruce co-directed _Hair Love_, an Oscar-winning animated short about an African-American father learning to do his daughter's hair for the first time. This short was a fantastic success, telling a story so simple yet so meaningful. You can watch the stunning 6-minute short [here](https://www.youtube.com/watch?v=kNw8V_Fkw28).

@@ -67,6 +67,8 @@ export const getStaticProps = async () => {
     'subtitle',
     'date',
     'slug',
+    'headshotSerious',
+    'photos',
     'author',
     'categories',
     'coverImage',
