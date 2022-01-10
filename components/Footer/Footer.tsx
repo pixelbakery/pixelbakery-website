@@ -12,6 +12,7 @@ import footerMenu from '../../data/footerMenu'
 import footerMenuMore from '../../data/footerMenuMore'
 
 export const Footer: NextPage = () => {
+  const year = new Date().getFullYear()
   return (
     <footer className='bg-peach px-12 py-24 lg:max-h-screen mb-4' id='footer'>
       <div className='mx-auto max-w-6xl'>
@@ -87,6 +88,7 @@ export const Footer: NextPage = () => {
             </div>
             <div className='flex justify-center w-full my-3'>
               <Button_Filled
+                center={true}
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 bgColor={'pink'}
@@ -108,7 +110,7 @@ export const Footer: NextPage = () => {
         </div>
         <div className='text-center pt-4'>
           <span className='italic text-sm  text-cream'>
-            © 2021 Pixel Bakery Design Studio
+            © {year} Pixel Bakery Design Studio
             <br />
             Made with lust and flour in Lincoln, Nebraska & NW Arkansas
           </span>
