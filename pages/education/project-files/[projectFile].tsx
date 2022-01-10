@@ -100,7 +100,7 @@ function EducationProject({ projectFile }: Props) {
                 scrolling='no'
                 className='w-full  inline-block bg-transparent'
                 id='kofiframe'
-                src='https://ko-fi.com/pixelbakery/?hidefeed=true&widget=true&embed=true&preview=true'
+                src='https://ko-fi.com/pixelbakery/?hidefeed=true&widget=true&embed=true&preview=true&transparent-background=true'
                 style={{
                   border: 'none',
                   width: '100%',
