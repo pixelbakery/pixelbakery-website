@@ -1,7 +1,7 @@
 ---
 #bios found here: https://docs.google.com/document/d/13UuePbGLRF4G5b5JoEe2Vua3NukZ1-QwRW4Oisnd8lI/edit#
 #anything that should be left blank enter: ''
-name: Maddie Hahns
+name: Lizzie Moore
 active: true
 title: titleGoesHere
 #only enter a phone number if they're client facing
@@ -31,9 +31,9 @@ socials:
   personalWebsite: Url
   etsy: Url
 photos:
-  headshotSerious: /img/team/maddie_serious.png
-  headshotSmiling: /img/team/maddie_smiling.png
-  headshotFun: /img/team/maddie_silly.png
+  headshotSerious: /img/team/lizzie_serious.png
+  headshotSmiling: /img/team/lizzie_smiling.png
+  headshotFun: /img/team/lizzie_silly.png
 ---
 
 Maddie iss co00oolll

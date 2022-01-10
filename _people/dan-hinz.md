@@ -1,7 +1,7 @@
 ---
 #bios found here: https://docs.google.com/document/d/13UuePbGLRF4G5b5JoEe2Vua3NukZ1-QwRW4Oisnd8lI/edit#
 #anything that should be left blank enter: ''
-name: Maddie Hahn
+name: Dan Hinz
 active: true
 title: titleGoesHere
 #only enter a phone number if they're client facing
@@ -31,9 +31,9 @@ socials:
   personalWebsite: Url
   etsy: Url
 photos:
-  headshotSerious: /img/team/Headshot_Abby_Proof.png
-  headshotSmiling: /img/team/Headshot_Abby_Smiling_Proof.png
-  headshotFun: string
+  headshotSerious: /img/team/dan_serious.png
+  headshotSmiling: /img/team/dan_smiling.png
+  headshotFun: /img/team/dan_silly.png
 ---
 
 Maddie iss co00oolll

@@ -1,11 +1,11 @@
 import React from 'react'
 
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-// import About_Intro from '../../components/About/About_Intro'
+import About_Intro from '../../components/About/About_Intro'
 import About_Team from '../../components/About/About_Team'
 import About_Values from '../../components/About/About_Values'
 import About_StudioViews from '../../components/About/About_StudioViews'
-// import About_Twitch from '../../components/About/About_Twitch'
+import About_Twitch from '../../components/About/About_Twitch'
 import About_Faq from '../../components/About/About_Faq'
 import { getAllPeople } from '../../lib/api_person'
 import Person from '../../types/person'
@@ -15,8 +15,9 @@ type Props = {
 }
 function About({ allPeople }: Props) {
   return (
-    <main className='bg-egg'>
+    <main className='max-w-screen overflow-x-hidden'>
       <PageHeader_VariableHeight header='About' subheader='copy copy copy ' />
+      <About_Intro />
       <About_Team people={allPeople} />
       <About_Values />
       <About_StudioViews />
