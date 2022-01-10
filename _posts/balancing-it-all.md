@@ -1,0 +1,43 @@
+---
+title: 'Balancing it All: Tips for College Students'
+subtitle: I’m here to provide 5 quick and easy tips to help juggle all of life’s craziness.  
+excerpt: I’m here to provide 5 quick and easy tips to help juggle all of life’s craziness. 
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/PB_Tyler_Blog_v4-scaled2.jpeg
+date: '2019-12-12'
+categories: ['from the desk of', 'education']
+tags: ['college students', 'tips']
+author:
+    name: Tyler Loebig
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/PB_Tyler_Blog_v4-scaled2.jpeg
+---
+Being a college student can be tough. Between a hectic school schedule with rigorous requirements, working part-time to keep your cat overly fed, and rocking it at an internship, it can be really rough trying to keep everything straight and not want to cry into your weekly Big Mac (we've all been there, right?).
+
+This is why I'm here to provide 5 quick and easy tips to help juggle all of life's craziness.
+
+#### USE YOUR TOOLS
+
+While I could've played it out and said the generic "stay organized" thing that all the BuzzFeed articles yammer on about, using your tools goes beyond that. I'm a big fan of Google Calendar to keep all my deadlines straight, and I use it as a guide to see what I'm doing when. Trello is another really great project management tool to keep your to-do list from not looking completely terrifying. Also, if you find yourself crying into a Big Mac more than usual (this is a recurring theme in my life), there are so many resources on campus to help handle life's stressors. Do not hesitate to reach out, even if it's just to talk.
+
+#### MOVE THAT BODY
+
+Ok, I'm the worst about this, and it is usually the first thing I cut out of my schedule when things get too wild, but trust me, this is important. Find something you can do consistently every day and work it into your schedule. This seamlessness helps make sure you actually can actually get that physical exertion your body craves. Not only is this helpful for your body, but really cleansing for your mind. I usually get a lot of my great ideas in that meditative state of exercising.
+
+#### SET A TIMER
+
+I do this constantly to balance all of my assignments. This totally just depends on your own attention span. I like to set a timer for 45 minutes and work straight without interruptions for that amount of time. Then I spend 15 minutes mindlessly scrolling Instagram like the plugged-in guy you all know and love. This helps me gauge how long a certain project or assignment might take me because I can see how much I accomplished in the allotted time.
+
+#### TREAT YO'SELF
+
+This is my favorite tip and something that I do entirely way too much, but it is as important as anything else. Within the hecticness of life, it is so valuable to make time for yourself. Whether it's Saturday sushi or Tuesday movie night, make sure you relax. Plus, seeing family and friends is really important too (they miss you). My mantra has always been "work hard, play harder."
+
+#### BE REALISTIC
+
+You are not a superhero, and if you are, I'm very jealous and need your secrets. But for the rest of us, be realistic about what you can do. Don't spread yourself thin to please everyone around you. Your work suffers, your relationships suffer, and you suffer. If you're doing too many things and you feel like you've lost control, it may be time to reevaluate where you're dedicating your time. Do what you need to do to benefit you.
+
+In closing, I hope these tips are helpful to someone. Heck, it was helpful for me to realize that I need to finally check out that hot yoga class like I've been talking about doing for months. Life is short, fam, don't stress yourself out trying to be a superhero by doing everything.
+
+And remember, crying into a Big Mac doesn't lower your self-worth.
