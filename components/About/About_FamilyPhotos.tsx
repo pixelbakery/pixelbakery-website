@@ -1,23 +1,9 @@
 import React, { useEffect } from 'react'
-import Flickity from 'react-flickity-component'
+
 import photos from '../../data/about-studioviews'
 import Image from 'next/image'
-const flickityOptions = {
-  wrapAround: true,
-  pageDots: true,
-  lazyLoad: true,
-  autoPlay: 5000,
-  pauseAutoPlayOnHover: false,
-}
 
 function About_FamilyPhotos() {
-  useEffect(() => {
-    this.flkty.on('settle', () => {
-      // console.log(`current index is ${this.flkty.selectedIndex}`);
-    })
-    return () => {}
-  }, [])
-
   return (
     <section className='my-4 py-24'>
       <div className='grid grid-cols-5 gap-12 w-full'>
@@ -29,30 +15,7 @@ function About_FamilyPhotos() {
             </p>
           </div>
         </div>
-        <div className=' col-span-3'>
-          <Flickity
-            options={flickityOptions}
-            className={'carousel '} // default ''
-            flickityRef={(c) => (this.flkty = c)}
-          >
-            {photos.map((photo) => (
-              <div
-                className='w-full aspect-w-4 aspect-h-3 overflow-hidden bg-blue carousel-cell'
-                key={photo.name}
-              >
-                <div>
-                  <Image
-                    alt={photo.name}
-                    layout='fill'
-                    objectFit='cover'
-                    className='object-center object-cover w-full h-full'
-                    src={photo.url}
-                  />
-                </div>
-              </div>
-            ))}
-          </Flickity>
-        </div>
+        <div className=' col-span-3'></div>
       </div>
     </section>
   )
