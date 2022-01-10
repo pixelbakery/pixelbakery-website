@@ -1,0 +1,37 @@
+---
+title: 'Mastering the Art of “Slowly but Surely” and Overcoming Imposter Syndrome'
+subtitle: Hey there, I’m Natalie! I’m Pixel Bakery’s newest addition to the team.
+excerpt: Hey there, I’m Natalie! I’m Pixel Bakery’s newest addition to the team. I’m the Account Executive, which means I’ll try my best not to be a nag, but you’ll be hearing from me a lot. I’m the one who communicates what our clients want to our creatives, and present what the creatives whip up to our clients.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/pic-of-nat-1080x1080.png
+date: '2020-01-07'
+categories: ['From the Desk of']
+tags: ['account executive', 'imposter syndrome']
+author:
+  name: Natalie Roetman
+  picture: /img/placeholder01.png
+  profileURL: '/'
+ogImage:
+  url: /img/blog/pic-of-nat-1080x1080.png
+---
+Hey there, I'm Natalie! I'm Pixel Bakery's newest addition to the team. I'm the Account Executive, which means I'll try my best not to be a nag, but you'll be hearing from me a lot. I'm the one who communicates what our clients want to our creatives, and present what the creatives whip up to our clients.
+
+To give you an idea of who I am, I'm a Libra, ESFJ Myers Briggs, Type 7 Enneagram, and Ravenclaw. My Gallup Strengths include Woo (winning others over), Futuristic, Communication, Discipline, and Developer. My weaknesses include ice cream, cute dog and cat videos, and getting out of bed in the morning without snoozing my alarm at least once (which is why I always set it for 15-30 minutes before I have to get up).
+
+I recently graduated with my degree in Advertising and Public Relations from UNL in 3.5 years because I was just too dang excited to wait any longer to start working in the world of advertising! Some would say that I'm always rushing to the next thing, I like to think that I just plan effectively and efficiently.
+
+But for real, always rushing to the next thing, or rushing to "grow up," has always been a trait of mine. It's even been a fault at times. Because I'm always rushing it's hard for me to live in the moment, but I'm hoping that in this new chapter of my life I'll master the art of "slowly but surely" rather than getting impatient when things don't happen at my ideal pace. 
+
+Along with slowing my role in my new chapter, I also need to overcome my imposter syndrome. I think this is a common symptom for recent college grads to experience because we are scared we didn't learn enough during our time in college or that hiring managers won't see our experience as legit. But, the truth is: 
+
+#### 1) You'll never know everything.
+
+Life is about learning as you go to help you grow, so instead of being insecure, hone in on what you do know and use that to your advantage. Keep learning, keep refining your craft, and believe in your ability to learn and adapt as you go.
+
+#### 2) Everyone who is graduating college is in the same boat.
+
+They probably had internships, part-time jobs, and club involvement just like you and they'll get jobs and you will get a job. Maybe it won't happen for you on the first try. Hiring managers will probably tell you they had "a really talented applicant pool," but you didn't make the cut. Be patient and keep faith that you'll find the right fit.
+
+So, there's my little nuggets of wisdom and weaknesses that I can share with y'all for now. I'm so stoked to work for Pixel Bakery, and I can't wait to grow as an individual, but also as a professional as I help PB do some really rad work. Stay tuned for updates, and if you're a client, you'll probably be hearing from me soon. 😉
+
+P.S. connect with me on LinkedIn
