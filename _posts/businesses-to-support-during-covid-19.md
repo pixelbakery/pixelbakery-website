@@ -6,14 +6,22 @@ excerpt: Who knew the new decade would begin like this? Confined to our homes, c
 coverImage: /img/blog/COVID_Blog_Header_v3-2048x1180_copy_copy.png
 date: '2020-03-20'
 categories: ['editorial', 'education']
-tags: ['covid-19', 'economy', 'lincoln nebraska', 'local business', 'Pixel Bakery', 'small business', 'work from home']
+tags:
+  [
+    'covid-19',
+    'economy',
+    'lincoln nebraska',
+    'local business',
+    'Pixel Bakery',
+    'small business',
+    'work from home',
+  ]
 author:
   name: Madeline Christensen
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/COVID_Blog_Header_v3-2048x1180_copy_copy.png
 ---
+
 Who knew the new decade would begin like this? Confined to our homes, communicating through screens, virtually no in-person gatherings, and an unimaginable amount of people struggling to survive without jobs that rely on human interaction. 2019, if you're listening, we didn't mean what we said about you. Take us back!
 
 You don't really appreciate the necessity of day-to-day human contact until it's suddenly gone.
@@ -22,7 +30,7 @@ We're experiencing one of the most unprecedented, difficult times our world has 
 
 PB is here to remind you to check in on your friends, take care of yourself, and most importantly, support your community. Oh, and wash your damn hands.
 
-* * * * *
+---
 
 ![](/img/blog/Jordan_Headshot.jpeg)
 
@@ -30,9 +38,9 @@ PB is here to remind you to check in on your friends, take care of yourself, and
 
 #### [Iron Brush Tattoo](https://ironbrush.com/)
 
-While everyone is suffering during this, businesses whose services require human contact like Iron Brush are especially suffering. They closed their doors on March 16th with the following statement: *"part of the solution to this current situation, and follow the advice of the health professionals. Nothing is more important to us than protecting the health and safety of our clients, our crew and community."*
+While everyone is suffering during this, businesses whose services require human contact like Iron Brush are especially suffering. They closed their doors on March 16th with the following statement: _"part of the solution to this current situation, and follow the advice of the health professionals. Nothing is more important to us than protecting the health and safety of our clients, our crew and community."_
 
-As with a lot of these, definitely grab a gift card or make a future appointment with them, but also remember that emotional support is just as important as financial support. Show you care about them by leaving them a comment on their facebook page or email to <tyson@ironbrush.com>. If you already have a deposit down, leave it there. If you got a tattoo from them in the past, throw a photo of it on the 'gram and tag them. 
+As with a lot of these, definitely grab a gift card or make a future appointment with them, but also remember that emotional support is just as important as financial support. Show you care about them by leaving them a comment on their facebook page or email to <tyson@ironbrush.com>. If you already have a deposit down, leave it there. If you got a tattoo from them in the past, throw a photo of it on the 'gram and tag them.
 
 #### [Relentless Merch](https://relentlessmerch.com/)
 
@@ -44,10 +52,10 @@ If you know anyone that needs merch printed, hit them up: <matt@relentlessmerch.
 
 We work with a lot of small businesses and nonprofits. This means that when they're in a gridlock, so are we. I think one of the important life lessons that this whole situation should be teaching us is that it's okay to ask for help. I'm saying do the whole "GoFundMe-link-for-my-study-abroad-trip-in-my-Tinder-bio" thing, but if you want a couple free ways to support us:
 
--   Rock our merch. Wear our shirts and tag us in photos of you in them. Put our stickers on your Hydroflask, laptop case, etc. If you DM us your address, I'll mail you a couple for free. We also sell our t-shirts at-cost (How much we pay Relentless to make them) on our website.
--   Invite your friends to follow us on Instagram.
--   DM us if PB or anyone on the PB team has made an impact in your life. We're all pretty down in the dumps right now, and I think our team would really appreciate any words of encouragement.
--   Tell everyone you know about us! If you think there's a potentially awesome client relationship with a company, introduce us to them.
+- Rock our merch. Wear our shirts and tag us in photos of you in them. Put our stickers on your Hydroflask, laptop case, etc. If you DM us your address, I'll mail you a couple for free. We also sell our t-shirts at-cost (How much we pay Relentless to make them) on our website.
+- Invite your friends to follow us on Instagram.
+- DM us if PB or anyone on the PB team has made an impact in your life. We're all pretty down in the dumps right now, and I think our team would really appreciate any words of encouragement.
+- Tell everyone you know about us! If you think there's a potentially awesome client relationship with a company, introduce us to them.
 
 ![](/img/blog/karley_headshot.jpeg)
 
@@ -57,12 +65,12 @@ We work with a lot of small businesses and nonprofits. This means that when they
 
 Rutabagas is a female-led vegan comfort food spot here in Lincoln. They have been working really hard and saving up money to be able to open up their own location on O Street. They are currently under construction for the new location that's supposed to open next month, so their team needs as much love and support that they can get now.
 
-Here's a statement from Sara: *"From the bottom of our Rutabagas hearts, we ask that you continue patronizing our business as long as you can for as long as the government allows us to operate. As a small business that has only been alive for 18 months, we do NOT have paid time off as a perk for our staff (as much as we wish we did!) and we love our staff like family and want to prevent as many economic hardships as we can."*
+Here's a statement from Sara: _"From the bottom of our Rutabagas hearts, we ask that you continue patronizing our business as long as you can for as long as the government allows us to operate. As a small business that has only been alive for 18 months, we do NOT have paid time off as a perk for our staff (as much as we wish we did!) and we love our staff like family and want to prevent as many economic hardships as we can."_
 
--   They are currently offering take out options at their restaurant on 230 N 12th
--   Order online at [eatrutabagas.com](http://eatrutabagas.com/?fbclid=IwAR0KG4ROsBA_maU-P9ZalPizZWPu2-bISwFMdJcLTUdCT-hhlS1jyH7kiUM)
--   Call them at 402-440-7651 to order take out from our regular menu.
--   Find them on [doordash.com](http://doordash.com/?fbclid=IwAR3vTPtUTEUSuPU3V35ScNqEKzpW899ryDu-SfK-qHVNufVGHKcORQec7BI) to get their regular menu delivered to you.
+- They are currently offering take out options at their restaurant on 230 N 12th
+- Order online at [eatrutabagas.com](http://eatrutabagas.com/?fbclid=IwAR0KG4ROsBA_maU-P9ZalPizZWPu2-bISwFMdJcLTUdCT-hhlS1jyH7kiUM)
+- Call them at 402-440-7651 to order take out from our regular menu.
+- Find them on [doordash.com](http://doordash.com/?fbclid=IwAR3vTPtUTEUSuPU3V35ScNqEKzpW899ryDu-SfK-qHVNufVGHKcORQec7BI) to get their regular menu delivered to you.
 
 #### [Goldenrod Pastries](http://www.goldenrodpastries.com/)
 
@@ -70,9 +78,9 @@ There's no better way to social distance yourself than to sit on your couch with
 
 With a team of almost 20, they want to weather this COVID-19 storm by still serving up tasty treats. They will be offering take out only orders, curbside pickup, and you can also pick up a gift card to use at a later date. Call their two locations to place your orders.
 
--   Order Online at <http://www.goldenrodpastries.com/>
--   The Bay: 402-486-4103 9 am - 4 pm
--   48th Location: 402-327-1532 10 a.m. - 5 p.m.
+- Order Online at <http://www.goldenrodpastries.com/>
+- The Bay: 402-486-4103 9 am - 4 pm
+- 48th Location: 402-327-1532 10 a.m. - 5 p.m.
 
 #### [Cycle Works & Moose's Tooth](https://www.cycleworksusa.com/articles/cycle-works-bike-shop-lincoln-ne-pg299.htm)
 
@@ -80,7 +88,7 @@ Cycle Works & Moose's Tooth are mainstays in the Lincoln small business communit
 
 In light of the recent pandemic, fewer people are wanting to leave their homes. Folks, nature is not canceled. Working out outside is actually great for you, as long as you are taking the proper precautions to keep you and the others on the trail healthy.
 
-Here's what they had to say: *"Cycling is the most fun form of social distancing we can think of!!! We are here to keep you rolling! Let us know if you need something brought to your car or delivered if necessary. Thank you for taking care of each other by keeping your distance."*
+Here's what they had to say: _"Cycling is the most fun form of social distancing we can think of!!! We are here to keep you rolling! Let us know if you need something brought to your car or delivered if necessary. Thank you for taking care of each other by keeping your distance."_
 
 ![](/img/blog/hannah_headshot-2048x768.jpeg)
 
@@ -92,8 +100,8 @@ I don't know another restaurant in Lincoln who is as committed to sourcing all o
 
 Right now Pepe is offering pre-order and takeout only options Monday-Friday from 11 a.m. - 2 p.m. You can also snag one of his gift certificates to use at a later date.
 
--   Check out the takeout menu [here](https://www.facebook.com/80783326241/photos/a.125536216241/10157243420526242/?type=3&theater)
--   Call (402) 470-7217 to order
+- Check out the takeout menu [here](https://www.facebook.com/80783326241/photos/a.125536216241/10157243420526242/?type=3&theater)
+- Call (402) 470-7217 to order
 
 #### Local Artists
 
@@ -101,12 +109,12 @@ Many young, local artists are unable to work the campus and service jobs that ke
 
 Here is a list of just a few incredible artists here in Nebraska:
 
--   Yvon (Instagram: @byyvon) - *Taking commissions*
--   Chas Hyman (Instagram: @urweirdgf) - *Selling prints*
--   Johnny Redd (Instagram: @johnny_redd.pdf) - *Selling buttons and merch*
--   Lilli Marvin (Instagram: @lillimarvin) -- Album art commissions.
--   Sara Cecetka (Instagram: @happyhelpart, DePop: @cecethrift) - *Jewelry, and accessories for sale*
--   Abby Birkel (Instagram: @abigail.birkel.art) - *Taking commissions*
+- Yvon (Instagram: @byyvon) - _Taking commissions_
+- Chas Hyman (Instagram: @urweirdgf) - _Selling prints_
+- Johnny Redd (Instagram: @johnny_redd.pdf) - _Selling buttons and merch_
+- Lilli Marvin (Instagram: @lillimarvin) -- Album art commissions.
+- Sara Cecetka (Instagram: @happyhelpart, DePop: @cecethrift) - _Jewelry, and accessories for sale_
+- Abby Birkel (Instagram: @abigail.birkel.art) - _Taking commissions_
 
 ![](/img/blog/tyler_headshot-2048x768.jpeg)
 
@@ -194,7 +202,7 @@ Have a craving for great ice cream? Order something sweet from (402) Creamery th
 
 The Hub Cafe was created by a family-owned farm (Branched Oak Farm) just outside of Lincoln. All ingredients used in the restaurant come from local farmers. Due to COVID-19, they have closed their dining room.
 
--   Show your support and follow their Instagram: @hubcafelincoln
--   Instead of eating at chain restaurants, try to eat locally! The Hub Cafe is offering curbside pickup orders during this time.
+- Show your support and follow their Instagram: @hubcafelincoln
+- Instead of eating at chain restaurants, try to eat locally! The Hub Cafe is offering curbside pickup orders during this time.
 
 PB knows that artists, freelancers, creators, and makers are getting hit hard by COVID-19, and we want to do our part to support our local creative community. Find out how we're helping [here.](https://pixelbakery.co/covid)

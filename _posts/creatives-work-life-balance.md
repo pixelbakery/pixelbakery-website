@@ -3,17 +3,17 @@ title: 'Ingredients for a Creative’s Work-Life Balance'
 subtitle: Hello hello, my name is Rebecca and I am the newest animator at Pixel Bakery!
 excerpt: Hello hello, my name is Rebecca and I am the newest animator at Pixel Bakery! A little background about myself is I’m originally a Cali girl, but I’ve been bouncing around the midwest for most of my life now—growing up in Omaha, earning my Bachelors of Fine Arts from the Kansas City Art Institute, and rolling to a stop in Lincoln to be the newest Cook in Pixel Bakery’s Kitchen.
 # Cover Photos MUST be 4x3 resolution
+
 coverImage: /img/blog/RebeccaAugustHeadshot-2_copy.jpeg
 date: '2022-01-05'
 categories: ['announcements']
 tags: ['Animation', 'motion design']
 author:
-  name: Rebecca Cook
-  picture: /img/placeholder01.png
-  profileURL: '/'
+  name: 'Rebecca Cook'
 ogImage:
   url: /img/blog/RebeccaAugustHeadshot-2_copy.jpeg
 ---
+
 Hello hello, my name is Rebecca and I am the newest animator at Pixel Bakery! A little background about myself is I'm originally a Cali girl, but I've been bouncing around the midwest for most of my life now - growing up in Omaha, earning my Bachelors of Fine Arts from the Kansas City Art Institute, and rolling to a stop in Lincoln to be the newest Cook in Pixel Bakery's Kitchen.
 
 As an Animation Generalist, I do a little bit of everything along the production pipeline when Pixel Bakery is producing an animated sequence. I'm involved in the concept work, storyboarding, sometimes I'm doing the animating myself, and other times I'm building the structures to be animated by my peers.
@@ -56,7 +56,7 @@ If that's not an option for how I do my job, I need to lessen the hours I'm on i
 
 The answer is also easy for my creative conundrum: If my creative muscle is being strained from using it so much, I need to,
 
-1\. make less art. I am very satisfied with the work I do for my career, and I'm working on giving myself permission to do less hobby-art than I used to. It's alright for your relationship with your craft to change with you. 
+1\. make less art. I am very satisfied with the work I do for my career, and I'm working on giving myself permission to do less hobby-art than I used to. It's alright for your relationship with your craft to change with you.
 
 2\. focus on quality over quantity, and really narrow what art pieces I execute to the projects that matter to me. This can mean ideas I think are important or just things that are purely for fun! (I think my best work happens when I'm having fun anyways)
 
