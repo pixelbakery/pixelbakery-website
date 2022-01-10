@@ -4,6 +4,7 @@ import Home_SocialLinks from './Home_SocialLinks'
 import Button_Filled from '../parts/Button_Filled'
 import Image from 'next/image'
 import Lottie from 'react-lottie-player'
+import dynamic from 'next/dynamic'
 const Lottie_Blue_Dark = dynamic(() => import('../PageHeader/Lottie_Blue_Dark'), { ssr: true })
 
 import LandingPattern from '../../data/Patterns_Blue_Dark.json'
