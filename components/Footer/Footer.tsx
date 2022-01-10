@@ -110,7 +110,7 @@ export const Footer: NextPage = () => {
           <span className='italic text-sm  text-cream'>
             © 2021 Pixel Bakery Design Studio
             <br />
-            Made with lust and flour in Lincoln, Nebraska
+            Made with lust and flour in Lincoln, Nebraska & NW Arkansas
           </span>
         </div>
       </div>
