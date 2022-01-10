@@ -17,9 +17,10 @@ type Props = {
   post: PostType
   matchingAuthorPosts: PostType[]
   author: Array<string>
+  name: string
 }
 
-const Person = ({ person, matchingAuthorPosts }: Props) => {
+function Person({ person, matchingAuthorPosts }: Props) {
   const router = useRouter()
 
   // const allPosts
@@ -69,11 +70,16 @@ const Person = ({ person, matchingAuthorPosts }: Props) => {
   )
 }
 
-export default Person
 type Params = {
   params: {
     person: string
     slug: string
+    name: string
+    post: {
+      author: {
+        name: string
+      }
+    }
   }
 }
 export async function getStaticProps({ params }: Params) {
@@ -134,3 +140,4 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
+export default Person
