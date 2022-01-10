@@ -75,20 +75,15 @@ type Params = {
     person: string
     slug: string
     name: string
-    post: {
-      author: {
-        name: string
-      }
-    }
   }
 }
 export async function getStaticProps({ params }: Params) {
   const person = getPersonBySlug(params.person, [
     'name',
     'active',
-    'photos.headshotSerious',
-    'photos.headshotSmiling',
+    'headshotSerious',
     'title',
+    'photos',
     'phone',
     'email',
     'content',

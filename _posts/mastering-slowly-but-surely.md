@@ -9,20 +9,19 @@ categories: ['From the Desk of']
 tags: ['account executive', 'imposter syndrome']
 author:
   name: Natalie Roetman
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/pic-of-nat-1080x1080.png
 ---
+
 Hey there, I'm Natalie! I'm Pixel Bakery's newest addition to the team. I'm the Account Executive, which means I'll try my best not to be a nag, but you'll be hearing from me a lot. I'm the one who communicates what our clients want to our creatives, and present what the creatives whip up to our clients.
 
 To give you an idea of who I am, I'm a Libra, ESFJ Myers Briggs, Type 7 Enneagram, and Ravenclaw. My Gallup Strengths include Woo (winning others over), Futuristic, Communication, Discipline, and Developer. My weaknesses include ice cream, cute dog and cat videos, and getting out of bed in the morning without snoozing my alarm at least once (which is why I always set it for 15-30 minutes before I have to get up).
 
 I recently graduated with my degree in Advertising and Public Relations from UNL in 3.5 years because I was just too dang excited to wait any longer to start working in the world of advertising! Some would say that I'm always rushing to the next thing, I like to think that I just plan effectively and efficiently.
 
-But for real, always rushing to the next thing, or rushing to "grow up," has always been a trait of mine. It's even been a fault at times. Because I'm always rushing it's hard for me to live in the moment, but I'm hoping that in this new chapter of my life I'll master the art of "slowly but surely" rather than getting impatient when things don't happen at my ideal pace. 
+But for real, always rushing to the next thing, or rushing to "grow up," has always been a trait of mine. It's even been a fault at times. Because I'm always rushing it's hard for me to live in the moment, but I'm hoping that in this new chapter of my life I'll master the art of "slowly but surely" rather than getting impatient when things don't happen at my ideal pace.
 
-Along with slowing my role in my new chapter, I also need to overcome my imposter syndrome. I think this is a common symptom for recent college grads to experience because we are scared we didn't learn enough during our time in college or that hiring managers won't see our experience as legit. But, the truth is: 
+Along with slowing my role in my new chapter, I also need to overcome my imposter syndrome. I think this is a common symptom for recent college grads to experience because we are scared we didn't learn enough during our time in college or that hiring managers won't see our experience as legit. But, the truth is:
 
 #### 1) You'll never know everything.
 

@@ -9,20 +9,19 @@ categories: ['education']
 tags: ['Black History Month', 'Cinematagraphy', 'Oscar Micheaux']
 author:
   name: Miranda Hussey
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/Black-History-Photography.jpg
 ---
+
 Pixel Bakery is a design studio that specializes in animation, photography, videography, and graphic art. For Black History Month, we have been exploring the histories of our various crafts and spending the final few weeks of February highlighting the Black creatives that have shaped the industry we're a part of. To find last week's piece on animation, click [here](https://pixelbakery.co/recipes/black-history-month-a-history-in-black-animation/).
 
-Photography is the most historically rich of our crafts, spanning back almost 200 years (The first photograph we *think* is from 1826). Since we have the rest of the year to highlight BIPOC photographers through a more modern lens, we thought we would use this piece to highlight how Black photography has paved the way for issues on social justice. Black people have been at photography's forefront throughout its tenure as a technology.
+Photography is the most historically rich of our crafts, spanning back almost 200 years (The first photograph we _think_ is from 1826). Since we have the rest of the year to highlight BIPOC photographers through a more modern lens, we thought we would use this piece to highlight how Black photography has paved the way for issues on social justice. Black people have been at photography's forefront throughout its tenure as a technology.
 
 Historically, Black artists have used photography as a medium in their fight for human rights and equality - their own or otherwise.
 
-This is perfectly described by Black feminist author bell hooks in [her 1994 essay *In our Glory: Photography and Black Life*:](https://terrawolves.com/ourpages/auto/2015/9/17/53524157/hooks--Glory.pdf)
+This is perfectly described by Black feminist author bell hooks in [her 1994 essay _In our Glory: Photography and Black Life_:](https://terrawolves.com/ourpages/auto/2015/9/17/53524157/hooks--Glory.pdf)
 
-> "Cameras gave to black folks, irrespective of class, a means by which we could participate fully in the production of images. Hence it is essential that any theoretical discussion of the relationship of black life to the visual, to art making, make photography central. ... *For black folks, the camera provided a means to document a reality that could, if necessary, be packed, stored, moved from place to place. It was documentation that could be shared, passed around."*
+> "Cameras gave to black folks, irrespective of class, a means by which we could participate fully in the production of images. Hence it is essential that any theoretical discussion of the relationship of black life to the visual, to art making, make photography central. ... _For black folks, the camera provided a means to document a reality that could, if necessary, be packed, stored, moved from place to place. It was documentation that could be shared, passed around."_
 
 Here's a very small glimpse into some of the Black photographers who used their talent to pioneer the world in social justice.
 
@@ -66,11 +65,11 @@ He is one of the most celebrated photographers of the 20th century -- you can re
 
 ![](https://media.pixelbakery.co/PB/2021/02/15tmag-cmw-slide-UK5S-superJumbo-600x800.jpg)
 
-Carrie Mae Weems is one of the most influential photographers of our time in the modern sphere. She has been one of the chief photographers in giving a voice to women of color, showing her subjects in all of their *real* glory, making sure to highlight persons of every body shape or ability. When [interviewed](https://www.nytimes.com/2018/10/15/t-magazine/carrie-mae-weems-interview.html) about her craft by the NYT, she reflects on why this is important to her: "I think artists are always trying for, struggling for, clamoring for, unearthing, digging for what is most authentically true about their understanding of the world and how they fit in it ... And the one thing that I did know was that the ways in which women had photographed themselves up until [this] moment for the most part really didn't interest me. I was also deeply concerned about the lack of representation of African-American women generally."
+Carrie Mae Weems is one of the most influential photographers of our time in the modern sphere. She has been one of the chief photographers in giving a voice to women of color, showing her subjects in all of their _real_ glory, making sure to highlight persons of every body shape or ability. When [interviewed](https://www.nytimes.com/2018/10/15/t-magazine/carrie-mae-weems-interview.html) about her craft by the NYT, she reflects on why this is important to her: "I think artists are always trying for, struggling for, clamoring for, unearthing, digging for what is most authentically true about their understanding of the world and how they fit in it ... And the one thing that I did know was that the ways in which women had photographed themselves up until [this] moment for the most part really didn't interest me. I was also deeply concerned about the lack of representation of African-American women generally."
 
 These thoughts are what prompted her to create her most well known work - [The Kitchen Table Series](https://carriemaeweems.net/galleries/kitchen-table.html).
 
-![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table14.jpg)   ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table10.jpg)   ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table5.jpg)   ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table3.jpg)
+![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table14.jpg) ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table10.jpg) ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table5.jpg) ![](https://pixelbakery.co/wp-content/uploads/PB/2021/02/kitchen-table3.jpg)
 
 In addition to her work being extremely influential on artists and individuals, it has gained her many accolades; among these are a [MacArthur Fellowship](https://www.macfound.org/fellows/class-of-2013/carrie-mae-weems), [the WEB Du Bois medal from Harvard University](https://www.bostonglobe.com/lifestyle/names/2015/09/30/namesharvard/FT1SZp6fGOhesSYia4khAO/story.html), and [several honorary degrees](http://carriemaeweems.net/bio.html).
 

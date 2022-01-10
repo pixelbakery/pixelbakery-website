@@ -18,8 +18,8 @@ type Props = {
   post: PostType
   morePosts: PostType[]
   relatedPosts: PostType[]
-  matchingAuthor: PersonType[]
-  ourPerson: PersonType[]
+  matchingAuthor: PersonType
+  ourPerson: PersonType
 }
 
 function shuffleArray(array) {
@@ -34,7 +34,7 @@ function shuffleArray(array) {
 }
 
 const Post = ({ post, relatedPosts, ourPerson }: Props) => {
-  console.log(ourPerson.title)
+  console.log(ourPerson)
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -100,6 +100,7 @@ export async function getStaticProps({ params }: Params) {
     'slug',
     'headshotSerious',
     'headshotSmiling',
+    'photos',
     'active',
     'title',
     'phone',

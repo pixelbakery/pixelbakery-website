@@ -1,26 +1,40 @@
 ---
 title: 'Busy AF and Living in a Pandemic'
 subtitle: Miranda’s Declassified School Pandemic Survival Guide
-excerpt: Approaching the end of 2020 we all know one thing for certain, time isn’t real. As it turns out, the main way the human world functions is by pretending time is real and adhering to a bunch of things like rules, deadlines, circadian rhythms… When a global pandemic arrives and your country (and especially your state 👀) doesn’t handle it very well, apparently all of that structure goes out the window and we become feral goblins unsure of how to exist within our own homes. 
+excerpt: Approaching the end of 2020 we all know one thing for certain, time isn’t real. As it turns out, the main way the human world functions is by pretending time is real and adhering to a bunch of things like rules, deadlines, circadian rhythms… When a global pandemic arrives and your country (and especially your state 👀) doesn’t handle it very well, apparently all of that structure goes out the window and we become feral goblins unsure of how to exist within our own homes.
 # Cover Photos MUST be 4x3 resolution
 coverImage: /img/blog/MirandaHussey.jpeg
 date: '2020-12-15'
 categories: ['editorial', 'from the desk of']
-tags: ['2020 sucks', 'account executive', 'Advertising', 'burnout', 'Client Services', 'covid', 'covid-19','lifestyle', 'Mental Health', 'pandemic', 'stress', 'Women in Advertising']
+tags:
+  [
+    '2020 sucks',
+    'account executive',
+    'Advertising',
+    'burnout',
+    'Client Services',
+    'covid',
+    'covid-19',
+    'lifestyle',
+    'Mental Health',
+    'pandemic',
+    'stress',
+    'Women in Advertising',
+  ]
 author:
   name: Miranda Hussey
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/MirandaHussey.jpeg
 ---
-Approaching the end of 2020 we all know one thing for certain: time isn't real. As it turns out, the main way the human world functions is by pretending time *is* real and adhering to a bunch of things like rules, deadlines, circadian rhythms... When a global pandemic arrives and your country (and especially your [state](https://www.politifact.com/article/2020/nov/24/nebraska-skyrocketing-cases-covid-19-put-localitie/) 👀) doesn't handle it very well, apparently all of that structure goes out the window and we become feral goblins unsure of how to exist within our own homes.
 
-It is garbage. Like, no one is *really* enjoying it, right? It's obviously worse for some than others, and we on the PB team are extremely lucky that our work is (mostly) in the digital realm and could be transitioned relatively easily to being done remotely. That said, figuring out to exist this year has still sucked major ass - and no one has really put out a guide on how to juggle your busy adult life in a way that's actually helpful. Tired of all the articles telling me to "take time for myself" and "put on some real clothes," I humbly offer this to you:
+Approaching the end of 2020 we all know one thing for certain: time isn't real. As it turns out, the main way the human world functions is by pretending time _is_ real and adhering to a bunch of things like rules, deadlines, circadian rhythms... When a global pandemic arrives and your country (and especially your [state](https://www.politifact.com/article/2020/nov/24/nebraska-skyrocketing-cases-covid-19-put-localitie/) 👀) doesn't handle it very well, apparently all of that structure goes out the window and we become feral goblins unsure of how to exist within our own homes.
 
-Miranda's Declassified ~~School~~ Pandemic Survival Guide
----------------------------------------------------------
+It is garbage. Like, no one is _really_ enjoying it, right? It's obviously worse for some than others, and we on the PB team are extremely lucky that our work is (mostly) in the digital realm and could be transitioned relatively easily to being done remotely. That said, figuring out to exist this year has still sucked major ass - and no one has really put out a guide on how to juggle your busy adult life in a way that's actually helpful. Tired of all the articles telling me to "take time for myself" and "put on some real clothes," I humbly offer this to you:
+
+## Miranda's Declassified ~~School~~ Pandemic Survival Guide
+
 ### Keys to Success:
+
 #### Zoom as much as you possibly can, and get good at it
 
 The biggest struggle throughout existing post-March has been the constant yearning for human life; working from home can be a really isolating experience, and no amount of slack channels are going to change that. While all the Zoom themed commercials are extremely grating (stop using the phrase "new normal" and showing me someone getting married or engaged on zoom to advertise chips or something like that), Zoom truly has become a huge part of life for us.
@@ -55,6 +69,6 @@ But really, the easiest way to exist as an adult right now is to have your life 
 
 #### Reminders so you don't hate yourself:
 
-- It's okay to feel *extremely* unmotivated. Like, you aren't seeing anyone, you're stuck at home, and it's really hard to make yourself give a shit about arbitrary assignments and plop down in front of a screen. Don't get caught up in feeling guilty that you're not motivated to do stuff; just celebrate when you actually manage to do the things you
+- It's okay to feel _extremely_ unmotivated. Like, you aren't seeing anyone, you're stuck at home, and it's really hard to make yourself give a shit about arbitrary assignments and plop down in front of a screen. Don't get caught up in feeling guilty that you're not motivated to do stuff; just celebrate when you actually manage to do the things you
 - We are all not killing it health wise right now. I bought some resistance bands in March so I could work out at home - I honestly have no effing clue where they are, and they're definitely still in the packaging. While it is AWESOME if you are working out from home or figuring out a way to exercise at a gym or outside, don't beat yourself up for not being the epitome of fitness. If you haven't gained at least 10 pounds, please explain how to me lmao.
 - It makes sense for your sleep schedule to be completely wack. I know business hours are still a thing, and people might make you feel shitty about the way you're chaotically up at 4 am, but it is totally normal to be all over the place. We are all probably at least a little depressed, and daylight savings time shouldn't exist. (Well, standard time shouldn't exist - we should permanently just vibe in daylight time).

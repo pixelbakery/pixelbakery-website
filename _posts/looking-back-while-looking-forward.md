@@ -1,7 +1,7 @@
 ---
 title: 'Looking Back While Simultaneously Looking Forward'
 subtitle: Hi there! I’m Kaitlyn, Pixel Bakery’s freshest intern, and definitely not a seasoned baker.
-excerpt: Hi there! I’m Kaitlyn, Pixel Bakery’s freshest intern, and definitely not a seasoned baker. It turns out that mistaking powdered sugar for flour drastically affects the results of chocolate chip cookies — lesson learned. However, despite my lack of literal baking skills, you can count on me, the new Account Executive Apprentice, to stay on top of everything that is thrown my way and to keep it all organized (in a color-coded manner, of course). 
+excerpt: Hi there! I’m Kaitlyn, Pixel Bakery’s freshest intern, and definitely not a seasoned baker. It turns out that mistaking powdered sugar for flour drastically affects the results of chocolate chip cookies — lesson learned. However, despite my lack of literal baking skills, you can count on me, the new Account Executive Apprentice, to stay on top of everything that is thrown my way and to keep it all organized (in a color-coded manner, of course).
 # Cover Photos MUST be 4x3 resolution
 coverImage: /img/blog/PB_00133-2_web-1398x1080.jpeg
 date: '2020-01-20'
@@ -9,12 +9,11 @@ categories: ['from the desk of']
 tags: ['account executive']
 author:
   name: Kaitlyn Pfannenstiel
-  picture: /img/placeholder01.png
-  profileURL: '/'
 ogImage:
   url: /img/blog/PB_00133-2_web-1398x1080.jpeg
 ---
-Hi there! I'm Kaitlyn, Pixel Bakery's freshest intern, and definitely *not* a seasoned baker. It turns out that mistaking powdered sugar for flour drastically affects the results of chocolate chip cookies - lesson learned. However, despite my lack of literal baking skills, you can count on me, the new Account Executive Apprentice, to stay on top of everything that is thrown my way and to keep it all organized (in a color-coded manner, of course).
+
+Hi there! I'm Kaitlyn, Pixel Bakery's freshest intern, and definitely _not_ a seasoned baker. It turns out that mistaking powdered sugar for flour drastically affects the results of chocolate chip cookies - lesson learned. However, despite my lack of literal baking skills, you can count on me, the new Account Executive Apprentice, to stay on top of everything that is thrown my way and to keep it all organized (in a color-coded manner, of course).
 
 To give you a brief idea of who I am, I was born and raised in Omaha, Nebraska and have spent most of my life close to home. Although most people believe that Nebraska consists of just cornfields, living here has given me the opportunity to find beauty and adventure in everything I come across in life. I will be graduating from the University of Nebraska-Lincoln in May with a degree in Advertising and Public Relations and am thrilled to put everything I've learned into motion.
 
