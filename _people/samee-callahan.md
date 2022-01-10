@@ -31,9 +31,9 @@ socials:
   personalWebsite: Url
   etsy: Url
 photos:
-  headshotSerious: /img/team/Headshot_Abby_Proof.png
-  headshotSmiling: /img/team/Headshot_Abby_Smiling_Proof.png
-  headshotFun: string
+  headshotSerious: /img/team/samee_serious.png
+  headshotSmiling: /img/team/samee_smiling.png
+  headshotFun: /img/team/samee_silly.png
 ---
 
 Maddie iss co00oolll
