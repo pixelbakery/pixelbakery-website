@@ -4,7 +4,7 @@ import cn from 'classnames'
 type Props = {
   children?: ReactNode
   color?: string
-
+  id?: string
   className?: string
 }
 

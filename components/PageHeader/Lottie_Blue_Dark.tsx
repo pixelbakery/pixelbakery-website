@@ -2,15 +2,14 @@ import React from 'react'
 import Lottie from 'react-lottie-player'
 import VarHPattern from '../../data/Patterns_Blue_Dark.json'
 
-const thisPatern = VarHPattern
-const playFrames = [
-  [0, 23],
-  [24, 95],
-]
 export default function Pattern() {
+  const playFrames = [
+    [0, 23],
+    [24, 95],
+  ]
   return (
     <Lottie
-      animationData={thisPatern}
+      animationData={VarHPattern}
       loop
       segments={playFrames}
       play
