@@ -6,11 +6,11 @@ module.exports = {
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-      resolve: {
-        fallback: {
-          fs: false,
-        },
-      },
+      // resolve: {
+      //   fallback: {
+      //     fs: false,
+      //   },
+      // },
     })
 
     return config

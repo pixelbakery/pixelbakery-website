@@ -63,6 +63,7 @@ function Home_Landing() {
             </div>
             <div className='flex justify-center w-full my-2'>
               <Button_Filled
+                center={true}
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 bgColor={'pink'}
