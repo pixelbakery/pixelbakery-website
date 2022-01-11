@@ -1191,7 +1191,7 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.1"
 
-"@next/react-refresh-utils@0.8.3", "@next/react-refresh-utils@12.0.7":
+"@next/react-refresh-utils@12.0.7":
   version "12.0.7"
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-12.0.7.tgz#921c403798e188b4f1d9e609283c0e8d3e532f89"
   integrity sha512-Pglj1t+7RxH0txEqVcD8ZxrJgqLDmKvQDqxKq3ZPRWxMv7LTl7FVT2Pnb36QFeBwCvMVl67jxsADKsW0idz8sA==
@@ -4538,14 +4538,7 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-react@latest:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/lottie-react/-/lottie-react-2.1.0.tgz#24d20ea41dc10791b1253f408dcb6f3e995780be"
-  integrity sha512-sHDJb5aeh1letUIWqwidHoHZj07ZOZQoLuUgy0gqt9FB/XiCtAZ2+421Cn+ZkHR7anVvWljKhGgctQCtgFloUA==
-  dependencies:
-    lottie-web "^5.7.3"
-
-lottie-web@^5.7.3, lottie-web@^5.7.6, lottie-web@latest:
+lottie-web@^5.7.6, lottie-web@latest:
   version "5.8.1"
   resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.8.1.tgz#807e0af0ad22b59bf867d964eb684cb3368da0ef"
   integrity sha512-9gIizWADlaHC2GCt+D+yNpk5l2clZQFqnVWWIVdY0LnxC/uLa39dYltAe3fcmC/hrZ2IUQ8dLlY0O934Npjs7Q==
@@ -7237,6 +7230,11 @@ whatwg-url@^7.0.0:
     tr46 "^1.0.1"
     webidl-conversions "^4.0.2"
 
+when@~2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/when/-/when-2.4.0.tgz#4b762170a4dee67135bd62ac3d22cc4fc64cf831"
+  integrity sha1-S3YhcKTe5nE1vWKsPSLMT8ZM+DE=
+
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz#13757bc89b209b049fe5d86430e21cf40a89a8e6"
@@ -7273,6 +7271,13 @@ which@^2.0.1:
   integrity sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   dependencies:
     isexe "^2.0.0"
+
+why@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/why/-/why-0.1.12.tgz#a37a0bfd2007767346a3a694d032d2b0e0549a40"
+  integrity sha1-o3oL/SAHdnNGo6aU0DLSsOBUmkA=
+  dependencies:
+    when "~2.4.0"
 
 wide-align@^1.1.0:
   version "1.1.5"

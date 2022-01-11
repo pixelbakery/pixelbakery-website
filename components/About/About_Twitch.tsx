@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactPlayer from 'react-player/twitch'
+// import ReactPlayer from 'react-player/twitch'
 
 function About_Twitch() {
   return (
@@ -21,14 +21,14 @@ function About_Twitch() {
         </div>
 
         <div className='aspect-w-9 md:aspect-w-16 md:aspect-h-9 '>
-          <ReactPlayer
+          {/* <ReactPlayer
             url='https://www.twitch.tv/pixelbakery'
             controls
             autoPlay={true}
             muted={true}
             width={'100%'}
             height={'100%'}
-          />
+          /> */}
         </div>
       </div>
     </section>
