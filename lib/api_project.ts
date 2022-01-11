@@ -37,7 +37,7 @@ export function getProjectBySlug(slug: string, fields: string[] = []) {
 }
 
 export function getAllProjects(fields: string[] = []) {
-  const slugs = getProjectSlugs()s
+  const slugs = getProjectSlugs()
   const projects = slugs.map((slug) => getProjectBySlug(slug, fields))
   // sort posts by date in descending order
   // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
