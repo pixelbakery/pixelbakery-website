@@ -1,0 +1,21 @@
+---
+title: 'Pixel Bakery wins silver at AIGA Nebraska’s 2019 Show'
+subtitle: 'This past weekend, Pixel Bakery was honored to earn a silver award for their work on SoulPancake: The Price of Free at the 2019 AIGA Show.'
+excerpt: 'This past weekend, Pixel Bakery was honored to earn a silver award for their work on SoulPancake: The Price of Free at the 2019 AIGA Show.'
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Image-from-iOS-11-1536x952.jpeg
+date: '2019-12-01'
+categories: ['announcements']
+tags: ['AIGA', 'announcements', 'awards', 'silver']
+author:
+  name: Gabby Giesler
+ogImage:
+  url: /img/blog/Image-from-iOS-11-1536x952.jpeg
+---
+This past weekend, Pixel Bakery was honored to earn a silver award for their work on SoulPancake: The Price of Free at the 2019 AIGA Show. In collaboration with Participant Media, SoulPancake's parent company, this project was created with the purpose of promoting a feature documentary. The award-winning animated video highlights the troubling statistics and information related to forced child labor. The video was published on SoulPancake's Facebook and YouTube channels alongside the official trailer. See more about The Price of Free here: <https://pixelbakery.co/work/soul-pancake/the-price-of-free/>.
+
+This project was fast-moving with a hard deadline. It was truly all hands on deck, and we are fortunate to have such hardworking, dedicated and talented employees who helped make it all happen. Thank you also to AIGA Nebraska for taking the time to review our submissions and host such an exciting night for Nebraska Creatives.
+
+While you're here, I might as well throw in a shameless plug about working with us. If you happen to be an awesome business owner looking for a small creative shop to help you execute your upcoming projects, please send us an email at hello@pixelbakery.co
+
+We would love to have you be a part of our journey.
