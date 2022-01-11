@@ -42,7 +42,6 @@ function shuffle(arr) {
     x = arr[index]
     arr[index] = arr[j]
     arr[j] = x
-    // console.log('test:', arr[j])
   }
   return arr
 }

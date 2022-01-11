@@ -21,7 +21,6 @@ type Props = {
 }
 
 const PostHeader = ({ category, title, subtitle, coverImage, date, author, person }: Props) => {
-  console.log(person.title)
   let profilePic
   if (person.slug && person.photos.headshotSmiling != typeof undefined) {
     profilePic = person.photos.headshotSmiling

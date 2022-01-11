@@ -12,7 +12,6 @@ type Props = {
   allProjectFiles: ProjectFile[]
 }
 function EducationPage({ allProjectFiles }: Props) {
-  console.log(allProjectFiles)
   return (
     <main className='max-w-screen overflow-x-hidden' id='educationPage'>
       <Education_Header />

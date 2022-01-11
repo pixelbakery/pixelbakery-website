@@ -13,7 +13,6 @@ export default function Home() {
       if (!field.name) return
       formData[field.name] = field.value
     })
-    console.log(formData)
 
     await fetch('../api/mail', {
       method: 'POST',

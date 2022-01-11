@@ -61,7 +61,6 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
     refetch()
     CanIAddToCart('select')
   }
-  // console.log('checkout button enabled? ' + soldOut)
 
   // check to see if it's a name your own price product
   let prependPrice = ''
