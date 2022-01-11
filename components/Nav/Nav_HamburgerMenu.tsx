@@ -7,7 +7,6 @@ function Nav_HamburgerMenu() {
   const [isActive, setActive] = useState(true)
 
   const handleHamToggle = () => {
-    console.log('test')
     setActive(!isActive)
     if (isActive) {
       HandleHamOpen()

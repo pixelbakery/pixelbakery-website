@@ -26,8 +26,6 @@ function About_Team_Headshot({ ...props }) {
             ['opacity-0']: hover,
           })}
           alt={'pixel bakery ' + props.name}
-
-          // onMouseOver={(e) => console.log(props.headshotSmiling)}
         />
         <Image
           src={headshotSmiling}
@@ -35,8 +33,6 @@ function About_Team_Headshot({ ...props }) {
           objectFit='cover'
           className='absolute top-0 left-0  w-full h-full object-cover z-10'
           alt={'pixel bakery ' + props.name}
-
-          // onMouseOver={(e) => console.log(props.headshotSmiling)}
         />
       </a>
     </Link>

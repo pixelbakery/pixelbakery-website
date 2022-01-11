@@ -11,9 +11,6 @@ function shuffleArray(array) {
     array[i] = array[j]
     array[j] = temp
   }
-  for (let x = 0; x < array.length; x++) {
-    console.log(array[x].name)
-  }
   return array
 }
 

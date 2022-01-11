@@ -174,7 +174,6 @@ let Checkout: NextPage = () => {
       //   res.data.error.param
       // );s
       alert('An error occurred while processing your payment: ' + res?.message)
-      console.log(res)
     }
     setLoading(false)
   }

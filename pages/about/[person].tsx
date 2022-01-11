@@ -104,9 +104,7 @@ export async function getStaticProps({ params }: Params) {
     (post) => post.author.name.toUpperCase() === person.name.toUpperCase(),
   )
 
-  // console.log(matchingAuthorPosts.length)
   // matchingAuthorPosts.forEach((post) => {
-  //   console.log(post.author.name, ' | ', post.title, ' | ', post.slug)
   // })
 
   const content = await markdownToHtml(person.content || '')
