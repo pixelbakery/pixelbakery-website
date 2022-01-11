@@ -30,6 +30,7 @@ function Services_Related() {
         </div>
         <div className=' py-8 mx-auto w-full'>
           <Button_Filled
+            center={true}
             text='test'
             link='/'
             bgColor={'pink'}
