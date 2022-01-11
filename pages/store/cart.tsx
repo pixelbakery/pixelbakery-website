@@ -19,18 +19,15 @@ const CheckoutPage: NextPage = () => {
   const addQuantity = async (item: any) => {
     await commerce.cart.update(item.id, { quantity: item.quantity + 1 })
     refetch()
-    console.log('ADDED ITEM')
   }
   const subtractQuantity = async (item: any) => {
     await commerce.cart.update(item.id, { quantity: item.quantity - 1 })
 
-    console.log('SUBTRACTED ITEM')
     refetch()
   }
   const removeLineItem = async (item: any) => {
     await commerce.cart.update(item.id, { quantity: 0 })
 
-    console.log('REMOVED ITEM')
     refetch()
   }
 

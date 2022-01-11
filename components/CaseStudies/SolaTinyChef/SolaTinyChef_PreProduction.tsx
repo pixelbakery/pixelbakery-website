@@ -27,11 +27,7 @@ function Carousel() {
       navigation
       //  loop={true}
       effect={'cards'}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      //  onSlideChange={() => console.log('slide change')}
-      //  onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <div className='relative'>

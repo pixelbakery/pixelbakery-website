@@ -34,13 +34,11 @@ function shuffleArray(array) {
 }
 
 const Post = ({ post, relatedPosts, ourPerson }: Props) => {
-  console.log(ourPerson)
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   // const allPosts
-  // console.log(matchingAuthor)
   return (
     <main>
       {router.isFallback ? (
@@ -118,17 +116,14 @@ export async function getStaticProps({ params }: Params) {
     'excerpt',
   ])
   // Get author bios
-  // console.log(post.author.name)
   const matchingAuthor = allPeople.filter(
     (person) => person.name.toUpperCase() === post.author.name.toUpperCase(),
   )
 
-  // console.log(matchingAuthor.length)
   // matchingAuthor.forEach((person) => {
   // })
   const currentPost = post
   const ourPerson = matchingAuthor[0]
-  // console.log(ourPerson.name, ' | ', ourPerson.title, ' | ', ourPerson.slug)
 
   // Map the currentPost categories array to a Set for lookup in the filter
   const searchCategories = new Set(currentPost.categories.map((category) => category.toUpperCase()))
@@ -160,10 +155,7 @@ export async function getStaticProps({ params }: Params) {
   }
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
 
-  // console.log('Matching Posts:')
-  relatedPosts.map((post) => {
-    // console.log(post.title)
-  })
+  relatedPosts.map((post) => {})
 
   const content = await markdownToHtml(post.content || '')
   return {

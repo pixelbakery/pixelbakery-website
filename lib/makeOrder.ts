@@ -37,7 +37,6 @@ export function makeOrder({ live, values, billingSameAsShipping }: any) {
     },
     pay_what_you_want,
   }
-  console.log(values, newOrder)
 
   return newOrder
 }

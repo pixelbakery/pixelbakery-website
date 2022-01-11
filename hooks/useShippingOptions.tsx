@@ -9,7 +9,6 @@ export default function useShippingOptions(country: string, region: string | und
 
   useEffect(() => {
     if (!checkout || !country) {
-      console.log('no asdf ', { checkout, country })
       return
     }
 

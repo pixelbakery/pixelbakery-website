@@ -36,10 +36,7 @@ function Education_ProjectFiles({ projectFiles }: Props) {
     } else {
       setFilteredItems(projectFiles.filter((file) => file.category === filter))
     }
-    console.log('fiilterred', filteredProjectFiles)
   }
-
-  console.log(activeFilter)
   return (
     <PageSection className='bg-pink-light'>
       <InnerWrapper>

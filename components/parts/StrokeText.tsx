@@ -39,7 +39,6 @@ const StrokeText = ({ index, active, text, fontSize, strokeWidth, color, fontWei
       let w_text = document.querySelector(`#text-${index}`).getBBox().width
       let h_text = document.querySelector(`#text-${index}`).getBBox().height
 
-      // console.log(dimensions.w_text, dimensions.h_text)
       svg.setAttribute('width', w_text)
       svg.setAttribute('height', h_text)
     }, 1000)
