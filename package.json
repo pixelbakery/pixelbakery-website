@@ -70,6 +70,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
+    "why": "^0.1.12",
     "@svgr/cli": "^6.2.0",
     "@svgr/webpack": "^6.2.0",
     "@types/gtag.js": "^0.0.8",
