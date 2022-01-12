@@ -3,7 +3,7 @@ title: 'Using Trim Paths to Animate Text'
 subtitle: Today we’re going to talk about how to animate the illusion of text being drawn/painted onto the screen in After Effects using Trim Paths.
 excerpt: Today we’re going to talk about how to animate the illusion of text being drawn/painted onto the screen in After Effects using Trim Paths.
 # Cover Photos MUST be 4x3 resolution
-coverImage: /img/blog/Dantheman.jpeg
+coverImage: /img/blog/111Screen-Shot-2020-04-09-at-12.25.23-PM.png
 date: '2020-04-09'
 categories: ['education']
 tags:
@@ -20,7 +20,7 @@ tags:
 author:
   name: Jordan Lambrecht
 ogImage:
-  url: /img/blog/Dantheman.jpeg
+  url: /img/blog/111Screen-Shot-2020-04-09-at-12.25.23-PM.png
 ---
 
 Today we're going to talk about how to animate the illusion of text being drawn/painted onto the screen in After Effects using Trim Paths. It's a fairly straightforward process, so this will be a short tutorial. This tutorial assumes you already know how to [set up a composition](https://pixelbakery.co/recipes/tutorial-composition-settings-in-after-effects/) inside of After Effects and have already done so. Let's dive in.
