@@ -1,0 +1,152 @@
+---
+title: 'Generate Assets in Photoshop for Web Images'
+subtitle: 'In this tutorial: I’ll go over how we utilize the Generate Assets tool inside of Adobe Photoshop to quickly modulate web-ready image assets.'
+excerpt: 'In this tutorial: I’ll go over how we utilize the Generate Assets tool inside of Adobe Photoshop to quickly modulate web-ready image assets.'
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/PixelBakery_JordanLambrecht_PhotoshopTutorial.png
+date: '2019-09-13'
+categories: ['education']
+tags:
+  [
+    'Adobe Creative Cloud',
+    'Generate Assets',
+    'Photoshop',
+    'Photoshop Artboards',
+    'Tutorial',
+    'Web Design',
+    'web development'
+  ]
+author:
+  name: Jordan Lambrecht
+ogImage:
+  url: /img/blog/PixelBakery_JordanLambrecht_PhotoshopTutorial.png
+---
+In this tutorial: I'll go over how we utilize the Generate Assets tool inside of Adobe Photoshop to quickly modulate web-ready image assets.
+
+We recently wrapped on a WordPress web design project for a client that writes a lot of online articles, which means his new site is pretty asset heavy. Before he started working with us, he had thousands of images of all different resolutions, file formats, and sizes. Our role was to simply design and develop the new site, but we didn't want to leave the client hanging, so I put together this tutorial to walk you through how Pixel Bakery established an image workflow to get assets ready for the web.
+
+You'll need [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) for this tutorial if you don't already have it. You can pick up a subscription from their website for $9.99/month that includes both Photoshop and Lightroom.
+
+For those of you that need to touch and feel, I've uploaded all of the working files that I use in this tutorial. You can download them below.
+
+Okay, let's dive in.
+
+(Also my camera decided to stop recording towards the end of the video so you'll have to stare at the screen recording of my desktop for a bit. Apologies)
+
+Preface
+-------
+
+A little background:
+
+This workflow takes advantage of Photoshop's new Artboard capabilities, which provides Illustrator-like functionality to canvases.
+
+We use this workflow because it's very simple and fast to use, and our clients are able to understand the process with relative ease. Even beginners should have no trouble mastering this technique. There's several sub-steps that we'll go through, but overall it comes down to:
+
+1) Prepping your files ahead of time correctly.
+2) Doing all of the Photoshop magic.
+3) Compressing the files correctly so your website visitors have a quick and enjoyable browsing experience.
+
+Part I: File Prep
+-----------------
+
+![setting up our files before we generate assets](/img/blog/1Screen-Shot-2019-06-06-at-4.41.42-PM.png)
+
+#### 01\. Create naming conventions / hierarchy
+
+I'm sorry in advance if this part sounds soap box-y.
+
+Before we do anything else, we need to make sure our workflow has a good foundation. Establishing and enforcing naming conventions and file structure ahead of time will help increase the shelf life of your project. It prevents files from getting jumbled and lost, and eases the learning curve with your clients. You'll know exactly where to find your images and be able to identify the correct one immediately based off of the name. If you don't set these rules up, you'll end up with a lot of IMG_5135112.JPG and Headshots_Old_Finalfinal.jpg
+
+We always use a Big Idea -> Little Idea system. For example:
+
+PB_Tut_GenerateAssets_4k_v01.mov
+
+So to break that down:
+
+Client Abbreviation (Internal in this case, so Pixel Bakery) -> Project Name -> File Name / Purpose -> Unique Identifier -> Version Number
+
+#### 02\. Plan Ahead and standardize your sizes
+
+The final piece of prep work that we need to do is figure out what sizes we'll be using in different contexts on our website. If you're working with a developer, grab a list from him. You'll want to account for mobile vs. desktop, how the images look on Retina displays, and decide where and how they'll used.
+
+Here's a pretty standard list to start from:
+
+-   16:9, 1920 x 1080
+-   4:3, 1024 x 768
+-   3:4, 728 x 1024
+-   1:1, 1080 x 1080
+-   3:2, 1080 x 720
+
+Part II: Photoshop
+------------------
+
+Okay, now on to the good good. I'm going to blaze past this part since most of the steps are self-explanatory.
+
+![The correct photoshop document settings for generate assets](/img/blog/2Screen-Shot-2019-06-07-at-3.50.50-PM.png)
+
+#### 1\. Create a new Photoshop Document
+
+Go to File>New and create a new document. You can start off in the web presets if you want. Set the dimensions for your first artboard and make sure the artboard box is checked. You shouldn't need higher than 72 for the resolution. Set your color mode to RGB at 15 bits. You shouldn't need to change anything else beyond this. Hit create and check out your new artboard.
+
+![How to correctly layout your photoshop artboards for Generate Assets](/img/blog/3Screen-Shot-2019-06-07-at-3.53.22-PM.png)
+
+#### 2\. Create your different artboards
+
+We now have a single artboard set up for us already, but we'll most likely want to include more than one size of our photos. You can either Option + Drag your already existing artboard and edit the dimensions in the properties panel, hit the artboard's name on the canvas followed by the plus button, or switch to your artboard move tool by hitting Shift + V and creating one with a custom size.
+
+![How to toggle Generate Assets inside of Photoshop](/img/blog/4Screen-Shot-2019-06-07-at-3.58.43-PM.png)
+
+#### 3\. Turn on "Generate Assets"
+
+This part is pretty self-explanatory. Head up to File > Generate > Image Assets. Make sure you save your file directly after you turn it on. If you check out the root folder that your .psd is saved in, you'll notice a new folder called yadayadayada-assets. This is where all your sweet images will be generated at.
+
+![Example Artboard layout inside of Photoshop for Generate Assets](/img/blog/5Screen-Shot-2019-09-13-at-4.13.26-PM.png)
+
+#### 4\. Place Your Images
+
+Now you're going to want to make duplicates of your image on every corresponding artboard (you can do this by alt-dragging the image). Remember not to oversize your images as it'll cause them to be pixelated.
+
+![Name your Photoshop Layers correctly to use Generate Assets](/img/blog/6Screen-Shot-2019-09-13-at-4.13.54-PM.png)
+
+#### 5\. Rename your layers
+
+This is where the magic happens. Photoshop currently supports three file types for generating assets: JPG, PNG, and GIF.
+
+Generate Assets will use the layer's name to determine what to do with the image files. There's a ton of personal preference and customizability that can be tweaked to your liking, so I'll just stick to what we do and let you draw your own conclusions. For a complete list of what's possible, check out this [Adobe help section article](https://helpx.adobe.com/photoshop/using/generate-assets-layers.html).
+
+There are three big things that we do:
+
+1\. We organize everything into subfolders named either categorically or based on the image ratio. Photoshop will determine anything preceding a forward slash as a file path. For example: 16×9/FileName.jpg would place the image inside of a folder named "16×9". If the folder does not already exist, it will create one.
+
+2\. We're sure to include the image ratio within the actual file name. This will save your developers a TON of headache and time down the road and will prevent them from having to guess or inspect each photo. For example: PB_Headshots_Jordan05_16x9.JPG
+
+3\. The extension. What you put after the filename is what determines the image type and image quality. Again, there's a thousand options here and I'm not going to cover them all. PNGs and GIFs have slightly different syntax than JPGs, but the logic is the same. Examples:
+
+- Headshot.jpg100% This will generate a JPG image at 100% quality.
+- Headshot.jpg50% You guessed it: a JPG at 50% quality.
+- 200% 16×9/2x/Headshot@2x.jpg100% A little trickier: this generates an image that is twice as large, puts it in a subfolder named "2x", and appends the identifier "@2x" to the end of the image name. This is great for [developing responsive websites](https://css-tricks.com/planning-for-responsive-images/)that are designed to be retina-ready. This allows a website to only load the @2x version of the image if it detects a huge screen or retina display is being used.
+- 200% 16×9/2x/Headshot@2x.jpg100% 16×9/Headshot.jpg100% This one is a bit nuts to look at, but it's pretty straight forward. It's simply combining the first and the third bullet points and generating both.
+
+Advanced bonus tip: if you check out that aforementioned adobe help link, there's a section that will show you how to set up some defaults for Generate Assets in your Photoshop file. This lets you simplify a few of the variables (i.g only needing to type .jpg vs .jpg100%).
+
+Part III: Compress & Enjoy
+--------------------------
+
+![Compress your images on TinyJPG](/img/blog/7Screen-Shot-2019-06-07-at-3.23.08-PM.png)
+
+Phew. That was easy enough, right? The last thing we need to do before we deploy the assets live is ensure that they're properly compressed for web. In general, Photoshop doesn't handle image compression the best so we'll need to use a third-party resource. I personally am a huge fan of [tinyjpg.com](https://tinyjpg.com/). The compression results are astronomical and what ever black magic they use doesn't seem to degrade the image quality in the slightest. We swear that they didn't pay us to say any of this. They don't even know that we exist =[
+
+All we need to do is a little drag n' drop action to their site, download the files to a new folder such as ./*compressed, and away we go.
+
+If you have any questions, feel free to [shoot us a message](https://pixelbakery.co/contact/).
+
+[Download Working Files (111 MB)](https://media.pixelbakery.co/PB/PB_Tut_WebAssets_ProjectFiles_v1.zip)
+
+More PB Tutorials
+-----------------
+
+-   [Gmail: How to Automatically Delete or Archive Emails After A Certain Number of Days](https://pixelbakery.co/recipes/gmail-how-to-automatically-delete-or-archive-emails-after-a-certain-number-of-days)
+-   [Black History Month: A History in Black Cinematography](https://pixelbakery.co/recipes/black-history-month-a-history-in-black-cinematography)
+-   [PDF Presets in Adobe Illustrator. Which one should you use?](https://pixelbakery.co/recipes/pdf-presets-in-adobe-illustrator)
+-   [List of Video/Image Formats in 2021 Supporting Alpha Channels](https://pixelbakery.co/recipes/list-of-video-image-formats-in-2021-supporting-alpha-channels)
+-   [Dan the Man](https://pixelbakery.co/recipes/dan-the-man)
