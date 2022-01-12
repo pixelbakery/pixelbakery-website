@@ -1,0 +1,27 @@
+---
+title: 'Pixel Bakery wins two awards at the 2019 Nebraska ADDY’s'
+subtitle: At the 2019 Nebraska ADDY Awards, Pixel Bakery was awarded one gold and one silver in two different categories including animation and music.
+excerpt: At the 2019 Nebraska ADDY Awards, Pixel Bakery was awarded one gold and one silver in two different categories including animation and music.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/IMG_2078-1024x768.jpeg
+date: '2019-03-12'
+categories: ['from the desk of', 'announcements']
+tags: ['ADDYs', 'awards', 'gold', 'silver']
+author:
+  name: Karley Johnson
+ogImage:
+  url: /img/blog/IMG_2078-1024x768.jpeg
+---
+At the 2019 Nebraska ADDY Awards, Pixel Bakery was awarded one gold and one silver in two different categories including animation and music.
+
+Gold Winner - [KANEKO: Reality Animation](https://pixelbakery.co/work/kaneko-reality/)
+
+Silver Winner - [Lincoln Calling: Space Traffic Original Song](https://pixelbakery.co/work/lincoln-calling-2018-lineup/)
+
+From the beginning we've always been the underdog in a world full of forerunners in the advertising industry. Being able to compete against large Nebraska agencies with hundreds of employees is something we pride ourselves in. We would personally like to thank everyone that continues to support our small and nimble team every year. In addition to that, thank you to all of our clients that keep allowing us the freedom to be creative and make art.
+
+I'm extremely proud of all of the hard work that the PB team has put in this last year, because its been a wild ride. A lot of you don't see what happens behind the scenes here, but we're a committed team that is frequently working into all hours of the night, and on weekends. I think there's really something special about midwestern work ethic that leaves us at an unparalleled advantage. It's not easy lifestyle, but we wouldn't have it any other way. Earning two more highly recognized awards in the industry has ignited a spark in us, and we're ready to keep creating for you.
+
+Since you're already here, I might as well throw in a shameless plug about working with us. If you happen to be an awesome business owner looking for a small creative shop to help you execute your upcoming projects, please email our accounts guru Elaina at elaina@pixelbakery.co
+
+We would love to have you be apart of our journey.
