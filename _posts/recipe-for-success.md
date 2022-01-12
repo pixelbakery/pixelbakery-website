@@ -1,0 +1,25 @@
+---
+title: 'Recipe for Success: Mix Adaptability and Confidence (together, in a medium sized bowl)'
+subtitle: Hi! I’m Gabby, Pixel Bakery’s first ever Brand Manager!
+excerpt: Hi! I’m Gabby, Pixel Bakery’s first ever Brand Manager! 
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/PB_GabbyHeadshot_Resized.jpeg
+date: '2019-08-28'
+categories: ['announcements', 'from the desk']
+tags: ['brand management', 'branding', 'social media', 'social strategy']
+author:
+  name: Gabby Giesler
+ogImage:
+  url: /img/blog/PB_GabbyHeadshot_Resized.jpeg
+---
+Hi! I'm Gabby, Pixel Bakery's first-ever Brand Manager! My title sounds super official and I even got my own business card. Woo! I'm a fourth-year advertising and public relations student at UNL and am beginning my last year with a bang by starting here at Pixel Bakery. My first job when I was 16 was at a cupcake shop in Omaha, so it's good to be back. This time though, I'll be baking up some fresh social strategies and brand guidelines. Excited is an understatement.
+
+Transitional times (i.e. new school year, new job) scream change which often scares me. I am totally type A - always wanting a standard routine and I feel happiest and safest when I am in control of what's happening in my life. Within the last couple years though, I've had to change my tune and learn how to be what's called adaptable. I've learned that life doesn't always go according to plan, but sometimes the plan which unfolds ends up being better than what I had in mind. Funny how that works, huh?
+
+Coming into a new role here and making it my own while simultaneously improving the entire wellbeing of the company is a big deal, and that requires being adaptable. But the biggest thing - especially as a student moving into a "big girl" job - is confidence.
+
+There's always going to be someone who writes more clever captions and has better Instagram filters. There are business accounts that have double, even triple the amount of followers. Employees with 20+ years of experience while I've had a few semesters of relevant classes and a couple of internships. It's easy to make comparisons and forget to focus on the progress I've made.
+
+That's where confidence and adaptability come together. In order to succeed in a new role, I've got to mix the two. Being confident in my ability to drive metrics and build the brand is what is going to help PB grow. It's what helps any company grow. Being adaptable when I need to adjust and humble enough to refocus and continue moving forward furthers that growth.
+
+Everyone's recipe for success is different depending on the job, but these two ingredients are the baseline for a good cake. Or cookie. Or cupcake. I'm having too much fun with these bakery puns already.
