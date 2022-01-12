@@ -1,0 +1,33 @@
+---
+title: 'A Multimedia Designer’s Journey: Sugar, Spice, and Everything Right'
+subtitle: Hi, I’m Ty, and I’m the newest ingredient to the Pixel Bakery spice rack. I just started here as a multimedia designer and I wanted to share my journey with you.
+excerpt: Hi, I’m Ty, and I’m the newest ingredient to the Pixel Bakery spice rack. I just started here as a multimedia designer and I wanted to share my journey with you.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/yonigill.com_Tyler-08549-1-768x1151.jpg
+date: '2019-08-29'
+categories: ['announcements', 'from the desk of']
+tags:
+  ['multimedia designer', 'Lincoln', 'motion design studio']
+author:
+  name: Tyler Loebig
+ogImage:
+  url: /img/blog/yonigill.com_Tyler-08549-1-768x1151.jpg
+---
+Hi, I'm Ty, and I'm the newest ingredient to the Pixel Bakery spice rack. I just started here as a multimedia designer and I wanted to share my journey with you.\
+If you would've told 2016 Ty that I would one day be working at a super rad motion design studio with a bunch of v talented people, I would have laughed straight to your face.
+
+But that's only because 2016 Ty had ZERO idea what he was doing and where he was going. Needless to say, it's been a rocky road becoming the designer I am today.
+
+Let's flashback three years ago to a helpless Ty sitting in his advertising classes being shown diagram after diagram of "how to find your fit in the advertising world." Was I personable enough to be an account executive? Did I have the chops to be a PR maven? Could I be witty and clever to be a copywriter?
+
+It wasn't until I actually started pushing and pulling pixels that I found design calling my name. And it was literally was screaming in my face, "HEY TY!"
+
+My educational journey up to this point had been VERY untraditional, and while I had only one year left to graduate with my degree in advertising, I knew I had to pursue my passion for graphic design. So, I did what any sane person with a year left of college would do: I added a second major.
+
+Did it add some years of schooling to my already extensive transcript? Yes. Did it add some dividends to my student loans? Probably. Was it the best decision of my life? Absolutely.
+
+There is no "right" path when it comes to doing what you love. It's simply finding what you love and going for it, fearlessly. If I would've ignored that aggressive screaming, I wouldn't be the kickass(ish) designer I am today. The decision to answer my calling and become a designer has given me the opportunity to find my niche and myself (cue corny dubbed 'aweee' sound).
+
+So remember kids, there is no such thing as the "right" path. Find your passions and go for them. Like when the world tells you, "you can't write a motivational blog post," defy them and write a crummy one anyway.
+
+That's a wrap from me, friends. Thanks for tuning in, and stay tuned for all the stellar things I'll be helping create during my time here at Pixel Bakery.
