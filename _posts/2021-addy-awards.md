@@ -19,8 +19,6 @@ We are insurmountably proud of the work we produced this past year. We made some
 
 Pixel Bakery brought home some cred at this year's [ADDY® Awards](https://getthegreenlight.co/). Our multimedia designer, [Tyler Loebig](https://www.tylerloebig.com/), and our Associate Creative Director, [Madeline Christensen](https://www.linkedin.com/in/madeline-christensen/), won [AAF Lincoln's](https://aaflincoln.org/about/) "Ad Rookies of the Year" award. They produced the branding & web design for the ADDY's this year, and we couldn't be more happy for them. They're the true definition of "creatives" and we are so incredibly proud to call them members of the PB team.
 
-!['Photo of Abby Hall's Face'](/img/blog/abby_face.jpg)_Photo of Abby Hall's Face_
-
 Pixel Bakery also won a Gold ADDY® for our website creation for [Holly's Healthy Holes](https://hollyshealthyholes.com/). If you're looking for some guilt-free donuts, hop on over to Holly's site and take a peek around.
 
 We think you'll like what you see! 😉
