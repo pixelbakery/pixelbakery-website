@@ -1,0 +1,135 @@
+---
+title: 'Mind the Gap'
+subtitle: I’m here to provide 5 quick and easy tips to help juggle all of life’s craziness.  
+excerpt: There are gaps in our education. No secret there, right? Personal finance, communication skills, sales skills,  and leadership development might not have made it onto your syllabus. This means it’s on us to fill those gaps.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Fotolia_61610095_Subscription_Monthly_M-1-2-1024x680.jpeg
+date: '2019-02-19'
+categories: ['announcements']
+tags: ['Pixel Bakery']
+author:
+    name: Mitch Johnson
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/Fotolia_61610095_Subscription_Monthly_M-1-2-1024x680.jpeg
+---
+I've never been a fan of horror films. Honestly, I remember being more than a little freaked out in middle school after watching "The Conjuring" for the first time. To this day I run up the stairs from dark basements as if one misstep could lead to my quick and mysterious disappearance into the void.
+
+As we get older, the things that we fear change and evolve.
+
+Dark basements become the job market and landing a gig post college. Your irrational fear of gutters - because a certain cinematic clown RUINED them for you - turns into a newfound anxiety about job interviews, mountains of student debt, and questions about just how prepared we *truly* are for a career.
+
+![](/img/blog/pennywise-it.jpg)
+
+There are gaps in our education. No secret there, right? Personal finance, communication skills, sales skills, and leadership development might not have made it onto your syllabus. This means it's on us to fill those gaps.
+
+This past week, PB's account executive Elaina and I spoke to the University of Nebraska-Lincoln student-run advertising agency about our personal and professional experience and what it's like being on the other side of the proverbial wall that separates college students from the "real world."
+
+After the Pixel Bakery swag had been handed out, questions had been answered, and the whole heebie-jeebies of public speaking had left our veins, we reflected on what we learned in the process. We had talked to students who were just a year or two behind us on their career path. What did we wish we would've known just a short 18-months ago, sitting in their seats?
+
+In the eloquent words of DJ Kool, let me clear my throat:
+
+The degree does not equal a career-level job.
+
+In fact, it is startling how many students how many students end up in a job that doesn't even require a degree. According to CNBC,
+
+<https://www.cnbc.com/2018/06/25/why-your-first-job-out-of-college-really-really-matters.html>
+
+More than 40% of college graduates take a job out of school that didn't require a degree in the first place.
+
+Granted, there are probably unaccounted variables that can lead to this horrifying number, such as gap years, or switching career paths, or competition in the job-market. It's still enough to give a well-prepared college graduate a gut-check to be intentional with your time in college.
+
+Each year the education system pumps a slew of graduates into the job-market. Here are the latest numbers, "During the 2018--19 school year, colleges and universities are expected to award 1.0 million associate's degrees; 1.9 million bachelor's degrees; 780,000 master's degrees; and 182,000 doctor's degrees [(source)](https://nces.ed.gov/programs/digest/d17/tables/dt17_318.10.asp).
+
+1.9 million bachelor's degree graduates every year. *That is the total population of Nebraska*. It is a competitive market. Not to worry though, you're a total go-getter and reading this article right now! *You go, Glen Coco.* The solution to post-graduate anxieties is simple. So simple, in fact, that I stole it from my childhood Disney movie of choice, "The Goofy Movie."
+
+#### 1. Stand out.
+
+![](/img/blog/80e2d587165b7525ef48fc4382a4db5b.jpg)
+
+This simple phrase points to the importance of self-education and looking for opportunities outside of the classroom to learn, earn, and grow. That is how you stand out. Be bold and *do something* other than what the 1.9 million graduates are doing right along with you.
+
+Think about it: there is a reason that on a resume the education section is this tiny section on the page, while the *experience* section dominates the rest. Start a business. Do freelance work. Compete in collegiate competitions. Be a leader on campus of an organization and keep record of what you actually accomplished with your time. The possibilities are endless as long as you are intentional with your time and efforts.
+
+The goal of college should not be just to get a degree. The goal should be to develop quantifiable and measurable skills, to grow in the process, and have a damn good time doing it. When the time comes to find a job, you will be able to show competency and be able to demonstrate that to a prospective employer.
+
+Think of it in terms of the employer's perspective. Essentially, when they hire someone, they are taking a risk, and they are going to invest time and money onboarding you. Stand out by doing things that people are not willing to do!
+
+Jerry Rice has a great quote: "Today I will do the things others won't so tomorrow I can do what others can't."
+
+![](/img/blog/JerryRice_thumbsUp.jpg)
+
+Mmm...that's good stuff. Thanks, Jerry.
+
+Now, about the interview process:
+
+#### 2. Know + celebrate what you bring to the table.
+
+![](/img/blog/DSCF0640-1024x768.jpg) _Confetti helps everything._
+
+Here's the thing: you have gifts and strengths that make you a very valuable asset to any team. Now, if you don't *fully* believe that, here is my prescription for you:
+
+To rediscover and get in touch with your inner badass-ery, read the book "You are a Badass" by Jen Sincero. The pages are chock full of wisdoms that resonate, and exercises to get in touch with your personal power. It's a top five read for me. No doubt.
+
+Your job in college is to get to know your badass self, do the things, and celebrate what makes you, you. *Do not* go into interviews with the mentality that the prospective employer is the only one that should be asking the questions.
+
+Which leads to our third insight...
+
+#### 3. You are the interviewee just as much as you are the interviewer.
+
+It is just as important that you are 90% sure that they are a good fit for YOU. Here is a principle that has led me well so far:
+
+"You are the average of the five people you spend the most time with."
+
+Like it or not, it's true. We absorb our environments. Knowing that, we get to be very aware and protective of what kind of environments and social groups we are placing ourselves for a whopping 1/3 of our lives...
+
+Here are some hard-hitting topics to ask about:
+
+* The culture. Ask for the real deal - not the elevator pitch of casual Friday and catered lunches. Ask about what they believe could be improved.
+* If you are not interviewing with who your leader would be, ask to meet them and make sure you respect them.
+* Ask to meet your colleagues for a moment and get a feel for the vibe.
+* Ask questions about the product or service. As a salesman, I feel obligated to pass this on: make *certain* that you believe in what your company offers the market place. You will perform better if you feel you are helping to make a meaningful impact on the world.
+
+This next suggestion received a very noticeable moment of silence during our presentation to students:
+
+* Ask about how you advance the ranks. If you outperform someone for long enough, do you get what they have? The corner office? The salary? The big promotion? Or is it the kind of company that rewards employees based on how long they stay with the company? These are things to think about. Be bold and ask in advance so you can avoid disappointment and resentment in the future.
+
+#### 4. Leverage your "Student Card."
+
+As a university student, you are at a very interesting time in your life in which people are very receptive and open to helping you out. Use it to your advantage!
+
+The coolest mentors I've ever known and have learned from live their life by the philosophy of having one hand stretched out in front of them and one hand stretched out behind them. They are grabbing ahold of a hand in front of them - someone that knows the way, shows the way and goes the way - and more often than not, they have a hand stretched out behind them, willing to mentor someone, too. Kind of like the monkey in a barrel toys from our childhood! That's generational mentoring for ya'.
+
+There is no shortage of teachers, but there is a shortage of *willing students*. People love talking about themselves. That is universal. Use the student card to find mentors, job-shadow, and network. The world is your oyster.
+
+#### 5. Bring it.
+
+Sometimes, when you shift yourself to being the kind of person that "brings it" to what you are involved in, surprising and rewarding doors open for you. Elaina has an awesome origin story about how she got hired at Pixel Bakery. It all started with two Manhattans, shots of Rumple Minze, and one of our managing partners, Jordan Lambrecht. Here's how it went in her words - Jordan pleads the fifth.
+
+![](/img/blog/Two-Manhattans-1024x682.jpg)
+
+"About halfway through college, I had a coming to Jesus moment when I realized that marketing and management wasn't the path I wanted for my life. I've always been an artist, and it was time I actually lived for my passion. I switched to major in Graphic Design, which is where I first met Jordan and Karley. More importantly, before that, I met Evan Barrett. Evan was the 'old' student (30) in my introductory art classes. He was the manager at the Starlite Lounge, and had decided to go back to school for graphic design. We became friends over some *really* inappropriate and hilarious conversations, and one day he asked me to come work for him. I learned everything from that job. I busted my butt every night working there, and because of that, Evan asked me to work for him when he started his own bar, Alchemy.
+
+I helped design their menus and some T-shirts for their eclipse party, which I missed for school (gross), but those shirts are how Jordan and Karley recognized me when I wore the shirt to the first (and only) AIGA meeting I attended that year. Even longer story short, I got rejected for the account management internship at PB due to my commitment at Alchemy, but I still won Jordan over every time he came in to Alchemy as his server. One night many months later, he brought in a bunch of his Archrival friends, and with their stamp of approval and probably one too many drinks, I got invited for shots at the Tavern. Jordan looked through my design portfolio, we talked about my sales and entrepreneurship experience, and took a few shots together. He then screamed, 'How much money do you want?' and the rest is history... and my future, I guess!"
+
+Serendipitous! I love Elaina's PB origin story because it goes to show that when you are bringing it in life and work long enough, someone will take note, and an opportunity will be presented, a door will be opened.
+
+To recap:
+
+* Stand out.
+* Know + Celebrate what you bring to the table.
+* You are the interviewee just as much as the interviewer.
+* Leverage the "Student card."
+* Bring it!
+
+Elaina and I would love to give a special thanks to Jacht for having us out, and in the famous words of Porky-Pig, "Th-Th-The, Th-Th-The, Th-Th... That's all, folks!
+
+![](/img/blog/0cb42d7c7f68fed8519555dd846b307b-851x1024.jpg)
+
+#### sources
+
+* <https://nces.ed.gov/fastfacts/display.asp?id=372>
+* <https://nces.ed.gov/fastfacts/display.asp?id=561>
+* <https://www.cnbc.com/2018/06/25/why-your-first-job-out-of-college-really-really-matters.html>
+* <https://www.amazon.com/You-Are-Badass%C2%AE-Doubting-Greatness/dp/0762447699>
