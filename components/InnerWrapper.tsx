@@ -5,18 +5,18 @@ type Props = {
   children?: ReactNode
   id?: string
   color?: string
-  classNames?: string
+  className?: string
 }
 
-const InnerWrapper = ({ id, color, children, ...classNames }: PropsWithChildren<Props>) => {
+const H2 = ({ id, color, children, className }: PropsWithChildren<Props>) => {
   return (
     <div
       id={id}
-      className={cn('max-w-md md:max-w-2xl xl:max-w-6xl mx-auto', `${classNames}`, 'bg-', color)}
+      className={cn('max-w-md md:max-w-2xl xl:max-w-6xl mx-auto', `bg-${color}`, className)}
     >
       {children}
     </div>
   )
 }
 
-export default InnerWrapper
+export default H2
