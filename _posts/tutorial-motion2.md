@@ -1,0 +1,25 @@
+---
+title: 'Tutorial: Crash Course on Motion2'
+subtitle: This is a quick and dirty tutorial on Mt. Mograph’s Motion2 plugin for After Effects.
+excerpt: This is a quick and dirty tutorial on Mt. Mograph’s Motion2 plugin for After Effects.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/PixelBakery_Motion2_After_Effects_Tutorial.png
+date: '2019-02-26'
+categories: ['education']
+tags: ['character rigging', 'Mt Mograph', 'Animation']
+author:
+  name: Jordan Lambrecht
+ogImage:
+  url: /img/blog/PixelBakery_Motion2_After_Effects_Tutorial.png
+---
+This is a quick and dirty tutorial on Mt. Mograph's Motion2 plugin for After Effects.
+
+[Motion v2 ](https://www.mtmograph.com/motion/)includes 20 powerful new tools that put the power in your hands and a punch in your keyframes. The new UI is smaller and the code is even faster. The goal of Motion v2 was to create an animation wingman to help bring your projects to life.
+
+### More Tutorials:
+
+-   [Gmail: How to Automatically Delete or Archive Emails After A Certain Number of Days](https://pixelbakery.co/recipes/gmail-how-to-automatically-delete-or-archive-emails-after-a-certain-number-of-days)
+-   [Black History Month: A History in Black Cinematography](https://pixelbakery.co/recipes/black-history-month-a-history-in-black-cinematography)
+-   [PDF Presets in Adobe Illustrator. Which one should you use?](https://pixelbakery.co/recipes/pdf-presets-in-adobe-illustrator)
+-   [List of Video/Image Formats in 2021 Supporting Alpha Channels](https://pixelbakery.co/recipes/list-of-video-image-formats-in-2021-supporting-alpha-channels)
+-   [Dan the Man](https://pixelbakery.co/recipes/dan-the-man)
