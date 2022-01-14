@@ -8,18 +8,18 @@ type Props = {
   className?: string
 }
 
-const H2 = ({ color, children, className }: PropsWithChildren<Props>) => {
+const Lead = ({ color, children, className }: PropsWithChildren<Props>) => {
   return (
-    <h2
+    <p
       className={cn(
-        ' font-bold max-w-md mt-0 text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none mb-12 2xl:mb-20 ',
+        'text-2xl lg:text-3xl mt-0 font-bold mb-8 lg:mb-12 leading-none',
         [`text-${color}`],
         className,
       )}
     >
       {children}
-    </h2>
+    </p>
   )
 }
 
-export default H2
+export default Lead
