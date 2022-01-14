@@ -16,16 +16,16 @@ export default [
     url: 'https://discord.gg/ZJfGg76BUB',
     icon: 'bi-discord ',
   },
-  // {
-  //   name: 'medium',
-  //   url: 'https://pixelbakery.medium.com',
-  //   icon: 'bi-medium ',
-  // },
-  // {
-  //   name: 'twitter',
-  //   url: 'https://twitter.com/PixelBakeryLNK/',
-  //   icon: 'bi-twitter ',
-  // },
+  {
+    name: 'medium',
+    url: 'https://pixelbakery.medium.com',
+    icon: 'bi-medium ',
+  },
+  {
+    name: 'twitter',
+    url: 'https://twitter.com/PixelBakeryLNK/',
+    icon: 'bi-twitter ',
+  },
   // {
   //   name: 'tiktok',
   //   url: 'https://www.tiktok.com/@pixelbakery',
@@ -41,20 +41,16 @@ export default [
     url: 'https://twitch.tv/pixelbakery',
     icon: 'bi-twitch ',
   },
-  // {
-  //   name: 'minecraft',
-  //   url: 'https://instagram.com/pixelbakery',
-  // },
-  // {
-  //   name: 'behance',
-  //   url: 'https://www.behance.net/pixelbakerylnk',
-  //   icon: 'bi-behance ',
-  // },
-  // {
-  //   name: 'facebook',
-  //   url: 'https://www.facebook.com/pixelbakerylnk/',
-  //   icon: 'bi-facebook ',
-  // },
+  {
+    name: 'behance',
+    url: 'https://www.behance.net/pixelbakerylnk',
+    icon: 'bi-behance ',
+  },
+  {
+    name: 'facebook',
+    url: 'https://www.facebook.com/pixelbakerylnk/',
+    icon: 'bi-facebook ',
+  },
   {
     name: 'linkedin',
     url: 'https://www.linkedin.com/company/pixelbakery',
