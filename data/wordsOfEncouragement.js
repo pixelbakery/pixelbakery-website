@@ -6,6 +6,9 @@ export default [
     text: 'call your mom.',
   },
   {
+    text: 'be kind to yourself.',
+  },
+  {
     text: "i'm so damn proud of you.",
   },
   {
