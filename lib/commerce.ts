@@ -18,4 +18,5 @@ if (devEnvironment && !checAPIKey) {
   )
 }
 
-export default new Commerce(checAPIKey, devEnvironment, commerceConfig)
+// export default new Commerce(checAPIKey, devEnvironment, commerceConfig)
+export default new Commerce(checAPIKey, debug, commerceConfig)
