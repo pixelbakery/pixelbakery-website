@@ -2,41 +2,141 @@ import React, { useEffect } from 'react'
 // import socialLinks from '../../data/SocialUrls'
 import StrokeText from '../parts/StrokeText'
 import Link from 'next/link'
+import PageSection from '../PageSection'
+import InnerWrapper from '../InnerWrapper'
+import H2 from '../H2'
+import cn from 'classnames'
+import gsap from 'gsap'
+
+import SocialUrls_Contact from '../../data/SocialUrls_Contact'
 
 function Contact_HangOut() {
-  // useEffect(() => {
-  //   const socialLinks = document.querySelectorAll('svg.social-link')
-  //   socialLinks.forEach((svg) => {
-  //     let bbox = svg.getBBox()
-  //     svg.setAttribute('width', bbox.x + bbox.width + bbox.x)
-  //     svg.setAttribute('height', bbox.y / 3 + bbox.height)
-  //     svg.firstChild.setAttribute('y', '66%')
-  //   })
-  //   return () => {}
-  // }, [])
+  useEffect(() => {
+    gsap.set('.animate-horizontal', { x: 0 })
+    const headerTL = gsap
+      .timeline({ repeat: -1 })
+      .to('.animate-horizontal', { x: 20, duration: 2, delay: 0.5, ease: ' sine.inOut' })
+      .to('.animate-horizontal', { x: 0, duration: 2, delay: 0.5, ease: ' sine.inOut' })
+      .to('.animate-horizontal', { x: 20, duration: 2, delay: 0.5, ease: ' sine.inOut' })
+      .to('.animate-horizontal', { x: 0, duration: 2, delay: 0.5, ease: ' sine.inOut' })
+    headerTL.play
+    return () => {
+      headerTL.kill()
+    }
+  }, [])
   return (
-    <section className='my-4 mx-auto py-6'>
-      {/* <div className='max-w-7xl  mx-auto'>
-        <h2 className='my-16 text-blue'>Let&apos;s hang out </h2>
-        <ul className='my-8 flex gap-x-12 gap-y-6 flex-wrap'>
-          {socialLinks.map((link) => (
-            <li className='' key={link.name}>
-              <Link href={link.url} passHref>
-                <a target='_blank'>
-                  <StrokeText
-                    text={link.name}
-                    fontSize={'text-5xl'}
-                    strokeWidth={'stroke-1'}
-                    color={'blue-dark'}
-                    fontWeight={'font-black'}
-                  />
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-    </section>
+    <PageSection className=''>
+      <InnerWrapper>
+        <H2 color='blue' className='text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl'>
+          Let's hang out
+        </H2>
+
+        <div className='mb-12'>
+          <ul className='flex flex-wrap gap-8 lg:gap-12'>
+            {SocialUrls_Contact.map((URL, index) => {
+              return (
+                <li key={URL.name} className={cn('-mt-12')}>
+                  <Link href={URL.url} passHref>
+                    <a>
+                      <StrokeText
+                        text={URL.name}
+                        index={index}
+                        fontSize={'text-3xl lg:text-4xl'}
+                        strokeWidth={'stroke-1'}
+                        color={'blue-dark'}
+                        fontWeight={'font-black'}
+                        active={false}
+                      />
+                    </a>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </InnerWrapper>
+      <div className='-mt-10 xl:-mt-20'>
+        <div className='w-full flex flex-grow overflow-visible animate-horizontal pointer-events-none'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className={cn(' top-0 left-0 social-link text-blue-dark fill-yellow ')}
+            stroke='currentColor'
+            width={800}
+          >
+            <g className='text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl'>
+              <text
+                x='0'
+                y='77%'
+                strokeWidth={0}
+                className={cn(
+                  'font-black font-body w-full tracking-wider text-blue animate-horizontal',
+                )}
+                fill='currentColor'
+              >
+                Let's Hang Out... IRL
+              </text>
+              <text
+                x='10px'
+                y='80%'
+                strokeWidth={0}
+                className={cn('font-black font-body w-full tracking-wider  text-yellow')}
+                fill='currentColor'
+              >
+                Let's Hang Out... IRL
+              </text>
+              <text
+                x='6px'
+                y='80%'
+                fill='none'
+                className={cn(
+                  'font-black font-body w-full tracking-wider stroke-2 letting-none lg:stroke-3',
+                )}
+              >
+                Let's Hang Out... IRL
+              </text>
+            </g>
+          </svg>
+        </div>
+        <InnerWrapper
+          color='pink-light'
+          className='py-20 px-12 xl:px-40 -mt-14 flex justify-center'
+        >
+          <div className='mx-auto flex  flex-col mt-6 xl:mt-0 xl:flex-row justify-center lg:justify-between flex-stretch w-full '>
+            <div className='w-1/2 h-full mx-auto xl:mx-0'>
+              <div className='h-full flex flex-col justify-center w-max mx-auto text-4xl text-pink font-bold lowercase leading-tight'>
+                <span className='text-peach font-bold leading-none mb-0 pb-0 text-2xl'>
+                  it's good to see you.
+                </span>
+                Pixel Bakery <br className='xl:hidden' /> Design Studio
+                <br /> 2124 Y St. Flat #208
+                <br /> Lincoln, NE 68503
+              </div>
+            </div>
+            <div className='w-1/2 h-full mx-auto xl:mx-0 mt-6 xl:mt-0'>
+              <div className=' h-full xl:float-right xl:mx-auto w-max'>
+                <ul className='text-blue font-bold text-3xl h-full flex flex-col justify-between'>
+                  <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'/about#twitch'} passHref>
+                      <a>are we home?</a>
+                    </Link>
+                  </li>
+                  <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'https://g.page/pixelbakery?share'} passHref>
+                      <a target='_blank'>map it</a>
+                    </Link>
+                  </li>
+                  <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'/contact/schedule'} passHref>
+                      <a>schedule it</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </InnerWrapper>
+      </div>
+    </PageSection>
   )
 }
 export default Contact_HangOut

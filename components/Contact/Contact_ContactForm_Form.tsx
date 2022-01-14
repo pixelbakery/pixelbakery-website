@@ -185,7 +185,7 @@ function Contact_ContactForm_Form() {
         placeholder='email'
         {...register('email', { required: true })}
       />
-      <div className='w-full flex gap-2'>
+      <div className='w-full flex flex-wrap gap-2'>
         <input
           className='form-border-b flex-grow'
           type='tel'
