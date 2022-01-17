@@ -7,7 +7,7 @@ type Props = {
   className?: string
 }
 
-const InnerWrapper = ({ color, children, ...className }: PropsWithChildren<Props>) => {
+const H3 = ({ color, children, ...className }: PropsWithChildren<Props>) => {
   return (
     <h3
       className={cn(
@@ -21,4 +21,4 @@ const InnerWrapper = ({ color, children, ...className }: PropsWithChildren<Props
   )
 }
 
-export default InnerWrapper
+export default H3
