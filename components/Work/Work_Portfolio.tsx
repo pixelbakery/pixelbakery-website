@@ -10,32 +10,36 @@ import portfolio from '../../data/portfolio'
 // }
 const Work_Portfolio = () => {
   const featuredProjNo = 4
+  const projectPath = (slug) => {
+    return `/work/case-studies/${slug}`
+  }
+  const projects = portfolio.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
 
   const getFeaturedWork = () => {
-    return portfolio.slice(0, featuredProjNo).map((project) => {
+    return projects.slice(0, featuredProjNo).map((project) => {
       return (
         <Work_Portfolio_Card
-          key={project.name}
-          name={project.name}
+          key={project.title}
+          name={project.title}
           client={project.client}
           previewImg={project.previewImg}
-          previewImgAlt={project.previewImgAlt}
-          url={project.url}
+          previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
+          url={projectPath(project.slug)}
           tags={project.tags}
         />
       )
     })
   }
   const getOtherWork = () => {
-    return portfolio.slice(featuredProjNo + 1).map((project) => {
+    return projects.slice(featuredProjNo).map((project) => {
       return (
         <Work_Portfolio_Card
-          key={project.name}
-          name={project.name}
+          key={project.title}
+          name={project.title}
           client={project.client}
           previewImg={project.previewImg}
-          previewImgAlt={project.previewImgAlt}
-          url={project.url}
+          previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
+          url={projectPath(project.slug)}
           tags={project.tags}
         />
       )

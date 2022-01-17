@@ -1,16 +1,18 @@
 import React from 'react'
-import SolaTinyChef_Header from '../components/CaseStudies/CaseStudies_Header'
-import CaseStudies_Tags from '../components/CaseStudies/CaseStudies_Tags'
-import SolaTinyChef_Description from '../components/CaseStudies/CaseStudies_Description'
-import SolaTinyChef_PreProduction from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_PreProduction'
-import SolaTinyChef_Production from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_Production'
-import SolaTinyChef_PostProduction from '../components/CaseStudies/SolaTinyChef/SolaTinyChef_PostProduction'
-import CaseStudies_Credits from '../components/CaseStudies/CaseStudies_Credits'
-import SolaTinyChef_OtherProjects from '../components/CaseStudies/CaseStudies_OtherProjects'
-import CaseStudies_BecomeAClient from '../components/CaseStudies/CaseStudies_BecomeAClient'
-import * as matter from 'gray-matter'
-import Project from '../types/project'
+import CaseStudies_Header from '../../../components/CaseStudies/CaseStudies_Header'
+import CaseStudies_Tags from '../../../components/CaseStudies/CaseStudies_Tags'
+import SolaTinyChef_Description from '../../../components/CaseStudies/CaseStudies_Description'
+import SolaTinyChef_PreProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PreProduction'
+import SolaTinyChef_Production from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_Production'
+import SolaTinyChef_PostProduction from '../../../components/CaseStudies/SolaTinyChef/SolaTinyChef_PostProduction'
+import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
+import SolaTinyChef_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
+import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
+import Project from '../../../types/project'
+import Main from '../../../components/Main'
 
+const title = 'Tiny Chef Magic'
+const client = 'SOLA'
 const tags = [
   { name: 'Creative Concepting', url: '/' },
   { name: '2d animation', url: '/' },
@@ -47,16 +49,16 @@ type Props = {
 
 function SolaTinyChef({ project }: Props) {
   return (
-    <main className='overflow-x-hidden'>
-      <SolaTinyChef_Header
+    <Main className='overflow-x-hidden'>
+      <CaseStudies_Header
         client='SOLA'
         clientLogo='/img/client-logos/Black-Sola-Logo.png'
         projectName='Tiny Chef Magic'
         projectExcerpt='How animation brought to life a Tiny Chef with the ability to create keto-friendly,
-          carb-conscious deliciousness that is SOLA bread.'
+carb-conscious deliciousness that is SOLA bread.'
         projectIntroduction='The SOLA Company is a low-carb, low-sugar, keto-friendly brand that came to Pixel Bakery looking to make an animated explainer video showcasing their bread. We had previously
-          worked with SOLA in the live-action realm and were extremely excited to see what we could
-          do for them within another specialty of ours – animation.'
+worked with SOLA in the live-action realm and were extremely excited to see what we could
+do for them within another specialty of ours – animation.'
         heroVideo='640466563'
         projectSubhead='Bringing a Tiny Chef with big, keto-friendly ideas to life.'
       />
@@ -64,19 +66,27 @@ function SolaTinyChef({ project }: Props) {
       <CaseStudies_Tags tags={tags} />
       <SolaTinyChef_Description
         bodyCopy=' The live-action portion of this project consisted of hiring a production crew to assist in
-          bringing the Tiny Chef Magic to life. The video production team included a director,
-          gaffer, grip, assistant camera, and a FOOD STYLIST (how legit). Maria Smal, Pixel Bakery’s
-          social media manager, was pegged as the perfect candidate to be cast as the homeowner for
-          the video.'
+bringing the Tiny Chef Magic to life. The video production team included a director,
+gaffer, grip, assistant camera, and a FOOD STYLIST (how legit). Maria Smal, Pixel Bakery’s
+social media manager, was pegged as the perfect candidate to be cast as the homeowner for
+the video.'
         header='Project Description'
       />
       <SolaTinyChef_PreProduction />
       <SolaTinyChef_Production />
       <SolaTinyChef_PostProduction />
       <CaseStudies_Credits credits={credits} />
-      <SolaTinyChef_OtherProjects otherProjects={otherProjects} />
+      <SolaTinyChef_OtherProjects title={title} client={client} />
       <CaseStudies_BecomeAClient />
-    </main>
+    </Main>
   )
 }
 export default SolaTinyChef
+
+export async function getStaticProps() {
+  return {
+    props: {
+      title: title,
+    },
+  }
+}
