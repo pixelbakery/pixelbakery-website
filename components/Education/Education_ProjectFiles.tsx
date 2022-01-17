@@ -5,8 +5,7 @@ import PageSection from '../PageSection'
 import InnerWrapper from '../InnerWrapper'
 import ProjectFile from '../../types/projectFile'
 import cn from 'classnames'
-import gsap from 'gsap'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import StrokeText from '../parts/StrokeText'
 
 // import Swiper core and required modules

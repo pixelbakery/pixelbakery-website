@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-CaseStudies_Credits.PropTypes = {
+CaseStudies_Credits.propTypes = {
   credits: PropTypes.array.isRequired,
 }
 
