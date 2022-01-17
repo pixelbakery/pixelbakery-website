@@ -1,0 +1,48 @@
+---
+title: "5 Easy Steps to World Domination. (Not really)"
+subtitle: What’s up y’all! I’m Mitch Johnson. The fresh wheat here at PB.
+excerpt: What’s up y’all! I’m Mitch Johnson. The fresh wheat here at PB.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/mitchell_headshot-1024x1024.jpeg
+date: '2019-01-07'
+categories: ['editorial']
+tags: ['advertising', 'business development']
+author:
+  name: Mitch Johnson
+ogImage:
+  url: /img/blog/mitchell_headshot-1024x1024.jpeg
+---
+What's up y'all! I'm Mitch Johnson. The fresh wheat here at PB. I'm currently finishing up my degree in Advertising at the University of Nebraska-Lincoln, and I was brought on to the PB team for New Business Development, which is a very fancy way of saying that I am the tip of the spear when it comes to client acquisition. Sales. I do sales.
+
+Sales gets a bad rap, and for very good reason given the promoted historical context around the field. We've all seen the cartoons and caricatures of ole timey snake oil salesmen, street barkers, and of course the infamous used car salesman.
+
+My role is to not fit into any of those archetypes. The way I approach sales is simple. Sales is finding a need, filling a need, and if the shoe doesn't fit, don't buy the shoe.
+
+I am fully stoked to be working here at PB, and there's already been several instances of me having an out of body experience with just how in the heck did I land this gig? Well, after some not so quiet reflection over Griz's musical masterpiece, *Good Times Roll*, and a double-shot crowbar from The Mill, I've come up with a recipe that has just five easy steps.
+
+01 - Have a vision
+------------------
+
+It's a strange thing in our society that we learn more in school about keyboarding skills then how to design a life we can be stoked to work towards day in and day out. That's just the way it is currently. This means that it is on us to figure that out. A great exercise to get rolling on building a full-stoke life is called the awesome life list. It revolves around this idea of Be-Do-Have. 30 things you desire to be, 30 things you desire to do, and 30 things you desire to have, all before you croak. It's in the order of Be-Do-Have because that is the order of importance. On our deathbeds, we won't be concerned with the apple watch we didn't get, but we most certainly will be concerned for who we were *being* for those we loved while we performed our earthly jaunt. Grab yourself a beverage and take some time to fill out those 30 items for each category, then reverse engineer that path daily. With intention and attention, you will bring these attributes, experiences, and items into your life - it is extremely trippy, and also fascinating.
+
+02 - Invest in yourself
+-----------------------
+
+In our early twenties, I believe it is our job to go crazy with investing in ourselves. In fact, I believe that is a lifelong thing. Personal development/self-help also gets a bad rep, but I believe why you do something is always the most important aspect of anything. I approach personal growth in this manner, the better I get and grow myself to become, the more value I can add for the people in my circle of influence. It is this awesome law of the universe that when we get better, everyone around us gets better. A rising tide lifts all boats kind of deal. A great side note about investing in yourself is this: people in high places want to invest in people who invest in themselves. There is a saying in angel investing: bet on the jockey, not the horse. Basically, people are willing to take bets on others who have done the work and have skin in the game. Our job is to reduce risk for employers by showing that we know how to work hard, study hard, and be coachable. Demonstrate those things with quantifiable stats, and boom goes the dynamite.
+
+03 - Listen to your gut
+-----------------------
+
+Our intuition is this really weird and somewhat meta thing. It's also very smart and has led me to some of the coolest and most profound life experiences I've ever had. Pixel Bakery is one of them. The book *The Alchemist* by Paulo Coelho is still the philosophy that I prescribe to about the importance of listening, trusting, and following your inner wisdom.
+
+04 - Failure is the foundation
+------------------------------
+
+I've learned orders of magnitudes more from my failures then from my wins. For example, I do this crazy summer job where I get to do door to door sales. Yep, door to door. Here is my break down over the past four years. 10,000+ approaches, 3500+ presentations, 901 clients. This means that conventional wisdom would tell us that I have failed 10 times more than I've "succeeded." That's not really the case, though. Each of those reps added to my growth and taught me a whole bunch about life, people, and myself. When it comes to putting myself out there, the mentality I have formed that has served me well is this: I either succeed, or I learn. *I love learning*. It goes back to the whole being intentional about leveling up for the people around you deal, and also becoming who you envision yourself becoming, doing, and having in this life. See? It all ties together. ☺ So, it's best to fail fast and fail often.
+
+05 - Aim to become the Hulk
+---------------------------
+
+In the movie *The Avengers* there's this scene that I absolutely love. It is the scene where Loki is telling Iron Man in the Avenger's tower why the Avengers are essentially screwed via an interdimensional alien invasion. Iron Man is behind the bar pouring himself a whiskey on the rocks like a true gentleman, and he very calmly looks at Loki and says these magic words, "We have a Hulk." Ahhhh. So good. I think about that a lot. That's where I choose to hang my hat on for how I choose to show up in life for the people around me. To add so much value to those around me and the causes that I invest myself in that those humans gain confidence by having me around. Do I always hit that target? No way. I am human. I do pride myself coming in clutch when it counts and striving daily to become that kind of guy for the people I love and involve myself with.
+
+So, here's to Pixel Bakery and building great things with great people. Cheers.
