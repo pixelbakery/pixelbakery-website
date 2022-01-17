@@ -1,0 +1,33 @@
+---
+title: 'We won a really cool award for the way we run our business'
+subtitle: A few weeks ago, Jordan, Karley and I were honored to accept the New Company Entrepreneur Award from the Nebraska Center for Entrepreneurship.  
+excerpt: A few weeks ago, Jordan, Karley and I were honored to accept the New Company Entrepreneur Award from the Nebraska Center for Entrepreneurship.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/COB_6381-1-1-1024x684.jpeg
+date: '2018-11-21'
+categories: ['announcements']
+tags: ['entrepreneurship', 'New Company', 'award']
+author:
+    name: Tony Bertino
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/COB_6381-1-1-1024x684.jpeg
+---
+A few weeks ago, Jordan, Karley and I were honored to accept the New Company Entrepreneur Award from the Nebraska Center for Entrepreneurship. The award is given annually to a founder of a firm less than five years old that has proven successful in creating an innovative offering and experienced early growth and success. Brent Martin, the Entrepreneurship Center Coordinator said that "Judging by the nominations that we received, it is very evident that you are making positive impressions within your community. We commend your efforts and are happy to count you among the good company of past winners!"
+
+It's very rewarding to be recognized not only for the creative we produce with our clients, but for the way we run our business. We see value in growing Pixel Bakery the right way by focusing on making meaningful work and maintaining sustainable partnerships. We are growing slowly but steadily, and we're aware of that, and we're okay with that. It's important that we remember that we don't have to be everything all at once. At the awards, we were asked to give students advice after we accepted the award, but found ourselves slightly unprepared. So, we'd like to give that advice now that we've had a week to think about it.
+
+### Karley
+
+Always be curious to find out more. Failure comes with being an entrepreneur - learning how to overcome that failure will set you apart from everyone else.
+
+### Jordan
+
+Starting a business is a very daunting task, so take it in bite sizes. Learning is a constant, so never stop. It is important to reflect every day and think, "What did I learn today, and why am I better because of it?" Otherwise you can get overwhelmed and drown in how much there is to do.
+
+### Tony
+
+Be weird and authentic. People are weird, business is weird, and it doesn't get less weird. Embrace your weirdness and use it to your advantage. If you're able to do it authentically you'll be miles ahead of at least half your peers.
+
+Back to work!
