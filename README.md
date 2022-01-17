@@ -32,3 +32,9 @@ All icons are set to 270x270px, regardless of their relation to other icons. Goo
 
 _Relative_
 All icons are sized relative to the other icons. This gives the line thickness a consistant weight
+
+## Creating new case studies
+
+If you see the following error:
+`TypeError: undefined is not an object (evaluating 'prev.slug')`
+This means that the title in the datafile does not match the title in the project page.
