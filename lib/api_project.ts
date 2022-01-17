@@ -1,8 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
-import matter from 'gray-matter'
 
-const projectDirectory = join(process.cwd(), '_projects')
+const projectDirectory = join(process.cwd(), '/pages/work/projects')
 
 export function getProjectSlugs() {
   return fs.readdirSync(projectDirectory)
@@ -12,7 +11,7 @@ export function getProjectBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.tsx$/, '')
   const fullPath = join(projectDirectory, `${realSlug}.tsx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+  const content = fileContents
   type Items = {
     [key: string]: string
   }
@@ -26,10 +25,6 @@ export function getProjectBySlug(slug: string, fields: string[] = []) {
     }
     if (field === 'content') {
       items[field] = content
-    }
-
-    if (typeof data[field] !== 'undefined') {
-      items[field] = data[field]
     }
   })
 

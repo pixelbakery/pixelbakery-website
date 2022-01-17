@@ -1,7 +1,14 @@
+import Main from '../components/Main'
+import PageHeader_VarH from '../components/PageHeader/PageHeader_VarH'
 import React, { useLayoutEffect } from 'react'
 // import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Onboarding_ExpectationsRow from '../components/Onboarding/Onboarding_ExpectationsRow'
+import PageSection from '../components/PageSection'
+import InnerWrapper from '../components/InnerWrapper'
+import H1 from '../components/H1'
+import H2 from '../components/H2'
+import Lead from '../components/Lead'
 
 function Onboarding() {
   // gsap.registerPlugin(ScrollTrigger)
@@ -78,18 +85,22 @@ function Onboarding() {
   // }, [])
 
   return (
-    <main className=''>
-      <section id='onboarding-contact' className='bg-yellow h-16 lander'>
-        <div className='max-w-6xl mx-auto flex flex-col justify-center h-full'>
-          <h1 className='my-4 text-blue-dark'>Start something wonderful</h1>
-
-          <p className='text-lg text-wine leading-loose max-w-xl'>
+    <Main id='page-onboarding'>
+      <PageHeader_VarH header='start something wonderful' subheader='copy copy copy' />
+      <PageSection>
+        <InnerWrapper>
+          <Lead>
             We don&apos;t do the pushy sales thing. We&apos;re here to make well-crafted,
             custom-tailored pieces of work for clients that we have a deep-rooted connection with.
             This means that we&apos;re highly selective when we take on a new client. We view it
             more as dating than making a sale. It&apos;s just as important that you like us and it
             is we like you.
-          </p>
+          </Lead>
+        </InnerWrapper>
+      </PageSection>
+      <section id='onboarding-contact' className='bg-yellow h-16 lander'>
+        <div className='max-w-6xl mx-auto flex flex-col justify-center h-full'>
+          <p className='text-lg text-wine leading-loose max-w-xl'></p>
 
           <div className='hb-p-5d92c026f3a53e07975e0cea-2'></div>
           <div>
@@ -148,7 +159,7 @@ function Onboarding() {
       <section id='onboarding-process' className='bg-yellow h-16'>
         Here&apos;s where we talk about our process
       </section>
-    </main>
+    </Main>
   )
 }
 

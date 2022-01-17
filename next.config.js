@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
+const mdxEnhanced = require('next-mdx-enhanced')
 // eslint-disable-next-line no-undef
 module.exports = {
+  mdxEnhanced() {
+    layoutPath: './templates'
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
