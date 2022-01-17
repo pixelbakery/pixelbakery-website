@@ -1,0 +1,15 @@
+---
+title: "Tutorial: Adobe Illustrator’s Smooth Tool"
+subtitle: A quick tutorial on how to smooth out bezier paths and points within Adobe Illustrator CC.
+excerpt: A quick tutorial on how to smooth out bezier paths and points within Adobe Illustrator CC.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Screen-Shot-2019-01-08-at-9.55.12-AM.png
+date: '2019-01-08'
+categories: ['education']
+tags: ['Tutorial', 'Illustration']
+author:
+  name: Jordan Lambrecht
+ogImage:
+  url: /img/blog/Screen-Shot-2019-01-08-at-9.55.12-AM.png
+---
+A quick tutorial on how to smooth out bezier paths and points within Adobe Illustrator CC.
