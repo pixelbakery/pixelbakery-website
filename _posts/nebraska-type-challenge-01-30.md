@@ -1,0 +1,81 @@
+---
+title: 'Nebraska Type Challenge – 01/30 Ampersand'
+subtitle: This week officially kicks off the Nebraska Type Challenge, a 30 week typography experiment that Pixel Bakery is helping put on. 
+excerpt: This week officially kicks off the Nebraska Type Challenge, a 30 week typography experiment that Pixel Bakery is helping put on.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/NebraskaTypeChallenge_banner.png
+date: '2018-09-12'
+categories: ['Nebraska Type Challenge 2018']
+tags: ['design', 'Nebraska', 'type challenge', 'typography']
+author:
+    name: Jordan Lambrecht
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/NebraskaTypeChallenge_banner.png
+---
+### Type Week 1: Ampersand
+
+This week officially kicks off the Nebraska Type Challenge, a 30 week typography experiment that Pixel Bakery is helping put on. Over the course of the next 30 weeks several talented designers in the Lincoln and Omaha area will be tackling one character a week. The first week's challenge character was an ampersand and provided some stunning results:
+
+#### Amanda Walla
+
+[Ervin & Smith](https://ervinandsmith.com/)\
+https://www.instagram.com/p/BnmgrW9Bv2D/
+
+#### Kate Fiedler
+
+[Nebraska Press](https://www.nebraskapress.unl.edu/)\
+https://www.instagram.com/p/BnmjSiAlm75/
+
+#### Michael Nielsen
+
+Portfolio\
+https://www.instagram.com/p/BnmWBWJAriq/
+
+#### Samee Callahan
+
+[PLAY Creative](https://www.playcreativedesign.com/)\
+https://www.instagram.com/p/BnmnXS2BDyx/
+
+#### Josh Hoepner
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/Bnmt15bHOgG
+
+#### Mike Rudolf
+
+[Swanson Russell](https://www.swansonrussell.com/)\
+https://www.instagram.com/p/BnnEhY5gqb4/
+
+#### Jordan Lambrecht
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/BnpAZaqlP2L
+
+#### Quenton Orr
+
+[Swanson Russell](https://www.swansonrussell.com/)\
+https://www.instagram.com/p/Bnmm8efF1qe/
+
+#### Allie Laing
+
+[Archrival](https://archrival.com/)\
+https://www.instagram.com/p/Bn3l7XNB279
+
+#### Daniel Neuman
+
+[Agency 877](https://agency877.com/)\
+https://www.instagram.com/p/Bn0CkqCBRb1/
+
+#### Hannah Klemme
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/Bn3LkJzgyHI
+
+### Be sure to check out the rest of the series:
+
+[Week 01: Ampersand](https://pixelbakery.co/recipes/nebraska-typography-01-ampersand/)\
+[Week 02: Question Mark](https://pixelbakery.co/recipes/nebraska-type-challenge-02-question-mark/)\
+[Week 03: Semicolon](https://pixelbakery.co/recipes/nebraska-type-challenge-03-30-semicolon/)\
+[Week 04: Exclamation Mark](https://pixelbakery.co/recipes/nebraska-type-challenge-04-30-exclamation-mark/)
