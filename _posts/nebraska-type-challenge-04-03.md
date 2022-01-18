@@ -65,7 +65,7 @@ https://www.instagram.com/p/BoZ1gttBmzT
 
 #### Daniel Neuman
 
-Agency 877\
+[Agency 877](https://agency877.com/)\
 https://www.instagram.com/p/BoaIs4oBaIX
 
 #### Katie Krcmarik
@@ -75,7 +75,7 @@ https://www.instagram.com/p/Boaod84hlOB
 
 #### Ed Mejia
 
-Nelnet\
+[Nelnet](https://nelnet.com/welcome)\
 https://www.instagram.com/p/Boc4LRqAQeC
 
 ### Be sure to check out the rest of the series:
