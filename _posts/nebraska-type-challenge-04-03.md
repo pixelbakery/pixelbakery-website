@@ -1,7 +1,7 @@
 ---
 title: 'Nebraska Type Challenge – 04/30 Exclamation Mark'
-subtitle: I’m here to provide 5 quick and easy tips to help juggle all of life’s craziness.  
-excerpt: There are gaps in our education. No secret there, right? Personal finance, communication skills, sales skills,  and leadership development might not have made it onto your syllabus. This means it’s on us to fill those gaps.
+subtitle: Hello! Week Four of the Nebraska Type Challenge has concluded! We’re very excited about the submissions for this week!! 
+excerpt: Hello! Week Four of the Nebraska Type Challenge has concluded! We’re very excited about the submissions for this week!!
 # Cover Photos MUST be 4x3 resolution
 coverImage: /img/blog/NebraskaTypeChallenge_banner.png
 date: '2018-10-16'
