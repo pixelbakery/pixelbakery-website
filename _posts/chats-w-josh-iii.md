@@ -1,0 +1,51 @@
+---
+title: 'Ovenside Chats w/ Josh III'
+subtitle: On September 3rd, 2018 at 2:20 PM, a former NFL player posted a simple image on Twitter. The image was a portrait of himself with two lines of text spanning from cheek to cheek. What followed was unprecedented. 
+excerpt: On September 3rd, 2018 at 2:20 PM, a former NFL player posted a simple image on Twitter. The image was a portrait of himself with two lines of text spanning from cheek to cheek. What followed was unprecedented. 
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Colin-Kaepernick-1080x630-1-1024x597.jpeg
+date: '2018-09-26'
+categories: ['from the desk of']
+tags: ['NFL', 'Kaepernick', 'Nike']
+author:
+  name: Josh Hoepner
+ogImage:
+  url: /img/blog/Colin-Kaepernick-1080x630-1-1024x597.jpeg
+---
+### The Swoosh
+
+On September 3rd, 2018 at 2:20 PM, a former NFL player posted a simple image on Twitter. The image was a portrait of himself with two lines of text spanning from cheek to cheek. What followed was unprecedented. 
+
+### NFL + Kaepernick
+
+Ask any football fan and they will tell you that the National Football League preseason is not a highly-regarded event by any means. Teams cut their roster down to 53 players, the wins don't matter, and the heat of the summer is still in full effect. However, after August 27th, 2016, the NFL preseason became a hot-button topic amongst both football and non-football fans. This attention was due to the actions (or inactions) of the quarterback for the San Francisco 49ers, Colin Kaepernick.
+
+![Kaepernick kneels for National Anthem](/img/blog/160912_SNUT_Kaepernick-Anthem.jpg.CROP_.promo-xlarge2-1024x731.jpg)
+
+You know what comes next.
+
+Now, let's fast-forward. Past the burning of jerseys, past the praise, past the ignorance, and past the NFL's failure to appropriately handle any of this.
+
+We are living in a time where if you don't have an opinion on an issue people are mad at you. Furthermore, if you take a stance on that issue and people don't agree, they are even more upset than before. This phenomenon has happened over and over with so many issues that we've all come to just expect it.
+
+That's not what should have happened with this issue, but somehow, it did.
+
+The reason for Kaepernick's peaceful protest was to bring awareness to systematic racism and police brutality in America. That is as plain and simple as it gets.
+
+>"I am not looking for approval. I have to stand up for people that are oppressed.... If they take football away, my endorsements from me, I know that I stood up for what is right."
+
+### Nike + Kaepernick
+
+By endorsing Kaepernick, Nike has continued their stance as a progressive brand that looks to unite. The loudest voices have declared a boycott, yet Nike has seen a 15% increase in online sales in the weeks following Kaep's tweet.
+
+Does this fix the systematic problems in America? Absolutely not, but kneeling didn't either.
+
+We have yet to see what this campaign can do, but it's a start. The voices of those who are oppressed deserve to be heard and the companies that help that message spread will most certainly be regarded in doing so.
+
+### Kaepernick + Me
+
+I know I'm a white guy from a suburban Minnesota town, but that doesn't mean I should be silent in a time like this. To me, it means the absolute opposite. I should be supporting those who need it most.
+
+The biggest lesson I learned in high school was taught to me by a social studies teacher on the last day of my junior year. Instead of a sappy goodbye, he stood in front of the class and said he hoped that the historical topics we discussed would help us to recognize problems in today's society. He closed his speech by saying, "Be on the right side of history." That message stuck and it is more true to me now than the first time I heard it.
+
+So, I challenge you all to do the same. Take the time to think about the world from someone else's perspective. Feel what they feel, see what they see, and fight like hell to ensure everyone gets to feel the same way.
