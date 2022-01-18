@@ -1,0 +1,21 @@
+---
+title: 'PB wins Gold at AIGA Nebraska’s SHOW for the second year in a row'
+subtitle: This past Saturday, we were excited to accept a Gold AIGA award for work we created with our partners at KANEKO.
+excerpt: This past Saturday, we were excited to accept a Gold AIGA award for work we created with our partners at KANEKO.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/IMG_7619-1.jpeg
+date: '2018-10-17'
+categories: ['announcements']
+tags: ['AIGA award', '2018']
+author:
+    name: Tony Bertino
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/IMG_7619-1.jpeg
+---
+This past Saturday, we were excited to accept a Gold AIGA award for work we created with our partners at KANEKO. Wrapping up in early 2018, the video we produced was a teaser for their Light exhibition. We shot footage around the museum the week before the exhibition was open to the public, including the infinity room - an enclosed room with floor to ceiling mirrors reflecting images from a projector. Other areas featured work previously on display at Burning Man and an interactive audiovisual piece curated by Circus Family and artist Refik Anandol. 
+
+The exhibition saw record-breaking daily and overall attendance and was featured in publications like the Omaha World Herald, Creative Boom, and the Lincoln Journal Star.
+
+This was our second year in a row one of our submissions was awarded a Gold at SHOW. Last year, a series of illustrations we did for a local photographer's website took home the Gold. Check out the video below and read more about the Light exhibition on our portfolio page.
