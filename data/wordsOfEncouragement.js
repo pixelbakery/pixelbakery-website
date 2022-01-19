@@ -9,6 +9,9 @@ export default [
     text: 'be kind to yourself.',
   },
   {
+    text: 'we appreciate you.',
+  },
+  {
     text: "i'm so damn proud of you.",
   },
   {
