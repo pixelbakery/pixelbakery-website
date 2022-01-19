@@ -1,0 +1,27 @@
+---
+title: 'Pixel Bakery wins five ADDY awards'
+subtitle: Last weekend, Pixel Bakery was awarded two golds and three silvers in five different categories at the Nebraska ADDY Awards.
+excerpt: Last weekend, Pixel Bakery was awarded two golds and three silvers in five different categories at the Nebraska ADDY Awards.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/16_9.jpeg
+date: '2018-02-22'
+categories: ['from the desk of', 'announcements']
+tags: ['ADDYs', 'awards', 'gold', 'silver']
+author:
+  name: Tony Bertino
+ogImage:
+  url: /img/blog/I16_9.jpeg
+---
+Last weekend, Pixel Bakery was awarded two golds and three silvers in five different categories at the Nebraska ADDY Awards.
+
+It's humbling to see our winning work alongside advertising giants like Swanson Russell and Bozell, but more than that, it's an honor to represent our clients for a second year in a row. To our clients: thank you for trusting your company's visual identity with a young group of passionate creatives. We can't wait to get back to work.
+
+This year's results reinforced what we've already known: our services are focused and lean, our creative is innovative and forward thinking, and our strategy is rooted is in authenticity and simplicity. There isn't a creative agency in Nebraska that is as young or as small that has been more widely recognized for its work than us. Maybe that sounds self-centered or over-confident, but it's something I believe to be true and something I'm immensely proud of.
+
+That being said, I don't want this to be a post just about award recognition, but rather a broader direct call to action:
+
+Send us a message if you're a business owner looking for a creative team. Give us a call if you're a potential client looking for a *new* creative team. Fill out an application if you're a student looking for a summer internship. Send over your reel if you're a talented freelance artist. Let us know if you're an employee at another creative agency and looking to make a change.
+
+We're looking forward to hearing from you.
+
+View the award winning work [here](https://pixelbakery.co/2018-addy-award-winning-work/).
