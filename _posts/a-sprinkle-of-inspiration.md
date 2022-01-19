@@ -1,0 +1,45 @@
+---
+title: 'A Sprinkle of Inspiration'
+subtitle: The point of this post isn’t to tell you to “just go for it,” because sometimes that advice is wrong and thinking it out is the right choice.
+excerpt: The point of this post isn’t to tell you to “just go for it,” because sometimes that advice is wrong and thinking it out is the right choice.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Elaina-Headshot.jpeg
+date: '2018-06-25'
+categories: ['announcements']
+tags: ['project manager', 'college']
+author:
+  name: Elaina Dye
+ogImage:
+  url: /img/blog/Elaina-Headshot.jpeg
+---
+*Scene: Jack's bar, two employees and their manager sipping on their third Crown and diet each on the back patio. This took place before I was at Pixel Bakery, and I was going through the classic time in every college kid's life where they work at a bar on the weekends to make ends meet. (In my case, to finance my shameless boujee-ness.)*
+
+Co-worker: So after this summer it's your last year in college, right? How's that going? Do you feel ready for the "big and scary real world?"
+
+Me: I dunno... Like, I feel like college went by so fast, ya know? I feel like I can't pay attention to it anymore and it bugs me that I have forgotten most everything I've learned in school. I haven't gotten anywhere with my degree and I'm almost done with it. It feels like it didn't even happen. My life is just a big blur.
+
+Boss, after downing drink: Don't you actually need to wear glasses though?
+
+#### Perfect Vision
+
+This was my turning point. Not this particular exchange, actually, but the one following when my manager asked me to join him in starting a bar.
+
+I've always had a plan. My freshman year of college I had written out a step-by-step plan for how to become the project manager for Jacht Ad Club. I also quite literally laid out in a notebook all the things I needed to learn to be the most prepared person for the job, and how learning it all would look like on a calendar. Of course, that plan didn't pan out at all because that's how life works. I experienced about 3 consecutive life-altering events during my sophomore year, which all somehow got me sitting at Jack's two years later with my boss and co-worker at 1:45 a.m. on a Thursday night. I was in a completely different major than I had planned, had an entirely different vision for my future, but most of all I had a lot (A LOT) more life experience under my belt. The real world hits you hard, and it hits you hardest in the bar industry - 10/10 would recommend working in it for a few years.
+
+But still that night at Jack's, even after everything that had changed for me, I had my plans. I still knew exactly what classes I needed to take and exactly what internships I had to get to graduate fully prepared for my new choice of career, and I was actually planning on dropping the bomb that I had to quit on the bar soon. I had everything planned still, with all the money and resources I needed to do it, but then on that fateful, kind of uncomfortably brisk April night, I got blindsided with Door Number Two.
+
+And I chose Door Number Two. Thank the Universe I chose Door Number Two. Today, I'm actually closer to where I was planning on going in the first place than I ever could have gotten if I had stuck to the plan that I made in my little notebook, and I'm by far a better and wiser person for it. I could not do the job I have today nor have the right to give anyone in this world advice if I hadn't walked through that door.
+
+#### It's a Push Door
+
+The point of this post isn't to tell you to "just go for it," because sometimes that advice is wrong and thinking it out is the right choice. The point of this is to tell you that growing into the real world doesn't happen by strategically planning out the future, it happens when you push yourself in the present moment.
+
+That same boss told me a story about one of his college psychology classes that changed his ability to work as a bartender and impacted every other part of his life. There was a lesson about how we all have these "rhythm" work-paces throughout our days that result in us looking up at the clock and thinking "Wow! Where did the time go?" Most of us are inclined to think that those rhythms are a good thing; "time flies when you're having fun, right?" Nope. Not in this instance, or really in any other. Those rhythms make up a good chunk of our day and are the paces that set our standard of excellence. For instance, my boss would have to shake HUNDREDS of cocktails a night, and when he would just be working "the wheel" and churning out drinks, that's when he'd get a pace going and his time would fly by. That lesson made him recognize those "pace" moments and actively begin to pay attention to them. Let's say he was already doing 1 drink a minute - how can he work to make it 2 drinks a minute? Three? In what ways can he actively think about how to set a new standard of excellence for himself, instead of just letting the blur happen? He did change his pace, and with that simple change of mentality, he exponentially shortened our drink wait, customers were leaving better tips and better reviews, and people respected him more. And, with how life works, all these things just snowballed into him gaining the confidence and resources that it took to start his own bar.
+
+#### Running Faster
+
+Hindsight being 20/20, that's the very reason why I chose to take a legitimate career risk and join the new business venture; it pushed me. I had to constantly look at my own shortcomings (including having literally no idea what I was doing) and figure out what I could do or learn to improve myself every day. I had no one to shelter me from my mistakes. When I messed up representing the company, it had real consequences with real damage to the business. Everything I learned from that bar taught me all I needed to know about being an account executive, but can't be formally taught, and here I am without the blur.
+
+In the real world, the tests come before the lessons and there's no way to really plan for the future. The Universe loves to blindside us. The only way we can prepare for it is to pick up our paces. The easiest example I have, which you're welcome to use, is running. When we're running, we strive to find that rhythmic pace, so we can just blur the effort out and fall into an easy step. However, if we do that, we'll never improve our time and grow as a runner. We have to be mentally present in the moment when we decide to start running faster. We don't truly grow when we're sitting in the living room with a calendar planning out the miles and the days that we run; we grow by pushing ourselves while we're running. I have yet to find a single moment in my life, at any job or in any class, where I can't adjust the blur to become an active moment of improvement. Yes, it sounds exhausting to always think about how to improve ourselves on those days when we're just begging the clock to fly by - because it is - but that's where we become stronger. It's how we grow and rise to new heights. It's how we become someone we're proud to be. Your life is too damn short to be a blur.
+
+And yes, for the record I actually do need to wear glasses - desperately - but Melania made squinting fetch and I'm already committed to the look.
