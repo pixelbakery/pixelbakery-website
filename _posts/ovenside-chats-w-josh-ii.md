@@ -26,7 +26,7 @@ Steven has built a following of over 164k with his extremely recognizable cartoo
 
 Nobody does it quite like the latter partner of Sagmeister + Walsh. The colors, the phrases, and the punchiness of her designs make her an iconic and must-follow for any designer.
 
-![](/img/blog/123840890_3252019318259734_2038933262115035136_n.jpeg)
+![](/img/blog/Jess123840890_3252019318259734_2038933262115035136_n.jpeg)
 
 #### 3\. Paul Fuentes (@paulfuentes_design) | Mexico
 
