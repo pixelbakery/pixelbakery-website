@@ -1,0 +1,86 @@
+---
+title: 'Nebraska Type Challenge – 02/30 Question Mark'
+subtitle: What’s up, rolling pins? Week 2 of the Nebraska Type Challenge had our participants tackling the question mark. 
+excerpt: What’s up, rolling pins? Week 2 of the Nebraska Type Challenge had our participants tackling the question mark.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/NebraskaTypeChallenge_banner.png
+date: '2018-09-18'
+categories: ['Nebraska Type Challenge 2018']
+tags: ['design', 'illustrator', 'Nebraska', 'type challenge', 'typography']
+author:
+    name: Jordan Lambrecht
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/NebraskaTypeChallenge_banner.png
+---
+### Type Week 2: Question Mark
+
+What's up, rolling pins? Week 2 of the Nebraska Type Challenge had our participants tackling the question mark. This mark is one of the most common in language, yet its history is basically unknown to us... hmmm. Any questions?
+
+#### Amanda Walla
+
+[Ervin & Smith](https://ervinandsmith.com/)\
+https://www.instagram.com/p/Bn3oLQ7FXA4/
+
+#### Kate Fiedler
+
+[Nebraska Press](https://www.nebraskapress.unl.edu/)\
+https://www.instagram.com/p/Bn1rFQJlbsN/
+
+#### Michael Nielsen
+
+[Portfolio](https://michaelnielsen.co/)\
+https://www.instagram.com/p/Bn1mTZtAWNO/
+
+#### Samee Callahan
+
+[PLAY Creative](https://www.playcreativedesign.com/)\
+https://www.instagram.com/p/Bn2dhuAlxOd/
+
+#### Josh Hoepner
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/Bn5B0Ivn2ep
+
+#### Mike Rudolf
+
+[Swanson Russell](https://www.swansonrussell.com/)\
+https://www.instagram.com/p/Bn2XLKiH0kz/
+
+#### Jordan Lambrecht
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/Bn4nkPAFBJX
+
+#### Quenton Orr
+
+[Swanson Russell](https://www.swansonrussell.com/)\
+https://www.instagram.com/p/Bn2OUYPltiR/
+
+#### Allie Laing
+
+[Archrival](https://archrival.com/)\
+https://www.instagram.com/p/Bn6vZ6GlOn9
+
+#### Daniel Neuman
+
+[Agency 877](https://agency877.com/)\
+https://www.instagram.com/p/Bn4itQ1hcXw/
+
+#### Hannah Klemme
+
+[Pixel Bakery](https://pixelbakery.co/)\
+https://www.instagram.com/p/Bn3LvREg2m3
+
+#### Ed Mejia
+
+[Nelnet](https://nelnet.com/welcome)\
+https://www.instagram.com/p/Bn1pIGZAbXq
+
+### Be sure to check out the rest of the series:
+
+[Week 01: Ampersand](https://pixelbakery.co/recipes/nebraska-typography-01-ampersand/)\
+[Week 02: Question Mark](https://pixelbakery.co/recipes/nebraska-type-challenge-02-question-mark/)\
+[Week 03: Semicolon](https://pixelbakery.co/recipes/nebraska-type-challenge-03-30-semicolon/)\
+[Week 04: Exclamation Mark](https://pixelbakery.co/recipes/nebraska-type-challenge-04-30-exclamation-mark/)

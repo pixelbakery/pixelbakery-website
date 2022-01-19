@@ -1,0 +1,29 @@
+---
+title: 'Hannah Klemme: Just Roll With It'
+subtitle: Hi! I’m Hannah Klemme! I’m new here.
+excerpt: Hi! I’m Hannah Klemme! I’m new here.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Image-from-iOS-1.jpeg
+date: '2018-08-29'
+categories: ['announcements', 'editorial']
+tags: ['careers', 'new hire', 'multimedia designer', 'Hannah Klemme']
+author:
+  name: Hannah Klemme
+ogImage:
+  url: /img/blog/Image-from-iOS-1.jpeg
+---
+Hi! I'm Hannah Klemme! I'm new here.
+
+Hey there! My name is Hannah Klemme and I'm the newest addition to the Pixel Bakery team. I'm a third year graphic design student at the University of Nebraska-Lincoln and I am beyond excited to be working here at Pixel Bakery. Like, so super pumped.
+
+I've always known I would go into the arts as a career path, and I really just don't see myself doing anything else. When I was in high school, I was always a little bummed when I thought about going to college. I used to think that in order to become a graphic designer, I'd have to go off to art school in New York or Chicago, live in a 4'x4' apartment with a nice view, and ornament my face with a septum piercing.
+
+However, I knew I didn't have the funds for that, and I knew my mom would disown me if I was walking around 'looking like a bull.'
+
+I remember openly telling people in high school I would NEVER go to UNL because I wanted to be edgy and different. I was so adamant about it that it almost became a personality trait of mine. Ugh, chill, past Hannah.
+
+But, I ended up here anyways due to some circumstances (I procrastinated) and I convinced myself I was excited to become a Husker (I wasn't).
+
+Jump ahead almost three years later and I've never thanked myself more for (sort of) choosing to stay in Nebraska. There are so many amazing opportunities that I refused to believe existed before I even tried seeking them out. The art and music scene is actually really cool here and not a lot of people know that about Lincoln. Had I known places like Pixel Bakery were here, I would've committed to this place in a heartbeat.
+
+Pixel Bakery has given me the opportunity to be a part of something I didn't think was possible. It may not be in New York, our view may not be the most amazing, and I still don't have that septum piercing (you're welcome, mom), but it's better than anything I could've ever imagined. I can't wait to see all the sweet things I do here.
