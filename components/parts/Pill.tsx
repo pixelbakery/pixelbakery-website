@@ -38,6 +38,11 @@ export default function Pill({ text, bgColor, textColor, size }) {
         px = ' px-3'
         fontWeight = ' font-medium'
         break
+      case 'xs':
+        py = ' py-1'
+        px = ' px-3'
+        fontWeight = ' font-bold'
+        break
       default:
         py = ' py-1'
         px = ' px-3'
