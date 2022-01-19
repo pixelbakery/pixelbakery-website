@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Work_Portfolio_Card from './Work_Portfolio_Card'
 import portfolio from '../../data/portfolio'
 
+import cn from 'classnames'
 // return {
 //   props: { caseStudies: data },
 // }
@@ -31,17 +32,19 @@ const Work_Portfolio = () => {
     })
   }
   const getOtherWork = () => {
-    return projects.slice(featuredProjNo).map((project) => {
+    return projects.slice(featuredProjNo).map((project, index) => {
       return (
-        <Work_Portfolio_Card
-          key={project.title}
-          name={project.title}
-          client={project.client}
-          previewImg={project.previewImg}
-          previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
-          url={projectPath(project.slug)}
-          tags={project.tags}
-        />
+        <div className={cn({ ['hidden md:block']: index > 5 })}>
+          <Work_Portfolio_Card
+            key={project.title}
+            name={project.title}
+            client={project.client}
+            previewImg={project.previewImg}
+            previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
+            url={projectPath(project.slug)}
+            tags={project.tags}
+          />
+        </div>
       )
       // return <h1 key={project.name}>{i}</h1>
     })
@@ -49,19 +52,10 @@ const Work_Portfolio = () => {
   return (
     <section className='' id='work-portfolio'>
       <h2> Work we&apos;re really really proud of</h2>
-      <div id='portfolioFilter'>
-        <button data-filter='*'>All</button>
-        <button data-filter='.animation'>Animation & Motion Design</button>
-        <button data-filter='.film'>Commercial Film Production</button>
-        <button data-filter='.concepting'>Creative Concepting & Strategy</button>
-        <button data-filter='.3dmodeling'>3D Modeling</button>
-        <button data-filter='.emergingmedia'>Emerging Media</button>
-        <button data-filter='.social'>Social Media Kitouts</button>
-      </div>
 
-      <div className='grid grid-cols-2 gap-8'>{getFeaturedWork()}</div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>{getFeaturedWork()}</div>
 
-      <div className='my-4 grid grid-cols-3 gap-8'>{getOtherWork()}</div>
+      <div className='my-4 grid grid-cols-1 md:grid-cols-3 gap-4'>{getOtherWork()}</div>
     </section>
   )
 }
