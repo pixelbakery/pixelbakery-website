@@ -20,7 +20,7 @@ function Work_Portfolio_Card(props) {
         <div className=' z-20 h-100 p-6 flex flex-col justify-between'>
           <div className='-py-3 flex flex-wrap flex-row  gap-4'>
             {props.tags.map((tag) => (
-              <Pill text={tag} bgColor={'peach'} textColor={'cream'} size='sm' key={tag} />
+              <Pill text={tag} bgColor={'blue'} textColor={'cream'} size='xs' key={tag} />
             ))}
           </div>
           <div className=''>
