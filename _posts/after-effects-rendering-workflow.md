@@ -1,0 +1,105 @@
+---
+title: "After Effects Rendering Workflow"
+subtitle: Hiya. Here’s a quick guide written for my students on what Pixel Bakery uses for our render workflow.
+excerpt: Hiya. Here’s a quick guide written for my students on what Pixel Bakery uses for our render workflow.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png
+date: '2018-02-19'
+categories: ['education']
+tags: ['rendering', 'after affects', 'workflow']
+author:
+  name: Jordan Lambrecht
+ogImage:
+  url: /img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png
+---
+Hiya. Here's a quick guide written for my students on what Pixel Bakery uses for our render workflow. I figured it might be of some use to the general public, so I decided making a post about it would be beneficial to all. It's important to keep in mind that there's a lot of different solutions for render workflows and every studio has a unique take on it, but this is what we do. I know this tutorial is pretty long, but I wanted to be as in-depth as possible to cover all scenarios.
+
+#### Make it Big, Then Make it Small
+
+I'm a big fan of linear workflows. All of my renders start with a parent version that's uncompressed and I move towards lower quality versions as needed. This isn't a catch-all solution though. We have to remember that time is money and money is power and cash rules everything around us. AKA, there's a balance between allowable time, available computing power, and the quality of the render. More time = nicer render, less time = lower quality render. Decisions have to be made with this and you have to decide what's best for you. If you're rendering out a render test or a rough draft to send to a client, or let's say you blew a deadline, then it clearly doesn't make sense to pull out all the stops.
+
+#### Naming Conventions & File Structures
+
+![](/img/blog/Screen-Shot-2016-09-12-at-20.27.35.png)
+
+We've all seen photos like the one above before. We usually laugh at how stupid something like that is, but the truth is that we all fall victim to runaway naming conventions. It's very easy to let them slip away from you if you're not strict with yourself - especially when you have lots of things going on and tons of files like you do with motion design. Again, there's lots of solutions and everyone has a different take, but this is what Pixel Bakery does. The word "final" should never appear in your naming conventions.
+
+![](/img/blog/Screen-Shot-2018-02-18-at-3.38.06-PM.png)
+
+First and foremost, take a look at how we organize our files. Every project has a unique folder where everything can live inside of it, and it's further broken down into sub folders like Renders, Assets, SFX, etc.
+
+I like to name my renders as follows. Let's pretend the client is named Pixel Bakery, this is our fifth version, and the project is called Sprinkle Machine
+
+Uncompressed render AKA the "master file": PB_SprinkleMachine_v5\
+Test / wireframe: PB_SprinkleMachine_RTESTv5\
+Lower quality version such has h264: PB_SprinkleMachine_H264v5
+
+#### Rendering inside After Effects
+
+Okay. Let's get into it.
+
+1\. Select what you want to render as your work area from within your main composition by scrubbing to the beginning and hitting B on the keyboard, followed by scrubbing to the end and hitting N. This will adjust your work area.
+
+2\. Go to Composition > Add to Render Queue. General rule of thumb: always render your master file within AE instead of Media Encoder. Adding the additional step of bringing in AME inserts extra room for error in your renderings. With such crazy big workflows in animation, it's important to make swift, surgical strikes wherever you can.
+
+![](/img/blog/Screen-Shot-2018-02-18-at-4.06.03-PM.png)
+
+There's three main areas we want to pay attention to now. Output To, Output Module, and Render Settings.
+
+3\. Set Output To to our naming conventions.\
+4\. Open up Output Module
+
+#### Output Module
+
+Format: Quicktime\
+Depth: Trillions of Colors\
+Color: Premultiplied
+
+Click on Format Options and set your video codec to Apple ProRes 4444.
+
+You shouldn't have to touch anything under color management.
+
+![](/img/blog/Screen-Shot-2018-02-18-at-4.35.31-PM.png)
+
+We don't really need to touch anything under the render settings.
+
+Final step: hit render. Keep in mind that this is uncompressed, so it's going to be a hefty file and I doubt you'll be able to play it on your computer. However, you should be able to upload this file to Vimeo and YouTube.
+
+#### Creating Lower Quality Versions
+
+Alrighty, our master file is done so all that's left is to render out lower quality versions if need be. This will all be done in Adobe Media Encoder. There's two different codecs that I would recommend. H.265 and H.264.
+
+H.265: This is a newer codec with better compression algorithm than H.264. However, there are a few down sides. Here are the pros and cons:
+
+#### Pros
+
+-   Smaller file sizes
+-   Higher quality than h.264
+-   Newer standard that has more shelf life than h.264
+
+#### Cons
+
+-   Way longer render times
+-   Since it's so new, it's not universally implemented yet. You might find that some websites do not accept it yet
+
+Flip everything around and you have the pros/cons for h.264.
+
+![](/img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png)
+
+Format: H.264 or H.265\
+Make sure your height and width are the correct size\
+Frame Rate: 24\
+Field Order: Progressive\
+Aspect: Square Pixels\
+TV Standard: NTSC\
+Profile: Main or High\
+Check Render at Maximum Depth\
+Bitrate encoding: VBR, 2 pass\
+Target Bitrate: 16 (this depends on hd vs 4k etc, but we'll assume 1920×1080 for this)\
+Maximum bitrate: 40\
+Check Use Master Render Quality\
+Time Interpolation: Frame Sampling
+
+You can also tone down that target and max bitrate if you need smaller files. I won't go over the specifics of what each one does for now as this was more so to just give you an idea of what we do when rendering out things.
+
+Hit the render button and you're done!
