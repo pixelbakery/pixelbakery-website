@@ -1,0 +1,29 @@
+---
+title: 'Motion Graphics for Pompeii: Wrath of Vesuvius'
+subtitle: One of the awesome things about working for an animation studio is the wide variety of projects that you get to be involved in.   
+excerpt: One of the awesome things about working for an animation studio is the wide variety of projects that you get to be involved in. 
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Screen-Shot-2017-09-25-at-7.19.18-PM.png
+date: '2016-11-16'
+categories: ['Behind the Scenes']
+tags: ['Pixel Bakery', 'Punch-It Entertainment', 'Pompeii', 'after effects']
+author:
+    name: Jordan Lambrecht
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/Screen-Shot-2017-09-25-at-7.19.18-PM.png
+---
+One of the awesome things about working for an animation studio is the wide variety of projects that you get to be involved in. One of our on-going clients, [Punch-It Entertainment](http://punchitent.com/), is an independent board game publisher and developer. How cool is that?
+
+They recently launched a new and exciting game called [Pompeii: Wrath of Vesuvius](https://www.kickstarter.com/projects/punchitent/pompeii-wrath-of-vesuvius?token=c9c4b377). Punch-It is a great company because they believe, much like Pixel Bakery, in the power of the little guy. What sets them apart as a company is their drive to help small creators and designers have their idea heard.
+
+While we didn't do any of the illustrations for this piece, we were entrusted with everything else. Punch-It let us do their logo reveal, which really shows how much they trusted us with their brand. A logo reveal for any company is not only the first thing that people will see, but it also establishes the mood and tone of a brand. As with their last project that we worked with them on - Battle for Sularia - they wanted us to take already created illustrations and game art and bring them to life with motion. It's also always a blast to try to find a voice actor that matches up with the feel of the video. While the voice actor may come off as a bit hokey at first, we think it really fits. With a brand like Pompeii, it's important to not take yourself too seriously and to remain fun.
+
+The entirety of this project was done in After Effects (cc 2017). Logo reveals can be a bit tricky at times because you're taking an already created (hopefully vector) file and breaking it down into a thousand pieces. We wanted to capture the essence of the name, as well as find a nice balance between cute/fun and reputable. Timing is also everything when animating a logo. It's important to keep it short and sweet, which a lot of people tend to forget. Nothing is worse than a long and drawn out logo animation. We generally try to keep ours to under 3 seconds. After several different ideations, we landed on the idea of the fist coming in and 'punching' the rest of the text. It was quick, smooth, and matched their brand perfectly. We then threw in a few more pieces of flair, such as the star rotating, a subtle sheen effect towards the end, and a soft 3d rotation upon entry.
+
+As far as the motion graphics go, most of it was pretty straight forward. A little movement here, a little movement there. We subtly masked in some special effects such as smoke and light to make the motion more believable. Beyond that, most of it was just getting the timing down and making extra sure that everything flows into each other well -- transitions are king.
+
+We're so grateful that they selected us to work on this project with them. Be sure to consider backing them on [Kickstarter](https://www.kickstarter.com/projects/punchitent/pompeii-wrath-of-vesuvius?token=c9c4b377) (we did!) and to like them on [Facebook](https://www.facebook.com/punchitentertainment/).
+
+Also, if you'd like to see some of the other work we've done for Punch-It, check out our portfolio piece for them.
