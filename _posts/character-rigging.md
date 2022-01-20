@@ -1,0 +1,96 @@
+---
+title: 'Character Rigging with DUIK – Digitigrade'
+subtitle: AToday in class a lot of my students were struggling with the AutoRig function inside of DUIK.
+excerpt: Today in class a lot of my students were struggling with the AutoRig function inside of DUIK.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/4x3_cow1.jpeg
+date: '2018-02-01'
+categories: ['education']
+tags: ['walk cycles', 'puppet tool', 'DUIK', 'digitgrade', 'character rigging', 'autorig', ' after effects']
+author:
+    name: Jordan Lambrecht
+    picture: /img/placeholder01.png
+    profileURL: '/'
+ogImage:
+  url: /img/blog/4x3_cow1.jpeg
+---
+Today in class a lot of my students were struggling with the AutoRig function inside of DUIK. I wanted to put together a brief tutorial on how to properly rig a Digitigrade since I couldn't find any great pre-existing tutorials on it. I went with a simple cow that we're using for another client's project because it was already designed and I really appreciate how bare-bones it is. Now, a cow isn't technically a Digitigrade - it should be an Ungulate. However, rigging it as an Ungulate will be far more complex than we need for something like this that doesn't contain a lot of detail.
+
+Also, I know a lot of motion designers don't use the autorigging function within DUIK, but I wanted to help ease my students into the concept of rigging with a linear workflow before throwing them to the wolves. Let's get into it and make him moove. I really hate tutorials with lots of superfluous fluff in them, but I also am writing this as a guide for my students, so I'll bold out the really important steps for those of you that want it quick and dirty.
+
+If you haven't yet, you can [download DUIK from their website here.](https://rainboxprod.coop/en/tools/duik/)
+
+#### Quick and Dirty
+
+1.  Import illustrator layers into AE
+2.  Create puppet pins where the joints should be if it's a solid object
+3.  Transform those pins into bones with DUIK
+4.  Run the DUIK autorig
+5.  Animate
+
+#### Setup
+
+Our cow is broken down into 7 different layers inside of after effects. We have his tail, his two legs, his two arms (AKA his front legs), his torso/body, and his head. The head is a pre-composition with all of his facial details inside of it so I can manipulate and move them independently later on.
+
+When you're setting this up, remember that character rigging gets pretty gnarly and complicated, so it's important to retain a clean workflow throughout the process. To use a cooking analogy, we need to practice "misan plas". Mise en place (MEEZ ahn plahs) is a French term for having all your ingredients measured, cut, peeled, sliced, grated, etc. before you start cooking. Pans are prepared. Mixing bowls, tools and equipment set out. It is a technique chefs use to assemble meals so quickly and effortlessly. A messy kitchen produces messy food. This is something I try to hammer into my students early on.
+
+For us, that means we have proper and consistent naming conventions, we reduce any extra unneeded path points in illustrator, we color code our layers in both Illustrator and after effects, we pre-comp often, we remain consistent with our composition sizes, we make sure our workflow allows us to work from large to small, and we save copies of our project at big milestones so we don't have to waste time removing a thousand expressions if we mess up. That last one is important. Seriously. Create a backup copy of your After Effects file before you put in puppet tools, before you make DUIK bones, and before you use the autorig function.
+
+#### Step 1 - Character Development / Pre After Effects
+
+First we need to design our character out. I highly recommend working by hand and sketching before bringing them into Illustrator or Photoshop. I'm not going to go over the basics of character design with you, but I will quickly touch on some important preflight things to be mindful of while you're in Illustrator.
+
+1.  Set your artboard to 1920×1080. After Effects will kindly take the size of our artboards for us and set our precomps to that.
+2.  Make sure you're working in an RGB colorspace. If you skip this step, it's going to look really bad.
+
+![](/img/blog/3x4_cow2-225x300.jpeg)
+
+3.  Crucify your character in Illustrator. Their arms, legs, tail, and head should be as outstretched to their natural limit. For us, that means out tail and legs will be stiff and straight.
+4.  Sort your body parts into working layers and sublayers. See below for how I organized mine. Notice how I did my naming conventions as well. These naming conventions will be brought over to After Effects, so we want to be sure to stay organized here.
+5.  Optional: I made my artboard 3840 px x 2160 px because, again, I like to have my workflow funnel the size of the character downwards. Start off big and scale down when needed in after effects so you don't have to worry about artifacting.
+
+![](/img/blog/16x9_cow3.jpeg)
+
+#### Step 2 - After Effects
+
+We're now ready for import. Remember to keep all of these files in one place so they don't become unlinked. Let's import that sucker. We want to import it as composition - retain layer sizes. Make sure the sequence option is not ticked. This is going to do two things. It's going to create a composition for us (again based off of our AI artboard size) as well as create a "parts bin" folder with all of our ai layers thrown in there as individual "objects". We'll want to switch the main comp and the cow comp to 1920×1080. You can do this by right clicking on the composition in the project panel and selecting Composition Settings.
+
+While we're here, you can also pick out a background color (this won't transfer to the composition it's nested in, don't worry) along with your frames per second (Make sure this number is consistent throughout all compositions - I usually work at 24)
+
+Open up that precomp. Rename it to something more relevant if you want. I like to also create another precomp titled "MAIN COMP" that we can drop our Cow Rig precomp into, along with a background, set design stuff, props, other characters, etc. Go ahead at this point and select your head and all of it's objects. Right click -> Pre-compose. Name the precomp "Head" and make sure "move all attributes into the new composition" is selected along with "Adjust composition duration to the span of the selected layers".
+
+I like to keep my precomp sizes tidy as well. We don't need the head's composition to be 1920×1080, so I'll downsize the composition with the Preview checked until the head fits nice and snug.
+
+Inside of these precomps, we'll want to Continuously Rasterize each layer, which is the little tick box that looks like a sun / butthole inside the timeline.
+
+Rinse and repeat this step for anything that's complex. Like if your arm and hand are seperate layers.
+
+Moving back to our Cow Rig composition, we want to scale our head precomp along with the rest of the body down to 50% to get them to fit on our 1920×1080 work area. You can do this by selecting the layer in the timeline, and hitting S.
+
+![](/img/blog/Screen-Shot-2018-02-01-at-6.00.03-PM.png)
+
+Note how in the image above, I also color coded my layers to stay organized. In a previous lecture, I mentioned that we need to parent our layers. This was incorrect as AutoRig will do that for us.
+
+We do, however, need to make sure our anchor points are properly set up. Grab the Pan Behind tool (hotkey Y) and drag the anchor point on each layer to correspond with where the joint will be. For example: if we have a leg, we want the anchor point to be where it connects to the hip.
+
+![](/img/blog/4x3_cow4-1024x768.jpeg)
+
+#### Step 3 - Creating Bones with the Puppet Tool
+
+Dope. So now we have a cow in After Effects. The next step is getting him ready to move. When we're making our points with the puppet tool, we'll want to crank the triangle count up to 1500. This can be done if you twirl down effects -> puppet -> Mesh 1 after you place your first puppet point. We don't need a pin on the head, because we aren't wanting it to squish or squash. On the legs, we'll be adding a femur, knee, tarsus, and hoof. On the front legs - or "arms" as we're calling them - we'll add a humerus, elbow, carpus, and hoof. He doesn't have much of a neck, so we're only going to add one pin. We'll use it for both the start and the end.
+
+Make sure you name them correctly. Here's an image of where I placed my pins and with what naming conventions. From here, load up DUIK. Select all of the layers in the timeline that we used the puppet tool on. DUIK will do some computing and spit out our new bones. This is going to make your timeline pretty cluttered, but that's okay. We'll shy a bunch of stuff here in a bit to clean it up.
+
+![](/img/blog/3x4_cow5.jpeg)
+
+#### Step 4 - Using the AutoRig
+
+The rest should be pretty automated if we set everything up correctly. Make sure none of your layers are selected and click the AutoRig button in DUIK. Select Digitigrade followed by Full Character. Walk through the steps and match up the names. It tries to autofill in names sometimes, but it's not very smart about it so always double check them. Our character is pretty simple, so we don't have points for things like his shoulder or toes - we'll just leave these options blank. Walk through all the steps and then generate the rig. Again, DUIK will do a lot of math and then spit out a ton of new objects.
+
+#### Step 5 - Keyframing
+
+Awesome. So now we have a ton of controller points. Let's keyframe them. The first thing I'm going to do is shy away everything that aren't my controllers. The shy feature is the little dude with the big nose in the timeline.
+
+![](/img/blog/16x9_cow6.jpeg)
+
+Next, I'm noticing that my legs aren't moving in the same way. They also get stretchy, which isn't really the look I'm going for. If I click on the respective leg controllers, I can select "Clockwise" and unselect "Auto-Stretch" in the Effect Controls panel. I'm not going to get into the specifics of keyframing or walk cycles in this, so the rest is up to you =]
