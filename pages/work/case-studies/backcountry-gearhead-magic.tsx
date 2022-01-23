@@ -11,7 +11,12 @@ import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Cre
 
 // project info
 const title = 'Gearhead Magic'
-const tags = [{ name: 'Creative Concepting', url: '/' }]
+
+const tags = [
+  { enabled: true, name: 'Creative Concepting', url: '/' },
+  { enabled: true, name: 'Logo Animation', url: '/' },
+  { enabled: true, name: 'Motion Design', url: '/' },
+]
 
 //client info
 const client = 'Backcountry'
@@ -19,7 +24,7 @@ const clientLogo = '/img/client-logos/Black-Sola-Logo.png'
 const clientURL = 'https://backcountry.com'
 
 // Project Header
-const heroVideo = '651678896'
+const heroVideo = '669198523'
 const projectSubhead = "i'm a big old subheader"
 const projectExcerpt = 'copy copy copy'
 const projectIntroduction = 'copy copy copy'
