@@ -8,7 +8,6 @@ import SolaTinyChef_PostProduction from '../../../components/CaseStudies/SolaTin
 import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
 import SolaTinyChef_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
-import Project from '../../../types/project'
 import Main from '../../../components/Main'
 
 const title = 'Tiny Chef Magic'
@@ -43,11 +42,8 @@ const otherProjects = [
     tag: 'Video Production',
   },
 ]
-type Props = {
-  project: Project
-}
 
-function SolaTinyChef({ project }: Props) {
+function SolaTinyChef() {
   return (
     <Main className='overflow-x-hidden'>
       <CaseStudies_Header

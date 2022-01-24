@@ -39,7 +39,10 @@ function About_Faq_Card({ faq, index }: Props) {
           },
         )}
       >
-        <p className='px-12 md:px-24  text-blue-dark text-md'>{faq.a}</p>
+        <div
+          className='px-12 md:px-24  text-blue-dark text-md'
+          dangerouslySetInnerHTML={{ __html: faq.a }}
+        />
       </div>
     </div>
   )
