@@ -1,9 +1,14 @@
 import React from 'react'
 import Button_Filled from '../parts/Button_Filled'
-
+import portfolio from '../../data/portfolio'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
 
 function Home_Portfolio() {
+  const featuerd = portfolio.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  const featuredProj01 = featuerd[0]
+  const featuredProj02 = featuerd[1]
+  const featuredProj03 = featuerd[2]
+  const featuredProj04 = featuerd[3]
   return (
     <section id='home-portfolio' className='bg-white py-8 my-4 px-6'>
       <div className='max-w-md md:max-w-2xl xl:max-w-6xl 2xl:max-w-full 2xl:px-12 mx-auto'>
@@ -15,14 +20,13 @@ function Home_Portfolio() {
             <Home_Portfolio_Card
               bgPosition={'block-right'}
               bgColor={'bg-pink'}
-              link={'/'}
-              image={'https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif'}
-              client={'The Sola Company'}
-              title='Tiny Chef Magic'
-              tags={['2d animation', 'creative concepting', 'storyboarding']}
-              description={
-                'Proactively redefine state of the art information rather than bricks-and-clicks technology.'
-              }
+              link={featuredProj01.slug}
+              previewImg={featuredProj01.previewImg}
+              video={featuredProj01.hoverVideo}
+              client={featuredProj01.client}
+              title={featuredProj01.title}
+              tags={featuredProj01.tags}
+              description={featuredProj01.description}
             />
           </div>
 
@@ -30,14 +34,13 @@ function Home_Portfolio() {
             <Home_Portfolio_Card
               bgPosition={'block-left'}
               bgColor={'bg-yellow'}
-              link={'/'}
-              image={'https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif'}
-              client={'SoulPancake'}
-              title='The Price of Free'
-              tags={['2d animation', 'creative concepting', 'storyboarding']}
-              description={
-                'Proactively redefine state of the art information rather than bricks-and-clicks technology.'
-              }
+              link={featuredProj02.slug}
+              previewImg={featuredProj02.previewImg}
+              video={featuredProj02.hoverVideo}
+              client={featuredProj02.client}
+              title={featuredProj02.title}
+              tags={featuredProj02.tags}
+              description={featuredProj02.description}
             />
           </div>
 
@@ -45,14 +48,13 @@ function Home_Portfolio() {
             <Home_Portfolio_Card
               bgPosition={'block-right-up'}
               bgColor={'bg-peach'}
-              link={'/'}
-              image={'https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif'}
-              client={'SoulPancake'}
-              title='The Price of Free'
-              tags={['2d animation', 'creative concepting', 'storyboarding']}
-              description={
-                'Proactively redefine state of the art information rather than bricks-and-clicks technology.'
-              }
+              link={featuredProj03.slug}
+              previewImg={featuredProj03.previewImg}
+              video={featuredProj03.hoverVideo}
+              client={featuredProj03.client}
+              title={featuredProj03.title}
+              tags={featuredProj03.tags}
+              description={featuredProj03.description}
             />
           </div>
 
@@ -60,20 +62,26 @@ function Home_Portfolio() {
             <Home_Portfolio_Card
               bgPosition={'block-left-2'}
               bgColor={'bg-blue'}
-              link={'/'}
-              image={'https://pixelbakery.co/wp-content/uploads/PB/2020/07/KN_ECommPromo_End.gif'}
-              client={'SoulPancake'}
-              title='The Price of Free'
-              tags={['2d animation', 'creative concepting', 'storyboarding']}
-              description={
-                'Proactively redefine state of the art information rather than bricks-and-clicks technology.'
-              }
+              link={featuredProj04.slug}
+              previewImg={featuredProj04.previewImg}
+              video={featuredProj04.hoverVideo}
+              client={featuredProj04.client}
+              title={featuredProj04.title}
+              tags={featuredProj04.tags}
+              description={featuredProj04.description}
             />
           </div>
         </div>
       </div>
       <div className=' px-4  mx-auto max-w-md justify-center mt-16 py-5'>
-        <Button_Filled text="that's just a taste" link='/work' textColor='cream' bgColor='peach' />
+        <Button_Filled
+          text="that's just a taste"
+          link='/work'
+          textColor='cream'
+          bgColor='peach'
+          center={true}
+          chevronDirection='right'
+        />
       </div>
     </section>
   )

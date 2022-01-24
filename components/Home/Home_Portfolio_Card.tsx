@@ -9,10 +9,11 @@ Home_Portfolio_Card.propTypes = {
   bgPosition: PropTypes.string,
   client: PropTypes.string,
   title: PropTypes.string,
-  tags: PropTypes.string,
+  tags: PropTypes.array,
   description: PropTypes.string,
-  image: PropTypes.string,
+  previewImg: PropTypes.string,
   link: PropTypes.string,
+  video: PropTypes.string,
 }
 function Home_Portfolio_Card({
   bgColor,
@@ -21,8 +22,9 @@ function Home_Portfolio_Card({
   title,
   tags,
   description,
-  image,
+  previewImg,
   link,
+  video,
 }) {
   return (
     <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
@@ -30,22 +32,24 @@ function Home_Portfolio_Card({
         className={cn('relative home-portfolio aspect-w-16 aspect-h-9 z-10', bgColor, bgPosition)}
       >
         <div className='absolute w-full h-full rounded overflow-hidden'>
-          <Link href={link} passHref>
+          <Link href={`/work/case-studies/${link}`} passHref>
             <a>
-              <Image
-                src={image}
-                layout='fill'
-                objectFit='cover'
-                quality={66}
-                blurDataURL='true'
-                className='w-full h-full object-center object-cover'
-                alt=''
-              />
+              <video
+                muted
+                playsInline
+                preload='true'
+                loop
+                autoPlay={true}
+                poster={previewImg}
+                className='object-cover w-full h-full'
+              >
+                <source src={video} type='video/mp4' />
+              </video>
             </a>
           </Link>
         </div>
       </div>
-      <Link href={link} passHref>
+      <Link href={`/work/case-studies/${link}`} passHref>
         <div className='mt-6 pt-4 lg:mt-12'>
           <h3 className='text-pink text-2xl font-bold mb-0 pb-0 leading-none'>{client}</h3>
           <h4 className='text-wine font-extrabold text-4xl lg:text-6xl leading-none mt-0 pt-0'>
