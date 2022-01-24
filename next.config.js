@@ -28,6 +28,21 @@ module.exports = {
       //   permanent: false,
       // },
       {
+        source: '/services/logo-animation',
+        destination: '/logo-animation',
+        permanent: true,
+      },
+      {
+        source: '/services/motion-mixer',
+        destination: '/logo-animation',
+        permanent: true,
+      },
+      {
+        source: '/motion-mixer',
+        destination: '/logo-animation',
+        permanent: true,
+      },
+      {
         source: '/education/project-files',
         destination: '/education#project-files',
         permanent: true,

@@ -3,31 +3,31 @@
 export default [
   {
     text: 'Privacy Policy',
-    url: '/store',
+    url: '/privacy-policy',
   },
   {
     text: 'Careers',
-    url: '/store',
+    url: '/careers',
   },
   {
     text: 'Bakery Login',
-    url: '/store',
+    url: '/',
   },
   {
     text: 'Press Kit',
-    url: '/store',
+    url: '/',
   },
   {
     text: 'Cookbook',
-    url: '/store',
+    url: '/',
   },
   {
     text: 'Motion Mixer',
-    url: '/store',
+    url: '/logo-animation',
   },
 
   {
     text: 'Pay-What-Ya-Want Web Hosting',
-    url: '/store',
+    url: '/',
   },
 ]
