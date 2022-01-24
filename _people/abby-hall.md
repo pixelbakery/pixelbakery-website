@@ -4,7 +4,7 @@ name: Abby Hall
 active: true
 title: Multimedia Designer
 phone: 402-413-8366
-email: Abby@pixelbakery.com
+email: abby@pixelbakery.com
 details:
   almaMater: university of nebraska-lincoln
   pronoun: she/they
@@ -14,7 +14,7 @@ details:
   hatedBird: pigeon
   hobby: skatebaording, piano, and creating art
   joinedPB: august 2021
-  favoriteBook: string
+  # favoriteBook: 
   personalAesthetic: pastel sk8r girl
   signs:
     sun: taurus
@@ -22,12 +22,12 @@ details:
     moon: scorpio
 socials:
   instagram: https://www.instagram.com/abbyehall/
-  # linkedIn: Url
-  # facebook: Url
-  # spotify: Url
-  # twitter: Url
-  # personalWebsite: Url
-  # etsy: Url
+  # linkedIn: 
+  # facebook: 
+  # spotify: 
+  # twitter:
+  # personalWebsite:
+  # etsy:
 photos:
   headshotSerious: /img/team/abby_serious.png
   headshotSmiling: /img/team/abby_smiling.png
