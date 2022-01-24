@@ -16,24 +16,25 @@ details:
   hatedBird: geese
   hobby: roller skating
   joinedPB: october 2020
-  # favoriteBook: string
+  # favoriteBook: 
   personalAesthetic: time traveler trying to blend in with modern times
   signs:
     sun: taurus
-    # rising: string
-    # moon: string
+    # rising: 
+    # moon: 
 socials:
-  # instagram: Url
-  # linkedIn: Url
-  # facebook: Url
-  # spotify: Url
-  # twitter: Url
-  # personalWebsite: Url
-  # etsy: Url
+  # instagram: 
+  # linkedIn: 
+  # facebook: 
+  # spotify: 
+  # twitter: 
+  # personalWebsite: 
+  # etsy: 
 photos:
   headshotSerious: /img/team/dan_serious.png
   headshotSmiling: /img/team/dan_smiling.png
   headshotFun: /img/team/dan_silly.png
 ---
+I'm a graphic designer from Lincoln, Nebraska, and a recent UNL grad. I am really into illustrative design, and am passionate about utilizing animation for visual storytelling. I hyperfocus on the small details in my work. Frame by frame, I strive to perfect and execute my ideas, so I can learn as much as possible in the process.
 
-Maddie iss co00oolll
+(insert something funny)
