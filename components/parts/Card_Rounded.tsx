@@ -10,6 +10,7 @@ import Pill from './Pill'
 function Card_Rounded(props) {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
+  console.log(props.tags)
   return (
     <Link href={props.link} passHref>
       <article

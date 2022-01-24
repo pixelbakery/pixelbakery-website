@@ -8,6 +8,7 @@ import Post from '../../types/post'
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
 import Recipes_FeaturedPost from '../../components/Recipes/Tutorial/Recipes_FeaturedPost'
 import Button_Outlined from '../../components/parts/Button_Outlined'
+import PageSection from '../../components/PageSection'
 
 type Props = {
   allPosts: Post[]
@@ -40,7 +41,7 @@ const Index = ({ allPosts }: Props) => {
         header="Mom's Recipes"
         subheader='No word yet on her spaghetti, though'
       />
-      <Section>
+      <PageSection>
         <div className='mx-auto max-w-6xl'>
           <h2>Recent</h2>
           <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
@@ -54,7 +55,7 @@ const Index = ({ allPosts }: Props) => {
         <div className='my-14 mx-auto max-w-sm '>
           <Button_Outlined text={'load more'} link={'/'} color={'blue'} chevronDirection={'down'} />
         </div>
-      </Section>
+      </PageSection>
     </>
   )
 }
