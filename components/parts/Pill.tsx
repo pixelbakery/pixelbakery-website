@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import cn from 'classnames'
 // must pass a size: xl, lg, md, sm
 //must pass a color without tailwind vernacular
 Pill.propTypes = {
@@ -8,8 +8,9 @@ Pill.propTypes = {
   bgColor: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
+  className: PropTypes.string,
 }
-export default function Pill({ text, bgColor, textColor, size }) {
+export default function Pill({ text, bgColor, textColor, size, className }) {
   let px = '',
     py = '',
     fontWeight = '',
@@ -61,15 +62,16 @@ export default function Pill({ text, bgColor, textColor, size }) {
 
   return (
     <div
-      className={
-        'inline whitespace-nowrap rounded-md' +
-        textSize +
-        fontWeight +
-        addBgColor +
-        addTextColor +
-        px +
-        py
-      }
+      className={cn(
+        'tag inline whitespace-nowrap rounded-md',
+        `${textSize}`,
+        `${fontWeight}`,
+        `${addBgColor}`,
+        `${addTextColor}`,
+        `${px}`,
+        `${py}`,
+        `${className}`,
+      )}
     >
       {text}
     </div>

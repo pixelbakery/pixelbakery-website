@@ -8,7 +8,7 @@ type Props = {
   className?: string
 }
 
-const H2 = ({ id, color, children, className }: PropsWithChildren<Props>) => {
+const InnerWrapper = ({ id, color, children, className }: PropsWithChildren<Props>) => {
   return (
     <div
       id={id}
@@ -19,4 +19,4 @@ const H2 = ({ id, color, children, className }: PropsWithChildren<Props>) => {
   )
 }
 
-export default H2
+export default InnerWrapper
