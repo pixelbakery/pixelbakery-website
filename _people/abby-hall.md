@@ -6,32 +6,32 @@ title: Multimedia Designer
 phone: 402-413-8366
 email: Abby@pixelbakery.com
 details:
-  almaMater: string
-  pronoun: string
-  favoriteThing: string
-  leastFavoritestring: string
-  favoriteMovie: string
-  hatedBird: string
-  hobby: string
-  joinedPB: string
+  almaMater: university of nebraska-lincoln
+  pronoun: she/they
+  favoriteThing: sleeping in
+  leastFavoritestring: being cold
+  favoriteMovie: fantastic mr. fox
+  hatedBird: pigeon
+  hobby: skatebaording, piano, and creating art
+  joinedPB: august 2021
   favoriteBook: string
-  personalAesthetic: string
+  personalAesthetic: pastel sk8r girl
   signs:
-    sun: string
-    rising: string
-    moon: string
+    sun: taurus
+    rising: gemini
+    moon: scorpio
 socials:
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  instagram: https://www.instagram.com/abbyehall/
+  # linkedIn: Url
+  # facebook: Url
+  # spotify: Url
+  # twitter: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
   headshotSerious: /img/team/abby_serious.png
   headshotSmiling: /img/team/abby_smiling.png
   headshotFun: /img/team/abby_silly.png
 ---
 
-Abby founded Pixel Bakery because he couldn’t find a job. His alma mater is the University of Nebraska-Lincoln where he received a Bachelor of Arts. Artistically trained, he brings a different perspective to advertising and how design work and the creative process can be approached. He’s been asked roughly 314 times if Pixel Bakery is a real bakery, which generally results in disappointment when he informs them that the last thing he cooked was burnt popcorn over a month ago.
+Abby is a current senior at the Johnny Carson Center for Emerging Media Arts at the University of Nebraska-Lincoln. She is passionate about aesthetics, functional design, and playing with color. They have a passion for fashion and media and hope to help bring inclusivity and environmental consciousness to future technology through their art. She has a cat named Pangur Ban and enjoys thrifting and styling outfits.
