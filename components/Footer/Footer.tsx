@@ -42,7 +42,11 @@ export const Footer: NextPage = () => {
                 <ul className='mt-3 text-center md:text-left'>
                   <li>
                     {' '}
-                    <a className='text-cream text-xl' href='#'>
+                    <a
+                      className='text-cream text-xl'
+                      target='_blank'
+                      href='https://g.page/pixelbakery?share'
+                    >
                       2124 y st ste 208
                       <br />
                       lincoln, ne 68503

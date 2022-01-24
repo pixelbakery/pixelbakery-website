@@ -45,9 +45,11 @@ function SolaTinyChef_Header({ ...props }) {
           />
         </div>
         <h2 className='mt-0 pt-0 mx-auto text-4xl max-w-sm text-center'>{props.projectSubhead}</h2>
-        <p className='mx-auto py-4  mb-4 text-wine text-md max-w-sm text-opacity-75'>
-          {props.projectIntroduction}
-        </p>
+
+        <p
+          className='mx-auto py-4  mb-4 text-wine text-md max-w-md text-opacity-75'
+          dangerouslySetInnerHTML={{ __html: props.projectIntroduction }}
+        ></p>
       </div>
     </section>
   )

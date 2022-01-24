@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Pill from '../parts/Pill'
 
 import cn from 'classnames'
-
+type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card(props) {
   const [isHovered, setHover] = useState(false)
   const projID = `${props.client.replace(/[^A-Za-z]+/g, '')}-${props.name.replace(
@@ -50,7 +50,7 @@ function Work_Portfolio_Card(props) {
   }, [isHovered])
 
   const shimmer = (w, h) => `
-    <svg width="${w}+30" height="${h}+30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="g"><stop stop-color="rgb(56, 204, 255)" offset="0%" /><stop stop-color="rgba(0, 81, 116, 0.25)" offset="50%" /><stop stop-color="rgb(56, 204, 255)" offset="100%" /></linearGradient></defs><rect width="${w}" height="${h}" fill="rgb(56, 204, 255)" /><rect id="r" width="${w}" height="${h}" fill="url(#g)" /><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
+    <svg width="${w}+30" height="${h}+30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="g"><stop stop-color="rgba(56, 204, 255, 0.25)" offset="0%" /><stop stop-color="rgba(0, 81, 116, 0.25)" offset="50%" /><stop stop-color="rgba(56, 204, 255,0.25)" offset="100%" /></linearGradient></defs><rect width="${w}" height="${h}" fill="rgbq(56, 204, 255,0.25)" /><rect id="r" width="${w}" height="${h}" fill="url(#g)" /><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
 
   const toBase64 = (str) =>
     typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)
@@ -85,11 +85,12 @@ function Work_Portfolio_Card(props) {
           <video
             muted
             playsInline
+            preload='true'
             loop
             autoPlay={false}
             poster={props.previewImg}
-            onMouseOver={(event) => event.target.play()}
-            onMouseOut={(event) => event.target.pause()}
+            onMouseOver={(event) => (event.target as MediaType).play()}
+            onMouseOut={(event) => (event.target as MediaType).pause()}
             className='object-cover w-full h-full'
           >
             <source src={props.hoverVideo} type='video/mp4' />
