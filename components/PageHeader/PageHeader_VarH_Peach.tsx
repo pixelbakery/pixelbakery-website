@@ -37,7 +37,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
   }
 
   return (
-    <section
+    <div
       className={classNames('relative overflow-hidden lander-variableHeight my-4', [
         `bg-${accentColor1}`,
       ])}
@@ -67,7 +67,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 export default PageHeader_VariableHeight

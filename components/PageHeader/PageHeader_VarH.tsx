@@ -40,9 +40,9 @@ function PageHeader_VarH({ header, subheader }) {
   const ThisPattern = patterns[randomNumber]
 
   return (
-    <div>
+    <section>
       <ThisPattern header={header} subheader={subheader} />
-    </div>
+    </section>
   )
 }
 export default PageHeader_VarH
