@@ -29,4 +29,28 @@ export default [
   {
     text: '🖖 live long and prosper',
   },
+  {
+    text: 'never stop trying',
+  },
+  {
+    text: "don't let them stop you",
+  },
+  {
+    text: 'just be yourself',
+  },
+  {
+    text: "if it's not a hell yes - it's a no",
+  },
+  {
+    text: 'nobody has it all figured out',
+  },
+  {
+    text: 'the world needs you',
+  },
+  {
+    text: 'give yourself a break',
+  },
+  {
+    text: "don't give up on your dreams",
+  },
 ]
