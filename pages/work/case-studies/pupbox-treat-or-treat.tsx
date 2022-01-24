@@ -45,7 +45,7 @@ function caseStudy_Backcountry_GearheadMagic() {
       />
       <CaseStudies_Tags tags={tags} />
       <CaseStudies_Credits credits={credits} />
-      <CaseStudies_PrevNext title={title} />
+      {/* <CaseStudies_PrevNext title={title} /> */}
       <CaseStudies_OtherProjects client={client} title={title} />
       <CaseStudies_BecomeAClient />
     </Main>

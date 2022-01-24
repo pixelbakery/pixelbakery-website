@@ -2,47 +2,23 @@ import React from 'react'
 
 import Work_Services from '../../components/Work/Work_Services'
 import Work_Portfolio from '../../components/Work/Work_Portfolio'
-import Work_Client from '../../components/Work/Work_Client'
+import Work_Clients from '../../components/Work/Work_Clients'
 import Work_Awards from '../../components/Work/Work_Awards'
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-// import Work_TestPortfolio from '../../components/Work/Work_TestPortfolio'
-import Link from 'next/link'
-// import { getAllProjects } from '../../lib/api_project'
-import Project from '../../types/project'
+
 import Main from '../../components/Main'
 
-// import Work_Portfolio from "../components/work-portfolio";
-// import Work_Filter from "../components/work-portfolio-filter";
-type Props = {
-  allProjects: Project[]
-}
 const Work = () => {
   // console.log(allProjects)
 
   return (
-    <Main>
-      <PageHeader_VariableHeight header='What We Make' subheader='copy copy copy ' />
+    <Main className='max-w-screen overflow-hidden'>
+      <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />
 
-      {/* <Work_Services /> */}
-      {/* <Work_TestPortfolio allProjects={allProjects} /> */}
+      <Work_Services />
       <Work_Portfolio />
-      {/* <div>
-          <ul>
-            {allProjects.map((post) => {
-              const { row, path } = post
-              return (
-                <Link key={path} href={path}>
-                  <a>
-                    <h3>
-                      {post.path} {row}
-                    </h3>
-                  </a>
-                </Link>
-              )
-            })    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))}
-          </ul>
-        </div> */}
-      <Work_Client />
+
+      <Work_Clients />
       <Work_Awards />
     </Main>
   )

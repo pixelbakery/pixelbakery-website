@@ -29,7 +29,7 @@ export default [
   {
     title: 'Gearhead Magic',
     client: 'Backcountry',
-    date: '2021-09',
+    date: '2021-10',
     previewImg: '/img/work/backcountry-gearhead-magic-preview.jpg',
     hoverVideo: '/img/work/backcountry-gearhead-magic-preview.mp4',
     slug: 'backcountry-gearhead-magic',
@@ -47,9 +47,9 @@ export default [
   {
     title: 'Creative Retainer',
     client: 'SNACKLINS',
-    date: '',
-    previewImg: '/img/work/',
-    hoverVideo: '/img/work/',
+    date: '2021-11',
+    previewImg: '/img/work/snacklins-retainer-preview.jpg',
+    hoverVideo: '/img/work/snacklins-retainer-preview.mp4',
     slug: 'snacklins-creative-retainer',
     tags: ['animation', 'creative concepting', 'art direction'],
   },

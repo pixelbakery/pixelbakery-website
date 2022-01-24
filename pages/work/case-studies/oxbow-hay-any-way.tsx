@@ -10,11 +10,11 @@ import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Cre
 import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
 
 // project info
-const title = 'Hay Any Way'
+const title = 'Hay, Any Way'
 const tags = [{ name: 'Creative Concepting', url: '/' }]
 
 //client info
-const client = 'Oxbow'
+const client = 'Oxbow Animal Health'
 const clientLogo = '/img/client-logos/Black-Sola-Logo.png'
 const clientURL = 'https://oxbowanimalhealth.com'
 

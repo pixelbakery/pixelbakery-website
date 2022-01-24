@@ -10,7 +10,7 @@ import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Cre
 import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
 
 // project info
-const title = 'Solutions For Change'
+const title = 'Solutions for Change'
 const tags = [{ name: 'Creative Concepting', url: '/' }]
 
 //client info
