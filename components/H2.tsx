@@ -12,7 +12,7 @@ const H2 = ({ color, children, className }: PropsWithChildren<Props>) => {
   return (
     <h2
       className={cn(
-        ' font-bold max-w-md mt-0 text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none mb-12 2xl:mb-20 ',
+        ' font-bold max-w-md mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none mb-12 2xl:mb-20 ',
         [`text-${color}`],
         className,
       )}
