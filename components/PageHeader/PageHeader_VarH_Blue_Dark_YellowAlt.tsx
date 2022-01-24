@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import Pattern from '../../data/Patterns_Blue_Dark.json'
 
 import PropTypes from 'prop-types'
+import H1 from '../H1'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -31,7 +32,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       <Lottie
         animationData={pattern}
         loop
-        segments={playFrames}
+        segments={playFrames as any}
         play
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
         style={{ height: '100%' }}
@@ -57,13 +58,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
           )}
         >
           <div className='w-fit px-6'>
-            <h1
-              className={classNames('leading-none mb-0 pb-0 text-6xl lg:text-7xl', [
-                `text-${accentColor}`,
-              ])}
-            >
-              {header}
-            </h1>
+            <H1 color={accentColor}>{header}</H1>
             <div className={classNames('my-2 text-2xl font-bold', [`text-${subheaderColor}`])}>
               {subheader}
             </div>

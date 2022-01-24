@@ -2,11 +2,11 @@ import React from 'react'
 import Lottie from 'react-lottie-player'
 
 import classNames from 'classnames'
-
-const Lottie_Blue_Dark = dynamic(() => import('./Lottie_Blue_Dark'), { ssr: true })
+import Pattern from '../../data/Patterns_Blue.json'
 
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
+import H1 from '../H1'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -16,37 +16,49 @@ PageHeader_VariableHeight.propTypes = {
 
 // Local Variables
 
-const primaryColor1 = 'blue'
-const accentColor1 = 'blue-dark'
-const subheaderColor1 = 'cream'
+const primaryColor = 'blue'
+const accentColor = 'blue-dark'
+const subheaderColor = 'cream'
 
 function PageHeader_VariableHeight({ header, subheader }) {
+  const playFrames = [
+    [0, 23],
+    [24, 95],
+  ]
+  const thisPatern = Pattern
+
+  function Pattern({ thisPatern }) {
+    return (
+      <Lottie
+        animationData={thisPatern}
+        loop
+        segments={playFrames as any}
+        play
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+        style={{ height: '100%' }}
+      />
+    )
+  }
   return (
     <div
       className={classNames('relative overflow-hidden lander-variableHeight my-4', [
-        `bg-${accentColor1}`,
+        `bg-${accentColor}`,
       ])}
       id='topOfPage'
     >
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <Lottie_Blue_Dark />
+        <Pattern thisPatern={thisPatern} />
       </div>
       <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
         <div
           className={classNames(
             'my-20 max-w-xs  sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center ',
-            [`bg-${primaryColor1}`],
+            [`bg-${primaryColor}`],
           )}
         >
           <div className='w-fit px-6'>
-            <h1
-              className={classNames('leading-none mb-0 pb-0 text-6xl lg:text-7xl', [
-                `text-${accentColor1}`,
-              ])}
-            >
-              {header}
-            </h1>
-            <div className={classNames('my-2 text-2xl font-bold', [`text-${subheaderColor1}`])}>
+            <H1 color={accentColor}>{header}</H1>
+            <div className={classNames('my-2 text-2xl font-bold', [`text-${subheaderColor}`])}>
               {subheader}
             </div>
           </div>

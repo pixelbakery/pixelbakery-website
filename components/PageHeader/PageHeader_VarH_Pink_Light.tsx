@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import Pattern from '../../data/Patterns_Pink_Light.json'
 
 import PropTypes from 'prop-types'
+import H1 from '../H1'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -15,9 +16,9 @@ PageHeader_VariableHeight.propTypes = {
 
 // Local Variables
 
-const primaryColor3 = 'pink-light'
-const accentColor3 = 'pink'
-const subheaderColor3 = 'blue-dark '
+const primaryColor = 'pink-light'
+const accentColor = 'pink'
+const subheaderColor = 'blue-dark '
 
 const pattern3 = Pattern
 const playFrames = [
@@ -31,7 +32,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       <Lottie
         animationData={pattern3}
         loop
-        segments={playFrames}
+        segments={playFrames as any}
         play
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
         style={{ height: '100%' }}
@@ -42,7 +43,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
   return (
     <div
       className={classNames('relative overflow-hidden lander-variableHeight my-4', [
-        `bg-${accentColor3}`,
+        `bg-${accentColor}`,
       ])}
       id='topOfPage'
     >
@@ -53,18 +54,13 @@ function PageHeader_VariableHeight({ header, subheader }) {
         <div
           className={classNames(
             'my-20 max-w-xs  sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center ',
-            [`bg-${primaryColor3}`],
+            [`bg-${primaryColor}`],
           )}
         >
           <div className='w-fit px-6'>
-            <h1
-              className={classNames('leading-none mb-0 pb-0 text-6xl lg:text-7xl', [
-                `text-${accentColor3}`,
-              ])}
-            >
-              {header}
-            </h1>
-            <div className={classNames('my-2 text-2xl font-bold', [`text-${subheaderColor3}`])}>
+            <H1 color={accentColor}>{header}</H1>
+
+            <div className={classNames('my-2 text-2xl font-bold', [`text-${subheaderColor}`])}>
               {subheader}
             </div>
           </div>
