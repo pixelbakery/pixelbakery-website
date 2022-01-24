@@ -47,4 +47,13 @@ export default [
   {
     text: "don't give up on your dreams",
   },
+  {
+    text: 'you got this',
+  },
+  {
+    text: 'everyone should have a friend like you',
+  },
+  {
+    text: "You're stronger than you think",
+  },
 ]
