@@ -2,30 +2,30 @@
 export default [
   {
     text: 'Work',
-    url: '/store',
+    url: '/work',
   },
   {
     text: 'About',
-    url: '/store',
+    url: '/about',
   },
   {
     text: 'Services',
-    url: '/store',
+    url: '/work#services',
   },
   {
     text: 'Education',
-    url: '/store',
+    url: '/education',
   },
   {
     text: 'Contact Us',
-    url: '/store',
+    url: '/contact',
   },
   {
-    text: 'Company Store',
+    text: 'Company Shop',
     url: '/store',
   },
   {
     text: "Mom's Recipes",
-    url: '/store',
+    url: '/recipes',
   },
 ]
