@@ -3,37 +3,36 @@
 #anything that should be left blank enter: ''
 name: Lizzie Moore
 active: true
-title: titleGoesHere
+title: multimedia designer
 #only enter a phone number if they're client facing
-phone: 402-xxx-xxxx
-email: maddie@pixelbakery.com
+phone: 402-413-8366
+email: lizzie@pixelbakery.com
 details:
-  almaMater: string
-  pronoun: string
-  favoriteThing: string
-  leastFavoritestring: string
-  favoriteMovie: string
-  hatedBird: string
-  hobby: string
-  joinedPB: string
-  favoriteBook: string
-  personalAesthetic: string
+  almaMater: university of nebraska-lincoln
+  pronoun: she/her
+  favoriteThing: literally any form of potato
+  leastFavoritestring: people smacking their food
+  favoriteMovie: waves
+  hatedBird: crows probably? idek
+  hobby: cooking, watching food network, making spotify playlists, skincare/makeup
+  joinedPB: november 2021
+  # favoriteBook: string
+  personalAesthetic: kardashian wannabe
   signs:
-    sun: string
-    rising: string
-    moon: string
+    sun: aries
+    rising: leo
+    moon: aquarius
 socials:
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  instagram: https://www.instagram.com/lizziemoore_/ 
+  linkedIn: www.linkedin.com/in/lizzie-moore
+  # facebook: Url
+  # spotify: Url
+  # twitter: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
   headshotSerious: /img/team/lizzie_serious.png
   headshotSmiling: /img/team/lizzie_smiling.png
   headshotFun: /img/team/lizzie_silly.png
 ---
-
-Maddie iss co00oolll
+Lizzie is a senior at UNL studying Broadcast Journalism and minoring in entrepreneurship. She loves hosting a good dinner party with 〰fun〰 cocktails, always. Traveling is her passion. She spent two weeks in Greece and Italy and dreams of going back to Capri. She is the type of person that adds a ridiculous amount of items to their online shopping cart just for it to sit there, will ask to pet your dog when passing on the sidewalk, and checks if the pasta is done by throwing it at a wall.
