@@ -1,13 +1,16 @@
 import React from 'react'
 import Main from '../../../components/Main'
-
-// case study components
 import CaseStudies_Header from '../../../components/CaseStudies/CaseStudies_Header'
 import CaseStudies_Tags from '../../../components/CaseStudies/CaseStudies_Tags'
 import CaseStudies_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
 import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
 import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Fill out the details of the case study below and the page will be automatically (mostly) populated.
+// See the README for a more in-debth explanation
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // project info
 const title = 'Gearhead Magic'

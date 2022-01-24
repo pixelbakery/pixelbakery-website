@@ -30,4 +30,19 @@ export default [
     logo: '/img/clients/pixelbakery_client_pupbox.png',
     url: 'https://pupbox.com',
   },
+  {
+    client: 'SOLA',
+    logo: '/img/clients/pixelbakery_client_sola.png',
+    url: 'https://sola.com',
+  },
+  {
+    client: 'YouTube',
+    logo: '/img/clients/pixelbakery_client_youtube.png',
+    url: 'https://youtube.com',
+  },
+  {
+    client: 'SoulPancake',
+    logo: '/img/clients/pixelbakery_client_soulpancake.png',
+    url: 'https://soulpancake.com',
+  },
 ]

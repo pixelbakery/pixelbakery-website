@@ -8,14 +8,18 @@ type Props = {
 export default function Work_Services_Card({ service, url }: Props) {
   return (
     <Link href={url} passHref>
-      <article className=' m-2 w-full hover:opacity-90 hover:scale-95 cursor-pointer'>
-        <div className='items-stretch bg-pink-light overflow-hidden rounded-lg flex-grow flex flex-row md:flex-col md:justify-between px-8 py-2 h-32  '>
-          <h2 className='my-auto md:mt-2 md:mb-4 font-bold text-xl leading-none lg:text-2xl font-Heading text-pink'>
-            {service}
-          </h2>
-          <i className='w-full my-auto md:my-4'>
-            <ChevronRightIcon className=' h-12 w-12 text-pink ml-auto' />
-          </i>
+      <article className='bg-pink-light overflow-hidden rounded-lg  w-full hover:opacity-90 hover:scale-98 cursor-pointer px-8 py-2  h-24 sm:h-28 lg:h-32  '>
+        <div className='  flex flex-row  justify-between gap-4 h-full'>
+          <div className='self-center'>
+            <h3 className=' my-1 md:my-3 font-semibold lg:font-bold text-xl leading-none lg:text-2xl font-Heading text-pink'>
+              {service}
+            </h3>
+          </div>
+          <div className='self-center -mb-1'>
+            <i className=' '>
+              <ChevronRightIcon className=' h-10 w-10 lg:h-12 lg:w-12 text-pink ml-auto' />
+            </i>
+          </div>
         </div>
       </article>
     </Link>
