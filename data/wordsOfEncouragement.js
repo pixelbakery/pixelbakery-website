@@ -18,9 +18,6 @@ export default [
     text: 'you look great today - take a selfie.',
   },
   {
-    text: "it's good to have you with us, even if it's just for the day",
-  },
-  {
     text: "i can't imagine doing this without you.",
   },
   {
@@ -36,19 +33,16 @@ export default [
     text: "don't let them stop you",
   },
   {
-    text: 'just be yourself',
-  },
-  {
-    text: "if it's not a hell yes - it's a no",
+    text: "you're doing the best you can",
   },
   {
     text: 'nobody has it all figured out',
   },
   {
-    text: 'the world needs you',
+    text: 'the world needs more people like you',
   },
   {
-    text: 'give yourself a break',
+    text: 'be kind to yourself',
   },
   {
     text: "don't give up on your dreams",
