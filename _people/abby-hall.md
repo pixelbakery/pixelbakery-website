@@ -2,7 +2,7 @@
 #bios found here: https://docs.google.com/document/d/13UuePbGLRF4G5b5JoEe2Vua3NukZ1-QwRW4Oisnd8lI/edit#
 name: Abby Hall
 active: true
-title: Multimedia Designer
+title: multimedia designer
 phone: 402-413-8366
 email: abby@pixelbakery.com
 details:
