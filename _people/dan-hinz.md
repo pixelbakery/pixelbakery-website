@@ -3,33 +3,33 @@
 #anything that should be left blank enter: ''
 name: Dan Hinz
 active: true
-title: titleGoesHere
+title: motion lead
 #only enter a phone number if they're client facing
-phone: 402-xxx-xxxx
-email: maddie@pixelbakery.com
+phone: 402-413-8366
+email: daniel@pixelbakery.com
 details:
-  almaMater: string
-  pronoun: string
-  favoriteThing: string
-  leastFavoritestring: string
-  favoriteMovie: string
-  hatedBird: string
-  hobby: string
-  joinedPB: string
-  favoriteBook: string
-  personalAesthetic: string
+  almaMater: university of nebraska-lincoln
+  pronoun: he/him
+  favoriteThing: gummies
+  leastFavoritestring: team building activities
+  favoriteMovie: monster house
+  hatedBird: geese
+  hobby: roller skating
+  joinedPB: october 2020
+  # favoriteBook: string
+  personalAesthetic: time traveler trying to blend in with modern times
   signs:
-    sun: string
-    rising: string
-    moon: string
+    sun: taurus
+    # rising: string
+    # moon: string
 socials:
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  # instagram: Url
+  # linkedIn: Url
+  # facebook: Url
+  # spotify: Url
+  # twitter: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
   headshotSerious: /img/team/dan_serious.png
   headshotSmiling: /img/team/dan_smiling.png
