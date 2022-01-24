@@ -5,11 +5,12 @@ import InnerWrapper from '../InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '../Images/UI_Icons'
 function CaseStudies_PrevNext({ title }) {
+  console.log(title)
   const titleCheck = title.toLowerCase()
   const index = allProjects.findIndex(
     (project) => project.title.toLowerCase() === title.toLowerCase(),
   )
-
+  console.log(index)
   const getPrev = (i) => {
     if (i === 0) {
       return allProjects.at(-1)

@@ -1,5 +1,8 @@
 import React from 'react'
-
+import InnerWrapper from '../InnerWrapper'
+import PageSection from '../PageSection'
+import awards from '../../data/awards'
+import H2 from '../H2'
 function Work_Awards() {
   // useEffect(() => {
   //   const awards = gsap.timeline()
@@ -21,66 +24,39 @@ function Work_Awards() {
   // }, [])
 
   return (
-    <section className=' mb-4 px-4  mx-auto py-8 max-h-screen bg-blue' id='awards'>
-      <div className='container grid grid-cols-1 md:grid-cols-3 mx-auto py-4 max-w-7xl'>
-        <div className='col-span-1'>
-          <h2 className='text-blue-dark'>awards and recognition</h2>
-          <h4 className=' text-2xl text-cream font-extrabold'>swoosh.</h4>
-        </div>
-        <div className='col-span-2 flex flex-col justify-between mx-auto w-full gap-12'>
-          <div className='mx-4 px-4'>
-            <div>
-              <ul
-                className='text-cream font-body font-extrabold text-xl relative awardsList'
-                id='awardsList1'
-              >
-                <li className='my-2 relative award'>
-                  <a href=''>SoulPancake / Price of Free Animation / Silver AIGA Show</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>KANEKO / Reality Animation / Gold ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''> Lincoln Calling / Space Traffic Original Song / Silver ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>New Company Entrepreneur Award</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>KANEKO / Light / Gold AIGA Show</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>Prosper Lincoln Step Up Award 2018 Recipient</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>Red Roots Yoga / Illustration / Gold ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>Pixel Bakery / Web Design / Gold ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>Yoni Gill Photography / Branded Elements / Gold AIGA Show</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>Red Roots Yoga / Web Design / Silver ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>
-                    American Advertising Federation / Music & Sound Design / Silver ADDY
-                  </a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>HopCat / Animation / Silver ADDY</a>
-                </li>
-                <li className='my-2 award'>
-                  <a href=''>HopCat / Music & Sound Design / Silver ADDY</a>
-                </li>
-              </ul>
-            </div>
+    <PageSection color={'blue'} id='awards'>
+      <InnerWrapper>
+        <div className=' grid grid-cols-1 xl:grid-cols-3 gap-12 xl:gap-32'>
+          <div className='col-span-1'>
+            <H2 className='text-blue-dark'>
+              awards and recognition<span className='hidden lg:inline'>*</span>
+            </H2>
+            <div className='-mt-8 text-2xl text-cream font-extrabold'>swoosh.</div>
+            <p className='hidden lg:block max-w-lg mt-6 text-xs text-cream font-medium'>
+              *awards are stupid and meaningless, but idk, i guess everything is. might as well
+              smoke &apos;em if you &apos;em, right?
+            </p>
+          </div>
+          <div className='col-span-2  flex flex-col justify-between mx-auto w-full gap-12'>
+            <ul
+              className='w-fit self-end text-cream font-body font-bold  md:text-lg relative awardsList'
+              id='awardsList1'
+            >
+              {awards.map((award) => {
+                return (
+                  <li key={award.project} className='my-4 '>
+                    {award.award != '' ? `${award.award} ` : ''}
+                    {award.category != '' ? `/ ${award.category} ` : ''}
+                    {award.project != '' ? `/ ${award.project} ` : ''}
+                    {award.client != '' ? `/ ${award.client} ` : ''}
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 

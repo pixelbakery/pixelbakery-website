@@ -17,19 +17,20 @@ function CaseStudies_Tags({ tags }) {
         <h3 className='text-center text-2xl text-pink mb-3'>here&apos;s what we did</h3>
         <div className='flex flex-row justify-center gap-3 flex-wrap'>
           {tags.map((tag) => {
-            return (
-              <Link href={tag.url} passHref key={tag.name}>
-                <a className='cursor-pointer transition-all duration-500 ease-in-out hover:scale-105'>
-                  {' '}
-                  <Pill
-                    text={tag.name}
-                    bgColor={'blue-light'}
-                    textColor={'blue-dark'}
-                    size={'md'}
-                  />
-                </a>
-              </Link>
-            )
+            if (tag.enabled)
+              return (
+                <Link href={tag.url} passHref key={tag.name}>
+                  <a className='cursor-pointer transition-all duration-500 ease-in-out hover:scale-105'>
+                    <Pill
+                      text={tag.name}
+                      bgColor={'blue-light'}
+                      textColor={'blue-dark'}
+                      size={'md'}
+                    />
+                  </a>
+                </Link>
+              )
+            else return null
           })}
         </div>
       </div>
