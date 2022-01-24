@@ -17,7 +17,7 @@ const Meta = () => {
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       <meta
         name='description'
-        content={`A statically generated blog example using Next.js and .`}
+        content={`Pixel Bakery Design Studio is a multidisciplinary production studio in Lincoln, Nebraska and NW Arkansas.`}
       />
       <meta property='og:image' content='/img/pixel-bakery-samee-dan.webp' />
     </Head>
