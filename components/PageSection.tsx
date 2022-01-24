@@ -1,24 +1,21 @@
 import React from 'react'
-import cs from 'classnames'
+import cn from 'classnames'
 type Props = {
   className?: string
   innerClassName?: string
   innerMaxWidth?: string
+  color?: string
   id?: string
 }
 export default function PageSection({
   className,
-  innerClassName,
-  innerMaxWidth,
   children,
+  color,
   id,
-  ...rest
 }: React.PropsWithChildren<Props>) {
   return (
-    <section className={cs('my-4 py-8 px-8 lg:py-32', className)} id={id}>
-      <div className={'mx-auto ' + innerMaxWidth}>
-        <div className={cs('lg:px-12 py-8 ', innerClassName)}>{children}</div>
-      </div>
+    <section className={cn('my-4 py-8 px-8 lg:py-32', `bg-${color}`, `${className}`)} id={id}>
+      {children}
     </section>
   )
 }
