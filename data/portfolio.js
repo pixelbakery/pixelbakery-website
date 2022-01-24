@@ -21,10 +21,12 @@ export default [
     title: 'Tiny Chef Magic',
     client: 'SOLA',
     date: '2021-08',
-    previewImg: '/img/work/sola-tiny-chef-magic-preview.jpg    ',
+    previewImg: '/img/work/sola-tiny-chef-magic-preview.jpg',
     hoverVideo: '/img/work/sola-tiny-chef-magic-preview.mp4',
     slug: 'sola-tiny-chef',
     tags: ['animation', 'creative concepting', 'art direction'],
+    description:
+      'Proactively redefine state of the art information rather than bricks-and-clicks technology.',
   },
   {
     title: 'Gearhead Magic',
@@ -34,6 +36,8 @@ export default [
     hoverVideo: '/img/work/backcountry-gearhead-magic-preview.mp4',
     slug: 'backcountry-gearhead-magic',
     tags: ['animation', 'creative concepting', 'art direction'],
+    description:
+      'Proactively redefine state of the art information rather than bricks-and-clicks technology.',
   },
   {
     title: 'Hay, Any Way',
@@ -43,6 +47,8 @@ export default [
     hoverVideo: '/img/work/oxbow-hay-any-way-preview.mp4',
     slug: 'oxbow-hay-any-way',
     tags: ['animation', 'creative concepting', 'art direction'],
+    description:
+      'Proactively redefine state of the art information rather than bricks-and-clicks technology.',
   },
   {
     title: 'Creative Retainer',
@@ -52,6 +58,8 @@ export default [
     hoverVideo: '/img/work/snacklins-retainer-preview.mp4',
     slug: 'snacklins-creative-retainer',
     tags: ['animation', 'creative concepting', 'art direction'],
+    description:
+      'Proactively redefine state of the art information rather than bricks-and-clicks technology.',
   },
 
   {
@@ -62,6 +70,8 @@ export default [
     hoverVideo: '/img/work/sunday-scaries-make-monday-less-scary-preview.mp4',
     slug: 'sunday-scaries-make-monday-less-scary',
     tags: ['animation', 'creative concepting', 'art direction'],
+    description:
+      'Proactively redefine state of the art information rather than bricks-and-clicks technology.',
   },
   {
     title: 'Hay, The Oxbow Way',
