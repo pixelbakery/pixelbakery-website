@@ -25,11 +25,11 @@ details:
 socials:
   instagram: https://www.instagram.com/maddielhahn/ 
   linkedIn: https://www.linkedin.com/in/madisyn-hahn-788257140 
-  # facebook: URL
-  # spotify: URL
-  # twitter: URL
-  # personalWebsite: URL
-  # etsy: URL
+  # facebook: Url
+  # spotify: Url
+  # twitter: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
   headshotSerious: /img/team/maddie_serious.png
   headshotSmiling: /img/team/maddie_smiling.png
