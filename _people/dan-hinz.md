@@ -20,8 +20,8 @@ details:
   personalAesthetic: time traveler trying to blend in with modern times
   signs:
     sun: taurus
-    # rising: 
-    # moon: 
+    rising: leo
+    moon: cancer
 socials:
   # instagram: 
   # linkedIn: 
