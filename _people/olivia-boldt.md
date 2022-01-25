@@ -4,37 +4,36 @@
 #anything that should be left blank enter: ''
 name: Olivia Boldt
 active: true
-title: titleGoesHere
+title: project manager
 #only enter a phone number if they're client facing
-phone: 402-xxx-xxxx
-email: maddie@pixelbakery.com
+phone: 402-413-8366
+email: olivia@pixelbakery.com
 details:
-  almaMater: string
-  pronoun: string
-  favoriteThing: string
-  leastFavoritestring: string
-  favoriteMovie: string
-  hatedBird: string
-  hobby: string
-  joinedPB: string
-  favoriteBook: string
-  personalAesthetic: string
+  almaMater: university of nebraska-lincoln
+  pronoun: she/her
+  favoriteThing: music
+  leastFavoritestring: wind (!)
+  favoriteMovie: spirited away
+  hatedBird: fucking pigeons
+  hobby: sleeping
+  joinedPB: july 2021
+  # favoriteBook: string
+  personalAesthetic: alpenglow
   signs:
-    sun: string
-    rising: string
-    moon: string
+    sun: aries
+    rising: scorpio
+    moon: pisces
 socials:
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  instagram: https://www.instagram.com/oliviaboldt/
+  linkedIn: https://www.linkedin.com/in/olivia-boldt-459a44200/
+  # facebook: Url
+  # spotify: Url
+  twitter: https://twitter.com/oliviaboldt
+  # personalWebsite: Url
+  # etsy: Url
 photos:
   headshotSerious: /img/team/olivia_serious.png
   headshotSmiling: /img/team/olivia_smiling.png
   headshotFun: /img/team/olivia_silly.png
 ---
-
-Maddie iss co00oolll
+Olivia graduated from the University of Nebraska-Lincoln in May 2021 with a double major in psychology and music. She began her journey at Pixel Bakery in July 2021 while beginning an online class in UX Design through CareerFoundry. With experience in various artistic fields and roles, Olivia hopes to use her leadership, teaching, design, and music experiences to produce work that is genuine and deliberate. In her personal time, Olivia loves lifting weights, drumming, reading, and listening to music.
