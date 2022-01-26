@@ -20,14 +20,19 @@ const clientURL = 'https://backcountry.com'
 
 // Project Header
 const heroVideo = '372482666'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'Illustrating and animating a cute bumblebee mascot'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "Simple and shape-based illustrations promote First Honey's all-natural healing products."
+const projectExcerpt = 'Illustrating and animating a cute bumblebee mascot.'
+const projectIntroduction = 
+'Based in Tennessee, First Honey is a bandage company that uses manuka honey to provide a unique, all-natural healing experience—manuka honey is native to New Zealand and produced by bees that pollinate the manuka bush. First Honey came to us looking for an engaging way to captivate their audience and encourage them to give their manuka honey-infused bandages and ointments a try. We created two playful, family-oriented animations to help show the power of First Honey’s fast, all-natural healing.'
 
 // credits
 const credits = [
   { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Karley Johnson', title: 'Art Director' },
+  { name: 'Madeline Christensen', title: 'Animator'},
+  { name: 'Hannah Klemme', title: 'Lead Illustrator'},
+  { name: 'Tyler Loebig', title: 'Illustrator'},
+  { name: 'Josie Sittig', title: 'Account Executive'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
