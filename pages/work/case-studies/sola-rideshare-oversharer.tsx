@@ -20,14 +20,22 @@ const clientURL = 'https://sola.com'
 
 // Project Header
 const heroVideo = '392586701'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "Using dry-humor to create something much different for a new demographic that's choosing healthier options."
+const projectExcerpt = 'An awkward Uber ride leads to an average guy trying to get home to find peace in a sandwhich made with keto-friendly, carb-concious SOLA bread.'
+const projectIntroduction = 'The SOLA company came to us to create a 60-second commercial that would promote their low-carb, keto-friendly bread. They needed something that would appeal to their millennial demographic: hopefully combining dry humor with a relatable scenario to today’s young adult.'
 
 // credits
 const credits = [
-  { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Kabin Thomas', title: 'Driver'},
+  { name: 'Nathan Dunham', title: 'Passenger'},
+  { name: 'Karley Johnson', title: 'Editor' },
+  { name: 'Michael Hennings', title: 'Cinematographer'},
+  { name: 'Madeline Christensen', title: 'Scriptwriter'},
+  { name: 'Jordan Lambrecht', title: 'Animator'},
+  { name: 'Aaron Smith', title: 'Gaffer'},
+  { name: 'Katie Jenkins', title: 'Makeup Artist'},
+  { name: 'Hannah Klemme', title: 'Production Assistant'},
+  { name: 'Shanda Shappell', title: 'Production Assistant'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
