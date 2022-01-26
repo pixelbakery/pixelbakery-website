@@ -20,14 +20,17 @@ const clientURL = 'https://backcountry.com'
 
 // Project Header
 const heroVideo = '426332870'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "through a variety of engaging colors and shapes Karma Nuts' Wrapped cashews resulted in captivating animations"
+const projectExcerpt = "An on-brand animation of Karma Nuts' Wrapped cashews highlighting all of its health benefits."
+const projectIntroduction = 'Karma Nuts is the alternative to the oil-fried cashews that we normally seen on supermarket shelves. These cashews are Wrapped®, giving them an irresistible crunch. We came in to spread the word about this tasty snack by creating a brand video that highlights all its awesome benefits. The goal was to create a cool and colorful 30-second, e-commerce animation that Karma Nuts could place to quickly tell the story of their products. Using the mandala-shaped logo as inspiration, we wanted to play with all the different flavors of nuts intertwining while giving it a bohemian flare.'
 
 // credits
 const credits = [
   { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Karley Johnson', title: 'Art Director' },
+  { name: 'Madeline Christensen', title: 'Lead Animator'},
+  { name: 'Tyler Loebig', title: 'Animator'},
+  { name: 'Kaitlyn Pfannenstiel', title: 'Account Executive'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
