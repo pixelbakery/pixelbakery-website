@@ -20,14 +20,17 @@ const clientURL = 'https://doane.edu'
 
 // Project Header
 const heroVideo = '362560267'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "The history of Doane planted a seed that has grown into a new mission."
+const projectExcerpt = 'How that college on a hill grew into a University that is Doane.'
+const projectIntroduction = 'To introduce their new school mission, vision, and values, Doane University came to us wanting a video that showed their past, present, and future. They needed a way to captivate current and potential students and steer them toward their new vision.'
 
 // credits
 const credits = [
   { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Karley Johnson', title: 'Art Director'},
+  { name: 'Tyler Loebig', title: 'Animation Lead'},
+  { name: 'Josie Sittig', title: 'Account Manager'},
+  { name: 'Yoni Gill', title: 'Account Manager'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
