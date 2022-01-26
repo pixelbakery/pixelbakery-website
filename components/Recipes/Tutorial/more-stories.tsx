@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from '../../../types/post'
+import H2 from '../../H2'
 import Recipes_SmallPost from './Recipes_SmallPost'
 
 type Props = {
@@ -9,9 +10,7 @@ type Props = {
 const MoreStories = ({ posts }: Props) => {
   return (
     <section>
-      <h2 className='mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight'>
-        More Stories
-      </h2>
+      <H2>More Stories</H2>
       <div className='w-full grid grid-cols-1 '>
         {posts.map((post) => (
           <Recipes_SmallPost

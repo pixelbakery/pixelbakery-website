@@ -21,7 +21,7 @@ const clientURL = 'https://backcountry.com'
 // Project Header
 const heroVideo = '372482666'
 const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
+const projectExcerpt = 'Illustrating and animating a cute bumblebee mascot'
 const projectIntroduction = 'copy copy copy'
 
 // credits

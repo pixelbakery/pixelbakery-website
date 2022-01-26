@@ -21,7 +21,7 @@ function About({ allPeople }: Props) {
       <About_Team people={allPeople} />
       <About_Values />
       <About_StudioViews />
-      {/* <About_Twitch /> */}
+      <About_Twitch />
       <About_Faq />
     </main>
   )
