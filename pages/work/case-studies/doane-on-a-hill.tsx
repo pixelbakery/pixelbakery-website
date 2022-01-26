@@ -29,8 +29,8 @@ const credits = [
   { name: 'Jordan Lambrecht', title: 'Director' },
   { name: 'Karley Johnson', title: 'Art Director'},
   { name: 'Tyler Loebig', title: 'Animation Lead'},
-  { name: 'Josie Sittig', title: 'Account Manager'},
-  { name: 'Yoni Gill', title: 'Account Manager'},
+  { name: 'Josie Sittig', title: 'Project Manager'},
+  { name: 'Yoni Gill', title: 'Project Manager'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
