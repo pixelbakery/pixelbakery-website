@@ -11,7 +11,6 @@ import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudi
 import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
 import Vimeo from '@u-wave/react-vimeo'
-import PageSection from '../../../components/PageSection'
 
 // project info
 const title = 'Social Promos'

@@ -1,6 +1,6 @@
 import React from 'react'
-// import ReactPlayer from 'react-player/twitch'
-
+import ReactPlayer from 'react-player/twitch'
+import { Player } from 'video-react'
 function About_Twitch() {
   return (
     <section className='relative mt-48 mb-4 h-full'>
@@ -21,14 +21,16 @@ function About_Twitch() {
         </div>
 
         <div className='aspect-w-9 md:aspect-w-16 md:aspect-h-9 '>
-          {/* <ReactPlayer
-            url='https://www.twitch.tv/pixelbakery'
+          {/* <Player playsInline poster='/assets/poster.png' src='https://www.twitch.tv/pixelbakery' /> */}
+          <ReactPlayer
+            urls='https://www.twitch.tv/pixelbakery'
             controls
             autoPlay={true}
             muted={true}
+            playsinline={true}
             width={'100%'}
             height={'100%'}
-          /> */}
+          />
         </div>
       </div>
     </section>
