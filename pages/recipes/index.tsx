@@ -9,6 +9,7 @@ import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_Va
 import Recipes_FeaturedPost from '../../components/Recipes/Tutorial/Recipes_FeaturedPost'
 import Button_Outlined from '../../components/parts/Button_Outlined'
 import PageSection from '../../components/PageSection'
+import H2 from '../../components/H2'
 
 type Props = {
   allPosts: Post[]
@@ -43,7 +44,7 @@ const Index = ({ allPosts }: Props) => {
       />
       <PageSection>
         <div className='mx-auto max-w-6xl'>
-          <h2>Recent</h2>
+          <H2>Recent</H2>
           <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
             {getFeaturedPosts()}
           </div>
