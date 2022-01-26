@@ -31,23 +31,27 @@ function Work_Clients() {
       </InnerWrapper>
       <InnerWrapper>
         <div className='mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>
-          {clientList.map((client, index) => (
-            <div key={client.client} className=' col-span-1 '>
-              <div className='relative w-full h-32'>
-                <p>
-                  <Image
-                    layout='fill'
-                    objectFit='contain'
-                    src={client.logo}
-                    alt={client.client}
-                    className='w-full'
-                    quality={25}
-                    blurDataURL='blur'
-                  />
-                </p>
+          {clientList.map((client, index) =>
+            client.active ? (
+              <div key={client.client} className=' col-span-1 '>
+                <div className='relative w-full h-32'>
+                  <p>
+                    <Image
+                      layout='fill'
+                      objectFit='contain'
+                      src={client.logo}
+                      alt={client.client}
+                      className='w-full'
+                      quality={25}
+                      blurDataURL='blur'
+                    />
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ) : (
+              ''
+            ),
+          )}
         </div>
       </InnerWrapper>
     </PageSection>
