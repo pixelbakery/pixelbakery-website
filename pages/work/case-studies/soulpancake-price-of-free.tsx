@@ -20,14 +20,17 @@ const clientURL = 'https://thepriceoffree.com'
 
 // Project Header
 const heroVideo = '300219367'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "bringing child labor to the forefront through animation."
+const projectExcerpt = 'How animation promoted a feature documentary by Kailash Satyarthi to free children forced into child labor.'
+const projectIntroduction = 'In collaboration with YouTube and Participant Media, we teamed up with SoulPancake to create an animation promoting a feature documentary. The film follows Nobel prize winner Kailash Satyarthi and his mission to free children forced into child labor.'
 
 // credits
 const credits = [
   { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Karley Johnson', title: 'Art Director' },
+  { name: 'Josh Hoepner', title: 'Lead Animtor'},
+  { name: 'Hannah Klemme', title: 'Lead Illustrator'},
+  { name: 'Tony Bertino', title: 'Account Manager'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
