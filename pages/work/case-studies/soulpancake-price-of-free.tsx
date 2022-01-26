@@ -30,7 +30,7 @@ const credits = [
   { name: 'Karley Johnson', title: 'Art Director' },
   { name: 'Josh Hoepner', title: 'Lead Animtor'},
   { name: 'Hannah Klemme', title: 'Lead Illustrator'},
-  { name: 'Tony Bertino', title: 'Account Manager'},
+  { name: 'Tony Bertino', title: 'Project Manager'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
