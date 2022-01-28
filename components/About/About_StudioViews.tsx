@@ -14,40 +14,14 @@ import photos from '../../data/about-studioviews'
 class Carousel extends React.Component {
   render() {
     return (
-      <section className='my-4 py-24'>
-        <div className='grid grid-cols-5 gap-12 w-full'>
-          <div className='h-full col-span-2 flex flex-col justify-center mx-auto'>
-            <div className='max-w-md px-12 mx-4'>
-              <h2 className='text-8xl font-bold text-pink leading-none'>Studio Views</h2>
-              <p className='text-2xl font-medium leading-loose py-3 text-wine opacity-80'>
-                Where the magic happens
-              </p>
-            </div>
-          </div>
-          <div className=' col-span-3'>
-            {/* <Flickity
-              options={flickityOptions}
-              className={'carousel '} // default ''
-              flickityRef={(c) => (this.flkty = c)}
-            >
-              {photos.map((photo) => (
-                <div
-                  className='w-full aspect-w-4 aspect-h-3 overflow-hidden bg-blue carousel-cell'
-                  key={photo.name}
-                >
-                  <div>
-                    <Image
-                      alt={photo.name}
-                      layout='fill'
-                      objectFit={'cover'}
-                      className='object-center w-full h-full'
-                      src={photo.url}
-                    />
-                  </div>
-                </div>
-              ))}
-            </Flickity> */}
-          </div>
+      <section className='w-full h-screen overflow-hidden my-4 '>
+        <div className='relative h-full w-full bg-blue'>
+          <Image
+            src={'/img/pixel-bakery-office.jpeg'}
+            layout='fill'
+            objectFit='cover'
+            alt="pixel bakery's studio in lincoln, nebraska"
+          />
         </div>
       </section>
     )

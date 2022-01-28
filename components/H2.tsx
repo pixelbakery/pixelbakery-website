@@ -7,7 +7,7 @@ type Props = {
   id?: string
   className?: string
 }
-
+// To override the bottom margin, you must prefix one of the classes with '2xl:'
 const H2 = ({ color, children, className }: PropsWithChildren<Props>) => {
   return (
     <h2
