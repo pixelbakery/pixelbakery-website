@@ -12,7 +12,7 @@ package-lock.json
 # next.js
 /.next/
 /out/
-
+.mdx-data
 # production
 /build
 

@@ -38,3 +38,30 @@ All icons are sized relative to the other icons. This gives the line thickness a
 If you see the following error:
 `TypeError: undefined is not an object (evaluating 'prev.slug')`
 This means that the title in the datafile does not match the title in the project page.
+
+## Blog Posts
+
+We use markdown to create posts (specifically MDX). Blog posts are created in the /\_posts folder. Each blog post has important 'frontmatter' items at the top of it that help tell the server the details of the post.
+
+There are some special components that we can use in these blog posts.
+
+### Videos
+
+The package we use to create videos is called [React-Player](https://github.com/CookPete/react-player). There's a lot of dope things we can do with it like using videos on YouTube, Vimeo, etc. Videos can also be pulled from the public folder. Check out that link to see what all is possible.
+
+To use the video component in a blog post, copy and paste this code:
+
+```
+<div className={'aspect-16/9'}>
+  <ReactPlayer
+    url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+    width={'100%'}
+    height={'100%'}
+    className={''}
+  />
+</div>
+```
+
+### Coming Soon: Image Carousels
+
+Next on the todo list is to implement image carousels, aka slideshows. We use a package called [Swiper](https://swiperjs.com/react) to do so. Check out the documentation above to see what all is possible.

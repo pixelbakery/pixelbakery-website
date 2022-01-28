@@ -1,37 +1,35 @@
-import React from 'react'
-import Section from '../../components/Section'
-import MoreStories from '../../components/Recipes/Tutorial/more-stories'
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
 
-import { getAllPosts } from '../../lib/api_post'
+import MoreStories from '../../components/Recipes/more-stories'
+import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
 
 import Post from '../../types/post'
 import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-import Recipes_FeaturedPost from '../../components/Recipes/Tutorial/Recipes_FeaturedPost'
+import Recipes_FeaturedPost from '../../components/Recipes/Recipes_FeaturedPost'
 import Button_Outlined from '../../components/parts/Button_Outlined'
 import PageSection from '../../components/PageSection'
 import H2 from '../../components/H2'
 
-type Props = {
-  allPosts: Post[]
-}
-
-const Index = ({ allPosts }: Props) => {
+const Index = ({ allPosts }) => {
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
   const morePosts = allPosts.slice(featuredPostNo)
   const getFeaturedPosts = () => {
     return allPosts.slice(0, featuredPostNo).map((post) => {
       return (
         <Recipes_FeaturedPost
-          slug={post.slug}
-          key={post.title}
-          title={post.title}
-          author={post.author}
-          categories={post.categories}
-          date={post.date}
+          as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+          href={`/recipes/[slug]`}
+          key={post.filePath}
+          title={post.data.title}
+          author={post.data.author}
+          categories={post.data.categories}
+          date={post.data.date}
           aspectW={'4'}
           aspectY={'3'}
-          coverImage={post.coverImage}
-          excerpt={post.excerpt}
+          coverImage={post.data.coverImage}
+          excerpt={post.data.excerpt}
         />
       )
     })
@@ -45,7 +43,7 @@ const Index = ({ allPosts }: Props) => {
       <PageSection>
         <div className='mx-auto max-w-6xl'>
           <H2>Recent</H2>
-          <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
+          <div className='my-16 grid grid-c\ols-1  sm:grid-cols-2  gap-4 md:gap-10'>
             {getFeaturedPosts()}
           </div>
         </div>
@@ -63,21 +61,19 @@ const Index = ({ allPosts }: Props) => {
 
 export default Index
 
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'subtitle',
-    'date',
-    'slug',
-    'headshotSerious',
-    'photos',
-    'author',
-    'categories',
-    'coverImage',
-    'excerpt',
-  ])
+export function getStaticProps() {
+  const allPosts = postFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+      const { content, data } = matter(source)
 
-  return {
-    props: { allPosts },
-  }
+      return {
+        content,
+        data,
+        filePath,
+      }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+
+  return { props: { allPosts } }
 }

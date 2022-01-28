@@ -1,23 +1,38 @@
-import React, { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import PostBody from '../../components/Recipes/Tutorial/post-body'
-
-import PostHeader from '../../components/Recipes/Tutorial/post-header'
-import Recipes_Posts_Related from '../../components/Recipes/Tutorial/Recipes_Post_Related'
-import { getPostBySlug, getAllPosts } from '../../lib/api_post'
+import fs from 'fs'
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
+import path from 'path'
+import PostHeader from '../../components/Recipes/post-header'
+import markdownStyles from '../../styles/markdown-styles.module.css'
 import { getPersonBySlug, getAllPeople } from '../../lib/api_person'
 
-import PostTitle from '../../components/Recipes/Tutorial/post-title'
-import Head from 'next/head'
-
-import markdownToHtml from '../../lib/markdownToHtml'
-import PostType from '../../types/post'
+import ReactPlayer from 'react-player'
+import Swiper from 'swiper'
+import Main from '../../components/Main'
+import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
 import PersonType from '../../types/person'
 
+import Recipes_Post_Tags from '../../components/Recipes/Recipes_Post_Tags'
+import Recipes_Posts_Related from '../../components/Recipes/Recipes_Post_Related'
+import Link from 'next/link'
+
+// Custom components/renderers to pass to MDX.
+// Since the MDX files aren't loaded by webpack, they have no knowledge of how
+// to handle import statements. Instead, you must include components in scope
+// here.
+const components = {
+  // It also works with dynamically-imported components, which is especially
+  // useful for conditionally loading components for certain routes.
+  // See the notes in README.md for more details.
+  Swiper: Swiper,
+  ReactPlayer: ReactPlayer,
+  TestComponent: dynamic(() => import('../../components/PageHeader/PageHeader_VarH')),
+  Head,
+}
 type Props = {
-  post: PostType
-  morePosts: PostType[]
-  relatedPosts: PostType[]
   matchingAuthor: PersonType
   ourPerson: PersonType
 }
@@ -32,67 +47,45 @@ function shuffleArray(array) {
   }
   return array
 }
-
-const Post = ({ post, relatedPosts, ourPerson }: Props) => {
-  const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
-  // const allPosts
+export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
   return (
-    <main>
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <>
-          <article className='mb-32'>
-            <Head>
-              <title>{post.title} | PBDS</title>
-              <meta property='og:image' content={post.ogImage.url} />
-            </Head>
-            <PostHeader
-              subtitle={post.subtitle}
-              title={post.title}
-              category={post.categories[0]}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-              person={ourPerson}
-            />
-            <PostBody tags={post.tags} content={post.content} />
-          </article>
+    <Main>
+      <article className='mb-32'>
+        <Head>
+          <title>{frontMatter.title} | PBDS</title>
+          <meta property='og:image' content={frontMatter.ogImage.url} />
+        </Head>
+        <h1>{filePath}</h1>
+        <PostHeader
+          title={frontMatter.title}
+          subtitle={frontMatter.subtitle}
+          category={frontMatter.categories[0]}
+          coverImage={frontMatter.coverImage}
+          date={frontMatter.date}
+          author={frontMatter.author as any}
+          person={ourPerson as any}
+        />
+        <section className='px-6 mt-8 md:max-w-3xl mx-auto' id='blog-body-guts '>
+          <div className={markdownStyles['markdown']}>
+            <MDXRemote {...source} components={components} />
+          </div>
 
-          <Recipes_Posts_Related relatedPosts={relatedPosts} />
-        </>
-      )}
-    </main>
+          <Recipes_Post_Tags tags={frontMatter.tags} />
+        </section>
+      </article>
+
+      <Recipes_Posts_Related relatedPosts={relatedPosts} />
+    </Main>
   )
 }
 
-export default Post
-
-type Params = {
-  params: {
-    slug: string
-    person: string
-    categories: Array<string>
-    allPosts: Array<object>
-  }
-}
-
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'subtitle',
-    'date',
-    'slug',
-    'tags',
-    'categories',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
+export const getStaticProps = async ({ params }) => {
+  //MDX Stuff
+  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
+  const source = fs.readFileSync(postFilePath)
+  const { content, data } = matter(source)
+  const slug = `${postFilePath.replace(/\.mdx?$/, '')}`
+  //Author Stuff
   const allPeople = getAllPeople([
     'name',
     'slug',
@@ -105,46 +98,42 @@ export async function getStaticProps({ params }: Params) {
     'email',
     'content',
   ])
-  const allPosts = getAllPosts([
-    'title',
-    'subtitle',
-    'date',
-    'slug',
-    'author',
-    'categories',
-    'coverImage',
-    'excerpt',
-  ])
+
   // Get author bios
   const matchingAuthor = allPeople.filter(
-    (person) => person.name.toUpperCase() === post.author.name.toUpperCase(),
+    (person) => person.name.toUpperCase() === data.author.name.toUpperCase(),
   )
-
-  // matchingAuthor.forEach((person) => {
-  // })
-  const currentPost = post
   const ourPerson = matchingAuthor[0]
 
-  // Map the currentPost categories array to a Set for lookup in the filter
-  const searchCategories = new Set(currentPost.categories.map((category) => category.toUpperCase()))
+  // RELEVANT POSTS
+  const allPosts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+    const { content, data } = matter(source)
 
-  // const temp = allPosts.filter((item) => item.author.name === 'Jordan Lambrecht')
+    return {
+      content,
+      data,
+      filePath,
+    }
+  })
+
+  // Map the currentPost categories array to a Set for lookup in the filter
+  const searchCategories = new Set(data.categories.map((category) => category.toUpperCase()))
 
   const matchingPosts = allPosts.filter((post) => {
     // If the currently iterated post title matches the currentPost return false (filter it out);
-    if (post.title === currentPost.title) {
+
+    if (post.data.title === data.title) {
       return false
     }
-
     // Otherwise, check if the currently iterated post has some() categories in common with currentPost
-    return post.categories.some((category) => searchCategories.has(category.toUpperCase()))
+    return post.data.categories.some((category) => searchCategories.has(category.toUpperCase()))
   })
-
   // If we don't have any related posts, we still need to display something, so we'll select three posts at random
   if (matchingPosts.length < 3) {
     const morePosts = allPosts
     allPosts.forEach(function (post, i) {
-      if (post.title === post.title) {
+      if (post.data.title === post.data.title) {
         morePosts.splice(i, 1)
       }
     })
@@ -155,32 +144,37 @@ export async function getStaticProps({ params }: Params) {
   }
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
 
-  relatedPosts.map((post) => {})
+  //END OF RELEVANT POSTS
+  //Back to MDX Stuff
+  const mdxSource = await serialize(content, {
+    // Optionally pass remark/rehype plugins
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [],
+    },
+    scope: data,
+  })
 
-  const content = await markdownToHtml(post.content || '')
   return {
     props: {
-      ourPerson: { ...ourPerson },
       relatedPosts: relatedPosts,
-      post: {
-        ...post,
-        content,
-      },
+      source: mdxSource,
+      frontMatter: data,
+      ourPerson: { ...ourPerson },
     },
   }
 }
 
-export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+export const getStaticPaths = async () => {
+  const paths = postFilePaths
+    // Remove file extensions for page paths
+    .map((path) => path.replace(/\.mdx?$/, ''))
+
+    // Map the path into the static paths object required by Next.js
+    .map((slug) => ({ params: { slug } }))
+
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-          categories: post.categories,
-        },
-      }
-    }),
+    paths,
     fallback: false,
   }
 }
