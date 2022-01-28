@@ -1,13 +1,9 @@
 import React from 'react'
 
-import Post from '../../types/post'
-
-import Recipes_SmallPost from '../Recipes/Tutorial/Recipes_SmallPost'
+import Recipes_SmallPost from '../Recipes/Recipes_SmallPost'
 import Button_Filled from '../parts/Button_Filled'
-type Props = {
-  allPosts: Post[]
-}
-function Home_Recipes({ allPosts }: Props) {
+
+function Home_Recipes({ allPosts }) {
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
   const postsToShhow = allPosts.slice(0, featuredPostNo)
   return (
@@ -17,14 +13,15 @@ function Home_Recipes({ allPosts }: Props) {
         {postsToShhow.map((post) => {
           return (
             <Recipes_SmallPost
-              key={post.slug}
-              title={post.title}
-              categories={post.categories}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-              slug={post.slug}
-              excerpt={post.excerpt}
+              key={post.filePath}
+              title={post.data.title}
+              categories={post.data.categories}
+              coverImage={post.data.coverImage}
+              date={post.data.date}
+              author={post.data.author}
+              as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+              href={`/recipes/[slug]`}
+              excerpt={post.data.excerpt}
             />
           )
         })}
@@ -36,6 +33,7 @@ function Home_Recipes({ allPosts }: Props) {
           chevronDirection='right'
           bgColor='blue'
           textColor='cream'
+          center={true}
         />
       </div>
     </section>

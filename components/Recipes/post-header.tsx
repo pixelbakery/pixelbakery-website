@@ -1,26 +1,24 @@
 import React from 'react'
 
 import DateFormatter from './date-formatter'
-import Avatar from './avatar'
-import Author from '../../../types/author'
+import Author from '../../types/author'
 import Link from 'next/link'
 import Image from 'next/image'
-import Pill from '../../parts/Pill'
-import PersonType from '../../../types/person'
-import { match } from 'assert'
+import Pill from '../parts/Pill'
+import PersonType from '../../types/person'
+
 import cn from 'classnames'
 type Props = {
   title: string
   subtitle: string
   coverImage: string
   author: Author
-  date: string
-  matchingAuthor: PersonType
+  date?: string
   person: PersonType
   category: string
 }
 
-const PostHeader = ({ category, title, subtitle, coverImage, date, author, person }: Props) => {
+const PostHeader = ({ title, subtitle, category, coverImage, date, author, person }: Props) => {
   let profilePic
   if (person.slug && person.photos.headshotSmiling != typeof undefined) {
     profilePic = person.photos.headshotSmiling
@@ -28,7 +26,7 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
     profilePic = '/img/placeholder01.png'
   }
   return (
-    <main className='mt-44'>
+    <header className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
         <div className='' id='blog-body-intro'>
           <div className='mb-6'>
@@ -51,8 +49,6 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
                     blurDataURL='true'
                     layout='fill'
                     objectFit='cover'
-                    width={'48px'}
-                    height={'48px'}
                     alt={author.name}
                     quality={25}
                     className='object-top scale-175 sc'
@@ -66,8 +62,6 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
                   blurDataURL='true'
                   layout='fill'
                   objectFit='cover'
-                  width={'48px'}
-                  height={'48px'}
                   alt={author.name}
                   quality={25}
                   className='object-top scale-175 sc'
@@ -120,7 +114,7 @@ const PostHeader = ({ category, title, subtitle, coverImage, date, author, perso
           />
         </div>
       </div>
-    </main>
+    </header>
   )
 }
 

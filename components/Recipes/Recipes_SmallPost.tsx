@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Pill from '../../parts/Pill'
+import Pill from '../parts/Pill'
 import DateFormatter from './date-formatter'
 
-import Author from '../../../types/author'
+import Author from '../../types/author'
 
 type Props = {
   title: string
@@ -13,7 +13,8 @@ type Props = {
   excerpt: string
   categories: Array<string>
   author: Author
-  slug: string
+  href: string
+  as: string
 }
 const Recipes_SmallPost = ({
   title,
@@ -22,10 +23,12 @@ const Recipes_SmallPost = ({
   date,
   excerpt,
   author,
-  slug,
+
+  as,
+  href,
 }: Props) => {
   return (
-    <Link as={`/recipes/${slug}`} href='/recipes/[slug]'>
+    <Link as={`${as}`} href={`${href}`} passHref>
       <a aria-label={title}>
         <article className='border-t border-wine-100 my-6 pb-4 pt-8 cursor-pointer transition-scale duration-500 hover:scale-98'>
           <div className='flex flex-row gap-4 md:gap-10'>
