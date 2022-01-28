@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const mdxEnhanced = require('next-mdx-enhanced')
+const React = require('react')
 // eslint-disable-next-line no-undef
 module.exports = {
   mdxEnhanced() {

@@ -187,19 +187,17 @@
   }
 }
 @layer utilities {
-  @variants responsive {
-    .text-shadow {
-      text-shadow: 3px 3px 6px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-md {
-      text-shadow: 4px 4px 8px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-lg {
-      text-shadow: 15px 15px 30px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-none {
-      text-shadow: none;
-    }
+  .text-shadow {
+    text-shadow: 3px 3px 6px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-md {
+    text-shadow: 4px 4px 8px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-lg {
+    text-shadow: 15px 15px 30px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-none {
+    text-shadow: none;
   }
 }
 .lander {
