@@ -14,7 +14,7 @@ function About_Team_Headshot({ ...props }) {
   return (
     <Link href={`/about/${props.url}`} passHref>
       <a
-        className='relative w-full  aspect-w-3 aspect-h-4'
+        className='relative w-full  aspect-w-3 aspect-h-4 col-span-1'
         onMouseOver={handleHover}
         onMouseLeave={handleHover}
       >
