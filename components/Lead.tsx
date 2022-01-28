@@ -13,8 +13,8 @@ const Lead = ({ color, children, className }: PropsWithChildren<Props>) => {
     <p
       className={cn(
         'text-2xl lg:text-3xl mt-0 font-bold mb-8 lg:mb-12 leading-none max-w-lg',
-        [`text-${color}`],
-        className,
+        `text-${color}`,
+        `${className}`,
       )}
     >
       {children}
