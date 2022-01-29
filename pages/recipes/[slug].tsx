@@ -7,7 +7,7 @@ import Head from 'next/head'
 import path from 'path'
 import PostHeader from '../../components/Recipes/post-header'
 import markdownStyles from '../../styles/markdown-styles.module.css'
-import { getPersonBySlug, getAllPeople } from '../../lib/api_person'
+import { getAllPeople } from '../../lib/api_person'
 
 import ReactPlayer from 'react-player'
 import Swiper from 'swiper'
