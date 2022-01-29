@@ -12,13 +12,14 @@ function About_Team_Headshot({ ...props }) {
   const handleHover = () => setHover(!hover)
 
   return (
-    <Link href={`/about/${props.url}`} passHref>
+    <Link as={`/about/${props.url}`} href={`/about/[person]`} passHref>
       <a
         className='relative w-full  aspect-w-3 aspect-h-4 col-span-1'
         onMouseOver={handleHover}
         onMouseLeave={handleHover}
       >
         <Image
+          priority
           src={headshot}
           layout={'fill'}
           objectFit='cover'
@@ -28,6 +29,7 @@ function About_Team_Headshot({ ...props }) {
           alt={'pixel bakery ' + props.name}
         />
         <Image
+          priority
           src={headshotSmiling}
           layout={'fill'}
           objectFit='cover'
