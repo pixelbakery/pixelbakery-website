@@ -5,19 +5,18 @@ import { serialize } from 'next-mdx-remote/serialize'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
-import PostHeader from '../../components/Recipes/post-header'
-import markdownStyles from '../../styles/markdown-styles.module.css'
-import { getAllPeople } from '../../lib/api_person'
+import PostHeader from '@recipes/post-header'
+import markdownStyles from '@styles/markdown-styles.module.css'
+import { getAllPeople } from '@lib/api_person'
 
 import ReactPlayer from 'react-player'
 import Swiper from 'swiper'
-import Main from '../../components/Main'
-import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
-import PersonType from '../../types/person'
+import Main from '@parts/Main'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import PersonType from 'types/person'
 
-import Recipes_Post_Tags from '../../components/Recipes/Recipes_Post_Tags'
-import Recipes_Posts_Related from '../../components/Recipes/Recipes_Post_Related'
-import Link from 'next/link'
+import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
+import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -29,7 +28,7 @@ const components = {
   // See the notes in README.md for more details.
   Swiper: Swiper,
   ReactPlayer: ReactPlayer,
-  TestComponent: dynamic(() => import('../../components/PageHeader/PageHeader_VarH')),
+  TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
 type Props = {

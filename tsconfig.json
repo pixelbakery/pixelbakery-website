@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -14,7 +15,33 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@parts/*": ["components/parts/*"],
+      "@data/*": ["data/*"],
+      "@foot/*": ["components/foot/*"],
+      "@about/*": ["components/pageSpecific/about/*"],
+      "@careers/*": ["components/pageSpecific/careers/*"],
+      "@caseStudies/*": ["components/pageSpecific/caseStudies/*"],
+      "@contact/*": ["components/pageSpecific/contact/*"],
+      "@education/*": ["components/pageSpecific/education/*"],
+      "@home/*": ["components/pageSpecific/home/*"],
+      "@onboarding/*": ["components/pageSpecific/onboarding/*"],
+      "@recipes/*": ["components/pageSpecific/recipes/*"],
+      "@services/*": ["components/pageSpecific/services/*"],
+      "@footerParts/*": ["components/footerParts/*"],
+      "@work/*": ["components/pageSpecific/work/*"],
+      "@store/*": ["components/store/*"],
+      "@sitemap/*": ["components/sitemap/*"],
+      "@images/*": ["components/images/*"],
+      "@logoAnimation/*": ["components/pageSpecific/logoAnimation/*"],
+      "@pageHeaders/*": ["components/pageHeaders/*"],
+      "@nav/*": ["components/nav/*"],
+      "@lib/*": ["lib/*"],
+      "@types/*": ["types/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

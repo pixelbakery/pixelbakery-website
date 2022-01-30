@@ -1,18 +1,18 @@
 import Head from 'next/head'
-import React from 'react'
+
 // import InstagramFeed from "../components/instagramFeed";
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import Home_Landing from '../components/Home/Home_Landing'
-import Home_WhoTheHeck from '../components/Home/Home_WhoTheHeck'
-import Home_WhatWeMake from '../components/Home/Home_WhatWeMake'
-import Home_Services from '../components/Home/Home_Services'
-import Home_Portfolio from '../components/Home/Home_Portfolio'
+import Home_Landing from '@home/Home_Landing'
+import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
+import Home_WhatWeMake from '@home/Home_WhatWeMake'
+import Home_Services from '@home/Home_Services'
+import Home_Portfolio from '@home/Home_Portfolio'
 
-import { postFilePaths, POSTS_PATH } from '../lib/mdxUtils'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 
-import Home_Recipes from '../components/Home/Home_Recipes'
+import Home_Recipes from '@home/Home_Recipes'
 
 const Home = ({ allPosts }) => {
   return (

@@ -1,25 +1,27 @@
 /* eslint-disable react/no-children-prop */
 import { GetServerSideProps, NextPage } from 'next'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-import Store_Maintenance from '../../../components/Store/Store_Maintenance'
-import PageSection from '../../../components/PageSection'
-import commerce from '../../../lib/commerce'
+import Store_Maintenance from '@store/Store_Maintenance'
+import PageSection from '@parts/PageSection'
+import commerce from '@lib/commerce'
 import Image from 'next/image'
-import useCart from '../../../hooks/useCart'
-import Store_VariantPicker from '../../../components/Store/Store_VariantPicker'
+import useCart from '@hooks/useCart'
+import Store_VariantPicker from '@store/Store_VariantPicker'
 import Link from 'next/link'
 import Head from 'next/head'
 import cs from 'classnames'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ReactGA from 'react-ga4'
+import React from 'react'
+import Navigation_Store from '@parts/Navigation_Store'
 ReactGA.send('pageview')
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
-  const product = await commerce.products.retrieve(permalink, { type: 'permalink ' })
+  const product = await commerce.products.retrieve(permalink as any, { type: 'permalink ' })
 
   return {
     props: {
@@ -83,31 +85,8 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
         <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
       </Head>
       <div className='d-sm-block'></div>
+      <Navigation_Store />
 
-      <Link href='/store/cart' passHref>
-        <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
-          <div
-            className='relative  text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-97 active:scale-90'
-          >
-            {cart?.total_items}
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-7 w-7'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2.5'
-                d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-              />
-            </svg>
-          </div>
-        </div>
-      </Link>
       <PageSection
         className={'bg-cream  my-4 inset-0 py-20'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}

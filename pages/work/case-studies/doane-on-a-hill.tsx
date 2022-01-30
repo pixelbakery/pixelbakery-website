@@ -1,14 +1,13 @@
-import React from 'react'
-import Main from '../../../components/Main'
+import Main from '@parts/Main'
 
 // case study components
-import CaseStudies_Header from '../../../components/CaseStudies/CaseStudies_Header'
-import CaseStudies_Tags from '../../../components/CaseStudies/CaseStudies_Tags'
-import CaseStudies_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
-import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
-import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
-import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
-import CaseStudies_Description from '../../../components/CaseStudies/CaseStudies_Description'
+import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
+import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
+import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
+import CaseStudies_BecomeAClient from '@caseStudies/CaseStudies_BecomeAClient'
+import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
+import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
+import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 
 // project info
 const title = 'On A Hill'

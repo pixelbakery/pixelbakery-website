@@ -1,12 +1,10 @@
-import React from 'react'
+import Work_Services from '@work/Work_Services'
+import Work_Portfolio from '@work/Work_Portfolio'
+import Work_Clients from '@work/Work_Clients'
+import Work_Awards from '@work/Work_Awards'
+import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
-import Work_Services from '../../components/Work/Work_Services'
-import Work_Portfolio from '../../components/Work/Work_Portfolio'
-import Work_Clients from '../../components/Work/Work_Clients'
-import Work_Awards from '../../components/Work/Work_Awards'
-import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-
-import Main from '../../components/Main'
+import Main from '@parts/Main'
 
 const Work = () => {
   // console.log(allProjects)

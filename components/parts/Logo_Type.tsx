@@ -1,4 +1,3 @@
-import React from 'react'
 function Logo_Type() {
   return (
     <div>
