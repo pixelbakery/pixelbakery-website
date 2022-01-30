@@ -1,32 +1,28 @@
-import React from 'react'
+import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
-import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-import About_Intro from '../../components/About/About_Intro'
-import About_Team from '../../components/About/About_Team'
-import About_Values from '../../components/About/About_Values'
-import About_Commitment from '../../components/About/About_Commitment'
-import About_StudioViews from '../../components/About/About_StudioViews'
-import About_Twitch from '../../components/About/About_Twitch'
-import About_Faq from '../../components/About/About_Faq'
-import { getAllPeople } from '../../lib/api_person'
-import Person from '../../types/person'
-
+import About_Team from '@about/About_Team'
+import About_Values from '@about/About_Values'
+import About_Commitment from '@about/About_Commitment'
+import About_Twitch from '@about/About_Twitch'
+import About_Faq from '@about/About_Faq'
+import { getAllPeople } from '@lib/api_person'
+import Person from 'types/person'
+import Main from '@parts/Main'
 type Props = {
   allPeople: Person[]
 }
 function About({ allPeople }: Props) {
   return (
-    <main className='max-w-screen overflow-x-hidden'>
+    <Main>
       <PageHeader_VariableHeight header='About' subheader='copy copy copy ' />
-      {/* <About_Intro /> */}
+
       <About_Team people={allPeople} />
       <About_Commitment />
-      <About_StudioViews />
 
       <About_Values />
       <About_Twitch />
       <About_Faq />
-    </main>
+    </Main>
   )
 }
 

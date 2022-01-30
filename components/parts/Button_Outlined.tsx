@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import { ChevronRightIcon } from '../Images/UI_Icons/index'
+import { ChevronRightIcon } from '@images/UI_Icons/index'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 

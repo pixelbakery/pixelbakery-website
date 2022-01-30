@@ -1,14 +1,13 @@
-import Main from '../components/Main'
-import PageHeader_VarH from '../components/PageHeader/PageHeader_VarH'
-import React, { useLayoutEffect } from 'react'
+import Main from '@parts/Main'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+
 // import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Onboarding_ExpectationsRow from '../components/Onboarding/Onboarding_ExpectationsRow'
-import PageSection from '../components/PageSection'
-import InnerWrapper from '../components/InnerWrapper'
-import H1 from '../components/H1'
-import H2 from '../components/H2'
-import Lead from '../components/Lead'
+import Onboarding_ExpectationsRow from '@onboarding/Onboarding_ExpectationsRow'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+
+import Lead from '@parts/Lead'
 
 function Onboarding() {
   // gsap.registerPlugin(ScrollTrigger)

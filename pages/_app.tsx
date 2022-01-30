@@ -1,12 +1,12 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/Layout'
+import { useEffect } from 'react'
+import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/parts/Layout'
 import TagManager from 'react-gtm-module'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import * as ga from '../lib/ga'
-import '../styles/globals.css'
-import '../styles/typography.css'
+import * as ga from '@lib/ga'
+import '@styles/globals.css'
+import '@styles/typography.css'
 
 const client = new QueryClient()
 

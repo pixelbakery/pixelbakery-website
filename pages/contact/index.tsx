@@ -1,10 +1,9 @@
-import React from 'react'
-import PageHeader_VarH from '../../components/PageHeader/PageHeader_VarH'
-import Contact_Clients from '../../components/Contact/Contact_Clients'
-import Contact_ContactForm from '../../components/Contact/Contact_ContactForm'
-import Contact_Jobs from '../../components/Contact/Contact_Jobs'
-import Contact_HangOut from '../../components/Contact/Contact_HangOut'
-import Main from '../../components/Main'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import Contact_Clients from '@contact/Contact_Clients'
+import Contact_ContactForm from '@contact/Contact_ContactForm'
+import Contact_Jobs from '@contact/Contact_Jobs'
+import Contact_HangOut from '@contact/Contact_HangOut'
+import Main from '@parts/Main'
 
 function Contact() {
   return (

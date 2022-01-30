@@ -2,15 +2,13 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
-import MoreStories from '../../components/Recipes/more-stories'
-import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
-
-import Post from '../../types/post'
-import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
-import Recipes_FeaturedPost from '../../components/Recipes/Recipes_FeaturedPost'
-import Button_Outlined from '../../components/parts/Button_Outlined'
-import PageSection from '../../components/PageSection'
-import H2 from '../../components/H2'
+import MoreStories from '@recipes/more-stories'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import Button_Outlined from '@parts/Button_Outlined'
+import PageSection from '@parts/PageSection'
+import H2 from '@parts/H2'
 
 const Index = ({ allPosts }) => {
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
