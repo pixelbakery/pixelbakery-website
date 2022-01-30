@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import commerce from '../lib/commerce'
+import commerce from '@lib/commerce'
 import { useCheckoutState } from './useCheckoutState'
 
 export default function useShippingSubdivisions(countryCode: string) {

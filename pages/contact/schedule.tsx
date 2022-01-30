@@ -1,9 +1,7 @@
-import { Head } from 'next/document'
-import React from 'react'
-import InnerWrapper from '../../components/H1'
-import H2 from '../../components/InnerWrapper'
-import PageHeader_VarH from '../../components/PageHeader/PageHeader_VarH'
-import PageSection from '../../components/PageSection'
+import InnerWrapper from '@parts/H1'
+import H2 from '@parts/InnerWrapper'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import PageSection from '@parts/PageSection'
 import { InlineWidget } from 'react-calendly'
 
 function Schedule() {

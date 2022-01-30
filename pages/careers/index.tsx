@@ -1,13 +1,11 @@
-import React from 'react'
-
-import Careers_Breadwinners from '../../components/Careers/Careers_Breadwinners'
-import Careers_OpenPositions from '../../components/Careers/Careers_OpenPositions'
-import Careers_Apprenticeships from '../../components/Careers/Careers_Apprenticeships'
-import Careers_Casting from '../../components/Careers/Careers_Casting'
-import Careers_Vendors from '../../components/Careers/Careers_Vendors'
-import Careers_Benefits from '../../components/Careers/Careers_Benefits'
-import Careers_Culture from '../../components/Careers/Careers_Culture'
-import PageHeader_VariableHeight from '../../components/PageHeader/PageHeader_VarH'
+import Careers_Breadwinners from '@careers/Careers_Breadwinners'
+import Careers_OpenPositions from '@careers/Careers_OpenPositions'
+import Careers_Apprenticeships from '@careers/Careers_Apprenticeships'
+import Careers_Casting from '@careers/Careers_Casting'
+import Careers_Vendors from '@careers/Careers_Vendors'
+import Careers_Benefits from '@careers/Careers_Benefits'
+import Careers_Culture from '@careers/Careers_Culture'
+import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
 const Careers = () => {
   return (

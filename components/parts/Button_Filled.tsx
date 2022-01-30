@@ -1,13 +1,12 @@
-import React from 'react'
 import Link from 'next/link'
-import { ChevronRightIcon, DownloadIcon } from '../Images/UI_Icons/index'
+import { ChevronRightIcon, DownloadIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
 import PropTypes from 'prop-types'
 
 type Props = {
   text: string
-  link: string
+  link?: string
   center: boolean
   bgColor: string
   textColor: string

@@ -1,16 +1,16 @@
 import React, { useRouter } from 'next/router'
 import fs from 'fs'
 import path from 'path'
-import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 
-import { getAllPeople, getPersonBySlug } from '../../lib/api_person'
+import { getAllPeople, getPersonBySlug } from '@lib/api_person'
 import matter from 'gray-matter'
 
 import Head from 'next/head'
-import markdownStyles from '../../styles/markdown-styles.module.css'
+import markdownStyles from '@styles/markdown-styles.module.css'
 
-import markdownToHtml from '../../lib/markdownToHtml'
-import PersonType from '../../types/person'
+import markdownToHtml from '@lib/markdownToHtml'
+import PersonType from 'types/person'
 
 import Link from 'next/link'
 
