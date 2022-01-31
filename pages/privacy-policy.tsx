@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
-
+import Main from '@parts/Main'
 function PrivacyPolicy() {
   return (
-    <main id='' className='my-4'>
+    <Main id='' className='my-4'>
       <section className='mt-20 py-20'>
         <div className='mx-auto max-w-3xl'>
           <h1 className='text-wine text-6xl text-center mb-12'>
@@ -201,7 +200,7 @@ function PrivacyPolicy() {
           </p>
         </div>
       </section>
-    </main>
+    </Main>
   )
 }
 

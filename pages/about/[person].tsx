@@ -1,26 +1,20 @@
 import React, { useRouter } from 'next/router'
+import fs from 'fs'
+import path from 'path'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 
-import { getAllPeople, getPersonBySlug } from '../../lib/api_person'
-import { getAllPosts } from '../../lib/api_post'
+import { getAllPeople, getPersonBySlug } from '@lib/api_person'
+import matter from 'gray-matter'
 
 import Head from 'next/head'
-import markdownStyles from '../../styles/markdown-styles.module.css'
+import markdownStyles from '@styles/markdown-styles.module.css'
 
-import markdownToHtml from '../../lib/markdownToHtml'
-import PersonType from '../../types/person'
-import PostType from '../../types/post'
+import markdownToHtml from '@lib/markdownToHtml'
+import PersonType from 'types/person'
+
 import Link from 'next/link'
 
-type Props = {
-  person: PersonType
-  content: string
-  post: PostType
-  matchingAuthorPosts: PostType[]
-  author: Array<string>
-  name: string
-}
-
-function Person({ person, matchingAuthorPosts }: Props) {
+function Person({ person, matchingAuthorPosts }) {
   const router = useRouter()
 
   // const allPosts
@@ -53,9 +47,14 @@ function Person({ person, matchingAuthorPosts }: Props) {
                 <div>
                   {matchingAuthorPosts.map((post) => {
                     return (
-                      <Link href={'/recipes/' + post.slug} key={post.title} passHref>
+                      <Link
+                        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+                        key={post.data.title}
+                        href={'/recipes/[slug]'}
+                        passHref
+                      >
                         <a>
-                          <h3>{post.title}</h3>
+                          <h3>{post.data.title}</h3>
                         </a>
                       </Link>
                     )
@@ -88,20 +87,22 @@ export async function getStaticProps({ params }: Params) {
     'email',
     'content',
   ])
-  const allPosts = getAllPosts([
-    'title',
-    'subtitle',
-    'date',
-    'slug',
-    'author',
-    'name',
-    'categories',
-    'coverImage',
-    'excerpt',
-  ])
+  const allPosts = postFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+      const { content, data } = matter(source)
+
+      return {
+        content,
+        data,
+        filePath,
+      }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+
   // const matchingAuthorPosts = allPosts.filter((post) => post.author === 'Jordan Lambrecht')
   const matchingAuthorPosts = allPosts.filter(
-    (post) => post.author.name.toUpperCase() === person.name.toUpperCase(),
+    (post) => post.data.author.name.toUpperCase() === person.name.toUpperCase(),
   )
 
   // matchingAuthorPosts.forEach((post) => {

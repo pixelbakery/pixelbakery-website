@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, SVGProps } from 'react'
 import { ReactDOM } from 'react'
 import cn from 'classnames'
 type Props = {
@@ -10,18 +10,30 @@ type Props = {
   color: string
   fontWeight: string
 }
+interface SVGRProps {
+  title?: string
+  titleId?: string
+}
 function debounce(fn, ms) {
   let timer
   return (_) => {
     clearTimeout(timer)
     timer = setTimeout((_) => {
       timer = null
-      fn.apply(this, arguments)
+      fn.apply(this)
     }, ms)
   }
 }
 
-const StrokeText = ({ index, active, text, fontSize, strokeWidth, color, fontWeight }: Props) => {
+const StrokeText = ({
+  index,
+  active,
+  text,
+  fontSize,
+  strokeWidth,
+  color,
+  fontWeight,
+}: Props & SVGProps<SVGGraphicsElement> & SVGRProps) => {
   // const [dimensions, setDimensions] = useState({
   //   w_text: 0,
   //   h_text: 0,
@@ -36,8 +48,8 @@ const StrokeText = ({ index, active, text, fontSize, strokeWidth, color, fontWei
     const debouncedHandleResize = debounce(function handleResize() {
       const svg = document.getElementById(`svg-${index}`)
 
-      let w_text = document.querySelector(`#text-${index}`).getBBox().width
-      let h_text = document.querySelector(`#text-${index}`).getBBox().height
+      let w_text = document.querySelector(`#text-${index}` as any).getBBox().width
+      let h_text = document.querySelector(`#text-${index}` as any).getBBox().height
 
       svg.setAttribute('width', w_text)
       svg.setAttribute('height', h_text)
@@ -45,8 +57,8 @@ const StrokeText = ({ index, active, text, fontSize, strokeWidth, color, fontWei
 
     window.addEventListener('resize', debouncedHandleResize)
     setAttributes(
-      document.querySelector(`#text-${index}`).getBBox().width,
-      document.querySelector(`#text-${index}`).getBBox().height,
+      document.querySelector(`#text-${index}` as any).getBBox().width,
+      document.querySelector(`#text-${index}` as any).getBBox().height,
     )
     return () => {
       window.removeEventListener('resize', debouncedHandleResize)

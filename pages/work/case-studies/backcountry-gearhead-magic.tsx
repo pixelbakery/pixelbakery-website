@@ -1,11 +1,10 @@
-import React from 'react'
-import Main from '../../../components/Main'
-import CaseStudies_Header from '../../../components/CaseStudies/CaseStudies_Header'
-import CaseStudies_Tags from '../../../components/CaseStudies/CaseStudies_Tags'
-import CaseStudies_OtherProjects from '../../../components/CaseStudies/CaseStudies_OtherProjects'
-import CaseStudies_BecomeAClient from '../../../components/CaseStudies/CaseStudies_BecomeAClient'
-import CaseStudies_PrevNext from '../../../components/CaseStudies/CaseStudies_PrevNext'
-import CaseStudies_Credits from '../../../components/CaseStudies/CaseStudies_Credits'
+import Main from '@parts/Main'
+import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
+import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
+import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
+import CaseStudies_BecomeAClient from '@caseStudies/CaseStudies_BecomeAClient'
+import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
+import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fill out the details of the case study below and the page will be automatically (mostly) populated.

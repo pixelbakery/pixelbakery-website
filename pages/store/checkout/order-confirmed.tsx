@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+
 import next from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import { ChevronRightIcon } from '../../../components/Images/UI_Icons/index'
+import Navigation from '@parts/Navigation'
 
 function SubmissionConfirmation() {
   return (
@@ -11,6 +11,8 @@ function SubmissionConfirmation() {
       <Head>
         <title>PBDS – Order Confirmed</title>
       </Head>
+      <Navigation />
+
       <section
         id=''
         className='px-12 my-4 min-h-screen pt-20 bg-pink-light flex flex-col justify-center'
