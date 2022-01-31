@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 // must pass a size: xl, lg, md, sm

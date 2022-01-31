@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { NextPage, GetServerSideProps } from 'next'
-import PageSection from '../../components/PageSection'
-import Maintenance from '../../components/Store/Store_Maintenance'
-import commerce from '../../lib/commerce'
+import PageSection from '@parts/PageSection'
+import Maintenance from '@store/Store_Maintenance'
+import commerce from '@lib/commerce'
 import Link from 'next/link'
-import useCart from '../../hooks/useCart'
-import Image from 'next'
+import useCart from '@hooks/useCart'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import gsap from 'gsap'
 
 import Head from 'next/head'
+import Navigation_Store from '@parts/Navigation_Store'
+import Main from '@parts/Main'
 export const getServerSideProps: GetServerSideProps = async () => {
   const products = await commerce.products.list()
   return {
@@ -52,7 +54,7 @@ const StorePage: NextPage = ({ products }: any) => {
   // END GSAP
 
   return (
-    <main id='page-store' className='min-w-screen'>
+    <Main id='page-store' className='min-w-screen'>
       <Head>
         <title>PBDS – Store</title>
         <meta
@@ -71,31 +73,9 @@ const StorePage: NextPage = ({ products }: any) => {
         <meta name='twitter:card' content='summary_large_image'></meta>
         <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
       </Head>
-      <Link href='/store/cart' passHref>
-        <div className='absolute right-0 top-0 mr-8 mt-8 z-50'>
-          <div
-            className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-97 active:scale-90'
-          >
-            {cart?.total_items}
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-7 w-7'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2.5'
-                d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-              />
-            </svg>
-          </div>
-        </div>
-      </Link>
-      <section className='mt-4 bg-blue-dark py-12 px-8 min-w-screen'>
+      <Navigation_Store />
+      <PageHeader_VarH header='Company Store' subheader='copy copy copy' />
+      {/* <section className='mt-4 bg-blue-dark py-12 px-8 min-w-screen'>
         <div className='max-w-xl md:max-w-6xl mx-auto my-16 md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
           <div className='cols-span-1 lg:col-span-3'>
             <h1 className='text-4xl lg:text-8xl text-pink-light mt-0 mb-0 pt-0 leading-none'>
@@ -134,7 +114,7 @@ hover:opacity-90 hover:scale-97 active:scale-90'
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       <PageSection className='bg-egg my-4'>
         <div className='max-w-7xl mx-auto mb-30 '>
           <div className='text-center md:text-left text-4xl md:text-6xl text-peach font-black anim-header block pb-12'>
@@ -187,7 +167,7 @@ hover:opacity-90 hover:scale-99 active:scale-97'
         </div>
       </PageSection>
       <Maintenance />
-    </main>
+    </Main>
   )
 }
 

@@ -2,9 +2,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 // import { NextPage } from 'next'
 
-// import PageSection from '../../components/PageSection'
-// import Button_Filled from '../../components/parts/Button_Filled'
-// import Button_Filled from '../../components/parts/Button_Filled'
+// import PageSection from '@parts/PageSection'
+// import Button_Filled from '@parts/Button_Filled'
+// import Button_Filled from '@parts/Button_Filled'
 
 function CareerPost() {
   return (

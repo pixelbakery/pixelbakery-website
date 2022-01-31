@@ -1,24 +1,20 @@
 import Head from 'next/head'
-import React from 'react'
+
 // import InstagramFeed from "../components/instagramFeed";
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import Home_Landing from '@home/Home_Landing'
+import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
+import Home_WhatWeMake from '@home/Home_WhatWeMake'
+import Home_Services from '@home/Home_Services'
+import Home_Portfolio from '@home/Home_Portfolio'
 
-import Home_Landing from '../components/Home/Home_Landing'
-import Home_WhoTheHeck from '../components/Home/Home_WhoTheHeck'
-import Home_WhatWeMake from '../components/Home/Home_WhatWeMake'
-import Home_Services from '../components/Home/Home_Services'
-import Home_Portfolio from '../components/Home/Home_Portfolio'
-import Post from '../types/post'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 
-import { getAllPosts } from '../lib/api_post'
+import Home_Recipes from '@home/Home_Recipes'
 
-// import Home_Recipes from '../components/Home/Home_Recipes'
-
-import Link from 'next/link'
-import Home_Recipes from '../components/Home/Home_Recipes'
-type Props = {
-  allPosts: Post[]
-}
-const Home = ({ allPosts }: Props) => {
+const Home = ({ allPosts }) => {
   return (
     <main className='max-w-screen overflow-x-hidden '>
       <Head>
@@ -36,19 +32,20 @@ const Home = ({ allPosts }: Props) => {
 }
 
 export default Home
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'subtitle',
-    'date',
-    'slug',
-    'author',
-    'categories',
-    'coverImage',
-    'excerpt',
-  ])
 
-  return {
-    props: { allPosts },
-  }
+export function getStaticProps() {
+  const allPosts = postFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+      const { content, data } = matter(source)
+
+      return {
+        content,
+        data,
+        filePath,
+      }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+
+  return { props: { allPosts } }
 }

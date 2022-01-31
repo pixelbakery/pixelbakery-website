@@ -1,7 +1,7 @@
 import { CheckPayWhatYouWantResponse } from '@chec/commerce.js/features/checkout'
 import { useCallback, useContext } from 'react'
-import commerce from '../lib/commerce'
-import { useCheckoutState } from './useCheckoutState'
+import commerce from '@lib/commerce'
+import { useCheckoutState } from '@hooks/useCheckoutState'
 
 export default function useCheckPwyw() {
   const { checkout, setLive } = useCheckoutState()
