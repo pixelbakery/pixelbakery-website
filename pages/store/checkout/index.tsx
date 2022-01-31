@@ -32,6 +32,7 @@ export type CheckoutSchema = {
   lastName: string
   email: string
   phoneNumber: string
+  price: any
   selected_options: [
     {
       group_id: string
@@ -357,7 +358,6 @@ let Checkout: NextPage = () => {
                     pwywMin={pwywMin}
                     pwywMax={pwywMax}
                     pwyw={pwyw}
-                    // cost={pwyw}
                     onPwywChange={onPwywChange}
                     cost={0}
                     onCostChange={undefined} // onCostChange={onPwywChange}

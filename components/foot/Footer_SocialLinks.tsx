@@ -2,10 +2,10 @@ import SocialLinks from '@images/Icons_Social/SocialLinks'
 
 function Footer_SocialLinks() {
   const color = 'text-egg'
-  const textSize = 'text-3xl'
+  const textSize = 'text-xl lg:text-3xl'
 
   return (
-    <div className='max-w-xs mx-auto flex justify-between  px-8'>
+    <div className='max-w-xs flex justify-center gap-2  px-8'>
       <SocialLinks iconName={'Instagram'} color={color} textSize={textSize} />
       <SocialLinks iconName={'Youtube'} color={color} textSize={textSize} />
       <SocialLinks iconName={'Discord'} color={color} textSize={textSize} />

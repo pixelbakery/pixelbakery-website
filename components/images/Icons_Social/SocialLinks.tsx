@@ -18,7 +18,7 @@ const SocialLinks = ({ iconName, ...props }) => {
   return (
     <div>
       <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
-        <a rel='nofollow' className='mx-1 t'>
+        <a rel='nofollow' className='mx-1 '>
           <i
             className={cn(
               'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
