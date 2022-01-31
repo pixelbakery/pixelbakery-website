@@ -12,7 +12,7 @@ import useTotals from '@hooks/useTotals'
 
 type Props = {
   cost: number
-  price: any
+
   shipping?: {
     price: any
   }
