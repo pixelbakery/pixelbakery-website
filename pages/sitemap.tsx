@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import Sitemap_Table from '../components/Sitemap/Sitemap_Table'
+import Sitemap_Table from '@sitemap/Sitemap_Table'
 
 function Sitemap() {
   return (

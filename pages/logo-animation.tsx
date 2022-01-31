@@ -1,12 +1,10 @@
-import React from 'react'
-
-import PageHeader_VariableHeight from '../components/PageHeader/PageHeader_VarH'
-import LogoAnimation_Intro from '../components/LogoAnimation/LogoAnimation_Intro'
-import LogoAnimation_Descriptions from '../components/LogoAnimation/LogoAnimation_Descriptions'
-import LogoAnimation_PastClients from '../components/LogoAnimation/LogoAnimation_PastClients'
+import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+import LogoAnimation_Intro from '@logoAnimation/LogoAnimation_Intro'
+import LogoAnimation_Descriptions from '@logoAnimation/LogoAnimation_Descriptions'
+import LogoAnimation_PastClients from '@logoAnimation/LogoAnimation_PastClients'
 import Vimeo from '@u-wave/react-vimeo'
-import LogoAnimation_Tiers from '../components/LogoAnimation/LogoAnimation_Tiers'
-import LogoAnimation_GetStarted from '../components/LogoAnimation/LogoAnimation_GetStarted'
+import LogoAnimation_Tiers from '@logoAnimation/LogoAnimation_Tiers'
+import LogoAnimation_GetStarted from '@logoAnimation/LogoAnimation_GetStarted'
 function LogoAnimation() {
   return (
     <main>

@@ -187,19 +187,17 @@
   }
 }
 @layer utilities {
-  @variants responsive {
-    .text-shadow {
-      text-shadow: 3px 3px 6px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-md {
-      text-shadow: 4px 4px 8px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-lg {
-      text-shadow: 15px 15px 30px rgba(0, 81, 116, 0.5);
-    }
-    .text-shadow-none {
-      text-shadow: none;
-    }
+  .text-shadow {
+    text-shadow: 3px 3px 6px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-md {
+    text-shadow: 4px 4px 8px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-lg {
+    text-shadow: 15px 15px 30px rgba(0, 81, 116, 0.5);
+  }
+  .text-shadow-none {
+    text-shadow: none;
   }
 }
 .lander {
@@ -268,52 +266,6 @@
   bottom: 0;
   top: 0;
 }
-/* Hamburger Menu  */
-/* This is forked from Mikael Ainalem's source code: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3 */
-.ham {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  /* transition: transform 400ms; */
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.hamRotate.active {
-  transform: rotate(45deg);
-}
-.hamRotate180.active {
-  transform: rotate(180deg);
-}
-.line {
-  transition: stroke-dasharray 500ms, stroke-dashoffset 500ms;
-
-  stroke-width: 5.5;
-  stroke-linecap: round;
-}
-.ham8 .top {
-  stroke-dasharray: 40 160;
-}
-.ham8 .middle {
-  stroke-dasharray: 40 142;
-  transform-origin: 50%;
-  transition: transform 500ms;
-}
-.ham8 .bottom {
-  stroke-dasharray: 40 85;
-  transform-origin: 50%;
-  transition: transform 500ms, stroke-dashoffset 500ms;
-}
-.ham8.active .top {
-  stroke-dashoffset: -64px;
-}
-.ham8.active .middle {
-  transform: rotate(90deg);
-}
-.ham8.active .bottom {
-  stroke-dashoffset: -64px;
-}
-/* END OF HAM STYLING */
 
 /* Twitch */
 #twitch-title {

@@ -1,4 +1,4 @@
-import commerce from '../lib/commerce'
+import commerce from '@lib/commerce'
 import { useCheckoutState } from './useCheckoutState'
 
 export default function useSetShippingOption() {
