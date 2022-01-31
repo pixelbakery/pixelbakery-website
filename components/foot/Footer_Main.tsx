@@ -5,21 +5,51 @@ import Footer_HappyCard from '@foot/Footer_HappyCard'
 import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@foot/Footer_SocialLinks'
-
+import Footer_Mailchimp2 from '@foot/Footer_Mailchimp2'
 import footerMenu from '@data/footerMenu'
 import footerMenuMore from '@data/footerMenuMore'
-
+import { useEffect, useState } from 'react'
+import gsap from 'gsap'
 export const Footer: NextPage = () => {
+  const [testModalOpen, setTestModal] = useState(false)
+  // const [selectedStar, setSelectedStar] = useState()
+
+  const updateModal = () => {
+    setTestModal(!testModalOpen)
+    console.log(testModalOpen)
+  }
+
+  // GSAP FOR MODAL
+  useEffect(() => {
+    if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
+    else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
+    return () => {}
+  })
+  // const updateStars = (star) => {
+  //   setSelectedStar(star)
+  // }
   const year = new Date().getFullYear()
   return (
-    <footer className='bg-peach px-12 py-24 lg:max-h-screen mb-4' id='footer'>
+    <footer
+      className='relative bg-peach px-6 lg:px-12 py-6 lg:py-24 lg:max-h-screen mb-4'
+      id='footer'
+    >
+      <section
+        id='croissantModal'
+        className='transform-gpu will-change-transform absolute w-full h-full top-0 left-0 bg-peach z-30'
+      >
+        <Footer_Mailchimp2 onModalUpdate={updateModal} />
+      </section>
+
       <div className='mx-auto max-w-6xl'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 mb-12 gap-8 h-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 lg:mb-12 gap-8 h-full'>
           <div className='h-full flex flex-col justify-between'>
-            <div className='flex justify-center lg:justify-start'>{/* <Logo_Type /> */}</div>
+            <div className='flex justify-center lg:justify-start'>
+              <Logo_Type />
+            </div>
 
             <nav className=' pt-5 mt-3'>
-              <ul className='grid grid-cols-1 text-center lg:text-left text-4xl font-black'>
+              <ul className='grid grid-cols-2 lg:grid-cols-1  text-left text-xl lg:text-4xl font-semibold gap-x-2 lg:font-black'>
                 {footerMenu.map((navitem) => (
                   <Footer_Nav navitem={navitem} key={navitem.text} />
                 ))}
@@ -28,7 +58,7 @@ export const Footer: NextPage = () => {
           </div>
 
           <div className='flex flex-col justify-between h-full md:pr-6'>
-            <div className='self-center w-full'>
+            <div className='self-center w-full hidden lg:block'>
               <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
                 <h3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
                   studio
@@ -37,7 +67,6 @@ export const Footer: NextPage = () => {
               <div>
                 <ul className='mt-3 text-center md:text-left'>
                   <li>
-                    {' '}
                     <a
                       className='text-cream text-xl'
                       target='_blank'
@@ -56,14 +85,14 @@ export const Footer: NextPage = () => {
                 </ul>
               </div>
             </div>
-            <div className='pt-4 md:pr-4'>
-              <div className='mx-auto mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
-                <h3 className='text-center md:text-left font-extrabold text-3xl  text-cream'>
+            <div className='lg:pt-4 md:pr-4'>
+              <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
+                <h3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
                   more stuff
                 </h3>
               </div>
-              <nav>
-                <ul className='mt-3'>
+              <nav className='flex justify-center'>
+                <ul className='mt-3 grid grid-cols-2 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
                   {footerMenuMore.map((navitem) => (
                     <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
                   ))}
@@ -73,30 +102,30 @@ export const Footer: NextPage = () => {
           </div>
 
           <div className='flex flex-col justify-between h-full'>
-            <div className='text-center mb-4'>
+            <div className='text-center lg:mb-4'>
               <Footer_HappyCard />
             </div>
-            <div className='w-full py-4 my-3'>
+            <div className='w-full lg:py-4 lg:my-3'>
               <div className='w-full' id='footer-social'>
                 <Footer_SocialLinks />
               </div>
-              <div className='w-full flex justify-center'>
+              {/* <div className='w-full flex justify-center'>
                 <span className='text-cream italic font-bold text-center text-lg'>
                   fresh puns and nice buns
                 </span>
-              </div>
+              </div> */}
             </div>
-            <div className='flex justify-center w-full my-3'>
+            <div className='hidden lg:flex justify-center w-full my-3'>
               <Button_Filled
                 center={true}
                 text={'Start something wonderful'}
                 link={'/onboarding'}
-                bgColor={'pink'}
-                textColor={'pink-light'}
+                bgColor={'blue-dark'}
+                textColor={'cream'}
                 chevronDirection='right'
               />
             </div>
-            <div className='text-center mt-3'>
+            <div className='hidden lg:block text-center lg:mt-3'>
               <a
                 className='text-cream  text-2xl font-extrabold'
                 href='mailto:hello@pixelbakery.com'
@@ -108,12 +137,19 @@ export const Footer: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className='text-center pt-4'>
-          <span className='italic text-sm  text-cream'>
+        <div className='flex flex-col md:flex-row justify-center md:justify-between'>
+          <button
+            onClick={updateModal}
+            className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md py-2 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
+          >
+            <i className='block duration-300 ease-in-out group-hover:rotate-360'> 🥐</i>
+          </button>
+          <span className='self-center text-center mt-4 md:mt-0 italic text-sm  text-cream'>
             © {year} Pixel Bakery Design Studio
             <br />
             Made with lust and flour in Lincoln, Nebraska & NW Arkansas
           </span>
+          <div className='hidden md:block' />
         </div>
       </div>
     </footer>

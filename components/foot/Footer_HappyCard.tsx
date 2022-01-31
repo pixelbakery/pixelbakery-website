@@ -1,15 +1,19 @@
 import happyItem from '@data/wordsOfEncouragement'
+import { useState } from 'react'
 
 export default function HappyCard() {
-  const randomQuote = () => {
-    const randomIndex = Math.floor(Math.random() * happyItem.length)
-    return happyItem[randomIndex].text
-  }
+  const randomIndex = Math.floor(Math.random() * happyItem.length)
+  const quote = happyItem[randomIndex].text
+
+  const [happyCard] = useState(quote)
 
   return (
     <div suppressHydrationWarning>
-      <p suppressHydrationWarning className='text-4xl lg:text-6xl italic font-black text-cream'>
-        {randomQuote()}
+      <p
+        suppressHydrationWarning
+        className='text-xl md:text-4xl leading-none lg:text-6xl italic font-black text-cream'
+      >
+        {happyCard}
       </p>
     </div>
   )

@@ -1,10 +1,10 @@
 import Lottie from 'react-lottie-player'
 
 import classNames from 'classnames'
-import Pattern from '@data/Patterns_Blue.json'
+
+import Pattern from '@data/Patterns_Blue_Dark'
 
 import PropTypes from 'prop-types'
-import dynamic from 'next/dynamic'
 import H1 from '@parts/H1'
 
 PageHeader_VariableHeight.propTypes = {
@@ -15,18 +15,19 @@ PageHeader_VariableHeight.propTypes = {
 
 // Local Variables
 
-const primaryColor = 'blue'
-const accentColor = 'blue-dark'
+const primaryColor = 'blue-dark'
+const accentColor = 'blue'
 const subheaderColor = 'cream'
 
-function PageHeader_VariableHeight({ header, subheader }) {
-  const playFrames = [
-    [0, 23],
-    [24, 95],
-  ]
-  const thisPatern = Pattern
+const thisPatern = Pattern
 
+function PageHeader_VariableHeight({ header, subheader }) {
   function Pattern({ thisPatern }) {
+    const playFrames = [
+      [0, 23],
+      [24, 95],
+    ]
+
     return (
       <Lottie
         animationData={thisPatern}
@@ -38,6 +39,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       />
     )
   }
+
   return (
     <div
       className={classNames('relative overflow-hidden lander-variableHeight my-4', [

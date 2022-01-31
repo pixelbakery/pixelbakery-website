@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import SendMail from '../../pages/api/mail'
 
 export default function Home() {
   async function handleOnSubmit(e) {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRightIcon, DownloadIcon } from '@images/UI_Icons/index'
+import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
 import PropTypes from 'prop-types'
@@ -32,7 +32,7 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
     <Link href={link} passHref>
       <div
         className={cn(
-          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transform transition duration-400 hover:scale-102',
+          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
           `bg-${bgColor}`,
           { ['mx-auto']: center },
         )}
