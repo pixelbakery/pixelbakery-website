@@ -1,7 +1,6 @@
 import Main from '@parts/Main'
 
 // case study components
-// case study components
 import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
