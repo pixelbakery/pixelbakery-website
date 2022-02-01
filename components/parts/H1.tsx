@@ -7,7 +7,7 @@ type Props = {
   className?: string
 }
 
-const H1 = ({ color, children, ...className }: PropsWithChildren<Props>) => {
+const H1 = ({ color, children, className }: PropsWithChildren<Props>) => {
   return (
     <h1
       className={cn(

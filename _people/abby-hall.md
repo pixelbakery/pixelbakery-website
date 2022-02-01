@@ -3,7 +3,7 @@
 name: Abby Hall
 active: true
 title: multimedia designer
-phone: 402-413-8366
+# phone: 402-413-8366
 email: abby@pixelbakery.com
 details:
   almaMater: university of nebraska-lincoln
@@ -14,7 +14,7 @@ details:
   hatedBird: pigeon
   hobby: skatebaording, piano, and creating art
   joinedPB: august 2021
-  # favoriteBook: 
+  # favoriteBook:
   personalAesthetic: pastel sk8r girl
   signs:
     sun: taurus
@@ -22,16 +22,16 @@ details:
     moon: scorpio
 socials:
   instagram: https://www.instagram.com/abbyehall/
-  # linkedIn: 
-  # facebook: 
-  # spotify: 
+  linkedin: https://linkedin.com
+  # facebook:
+  # spotify:
   # twitter:
   # personalWebsite:
   # etsy:
 photos:
-  headshotSerious: /img/team/abby_serious.png
-  headshotSmiling: /img/team/abby_smiling.png
-  headshotFun: /img/team/abby_silly.png
+  headshotSerious: /img/team/pixel-bakery-abby-hall-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-abby-hall-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-abby-hall-silly.jpg
 ---
 
 Abby is a current senior at the Johnny Carson Center for Emerging Media Arts at the University of Nebraska-Lincoln. She is passionate about aesthetics, functional design, and playing with color. They have a passion for fashion and media and hope to help bring inclusivity and environmental consciousness to future technology through their art. She has a cat named Pangur Ban and enjoys thrifting and styling outfits.
