@@ -28,13 +28,14 @@ socials:
   # facebook: Url
   # spotify: Url
   # twitter: Url
-  personalWebsite: https://www.johnny-redd.com/ 
-  etsy: https://www.etsy.com/shop/johnnyreddpdf
+  # personalWebsite: https://www.johnny-redd.com/
+  # etsy: https://www.etsy.com/shop/johnnyreddpdf
 photos:
-  headshotSerious: /img/team/johnny_serious.png
-  headshotSmiling: /img/team/johnny_smiling.png
-  headshotFun: /img/team/johnny_silly.png
+  headshotSerious: /img/team/pixel-bakery-johnny-redd-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-johnny-redd-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-johnny-redd-silly.jpg
 ---
+
 Johnny is a graphic designer and artist with a passion for the color pink. They graduated from the University of Nebraska at Omaha in 2020 with a bachelor's degree in studio art, a minor in art history, and a LOT of student debt. Johnny loves urban planning, podcasts, and browsing Reddit, and hates haircuts, autoplay, and Diet Coke.
 
 They are also a co-founder of [Strongly Worded Letters](https://www.stronglywordedomaha.org/), a political education team working to make local government more accessible to all.

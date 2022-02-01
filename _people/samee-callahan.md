@@ -23,16 +23,24 @@ details:
     rising: sagittarius
     moon: capricorn
 socials:
+<<<<<<< HEAD
   # instagram: Url
   linkedIn: https://www.linkedin.com/in/sameecallahan/
   # facebook: Url
   # spotify: Url
   # twitter: Url
+=======
+  instagram: Url
+  linkedIn: Url
+  facebook: Url
+  spotify: Url
+  twitter: Url
+>>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:
-  headshotSerious: /img/team/samee_serious.png
-  headshotSmiling: /img/team/samee_smiling.png
-  headshotFun: /img/team/samee_silly.png
+  headshotSerious: /img/team/pixel-bakery-samee-callahan-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-samee-callahan-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-samee-callahan-silly.jpg
 ---
 Samee has been obsessed with design, animation, and videography since her young Myspace/YouTube days. What started as making videos with her friends for fun (from script-writing all the way through the editing process) has blossomed into a full-blown career doing the same damn thing. Samee studied art and advertising at the University of Nebraska-Lincoln and brings to the table her previous experience working in small and large agencies. She brings energy and inclusivity to every team she works with to ensure team members and clients feel understood and translates that to excellent creative.
