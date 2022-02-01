@@ -16,25 +16,26 @@ details:
   hatedBird: geese
   hobby: roller skating
   joinedPB: october 2020
-  # favoriteBook: 
+  # favoriteBook:
   personalAesthetic: time traveler trying to blend in with modern times
   signs:
     sun: taurus
-    # rising: 
-    # moon: 
+    # rising:
+    # moon:
 socials:
-  # instagram: 
-  # linkedIn: 
-  # facebook: 
-  # spotify: 
-  # twitter: 
-  # personalWebsite: 
-  # etsy: 
+  # instagram: URL
+  # linkedIn:
+  # facebook:
+  # spotify:
+  # twitter:
+  # personalWebsite:
+  # etsy:
 photos:
-  headshotSerious: /img/team/dan_serious.png
-  headshotSmiling: /img/team/dan_smiling.png
-  headshotFun: /img/team/dan_silly.png
+  headshotSerious: /img/team/pixel-bakery-dan-hinz-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-dan-hinz-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-dan-hinz-silly.jpg
 ---
+
 I'm a graphic designer from Lincoln, Nebraska, and a recent UNL grad. I am really into illustrative design, and am passionate about utilizing animation for visual storytelling. I hyperfocus on the small details in my work. Frame by frame, I strive to perfect and execute my ideas, so I can learn as much as possible in the process.
 
 (insert something funny)

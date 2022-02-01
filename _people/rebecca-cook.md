@@ -28,12 +28,12 @@ socials:
   facebook: Url
   spotify: Url
   twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
-  headshotSerious: /img/team/rebecca_serious.png
-  headshotSmiling: /img/team/rebecca_smiling.png
-  headshotFun: /img/team/rebecca_silly.png
+  headshotSerious: /img/team/pixel-bakery-rebecca-cook-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-rebecca-cook-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-rebecca-cook-silly.jpg
 ---
 
 Maddie iss co00oolll

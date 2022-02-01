@@ -29,12 +29,12 @@ socials:
   facebook: Url
   spotify: Url
   twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
-  headshotSerious: /img/team/olivia_serious.png
-  headshotSmiling: /img/team/olivia_smiling.png
-  headshotFun: /img/team/olivia_silly.png
+  headshotSerious: /img/team/pixel-bakery-olivia-boldt-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-olivia-boldt-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-olivia-boldt-silly.jpg
 ---
 
 Maddie iss co00oolll
