@@ -23,16 +23,24 @@ details:
     rising: taurus
     moon: pisces
 socials:
+<<<<<<< HEAD
   instagram: https://www.instagram.com/rcookieart/
   linkedIn: https://www.linkedin.com/in/rebecca-cook-549937219/
   # facebook: Url
   # spotify: Url
   # twitter: Url
+=======
+  instagram: Url
+  linkedIn: Url
+  facebook: Url
+  spotify: Url
+  twitter: Url
+>>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:
-  headshotSerious: /img/team/rebecca_serious.png
-  headshotSmiling: /img/team/rebecca_smiling.png
-  headshotFun: /img/team/rebecca_silly.png
+  headshotSerious: /img/team/pixel-bakery-rebecca-cook-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-rebecca-cook-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-rebecca-cook-silly.jpg
 ---
 Rebecca loves studying things that move, from cartoons to animals to her small-but-growing collection of wind-up toys. And that versatility serves her well as PB's resident Animation Generalist, making concept art, storyboards, and animated assets for the needs of any project. Upon joining PB she was asked by family if "the pixels at the bakery are byte-sized", and now lives burdened by the knowledge that she herself will never think of a pun quite that good.
