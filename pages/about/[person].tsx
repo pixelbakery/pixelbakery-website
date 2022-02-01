@@ -10,62 +10,129 @@ import Head from 'next/head'
 import markdownStyles from '@styles/markdown-styles.module.css'
 
 import markdownToHtml from '@lib/markdownToHtml'
-import PersonType from 'types/person'
-
+import Image from 'next/image'
 import Link from 'next/link'
+import Main from '@parts/Main'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+import H1 from '@parts/H1'
+import Lead from '@parts/Lead'
+import About_Team_SocialLinks from '@about/About_Team_SocialLinks'
+import SocialLinks from '@images/Icons_Social/SocialLinks'
 
 function Person({ person, matchingAuthorPosts }) {
   const router = useRouter()
+  const socialList = person.socials
+
+  // This gets us the social handle. How do we get the url?
+  // Object.keys(socialList).forEach((obj) => {
+  //   console.log(obj, ' : ', socialList[obj])
+  // })
+
+  // for (let x in person.socials) {
+  //   console.log(x + ': ' + person.socials[x])
+  // }
 
   // const allPosts
+  function makeString(social) {
+    const temp = JSON.stringify(social)
+    console.log(temp)
+    return 'instagram'
+  }
+
+  function Socials() {
+    return (
+      <div className='mt-8 flex justify-start gap-2'>
+        {Object.entries(socialList).map(([social, profile]) => {
+          return <SocialLinks key={social} iconName={social} href={profile} />
+        })}
+
+        <div
+          className={markdownStyles['markdown']}
+          dangerouslySetInnerHTML={{ __html: person.content }}
+        />
+      </div>
+    )
+  }
   return (
-    <main>
+    <Main>
+      <Head>
+        <title>PBDS | {person.name} </title>
+      </Head>
       {router.isFallback ? (
         <p>Loading…</p>
       ) : (
         <>
-          <article className='mb-32'>
-            <Head>
-              <title>{person.name} | PBDS</title>
-            </Head>
-            <main>
-              <section className='my-4 lander bg-white flex flex-col justify-center'>
-                <div className='mx-auto max-w-6xl'>
-                  <h2>{person.name}</h2>
-                  <ul className='unstyled'>
-                    <li>{person.title}</li>
-                    <li>{person.phone}</li>
-                    <li>{person.email}</li>
-                  </ul>
-                  <div
-                    className={markdownStyles['markdown']}
-                    dangerouslySetInnerHTML={{ __html: person.content }}
-                  />
+          <PageSection color='white'>
+            <InnerWrapper className='mt-24'>
+              <div className='grid grid-cols-1 gap-y-8'>
+                <div className='col-span-1 relative w-full aspect-3/4'>
+                  <div className='relative max-w-lg'>
+                    <Image
+                      priority
+                      src={person.photos.headshotFun}
+                      layout='fill'
+                      objectFit='cover'
+                      alt={`${person.name}, ${person.title} at Pixel Bakery Design Studio`}
+                    />
+                  </div>
                 </div>
-              </section>
-              <section className='my-4'>
-                <div>
-                  {matchingAuthorPosts.map((post) => {
-                    return (
-                      <Link
-                        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-                        key={post.data.title}
-                        href={'/recipes/[slug]'}
-                        passHref
+                <div className='col-span-1'>
+                  <div>
+                    <H1 color='blue' className='mb-2 pb-0'>
+                      {person.name}
+                    </H1>
+                    <Lead color='wine' className='mb-2 pb-0'>
+                      {person.title}
+                    </Lead>
+                  </div>
+                  <div>
+                    {person.email ? (
+                      <a
+                        href={`mailto:${person.email}`}
+                        className='italic text-peach cursor-pointer'
                       >
-                        <a>
-                          <h3>{post.data.title}</h3>
-                        </a>
-                      </Link>
-                    )
-                  })}
+                        {person.email}
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                    {person.phone ? (
+                      <a href={`tel:${person.phone}`} className='italic text-peach cursor-pointer'>
+                        {person.phone}
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                  {socialList != undefined ? <Socials /> : ''}
                 </div>
-              </section>
-            </main>
-          </article>
+              </div>
+            </InnerWrapper>
+
+            {/*  */}
+          </PageSection>
+          <PageSection>
+            <div>
+              {matchingAuthorPosts.map((post) => {
+                return (
+                  <Link
+                    as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+                    key={post.data.title}
+                    href={'/recipes/[slug]'}
+                    passHref
+                  >
+                    <a>
+                      <h3>{post.data.title}</h3>
+                    </a>
+                  </Link>
+                )
+              })}
+            </div>
+          </PageSection>
         </>
       )}
-    </main>
+    </Main>
   )
 }
 
@@ -80,7 +147,8 @@ export async function getStaticProps({ params }: Params) {
   const person = getPersonBySlug(params.person, [
     'name',
     'active',
-    'headshotSerious',
+    'socials',
+
     'title',
     'photos',
     'phone',

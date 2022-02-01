@@ -34,6 +34,7 @@
       "@store/*": ["components/store/*"],
       "@sitemap/*": ["components/sitemap/*"],
       "@images/*": ["components/images/*"],
+      // "@socialIcons/*": ["components/images/Icons_Social/Icons/*"],
       "@logoAnimation/*": ["components/pageSpecific/logoAnimation/*"],
       "@pageHeaders/*": ["components/pageHeaders/*"],
       "@nav/*": ["components/nav/*"],
