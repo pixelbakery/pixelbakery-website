@@ -28,7 +28,7 @@ function About({ allPeople }: Props) {
 
 export default About
 export const getStaticProps = async () => {
-  const allPeople = getAllPeople(['slug', 'name', 'active', 'title', 'photos'])
+  const allPeople = getAllPeople(['slug', 'socials', 'name', 'active', 'title', 'photos'])
 
   return {
     props: { allPeople },
