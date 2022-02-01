@@ -23,16 +23,17 @@ details:
     rising: leo
     moon: aquarius
 socials:
-  instagram: https://www.instagram.com/lizziemoore_/ 
-  linkedIn: www.linkedin.com/in/lizzie-moore
+  instagram: https://www.instagram.com/lizziemoore_/
+  linkedIn: https://linkedin.com/in/lizzie-moore
   # facebook: Url
   # spotify: Url
   # twitter: Url
   # personalWebsite: Url
   # etsy: Url
 photos:
-  headshotSerious: /img/team/lizzie_serious.png
-  headshotSmiling: /img/team/lizzie_smiling.png
-  headshotFun: /img/team/lizzie_silly.png
+  headshotSerious: /img/team/pixel-bakery-lizzie-moore-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-lizzie-moore-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-lizzie-moore-silly.jpg
 ---
+
 Lizzie is a senior at UNL studying Broadcast Journalism and minoring in entrepreneurship. She loves hosting a good dinner party with 〰fun〰 cocktails, always. Traveling is her passion. She spent two weeks in Greece and Italy and dreams of going back to Capri. She is the type of person that adds a ridiculous amount of items to their online shopping cart just for it to sit there, will ask to pet your dog when passing on the sidewalk, and checks if the pasta is done by throwing it at a wall.

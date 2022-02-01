@@ -28,12 +28,12 @@ socials:
   facebook: Url
   spotify: Url
   twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
-  headshotSerious: /img/team/maddie_serious.png
-  headshotSmiling: /img/team/maddie_smiling.png
-  headshotFun: /img/team/maddie_silly.png
+  headshotSerious: /img/team/pixel-bakery-maddie-hahn-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-maddie-hahn-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-maddie-hahn-silly.jpg
 ---
 
 Maddie iss co00oolll

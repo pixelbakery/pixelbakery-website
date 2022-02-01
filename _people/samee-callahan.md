@@ -28,12 +28,12 @@ socials:
   facebook: Url
   spotify: Url
   twitter: Url
-  personalWebsite: Url
-  etsy: Url
+  # personalWebsite: Url
+  # etsy: Url
 photos:
-  headshotSerious: /img/team/samee_serious.png
-  headshotSmiling: /img/team/samee_smiling.png
-  headshotFun: /img/team/samee_silly.png
+  headshotSerious: /img/team/pixel-bakery-samee-callahan-serious.jpg
+  headshotSmiling: /img/team/pixel-bakery-samee-callahan-smiling.jpg
+  headshotFun: /img/team/pixel-bakery-samee-callahan-silly.jpg
 ---
 
 Maddie iss co00oolll
