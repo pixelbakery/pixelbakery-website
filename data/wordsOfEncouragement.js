@@ -18,6 +18,9 @@ export default [
     text: "i'm so damn proud of you.",
   },
   {
+    text: 'idk man, i just work here.',
+  },
+  {
     text: 'you look great today - take a selfie.',
   },
   {
