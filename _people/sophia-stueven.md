@@ -2,7 +2,7 @@
 #bios found here: https://docs.google.com/document/d/13UuePbGLRF4G5b5JoEe2Vua3NukZ1-QwRW4Oisnd8lI/edit#
 #anything that should be left blank enter: ''
 name: Sophia Stueven
-active: true
+active: false
 title: titleGoesHere
 #only enter a phone number if they're client facing
 phone: 402-xxx-xxxx

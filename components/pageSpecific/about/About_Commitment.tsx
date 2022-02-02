@@ -23,19 +23,22 @@ function About_Commitment() {
               We only bring on 20 clients every year, so it's important that we build relationships
               with ones that align with our values. We seek out clients that:
             </p>
-            <ul className='list-decimal list-outside px-4'>
-              <li className='my-4'>
+            <ul className='list-decimal list-inside grid gap-y-4'>
+              <li className=' bg-cream py-4 px-6 rounded-lg drop-shadow-sm font-semibld'>
                 pay a living wage and care about the health and safety of their employees
               </li>
-              <li className='my-4'>
+              <li className=' bg-cream py-4 px-6 rounded-lg drop-shadow-sm font-semibld'>
                 promote products, practices, and movements that help combat climate change
               </li>
-              <li className='my-4'> Are woman, LGBTQ+, or BIPOC owned</li>
+              <li className=' bg-cream py-4 px-6 rounded-lg drop-shadow-sm font-semibld'>
+                {' '}
+                Are woman, LGBTQ+, or BIPOC owned
+              </li>
               {/* <li className='my-4'>
                 Are innovative and push our society towards a world we want future generations to
                 live in
               </li> */}
-              <li className='my-4'>
+              <li className='bg-cream py-4 px-6 rounded-lg drop-shadow-sm font-semibld'>
                 Believe in the power of art and design, and the important role it plays in building
                 culture
               </li>

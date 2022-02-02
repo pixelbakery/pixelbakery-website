@@ -1,13 +1,22 @@
-import About_Team_Headshot from './About_Team_Headshot'
-import Person from '@types/person'
+import About_Team_Headshot from '@about/About_Team_Headshot'
+
 import H2 from '@parts/H2'
 import Lead from '@parts/Lead'
-
-type Props = {
-  people: Person[]
-}
+import { useState } from 'react'
 
 function About_Team({ people }) {
+  const [shuffled, setShuffle] = useState(Shuffle(people))
+  function Shuffle(arr) {
+    let j, x, index
+    for (index = arr.length - 1; index > 0; index--) {
+      j = Math.floor(Math.random() * (index + 1))
+      x = arr[index]
+      arr[index] = arr[j]
+      arr[j] = x
+    }
+    return arr
+  }
+
   function Header() {
     return (
       <div className='relative w-full  col-span-1 bg-blue flex flex-col justify-center px-8'>
@@ -23,16 +32,12 @@ function About_Team({ people }) {
         <Lead color='blue-dark' className='pt-4'>
           we&apos;re a ragtag team of scrappy designers, animators, and producers
         </Lead>
-        <Lead color='peach' className='pt-4 md:hidden'>
-          we create intentional and beautiful moments for exciting people that share our beliefs and
-          passions
-        </Lead>
       </div>
     )
   }
   function Leader2() {
     return (
-      <div className='hidden md:flex relative w-full bg-blue-dark col-span-1 aspect-h-4 md:flex-col justify-center px-8'>
+      <div className='flex relative w-full bg-blue-dark col-span-2 lg:col-span-1 aspect-1/1 md:aspect-3/4 flex-col justify-center px-8'>
         <Lead color='blue' className='mb-0 pb-0'>
           we create intentional and beautiful moments for exciting people that share our beliefs and
           passions
@@ -41,21 +46,31 @@ function About_Team({ people }) {
     )
   }
 
-  const shifted = people
-  const headerIndex = 0
+  const shifted = people.map((person) => {
+    if (person.active === true) {
+      return person
+    } else return
+  })
+  shifted.forEach((person) => {
+    console.log(person)
+  })
+  // const headerIndex = 0
 
-  shifted.splice(headerIndex, 0, <Header />)
-  const leadIndex1 = (shifted.length - 7) * 1
-  console.log(leadIndex1, ' – ', shifted.length)
-  shifted.splice(leadIndex1, 0, <Leader1 />)
+  // shifted.splice(headerIndex, 0, <Header />)
 
-  const leadIndex2 = (shifted.length - 2) * 1
-  console.log(leadIndex2)
-  shifted.splice(leadIndex2, 0, <Leader2 />)
+  // const leadIndex1 = 6
+
+  // shifted.splice(leadIndex1, 0, <Leader1 />)
+
+  // const leadIndex2 = (shifted.length - 4) * 1
+
+  // shifted.splice(leadIndex2, 0, <Leader2 />)
+
+  // console.log(shifted)
 
   return (
     <section className='my-4' id='team'>
-      <div className='grid gap-1 -4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
+      {/* <div className='grid gap-1 -4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {shifted.map((person, index) => {
           if (index === headerIndex) {
             return <Header />
@@ -79,7 +94,7 @@ function About_Team({ people }) {
             }
           }
         })}
-      </div>
+      </div> */}
     </section>
   )
 }
