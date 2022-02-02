@@ -2,7 +2,7 @@ import React, { useRouter } from 'next/router'
 import fs from 'fs'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-
+import { CamelCaseToSentence } from '@lib/helpers'
 import { getAllPeople, getPersonBySlug } from '@lib/api_person'
 import matter from 'gray-matter'
 
@@ -17,40 +17,50 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H1 from '@parts/H1'
 import Lead from '@parts/Lead'
-import About_Team_SocialLinks from '@about/About_Team_SocialLinks'
 import SocialLinks from '@images/Icons_Social/SocialLinks'
+import H2 from '@parts/H2'
+import H3 from '@parts/H3'
+import { ChevronRightIcon } from '@images/UI_Icons'
 
-function Person({ person, matchingAuthorPosts }) {
+function Person({ prev, next, person, matchingAuthorPosts }) {
   const router = useRouter()
   const socialList = person.socials
+  const details = person.details
+  console.log('prev: ', prev.name, ' ', prev.slug)
+  console.log('next: ', next.name, ' ', next.slug)
 
-  // This gets us the social handle. How do we get the url?
-  // Object.keys(socialList).forEach((obj) => {
-  //   console.log(obj, ' : ', socialList[obj])
-  // })
-
-  // for (let x in person.socials) {
-  //   console.log(x + ': ' + person.socials[x])
-  // }
-
-  // const allPosts
-  function makeString(social) {
-    const temp = JSON.stringify(social)
-    console.log(temp)
-    return 'instagram'
+  function Details() {
+    return (
+      <div className='grid grid-cols-2 gap-y-6 gap-x-6'>
+        {Object.entries(details).map(([header, text]) => {
+          return (
+            <div className='col-span-1'>
+              <Lead className='mb-1' color='peach'>
+                {CamelCaseToSentence(header)}
+              </Lead>
+              {header === 'signs' ? (
+                <ul className='flex flex-wrap gap-x-4 text-md text-wine'>
+                  <li>☉ {details.signs.sun}</li>
+                  <li>↑ {details.signs.rising}</li>
+                  <li>☽ {details.signs.moon}</li>
+                </ul>
+              ) : (
+                <p className='text-md text-wine'>{text}</p>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    )
   }
-
   function Socials() {
     return (
-      <div className='mt-8 flex justify-start gap-2'>
+      <div className='mt-0 pt-0 flex justify-start gap-x-3'>
         {Object.entries(socialList).map(([social, profile]) => {
-          return <SocialLinks key={social} iconName={social} href={profile} />
+          return (
+            <SocialLinks key={social} color='blue' size={'3xl'} iconName={social} href={profile} />
+          )
         })}
-
-        <div
-          className={markdownStyles['markdown']}
-          dangerouslySetInnerHTML={{ __html: person.content }}
-        />
       </div>
     )
   }
@@ -67,7 +77,7 @@ function Person({ person, matchingAuthorPosts }) {
             <InnerWrapper className='mt-24'>
               <div className='grid grid-cols-1 gap-y-8'>
                 <div className='col-span-1 relative w-full aspect-3/4'>
-                  <div className='relative max-w-lg'>
+                  <div className=' max-w-lg'>
                     <Image
                       priority
                       src={person.photos.headshotFun}
@@ -105,12 +115,27 @@ function Person({ person, matchingAuthorPosts }) {
                       ''
                     )}
                   </div>
+                  <div
+                    className={markdownStyles['markdown']}
+                    dangerouslySetInnerHTML={{ __html: person.content }}
+                  />
                   {socialList != undefined ? <Socials /> : ''}
                 </div>
               </div>
             </InnerWrapper>
 
             {/*  */}
+          </PageSection>
+          <PageSection>
+            <InnerWrapper>
+              <Details />
+              {/* <div className='grid grid-cols-1'>
+                {socialList != undefined ? (
+                  {
+                    Object.entries(obj).map()
+                  }
+                ) : ''}</div> */}
+            </InnerWrapper>
           </PageSection>
           <PageSection>
             <div>
@@ -130,6 +155,37 @@ function Person({ person, matchingAuthorPosts }) {
               })}
             </div>
           </PageSection>
+          <PageSection className='bg-pink-light py-2'>
+            <InnerWrapper className='py-2 my-2'>
+              <div className='flex justify-between'>
+                <Link href={prev.slug}>
+                  <a className='flex'>
+                    <div className='w-20 text-peach rotate-180'>
+                      <ChevronRightIcon />
+                    </div>
+                    <div className='self-center'>
+                      <p className='text-peach font-semibold text-xl leading-none mt-1'>
+                        {prev.name}
+                      </p>
+                    </div>
+                  </a>
+                </Link>
+
+                <Link href={next.slug}>
+                  <a className='flex justify-end'>
+                    <div className='self-center'>
+                      <p className='text-peach font-semibold text-xl leading-none mt-1'>
+                        {next.name}
+                      </p>
+                    </div>
+                    <div className='w-20 text-peach '>
+                      <ChevronRightIcon />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </InnerWrapper>
+          </PageSection>
         </>
       )}
     </Main>
@@ -148,13 +204,38 @@ export async function getStaticProps({ params }: Params) {
     'name',
     'active',
     'socials',
-
+    'details',
     'title',
     'photos',
     'phone',
     'email',
     'content',
   ])
+  const allPeople = getAllPeople(['name', 'slug'])
+  // Get current person in people object so we can see who comes before and after
+  const index = allPeople
+    .sort((person2, person1) => (person1.name > person2.name ? -1 : 1))
+    .findIndex((p) => p.name.toLowerCase() === person.name.toLowerCase())
+
+  const getPrev = (i) => {
+    if (i === 0) {
+      return allPeople[allPeople.length - 1]
+    } else {
+      return allPeople[i - 1]
+    }
+  }
+
+  const getNext = (i) => {
+    if (i === allPeople.length - 1) {
+      return allPeople[0]
+    } else {
+      return allPeople[i + 1]
+    }
+  }
+  const prev = getPrev(index)
+  const next = getNext(index)
+
+  // Find any associated blog posts
   const allPosts = postFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
@@ -173,13 +254,13 @@ export async function getStaticProps({ params }: Params) {
     (post) => post.data.author.name.toUpperCase() === person.name.toUpperCase(),
   )
 
-  // matchingAuthorPosts.forEach((post) => {
-  // })
-
   const content = await markdownToHtml(person.content || '')
   return {
     props: {
       matchingAuthorPosts: matchingAuthorPosts,
+      allPeople: allPeople,
+      prev: prev,
+      next: next,
       person: {
         ...person,
         content,
@@ -188,11 +269,11 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 export async function getStaticPaths() {
-  const people = getAllPeople(['slug'])
+  const allPeople = getAllPeople(['slug'])
   // const posts = getAllPosts(['slug'])
 
   return {
-    paths: people.map((person) => {
+    paths: allPeople.map((person) => {
       return {
         params: {
           person: person.slug,
