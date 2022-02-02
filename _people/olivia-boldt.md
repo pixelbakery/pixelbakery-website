@@ -24,19 +24,11 @@ details:
     rising: scorpio
     moon: pisces
 socials:
-<<<<<<< HEAD
   instagram: https://www.instagram.com/oliviaboldt/
   linkedIn: https://www.linkedin.com/in/olivia-boldt-459a44200/
   # facebook: Url
   # spotify: Url
   twitter: https://twitter.com/oliviaboldt
-=======
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
->>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:
@@ -44,4 +36,5 @@ photos:
   headshotSmiling: /img/team/pixel-bakery-olivia-boldt-smiling.jpg
   headshotFun: /img/team/pixel-bakery-olivia-boldt-silly.jpg
 ---
+
 Olivia graduated from the University of Nebraska-Lincoln in May 2021 with a double major in psychology and music. She began her journey at Pixel Bakery in July 2021 while beginning an online class in UX Design through CareerFoundry. With experience in various artistic fields and roles, Olivia hopes to use her leadership, teaching, design, and music experiences to produce work that is genuine and deliberate. In her personal time, Olivia loves lifting weights, drumming, reading, and listening to music.
