@@ -51,16 +51,19 @@ The package we use to create videos is called [React-Player](https://github.com/
 
 To use the video component in a blog post, copy and paste this code:
 
-```
-<div className={'aspect-16/9'}>
-  <ReactPlayer
-    url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
-    width={'100%'}
-    height={'100%'}
-    className={''}
-  />
-</div>
-```
+`<Video url={'https://www.youtube.com/watch?v=5qap5aO4i9A'} />`
+The available props that you can pass:
+
+- autoPlay (defaults to false)
+- poster={props.poster} (defaults to false), insert an src to an image that you want to use as a title card when the video isn't playing.
+- loop (defaults to false)
+- muted (defaults to false)
+- playsInline (defaults to false)
+- controls (defaults to true)
+
+You can pas any of these props like you pass the URL prop. For example, if you wanted a muted video that autoplays and continually loops:
+
+`<Video url={'https://www.youtube.com/watch?v=5qap5aO4i9A'} autoplay={true} loop={true} muted={true}/>`
 
 ### Coming Soon: Image Carousels
 
