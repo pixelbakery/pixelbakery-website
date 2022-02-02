@@ -6,16 +6,20 @@ title: multimedia designer
 # phone: 402-413-8366
 email: abby@pixelbakery.com
 details:
-  almaMater: university of nebraska-lincoln
-  pronoun: she/they
-  favoriteThing: sleeping in
-  leastFavoritestring: being cold
-  favoriteMovie: fantastic mr. fox
-  hatedBird: pigeon
-  hobby: skatebaording, piano, and creating art
   joinedPB: august 2021
+
+  pronoun: she/they
+
+  almaMater: university of nebraska-lincoln
+
+  favoriteThing: sleeping in
+  notAbout: being cold
+  favoriteMovie: fantastic mr. fox
+  mostHatedBird: pigeon
   # favoriteBook:
   personalAesthetic: pastel sk8r girl
+  hobby: skatebaording, piano, and creating art
+
   signs:
     sun: taurus
     rising: gemini
