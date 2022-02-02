@@ -305,21 +305,21 @@
 }
 .circle-plus .circle .horizontal {
   /* position: absolute; */
-  width: 30px;
-  height: 5px;
+  width: 20px;
+  height: 4px;
   left: 50%;
-  margin-left: -15px;
+  margin-left: -10px;
   top: 50%;
   margin-top: -2.5px;
 }
 .circle-plus .circle .vertical {
   /* position: absolute; */
-  width: 5px;
-  height: 30px;
+  width: 4px;
+  height: 20px;
   left: 50%;
   margin-left: -2.5px;
   top: 50%;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 .answer {
   display: none;
