@@ -19,14 +19,15 @@ const clientURL = 'https://backcountry.com'
 
 // Project Header
 const heroVideo = '324888735'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "Bringing the Hudle Focus prototype to life through a video of highly realistic models."
+const projectExcerpt = 'What started as just a prototype ended with realistic renders and a quality product to show potential clients.'
+const projectIntroduction = 'Hudl came to us with a brand new, self-automated camera that could be used by sports teams to capture game footage without a cameraman, called the Hudl Focus. They needed a polished, fast-paced video to generate some hype around their exciting, homegrown product. Cool, right? One problem: the Focus hadn’t actually been manufactured yet.'
 
 // credits
 const credits = [
-  { name: 'Jordan Lambrecht', title: 'Director' },
-  { name: 'Samee Callahan', title: 'Associate Creative Director' },
+  { name: 'Jordan Lambrecht', title: 'Director'},
+  { name: 'Karley Johnson', title: 'Animator'},
+  { name: 'Elaina Dye', title: 'Account Manager'},
 ]
 
 function caseStudy_Backcountry_GearheadMagic() {
