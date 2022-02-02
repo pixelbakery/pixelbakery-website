@@ -20,8 +20,13 @@ details:
   personalAesthetic: time traveler trying to blend in with modern times
   signs:
     sun: taurus
+<<<<<<< HEAD
+    rising: leo
+    moon: cancer
+=======
     # rising:
     # moon:
+>>>>>>> main
 socials:
   # instagram: URL
   # linkedIn:
