@@ -57,6 +57,12 @@ export default [
     text: 'everyone should have a friend like you',
   },
   {
-    text: "You're stronger than you think",
+    text: "you're stronger than you think",
   },
+  {
+    text: 'i hope you have a better day today',
+  },
+  {
+    text: 'just wanted to send you a smile today:)'
+  }
 ]
