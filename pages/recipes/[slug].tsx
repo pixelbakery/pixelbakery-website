@@ -16,6 +16,7 @@ import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import PersonType from 'types/person'
 
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
+import Video from '@parts/Video'
 import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 
 // Custom components/renderers to pass to MDX.
@@ -27,7 +28,7 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Swiper: Swiper,
-  ReactPlayer: ReactPlayer,
+  Video: Video,
   TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
