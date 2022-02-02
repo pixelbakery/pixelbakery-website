@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 function CaseStudies_PrevNext({ title }) {
   console.log(title)
-  const titleCheck = title.toLowerCase()
+
   const index = allProjects.findIndex(
     (project) => project.title.toLowerCase() === title.toLowerCase(),
   )
