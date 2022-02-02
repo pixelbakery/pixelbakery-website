@@ -27,8 +27,8 @@ const SocialLinks = ({ iconName, ...props }) => {
           <i
             className={cn(
               'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
-              props.color,
-              props.textSize,
+              `text-${props.color}`,
+              `text-${props.size}`,
             )}
             role='img'
             aria-label={iconName}

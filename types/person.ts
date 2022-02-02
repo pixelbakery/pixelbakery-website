@@ -12,7 +12,7 @@ type PersonType = {
     almaMater: string
     pronoun: string
     favoriteThing: string
-    leastFavoriteString: string
+    leastFavoriteThing: string
     favoriteMovie: string
     hatedBird: string
     hobby: string
