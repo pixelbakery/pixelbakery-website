@@ -35,20 +35,10 @@ export function getPersonBySlug(slug: string, fields: string[] = []) {
 
   return items
 }
-function shuffle(arr) {
-  let j, x, index
-  for (index = arr.length - 1; index > 0; index--) {
-    j = Math.floor(Math.random() * (index + 1))
-    x = arr[index]
-    arr[index] = arr[j]
-    arr[j] = x
-  }
-  return arr
-}
+
 export function getAllPeople(fields: string[] = []) {
   const slugs = getPeopleSlugs()
   const people = slugs.map((slug) => getPersonBySlug(slug, fields))
-  shuffle(people)
   // sort people by date in descending order
   // .sort((person1, person2) => (person1.date > person2.date ? -1 : 1))
   return people
