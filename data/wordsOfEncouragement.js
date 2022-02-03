@@ -65,4 +65,10 @@ export default [
   {
     text: 'just wanted to send you a smile today 😊',
   },
+  {
+    text: 'everything will be ok.',
+  },
+  {
+    text: 'i believe in you',
+  },
 ]
