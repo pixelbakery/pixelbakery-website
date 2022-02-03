@@ -2,7 +2,7 @@ import ReactPlayer from 'react-player'
 
 function Video({ url, ...props }) {
   return (
-    <div className='aspect-16/9'>
+    <div className='markdown-video aspect-16/9'>
       <ReactPlayer
         url={url}
         autoPlay={props.autoPlay ? props.autoPlay : false}
@@ -14,6 +14,7 @@ function Video({ url, ...props }) {
         playsInline={props.playsInline ? props.playsInline : false}
         controls={props.controls ? props.controls : true}
       />
+      <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '> {props.caption}</em>
     </div>
   )
 }
