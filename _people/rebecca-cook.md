@@ -23,19 +23,11 @@ details:
     rising: taurus
     moon: pisces
 socials:
-<<<<<<< HEAD
   instagram: https://www.instagram.com/rcookieart/
   linkedIn: https://www.linkedin.com/in/rebecca-cook-549937219/
   # facebook: Url
   # spotify: Url
   # twitter: Url
-=======
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
->>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:
