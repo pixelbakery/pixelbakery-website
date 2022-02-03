@@ -24,19 +24,11 @@ details:
     rising: scorpio
     moon: pisces
 socials:
-<<<<<<< HEAD
   instagram: https://www.instagram.com/oliviaboldt/
   linkedIn: https://www.linkedin.com/in/olivia-boldt-459a44200/
   # facebook: Url
   # spotify: Url
   twitter: https://twitter.com/oliviaboldt
-=======
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
->>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:

@@ -23,19 +23,11 @@ details:
     rising: gemini
     moon: virgo
 socials:
-<<<<<<< HEAD
   instagram: https://www.instagram.com/maddielhahn/ 
   linkedIn: https://www.linkedin.com/in/madisyn-hahn-788257140 
   # facebook: Url
   # spotify: Url
   # twitter: Url
-=======
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
->>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:

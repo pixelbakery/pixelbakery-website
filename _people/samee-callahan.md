@@ -23,19 +23,11 @@ details:
     rising: sagittarius
     moon: capricorn
 socials:
-<<<<<<< HEAD
   # instagram: Url
   linkedIn: https://www.linkedin.com/in/sameecallahan/
   # facebook: Url
   # spotify: Url
   # twitter: Url
-=======
-  instagram: Url
-  linkedIn: Url
-  facebook: Url
-  spotify: Url
-  twitter: Url
->>>>>>> main
   # personalWebsite: Url
   # etsy: Url
 photos:
