@@ -18,11 +18,11 @@ Hello hello. Here's a brief demo on how to integrate a php workflow with Bootstr
 
 ![](/img/blog/Screen-Shot-2018-03-06-at-5.04.16-PM.png)
 
-#### Why use PHP?
+## Why use PHP?
 
 PHP will help us keep our files clean and organized. Also, if we reference a single php file from multiple pages, it allows us to make one edit instead of 20 if we need to make a change to something. It also expands the capabilities of our website, like allowing for contact forms.
 
-#### How it Works
+## How it Works
 
 Instead of using pages like index.html, we're going to use index.php. From here, we'll call a bunch of "parts" from a /inc/ file path. We'll use the following components in this tutorial.
 
@@ -34,11 +34,11 @@ Instead of using pages like index.html, we're going to use index.php. From here,
 6.  inc/contactform.php
 7.  inc/footer.php
 
-#### Header.php
+## Header.php
 
 This is where all the opening stuff will happen in your website. This is where you declare the doctype, link your stylesheets, call google analytics, and start the body tag.
 
-#### Setting Up a Navigation System
+## Setting Up a Navigation System
 
 Before we start, we want to be able to tell the navigation file what page we're currently viewing. We can set the name of each page by placing the following line of code in every page file (index.php, about.php, etc).
 
@@ -70,7 +70,7 @@ This function says "If the current $page is set to "home", add the class .active
     border-bottom: 1px white dotted !important;
 }
 
-#### Creating a Contact Section
+## Creating a Contact Section
 
 Okay, so let's say we have a section that we want to use repeatedly throughout the site. For this example, let's add a Contact Us section to our site. We want the contact section on both the home page and the about page, so it makes sense to create a new contactSection.php and have our pages reference that file. That way, if we want to swap out a phone number or form field, we can just do it once in the contactSection.php instead of editing all of our pages.
 
@@ -84,7 +84,7 @@ I want to create two big columns. I want a blurb and some social links on the le
 
 We're going to next the actual contact form in it's own php file to save space. We'll call that php file from contactSection.php, and then we'll call ContactSection.php from index.php.
 
-#### The Footer
+## The Footer
 
 Another neat thing we can do since we're using php is make sure our copyright is automatically always the correct year. This avoids tackiness.
 
@@ -105,7 +105,7 @@ PHP is dope. Use it. Bootstrap 4.0 is dope. Use that too. Make cool things faste
 
 *Update: March 12th, 2019*
 
-#### How to remove .php, .html, .htm extensions with .htaccess
+## How to remove .php, .html, .htm extensions with .htaccess
 
 I prefer getting rid of the .php extensions on all of my websites that I design. I think it looks cleaner and is easier to navigate. Alex Cican has a great article on the subject that goes further in depth, but here's the gist.
 
