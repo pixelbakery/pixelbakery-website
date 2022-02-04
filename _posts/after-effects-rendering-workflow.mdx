@@ -14,11 +14,11 @@ ogImage:
 ---
 Hiya. Here's a quick guide written for my students on what Pixel Bakery uses for our render workflow. I figured it might be of some use to the general public, so I decided making a post about it would be beneficial to all. It's important to keep in mind that there's a lot of different solutions for render workflows and every studio has a unique take on it, but this is what we do. I know this tutorial is pretty long, but I wanted to be as in-depth as possible to cover all scenarios.
 
-#### Make it Big, Then Make it Small
+## Make it Big, Then Make it Small
 
 I'm a big fan of linear workflows. All of my renders start with a parent version that's uncompressed and I move towards lower quality versions as needed. This isn't a catch-all solution though. We have to remember that time is money and money is power and cash rules everything around us. AKA, there's a balance between allowable time, available computing power, and the quality of the render. More time = nicer render, less time = lower quality render. Decisions have to be made with this and you have to decide what's best for you. If you're rendering out a render test or a rough draft to send to a client, or let's say you blew a deadline, then it clearly doesn't make sense to pull out all the stops.
 
-#### Naming Conventions & File Structures
+## Naming Conventions & File Structures
 
 ![](/img/blog/Screen-Shot-2016-09-12-at-20.27.35.png)
 
@@ -34,7 +34,7 @@ Uncompressed render AKA the "master file": PB_SprinkleMachine_v5\
 Test / wireframe: PB_SprinkleMachine_RTESTv5\
 Lower quality version such has h264: PB_SprinkleMachine_H264v5
 
-#### Rendering inside After Effects
+## Rendering inside After Effects
 
 Okay. Let's get into it.
 
@@ -49,7 +49,7 @@ There's three main areas we want to pay attention to now. Output To, Output Modu
 3\. Set Output To to our naming conventions.\
 4\. Open up Output Module
 
-#### Output Module
+## Output Module
 
 Format: Quicktime\
 Depth: Trillions of Colors\
@@ -65,19 +65,19 @@ We don't really need to touch anything under the render settings.
 
 Final step: hit render. Keep in mind that this is uncompressed, so it's going to be a hefty file and I doubt you'll be able to play it on your computer. However, you should be able to upload this file to Vimeo and YouTube.
 
-#### Creating Lower Quality Versions
+## Creating Lower Quality Versions
 
 Alrighty, our master file is done so all that's left is to render out lower quality versions if need be. This will all be done in Adobe Media Encoder. There's two different codecs that I would recommend. H.265 and H.264.
 
 H.265: This is a newer codec with better compression algorithm than H.264. However, there are a few down sides. Here are the pros and cons:
 
-#### Pros
+## Pros
 
 -   Smaller file sizes
 -   Higher quality than h.264
 -   Newer standard that has more shelf life than h.264
 
-#### Cons
+## Cons
 
 -   Way longer render times
 -   Since it's so new, it's not universally implemented yet. You might find that some websites do not accept it yet
