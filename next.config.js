@@ -125,6 +125,8 @@ module.exports = {
       'media.pixelbakery.com',
       'pixelbakery.com',
       'placeimg.com',
+      'scontent.cdninstagram.com',
+      'cdninstagram.com',
     ],
   },
 }
