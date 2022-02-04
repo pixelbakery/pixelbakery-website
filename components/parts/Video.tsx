@@ -14,7 +14,14 @@ function Video({ url, ...props }) {
         playsInline={props.playsInline ? props.playsInline : false}
         controls={props.controls ? props.controls : true}
       />
-      <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '> {props.caption}</em>
+      {props.caption ? (
+        <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '>
+          {' '}
+          {props.caption}
+        </em>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
