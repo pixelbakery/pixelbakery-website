@@ -1,0 +1,689 @@
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<link rel="pingback" href="https://pixelbakery.co/xmlrpc.php" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
+
+	<!-- cdnjs -->
+	 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+	 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
+
+    <link rel="shortcut icon" href="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/favicon.png" />
+    <link rel="stylesheet" href="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/style.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+
+
+			<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.6 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Student Calendar Sketches - January - Pixel Bakery Design Studio</title>
+	<link rel="canonical" href="https://pixelbakery.co/recipes/student-calendar-sketches-january" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Student Calendar Sketches - January - Pixel Bakery Design Studio" />
+	<meta property="og:description" content="After reading this post on reddit, I decided it would be cool to have my design students try this project out. The..." />
+	<meta property="og:url" content="https://pixelbakery.co/recipes/student-calendar-sketches-january" />
+	<meta property="og:site_name" content="Pixel Bakery Design Studio" />
+	<meta property="article:publisher" content="https://facebook.com/pixelbakerylnk" />
+	<meta property="article:published_time" content="2018-02-04T23:05:28+00:00" />
+	<meta property="article:modified_time" content="2018-02-22T23:15:32+00:00" />
+	<meta property="og:image" content="https://pixelbakery.co/wp-content/uploads/2018/02/JanSketches18.gif" />
+	<meta property="og:image:width" content="672" />
+	<meta property="og:image:height" content="378" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:creator" content="@pixelbakerylnk" />
+	<meta name="twitter:site" content="@pixelbakerylnk" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Jordan Lambrecht" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://pixelbakery.co/#organization","name":"Pixel Bakery","url":"https://pixelbakery.co/","sameAs":["https://facebook.com/pixelbakerylnk","https://instagram.com/pixelbakerylnk","https://www.linkedin.com/company/pixel-bakery/","https://www.youtube.com/channel/UClgJ7sXSk4x4z9njkYmnVrw?view_as=subscriber","https://twitter.com/pixelbakerylnk"],"logo":{"@type":"ImageObject","@id":"https://pixelbakery.co/#logo","inLanguage":"en-US","url":"https://pixelbakery.co/wp-content/uploads/2017/09/PBProfPic-01-01.png","contentUrl":"https://pixelbakery.co/wp-content/uploads/2017/09/PBProfPic-01-01.png","width":834,"height":834,"caption":"Pixel Bakery"},"image":{"@id":"https://pixelbakery.co/#logo"}},{"@type":"WebSite","@id":"https://pixelbakery.co/#website","url":"https://pixelbakery.co/","name":"Pixel Bakery Design Studio","description":"Fresh Puns &amp; Nice Buns","publisher":{"@id":"https://pixelbakery.co/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://pixelbakery.co/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#primaryimage","inLanguage":"en-US","url":"https://pixelbakery.co/wp-content/uploads/2018/02/JanSketches18.gif","contentUrl":"https://pixelbakery.co/wp-content/uploads/2018/02/JanSketches18.gif","width":672,"height":378,"caption":"Calendar Sketchbook Drawings from UNL Design Student"},{"@type":"WebPage","@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#webpage","url":"https://pixelbakery.co/recipes/student-calendar-sketches-january/","name":"Student Calendar Sketches - January - Pixel Bakery Design Studio","isPartOf":{"@id":"https://pixelbakery.co/#website"},"primaryImageOfPage":{"@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#primaryimage"},"datePublished":"2018-02-04T23:05:28+00:00","dateModified":"2018-02-22T23:15:32+00:00","breadcrumb":{"@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://pixelbakery.co/recipes/student-calendar-sketches-january/"]}]},{"@type":"BreadcrumbList","@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pixelbakery.co/"},{"@type":"ListItem","position":2,"name":"Mom's Recipes","item":"https://pixelbakery.co/recipes"},{"@type":"ListItem","position":3,"name":"Student Calendar Sketches &#8211; January"}]},{"@type":"Article","@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#article","isPartOf":{"@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#webpage"},"author":{"@id":"https://pixelbakery.co/#/schema/person/4cb6e21f9742fe569d192311004d8bff"},"headline":"Student Calendar Sketches &#8211; January","datePublished":"2018-02-04T23:05:28+00:00","dateModified":"2018-02-22T23:15:32+00:00","mainEntityOfPage":{"@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#webpage"},"wordCount":69,"commentCount":0,"publisher":{"@id":"https://pixelbakery.co/#organization"},"image":{"@id":"https://pixelbakery.co/recipes/student-calendar-sketches-january/#primaryimage"},"thumbnailUrl":"https://pixelbakery.co/wp-content/uploads/2018/02/JanSketches18.gif","articleSection":["Education"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://pixelbakery.co/recipes/student-calendar-sketches-january/#respond"]}]},{"@type":"Person","@id":"https://pixelbakery.co/#/schema/person/4cb6e21f9742fe569d192311004d8bff","name":"Jordan Lambrecht","url":"https://pixelbakery.co/author/pixelbakery"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Pixel Bakery Design Studio &raquo; Feed" href="https://pixelbakery.co/feed" />
+<link rel="alternate" type="application/rss+xml" title="Pixel Bakery Design Studio &raquo; Comments Feed" href="https://pixelbakery.co/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="Pixel Bakery Design Studio &raquo; Student Calendar Sketches &#8211; January Comments Feed" href="https://pixelbakery.co/recipes/student-calendar-sketches-january/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/pixelbakery.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.3"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='slick-styles-css'  href='https://pixelbakery.co/wp-content/plugins/carousel-block/dist/assets/vendor/slick/slick.min.css?ver=1637692410' type='text/css' media='' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://pixelbakery.co/wp-includes/css/dist/block-library/style.min.css?ver=5.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='carousel_block-cgb-style-css-css'  href='https://pixelbakery.co/wp-content/plugins/carousel-block/dist/blocks.style.build.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-featherlight-css'  href='https://pixelbakery.co/wp-content/plugins/wp-featherlight/css/wp-featherlight.min.css?ver=1.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='ebor-google-font-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A200%2C300%2C400%2C400i%2C500%2C600%2C700%7CMerriweather%3A300%2C300i%7CMaterial+Icons&#038;ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://pixelbakery.co/wp-content/themes/stack/style/css/bootstrap.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ebor-icons-css'  href='https://pixelbakery.co/wp-content/themes/stack/style/css/icons.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ebor-plugins-css'  href='https://pixelbakery.co/wp-content/themes/stack/style/css/plugins.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ebor-theme-css'  href='https://pixelbakery.co/wp-content/uploads/wp-less/stack/style/css/theme-8185fc5487.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ebor-style-css'  href='https://pixelbakery.co/wp-content/themes/pixelbakery-theme/style.css?ver=1.0' type='text/css' media='all' />
+<style id='ebor-style-inline-css' type='text/css'>
+
+			.btn--primary .btn__text, .btn--primary:visited .btn__text {
+			    color: #ffffff;	
+			}
+			input[type].btn--primary,
+			.pos-fixed.bar--transparent.bg--primary,
+			.ebor-cart-count, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
+				background: #f16e74;	
+			}
+			.pos-fixed.bar--transparent.bg--secondary {
+				background: #ffffff;
+			}
+			.pos-fixed.bar--transparent.bg--dark {
+				background: #1b1c1c;
+			}
+			.pos-fixed.bar--transparent.bg--primary-1 {
+				background: #d464a5;
+			}
+			.bg--white h1, .bg--white h2, .bg--white h3, .bg--white h4, .bg--white h5, .bg--white h6, .bg--white i, .mobile-header .cart-link {
+			    color: #1b1c1c;
+			}
+			@media all and (max-width:767px) {
+			    .bar.bg--dark.bar--mobile-sticky[data-scroll-class*="fixed"].pos-fixed,
+			    .bar.bg--dark.bar--mobile-sticky[data-scroll-class*="fixed"]+.bar.pos-fixed {
+			    	background: #1b1c1c;
+			    }
+			    .bar.bg--secondary.bar--mobile-sticky[data-scroll-class*="fixed"].pos-fixed,
+			    .bar.bg--secondary.bar--mobile-sticky[data-scroll-class*="fixed"]+.bar.pos-fixed {
+			    	background: #ffffff;
+			    }
+			}
+			.thumbnails-slider .thumbnail-trigger.active img {
+				border: 1px solid #f16e74;
+			}
+			.menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger {
+				font-size: 1em;
+			}
+			.woocommerce #respond input#submit.alt, 
+			.woocommerce a.button.alt, 
+			.woocommerce button.button.alt, 
+			.woocommerce input.button.alt,
+			.woocommerce #respond input#submit, 
+			.woocommerce a.button, 
+			.woocommerce button.button, 
+			.woocommerce input.button {
+				background: #f16e74;
+				color: #fff;
+				transition: 0.1s linear;
+			}
+			.woocommerce #respond input#submit.alt:hover, 
+			.woocommerce a.button.alt:hover, 
+			.woocommerce button.button.alt:hover, 
+			.woocommerce input.button.alt:hover,
+			.woocommerce #respond input#submit:hover, 
+			.woocommerce a.button:hover, 
+			.woocommerce button.button:hover, 
+			.woocommerce input.button:hover {
+				color: #fff;
+				opacity: 0.9;
+				background: #f16e74;
+				transform: translate3d(0, -2px, 0);
+				-webkit-transform: translate3d(0, -2px, 0);
+			}
+		
+</style>
+<link rel='stylesheet' id='ebor-iconsmind-css'  href='https://pixelbakery.co/wp-content/themes/stack/style/css/iconsmind.css?ver=1.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://pixelbakery.co/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' defer onload='' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' defer onload='' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/plugins/carousel-block/dist/assets/vendor/slick/slick.min.js?ver=1' defer onload='' id='carousel-block-slick-js-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/plugins/carousel-block/dist/assets/js/script.js?ver=1' defer onload='' id='carousel-block-script-js-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/plugins/svg-support/js/min/svgs-inline-min.js?ver=1.0.0' defer onload='' id='bodhi_svg_inline-js'></script>
+<script type='text/javascript' id='bodhi_svg_inline-js-after'>
+cssTarget="img.style-svg";ForceInlineSVGActive="false";
+</script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/pixelbakery-theme/InstagramFeed-master/dist/InstagramFeed.min.js?ver=5.8.3' defer onload='' id='InstagramFeed.min.js-js'></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-75143261-1' id='google_gtagjs-js' async></script>
+<script type='text/javascript' id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["pixelbakery.co"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-75143261-1");
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://pixelbakery.co/wp-json/" /><link rel="alternate" type="application/json" href="https://pixelbakery.co/wp-json/wp/v2/posts/3984" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://pixelbakery.co/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://pixelbakery.co/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.3" />
+<link rel='shortlink' href='https://pixelbakery.co/?p=3984' />
+<link rel="alternate" type="application/json+oembed" href="https://pixelbakery.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpixelbakery.co%2Frecipes%2Fstudent-calendar-sketches-january" />
+<link rel="alternate" type="text/xml+oembed" href="https://pixelbakery.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpixelbakery.co%2Frecipes%2Fstudent-calendar-sketches-january&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.46.0" />
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body data-smooth-scroll-offset='180'>
+
+
+    <a id="start"></a>
+   <div class="nav-container">
+       <nav id="menu1" class="bar bar--xs bar--toggle visible-xs" data-scroll-class='90vh:pos-fixed'>
+           <div class="container">
+                <div class="row">
+                    <div class="pull-left col-xs-1 col-sm-1 visible-xs">
+                        <div class="bar__module">
+                            <a href="https://pixelbakery.co">
+                                <img class="logo logo-dark" alt="logo" src="https://media.pixelbakery.co/PB/navlogos/nav_logo_color.png" />
+                                <img class="logo logo-light" alt="logo" src="https://media.pixelbakery.co/PB/navlogos/nav_logo_white.png" />
+                            </a>
+                        </div>
+                    </div>
+                     <div class="pull-right col-xs-3 col-sm-3 visible-xs">
+                        <div class="bar__module">
+                            <a class="menu-toggle pull-right" href="#" data-notification-link="sidebar-menu">
+                                <i class="stack-interface stack-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    <!--end bar-->
+        <nav id="menu2" class="bar bar--xs bar--toggle hidden-xs bar--transparent bar--absolute" data-scroll-class='90vh:pos-fixed'>
+            <div class="container">
+                <div class="row">
+                    <div class="pull-left col-md-1 col-sm-1 col-xs-1 hidden-xs">
+                        <div class="bar__module">
+                            <a href="https://pixelbakery.co">
+                                <img class="logo logo-dark" alt="logo" src="https://media.pixelbakery.co/PB/navlogos/nav_logo_color.png" />
+                                <img class="logo logo-light" alt="logo" src="https://media.pixelbakery.co/PB/navlogos/nav_logo_white.png" />
+                            </a>
+                        </div>
+                    </div>
+                     <div class="pull-right col-md-3 col-sm-3 col-xs-3 hidden-xs">
+                        <div class="bar__module">
+                             <a class="menu-toggle pull-right" href="#" data-notification-link="sidebar-menu">
+                                <i class="stack-interface stack-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </nav>
+   </div>
+    <!--side nav -->
+    <nav class="menuOpacity notification pos-right pos-top side-menu bg--white h-100" data-notification-link="sidebar-menu" data-animation="from-right">
+        <div class="side-menu__module">
+            <div class="nav-container">
+            <div class="row">
+                <div class="col-md-12 align-center">
+                    <a class="mx-auto align-center text-center" href="https://pixelbakery.co"><img alt="Pixel Bakery Logo" class="img-fluid logo logosecond mx-auto" src="https://media.pixelbakery.com/pb/pixelbakery_2021_logo_color_transparent.png"  alt="Pixel Bakery Design Studio Logo Branding"/></a>
+                    <!-- <p class="text-center"><em>Fresh Puns & Nice Buns Since 2015</em></p> -->
+                </div>
+                 <div class="col-md-12 py-1">
+                    <ul class="text-center ">
+                        <li> <a href="/home">Home</a> </li>
+                        <li> <a href="/work">Work</a> </li>
+                        <li> <a href="/bakery">Bakery</a> </li>
+                        <li> <a href="/recipes">Mom's Recipes</a> </li>
+                 <!--   <li> <a href="/research-and-development">R&D Lab</a> </li>-->
+                        <li> <a href="/shop">Shop</a> </li></br>
+                        <li> <a class="btn btn--notneeded" href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 text-center align-center py-1">
+                    <ul class="social-list list-inline text-center align-center list--hover">
+                        <li>
+                            <a href="https://www.facebook.com/pixelbakerylnk" target="_blank">
+                                <i class="socicon socicon-facebook icon icon--xs hvr-bob"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/pixelbakerylnk" target="_blank">
+                                <i class="socicon socicon-instagram icon icon--xs hvr-bob"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://vimeo.com/pixelbakery" target="_blank">
+                                <i class="socicon socicon-vimeo icon icon--xs hvr-bob"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/pixelbakerylnk" target="_blank">
+                                <i class="socicon socicon-twitter icon icon--xs hvr-bob"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--end side nav -->
+<section class="text-center imagebg height-40" data-overlay="3">
+    <div class="background-image-holder">
+        <img alt="background" src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/img/typewriter.jpg" />
+    </div>
+    <div class="container">
+        <div class="row py-3">
+            <div class=" col-md-8 offset-md-2">
+                <h1>Mom's Recipes</h1>
+                <p class="h3"><em>No word on her spaghetti yet, though.</em></p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="pt-1">
+	<div class="container mx-auto">
+		<div class="row">
+			<div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+				<a class='animated-arrow mb-4' href='/recipes/'>
+					<span class='the-arrow -left'>
+						<span class='shaft'></span>
+					</span>
+					<span class='main'>
+						<span class='text '>Back to All Recipes </span>
+						<span class='the-arrow -right'>
+							<span class='shaft'></span>
+						</span>
+					</span>
+				</a>
+				<article>
+					<div class="article__title text-center">
+						<h1 class="h2">Student Calendar Sketches &#8211; January</h1><span>February 4, 2018 in </span><span><a href="https://pixelbakery.co/education" rel="category tag">Education</a></span><section class="post-author">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">		
+                <p>Written by the one and only <a href="https://pixelbakery.co/author/pixelbakery" title="Posts by Jordan Lambrecht" rel="author">Jordan Lambrecht</a>			</div>
+		</div>
+	</div>
+</section><span><i style="font-size:.9em;" class="far fa-clock"></i><span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span class="rt-time"> 2</span> <span class="rt-label rt-postfix"></span></span> minute read </span>        
+					</div><!--end article title-->
+
+					<div class="article__body post-content">
+						<div class="featured-image-holder">
+													</div>
+						<p><img loading="lazy" class="aligncenter wp-image-3985 size-full" src="https://pixelbakery.co/wp-content/uploads/2018/02/JanSketches18.gif" alt="" width="672" height="378" /></p>
+<p>After reading <a href="https://www.reddit.com/r/doodles/comments/7nv5oh/i_doodle_a_little_memory_every_day_in_a_calendar/" target="_blank" rel="noopener">this post</a> on reddit, I decided it would be cool to have my design students try this project out. The results from month one are great and I wanted to share them on here. You can definitely see the wide variety in the student&#8217;s personal styles. It&#8217;s going to be interesting to see how these develop throughout the rest of the semester.</p>
+<p><img loading="lazy" class="size-full wp-image-3986 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/cameron1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/cameron1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/cameron1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/cameron1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/cameron1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3987 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/collin1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/collin1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/collin1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/collin1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/collin1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3988 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/crystal1.jpg" alt="" width="1668" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/crystal1.jpg 1668w, https://pixelbakery.co/wp-content/uploads/2018/02/crystal1-800x518.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/crystal1-768x497.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/crystal1-700x453.jpg 700w" sizes="(max-width: 1668px) 100vw, 1668px" /><img loading="lazy" class="size-full wp-image-3989 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/Curves-1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/Curves-1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/Curves-1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/Curves-1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/Curves-1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3990 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/emily.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/emily.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/emily-300x169.jpg 300w, https://pixelbakery.co/wp-content/uploads/2018/02/emily-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/emily-1024x576.jpg 1024w, https://pixelbakery.co/wp-content/uploads/2018/02/emily-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3991 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/jasmine1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/jasmine1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/jasmine1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/jasmine1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/jasmine1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3992 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/jenna1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/jenna1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/jenna1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/jenna1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/jenna1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3993 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/josh1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/josh1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/josh1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/josh1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/josh1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3994 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/kiersten1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/kiersten1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/kiersten1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/kiersten1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/kiersten1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3995 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/Logan1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/Logan1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/Logan1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/Logan1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/Logan1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3996 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/maeve1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/maeve1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/maeve1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/maeve1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/maeve1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3997 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/morgan3.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/morgan3.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/morgan3-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/morgan3-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/morgan3-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3998 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/natalie1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/natalie1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/natalie1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/natalie1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/natalie1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" class="size-full wp-image-3999 aligncenter" src="https://pixelbakery.co/wp-content/uploads/2018/02/Quang1.jpg" alt="" width="1920" height="1080" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/Quang1.jpg 1920w, https://pixelbakery.co/wp-content/uploads/2018/02/Quang1-800x450.jpg 800w, https://pixelbakery.co/wp-content/uploads/2018/02/Quang1-768x432.jpg 768w, https://pixelbakery.co/wp-content/uploads/2018/02/Quang1-700x394.jpg 700w" sizes="(max-width: 1920px) 100vw, 1920px" /></p>
+						<div class="post__tags">
+													</div>
+					</div>
+					<hr>
+					<div class="article__share text-center">
+
+	<a class="btn bg--facebook btn--icon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://pixelbakery.co/recipes/student-calendar-sketches-january">
+		<span class="btn__text">
+			<i class="socicon socicon-facebook"></i>
+			Share on Facebook		</span>
+	</a>
+	
+	<a class="btn bg--twitter btn--icon" target="_blank" href="https://twitter.com/share?url=https://pixelbakery.co/recipes/student-calendar-sketches-january">
+		<span class="btn__text">
+			<i class="socicon socicon-twitter"></i>
+			Share on Twitter		</span>
+	</a>
+	
+</div>
+				</article><!--end item-->
+			</div>
+
+		</div><!--end of row-->
+	</div><!--end of container-->
+</section>
+
+
+<section class="space--sm">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<hr>
+			</div>
+		</div><!--end of row-->
+	</div><!--end of container-->
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+			
+				<div class="comments">
+				
+					<h3>
+						0 Comments					</h3>
+					
+										
+				</div><!--end comments-->
+				
+				<div class="comments-form">
+						<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/recipes/student-calendar-sketches-january#respond" style="display:none;">Cancel</a></small></h3><form action="https://pixelbakery.co/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><label>Comment:</label><textarea name="comment" placeholder="Your comment here" id="comment" aria-required="true" rows="4"></textarea><div class="row"><div class="col-sm-4"><label>Your Name:</label><input type="text" id="author" name="author" placeholder="Type name here" value="" /></div>
+<div class="col-sm-4"><label>Email Address:</label><input name="email" type="text" id="email" placeholder="you@example.com" value="" /></div>
+<div class="col-sm-4"><label>Your URL:</label><input name="url" type="text" id="url" placeholder="example.com" value="" /></div></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='3984' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="dade4a7088" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="210"/><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+					</div>
+				
+			</div>
+		</div><!--end of row-->
+	</div><!--end of container-->
+</section>
+<section class="bg--secondary">
+	<div class="container">
+
+		<div class="row text-block loop-related">
+			<div class="col-sm-12">
+				<h3>More Recent Recipes</h3>
+			</div>
+		</div><!--end of row-->
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="masonry">
+					<div class="row">
+						<div class="masonry__container">
+			
+
+							<div id="post-3562" class="masonry__item col-sm-6 col-md-4 post-3562 post type-post status-publish format-standard has-post-thumbnail hentry category-education">
+	<article class="feature feature-1">
+
+		<a href="https://pixelbakery.co/recipes/after-effects-rendering-workflow" class="block card-img-top h-100">
+			<img width="1170" height="801" src="https://pixelbakery.co/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-8.25.45-PM-1578x1080.png" class="attachment-large size-large wp-post-image" alt="Adobe Media Encoder h264 render settings" loading="lazy" srcset="https://pixelbakery.co/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-8.25.45-PM-1578x1080.png 1578w, https://pixelbakery.co/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-8.25.45-PM-800x548.png 800w, https://pixelbakery.co/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-8.25.45-PM-768x526.png 768w, https://pixelbakery.co/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-8.25.45-PM-700x479.png 700w" sizes="(max-width: 1170px) 100vw, 1170px" />		</a>
+
+		<div class="feature__body boxed boxed--border">
+						<span>February 19, 2018</span>
+			<a class="h5 display-block" href="https://pixelbakery.co/recipes/after-effects-rendering-workflow">After Effects Rendering Workflow</a>			<a href="https://pixelbakery.co/recipes/after-effects-rendering-workflow">Read More</a>
+		</div>
+
+	</article>
+</div><!--end item-->
+<div id="post-5689" class="masonry__item col-sm-6 col-md-4 post-5689 post type-post status-publish format-standard has-post-thumbnail hentry category-education tag-bootstrap tag-tutorial tag-web-development">
+	<article class="feature feature-1">
+
+		<a href="https://pixelbakery.co/recipes/tutorial-getting-started-with-bootstraps" class="block card-img-top h-100">
+			<img width="1170" height="616" src="https://pixelbakery.co/wp-content/uploads/Screen-Shot-2019-02-14-at-8.36.18-AM-1920x1011.png" class="attachment-large size-large wp-post-image" alt="Tutorial: getting started with bootstrap 4" loading="lazy" srcset="https://pixelbakery.co/wp-content/uploads/Screen-Shot-2019-02-14-at-8.36.18-AM-1920x1011.png 1920w, https://pixelbakery.co/wp-content/uploads/Screen-Shot-2019-02-14-at-8.36.18-AM-800x421.png 800w, https://pixelbakery.co/wp-content/uploads/Screen-Shot-2019-02-14-at-8.36.18-AM-768x404.png 768w, https://pixelbakery.co/wp-content/uploads/Screen-Shot-2019-02-14-at-8.36.18-AM-700x369.png 700w" sizes="(max-width: 1170px) 100vw, 1170px" />		</a>
+
+		<div class="feature__body boxed boxed--border">
+						<span>February 14, 2019</span>
+			<a class="h5 display-block" href="https://pixelbakery.co/recipes/tutorial-getting-started-with-bootstraps">Tutorial: Getting Started with Bootstraps</a>			<a href="https://pixelbakery.co/recipes/tutorial-getting-started-with-bootstraps">Read More</a>
+		</div>
+
+	</article>
+</div><!--end item-->
+<div id="post-18887" class="masonry__item col-sm-6 col-md-4 post-18887 post type-post status-publish format-standard has-post-thumbnail hentry category-education tag-after-effects tag-animation tag-motion-design tag-track-matte tag-trim-paths tag-tutorial tag-typography tag-unl">
+	<article class="feature feature-1">
+
+		<a href="https://pixelbakery.co/recipes/using-trim-paths-to-animate-text" class="block card-img-top h-100">
+			<img width="1170" height="659" src="https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM.png" class="attachment-large size-large wp-post-image" alt="From Scratch: Animating hand-drawn text in After Effets" loading="lazy" srcset="https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM.png 1918w, https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM-800x450.png 800w, https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM-768x432.png 768w, https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM-1536x865.png 1536w, https://pixelbakery.co/wp-content/uploads/PB/2020/04/Screen-Shot-2020-04-09-at-12.25.23-PM-700x394.png 700w" sizes="(max-width: 1170px) 100vw, 1170px" />		</a>
+
+		<div class="feature__body boxed boxed--border">
+						<span>April 9, 2020</span>
+			<a class="h5 display-block" href="https://pixelbakery.co/recipes/using-trim-paths-to-animate-text">Using Trim Paths to Animate Text</a>			<a href="https://pixelbakery.co/recipes/using-trim-paths-to-animate-text">Read More</a>
+		</div>
+
+	</article>
+</div><!--end item-->
+
+						</div><!--end of masonry container-->
+					</div><!--end row-->
+				</div><!--end masonry-->
+			</div>
+		</div>
+
+	</div><!--end of container-->
+</section>
+  
+
+<footer class="text-center-xs py-0 imagebg bg--dark" id="gradientFooter">
+  <div id="instagram-feed" class="instagram_feed pb-5"></div>
+    <div class="py-3 container">
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="list-inline mb-auto">
+                    <li> <a class="footerLink" href="/bakery/">About</a> </li>
+                    <li> <a class="footerLink" href="/work/">Portfolio</a> </li>
+                    <li> <a class="footerLink" href="/futurebakers/">Careers</a> </li>
+                    <li> <a class="footerLink" href="/press-kit/">Press Kit</a> </li>
+                </ul>
+                <p class="mb-auto">© <span class="update-year"></span> Pixel Bakery Design Studio</p>
+                <p class="mb-auto"><em>Made with lust and flour in Lincoln, Nebraska + Northwest Arkansas.</em></p>
+                <ul class="list-inline mb-auto">
+                    <li>
+                        <div class="modal-instance">
+                            <a class="type--fine-print modal-trigger" href="#">Privacy Policy</a>
+                            <div class="modal-container">
+                                <div class="modal-content">
+                                    <section class="imageblock feature-large bg--white border--round ">
+                                        <div class="imageblock__content col-md-5 col-sm-3 pos-left">
+                                            <div class="background-image-holder">
+                                                <img alt="image" src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/img/lol.jpg" />
+                                            </div>
+                                        </div>
+                                       <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-push-6 col-sm-6col-sm-push-6">
+                <h6 class="type--uppercase text-left text-left-xs">Pixelbakery.co Privacy Policy
+
+                </h6>
+                <p>This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.</p>
+<div class="tabs-container text-center"  data-content-align="left">
+    <ul class="tabs">
+        <li class="active">
+            <div class="tab"> <span class="h5">Part 1</span> </div>
+            <div class="tab__content"><section class="switchable acordOveride"><div class="container"><div class="row"><div class="col-sm-12 switchable__text"><ul class="accordion accordion-2">
+                                    <li> <div class="accordion__title"> <span>What personal information do we collect from the people that visit our blog, website or app?</span> </div>
+                                        <div class="accordion__content"> <p>When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address or other details to help you with your experience. </p> </div></li>
+                                    <li><div class="accordion__title"> <span>When do we collect information?</span> </div>
+                                        <div class="accordion__content"><p> We collect information from you when you subscribe to a newsletter, fill out a form or enter information on our site. Provide us with feedback on our products or services</p></div></li>
+                                     <li><div class="accordion__title"> <span>How do we use your information?</span> </div>
+                                        <div class="accordion__content"><p>
+                                            We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:<br/>
+                                                  • To allow us to better service you in responding to your customer service requests.<br/>
+                                                  • To ask for ratings and reviews of services or products<br/>
+                                                  • To follow up with them after correspondence (live chat, email or phone inquiries)</p></div></li>
+                                     <li><div class="accordion__title"> <span>How do we protect your information?</span> </div>
+                                        <div class="accordion__content"><p> Our website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible. We use regular Malware Scanning. Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit      information you supply is encrypted via Secure Socket Layer (SSL) technology. All transactions are processed through a gateway provider and are not stored or processed on our servers.</p></div></li>
+                                     <li><div class="accordion__title"> <span>Do we use 'cookies'?</span> </div>
+                                        <div class="accordion__content"><p> Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.</p></div></li>
+                </ul></div></div></div></section></div>
+        </li>
+                            <li>
+            <div class="tab"> <span class="h5">Part 2</span> </div>
+            <div class="tab__content"><section class="switchable acordOveride"><div class="container"><div class="row"><div class="col-sm-12 switchable__text"><ul class="accordion accordion-2">
+                                    <li> <div class="accordion__title"> <span>We use cookies to:</span> </div>
+                                        <div class="accordion__content"> <p>      • Understand and save user's preferences for future visits.<br/>
+                                            • Compile aggregate data about site traffic and site interactions in order to offer better site experiences and tools in the future. We may also use trusted third-party services that track this information on our behalf.<br/><br/>
+                                            You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.</p> </div></li>
+                                    <li><div class="accordion__title"> <span>If users disable cookies in their browser:</span> </div>
+                                        <div class="accordion__content"><p> If you turn cookies off, Some of the features that make your site experience more efficient may not function properly.Some of the features that make your site experience more efficient and may not function properly.</p></div></li>
+                                     <li><div class="accordion__title"> <span>Third-party disclosure</span> </div>
+                                        <div class="accordion__content"><p> We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it's release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property or safety. <br/><br/>However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p></div></li>
+                                     <li><div class="accordion__title"> <span>Third-party links</span> </div>
+                                        <div class="accordion__content"><p> We do not include or offer third-party products or services on our website.</p></div></li>
+                                     <li><div class="accordion__title"> <span>Google</span> </div>
+                                        <div class="accordion__content"><p>
+                                            Google's advertising requirements can be summed up by Google's Advertising Principles. They are put in place to provide a positive experience for users. https://support.google.com/adwordspolicy/answer/1316548?hl=en  <br/>We use Google AdSense Advertising on our website.<br/>Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads to our users based on previous visits to our site and other sites on the Internet. Users may opt-out of the use of the DART cookie by visiting the Google Ad and Content Network privacy policy.</p></div></li>
+                </ul></div></div></div></section></div>
+        </li>
+        <li>
+            <div class="tab"> <span class="h5">Part 3</span> </div>
+            <div class="tab__content"><section class="switchable acordOveride"><div class="container"><div class="row"><div class="col-sm-12 switchable__text"><ul class="accordion accordion-2">
+                                    <li> <div class="accordion__title"> <span>We have implemented the following:</span> </div>
+                                        <div class="accordion__content"> <p>      • Google Display Network Impression Reporting<br/>
+                                            • Demographics and Interests Reporting<br/><br/>
+
+                                            We, along with third-party vendors such as Google use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the DoubleClick cookie) or other third-party identifiers together to compile data regarding user interactions with ad impressions and other ad service functions as they relate to our website.</p> </div></li>
+                                    <li><div class="accordion__title"> <span>Opting out:</span> </div>
+                                        <div class="accordion__content"><p>Users can set preferences for how Google advertises to you using the Google Ad Settings page. Alternatively, you can opt out by visiting the Network Advertising Initiative Opt Out page or by using the Google Analytics Opt Out Browser add on.</p></div></li>
+                                     <li><div class="accordion__title"> <span>California Online Privacy Protection Act</span> </div>
+                                        <div class="accordion__content"><p>CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. - See more at: http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf</p></div></li>
+                                     <li><div class="accordion__title"> <span>According to CalOPPA, we agree to the following:</span> </div>
+                                        <div class="accordion__content"><p> Users can visit our site anonymously. Once this privacy policy is created, we will add a link to it on our home page or as a minimum, on the first significant page after entering our website. Our Privacy Policy link includes the word 'Privacy' and can easily be found on the page specified above.<br/><br/>
+
+                                            You will be notified of any Privacy Policy changes:<br/>
+                                                • On our Privacy Policy Page<br/>
+                                            Can change your personal information:<br/>
+                                                  • By emailing us<br/>
+                                                  • By calling us<br/></p></div></li>
+                                     <li><div class="accordion__title"> <span>How does our site handle Do Not Track signals?</span> </div>
+                                        <div class="accordion__content"><p> We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.</p></div></li>
+                </ul></div></div></div></section></div>
+        </li>
+         <li>
+            <div class="tab"> <span class="h5">Part 4</span> </div>
+            <div class="tab__content"><section class="switchable acordOveride "><div class="container"><div class="row"><div class="col-sm-12 switchable__text"><ul class="accordion accordion-2">
+                                    <li> <div class="accordion__title"> <span>Does our site allow third-party behavioral tracking?</span> </div>
+                                        <div class="accordion__content"> <p>It's also important to note that we do not allow third-party behavioral tracking</p> </div></li>
+                                    <li><div class="accordion__title"> <span>COPPA (Children Online Privacy Protection Act)</span> </div>
+                                        <div class="accordion__content"><p> When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.<br/><br/>We do not specifically market to children under the age of 13 years old.</p></div></li>
+                                     <li><div class="accordion__title"> <span>In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:</span> </div>
+                                        <div class="accordion__content"><p> We will notify you via email<br/>
+                                              • Within 7 business days<br/>
+                                        We will notify the users via in-site notification<br/>
+                                              • Within 7 business days<br/><br/>
+
+                                        We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.</p></div></li>
+                                     <li><div class="accordion__title"> <span>CAN SPAM Act</span> </div>
+                                        <div class="accordion__content"><p> The CAN-SPAM Act is a law that sets the rules for commercial email, establishes requirements for commercial messages, gives recipients the right to have emails stopped from being sent to them, and spells out tough penalties for violations.</p></div></li>
+                                     <li><div class="accordion__title"> <span>We collect your email address in order to:</span> </div>
+                                        <div class="accordion__content"><p> Send information, respond to inquiries, and/or other requests or questions</p></div></li>
+                                     <li><div class="accordion__title"> <span>To be in accordance with CANSPAM, we agree to the following:</span> </div>
+                                        <div class="accordion__content"><p>      • Not use false or misleading subjects or email addresses.<br/>
+                                              • Identify the message as an advertisement in some reasonable way.<br/>
+                                              • Include the physical address of our business or site headquarters.<br/>
+                                              • Monitor third-party email marketing services for compliance, if one is used.<br/>
+                                              • Honor opt-out/unsubscribe requests quickly.<br/>
+                                              • Allow users to unsubscribe by using the link at the bottom of each email.</p></div></li>
+                </ul></div></div></div></section></div>
+        </li>  
+         <li>
+            <div class="tab"> <span class="h5">Contact</span> </div>
+            <div class="tab__content"><section class="switchable acordOveride"><div class="container"><div class="row"><div class="col-sm-12 switchable__text"><ul class="accordion accordion-2">
+                                    <li> <div class="accordion__title"> <span>If at any time you would like to unsubscribe from receiving future emails, you can email us at</span> </div>
+                                        <div class="accordion__content"> <p>      • Follow the instructions at the bottom of each email. jordan@pixelbakery.co and we will promptly remove you from ALL correspondence.</p> </div></li>
+                                    <li><div class="accordion__title"> <span>Contacting Us</span> </div>
+                                        <div class="accordion__content"><p>If there are any questions regarding this privacy policy, you may contact us using the information below.<br/><br/>
+
+                                            pixelbakery.co<br/>
+                                            2124 Y st, Flat 208<br/>
+                                            Lincoln, NE 68508<br/>
+                                            USA<br/>
+                                            jordan@pixelbakery.co<br/>
+                                            402-957-3995<br/><br/>
+
+                                            Last Edited on 2017-06-01</p></div></li>
+                </ul></div></div></div></section></div>
+        </li> 
+
+    </ul>
+</div>
+        </div></div></div>                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li> <a class="type--fine-print" data-tooltip="Client Login Portal" href="https://peachcobbler.co" target="_blank">Peach Cobbler</a> </li>
+                    <li> <a class="type--fine-print" data-tooltip="Not for you." href="/login/">PB Login</a> </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul>
+                    <li class="text-center">
+                        <ul class="social-list list-inline list--hover">
+                            <li>
+                                <a class="text-center" href="https://facebook.com/pixelbakerylnk" target="_blank" rel="nofollow">
+                                    <i class="socicon socicon-facebook icon icon--xs hvr-bob"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-center" href="https://instagram.com/pixelbakery" target="_blank" rel="nofollow">
+                                    <i class="socicon socicon-instagram icon icon--xs hvr-bob"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-center" href="https://www.vimeo.com/pixelbakery" target="_blank" rel="nofollow">
+                                    <i class="socicon socicon-vimeo icon icon--xs hvr-bob"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-center" href="https://www.twitter.com/pixelbakerylnk" target="_blank" rel="nofollow">
+                                    <i class="socicon socicon-twitter icon icon--xs hvr-bob"></i></a>
+                            </li>
+                            <li>
+                                <a class="text-center" href="https://www.youtube.com/channel/UClgJ7sXSk4x4z9njkYmnVrw" target="_blank" rel="nofollow">
+                                    <i class="socicon socicon-youtube icon icon--xs hvr-bob"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="text-center pt-1">
+                        <a class="btn btn--notneeded" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<!-- /main-container -->
+<script src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/js/freezeframe.pkgd.min.js"> </script>
+<script src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/js/hoverscript.js"> </script>
+<script src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/js/gradientFooter.js"> </script>
+<script src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/js/gradient.js"> </script>
+<script type="text/javascript" src="https://pixelbakery.co/wp-content/themes/pixelbakery-theme/InstagramFeed-master/dist/InstagramFeed.min.js" crossorigin="anonymous"></script>
+
+<a class="back-to-top inner-link" title="Back to top" href="#start" data-scroll-class="100vh:active">
+	<i class="stack-interface stack-up-open-big"></i>
+</a><script type='text/javascript' src='https://pixelbakery.co/wp-content/plugins/wp-featherlight/js/wpFeatherlight.pkgd.min.js?ver=1.3.4' defer onload='' id='wp-featherlight-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/parallax.js?ver=1.0' defer onload='' id='ebor-parallax-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/isotope.js?ver=1.0' defer onload='' id='ebor-isotope-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/final-countdown.js?ver=1.0' defer onload='' id='final-countdown-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/flickity.js?ver=1.0' defer onload='' id='flickity-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/granim.js?ver=1.0' defer onload='' id='granim-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/smooth-scroll.js?ver=1.0' defer onload='' id='smooth-scroll-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/spectragram.js?ver=1.0' defer onload='' id='spectragram-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/twitter-post-fetcher.js?ver=1.0' defer onload='' id='twitter-post-fetcher-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/ytplayer.js?ver=1.0' defer onload='' id='ytplayer-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/easy-pie-chart.js?ver=1.0' defer onload='' id='easy-pie-chart-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/steps.js?ver=1.0' defer onload='' id='steps-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/lightbox.js?ver=1.0' defer onload='' id='lightbox-js'></script>
+<script type='text/javascript' id='ebor-scripts-wp-js-extra'>
+/* <![CDATA[ */
+var stack_data = {"access_token":"2530351227.2dd930b.2c50bbff0b7f4447b5dd3b91eaf23d0f","client_id":"2dd930b6a82148fbb4f23e7fb4185702","typed_speed":"100","map_marker":"https:\/\/pixelbakery.co\/wp-content\/themes\/stack\/style\/img\/mapmarker.png","map_marker_title":"Stack","lightbox_text":"Image %1 of %2"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/scripts_wp.js?ver=1.0' defer onload='' id='ebor-scripts-wp-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-content/themes/stack/style/js/scripts.js?ver=1.0' defer onload='' id='ebor-scripts-js'></script>
+<script type='text/javascript' src='https://pixelbakery.co/wp-includes/js/wp-embed.min.js?ver=5.8.3' defer onload='' id='wp-embed-js'></script>
+
+</body>
+
+</html>

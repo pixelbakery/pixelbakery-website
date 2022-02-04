@@ -36,30 +36,42 @@ export default [
     text: 'never stop trying',
   },
   {
-    text: "don't let them stop you",
+    text: "don't let them stop you.",
   },
   {
     text: "you're doing the best you can",
   },
   {
-    text: 'nobody has it all figured out',
+    text: 'nobody has it all figured out.',
   },
   {
-    text: 'the world needs more people like you',
+    text: 'the world needs more people like you.',
   },
   {
-    text: 'be kind to yourself',
+    text: 'be kind to yourself.',
   },
   {
-    text: "don't give up on your dreams",
+    text: "don't give up on your dreams.",
   },
   {
-    text: 'you got this',
+    text: 'you got this.',
   },
   {
-    text: 'everyone should have a friend like you',
+    text: 'everyone should have a friend like you.',
   },
   {
-    text: "You're stronger than you think",
+    text: "you're stronger than you think.",
+  },
+  {
+    text: 'i hope you have a better day today.',
+  },
+  {
+    text: 'just wanted to send you a smile today 😊',
+  },
+  {
+    text: 'everything will be ok.',
+  },
+  {
+    text: 'i believe in you',
   },
 ]
