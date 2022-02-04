@@ -10,7 +10,7 @@ import markdownStyles from '@styles/markdown-styles.module.css'
 import { getAllPeople } from '@lib/api_person'
 
 import ReactPlayer from 'react-player'
-import Swiper from 'swiper'
+import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import PersonType from 'types/person'
@@ -27,7 +27,7 @@ const components = {
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
-  Swiper: Swiper,
+  Carousel: Carousel,
   Video: Video,
   TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,

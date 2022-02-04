@@ -65,6 +65,38 @@ You can pas any of these props like you pass the URL prop. For example, if you w
 
 `<Video url={'https://www.youtube.com/watch?v=5qap5aO4i9A'} autoplay={true} loop={true} muted={true}/>`
 
-### Coming Soon: Image Carousels
+### Image Carousels
 
-Next on the todo list is to implement image carousels, aka slideshows. We use a package called [Swiper](https://swiperjs.com/react) to do so. Check out the documentation above to see what all is possible.
+The Image Carousel component can be added to any blog post using `<Carousel />`. Obviously, you'll need to let it know what images to display. We can use this by passing an array of images to the slides prop. This is what it would look like:
+
+```
+<Carousel
+  slides={[
+    {
+      src: '/img/placeholder01.png',
+      alt: 'placeholder image',
+      fit: 'cover',
+    },
+    {
+      src: '/img/placeholder02.png',
+      alt: 'placeholder image',
+      fit: 'cover',
+    },
+    {
+      src: '/img/placeholder03.png',
+      alt: 'placeholder image',
+      fit: 'contain',
+    },
+    {
+      src: '/img/placeholder04.png',
+      alt: 'placeholder image',
+      fit: 'cover',
+    },
+  ]}
+/>
+```
+
+Three items are required for each slide.
+**src:** This is the image's path/location
+**alt:** A descriptor explaining the content of the image. Make sure it's SEO friendly
+**fit:** The least self-explanatory of the three. You can either select _cover_ or _contain_. Cover will scale the image to _cover_ the entire slide, which might cut some off. Contain will not fill the entire slide, but will make sure every part of the image is visible. Create images that are 4x3 and set it to 'cover' for best results.
