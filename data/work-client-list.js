@@ -226,7 +226,7 @@ export default [
   },
   {
     clients: 'Raikes Beef',
-    logo: '/img/clients/1x/pixelbakery_client_raikes .png',
+    logo: '/img/clients/1x/pixelbakery_client_raikes.png',
     url: 'https://raikesbeef.co/',
     active: true,
   },
