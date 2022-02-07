@@ -26,7 +26,8 @@ function Carousel({ slides }) {
           placeholder='blur'
           layout='fill'
           objectFit={slide.fill}
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+          className='w-full h-full object-center object-cover'
+          blurDataURL={slide.src}
         />
       </div>
     )
@@ -55,7 +56,7 @@ function Carousel({ slides }) {
       >
         {slides.map((slide) => {
           return (
-            <SwiperSlide className='bg-blue-dark'>
+            <SwiperSlide key={slide.src}className='bg-blue-dark'>
               <SetSlide slide={slide} />
             </SwiperSlide>
           )
