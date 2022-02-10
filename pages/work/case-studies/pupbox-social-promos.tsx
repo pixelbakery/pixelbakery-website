@@ -1,16 +1,16 @@
 import Main from '@parts/Main'
-
+import { PropsWithChildren } from 'react'
 // case study components
 import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
-import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
+import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '@caseStudies/CaseStudies_BecomeAClient'
-import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
-import Vimeo from '@u-wave/react-vimeo'
+import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 
+import Image from 'next/image'
 // project info
 const title = 'Social Promos'
 const tags = [
@@ -21,7 +21,7 @@ const tags = [
 
 //client info
 const client = 'PupBox'
-const clientLogo = '/img/clients/pixelbakery_client_pupbox.png'
+const clientLogo = '/img/clients/1x/pixelbakery_client_pupbox.png'
 const clientURL = 'https://pupbox.com'
 
 // Project Header
@@ -61,24 +61,40 @@ function caseStudy_Backcountry_GearheadMagic() {
         heroVideo={heroVideo}
         projectSubhead={projectSubhead}
       />
-      <section className='my-4 px-4 py-2 bg-white'>
-        <div className='mx-auto max-w-8xl'>
-          <div className='relative block  my-4 -mx-6 md:mx-0'>
-            <Vimeo video={'388594263'} autoplay={false} showPortrait responsive={true} />
-          </div>
-        </div>
-      </section>
       <CaseStudies_Tags tags={tags} />
-      <CaseStudies_Description header={'Process'} bodyCopy={process} />
-      <section className='my-4 px-4 py-2 bg-white'>
-        <div className='mx-auto max-w-8xl'>
-          <div className='relative block  my-4 -mx-6 md:mx-0'>
-            <Vimeo video={'388595960'} autoplay={false} showPortrait responsive={true} />
+      <CaseStudies_Description
+        headerColor={'dark-blue'}
+        textColor={'cream'}
+        bgColor={'blue'}
+        header={'Process'}
+      >
+         <p>
+         We rounded up three puppies to be our stars and created a few loose story boards to showcase each pup alongside stacks of PupBox subscription boxes.
+        </p>
+        <p>
+        The biggest thing we’ve learned from working with animals is you can’t go in expecting anything to go the way you planned. However, throughout hours of puppy wrangling (and getting more creative than you ever thought possible in order to get a 2-month-old golden retriever to take a toy out of a box), there’s nothing better than when a magical moment happens on camera.
+        </p>
+        <p>
+        In post production, we brought in some basic motion elements and color to elevate PupBox’s brand, including bouncy kinetic type and subtle movement for their logo. We packaged three videos for PupBox to use as native advertising in their social feeds that work toward brand awareness and recognition.
+        </p>
+  
+      </CaseStudies_Description>
+
+     <CaseStudies_Description header={''} bgColor={'cream'}>
+        <div className='grid grid-cols-1 lg:grid-cols-2'>
+          <div className='col-span-1 relative h-full w-full'>
+            <Image
+              src={'/img/work/KN_ECommPromo_SnackPack.gif'}
+              layout={'fill'}
+              alt={'DESCRIPTION GOES HERE'}
+              objectFit={'contain'}
+            />
           </div>
         </div>
-      </section>
+      </CaseStudies_Description>
       <CaseStudies_Credits credits={credits} />
       <CaseStudies_PrevNext title={title} />
+
       <CaseStudies_OtherProjects client={client} title={title} />
       <CaseStudies_BecomeAClient />
     </Main>
