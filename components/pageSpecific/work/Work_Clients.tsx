@@ -2,8 +2,8 @@ import Image from 'next/image'
 import clientList from '@data/work-client-list'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import Lead from '@parts/Lead'
-import H2 from '@parts/H2'
+import Lead from '@typography/Lead'
+import H2 from '@typography/H2'
 
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";

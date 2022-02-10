@@ -7,8 +7,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import markdownStyles from '@styles/markdown-styles.module.css'
 
-import H2 from '@parts/H2'
-import H1 from '@parts/H1'
+import H2 from '@typography/H2'
+
+import H1 from 'components/typography/H1'
 
 import Button_Filled from '@parts/Button_Filled'
 type Props = {

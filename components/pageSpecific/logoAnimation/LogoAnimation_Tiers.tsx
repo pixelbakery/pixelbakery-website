@@ -1,7 +1,8 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import logoAnimationTiers from '@data/logoAnimation'
 import LogoAnimation_Tiers_Card from './LogoAnimation_Tiers_Card'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 function LogoAnimation_Tiers() {
   const contentKeys = logoAnimationTiers
 

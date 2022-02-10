@@ -78,4 +78,37 @@
     font-style: italic;
     src: url(/fonts/Gilroy/gilroy-heavyitalic.woff2) format('woff');
   }
+  p,
+  ul,
+  ol,
+  blockquote {
+    @apply my-6;
+  }
+  p {
+    @apply text-lg text-wine my-4 pb-3;
+  }
+  p a {
+    @apply underline text-peach underline-offset-4 hover:opacity-75;
+  }
+  /* ul {
+    @apply my-6;
+  } */
+  /* li {
+    @apply text-lg text-wine my-3   list-inside list-disc;
+  } */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-pbheading font-extrabold lowercase;
+  }
+  h1 {
+    @apply text-8xl;
+  }
+  h2 {
+    @apply text-6xl font-extrabold  text-peach my-8;
+  }
+  p.lead {
+    @apply mt-2 text-2xl pb-6 leading-relaxed;
+  }
 }

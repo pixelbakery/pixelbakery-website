@@ -1,8 +1,9 @@
 import Button_Filled from '@parts/Button_Filled'
 import PageSection from '@parts/PageSection'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import InnerWrapper from '@parts/InnerWrapper'
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 
 function Contact_Jobs() {
   return (

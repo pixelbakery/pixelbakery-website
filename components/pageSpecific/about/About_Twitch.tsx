@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import PageSection from '@parts/PageSection'
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 import InnerWrapper from '@parts/InnerWrapper'
 
 const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), {

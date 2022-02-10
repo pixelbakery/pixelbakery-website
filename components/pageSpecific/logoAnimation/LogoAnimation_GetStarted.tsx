@@ -1,5 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import LogoAnimation_GetStarted_Formik from './LogoAnimation_GetStarted_Formik'
 import Button_Filled from '@parts/Button_Filled'
 

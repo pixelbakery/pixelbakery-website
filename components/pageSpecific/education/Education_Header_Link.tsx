@@ -1,7 +1,7 @@
 import next from 'next'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
-import H3 from '@parts/H3'
+import H3 from '@typography/H3'
 
 type Props = {
   header: string

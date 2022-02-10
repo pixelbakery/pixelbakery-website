@@ -41,7 +41,8 @@
       "@lib/*": ["lib/*"],
       "@types/*": ["types/*"],
       "@hooks/*": ["hooks/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@typography/*": ["components/typography/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
