@@ -1,7 +1,8 @@
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Contact_ContactForm_Form from './Contact_ContactForm_Form'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 function Content_ContactForm() {
   return (
     <PageSection className='bg-pink-light'>

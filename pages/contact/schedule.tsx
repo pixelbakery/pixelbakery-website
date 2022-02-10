@@ -1,5 +1,5 @@
-import InnerWrapper from '@parts/H1'
-import H2 from '@parts/InnerWrapper'
+import InnerWrapper from 'components/typography/H1'
+import H2 from '@typography/H2'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import PageSection from '@parts/PageSection'
 import { InlineWidget } from 'react-calendly'

@@ -8,7 +8,7 @@ import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection from '@parts/PageSection'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
 
 const Index = ({ allPosts }) => {
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards

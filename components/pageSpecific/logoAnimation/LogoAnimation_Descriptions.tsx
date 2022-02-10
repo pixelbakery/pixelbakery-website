@@ -1,6 +1,6 @@
 import LogoAnimation_Descriptions_Card from './LogoAnimation_Descriptions_Card'
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
 
 function LogoAnimation_Descriptions() {
   return (

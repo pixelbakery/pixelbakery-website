@@ -1,7 +1,8 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import awards from '@data/awards'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 function Work_Awards() {
   // useEffect(() => {
   //   const awards = gsap.timeline()

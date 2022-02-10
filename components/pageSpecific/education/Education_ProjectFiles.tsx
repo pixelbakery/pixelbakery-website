@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import ProjectFile from '@types/projectFile'

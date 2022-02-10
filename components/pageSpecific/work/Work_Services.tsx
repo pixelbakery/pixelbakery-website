@@ -2,8 +2,9 @@ import Work_Services_Card from './Work_Services_Card'
 import services from '@data/services'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@parts/H2'
-import Lead from '@parts/Lead'
+import H2 from '@typography/H2'
+
+import Lead from '@typography/Lead'
 function Work_Services() {
   return (
     <PageSection color={'white'} id='whatwemake'>

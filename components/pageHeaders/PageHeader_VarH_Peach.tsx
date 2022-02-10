@@ -2,7 +2,7 @@ import Lottie from 'react-lottie-player'
 import classNames from 'classnames'
 import Pattern from '@data/Patterns_Peach.json'
 import PropTypes from 'prop-types'
-import H1 from '@parts/H1'
+import H1 from 'components/typography/H1'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,

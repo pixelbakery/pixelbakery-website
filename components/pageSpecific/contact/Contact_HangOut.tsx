@@ -4,7 +4,8 @@ import StrokeText from '@parts/StrokeText'
 import Link from 'next/link'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import cn from 'classnames'
 import gsap from 'gsap'
 

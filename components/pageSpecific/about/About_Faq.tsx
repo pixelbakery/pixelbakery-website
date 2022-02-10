@@ -4,9 +4,10 @@ import faq from '@data/faq'
 import About_Faq_Card from './About_Faq_Card'
 import PageSection from '@parts/PageSection'
 import { gsap } from 'gsap'
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import InnerWrapper from '@parts/InnerWrapper'
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 export default function Aboout_Faq() {
   return (
     <PageSection className='bg-pink-light' id='faq'>

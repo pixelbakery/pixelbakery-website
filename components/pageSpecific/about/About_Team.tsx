@@ -1,7 +1,8 @@
 import About_Team_Headshot from '@about/About_Team_Headshot'
 
-import H2 from '@parts/H2'
-import Lead from '@parts/Lead'
+import H2 from '@typography/H2'
+
+import Lead from '@typography/Lead'
 import { useState } from 'react'
 
 function About_Team({ people }) {
