@@ -8,11 +8,12 @@ import { ChevronRightIcon } from '@images/UI_Icons/index'
 
 import Head from 'next/head'
 import Navigation from '@parts/Navigation'
-import H1 from '@parts/H1'
-import H2 from '@parts/H2'
+import H1 from 'components/typography/H1'
+import H2 from '@typography/H2'
+
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 import Navigation_NoCallouts from '@parts/Navigation_NoCallouts'
 
 const CheckoutPage: NextPage = () => {

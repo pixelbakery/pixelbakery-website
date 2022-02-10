@@ -15,11 +15,12 @@ import Link from 'next/link'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H1 from '@parts/H1'
-import Lead from '@parts/Lead'
+import H1 from 'components/typography/H1'
+import Lead from '@typography/Lead'
 import SocialLinks from '@images/Icons_Social/SocialLinks'
-import H2 from '@parts/H2'
-import H3 from '@parts/H3'
+import H2 from '@typography/H2'
+
+import H3 from '@typography/H3'
 import { ChevronRightIcon } from '@images/UI_Icons'
 
 function Person({ prev, next, person, matchingAuthorPosts }) {

@@ -1,7 +1,8 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import H2 from '@parts/H2'
-import Lead from '@parts/Lead'
+import H2 from '@typography/H2'
+
+import Lead from '@typography/Lead'
 
 function About_Commitment() {
   return (

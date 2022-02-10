@@ -3,8 +3,9 @@ import portfolio from '@data/portfolio'
 import cn from 'classnames'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@parts/H2'
-import Lead from '@parts/Lead'
+import H2 from '@typography/H2'
+
+import Lead from '@typography/Lead'
 
 const Work_Portfolio = () => {
   const featuredProjNo = 4

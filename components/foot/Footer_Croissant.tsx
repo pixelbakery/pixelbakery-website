@@ -1,4 +1,4 @@
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
@@ -31,6 +31,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
   // MONDAY
   ////////////
   async function SendToMonday(data) {
+    data.tag = 'Croissants'
     const query =
       'mutation ($email: String!) { create_item (board_id:2222479021, item_name:$email) { id } }'
     const vars = {
@@ -58,7 +59,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
   async function SendToMailchimp(data) {
     if (checked) {
       console.log('sending to mailchimp')
-      await fetch('/api/subscribe', {
+      await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {

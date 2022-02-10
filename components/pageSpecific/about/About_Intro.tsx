@@ -1,6 +1,7 @@
-import H2 from '@parts/H2'
+import H2 from '@typography/H2'
+
 import InnerWrapper from '@parts/H2'
-import Lead from '@parts/Lead'
+import Lead from '@typography/Lead'
 import PageSection from '@parts/PageSection'
 
 function About_Intro() {
