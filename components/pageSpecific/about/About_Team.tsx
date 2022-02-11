@@ -1,7 +1,6 @@
 import About_Team_Headshot from '@about/About_Team_Headshot'
 
 import H2 from '@typography/H2'
-
 import Lead from '@typography/Lead'
 import { useState } from 'react'
 
@@ -29,7 +28,7 @@ function About_Team({ people }) {
   }
   function Leader1() {
     return (
-      <div className='relative w-full bg-pink col-span-2  aspect-1/1 md:aspect-3/4 md:col-span-1  flex flex-col justify-center px-10'>
+      <div className='relative w-full bg-pink  h-full first-letter:col-span-1 aspect-3/4   flex flex-col justify-center px-10'>
         <Lead color='blue-dark' className='pt-4'>
           we&apos;re a ragtag team of scrappy designers, animators, and producers
         </Lead>
@@ -38,7 +37,7 @@ function About_Team({ people }) {
   }
   function Leader2() {
     return (
-      <div className='flex relative w-full bg-blue-dark col-span-2 lg:col-span-1 aspect-1/1 md:aspect-3/4 flex-col justify-center px-8'>
+      <div className='flex relative w-full h-full bg-blue-dark col-span-2 sm:col-span-1 aspect-3/4 flex-col justify-center px-8'>
         <Lead color='blue' className='mb-0 pb-0'>
           we create intentional and beautiful moments for exciting people that share our beliefs and
           passions
@@ -47,55 +46,59 @@ function About_Team({ people }) {
     )
   }
 
-  const shifted = people.map((person) => {
-    if (person.active === true) {
-      return person
-    } else return
+  const filtered = shuffled.filter((person) => person.active)
+
+  // filtered.forEach((person) => {
+  //   console.log(person.name)
+  // })
+  const addHeadshot = filtered.map((person) => {
+    return (
+      <About_Team_Headshot
+        key={person.name}
+        name={person.name}
+        headshot={person.photos.headshotSerious}
+        headshotSmiling={person.photos.headshotSmiling}
+        url={person.slug}
+      />
+    )
   })
-  shifted.forEach((person) => {
-    console.log(person)
-  })
-  // const headerIndex = 0
+  const headerIndex = 0
 
-  // shifted.splice(headerIndex, 0, <Header />)
+  addHeadshot.splice(headerIndex, 0, <Header />)
 
-  // const leadIndex1 = 6
+  const leadIndex1 = 5
 
-  // shifted.splice(leadIndex1, 0, <Leader1 />)
+  addHeadshot.splice(leadIndex1, 0, <Leader1 />)
 
-  // const leadIndex2 = (shifted.length - 4) * 1
+  let leadIndex2
+  if (addHeadshot.length % 2 === 0) {
+    leadIndex2 = addHeadshot.length - 3
+  } else leadIndex2 = addHeadshot.length - 3
 
-  // shifted.splice(leadIndex2, 0, <Leader2 />)
+  addHeadshot.splice(leadIndex2, 0, <Leader2 />)
 
   // console.log(shifted)
 
   return (
     <section className='my-4' id='team'>
-      {/* <div className='grid gap-1 -4 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
-        {shifted.map((person, index) => {
-          if (index === headerIndex) {
-            return <Header />
-          } else if (index === leadIndex1) {
-            return <Leader1 />
-          } else if (index === leadIndex2) {
-            return <Leader2 />
-          } else {
-            if (person.active === true) {
-              return (
-                <About_Team_Headshot
-                  key={person.name}
-                  name={person.name}
-                  headshot={person.photos.headshotSerious}
-                  headshotSmiling={person.photos.headshotSmiling}
-                  url={person.slug}
-                />
-              )
-            } else {
-              return
-            }
-          }
+      <div className='grid gap-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
+        {addHeadshot.map((person, index) => {
+          return person
+          // if (person != undefined) {
+          //   return (
+          //     <>
+          //       <About_Team_Headshot
+          //         key={person.name}
+          //         name={person.name}
+          //         headshot={person.photos.headshotSerious}
+          //         headshotSmiling={person.photos.headshotSmiling}
+          //         url={person.slug}
+          //       />
+          //     </>
+          //   )
+          // }
         })}
-      </div> */}
+      </div>
     </section>
   )
 }
