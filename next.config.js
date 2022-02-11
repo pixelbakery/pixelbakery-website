@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const React = require('react')
+// import micromatch from 'micromatch'
 // eslint-disable-next-line no-undef
 module.exports = {
   webpack(config) {
@@ -133,8 +134,9 @@ module.exports = {
       '*.scdn.co',
       'scdn.co',
       'mosaic.scdn.co',
+      'images234-focus-opensocial.googleusercontent.com',
       'scontent.cdninstagram.com',
-      'cdninstagram.com',
+      'scontent-akl1-1.cdninstagram.com',
     ],
   },
 }
