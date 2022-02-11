@@ -75,7 +75,8 @@ export const InstagramGallery = (props: GalleryProps) => {
                   objectFit='cover'
                   className='instagram-image'
                   key={index}
-                  src={item.media_url}
+                  src={item.media_url.replace(/^[^.]*/, 'https://scontent-akl1-1')}
+                  // src={item.media_url}
                   alt={item.caption}
                   quality={33}
                 />
