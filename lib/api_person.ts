@@ -38,8 +38,9 @@ export function getPersonBySlug(slug: string, fields: string[] = []) {
 
 export function getAllPeople(fields: string[] = []) {
   const slugs = getPeopleSlugs()
-  const people = slugs.map((slug) => getPersonBySlug(slug, fields))
-  // sort people by date in descending order
-  // .sort((person1, person2) => (person1.date > person2.date ? -1 : 1))
+  const people = slugs
+    .map((slug) => getPersonBySlug(slug, fields))
+    // sort people by date in descending order
+    .sort((person1, person2) => (person1.name > person2.name ? -1 : 1))
   return people
 }
