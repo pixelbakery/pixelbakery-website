@@ -28,9 +28,6 @@
     padding: 0;
   }
 
-  /* .socialIcons {
-    @apply transform-gpu transition duration-700 ease-in-out hover:-translate-y-2;
-  } */
   input.form-border-b,
   textarea.form-border-b,
   select.form-border-b,
@@ -67,8 +64,7 @@
 
   .slider::-moz-range-thumb {
     @apply w-4 h-4;
-    /* width: 25px;
-    height: 25px; */
+
     background: #04aa6d;
     cursor: pointer;
   }
@@ -76,27 +72,22 @@
   .expectations-number-wrapper span:nth-child(2) {
     top: -3%;
     left: -6%;
-    /* -webkit-text-stroke: 3px darkgrey; */
   }
   .expectations-number-wrapper span:nth-child(3) {
     top: -5%;
     left: -8%;
-    /* -webkit-text-stroke: 3px darkgrey; */
   }
   .expectations-number-wrapper span:nth-child(4) {
     top: -7%;
     left: -10%;
-    /* -webkit-text-stroke: 3px darkgrey; */
   }
   .expectations-number-wrapper span:nth-child(4) {
     top: -9%;
     left: -12%;
-    /* -webkit-text-stroke: 3px darkgrey; */
   }
   .expectations-number-wrapper span:nth-child(5) {
     top: -11%;
     left: -14%;
-    /* -webkit-text-stroke: 3px darkgrey; */
   }
 
   #home-mixer {
@@ -104,8 +95,6 @@
     right: 2.5%;
   }
   #home-sifter img {
-    /* -webkit-transform: scaleX(-1);
-    transform: scaleX(-1); */
   }
   video::-webkit-media-controls {
     display: none;
@@ -249,13 +238,11 @@
   top: 0;
 }
 
-/* Twitch */
 #twitch-title {
   top: -150px;
   left: 50%;
   transform: translateX(-50%);
 }
-/* FAQ  */
 
 .closed .vertical {
   transition: all 0.5s ease-in-out;
@@ -286,7 +273,6 @@
   height: 2.5em;
 }
 .circle-plus .circle .horizontal {
-  /* position: absolute; */
   width: 20px;
   height: 4px;
   left: 50%;
@@ -295,7 +281,6 @@
   margin-top: -2.5px;
 }
 .circle-plus .circle .vertical {
-  /* position: absolute; */
   width: 4px;
   height: 20px;
   left: 50%;
@@ -313,7 +298,7 @@
   display: block;
   opacity: 1;
 }
-//END FAQ
+
 .shimmer {
   position: absolute;
   top: 0;
@@ -363,49 +348,18 @@
   }
 }
 
-.config-select {
-  /* margin-top: 2rem; */
-  /* text-align: center; */
-  /* z-index: 10; */
-}
-.config-select .fieldset {
-  /* display: inline-block; */
-  /* position: relative; */
-  /* padding: 2px; */
-  /* margin-bottom: 1rem; */
-  /* border-radius: 50em; */
-  /* border: 2px solid #666666; */
-  /* background: #dddddd; */
-}
 .config-select input[type='radio'] {
-  /* position: absolute;
-  opacity: 0; */
 }
 .config-select label {
-  /* position: relative; */
-  /* z-index: 1; */
-  /* display: inline-block; */
-  /* float: left; */
   width: 90px;
   height: 40px;
   line-height: 40px;
-  /* cursor: pointer; */
-  /* font-size: 1rem; */
-  /* color: #033d74; */
-  /* transition: all 500ms ease-in-out; */
 }
 .config-select .switch {
-  /* floating background */
-  /* position: absolute; */
   top: 2px;
   left: 2px;
   height: 40px;
   width: 90px;
-  /* background-color: #033d74; */
-  /* border-radius: 50em; */
-  /* -webkit-transition: -webkit-transform 0.5s;s */
-  /* -moz-transition: -moz-transform 0.5s; */
-  /* transition: transform 0.5s; */
 }
 .config-select input[type='radio']:checked + label {
   color: #eee;
@@ -451,10 +405,10 @@
 }
 
 .animate__fadeIn {
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
   animation: fadein 2s;
 }
 @keyframes fadein {
