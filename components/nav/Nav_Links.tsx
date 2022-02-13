@@ -1,4 +1,3 @@
-import next from 'next'
 import Link from 'next/link'
 
 export const Nav_Links_Text = ({ text, url, id }) => {
