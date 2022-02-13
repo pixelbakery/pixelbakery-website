@@ -1,42 +1,27 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
 import { getPlaylist } from 'lib/spotify'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const response = await getPlaylist(playlistID)
+export default async function handler(req, res) {
+  const { id } = req.body
+
+  const response = await getPlaylist(id)
   const { tracks, name, images } = await response.json()
-  const cover = images.map((image) => ({
-    url: image.url,
-  }))
 
-  cover.forEach((element) => {
-    console.log(element.url)
-  })
-  const test = Object.entries(images)
-    .slice(0, 0)
-    .map(([key, url]) => {
-      url: url
-    })
-  const test2 = test[0]
-  console.log(test2)
+  const total = tracks.total
 
-  const result = Object.keys(images).map(function (key) {
-    // Using Number() to convert key to number type
-    // Using obj[key] to retrieve key value
+  const albumCoverImage = Object.keys(images).map(function (key) {
     return images[key].url
-  })
-  const temp = result[0]
+  })[0]
 
-  console.log('asdgf', result[0])
-  const tracksSelected = tracks.items.slice(0, 10).map((track) => ({
+  const tracksSelected = tracks.items.map((track) => ({
     artist: track.track.artists.map((_artist) => _artist.name).join(', '),
     albumArt: track.track.album.images[0].url,
     songUrl: track.track.external_urls.spotify,
     title: track.track.album.name,
   }))
 
-  res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200')
+  // res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=43200')
 
-  return res.status(200).json({ tracksSelected, name, images, cover, temp })
+  return res.status(200).json({ id, total, tracksSelected, tracks, name, images, albumCoverImage })
 }
 
 // https://developer.spotify.com/console/get-playlist/?playlist_id=5emLQhY7DYenV7AUbcc2aZ&market=&fields=&additional_types=
