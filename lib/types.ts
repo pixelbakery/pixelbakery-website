@@ -16,8 +16,18 @@ export type NowPlayingSong = {
 export type Playlist = {
   album: string
   albumImageUrl: string
+  albumCoverImage: string
+  name: string
   artist: string
   isPlaying: boolean
+  total: number
+  tracks: any
+  external_urls: string
+  followers: any
+  albumLength: string
+  spotify: string
+  description: string
+  tracksSelected: any
   songUrl: string
   title: string
   id: string
