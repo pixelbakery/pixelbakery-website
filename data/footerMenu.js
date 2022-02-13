@@ -9,10 +9,6 @@ export default [
     url: '/about',
   },
   {
-    text: 'Services',
-    url: '/work#services',
-  },
-  {
     text: 'Education',
     url: '/education',
   },
