@@ -45,9 +45,9 @@ export const getTopTracks = async () => {
   })
 }
 
-export const getPlaylist = async (playlistID) => {
+export const getPlaylist = async () => {
   const { access_token } = await getAccessToken()
-  const SELECTED_PLAYLIST_ENDPOINT = PLAYLISTS_ENDPOINT + `${playlistID}`
+  const SELECTED_PLAYLIST_ENDPOINT = PLAYLISTS_ENDPOINT + `5emLQhY7DYenV7AUbcc2aZ`
   return fetch(SELECTED_PLAYLIST_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,

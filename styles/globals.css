@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar,
+  .changeScrollbar::-webkit-scrollbar {
     @apply w-2 cursor-pointer;
   }
 
@@ -11,7 +12,8 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   }
 
-  body::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb,
+  .changeScrollbar::-webkit-scrollbar-thumb {
     @apply bg-peach rounded-md cursor-pointer;
   }
 
