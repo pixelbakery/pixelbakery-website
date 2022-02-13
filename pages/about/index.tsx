@@ -17,13 +17,13 @@ function About({ allPeople }: Props) {
   return (
     <Main>
       <PageHeader_VariableHeight header='About' subheader='copy copy copy ' />
-      {/* <About_Team people={allPeople} /> */}
+      <About_Team people={allPeople} />
       <About_Spotify />
-      {/* <About_Commitment /> */}
+      <About_Commitment />
 
       {/* <About_Values /> */}
-      {/* <About_Twitch /> */}
-      {/* <About_Faq /> */}
+      <About_Twitch />
+      <About_Faq />
     </Main>
   )
 }
