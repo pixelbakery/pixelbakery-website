@@ -84,6 +84,9 @@
   blockquote {
     @apply my-6;
   }
+  blockquote {
+    @apply border border-l-8 border-wine-100 px-16 py-3 my-20 italic;
+  }
   p {
     @apply text-lg text-wine my-4 pb-3;
   }
