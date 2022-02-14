@@ -26,7 +26,7 @@ export default [
   },
   {
     q: 'How long does it take to make an animation?',
-    a: "That's a pretty hard one to answer without having a discovery meeting and knowing the scope. It all depends on complexity. We like to have enough breathing room to ensure the level of quality our clients expect from us, so typically we don't do rush jobs. Sometimes we will if we have room in our production pipeline, but there's a surcharge. A good baseline: a 90 second 2D animation, on average, usually takess us about two months. That's with us developing the story, scripting, storyboarding, concepting, and animating. ",
+    a: "That's a pretty hard one to answer without having a discovery meeting and knowing the scope. It all depends on complexity. We like to have enough breathing room to ensure the level of quality our clients expect from us, so typically we don't do rush jobs. Sometimes we will if we have room in our production pipeline, but there's a surcharge. A good baseline: a 90 second 2D animation, on average, usually takes us about two months. That's with us developing the story, scripting, storyboarding, concepting, and animating. ",
   },
   {
     q: 'Do you do spec work?',
