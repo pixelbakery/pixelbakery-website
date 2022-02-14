@@ -3,7 +3,7 @@ import PageSection from '@parts/PageSection'
 import awards from '@data/awards'
 import H2 from '@typography/H2'
 
-function Work_Awards() {
+function About_Awards() {
   // useEffect(() => {
   //   const awards = gsap.timeline()
   //   awards.from('.awardslist .award', {
@@ -60,4 +60,4 @@ function Work_Awards() {
   )
 }
 
-export default Work_Awards
+export default About_Awards
