@@ -1,7 +1,7 @@
 import Work_Services from '@work/Work_Services'
 import Work_Portfolio from '@work/Work_Portfolio'
 import Work_Clients from '@work/Work_Clients'
-import Work_Awards from '@work/Work_Awards'
+
 import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
 import Main from '@parts/Main'
@@ -12,12 +12,9 @@ const Work = () => {
   return (
     <Main className='max-w-screen overflow-hidden'>
       <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />
-
       <Work_Services />
       <Work_Portfolio />
-
       <Work_Clients />
-      <Work_Awards />
     </Main>
   )
 }
