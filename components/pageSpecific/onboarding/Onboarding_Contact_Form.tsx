@@ -93,7 +93,7 @@ function Footer_Mailchimp() {
       type: 'custom',
       message: 'Make sure your email is entered correctly.',
     })
-    // SendToSendgrid(data)
+    SendToSendgrid(data)
     SendToMonday(data)
     SendToMailchimp(data)
     resetField('email')
