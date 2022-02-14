@@ -6,20 +6,12 @@ export default [
     url: '/privacy-policy',
   },
   {
-    text: 'Careers',
-    url: '/careers',
+    text: 'Nebraska Creative',
+    url: 'https://nebraska-creative.com',
   },
   {
     text: 'Bakery Login',
-    url: '/',
-  },
-  {
-    text: 'Press Kit',
-    url: '/',
-  },
-  {
-    text: 'Cookbook',
-    url: '/',
+    url: '/login',
   },
   {
     text: 'Motion Mixer',
