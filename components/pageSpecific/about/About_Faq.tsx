@@ -14,7 +14,6 @@ export default function Aboout_Faq() {
       <InnerWrapper>
         <div className='mb-12'>
           <H2 color={'blue'} className='mb-4'>
-            {' '}
             Some questions we get asked frequently
           </H2>
           <Lead color='peach'>what's a website without one of these?</Lead>
