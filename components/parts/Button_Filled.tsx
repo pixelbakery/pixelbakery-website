@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 type Props = {
   text: string
-  link?: string
+  link: string
   center: boolean
   bgColor: string
   textColor: string
