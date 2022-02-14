@@ -14,7 +14,7 @@ export const Nav_Links_Text = ({ text, url, id }) => {
 
 export const Nav_Links_Button = ({ text, url, id }) => {
   return (
-    <div id={id} className=' self-center relative z-30 hidden md:block'>
+    <div id={id} className='opacity-0 self-center relative z-30 hidden md:block'>
       <Link href={url} passHref>
         <a className='pointer-events-auto  mx-3 my-2 py-3 rounded-sm px-6 w-full text-center bg-peach'>
           <span className='text-cream font-extrabold text-md lowercase tracking-wide'>{text}</span>
