@@ -28,7 +28,7 @@ function About_Awards() {
       <InnerWrapper>
         <div className=' grid grid-cols-1 xl:grid-cols-3 gap-12 xl:gap-32'>
           <div className='col-span-1'>
-            <H2 className='text-blue-dark'>
+            <H2 color='blue-dark'>
               awards and recognition<span className='hidden lg:inline'>*</span>
             </H2>
             <div className='-mt-8 text-2xl text-cream font-extrabold'>swoosh.</div>

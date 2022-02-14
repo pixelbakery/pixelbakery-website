@@ -28,7 +28,7 @@ function About_Twitch() {
         </H2>
         <Lead color='pink' className='pb-10'>
           Working from home? Pretend you&apos;re not and vibe with us. Can&apos;t sleep? Cozy up
-          with us in your bed and listen to the ryhtemic sounds of computers clicking.
+          with us in your bed and listen to the rhythmic sounds of computers clicking.
           <br />
           <br />
           <a className='text-blue underline' href='https://twitch.tv/pixelbakery' target='_blank'>
