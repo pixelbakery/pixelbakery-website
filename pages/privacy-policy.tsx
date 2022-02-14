@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
+
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Main from '@parts/Main'
 function PrivacyPolicy() {
   return (
     <Main id='' className='my-4'>
+      <PageHeader_VarH header='Privacy Policy' />
       <section className='mt-20 py-20'>
         <div className='mx-auto max-w-3xl'>
           <h1 className='text-wine text-6xl text-center mb-12'>
