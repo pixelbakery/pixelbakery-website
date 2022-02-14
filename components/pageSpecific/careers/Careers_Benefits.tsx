@@ -2,11 +2,13 @@ import { useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
 
 function Careers_Benefits() {
   return (
-    <section className=' mb-4 px-4 py-40  mx-auto max-h-screen bg-pink-light' id='careers-benefits'>
-      <div className='container grid grid-cols-1 md:grid-cols-5 gap-20 mx-auto py-4 max-w-7xl'>
+    <PageSection color='pink-light' id='careers-benefits'>
+      <InnerWrapper className='container grid grid-cols-1 md:grid-cols-5 gap-20 mx-auto py-4 max-w-7xl'>
         <div className='col-span-2'>
           <h2 className='text-pink text-right mb-1 pb-1'>benefits</h2>
           <h4 className='my-0 py-0 text-right text-2xl text-blue font-extrabold'>nice.</h4>
@@ -40,8 +42,8 @@ function Careers_Benefits() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 
