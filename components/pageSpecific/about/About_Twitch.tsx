@@ -17,7 +17,7 @@ const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), 
 
 function About_Twitch() {
   return (
-    <PageSection className='px-0 pt-48  ' id='twitch'>
+    <PageSection className='px-0 md:pt-48 pb-0 lg:pb-0' id='twitch'>
       <Head>
         <script src='https://player.twitch.tv/js/embed/v1.js' />
       </Head>
@@ -26,7 +26,7 @@ function About_Twitch() {
         <H2 color='peach' className=' lg:-mt-12'>
           Peep on us
         </H2>
-        <Lead color='pink' className='pb-10'>
+        <Lead color='pink' className='pb-10 leading-tight'>
           Working from home? Pretend you&apos;re not and vibe with us. Can&apos;t sleep? Cozy up
           with us in your bed and listen to the rhythmic sounds of computers clicking.
           <br />
@@ -60,7 +60,6 @@ function About_Twitch() {
             </div>
           </div>
         </div>
-        <div className='w-full aspect-9/16 lg:aspect-video object-cover bg-blue'></div>
       </div>
     </PageSection>
   )

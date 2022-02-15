@@ -15,7 +15,8 @@ function About_Values() {
         </Lead>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12 '>
           {/* value 1: we're all going to die */}
-          <div>
+          <div className='flex gap-4'>
+            <div className='text-6xl font-black text-peach'>1</div>
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
                 we're all going to die
@@ -27,56 +28,50 @@ function About_Values() {
             </div>
           </div>
           {/* value 2: take care of your people */}
-          <div>
+          <div className='flex gap-4'>
+            <div className='text-6xl font-black text-peach'>2</div>
+
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
                 take care of your people
               </Lead>
               <p>
-                Your success is our success. We believe it is possible to create thoughtful and
-                purposeful design while hitting deadlines and turning projects around on time. Our
-                team of planners and designers work together to execute creative ideas with an
-                intense concentration and attention to detail.  We make it our business to involve
-                our clients in every decision, and keep them in the loop every step of the way.
-                Other agencies wouldn’t allow as much control from the client. We think it’s
-                important, so our small team gives unparalleled customer service.
+                Our success is a direct result of the people in our lives. Our employees, our
+                clients, and our community are vitally important to us. We believe in paying a
+                competitive wage, building trust with our clients, and giving back to the community
+                through education.
               </p>
             </div>
           </div>
 
           {/* value 3: unapologetically us*/}
-          <div>
+          <div className='flex gap-4'>
+            <div className='text-6xl font-black text-peach'>3</div>
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
                 unapologetically us
               </Lead>
               <p className='py-4 text-xl text-wine'>
-                We believe it is possible to create thoughtful and purposeful design while hitting
-                deadlines and turning projects around on time. Our team of planners and designers
-                work together to execute creative ideas with an intense concentration and attention
-                to detail.
-              </p>
-              <p className='py-4 text-xl text-wine'>
-                We make it our business to involve our clients in every decision, and keep them in
-                the loop every step of the way. Other agencies wouldn’t allow as much control from
-                the client. We think it’s important, so our small team gives unparalleled customer
-                service.
+                We are who we are and we treat everyone exactly the same. We want our relationships
+                to be built on trust, so how could we have it any other way? We practice this with
+                vulnerability, constructive criticism, and honesty.
               </p>
             </div>
           </div>
 
-          {/* value 3: Your success is our success.*/}
-          <div>
+          {/* value 4: You've got to be kind*/}
+          <div className='flex gap-4'>
+            <div className='text-6xl font-black text-peach'>4</div>
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
                 You've got to be kind
               </Lead>
-              <blockquote className='py-4 text-xl text-wine'>
+              <p className='pt-4 mb-0 text-xl text-wine italic'>
                 “Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter. It's
                 round and wet and crowded. On the outside, babies, you’ve got a hundred years here.
                 There’s only one rule that I know of, babies-“God damn it, you’ve got to be kind.”
-              </blockquote>
-              <cite className='py-4 text-xl text-wine'>
+              </p>
+              <cite className=' text-xl text-wine'>
                 <strong>– Kurt Vonnegut</strong>, God Bless You, Mr. Rosewater
               </cite>
             </div>

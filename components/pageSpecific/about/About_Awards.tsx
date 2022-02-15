@@ -37,14 +37,14 @@ function About_Awards() {
               smoke &apos;em if you &apos;em, right?
             </p>
           </div>
-          <div className='col-span-2  flex flex-col justify-between mx-auto w-full gap-12'>
+          <div className='col-span-2  flex flex-col justify-between mx-auto w-full '>
             <ul
-              className='w-fit self-end text-cream font-body font-bold  md:text-lg relative awardsList'
+              className='w-fit self-end text-cream font-body text-xs sm:text-sm md:text-lg font-medium md:font-bold  relative awardsList'
               id='awardsList1'
             >
-              {awards.map((award) => {
+              {awards.map((award, index) => {
                 return (
-                  <li key={award.project} className='my-4 '>
+                  <li key={index + award.project} className='my-4 '>
                     {award.award != '' ? `${award.award} ` : ''}
                     {award.category != '' ? `/ ${award.category} ` : ''}
                     {award.project != '' ? `/ ${award.project} ` : ''}

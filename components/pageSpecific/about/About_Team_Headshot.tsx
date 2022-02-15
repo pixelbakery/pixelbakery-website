@@ -26,7 +26,9 @@ function About_Team_Headshot({ ...props }) {
           className={cn('absolute top-0 left-0 w-full h-full object-cover z-20', {
             ['opacity-0']: hover,
           })}
-          alt={'pixel bakery ' + props.name}
+          alt={'pixel bakery ' + props.name + ', ' + props.title}
+          placeholder={'blur'}
+          blurDataURL={headshot}
         />
         <Image
           priority
@@ -35,6 +37,8 @@ function About_Team_Headshot({ ...props }) {
           objectFit='cover'
           className='absolute top-0 left-0  w-full h-full object-cover z-10'
           alt={'pixel bakery ' + props.name}
+          placeholder={'blur'}
+          blurDataURL={headshotSmiling}
         />
       </a>
     </Link>
