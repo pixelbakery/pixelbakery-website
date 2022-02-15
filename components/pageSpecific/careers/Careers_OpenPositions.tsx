@@ -1,43 +1,43 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
+import DateFormatter from '@lib/date-formatter'
 import H2AndLead from '@typography/H2AndLead'
-import Link from 'next/link'
 
-function Careers_OpenPositions() {
+import Careers_Card from './Careers_Card'
+import cn from 'classnames'
+function Careers_OpenPositions({ jobs, header, subheader }) {
+  jobs.forEach((job) => console.log(job.data.title))
+
   return (
-    <PageSection id=''>
-      <InnerWrapper className='mx-auto max-w-7xl '>
+    <PageSection className='lg:py-12'>
+      <InnerWrapper>
         <div className='mb-12'>
-          <H2AndLead
-            headerColor='blue'
-            className='text-blue'
-            headerText={'Open Positions'}
-            leadText={
-              'For those that are still in school or eager to learn, we offer apprenticeships to show you the ropes.'
-            }
-          />
+          <div className=''>
+            <h2
+              className={cn(
+                'font-bold max-w-md mt-0 text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-3xl leading-none mb-4 text-blue',
+              )}
+            >
+              {header}
+            </h2>
+            <p
+              className={cn('text-2xl lg:text-3xl mt-0 font-bold leading-none max-w-lg text-wine')}
+            >
+              {subheader}
+            </p>
+          </div>
         </div>
-        <div className='grid grid-cols-6 gap-4'>
-          <Link href={'/careers/anything-goes'} passHref>
-            <a className='col-span-1'>
-              <article className='px-3 py-4 border-4 border-pink rounded-lg flex flex-col justify-between'>
-                <div className='text-blue-dark bg-yellow font-bold py-1 px-2 mr-auto rounded-md '>
-                  Part-Time
-                </div>
-                <div className='py-8'>
-                  <h3 className='text-pink text-3xl mb-0 pb-0 leading-none'>anything goes</h3>
-                  <small className='text-blue-dark opacity-80 my-0 py-0 leading-none '>
-                    lincoln, ne
-                  </small>
-                </div>
-                <small className='text-wine opacity-50 text-2xs leading-tight'>
-                  posted on <br />
-                  november 21, 2021
-                </small>
-              </article>
-            </a>
-          </Link>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4'>
+          {jobs.map((job) => {
+            return (
+              <Careers_Card
+                title={job.data.title}
+                location={job.data.location}
+                commitment={job.data.commitment}
+                date={<DateFormatter dateString={job.data.date} />}
+              />
+            )
+          })}
         </div>
       </InnerWrapper>
     </PageSection>
