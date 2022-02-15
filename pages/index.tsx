@@ -13,10 +13,11 @@ import Home_Portfolio from '@home/Home_Portfolio'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 
 import Home_Recipes from '@home/Home_Recipes'
+import Main from '@parts/Main'
 
 const Home = ({ allPosts }) => {
   return (
-    <main className='max-w-screen overflow-x-hidden '>
+    <Main>
       <Head>
         <title>Pixel Bakery</title>
         <link rel='icon' href='/favicon.svg' />
@@ -27,7 +28,7 @@ const Home = ({ allPosts }) => {
       <Home_Services />
       <Home_Portfolio />
       <Home_Recipes allPosts={allPosts} />
-    </main>
+    </Main>
   )
 }
 
