@@ -75,7 +75,10 @@ function caseStudy_Backcountry_GearheadMagic() {
         The biggest thing we’ve learned from working with animals is you can’t go in expecting anything to go the way you planned. However, throughout hours of puppy wrangling (and getting more creative than you ever thought possible in order to get a 2-month-old golden retriever to take a toy out of a box), there’s nothing better than when a magical moment happens on camera.
         </p>
         <p>
-        In post production, we brought in some basic motion elements and color to elevate PupBox’s brand, including bouncy kinetic type and subtle movement for their logo. We packaged three videos for PupBox to use as native advertising in their social feeds that work toward brand awareness and recognition.
+        In post production, we brought in some basic motion elements and color to elevate PupBox’s brand, including bouncy kinetic type and subtle movement for their logo.
+        </p>
+        <p>
+        We packaged three videos for PupBox to use as native advertising in their social feeds that work toward brand awareness and recognition.
         </p>
   
       </CaseStudies_Description>
