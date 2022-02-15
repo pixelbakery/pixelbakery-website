@@ -21,7 +21,7 @@ const tags = [
 
 //client info
 const client = 'PupBox'
-const clientLogo = '/img/clients/1x/pixelbakery_client_pupbox.png'
+const clientLogo = '/img/clients/1x/pixelbakery_client_SOLA.png'
 const clientURL = 'https://pupbox.com'
 
 // Project Header
