@@ -178,11 +178,6 @@
   height: calc(100vh - 2rem);
 }
 
-@media (max-width: 1023px) {
-  .lander {
-    height: auto;
-  }
-}
 .lander-variableHeight {
   min-height: 66vh;
   max-height: calc(100vh - 2rem) !important;
