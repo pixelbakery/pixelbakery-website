@@ -114,4 +114,10 @@
   p.lead {
     @apply mt-2 text-2xl pb-6 leading-relaxed;
   }
+  p.disclaimer {
+    @apply text-sm text-wine-300 leading-tight italic;
+  }
+  sub {
+    @apply leading-none text-wine my-0 py-0;
+  }
 }
