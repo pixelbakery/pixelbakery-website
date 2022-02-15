@@ -56,6 +56,7 @@ function About_Team({ people }) {
       <About_Team_Headshot
         key={person.name}
         name={person.name}
+        title={person.title}
         headshot={person.photos.headshotSerious}
         headshotSmiling={person.photos.headshotSmiling}
         url={person.slug}
