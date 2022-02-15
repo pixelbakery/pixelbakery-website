@@ -14,7 +14,7 @@ const tags = [{ name: 'Creative Concepting', url: '/' }]
 
 //client info
 const client = 'PupBox'
-const clientLogo = '/img/client-logos/Black-Sola-Logo.png'
+const clientLogo = '/img/clients/1x/pixelbakery_client_pupbox.png'
 const clientURL = 'https://pupbox.com'
 
 // Project Header
