@@ -1,9 +1,9 @@
-import DateFormatter from './date-formatter'
-import Author from '@types/author'
+import DateFormatter from '../../../lib/date-formatter'
+import Author from 'types/author'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-import PersonType from '@types/person'
+import PersonType from 'types/person'
 
 import cn from 'classnames'
 type Props = {

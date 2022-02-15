@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-import DateFormatter from './date-formatter'
+import DateFormatter from '../../../lib/date-formatter'
 
-import Author from '@types/author'
+import Author from 'types/author'
 
 type Props = {
   title: string
@@ -38,6 +38,9 @@ const Recipes_SmallPost = ({
                   src={coverImage}
                   objectFit='cover'
                   className='rounded-md'
+                  placeholder='blur'
+                  quality={25}
+                  blurDataURL={coverImage}
                   alt={`Cover image for ${title}`}
                 />
               </div>
@@ -62,7 +65,10 @@ const Recipes_SmallPost = ({
                 {title}
               </h2>
               <div className='flex-grow 2xl:flex-initial'>
-                <p className='line-clamp-2 md:line-clamp-3 text-wine '>{excerpt}</p>
+                <div className='block'>
+                  {' '}
+                  <p className='pb-0 line-clamp-2 md:line-clamp-3 text-wine '>{excerpt}</p>
+                </div>
               </div>
               <div className=' mt-4'>
                 <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'sm'} />
