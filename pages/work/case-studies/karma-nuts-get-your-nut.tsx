@@ -17,8 +17,8 @@ const tags = [{ name: 'Creative Concepting', url: '/' }]
 
 //client info
 const client = 'Karma Nuts'
-const clientLogo = '/img/client-logos/Black-Sola-Logo.png'
-const clientURL = 'https://backcountry.com'
+const clientLogo = '/img/clients/1x/pixelbakery_client_karmanuts.png'
+const clientURL = 'https://www.karmanuts.com/'
 
 // Project Header
 const heroVideo = '426332870'
