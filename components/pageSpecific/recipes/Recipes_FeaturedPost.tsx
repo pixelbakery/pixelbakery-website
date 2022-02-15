@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import DateFormatter from './date-formatter'
-import Author from '@types/author'
+import DateFormatter from '../../../lib/date-formatter'
+import Author from 'types/author'
 
 type Props = {
   title: string
@@ -47,8 +47,10 @@ const Recipes_FeaturedPost = ({
             src={coverImage}
             layout='fill'
             objectFit='cover'
-            blurDataURL='true'
-            quality={100}
+            placeholder='blur'
+            blurDataURL={coverImage}
+            quality={50}
+            priority
             className=''
           />
           <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>
