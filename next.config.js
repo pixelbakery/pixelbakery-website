@@ -26,6 +26,16 @@ module.exports = {
       //   permanent: false,
       // },
       {
+        source: '/futurebakers/',
+        destination: '/careers/',
+        permanent: true,
+      },
+      {
+        source: '/futurebakers/apply',
+        destination: '/careers/application',
+        permanent: true,
+      },
+      {
         source: '/services/logo-animation',
         destination: '/logo-animation',
         permanent: true,
