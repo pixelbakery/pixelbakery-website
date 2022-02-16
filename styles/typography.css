@@ -90,6 +90,7 @@
   p {
     @apply text-lg text-wine my-4 pb-3;
   }
+
   p a {
     @apply underline text-peach underline-offset-4 hover:opacity-75;
   }
@@ -119,5 +120,12 @@
   }
   sub {
     @apply leading-none text-wine my-0 py-0;
+  }
+  label {
+    @apply text-lg text-wine mt-4 mb-2  font-bold block;
+  }
+  label.required::after {
+    content: ' *';
+    @apply text-sm align-top inline text-peach;
   }
 }

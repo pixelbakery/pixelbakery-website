@@ -6,12 +6,10 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function Footer_Mailchimp() {
   const [checked, setChecked] = useState(true)
-
-  const [submitted, setSubmitted] = useState(false)
-
   const handleCheck = () => {
     setChecked(!checked)
   }
+  const [submitted, setSubmitted] = useState(false)
 
   ////////////
   // MONDAY
