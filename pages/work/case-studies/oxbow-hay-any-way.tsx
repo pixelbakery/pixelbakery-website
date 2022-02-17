@@ -22,9 +22,10 @@ const clientURL = 'https://oxbowanimalhealth.com'
 
 // Project Header
 const heroVideo = '397498496'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "for all small pets looking for something healthier in their day-to-day."
+const projectExcerpt = 'Through tiny sets and star quality small pets Oxbow Animal Health’s organic hay line is fit for all little fury friends.'
+const projectIntroduction =  
+'Our second project with Oxbow Animal Health centered on their organic hay line, which includes six types of hay to fit different small pet ages and personalities.   <br/>  <br/>Basically, we heard “small pet personalities” and ran with it.   <br/>  <br/> We found six local small pets with star quality, built some tiny sets, got a chinchilla to drink from a tea cup and a bunny to do some yoga, and “Hay Any Way” was born.'
 
 // credits
 const credits = [
