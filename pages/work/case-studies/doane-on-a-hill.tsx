@@ -1,14 +1,16 @@
 import Main from '@parts/Main'
-
-// case study components
+import { PropsWithChildren } from 'react'
 // case study components
 import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
+import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
+
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import CaseStudies_BecomeAClient from '@caseStudies/CaseStudies_BecomeAClient'
-import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
+import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 
+import Image from 'next/image'
 // project info
 const title = 'On A Hill'
 const tags = [{ name: 'Creative Concepting', url: '/' }]
@@ -48,6 +50,36 @@ function caseStudy_Backcountry_GearheadMagic() {
         projectSubhead={projectSubhead}
       />
       <CaseStudies_Tags tags={tags} />
+      <CaseStudies_Description
+        headerColor={'dark-blue'}
+        textColor={'cream'}
+        bgColor={'blue'}
+        header={'Process'}
+      >
+         <p>
+         After sifting through decades of photos and videos from throughout Doane’s history, we pulled together a timeline of material that would be set to a high-energy percussion track we remastered ourselves. We knew we wanted to build to a pivotal movement in the music where the animation switched from the past to the present.
+        </p>
+        <p>
+        Typography was the true hero of this video. We made sure to time out every beat to make each word pop with energy and significance. Once we got a feel for how the words and music would weave together, we sprinkled in images and video to further accentuate the look and feel.
+        </p>
+        <p>
+        The end product was a sweet mission roll-out video that’s sure to satisfy all typography and animation enthusiasts.
+        </p>
+  
+      </CaseStudies_Description>
+
+     <CaseStudies_Description header={''} bgColor={'cream'}>
+        <div className='grid grid-cols-1 lg:grid-cols-2'>
+          <div className='col-span-1 relative h-full w-full'>
+            <Image
+              src={'/img/work/KN_ECommPromo_SnackPack.gif'}
+              layout={'fill'}
+              alt={'DESCRIPTION GOES HERE'}
+              objectFit={'contain'}
+            />
+          </div>
+        </div>
+      </CaseStudies_Description>
       <CaseStudies_Credits credits={credits} />
       <CaseStudies_PrevNext title={title} />
 
