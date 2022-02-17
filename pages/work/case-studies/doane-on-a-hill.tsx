@@ -22,8 +22,8 @@ const clientURL = 'https://doane.edu'
 
 // Project Header
 const heroVideo = '362560267'
-const projectSubhead = "The history of Doane planted a seed that has grown into a new mission."
-const projectExcerpt = 'How that college on a hill grew into a University that is Doane.'
+const projectSubhead = "How that college on a hill grew into a University that is Doane."
+const projectExcerpt = 'The history of Doane planted a seed that has grown into a new mission.'
 const projectIntroduction = 'To introduce their new school mission, vision, and values, Doane University came to us wanting a video that showed their past, present, and future. They needed a way to captivate current and potential students and steer them toward their new vision.'
 
 // credits
