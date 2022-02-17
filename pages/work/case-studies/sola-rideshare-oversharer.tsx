@@ -22,7 +22,7 @@ const clientURL = 'https://sola.com'
 
 // Project Header
 const heroVideo = '392586701'
-const projectSubhead = "Using dry-humor to create something much different for a new demographic that's choosing healthier options."
+const projectSubhead = "Using dry-humor to create something for a new demographic that's choosing healthier options."
 const projectExcerpt = 'An awkward Uber ride leads to an average guy trying to get home to find peace in a sandwhich made with keto-friendly, carb-concious SOLA bread.'
 const projectIntroduction = 'The SOLA company came to us to create a 60-second commercial that would promote their low-carb, keto-friendly bread. They needed something that would appeal to their millennial demographic: hopefully combining dry humor with a relatable scenario to today’s young adult.'
 
