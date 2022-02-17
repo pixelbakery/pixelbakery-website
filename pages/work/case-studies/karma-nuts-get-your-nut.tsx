@@ -23,9 +23,9 @@ const clientURL = 'https://www.karmanuts.com/'
 // Project Header
 const heroVideo = '426332870'
 const projectSubhead =
-  "through a variety of engaging colors and shapes Karma Nuts' Wrapped cashews resulted in captivating animations"
+  "An on-brand animation highlighting all of its health benefits."
 const projectExcerpt =
-  "An on-brand animation of Karma Nuts' Wrapped cashews highlighting all of its health benefits."
+  "Using engaging colors and shapes for an irresistible product that is Karma Nuts."
 const projectIntroduction =
   'Karma Nuts is the alternative to the oil-fried cashews that we normally seen on supermarket shelves. These cashews are Wrapped®, giving them an irresistible crunch. We came in to spread the word about this tasty snack by creating a brand video that highlights all its awesome benefits.   <br/>  <br/>The goal was to create a cool and colorful 30-second, e-commerce animation that Karma Nuts could place to quickly tell the story of their products. Using the mandala-shaped logo as inspiration, we wanted to play with all the different flavors of nuts intertwining while giving it a bohemian flare.'
 
