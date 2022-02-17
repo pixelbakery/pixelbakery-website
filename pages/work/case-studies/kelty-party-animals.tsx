@@ -22,9 +22,9 @@ const clientURL = 'https://www.kelty.com/'
 
 // Project Header
 const heroVideo = '340232287'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "Bringing mischievous animals to life for a rebrand"
+const projectExcerpt = 'How animation brought to life party animals stealing a camper’s gear that is Kelty.'
+const projectIntroduction = 'Kelty is a 67-year-old camping gear company based out of Boulder, CO. The original inventor of the external frame backpack, the spirit of the brand is all about getting people outside to re-discover the joy they felt playing outside as a kid. Even their founder, Dick Kelty, left his job at Lockheed to spend more time in the outdoors.   <br/>  <br/>With a loyal base of customers in the baby boomer generation, Kelty rebranded to reach a new audience of active 25-45 year olds. That’s where we came in: they wanted a short animated video to show off their products in a way that would appeal to millennials, with little or no voiceovers or text.   <br/>  <br/> We created a short animation that was playful and a little bit edgy to capture the spirit of an outdoor escapade and appeal to a new generation of campers.'
 
 // credits
 const credits = [
