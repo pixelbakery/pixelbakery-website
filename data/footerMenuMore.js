@@ -20,6 +20,6 @@ export default [
 
   {
     text: 'Pay-What-Ya-Want Web Hosting',
-    url: '/',
+    url: '/logo-animation',
   },
 ]

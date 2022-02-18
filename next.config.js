@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const React = require('react')
+
 // import micromatch from 'micromatch'
 // eslint-disable-next-line no-undef
 module.exports = {
@@ -41,12 +42,23 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/services/motion-mixer',
+        source: '/logoanimation',
         destination: '/logo-animation',
         permanent: true,
       },
       {
+        source: '/services/motion-mixer',
+        destination: '/logo-animation',
+        permanent: true,
+      },
+
+      {
         source: '/motion-mixer',
+        destination: '/logo-animation',
+        permanent: true,
+      },
+      {
+        source: '/motionmixer',
         destination: '/logo-animation',
         permanent: true,
       },

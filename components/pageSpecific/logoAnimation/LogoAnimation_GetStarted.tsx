@@ -1,7 +1,7 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 
-import LogoAnimation_GetStarted_Formik from './LogoAnimation_GetStarted_Formik'
+import LogoAnimation_GetStarted_Form from './LogoAnimation_GetStarted_Form'
 import Button_Filled from '@parts/Button_Filled'
 
 function LogoAnimation_GetStarted() {
@@ -10,7 +10,7 @@ function LogoAnimation_GetStarted() {
       <InnerWrapper>
         <H2 className='pb-6'>Get Started</H2>
 
-        <LogoAnimation_GetStarted_Formik />
+        <LogoAnimation_GetStarted_Form />
       </InnerWrapper>
     </section>
   )
