@@ -1,9 +1,10 @@
 import InnerWrapper from '@parts/InnerWrapper'
+import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 
 function LogoAnimation_Descriptions() {
   return (
-    <section className='my-4 px-12 py-12 bg-white' id='descriptions'>
+    <PageSection className='my-4 px-12 py-12 bg-white' id='descriptions'>
       <InnerWrapper>
         <H2 className='pb-6'>Logo Animation Packages</H2>
         <p className='text-wine text-lg font-medium text-opacity-75 max-w-lg pb-12'>
@@ -12,7 +13,7 @@ function LogoAnimation_Descriptions() {
           your brand’s persona.
         </p>
       </InnerWrapper>
-    </section>
+    </PageSection>
   )
 }
 export default LogoAnimation_Descriptions
