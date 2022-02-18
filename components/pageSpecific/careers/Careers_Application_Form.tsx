@@ -3,19 +3,21 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import 'react-toastify/dist/ReactToastify.css'
-
+import ReactPDF, { PDFViewer, usePDF } from '@react-pdf/renderer'
+import CareersApplicationPDF from '@lib/careersApplicationPDF'
+import ReactDOM from 'react-dom'
 export default function Careers_Application_Form({ allJobs }) {
   const [submitted, setSubmitted] = useState(false)
-  allJobs.forEach((job) => {
-    console.log(job.data.title)
-  })
+
+  // const [instance, update] = usePDF({ document })
   const {
     register,
+    watch,
     handleSubmit,
     resetField,
     formState: { errors },
   } = useForm()
-
+  const watchAllFields = watch()
   // Handle the submit
   const onSubmit = (data) => {
     //     SendToMailchimp(data)
@@ -37,16 +39,17 @@ export default function Careers_Application_Form({ allJobs }) {
   }
   console.log(errors)
 
+  const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className='grid grid-cols-2 gap-4'>
-        <div className='col-span-2'>
-          <label className='required'> Full Name</label>
-          <span className='text-sm text-wine-400 my-0 py-0 leading-none block'>
-            What your momma calls you when she's mad.
-          </span>
-        </div>
-        <div className='col-span-2 grid grid-cols-1 gap-y-1'>
+      <div className='mx-auto max-w-4xl grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-10'>
+        <div className='col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-y-1 lg:gap-x-4'>
+          <div className='col-span-1 lg:col-span-3'>
+            <label className='required'> Full Name</label>
+            <span className='text-sm text-wine-400 mt-0 mb-3 py-0 leading-none block'>
+              What your momma calls you when she's mad.
+            </span>
+          </div>
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6'
             type='text'
@@ -69,7 +72,8 @@ export default function Careers_Application_Form({ allJobs }) {
             {...register('name_last', {})}
           />
         </div>
-        <div className='col-span-2'>
+
+        <div className='col-span-2 lg:col-span-1'>
           <label htmlFor='pronoun' className=''>
             Preferred Pronoun
           </label>
@@ -80,6 +84,7 @@ export default function Careers_Application_Form({ allJobs }) {
             {...register('pronoun', {})}
           />
         </div>
+
         <div className='col-span-2'>
           <label className='required' htmlFor='email'>
             Email
@@ -92,7 +97,7 @@ export default function Careers_Application_Form({ allJobs }) {
           />
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-2 lg:col-span-1'>
           <label className='required' htmlFor='phone'>
             Phone Number
           </label>
@@ -104,7 +109,19 @@ export default function Careers_Application_Form({ allJobs }) {
           />
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-2 xl:col-span-1'>
+          <label className='' htmlFor='zodiac'>
+            LinkedIn or Instagram
+          </label>
+          <input
+            type='url'
+            className='w-full border-0 rounded-md text-lg text-wine px-6'
+            placeholder='https://'
+            {...register('social', {})}
+          />
+        </div>
+
+        <div className='col-span-2 xl:col-span-1'>
           <label className='' htmlFor='zodiac'>
             Zodiac Sign
           </label>
@@ -117,25 +134,13 @@ export default function Careers_Application_Form({ allJobs }) {
         </div>
 
         <div className='col-span-2'>
-          <label className='' htmlFor='zodiac'>
-            LinkedIn or Instagram
-          </label>
-          <input
-            type='url'
-            className='w-full border-0 rounded-md text-lg text-wine px-6'
-            placeholder='https://'
-            {...register('social', {})}
-          />
-        </div>
-
-        <div className='col-span-2'>
           <label className='required' htmlFor='position'>
             Position
           </label>
 
           <select
             {...register('position', {})}
-            className='w-full border-0 rounded-md text-lg text-wine px-6'
+            className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer'
           >
             {allJobs.map((job, index) => {
               return (
@@ -148,13 +153,13 @@ export default function Careers_Application_Form({ allJobs }) {
           </select>
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-2 lg:col-span-1'>
           <label className='required' htmlFor='commitment'>
             Commitment
           </label>
           <select
             required
-            className='w-full border-0 rounded-md text-lg text-wine px-6'
+            className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer'
             {...register('commitment', {})}
           >
             <option value='Full-Time'>Full-Time</option>
@@ -164,14 +169,14 @@ export default function Careers_Application_Form({ allJobs }) {
           </select>
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-2 xl:col-span-1'>
           <label className='required' htmlFor='education'>
             Education Level
           </label>
 
           <select
             required
-            className='w-full border-0 rounded-md text-lg text-wine px-6'
+            className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer'
             {...register}
           >
             <option value='High School Diploma'>High School Diploma</option>
@@ -226,7 +231,7 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-3'>
           <label className='required ' htmlFor='about_personal'>
             Tell Us About Yourself (nothing to do with your profession)
           </label>
@@ -238,7 +243,7 @@ export default function Careers_Application_Form({ allJobs }) {
           />
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-3'>
           <label className='required ' htmlFor='about_professional'>
             Tell Us About Yourself (your professional background)
           </label>
@@ -250,7 +255,7 @@ export default function Careers_Application_Form({ allJobs }) {
           />
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-3'>
           <label className='required ' htmlFor='why'>
             Why do you want this job?
           </label>
@@ -262,7 +267,7 @@ export default function Careers_Application_Form({ allJobs }) {
           />
         </div>
 
-        <div className='col-span-2'>
+        <div className='col-span-2 xl:col-span-1 '>
           <label className=' ' htmlFor='why'>
             What's your favorite band?
           </label>
@@ -374,6 +379,7 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
         </div>
       </div>
+      <p className='bg-white'>{JSON.stringify(watchAllFields, null, 2)}</p>
     </form>
   )
 }

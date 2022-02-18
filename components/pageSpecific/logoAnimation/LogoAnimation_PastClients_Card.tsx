@@ -8,7 +8,7 @@ LogoAnimation_PastClients_Card.propTypes = {
 function LogoAnimation_PastClients_Card({ video, client }) {
   return (
     <article>
-      <div className='bg-peach w-full aspect-square'>
+      <div className='relative bg-peach w-full aspect-w-1 aspect-h-1 overflow-hidden'>
         <Vimeo
           video={video}
           autoplay={true}
@@ -17,7 +17,7 @@ function LogoAnimation_PastClients_Card({ video, client }) {
           showPortrait
           controls={false}
           responsive={true}
-          className='object-cover w-full h-full'
+          className=' object-cover w-full h-full'
         />
       </div>
       <h3 className='text-wine-500 text-lg mt-3 font-medium'>Client: {client}</h3>
