@@ -101,13 +101,6 @@ function Footer_Mailchimp() {
   }
   //////////////////
 
-  // END GSAP
-  useEffect(() => {
-    setError('message', {
-      type: 'manual',
-      message: 'Dont Forget Your Username Should Be Cool!',
-    })
-  }, [setError])
   return (
     <>
       <form

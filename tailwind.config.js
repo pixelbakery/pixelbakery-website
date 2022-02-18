@@ -3,6 +3,9 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      translate: {
+        13: '3.25rem',
+      },
       fontSize: {
         '18xl': '18rem',
         '20xl': '20rem',
