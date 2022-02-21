@@ -177,7 +177,6 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
-  const tetsst = await serialize(source, { parseFrontmatter: true })
 
   return {
     props: {
