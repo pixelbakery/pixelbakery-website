@@ -1,24 +1,33 @@
-/** @type {import('next').NextConfig} */
-const React = require('react')
+/**
+ * @type {import('next').NextConfig}
+ */
+// const React = require('react')
+import React from 'react'
+// import CamelCaseToSentence from './data/work-client-list.js'
+
+// const CamelCaseToSentence = require('@lib/helpers')
+// const { redirects } = import('./lib/helpers')
 
 // import micromatch from 'micromatch'
 // eslint-disable-next-line no-undef
-module.exports = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-      // resolve: {
-      //   fallback: {
-      //     fs: false,
-      //   },
-      // },
-    })
+const nextConfig = {
+  // webpack(config) {
 
-    return config
-  },
+  //   config.module.rules.push({
+  //     test: /\.svg$/i,
+  //     issuer: /\.[jt]sx?$/,
+  //     use: ['@svgr/webpack'],
+  //     // resolve: {
+  //     //   fallback: {
+  //     //     fs: false,
+  //     //   },
+  //     // },
+  //   })
+
+  //   return config
+  // },
   productionBrowserSourceMaps: true,
+
   async redirects() {
     return [
       // {
@@ -162,3 +171,4 @@ module.exports = {
     ],
   },
 }
+export default nextConfig
