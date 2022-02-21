@@ -39,3 +39,12 @@ export function pluralize(count, itemName) {
   if (count === 1) return output
   else return (output += 's')
 }
+
+// async function redirects() {
+const redirects = [
+  {
+    source: '/original/',
+    destination: '/redirected/',
+    permanent: true,
+  },
+]

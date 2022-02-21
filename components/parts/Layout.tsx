@@ -1,6 +1,6 @@
 import Navbar from '@parts/Navigation'
 import Meta from '@parts/Meta'
-import Footer from '@foot/Footer_Main'
+import Footer from '@footer/Footer'
 import Nav_HamWrapper from '@nav/Nav_HamWrapper'
 type Props = {
   preview?: boolean

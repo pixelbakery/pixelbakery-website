@@ -68,6 +68,7 @@
     "react-query": "^3.34.7",
     "react-toastify": "^8.1.0",
     "react-twitch-embed-video": "^3.0.1",
+    "reading-time": "^1.5.0",
     "remark": "latest",
     "remark-html": "latest",
     "remark-mdx": "^2.0.0-rc.2",
