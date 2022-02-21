@@ -19,7 +19,7 @@
     "paths": {
       "@parts/*": ["components/parts/*"],
       "@data/*": ["data/*"],
-      "@foot/*": ["components/foot/*"],
+      "@footer/*": ["components/footer/*"],
       "@about/*": ["components/pageSpecific/about/*"],
       "@careers/*": ["components/pageSpecific/careers/*"],
       "@caseStudies/*": ["components/pageSpecific/caseStudies/*"],
