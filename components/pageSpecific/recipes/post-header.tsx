@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
 import PersonType from 'types/person'
-
+import { useRef } from 'react'
 import cn from 'classnames'
 type Props = {
   title: string
@@ -14,9 +14,21 @@ type Props = {
   date?: string
   person: PersonType
   category: string
+  forwardedRef: any
+  readTime: any
 }
 
-const PostHeader = ({ title, subtitle, category, coverImage, date, author, person }: Props) => {
+const PostHeader = ({
+  title,
+  subtitle,
+  category,
+  coverImage,
+  date,
+  author,
+  person,
+  forwardedRef,
+  readTime,
+}: Props) => {
   let profilePic
   if (person.slug && person.photos.headshotSmiling != typeof undefined) {
     profilePic = person.photos.headshotSmiling
@@ -70,8 +82,9 @@ const PostHeader = ({ title, subtitle, category, coverImage, date, author, perso
 
             <div className={cn('ml-8 flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
-                <DateFormatter dateString={date} /> <span className='mx-4'>|</span>Read Time: 4
-                minutes
+                <DateFormatter dateString={date} />
+                <span className='mx-2'>|</span>
+                <span ref={forwardedRef}>{readTime}</span>
               </div>
 
               {person.slug ? (

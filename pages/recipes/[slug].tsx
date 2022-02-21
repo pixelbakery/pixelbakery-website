@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs, { readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -8,16 +8,17 @@ import path from 'path'
 import PostHeader from '@recipes/post-header'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { getAllPeople } from '@lib/api_person'
-
+const readingTime = require('reading-time')
 import ReactPlayer from 'react-player'
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import PersonType from 'types/person'
-
+import { ReactDOM, useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Video from '@parts/Video'
 import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
+import { useEffect } from 'react'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -48,9 +49,26 @@ function shuffleArray(array) {
   return array
 }
 export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
+  const myContainer = useRef(null)
+  const [readTime, setReadTime] = useState('')
+  const childRef = useRef(null)
+
+  useEffect(() => {
+    //Sets Reading Time
+    function extractContent(s) {
+      var span = document.createElement('span')
+      span.innerHTML = s
+      return span.textContent || span.innerText
+    }
+    const text = extractContent(myContainer.current.innerHTML).toString()
+    const stats = readingTime(text)
+    setReadTime(stats.text)
+    return () => {}
+  }, [])
+
   return (
     <Main>
-      <article className='mb-32'>
+      <div className='mb-32'>
         <Head>
           <title>{frontMatter.title} | PBDS</title>
           <meta property='og:image' content={frontMatter.ogImage.url} />
@@ -64,15 +82,19 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
           date={frontMatter.date}
           author={frontMatter.author as any}
           person={ourPerson as any}
+          forwardedRef={childRef}
+          readTime={readTime}
         />
-        <section className='px-6 mt-8 md:max-w-3xl mx-auto' id='blog-body-guts '>
-          <div className={markdownStyles['markdown']}>
-            <MDXRemote {...source} components={components} />
-          </div>
+        <section className='px-6 mt-8 md:max-w-3xl mx-auto'>
+          <article ref={myContainer} id='blog-body-guts'>
+            <div className={markdownStyles['markdown']}>
+              <MDXRemote {...source} components={components} />
+            </div>
+          </article>
 
           <Recipes_Post_Tags tags={frontMatter.tags} />
         </section>
-      </article>
+      </div>
 
       <Recipes_Posts_Related relatedPosts={relatedPosts} />
     </Main>
@@ -84,7 +106,6 @@ export const getStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
   const { content, data } = matter(source)
-  const slug = `${postFilePath.replace(/\.mdx?$/, '')}`
   //Author Stuff
   const allPeople = getAllPeople([
     'name',
@@ -142,18 +163,21 @@ export const getStaticProps = async ({ params }) => {
       matchingPosts.push(morePosts[i])
     }
   }
+
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
 
   //END OF RELEVANT POSTS
   //Back to MDX Stuff
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
+
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
     },
     scope: data,
   })
+  const tetsst = await serialize(source, { parseFrontmatter: true })
 
   return {
     props: {
