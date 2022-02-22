@@ -70,6 +70,7 @@
     "react-twitch-embed-video": "^3.0.1",
     "reading-time": "^1.5.0",
     "remark": "latest",
+    "remark-gfm": "^3.0.1",
     "remark-html": "latest",
     "remark-mdx": "^2.0.0-rc.2",
     "remark-parse": "^10.0.1",

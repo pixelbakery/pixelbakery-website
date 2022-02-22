@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
 import PersonType from 'types/person'
-import { useRef } from 'react'
 import cn from 'classnames'
 type Props = {
   title: string
