@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 // eslint-disable-next-line no-undef
+const React = require('react')
 module.exports = {
   webpack(config) {
     config.module.rules.push({
@@ -205,7 +206,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/a-pretty-long-rant-about-being-polite-at-conferences-because-people-need-to-hear-it',
+        source:
+          '/recipes/a-pretty-long-rant-about-being-polite-at-conferences-because-people-need-to-hear-it',
         destination: '/recipes/being-polite-at-conferences',
         permanent: true,
       },
@@ -275,7 +277,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source:'/recipes/class-tutorial-prepping-character-joints-in-illustrator-for-rigging-in-after-effects',
+        source:
+          '/recipes/class-tutorial-prepping-character-joints-in-illustrator-for-rigging-in-after-effects',
         destination: '/recipes/class-tutorial-prepping-character-joints',
         permanent: true,
       },
@@ -330,7 +333,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/recipe-for-success-mix-adaptability-and-confidence-together-in-a-medium-sized-bowl',
+        source:
+          '/recipes/recipe-for-success-mix-adaptability-and-confidence-together-in-a-medium-sized-bowl',
         destination: '/recipes/recipe-for-success',
         permanent: true,
       },
@@ -430,6 +434,17 @@ module.exports = {
       'media.pixelbakery.com',
       'pixelbakery.com',
       'placeimg.com',
+      'scontent.cdninstagram.com',
+      'scontent-ort2-2.cdninstagram.com',
+      '*.cdninstagram.com',
+      'scontent-akl1-1.cdninstagram.com',
+      'i.scdn.co',
+      '*.scdn.co',
+      'scdn.co',
+      'mosaic.scdn.co',
+      'images234-focus-opensocial.googleusercontent.com',
+      'scontent.cdninstagram.com',
+      'scontent-akl1-1.cdninstagram.com',
     ],
   },
 }
