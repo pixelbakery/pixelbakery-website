@@ -61,10 +61,10 @@ const Recipes_FeaturedPost = ({
           ></div>
           <div className=' z-20 h-100 p-6 flex flex-col justify-between'>
             <div className='-py-3 flex flex-wrap flex-row  gap-4'>
-              <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='md' />
+              <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='sm' />
             </div>
             <div className=''>
-              <h3 className='text-2xl md:text-3xl text-white leading-none drop-shadow-lg'>
+              <h3 className='text-2xl md:text-3xl text-white leading-none drop-shadow-lg line-clamp-2'>
                 {title}
               </h3>
               <div className='text-sm text-white'>
