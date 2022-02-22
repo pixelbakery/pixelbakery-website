@@ -12,7 +12,7 @@ details:
   almaMater: university of nebraska-lincoln
   pronoun: she/her
   favoriteThing: music
-  leastFavoritestring: wind (!)
+  leastFavoriteThing: wind (!)
   favoriteMovie: spirited away
   hatedBird: fucking pigeons
   hobby: sleeping
@@ -27,7 +27,7 @@ socials:
   instagram: https://www.instagram.com/oliviaboldt/
   linkedIn: https://www.linkedin.com/in/olivia-boldt-459a44200/
   # facebook: Url
-  # spotify: Url
+  spotify: https://open.spotify.com/user/1284476234?si=47e128437d694df0
   twitter: https://twitter.com/oliviaboldt
   # personalWebsite: Url
   # etsy: Url

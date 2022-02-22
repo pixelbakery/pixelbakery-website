@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import cn from 'classnames'
-import { gsap } from 'gsap'
 type Props = {
   faq: { a: string; q: string }
   index: number
 }
 function About_Faq_Card({ faq, index }: Props) {
-  const btnClass = 'btn'
   const [open, setOpen] = useState(false)
   const onClick = () => setOpen(!open)
 
@@ -41,10 +39,7 @@ function About_Faq_Card({ faq, index }: Props) {
           },
         )}
       >
-        <div
-          className='px-8 pt-4 md:px-24  text-blue-dark text-md'
-          dangerouslySetInnerHTML={{ __html: faq.a }}
-        />
+        <div className='px-8 pt-4 md:px-24  text-blue-dark text-md'>{faq.a}</div>
       </div>
     </div>
   )

@@ -18,17 +18,14 @@ import InnerWrapper from '@parts/InnerWrapper'
 import H1 from 'components/typography/H1'
 import Lead from '@typography/Lead'
 import SocialLinks from '@images/Icons_Social/SocialLinks'
-import H2 from '@typography/H2'
 
-import H3 from '@typography/H3'
 import { ChevronRightIcon } from '@images/UI_Icons'
+import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 
 function Person({ prev, next, person, matchingAuthorPosts }) {
   const router = useRouter()
   const socialList = person.socials
   const details = person.details
-  console.log('prev: ', prev.name, ' ', prev.slug)
-  console.log('next: ', next.name, ' ', next.slug)
 
   function Details() {
     return (
@@ -40,7 +37,7 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
                 {CamelCaseToSentence(header)}
               </Lead>
               {header === 'signs' ? (
-                <ul className='flex flex-wrap gap-x-4 text-md text-wine'>
+                <ul className='flex flex-col gap-x-4 text-md text-wine'>
                   <li>☉ {details.signs.sun}</li>
                   <li>↑ {details.signs.rising}</li>
                   <li>☽ {details.signs.moon}</li>
@@ -101,7 +98,7 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
                     {person.email ? (
                       <a
                         href={`mailto:${person.email}`}
-                        className='italic text-peach cursor-pointer'
+                        className='block italic text-peach cursor-pointer'
                       >
                         {person.email}
                       </a>
@@ -109,7 +106,10 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
                       ''
                     )}
                     {person.phone ? (
-                      <a href={`tel:${person.phone}`} className='italic text-peach cursor-pointer'>
+                      <a
+                        href={`tel:${person.phone}`}
+                        className='block italic text-peach cursor-pointer'
+                      >
                         {person.phone}
                       </a>
                     ) : (
@@ -139,47 +139,47 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
             </InnerWrapper>
           </PageSection>
           <PageSection>
-            <div>
-              {matchingAuthorPosts.map((post) => {
-                return (
-                  <Link
-                    as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-                    key={post.data.title}
-                    href={'/recipes/[slug]'}
-                    passHref
-                  >
-                    <a>
-                      <h3>{post.data.title}</h3>
-                    </a>
-                  </Link>
-                )
-              })}
-            </div>
+            <InnerWrapper>
+              <div className='grid grid-cols-1 gap-3'>
+                {matchingAuthorPosts.slice(0, 11).map((post) => {
+                  return (
+                    <Recipes_FeaturedPost
+                      as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+                      href={`/recipes/[slug]`}
+                      key={post.filePath}
+                      title={post.data.title}
+                      author={post.data.author}
+                      categories={post.data.categories}
+                      date={post.data.date}
+                      aspectW={'4'}
+                      aspectY={'3'}
+                      coverImage={post.data.coverImage}
+                      excerpt={post.data.excerpt}
+                    />
+                  )
+                })}
+              </div>
+            </InnerWrapper>
           </PageSection>
           <PageSection className='bg-pink-light py-2'>
             <InnerWrapper className='py-2 my-2'>
               <div className='flex justify-between'>
                 <Link href={prev.slug}>
                   <a className='flex'>
-                    <div className='w-20 text-peach rotate-180'>
+                    <div className='w-20 self-center text-peach rotate-180'>
                       <ChevronRightIcon />
                     </div>
-                    <div className='self-center'>
-                      <p className='text-peach font-semibold text-xl leading-none mt-1'>
-                        {prev.name}
-                      </p>
+                    <div className='self-center h-full flex-col justify-center '>
+                      <p className='text-peach font-semibold text-xl leading-none '>{prev.name}</p>
                     </div>
                   </a>
                 </Link>
-
-                <Link href={next.slug}>
-                  <a className='flex justify-end'>
-                    <div className='self-center'>
-                      <p className='text-peach font-semibold text-xl leading-none mt-1'>
-                        {next.name}
-                      </p>
+                <Link href={prev.slug}>
+                  <a className='flex'>
+                    <div className='self-center h-full flex-col justify-center text-right'>
+                      <p className='text-peach font-semibold text-xl leading-none '>{next.name}</p>
                     </div>
-                    <div className='w-20 text-peach '>
+                    <div className='w-20 self-center text-peach'>
                       <ChevronRightIcon />
                     </div>
                   </a>
