@@ -43,6 +43,10 @@ This means that the title in the datafile does not match the title in the projec
 
 We use markdown to create posts (specifically MDX). Blog posts are created in the /\_posts folder. Each blog post has important 'frontmatter' items at the top of it that help tell the server the details of the post.
 
+We also use an extension of MDX called Github Flavored Markdown. Here's a cheatsheet:
+
+[Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 There are some special components that we can use in these blog posts.
 
 ### Videos
