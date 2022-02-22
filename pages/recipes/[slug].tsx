@@ -1,4 +1,4 @@
-import fs, { readFileSync } from 'fs'
+import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -19,7 +19,7 @@ import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Video from '@parts/Video'
 import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 import { useEffect } from 'react'
-
+import remarkGfm from 'remark-gfm'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -172,7 +172,7 @@ export const getStaticProps = async ({ params }) => {
     // Optionally pass remark/rehype plugins
 
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [],
     },
     scope: data,

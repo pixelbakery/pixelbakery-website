@@ -18,6 +18,7 @@ import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'
 import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
+import remarkGfm from 'remark-gfm'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -105,7 +106,7 @@ export const getStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [],
     },
     scope: data,

@@ -22,7 +22,6 @@ const Recipes_SmallPost = ({
   date,
   excerpt,
   author,
-
   as,
   href,
 }: Props) => {
