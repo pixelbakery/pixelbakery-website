@@ -1,146 +1,26 @@
-import { useForm } from 'react-hook-form'
+import { useForm, Control } from 'react-hook-form'
 
-import sendgrid from '@sendgrid/mail'
+import { useState } from 'react'
+import Lead from '@typography/Lead'
 
-const message = {
-  personalizations: [
-    {
-      to: [
-        {
-          email: 'john_doe@example.com',
-          name: 'John Doe',
-        },
-        {
-          email: 'julia_doe@example.com',
-          name: 'Julia Doe',
-        },
-      ],
-      cc: [
-        {
-          email: 'jane_doe@example.com',
-          name: 'Jane Doe',
-        },
-      ],
-      bcc: [
-        {
-          email: 'james_doe@example.com',
-          name: 'Jim Doe',
-        },
-      ],
-    },
-    {
-      from: {
-        email: 'sales@example.com',
-        name: 'Example Sales Team',
-      },
-      to: [
-        {
-          email: 'janice_doe@example.com',
-          name: 'Janice Doe',
-        },
-      ],
-      bcc: [
-        {
-          email: 'jordan_doe@example.com',
-          name: 'Jordan Doe',
-        },
-      ],
-    },
-  ],
-  from: {
-    email: 'orders@example.com',
-    name: 'Example Order Confirmation',
-  },
-  replyTo: {
-    email: 'customer_service@example.com',
-    name: 'Example Customer Service Team',
-  },
-  subject: 'Your Example Order Confirmation',
-  content: [
-    {
-      type: 'text/html',
-      value:
-        '<p>Hello from Twilio SendGrid!</p><p>Sending with the email service trusted by developers and marketers for <strong>time-savings</strong>, <strong>scalability</strong>, and <strong>delivery expertise</strong>.</p><p>%open-track%</p>',
-    },
-  ],
-  attachments: [
-    {
-      content:
-        'PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCiAgICA8aGVhZD4KICAgICAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICAgICAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlIj4KICAgICAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICAgICAgPHRpdGxlPkRvY3VtZW50PC90aXRsZT4KICAgIDwvaGVhZD4KCiAgICA8Ym9keT4KCiAgICA8L2JvZHk+Cgo8L2h0bWw+Cg==',
-      filename: 'index.html',
-      type: 'text/html',
-      disposition: 'attachment',
-    },
-  ],
-  categories: ['cake', 'pie', 'baking'],
-  sendAt: 1617260400,
-  batchId: 'AsdFgHjklQweRTYuIopzXcVBNm0aSDfGHjklmZcVbNMqWert1znmOP2asDFjkl',
-  asm: {
-    groupId: 12345,
-    groupsToDisplay: [12345],
-  },
-  ipPoolName: 'transactional email',
-  mailSettings: {
-    bypassListManagement: {
-      enable: false,
-    },
-    footer: {
-      enable: false,
-    },
-    sandboxMode: {
-      enable: false,
-    },
-  },
-  trackingSettings: {
-    clickTracking: {
-      enable: true,
-      enableText: false,
-    },
-    openTracking: {
-      enable: true,
-      substitutionTag: '%open-track%',
-    },
-    subscriptionTracking: {
-      enable: false,
-    },
-  },
-}
-
-function getDate() {
-  const SetDate = new Date()
-  const getDate =
-    SetDate.getFullYear() +
-    '-' +
-    ('0' + (SetDate.getMonth() + 1)).slice(-2) +
-    '-' +
-    ('0' + SetDate.getDate()).slice(-2)
-  return getDate
-}
-function getTime() {
-  function checkTime(i) {
-    return i < 10 ? '0' + i : i
-  }
-  const time = new Date(),
-    h = checkTime(time.getHours()),
-    m = checkTime(time.getMinutes()),
-    s = checkTime(time.getSeconds())
-  return h + ':' + m + ':00'
-}
+import PhoneInput from 'react-phone-number-input/react-hook-form-input'
 
 async function SendToMonday(data) {
   const strippedPhone = data.phone.replace(/[^+\d]+/g, '')
   const query5 =
-    'mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:2102802560, item_name:$subject, column_values:$columnVals) { id } }'
+    'mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:2302656906, item_name:$subject, column_values:$columnVals) { id } }'
   const vars = {
     subject: data.subject,
     columnVals: JSON.stringify({
-      status: { label: 'Done' },
+      text: data.name,
+      text0: data.entity,
       //  date4: { date: getDate(), time: getTime() },
       long_text: { text: data.message },
       text6: data.name,
       phone: { phone: strippedPhone, countryShortName: 'US' },
       //  text6: { text: data.name },
       email: { email: data.email, text: data.email },
+      checkbox: { checked: data.check.toString() },
     }),
   }
   fetch('https://api.monday.com/v2', {
@@ -154,65 +34,181 @@ async function SendToMonday(data) {
       query: query5,
       variables: JSON.stringify(vars),
     }),
-  }).then((res) => res.json())
+  })
+    .then((res) => res.json())
+    .then((res) => console.log(JSON.stringify(res, null, 2)))
 }
 
 function Contact_ContactForm_Form() {
+  const [checked, setChecked] = useState(true)
+  const [submitted, setSubmitted] = useState(false)
+  const handleCheck = () => {
+    setChecked(!checked)
+  }
+  ////////////
+  // MAILCHIMP
+  ////////////
+  async function SendToMailchimp(data) {
+    data.tag = 'Contact Form'
+    if (checked) {
+      console.log('sending to mailchimp')
+      await fetch('/api/mailchimp', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    } else {
+      console.log('not sending to mailchimp')
+      return
+    }
+  }
+  ///////////
+  // SENDGRID
+  ///////////
+  async function SendToSendgrid(data) {
+    console.log('sendgrid')
+    await fetch('/api/sendContact', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }).then((res) => res.json())
+  }
+
   const {
+    control,
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isValid },
   } = useForm()
-  const onSubmit = (data) => SendToMonday(data)
+
   console.log(errors)
 
-  return (
-    <form
-      className='mx-auto max-w-2xl  flex flex-wrap gap-2'
-      onSubmit={handleSubmit(onSubmit)}
-      data-netlify='true'
-    >
-      <input
-        className='form-border-b w-full'
-        type='text'
-        placeholder='name'
-        {...register('name', { required: true })}
-      />
-      <input
-        className='form-border-b w-full'
-        type='email'
-        placeholder='email'
-        {...register('email', { required: true })}
-      />
-      <div className='w-full flex flex-wrap gap-2'>
-        <input
-          className='form-border-b flex-grow'
-          type='tel'
-          placeholder='phone (optional)'
-          {...register('phone', {})}
-        />
-        <input
-          className='form-border-b flex-grow'
-          type='text'
-          placeholder='company / entity'
-          {...register('entity', {})}
-        />
-      </div>
-      <input
-        className='form-border-b w-full'
-        type='text'
-        placeholder="what's this all about?"
-        {...register('subject', {})}
-      />
-      <textarea
-        className='form-border-b w-full'
-        placeholder='sup?'
-        rows={5}
-        {...register('message', {})}
-      />
+  // Handle the submit
+  const onSubmit = (data) => {
+    // SendToSendgrid(data)
+    SendToMonday(data)
+    SendToMailchimp(data)
 
-      <input className='bg-blue text-lg font-bold text-cream rounded-md px-8 py-3 ' type='submit' />
-    </form>
+    setSubmitted(true)
+    reset()
+    console.log(errors)
+  }
+  const [value, setValue] = useState()
+
+  return (
+    <div>
+      {submitted ? (
+        <Lead>Thanks for your message 😉  We&apos;ll get back to you asap. </Lead>
+      ) : (
+        <form
+          className='mx-auto max-w-2xl  flex flex-wrap gap-2'
+          onSubmit={handleSubmit(onSubmit)}
+          data-netlify='true'
+        >
+          <input
+            className='form-border-b w-full'
+            type='text'
+            placeholder='name'
+            {...register('name', {
+              required: { message: 'Please enter your name, stranger', value: true },
+              minLength: { message: "c'mon that's not your name", value: 4 },
+            })}
+          />
+          <input
+            className='form-border-b w-full'
+            type='email'
+            placeholder='email'
+            {...register('email', {
+              required: { message: 'Please enter your email.', value: true },
+              minLength: { message: "c'mon that's not your email", value: 4 },
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: 'Invalid email address',
+              },
+            })}
+          />
+          <div className='w-full flex flex-wrap gap-2'>
+            <PhoneInput
+              placeholder='phone (optional)'
+              className='form-border-b flex-grow'
+              country='US'
+              name='phone'
+              control={control}
+              value={value}
+              onChange={setValue}
+            />
+            {/* 
+            <input
+              className='form-border-b flex-grow'
+              type='tel'
+              placeholder='phone (optional)'
+              {...register('phone', {})}
+            /> */}
+            <input
+              className='form-border-b flex-grow'
+              type='text'
+              placeholder='company / entity'
+              {...register('entity', {})}
+            />
+          </div>
+          <input
+            className='form-border-b w-full'
+            type='text'
+            placeholder="what's this all about?"
+            {...register('subject', {
+              required: { message: 'Please enter a subject line', value: true },
+              minLength: { message: "That's a pretty short subject line", value: 6 },
+            })}
+          />
+          <textarea
+            className='form-border-b w-full'
+            placeholder='sup?'
+            rows={5}
+            {...register('message', {
+              required: { message: 'Please enter a message, you goose.', value: true },
+              minLength: { message: 'Please write something a bit more... in-depth', value: 15 },
+            })}
+          />
+          {/* newsletter */}
+          <div className='col-span-2 flex my-4'>
+            <input
+              className={
+                'rounded-lg bg-cream border-2 border-blue-dark p-3 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-lg hover:scale-97 duration-300'
+              }
+              type='checkbox'
+              checked={checked}
+              onClick={handleCheck}
+              {...register('check')}
+            />
+            <label
+              className={
+                'self-center cursor-pointer ml-4 text-blue-dark  font-semibold leading-none my-0 py-0 '
+              }
+              htmlFor='check'
+              onClick={handleCheck}
+            >
+              Also sign up for the newsletter that we always forget to send out
+            </label>
+          </div>
+          <div>
+            <input
+              className='bg-blue text-lg font-bold text-cream rounded-md px-8 py-3  cursor-pointer hover:scale-98 duration-300 disabled:hover:scale-100 disabled:bg-opacity-30'
+              type='submit'
+            />
+          </div>
+          <div className='w-full text-peach'>
+            {errors.name && <div className='block '>{errors.name.message}</div>}
+            {errors.email && <div className='block '>{errors.email.message}</div>}
+            {errors.subject && <div className='error'>{errors.subject.message}</div>}
+            {errors.message && <div className='error'>{errors.message.message}</div>}
+            {errors.phone && <div className='error'>{errors.message.message}</div>}
+          </div>
+        </form>
+      )}
+    </div>
   )
 }
 export default Contact_ContactForm_Form

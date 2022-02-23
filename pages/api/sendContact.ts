@@ -9,9 +9,9 @@ export default async function sendOnboarding(req, res) {
   <p>A new onboarding form has been submitted. Here are the details:</p>
   <ul>
   <li><strong>name: </strong>${body.name}</li>
-  <li><strong>company:</strong> ${body.company}</li>
+  <li><strong>company:</strong> ${body.entity}</li>
   <li><strong>email:</strong> ${body.email}</li>
-  <li><strong>website:</strong> ${body.website}</li>
+  <li><strong>phone:</strong> ${body.phone}</li>
   <li><strong>subject: </strong> ${body.subject}</li>
   </ul>
   <p><strong>message:</strong></p>
@@ -25,7 +25,7 @@ export default async function sendOnboarding(req, res) {
       name: 'Pixel Bakery Robot',
     },
     replyTo: `${body.email}`,
-    subject: `Onboarding Form: ${body.name}`,
+    subject: `Contact Form: ${body.name}`,
 
     text: message,
     html: message.replace(/\r\n/g, '<br>'),

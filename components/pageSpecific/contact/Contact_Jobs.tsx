@@ -19,9 +19,6 @@ function Contact_Jobs() {
               Got what it takes to rise with us? Great! Send us a link to your résumé or portfolio
               to become part of our talent pool.
             </p>
-          </div>
-
-          <div className=' lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 lg:gap-4'>
             <Button_Filled
               center={true}
               link={'/careers#positions'}
@@ -30,7 +27,18 @@ function Contact_Jobs() {
               bgColor={'blue'}
               chevronDirection={'right'}
             />
-            <Button_Filled
+          </div>
+
+          <div className=' lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 lg:gap-4'>
+            {/* <Button_Filled
+              center={true}
+              link={'/careers#positions'}
+              text={'get to work'}
+              textColor={'cream'}
+              bgColor={'blue'}
+              chevronDirection={'right'}
+            /> */}
+            {/* <Button_Filled
               link={'/careers#vendors'}
               center={true}
               text={"get to freelancin'"}
@@ -45,7 +53,7 @@ function Contact_Jobs() {
               textColor={'cream'}
               bgColor={'blue'}
               chevronDirection={'right'}
-            />
+            />*/}
           </div>
         </div>
       </InnerWrapper>
