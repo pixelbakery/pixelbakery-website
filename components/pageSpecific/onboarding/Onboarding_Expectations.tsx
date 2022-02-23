@@ -117,7 +117,7 @@ function Onboarding_Expectations() {
             number={'1'}
             header={'We never asks for the keys to the kingdom right away.'}
             bodyCopy={
-              " We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship afterall, and it's important to us that both parties are happy and healthy."
+              " We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy."
             }
           />
           <Onboarding_ExpectationsRow
