@@ -34,7 +34,7 @@ function About_Awards() {
             <div className='-mt-8 text-2xl text-cream font-extrabold'>swoosh.</div>
             <p className='hidden lg:block max-w-lg mt-6 text-xs text-cream font-medium'>
               *awards are stupid and meaningless, but idk, i guess everything is. might as well
-              smoke &apos;em if you &apos;em, right?
+              smoke &apos;em if you got &apos;em, right?
             </p>
           </div>
           <div className='col-span-2  flex flex-col justify-between mx-auto w-full '>
