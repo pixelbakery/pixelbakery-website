@@ -11,7 +11,7 @@ details:
   almaMater: university of nebraska-lincoln
   pronoun: she/her
   favoriteThing: learning
-  leastFavoritestring: winter
+  leastFavoriteThing: winter
   favoriteMovie: kiki's delivery service
   hatedBird: crows
   hobby: mountain biking, gravel cycling, baking

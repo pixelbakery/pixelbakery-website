@@ -11,7 +11,7 @@ details:
   almaMater: university of nebraska-lincoln
   pronoun: she/her
   favoriteThing: traveling
-  leastFavoritestring: close mindedness
+  leastFavoriteThing: close mindedness
   favoriteMovie: girl, interrupted
   hatedBird: woodpeckers
   hobby: photography, painting, cooking/baking
@@ -23,8 +23,8 @@ details:
     rising: gemini
     moon: virgo
 socials:
-  instagram: https://www.instagram.com/maddielhahn/ 
-  linkedIn: https://www.linkedin.com/in/madisyn-hahn-788257140 
+  instagram: https://www.instagram.com/maddielhahn/
+  linkedIn: https://www.linkedin.com/in/madisyn-hahn-788257140
   # facebook: Url
   # spotify: Url
   # twitter: Url
