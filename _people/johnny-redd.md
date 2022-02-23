@@ -11,7 +11,7 @@ details:
   almaMater: university of nebraska-omaha
   pronoun: they/them/theirs
   favoriteThing: iced chai lattes
-  leastFavoritestring: car-centric urban planning
+  leastFavoriteThing: car-centric urban planning
   favoriteMovie: legally blonde
   hatedBird: (i love them all I'm so sorry)
   hobby: designing stickers, listening to podcasts, being a pain in the ass to local elected officials
