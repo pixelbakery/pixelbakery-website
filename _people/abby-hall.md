@@ -13,7 +13,7 @@ details:
   almaMater: university of nebraska-lincoln
 
   favoriteThing: sleeping in
-  notAbout: being cold
+  leastFavoriteThing: being cold
   favoriteMovie: fantastic mr. fox
   mostHatedBird: pigeon
   # favoriteBook:

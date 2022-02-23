@@ -11,7 +11,7 @@ details:
   almaMater: university of nebraska-lincoln
   pronoun: she/her
   favoriteThing: literally any form of potato
-  leastFavoritestring: people smacking their food
+  leastFavoriteThing: people smacking their food
   favoriteMovie: waves
   hatedBird: crows probably? idek
   hobby: cooking, watching food network, making spotify playlists, skincare/makeup

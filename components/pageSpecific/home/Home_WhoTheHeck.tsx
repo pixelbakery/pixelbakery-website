@@ -1,4 +1,5 @@
 import PageSection from '@parts/PageSection'
+import Lead from '@typography/Lead'
 
 function Home_WhoTheHeck() {
   return (
@@ -6,11 +7,12 @@ function Home_WhoTheHeck() {
       <div className='max-w-md  md:max-w-2xl xl:max-w-6xl mx-auto'>
         <h2 className=' my-8 2xl:text-8xl text-peach'>who the heck</h2>
         <div className='text-4xl  text-pink my-8 leading-none lowercase font-bold'>
-          <p className='py-3 max-w-xl lg:max-w-4xl'>
-            we&apos;re an award-winning multidisciplinary production studio centered around
+          <Lead>
+            We&apos;re an award-winning multidisciplinary production studio centered around
             animation, film, and design.
-          </p>
-          <p className='py-3 mt-2'>We don&apos;t do catering.</p>
+            <br />
+            We don't do catering
+          </Lead>
         </div>
       </div>
     </section>

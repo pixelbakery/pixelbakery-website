@@ -8,10 +8,10 @@ title: motion lead
 phone: 402-413-8366
 email: daniel@pixelbakery.com
 details:
-  alma Mater: university of nebraska-lincoln
+  almaMater: university of nebraska-lincoln
   pronoun: he/him
   favoriteThing: gummies
-  leastFavoritestring: team building activities
+  leastFavoriteThing: team building activities
   favoriteMovie: monster house
   hatedBird: geese
   hobby: roller skating

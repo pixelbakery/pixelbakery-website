@@ -12,7 +12,7 @@ function Home_WhatWeMake() {
         </div>
 
         <H2 color='blue' className='text-pb-blue-dark 2xl:text-8xl mt-0 pt-0 max-w-4xl'>
-          We build beautifuly immersive worlds{' '}
+          We build beautifully immersive worlds{' '}
         </H2>
         <div className='mx-auto lg:mx-0 lg:w-3/5  flex flex-col  justify-center py-8 mb-4'>
           <p className='lead  text-wine max-w-xl'>

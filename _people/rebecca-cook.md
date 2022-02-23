@@ -11,7 +11,7 @@ details:
   almaMater: kansas city art institute
   pronoun: she/her
   favoriteThing: spring & summer
-  leastFavoritestring: being cold for even a second
+  leastFavoriteThing: being cold for even a second
   favoriteMovie: finding nemo
   hatedBird: ostriches. too big.
   hobby: reading, embroidery, trying new type of art, like 5 video games she'll replay forever

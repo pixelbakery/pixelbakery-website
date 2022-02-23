@@ -11,7 +11,7 @@ details:
   almaMater: university of nebraska-lincoln
   pronoun: he/him/his
   favoriteThing: the speedy walkway things at airports
-  leastFavoritestring: fake candles
+  leastFavoriteThing: fake candles
   favoriteMovie: children of men
   hatedBird: pigeons
   hobby: laying in bed
