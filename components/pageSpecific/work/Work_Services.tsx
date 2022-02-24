@@ -31,11 +31,6 @@ function Work_Services() {
               />
             ))}
           </div>
-          {/* <div class="col-span-1 flex flex-wrap -m-2">
-                              <div class="h-12 m-2 w-1/2 rounded-md text-white bg-pink-light flex items-center justify-center text-2xl font-semibold ">1</div>
-                              <div class="h-12 m-2 w-1/2 rounded-md text-white bg-pink-light flex items-center justify-center text-2xl font-semibold ">2</div>
-                              <div class="h-12 m-2 w-1/2 rounded-md text-white bg-pink-light flex items-center justify-center text-2xl font-semibold ">3</div>
-                          </div> */}
         </div>
       </InnerWrapper>
     </PageSection>
