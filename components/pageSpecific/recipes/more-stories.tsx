@@ -1,4 +1,3 @@
-import Post from 'types/post'
 import H2 from '@typography/H2'
 
 import Recipes_SmallPost from './Recipes_SmallPost'
