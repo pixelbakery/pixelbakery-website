@@ -6,6 +6,7 @@ import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import InnerWrapper from '@parts/InnerWrapper'
+import Script from 'next/script'
 
 const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), {
   ssr: false,
@@ -19,7 +20,7 @@ function About_Twitch() {
   return (
     <PageSection className='px-0 md:pt-48 pb-0 lg:pb-0' id='twitch'>
       <Head>
-        <script src='https://player.twitch.tv/js/embed/v1.js' />
+        <Script src='https://player.twitch.tv/js/embed/v1.js' />
       </Head>
 
       <InnerWrapper>

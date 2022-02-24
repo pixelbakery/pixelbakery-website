@@ -51,10 +51,10 @@ function About_Team({ people }) {
   // filtered.forEach((person) => {
   //   console.log(person.name)
   // })
-  const addHeadshot = filtered.map((person) => {
+  const addHeadshot = filtered.map((person, index) => {
     return (
       <About_Team_Headshot
-        key={person.name}
+        key={index}
         name={person.name}
         title={person.title}
         headshot={person.photos.headshotSerious}
@@ -77,27 +77,11 @@ function About_Team({ people }) {
   } else leadIndex2 = addHeadshot.length - 3
 
   addHeadshot.splice(leadIndex2, 0, <Leader2 />)
-
-  // console.log(shifted)
-
   return (
     <section className='my-4' id='team'>
       <div className='grid gap-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {addHeadshot.map((person, index) => {
           return person
-          // if (person != undefined) {
-          //   return (
-          //     <>
-          //       <About_Team_Headshot
-          //         key={person.name}
-          //         name={person.name}
-          //         headshot={person.photos.headshotSerious}
-          //         headshotSmiling={person.photos.headshotSmiling}
-          //         url={person.slug}
-          //       />
-          //     </>
-          //   )
-          // }
         })}
       </div>
     </section>
