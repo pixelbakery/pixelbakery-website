@@ -18,10 +18,11 @@ function About({ allPeople }: Props) {
     <Main>
       <PageHeader_VariableHeight header='About' subheader='Just add flour.' />
       <About_Team people={allPeople} />
+      <About_Values />
+
       <About_Spotify />
       {/* <About_Commitment /> */}
 
-      <About_Values />
       <About_Twitch />
       <About_Awards />
       <About_Faq />

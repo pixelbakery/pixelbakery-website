@@ -21,6 +21,7 @@ import SocialLinks from '@images/Icons_Social/SocialLinks'
 
 import { ChevronRightIcon } from '@images/UI_Icons'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import Button_Filled from '@parts/Button_Filled'
 
 function Person({ prev, next, person, matchingAuthorPosts }) {
   const router = useRouter()
@@ -29,26 +30,28 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
 
   function Details() {
     return (
-      <div className='grid grid-cols-2 gap-y-6 gap-x-6'>
-        {Object.entries(details).map(([header, text]) => {
-          return (
-            <div className='col-span-1'>
-              <Lead className='mb-1' color='peach'>
-                {CamelCaseToSentence(header)}
-              </Lead>
-              {header === 'signs' ? (
-                <ul className='flex flex-col gap-x-4 text-md text-wine'>
-                  <li>☉ {details.signs.sun}</li>
-                  <li>↑ {details.signs.rising}</li>
-                  <li>☽ {details.signs.moon}</li>
-                </ul>
-              ) : (
-                <p className='text-md text-wine'>{text}</p>
-              )}
-            </div>
-          )
-        })}
-      </div>
+      <InnerWrapper>
+        <div className='grid grid-cols-2 2xl:grid-cols-5 gap-y-6 gap-12 lg:gap-x-24 w-fit mx-auto'>
+          {Object.entries(details).map(([header, text]) => {
+            return (
+              <div className='col-span-1 w-fit'>
+                <Lead className='mb-1 lg:mb-1 lg:pb-0' color='peach'>
+                  {CamelCaseToSentence(header)}
+                </Lead>
+                {header === 'signs' ? (
+                  <ul className='flex flex-col gap-x-4 text-md text-wine'>
+                    <li>☉ {details.signs.sun}</li>
+                    <li>↑ {details.signs.rising}</li>
+                    <li>☽ {details.signs.moon}</li>
+                  </ul>
+                ) : (
+                  <p className='text-md text-wine'>{text}</p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </InnerWrapper>
     )
   }
   function Socials() {
@@ -71,13 +74,15 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
         <p>Loading…</p>
       ) : (
         <>
-          <PageSection color='white'>
+          <PageSection color='cream'>
             <InnerWrapper className='mt-24'>
-              <div className='grid grid-cols-1 gap-y-8'>
+              <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-24  gap-y-8'>
                 <div className='col-span-1 relative w-full aspect-3/4'>
                   <div className=' max-w-lg'>
                     <Image
                       priority
+                      placeholder='blur'
+                      blurDataURL={person.photos.headshotFun}
                       src={person.photos.headshotFun}
                       layout='fill'
                       objectFit='cover'
@@ -87,10 +92,10 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
                 </div>
                 <div className='col-span-1'>
                   <div>
-                    <H1 color='blue' className='mb-2 pb-0'>
+                    <H1 color='blue' className='mb-2 pb-0 '>
                       {person.name}
                     </H1>
-                    <Lead color='wine' className='mb-2 pb-0'>
+                    <Lead color='wine' className='mb-2 lg:mb-8 pb-0'>
                       {person.title}
                     </Lead>
                   </div>
@@ -128,40 +133,53 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
             {/*  */}
           </PageSection>
           <PageSection>
-            <InnerWrapper>
-              <Details />
-              {/* <div className='grid grid-cols-1'>
+            <Details />
+            {/* <div className='grid grid-cols-1'>
                 {socialList != undefined ? (
                   {
                     Object.entries(obj).map()
                   }
                 ) : ''}</div> */}
-            </InnerWrapper>
           </PageSection>
-          <PageSection>
-            <InnerWrapper>
-              <div className='grid grid-cols-1 gap-3'>
-                {matchingAuthorPosts.slice(0, 11).map((post) => {
-                  return (
-                    <Recipes_FeaturedPost
-                      as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-                      href={`/recipes/[slug]`}
-                      key={post.filePath}
-                      title={post.data.title}
-                      author={post.data.author}
-                      categories={post.data.categories}
-                      date={post.data.date}
-                      aspectW={'4'}
-                      aspectY={'3'}
-                      coverImage={post.data.coverImage}
-                      excerpt={post.data.excerpt}
-                    />
-                  )
-                })}
-              </div>
-            </InnerWrapper>
-          </PageSection>
-          <PageSection className='bg-pink-light py-2'>
+          {Object.keys(matchingAuthorPosts).length > 0 ? (
+            <PageSection color='white'>
+              <InnerWrapper>
+                <h2>Recent Posts</h2>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
+                  {matchingAuthorPosts.slice(0, 11).map((post) => {
+                    return (
+                      <Recipes_FeaturedPost
+                        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+                        href={`/recipes/[slug]`}
+                        key={post.filePath}
+                        title={post.data.title}
+                        author={post.data.author}
+                        categories={post.data.categories}
+                        date={post.data.date}
+                        aspectW={'4'}
+                        aspectY={'3'}
+                        coverImage={post.data.coverImage}
+                        excerpt={post.data.excerpt}
+                      />
+                    )
+                  })}
+                </div>
+                <div className='mt-24'>
+                  <Button_Filled
+                    text='View More'
+                    link='/recipes'
+                    center={true}
+                    textColor='cream'
+                    bgColor='blue'
+                    chevronDirection='right'
+                  />
+                </div>
+              </InnerWrapper>
+            </PageSection>
+          ) : (
+            ''
+          )}
+          <PageSection color={'pink-light'}>
             <InnerWrapper className='py-2 my-2'>
               <div className='flex justify-between'>
                 <Link href={prev.slug}>
@@ -169,16 +187,21 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
                     <div className='w-20 self-center text-peach rotate-180'>
                       <ChevronRightIcon />
                     </div>
-                    <div className='self-center h-full flex-col justify-center '>
-                      <p className='text-peach font-semibold text-xl leading-none '>{prev.name}</p>
+                    <div className='flex flex-col justify-center'>
+                      <p className='text-peach font-semibold text-xl leading-none my-0 py-0'>
+                        {prev.name}
+                      </p>
                     </div>
                   </a>
                 </Link>
-                <Link href={prev.slug}>
+                <Link href={next.slug}>
                   <a className='flex'>
-                    <div className='self-center h-full flex-col justify-center text-right'>
-                      <p className='text-peach font-semibold text-xl leading-none '>{next.name}</p>
+                    <div className='flex flex-col justify-center'>
+                      <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0'>
+                        {next.name}
+                      </p>
                     </div>
+
                     <div className='w-20 self-center text-peach'>
                       <ChevronRightIcon />
                     </div>

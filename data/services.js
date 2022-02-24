@@ -7,15 +7,15 @@ export default [
   },
   {
     service: '3D Modeling',
-    url: '/services/animation',
+    url: '/services/3d-modeling',
   },
   {
     service: 'Creative Concepting & Strategy',
-    url: 'services/creative',
+    url: 'services/creative-concepting',
   },
   {
     service: 'Commercial Video Production',
-    url: '/services/creative-concepting',
+    url: '/services/video-production',
   },
   {
     service: 'Emerging Media',

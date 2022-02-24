@@ -23,8 +23,10 @@ function Work_Clients() {
       <InnerWrapper>
         <H2 color={'peach'}>Our lovely clients</H2>
         <Lead color='blue-dark'>
-          Conveniently simplify B2B relationships with goal-oriented platforms. Uniquely redefine
-          worldwide.
+          Our story wouldn’t exist if it weren’t for all of the wonderful clients that have been on
+          this journey with us. From initial discovery meetings to seeing the final product, we
+          thrive in bringing a client’s vision to life. Check out some of our past and present
+          clients below.
         </Lead>
       </InnerWrapper>
       <InnerWrapper>
