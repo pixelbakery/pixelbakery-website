@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
 import Author from 'types/author'
+import H3 from '@typography/H3'
 
 type Props = {
   title: string
@@ -43,37 +44,40 @@ const Recipes_FeaturedPost = ({
           }
         >
           <Image
-            alt={`cover photo for ${title}`}
+            priority
             src={coverImage}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
             blurDataURL={coverImage}
             quality={50}
-            priority
-            className=''
+            className='bg-blue'
+            alt={`cover photo for ${title}`}
           />
-          <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>
-          <div
+
+          <div className='mt-2 ml-2'>
+            {' '}
+            <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
+          </div>
+
+          {/* <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div> */}
+          {/* <div
             className={
               'absolute w-100 h-100 bg-gradient-to-t via-transparent from-blue-dark  opacity-50'
             }
-          ></div>
-          <div className=' z-20 h-100 p-6 flex flex-col justify-between'>
-            <div className='-py-3 flex flex-wrap flex-row  gap-4'>
-              <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='sm' />
-            </div>
-            <div className=''>
-              <h3 className='text-2xl md:text-3xl text-white leading-none drop-shadow-lg line-clamp-2'>
-                {title}
-              </h3>
-              <div className='text-sm text-white'>
-                <span className='hidden md:inline'>{author.name} – </span>{' '}
-                <DateFormatter dateString={date} />
-              </div>
-            </div>
-          </div>
+          ></div> */}
         </article>
+        <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+          <div className=''>
+            <div className='text-sm text-wine text-opacity-75'>
+              <span className='hidden md:inline'>{author.name} – </span>{' '}
+              <DateFormatter dateString={date} />
+            </div>
+            <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+              {title}
+            </h3>
+          </div>
+        </div>
       </a>
     </Link>
   )
