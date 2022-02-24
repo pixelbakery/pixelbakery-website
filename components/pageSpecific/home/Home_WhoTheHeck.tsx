@@ -7,11 +7,12 @@ function Home_WhoTheHeck() {
       <div className='max-w-md  md:max-w-2xl xl:max-w-6xl mx-auto'>
         <h2 className=' my-8 2xl:text-8xl text-peach'>who the heck</h2>
         <div className='text-4xl  text-pink my-8 leading-none lowercase font-bold'>
-          <Lead>
+          <Lead color='pink'>
             We&apos;re an award-winning multidisciplinary production studio centered around
             animation, film, and design.
             <br />
-            We don't do catering
+            <br />
+            We don't do catering.
           </Lead>
         </div>
       </div>
