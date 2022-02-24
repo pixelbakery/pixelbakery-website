@@ -28,7 +28,7 @@ const Recipes_SmallPost = ({
   return (
     <Link as={`${as}`} href={`${href}`} passHref>
       <a aria-label={title}>
-        <article className='border-t border-wine-100 my-6 pb-4 pt-8 cursor-pointer transition-scale duration-500 hover:scale-98'>
+        <article className='border-t border-wine-100 my-2 pb-4 pt-8 cursor-pointer transition-scale duration-300 hover:scale-99'>
           <div className='flex flex-row gap-4 md:gap-10'>
             <div className='hidden sm:block sm:w-2/5 2xl:w-2/5 '>
               <div className='w-full h-full md:aspect-4/3  relative'>
@@ -60,17 +60,18 @@ const Recipes_SmallPost = ({
                   <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />
                 </span>
               </div>
-              <h2 className='my-1 py-1 text-xl md:text-2xl font-semibold leading-none md:leading-tight text-blue-dark'>
+              <h2 className='mt-1 mb-0 pt-1 text-xl md:text-2xl font-semibold leading-none md:leading-tight text-blue-dark'>
                 {title}
               </h2>
               <div className='flex-grow 2xl:flex-initial'>
                 <div className='block'>
-                  {' '}
-                  <p className='pb-0 line-clamp-2 md:line-clamp-3 text-wine '>{excerpt}</p>
+                  <p className='text-sm pb-0 line-clamp-2 md:line-clamp-3 2xl:line-clamp-4 text-wine '>
+                    {excerpt}
+                  </p>
                 </div>
               </div>
-              <div className=' mt-4'>
-                <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'sm'} />
+              <div className=' mt-1'>
+                <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'xs'} />
               </div>
             </div>
           </div>
