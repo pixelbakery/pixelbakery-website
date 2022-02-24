@@ -19,8 +19,11 @@ function Education_Header() {
         <div className='max-w-xl mx-auto px-8  py-8'>
           <h1 className='text-5xl lg:text-7xl text-blue-dark leading-none mt-0 pt-0'>Education</h1>
           <div className='text-peach mb-8 lg:mb-16 mt-4  pb-0 font-medium lg:font-semibold 2xl:text-lg lg:text-xl lowercase leading-tight'>
-            Proactively repurpose premier leadership via sticky architectures. Uniquely predominate
-            distinctive convergence for stand-alone alignments.
+            Our success is a direct result of the people that we meet, whether that be our
+            employees, our clients, or community members. As such, we believe in giving back to our
+            community through education. We are proponents of breaking down any barriers (e.g.
+            monetary costs) that prevent creativity and believe that everyone should have access to
+            high-quality educational experiences and resources.
           </div>
           <div>
             <Education_Header_Link
