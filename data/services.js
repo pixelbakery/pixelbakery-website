@@ -19,7 +19,7 @@ export default [
   },
   {
     service: 'Emerging Media',
-    url: 's/ervices/emerging-media',
+    url: '/services/emerging-media',
   },
   {
     service: 'Social Media Kits',
@@ -31,6 +31,6 @@ export default [
   },
   {
     service: 'Pay-What-Ya-Want Web Hosting',
-    url: '#',
+    url: '/services/web-hosting',
   },
 ]
