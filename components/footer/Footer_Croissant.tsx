@@ -1,8 +1,7 @@
 import Lead from '@typography/Lead'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
-import gsap from 'gsap'
 import cn from 'classnames'
 function Footer_Mailchimp({ onModalUpdate }) {
   const [checked, setChecked] = useState(true)

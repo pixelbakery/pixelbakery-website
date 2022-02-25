@@ -87,7 +87,7 @@ const Index = ({ allPosts }) => {
           <button
             onClick={() => handleDisplayed()}
             className={cn(
-              'cursor-pointer transform transition-all duration-500 hover:scale-99 my-2 max-w-lg py-2 rounded-xl px-6 w-full bg-transparent text-center border-2 border-',
+              'cursor-pointer transform transition-all duration-500 hover:scale-99 my-2 max-w-lg py-2 rounded-xl px-6 w-full bg-transparent text-center border-2 border-blue text-blue',
             )}
           >
             <div className={cn(' font-extrabold text-lg lowercase flex')}>

@@ -21,11 +21,10 @@ import useShippingOptions from '@hooks/useShippingOptions'
 import useSetShippingOption from '@hooks/useSetShippingOption'
 import useCheckPwyw from '@hooks/useCheckPwyw'
 import useSetTaxZone from '@hooks/useSetTaxZone'
-import Navigation_NoCallouts from '@parts/Navigation_NoCallouts'
+import Navigation_NoCallouts from '@nav/Navigation_NoCallouts'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import Button_Filled from '@parts/Button_Filled'
 
 export type CheckoutSchema = {
   firstName: string

@@ -3,7 +3,7 @@
 import next from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import Navigation from '@parts/Navigation'
+import Navigation from '@nav/Navigation'
 
 function SubmissionConfirmation() {
   return (

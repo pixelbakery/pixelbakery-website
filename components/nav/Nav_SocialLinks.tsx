@@ -1,18 +1,54 @@
 import SocialLinks from '@images/Icons_Social/SocialLinks'
 
-function Footer_SocialLinks() {
-  const color = 'text-egg'
+function Nav_SocialLinks() {
+  const color = 'egg'
   const textSize = 'text-2xl md:text-3xl'
 
   return (
     <div className='max-w-xs mx-auto flex justify-between gap-3 px-8'>
-      <SocialLinks iconName={'Instagram'} color={color} textSize={textSize} />
-      <SocialLinks iconName={'Youtube'} color={color} textSize={textSize} />
-      <SocialLinks iconName={'Discord'} color={color} textSize={textSize} />
-      <SocialLinks iconName={'Vimeo'} color={color} textSize={textSize} />
-      <SocialLinks iconName={'Twitch'} color={color} textSize={textSize} />
-      <SocialLinks iconName={'Linkedin'} color={color} textSize={textSize} />
+      <SocialLinks
+        iconName={'Instagram'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://instagram.com/pixelbakery'}
+      />
+      <SocialLinks
+        iconName={'Youtube'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://www.youtube.com/c/pixelbakery'}
+      />
+      <SocialLinks
+        iconName={'Discord'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://discord.gg/DBxgDGJzAg  '}
+      />
+      <SocialLinks
+        iconName={'Vimeo'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://vimeo.com/pixelbakery'}
+      />
+      <SocialLinks
+        iconName={'Twitch'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://twitch.tv/pixelbakery'}
+      />
+      <SocialLinks
+        iconName={'Linkedin'}
+        color={color}
+        textSize={textSize}
+        size={'2xl'}
+        href={'https://www.linkedin.com/company/pixelbakery'}
+      />
     </div>
   )
 }
-export default Footer_SocialLinks
+export default Nav_SocialLinks

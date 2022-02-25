@@ -151,7 +151,7 @@ function Footer_Mailchimp() {
           {...register('message', { required: true })}
         />
 
-        <div className='col-span-2'>
+        <div className='col-span-2 flex'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-2 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
