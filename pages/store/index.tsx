@@ -9,7 +9,7 @@ import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import gsap from 'gsap'
 
 import Head from 'next/head'
-import Navigation_Store from '@parts/Navigation_Store'
+import Navigation_Store from '@nav/Navigation_Store'
 import Main from '@parts/Main'
 export const getServerSideProps: GetServerSideProps = async () => {
   const products = await commerce.products.list()

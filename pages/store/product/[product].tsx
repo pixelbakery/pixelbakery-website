@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ReactGA from 'react-ga4'
 import React from 'react'
-import Navigation_Store from '@parts/Navigation_Store'
+import Navigation_Store from '@nav/Navigation_Store'
 ReactGA.send('pageview')
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
