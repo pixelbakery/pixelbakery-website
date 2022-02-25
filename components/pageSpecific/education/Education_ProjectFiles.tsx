@@ -4,7 +4,7 @@ import H2 from '@typography/H2'
 
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import ProjectFile from '@types/projectFile'
+import ProjectFile from 'types/projectFile'
 import cn from 'classnames'
 import { useState } from 'react'
 import StrokeText from '@parts/StrokeText'

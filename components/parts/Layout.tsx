@@ -1,4 +1,4 @@
-import Navbar from '@parts/Navigation'
+import Navbar from '@nav/Navigation'
 import Meta from '@parts/Meta'
 import Footer from '@footer/Footer'
 import Nav_HamWrapper from '@nav/Nav_HamWrapper'

@@ -7,14 +7,14 @@ import commerce from '@lib/commerce'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
 
 import Head from 'next/head'
-import Navigation from '@parts/Navigation'
+import Navigation from '@nav/Navigation'
 import H1 from 'components/typography/H1'
 import H2 from '@typography/H2'
 
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import Lead from '@typography/Lead'
-import Navigation_NoCallouts from '@parts/Navigation_NoCallouts'
+import Navigation_NoCallouts from '@nav/Navigation_NoCallouts'
 
 const CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
