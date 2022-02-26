@@ -1,6 +1,6 @@
 function Services_Subservices_Box({ subservice }) {
   return (
-    <div className='my-12 border-2 border-wine rounded-lg flex py-6 px-4'>
+    <div className='my-12 border-4 border-blue rounded-lg flex py-6 px-4'>
       <div className='text-center px-6 flex flex-col justify-center'>
         <span className=' text-6xl'>{subservice.icon}</span>
       </div>
