@@ -1,4 +1,4 @@
-import Servicess_Subservicess_Box from './Servicess_Subservicess_Box'
+import Servicess_Subservicess_Box from './Servicess_Subservices_Box'
 import subservice from '@data/services-animation'
 
 function Services_Subservices() {
