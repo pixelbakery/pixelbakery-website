@@ -104,3 +104,11 @@ Three items are required for each slide.
 **src:** This is the image's path/location
 **alt:** A descriptor explaining the content of the image. Make sure it's SEO friendly
 **fit:** The least self-explanatory of the three. You can either select _cover_ or _contain_. Cover will scale the image to _cover_ the entire slide, which might cut some off. Contain will not fill the entire slide, but will make sure every part of the image is visible. Create images that are 4x3 and set it to 'cover' for best results.
+
+### Vimeo
+
+Instead of using the Video component, use the VimeoVideo component instead. Eventually there will be a permanent solution for the Video component, but it's low-priority. The VimeoVideo component is a bit different. You'll need to pass the video's ID as a prop instead of the full url. The ID can be found by going to the vimeo link in your browser and copying the first set of numbers in the address bar.
+
+Here's an example using the following url: https://vimeo.com/246759522
+
+`<VimeoPlayer videoID={'246759522'} />`

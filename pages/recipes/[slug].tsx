@@ -20,6 +20,7 @@ import Video from '@parts/Video'
 import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 import { useEffect } from 'react'
 import remarkGfm from 'remark-gfm'
+import VimeoPlayer from '@parts/VimeoPlayer'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -29,6 +30,7 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Carousel: Carousel,
+  VimeoPlayer: VimeoPlayer,
   Video: Video,
   TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
