@@ -4,6 +4,7 @@ import Services_Related from '@services/Services_Related'
 import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Lead from '@typography/Lead'
+import Store_Maintenance from '@store/Store_Maintenance'
 
 export default function Services() {
   return (
@@ -12,6 +13,7 @@ export default function Services() {
         <Lead>Coming Soon 😉 </Lead>
       </Services_Header>
       <Services_AllServices />
+      <Store_Maintenance />
     </div>
   )
 }
