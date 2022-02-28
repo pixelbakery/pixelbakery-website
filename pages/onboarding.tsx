@@ -9,7 +9,7 @@ function Onboarding() {
     <Main id='page-onboarding'>
       <PageHeader_VarH
         header='start something wonderful'
-        subheader="Let's add you to our pantry of clients"
+        subheader='All it takes is one great idea'
       />
       <Onboarding_Contact />
       <Onboarding_Calendly />
