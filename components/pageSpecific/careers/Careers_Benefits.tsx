@@ -36,7 +36,7 @@ function Careers_Benefits() {
                 <li className='my-2 benefit'>free domain and hosting… forever</li>
                 <li className='my-2 benefit'>paid passion project hours</li>
                 <li className='my-2 benefit'>
-                  access to pb&apos;s camera equiptment and studio for personal use
+                  access to pb&apos;s camera equipment and studio for personal use
                 </li>
               </ul>
             </div>
