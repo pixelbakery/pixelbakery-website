@@ -3,12 +3,6 @@ import dynamic from 'next/dynamic'
 
 const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
 
-// Local Variables
-
-const primaryColor1 = 'blue'
-const accentColor1 = 'blue-dark'
-const subheaderColor1 = 'cream'
-
 function Education_Header() {
   return (
     <section className='relative lander my-4 grid grid-cols-5 w-full'>
