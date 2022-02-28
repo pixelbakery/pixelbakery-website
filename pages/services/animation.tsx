@@ -5,6 +5,7 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Lead from '@typography/Lead'
 import Main from '@parts/Main'
+import Store_Maintenance from '@store/Store_Maintenance'
 
 export default function Services() {
   return (
@@ -24,6 +25,7 @@ export default function Services() {
       <Services_Related />
       <Services_AllServices />
       <Services_OurProcess />
+      <Store_Maintenance />
     </Main>
   )
 }
