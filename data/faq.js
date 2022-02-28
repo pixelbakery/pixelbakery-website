@@ -50,6 +50,6 @@ export default [
   },
   {
     q: 'Do you shoot weddings?',
-    a: 'Love is a lie, there is no god, and eventually the cold grip of entropy will consume the universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefossstercreative.com</a> for anything wedding related. Mazel tov!!',
+    a: 'Eventually the cold grip of entropy will consume the universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefossstercreative.com</a> for anything wedding related. Mazel tov!!',
   },
 ]
