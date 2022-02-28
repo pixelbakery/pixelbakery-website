@@ -55,8 +55,10 @@ const Work_Portfolio = () => {
         <InnerWrapper>
           <H2 className='mb-2'>Work we&apos;re really really really proud of</H2>
           <Lead color='blue-dark'>
-            Quickly fabricate high-quality relationships after intermandated solutions.
-            Phosfluorescently engineer backward-compatible portals through.
+            Everything we put out into the world is a unique piece of its own and wouldn’t exist
+            without the approval of each and every person involved in its creation. However, there
+            are a few pieces that we’re really, really, really proud of. Here are a few of our
+            favorites.
           </Lead>
         </InnerWrapper>
       </PageSection>
