@@ -1,6 +1,9 @@
 import Services_Related_Card from './Services_Related_Card'
 import relatedProjects from '@data/services-animation-related'
 import Button_Filled from '@parts/Button_Filled'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+import H2 from '@typography/H2'
 
 function shuffleArray(array) {
   let i = array.length - 1
@@ -16,13 +19,13 @@ function shuffleArray(array) {
 function Services_Related() {
   const shuffledPosts = shuffleArray(relatedProjects)
   return (
-    <section className='my-4' id='services-animation-related'>
-      <div className=''>
-        <div className='container max-w-xl ml-24 my-8 pb-4 pt-16'>
+    <PageSection className='my-4' id='services-animation-related'>
+      <InnerWrapper className=''>
+        <div className=''>
           <span className='text-peach text-2xl font-bold pb-0 mb-0'>Related Projects</span>
-          <h2 className='text-blue mt-0 pt-0'>Words are wind, so here&apos;s proof:</h2>
+          <H2 color='blue'>Words are wind, so here&apos;s proof</H2>
         </div>
-        <div className='pt-8 grid grid-cols-3 gap-4 '>
+        <div className='pt-8 grid grid-cols-1 md:grid-cols-3 gap-4 '>
           {shuffledPosts.map((project) => (
             <Services_Related_Card project={project} key={project.name} />
           ))}
@@ -30,15 +33,15 @@ function Services_Related() {
         <div className=' py-8 mx-auto w-full'>
           <Button_Filled
             center={true}
-            text='test'
-            link='/'
-            bgColor={'pink'}
+            text="we've got more"
+            link='/work'
+            bgColor={'pink-light'}
             textColor={'peach'}
             chevronDirection='right'
           />
         </div>
-      </div>
-    </section>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 

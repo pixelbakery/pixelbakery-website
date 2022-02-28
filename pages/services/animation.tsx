@@ -4,12 +4,13 @@ import Services_Related from '@services/Services_Related'
 import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Lead from '@typography/Lead'
+import Main from '@parts/Main'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
       <Services_Header serviceName='Animation'>
-        <Lead className='text-peach font-extrabold text-lg my-3 leading-relaxed'>
+        <Lead color='peach'>
           We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling
         </Lead>
         <p className='mt-6 leading-loose'>
@@ -23,6 +24,6 @@ export default function Services() {
       <Services_Related />
       <Services_AllServices />
       <Services_OurProcess />
-    </div>
+    </Main>
   )
 }
