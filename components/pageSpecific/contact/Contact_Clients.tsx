@@ -34,10 +34,16 @@ function Contct_Clients() {
           </div>
           <div className='col-span-1'>
             <Lead color='peach' className='leading-tight'>
-              Schedule a meeting with Jordan and he’ll buy you a beer or take you out for coffee. We
-              believe in building long-term relationships with our clients, so we’re never pushy or
-              “car salesman-y”. REWRITE THIS COPY I HATE IT
+              Schedule a meeting with our leadership team to discuss your next big project and to
+              see if we’re a good fit for one another! We like to think of discovery meetings as
+              speed dating:
             </Lead>
+            <p className='text-cream font-semibold text-xl'>
+              seeing if our goals and missions align and making sure there’s enough chemistry there
+              for something long-lasting to evolve. We believe in building long-term relationships
+              with our clients, so making sure all of these pieces are in check is of utmost
+              importance.
+            </p>
           </div>
         </div>
         <Button_Filled
