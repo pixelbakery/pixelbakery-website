@@ -19,12 +19,12 @@ function Nav_FullscreenMenu(props) {
     >
       <div className='relative w-full h-full bg-blue p-6'>
         <div className='relative z-20 mx-auto max-w-6xl flex justify-center h-full w-full'>
-          <div className='w-full md:w-2/3 flex flex-col justify-end '>
+          <div className='w-full lg:w-2/3 flex flex-col justify-end '>
             {/* Main menu */}
 
-            <div className='flex-grow mx-auto flex flex-col justify-end mb-12 gap-2 lg:gap-3 flex-wrap font-extrabold text-blue-dark text-2xl lg:text-4xl leading-none text-center lowercase'>
+            <div className='flex-grow mx-auto flex flex-col justify-end mb-6 lg:mb-12 gap-2 lg:gap-3 flex-wrap font-extrabold text-blue-dark text-2xl lg:text-4xl leading-none text-center lowercase'>
               <Link href='/'>
-                <div className='self-center relative text-blue-dark w-32 lg:w-40'>
+                <div className='self-center relative text-blue-dark w-28 md:w-32 lg:w-40'>
                   <Logo_Primary className='object-contain w-full h-full' />
                 </div>
               </Link>
@@ -84,7 +84,7 @@ function Nav_FullscreenMenu(props) {
                 />
               </div>
               <div className='flex w-full'>
-                <Nav_SocialLinks />
+                <Nav_SocialLinks color={'blue-dark'} textSize={'text-2xl md:text-3xl'} />
               </div>
             </div>
           </div>

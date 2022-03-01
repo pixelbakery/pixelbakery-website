@@ -7,25 +7,43 @@ import Lead from '@typography/Lead'
 
 function Services_Subservices() {
   return (
-    <PageSection>
-      <InnerWrapper>
-        <div className='grid grid-cols-4'>
-          <div className=' col-span-4 md:h-screen justify-center md:max-w-md mx-auto md:sticky top-0 md:overflow-auto'>
-            <div className=''>
-              <H2 color='wine'>there’s plenty of ways to butter your bread</H2>
-              <Lead color='blue'>and we’ve pretty much mastered all of them.</Lead>
-            </div>
-          </div>
-          <div className=' col-span-4 md:col-span-2 w-full h-full    mx-auto'>
-            <div>
-              {subservice.map((subservice) => (
-                <Servicess_Subservicess_Box subservice={subservice} key={subservice.service} />
-              ))}
-            </div>
+    <section>
+      <div className='grid grid-cols-5 mx-12'>
+        <div className=' col-span-5 lg:col-span-3 w-full md:h-screen  lg:sticky top-0 lg:overflow-auto'>
+          <div className='flex flex-col h-full justify-center lg:max-w-md mx-auto '>
+            <H2 color='wine'>there’s plenty of ways to butter your bread</H2>
+            <Lead color='blue'>and we’ve pretty much mastered all of them.</Lead>
           </div>
         </div>
-      </InnerWrapper>
-    </PageSection>
+        <div className=' col-span-5 lg:col-span-2 w-full   mx-auto'>
+          <div>
+            {subservice.map((subservice) => (
+              <Servicess_Subservicess_Box subservice={subservice} key={subservice.service} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    // <section
+    //   className=' py-16 grid grid-cols-2 w-full bg-white'
+    //   id='services-animation-subservices overflow-hidden sticky'
+    // >
+    //   <div className='w-full h-screen flex flex-col justify-center max-w-md mx-auto sticky top-0 overflow-auto'>
+    //     <div className=''>
+    //       <h2 className='text-wine'>there’s plenty of ways to butter your bread</h2>
+    //       <p className='text-blue text-xl font-extrabold '>
+    //         and we’ve pretty much mastered all of them.
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div className='w-full h-full max-w-lg mx-auto'>
+    //     <div>
+    //       {subservice.map((subservice) => (
+    //         <Servicess_Subservicess_Box subservice={subservice} key={subservice.service} />
+    //       ))}
+    //     </div>
+    //   </div>
+    // </section>
   )
 }
 export default Services_Subservices

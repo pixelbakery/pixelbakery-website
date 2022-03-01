@@ -110,7 +110,7 @@ export const Footer: NextPage = () => {
               </div>
               <div className='w-full lg:py-4 lg:my-3'>
                 <div className='w-full' id='footer-social'>
-                  <Footer_SocialLinks />
+                  <Footer_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
                 </div>
                 {/* <div className='w-full flex justify-center'>
                   <span className='text-cream italic font-bold text-center text-lg'>
@@ -156,7 +156,9 @@ export const Footer: NextPage = () => {
           </div>
         </div>
       </footer>
-      <div className='my-4'>{/* <InstagramGallery count={14} /> */}</div>
+      <div className='my-4'>
+        <InstagramGallery count={14} />
+      </div>
     </div>
   )
 }

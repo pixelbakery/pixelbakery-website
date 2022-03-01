@@ -178,6 +178,12 @@
   height: calc(100vh - 2rem);
 }
 
+@media (min-width: 1024px) {
+  .lander-education {
+    height: calc(100vh - 2rem) !important;
+  }
+}
+
 .lander-variableHeight {
   min-height: 66vh;
   max-height: calc(100vh - 2rem) !important;

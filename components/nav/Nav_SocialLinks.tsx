@@ -1,9 +1,6 @@
 import SocialLinks from '@images/Icons_Social/SocialLinks'
 
-function Nav_SocialLinks() {
-  const color = 'egg'
-  const textSize = 'text-2xl md:text-3xl'
-
+function Nav_SocialLinks({ color, textSize }) {
   return (
     <div className='max-w-xs mx-auto flex justify-between gap-3 px-8'>
       <SocialLinks
@@ -25,7 +22,7 @@ function Nav_SocialLinks() {
         color={color}
         textSize={textSize}
         size={'2xl'}
-        href={'https://discord.gg/DBxgDGJzAg  '}
+        href={'https://discord.gg/DBxgDGJzAg'}
       />
       <SocialLinks
         iconName={'Vimeo'}

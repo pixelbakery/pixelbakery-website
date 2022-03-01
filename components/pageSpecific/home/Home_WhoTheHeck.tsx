@@ -12,7 +12,7 @@ function Home_WhoTheHeck() {
             animation, film, and design.
             <br />
             <br />
-            We don't do catering.
+            <span className='text-blue'>We don't do catering.</span>
           </Lead>
         </div>
       </div>
