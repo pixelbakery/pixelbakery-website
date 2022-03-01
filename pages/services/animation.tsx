@@ -7,9 +7,9 @@ import Lead from '@typography/Lead'
 import Main from '@parts/Main'
 import Store_Maintenance from '@store/Store_Maintenance'
 
-export default function Services() {
+export default function Services_Animation() {
   return (
-    <Main>
+    <main>
       <Services_Header serviceName='Animation'>
         <Lead color='peach'>
           We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling
@@ -26,6 +26,6 @@ export default function Services() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </Main>
+    </main>
   )
 }

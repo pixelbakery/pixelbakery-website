@@ -28,36 +28,32 @@ function Contact_HangOut() {
   return (
     <PageSection className='overflow-visible '>
       <InnerWrapper>
-        <H2 color='blue' className='text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl'>
-          Let's hang out
-        </H2>
+        <H2 color='blue'>Let's hang out</H2>
 
-        <div className='mb-12'>
-          <ul className='flex flex-wrap gap-8 lg:gap-12'>
-            {SocialUrls_Contact.map((URL, index) => {
-              return (
-                <li key={URL.name} className={cn('-mt-12')}>
-                  <Link href={URL.url} passHref>
-                    <a>
-                      <StrokeText
-                        text={URL.name}
-                        index={index}
-                        fontSize={'text-3xl lg:text-4xl'}
-                        strokeWidth={'stroke-1'}
-                        color={'blue-dark'}
-                        fontWeight={'font-black'}
-                        active={false}
-                      />
-                    </a>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+        <ul className='flex flex-wrap gap-8 lg:gap-12 mt-24'>
+          {SocialUrls_Contact.map((URL, index) => {
+            return (
+              <li key={URL.name} className={cn('-mt-12')}>
+                <Link href={URL.url} passHref>
+                  <a>
+                    <StrokeText
+                      text={URL.name}
+                      index={index}
+                      fontSize={'text-3xl lg:text-4xl'}
+                      strokeWidth={'stroke-1'}
+                      color={'blue-dark'}
+                      fontWeight={'font-black'}
+                      active={false}
+                    />
+                  </a>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </InnerWrapper>
-      <div className='-mt-10 xl:-mt-20 overflow-visible '>
-        <div className='-ml-6 md:ml-0 w-full flex flex-grow overflow-visible animate-horizontal pointer-events-none'>
+      <div className='-mt-10 overflow-visible '>
+        <div className='-ml-6 md:ml-5 w-full flex flex-grow overflow-visible animate-horizontal pointer-events-none'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className={cn(' top-0 left-0 social-link text-blue-dark fill-yellow ')}
@@ -99,35 +95,37 @@ function Contact_HangOut() {
           </svg>
         </div>
         <InnerWrapper color='pink-light -mt-8 py-8'>
-          <div className='w-full h-full mx-auto xl:mx-0'>
-            <div className='h-full flex flex-col justify-center w-max mx-auto text-2xl lg:text-4xl text-pink font-bold lowercase leading-tight'>
-              <span className='text-peach font-bold leading-none mb-2 md:mb-0 pb-0 text-lg lg:text-2xl'>
-                it's good to see you.
-              </span>
-              Pixel Bakery <br className='xl:hidden' /> Design Studio
-              <br /> 2124 Y St. Flat #208
-              <br /> Lincoln, NE 68503
+          <div className='grid grid-cols-1 lg:grid-cols-2 py-12'>
+            <div className='col-span-1 h-full mx-auto xl:mx-0'>
+              <div className='h-full flex flex-col justify-center w-max mx-auto text-2xl lg:text-4xl text-pink font-bold lowercase leading-tight'>
+                <span className='text-peach font-bold leading-none mb-2 md:mb-0 pb-0 text-lg lg:text-2xl'>
+                  it's good to see you.
+                </span>
+                Pixel Bakery <br className='xl:hidden' /> Design Studio
+                <br /> 2124 Y St. Flat #208
+                <br /> Lincoln, NE 68503
+              </div>
             </div>
-          </div>
-          <div className='w-full lg:w-1/2 h-full mx-auto xl:mx-0 mt-6 xl:mt-0'>
-            <div className=' h-full mx-auto xl:float-right xl:mx-auto w-max'>
-              <ul className='text-blue font-bold text-3xl h-full flex flex-col justify-between'>
-                <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                  <Link href={'/about#twitch'} passHref>
-                    <a>are we home?</a>
-                  </Link>
-                </li>
-                <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                  <Link href={'https://g.page/pixelbakery?share'} passHref>
-                    <a target='_blank'>map it</a>
-                  </Link>
-                </li>
-                <li className='pb-2 my-4 inline w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                  <Link href={'/contact/schedule'} passHref>
-                    <a>schedule it</a>
-                  </Link>
-                </li>
-              </ul>
+            <div className='col-span-1  mx-auto xl:mx-0 mt-6 xl:mt-0'>
+              <div className=' mx-auto xl:mx-auto w-max'>
+                <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
+                  <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'/about#twitch'} passHref>
+                      <a>are we home?</a>
+                    </Link>
+                  </li>
+                  <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'https://g.page/pixelbakery?share'} passHref>
+                      <a target='_blank'>map it</a>
+                    </Link>
+                  </li>
+                  <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
+                    <Link href={'/contact/schedule'} passHref>
+                      <a>schedule it</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </InnerWrapper>

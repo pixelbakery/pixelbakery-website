@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Services_Related_Card({ project }) {
   return (
     <Link href={'/'} passHref>
-      <article className='  portfolio-project hover:opacity-90 hover:scale-95'>
+      <article className='  portfolio-project hover:opacity-90 hover:scale-99 duration-300 cursor-pointer'>
         <div className='relative aspect-w-4 aspect-h-3 xl:aspect-w-2  xl:aspect-h-3  w-full '>
           <Image
             layout='fill'

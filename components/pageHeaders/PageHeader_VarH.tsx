@@ -12,10 +12,6 @@ const PageHeader_VarH_Blue_Dark = dynamic(() => import('./PageHeader_VarH_Blue_D
   ssr: true,
 })
 const PageHeader_VarH_Cream = dynamic(() => import('./PageHeader_VarH_Cream'), { ssr: true })
-// const PageHeader_VarH_Blue_Dark_YellowAlt = dynamic(
-//   () => import('./PageHeader_VarH_Blue_Dark_YellowAlt'),
-//   { ssr: true },
-// )
 const PageHeader_VarH_Yellow = dynamic(() => import('./PageHeader_VarH_Yellow'), { ssr: true })
 
 PageHeader_VarH.propTypes = {
@@ -40,9 +36,9 @@ function PageHeader_VarH({ header, subheader }) {
   const ThisPattern = patterns[randomNumber]
 
   return (
-    <section>
+    <header className='bg-blue'>
       <ThisPattern header={header} subheader={subheader} />
-    </section>
+    </header>
   )
 }
 export default PageHeader_VarH
