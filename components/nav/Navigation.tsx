@@ -36,9 +36,9 @@ export default function Navbar() {
     }
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '',
-        start: 'top',
-        end: 'top 50%',
+        trigger: 'body',
+        start: 0,
+        end: () => innerHeight / 2,
         toggleActions: 'play none reverse none',
         // markers: true
       },
