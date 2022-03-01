@@ -1,15 +1,12 @@
 import Link from 'next/link'
-import Home_SocialLinks from './Home_SocialLinks'
 import Button_Filled from '@parts/Button_Filled'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
 
 import Logo_Primary from '@images/logo_primary'
+import Nav_SocialLinks from '@nav/Nav_SocialLinks'
 
-type Props = {
-  pattern1: object
-}
 function Home_Landing() {
   return (
     <section className='lander  overflow-hidden w-full my-4 flex'>
@@ -68,7 +65,7 @@ function Home_Landing() {
             />
           </div>
           <div className='mx-auto w-full '>
-            <Home_SocialLinks />
+            <Nav_SocialLinks color={'blue'} textSize={'text-2xl md:text-3xl'} />
           </div>
         </div>
       </nav>
