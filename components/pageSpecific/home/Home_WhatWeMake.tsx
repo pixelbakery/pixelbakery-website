@@ -8,7 +8,7 @@ function Home_WhatWeMake() {
   return (
     <PageSection>
       <InnerWrapper>
-        <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 mb-24'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 mb-12 lg:mb-24'>
           <div>
             <div className='text-pink text-2xl  2xl:text-4xl  leading-noone font-bold'>
               to put it simply,
@@ -18,8 +18,8 @@ function Home_WhatWeMake() {
               We build beautifully immersive worlds{' '}
             </H2>
           </div>
-          <div className='mx-auto lg:mx-0 w-full flex flex-col  justify-center lg:py-8 mb-4'>
-            <Lead color='peach' className='lg:mb-4'>
+          <div className='mx-auto lg:mx-0 w-full flex flex-col -mt-6 md:-mt-0 justify-center lg:py-8 lg:mb-4'>
+            <Lead color='peach' className='mb-0 pb-0 pt-0 lg:mb-4'>
               Our team creates intentional, high-quality products that are results of purposeful
               visions and not taking any shortcuts.
             </Lead>
