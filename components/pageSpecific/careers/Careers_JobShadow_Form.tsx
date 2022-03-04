@@ -124,7 +124,7 @@ function Careers_JobShadow_Form() {
       >
         {/* name */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='full name'
           {...register('name', { required: true })}
@@ -132,14 +132,14 @@ function Careers_JobShadow_Form() {
 
         {/* email */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='email'
           placeholder='email'
           {...register('email', { required: true })}
         />
         {/* school */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='school'
           {...register('school', { required: true })}
@@ -147,7 +147,7 @@ function Careers_JobShadow_Form() {
         {/* message */}
         <textarea
           rows={4}
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           placeholder='tell us about yourself and what about Pixel Bakery interests you'
           {...register('message', { required: true })}
         />
@@ -194,10 +194,10 @@ function Careers_JobShadow_Form() {
         </div>
 
         {/* newsletter */}
-        <div className='col-span-2 flex'>
+        <div className='col-span-2 flex '>
           <input
             className={
-              'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
+              'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl ring-0 focus:ring-0 '
             }
             type='checkbox'
             checked={checked}

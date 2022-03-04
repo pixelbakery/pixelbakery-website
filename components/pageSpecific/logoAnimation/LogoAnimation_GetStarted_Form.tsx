@@ -118,25 +118,25 @@ export default function LogoAnimation_GetStarted_Form() {
         data-netlify='true'
       >
         <input
-          className='form-border-b w-full'
+          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='name'
           {...register('name', { required: true })}
         />
         <input
-          className='form-border-b w-full'
+          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='email'
           placeholder='email'
           {...register('email', { required: true })}
         />
         <input
-          className='form-border-b w-full'
+          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='tel'
           placeholder='phone'
           {...register('phone', {})}
         />
         <input
-          className='form-border-b w-full'
+          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='company / entity'
           {...register('entity', {})}
@@ -207,7 +207,7 @@ export default function LogoAnimation_GetStarted_Form() {
           </div>
         </div>
         <textarea
-          className='form-border-b w-full'
+          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           placeholder='Any additional details you would like to share?'
           rows={5}
           {...register('message', {})}
