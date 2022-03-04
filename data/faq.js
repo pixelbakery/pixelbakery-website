@@ -14,7 +14,7 @@ export default [
   },
   {
     q: 'My budget is $500, can I afford you?',
-    a: 'Not likely. Try upwork.com or your nephew',
+    a: 'Not likely, but feel free to make your case. We love unique projects. Otherwise, try upwork.com or your nephew',
   },
   {
     q: 'Where’d you get the name Pixel Bakery?',
