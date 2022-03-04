@@ -53,12 +53,11 @@ const Work_Portfolio = () => {
     <>
       <PageSection>
         <InnerWrapper>
-          <H2 className='mb-2'>Work we&apos;re really really really proud of</H2>
+          <H2 className='mb-6'>Work we&apos;re really really really proud of</H2>
           <Lead color='blue-dark'>
-            Everything we put out into the world is a unique piece of its own and wouldn’t exist
-            without the approval of each and every person involved in its creation. However, there
-            are a few pieces that we’re really, really, really proud of. Here are a few of our
-            favorites.
+            Everything we put out into the world is a unique piece of its own. <br />
+            <br />
+            Here are a few of our favorites.
           </Lead>
         </InnerWrapper>
       </PageSection>
