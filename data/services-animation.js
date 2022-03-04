@@ -3,7 +3,7 @@
 export default [
   {
     service: 'Kinetic Typography',
-    desc: 'Kinetic typography is an animation technique used to make text move in numerous ways – whether that be expanding, shrinking, or moving in slow-motion, to name a few. The effect adds emphasis to the text’s meaning, or can simply add an element of motion to your videos.',
+    desc: 'Kinetic typography is  an animation technique used to make text move in numerous ways – whether that be expanding, shrinking, or moving in slow-motion, to name a few. The effect adds emphasis to the text’s meaning, or can simply add an element of motion to your videos.',
     icon: '🥓',
   },
   {
@@ -23,7 +23,7 @@ export default [
   },
   {
     service: 'Living Infographics',
-    desc: 'Globally promote out-of-the-box methodologies whereas leading-edge partnerships. Phosfluorescently simplify.',
+    desc: 'Infographics bring your data and information to life visually. When these are done correctly, they are able to transfer data into stories, making the complex information easy for your audience to digest. By adding in great design, infographics are visually engaging and should make the user curious to learn and see more.',
     icon: '🫐',
   },
   {

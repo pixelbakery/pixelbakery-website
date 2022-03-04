@@ -10,7 +10,14 @@ export default function Services() {
   return (
     <div>
       <Services_Header serviceName='Commercial Video Production'>
-        <Lead>Coming Soon 😉 </Lead>
+        <Lead>Making your story come to life.</Lead>
+        <p>
+          Commercial video production can include video advertisements, TV commercials, YouTube
+          pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
+          give your brand more recognition and to boost your marketplace identity. With our
+          experience in both video production and animation, there are no limits to what we can
+          produce for your brand.
+        </p>
       </Services_Header>
       <Services_Subservices />
       <Services_Related />
