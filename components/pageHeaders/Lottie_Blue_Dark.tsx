@@ -2,7 +2,7 @@ import Lottie from 'react-lottie-player'
 import VarHPattern from '@data/Patterns_Blue_Dark.json'
 
 export default function Pattern() {
-  const playFrames = [
+  const playFrames: [number, number][] = [
     [0, 23],
     [24, 95],
   ]

@@ -22,7 +22,7 @@ const subheaderColor = 'blue-dark '
 const pattern3 = Pattern
 
 function PageHeader_VariableHeight({ header, subheader }) {
-  const playFrames = [
+  const playFrames: [number, number][] = [
     [0, 23],
     [24, 95],
   ]
