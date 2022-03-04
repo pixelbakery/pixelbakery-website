@@ -18,7 +18,7 @@ export default [
   },
   {
     service: 'Educational',
-    desc: 'Globally promote out-of-the-box methodologies whereas leading-edge partnerships. Phosfluorescently simplify.',
+    desc: 'Nothing promotes understanding and learning like animation. Making memoral and engaging educational pieces drives memory retention and helps break down complex ideas into something easy to understand.',
     icon: '🍄',
   },
   {
@@ -28,12 +28,12 @@ export default [
   },
   {
     service: 'Music Videos',
-    desc: 'Globally promote out-of-the-box methodologies whereas leading-edge partnerships. Phosfluorescently simplify.',
+    desc: 'Show us your dance moves. We love taking the spirit and meaning behind music and bringing the narative to life through animation.',
     icon: '🍑',
   },
   {
     service: 'Independent Film',
-    desc: 'Globally promote out-of-the-box methodologies whereas leading-edge partnerships. Phosfluorescently simplify.',
+    desc: "Let's finally get that YouTube channel you've always dreamed of making off the ground.",
     icon: '🥪',
   },
 ]
