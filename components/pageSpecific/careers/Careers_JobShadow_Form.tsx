@@ -152,7 +152,7 @@ function Careers_JobShadow_Form() {
           {...register('message', { required: true })}
         />
         {/* agreements */}
-        <div className='col-span-2'>
+        <div className='col-span-2 flex'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
@@ -172,7 +172,7 @@ function Careers_JobShadow_Form() {
             I'm filling this out for myself.
           </label>
         </div>
-        <div className='col-span-2'>
+        <div className='col-span-2 flex'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
@@ -194,7 +194,7 @@ function Careers_JobShadow_Form() {
         </div>
 
         {/* newsletter */}
-        <div className='col-span-2'>
+        <div className='col-span-2 flex'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
