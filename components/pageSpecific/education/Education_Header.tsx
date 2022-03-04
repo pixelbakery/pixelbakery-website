@@ -26,7 +26,7 @@ function Education_Header() {
               inpageLink={'#projectFiles'}
             />
             <Education_Header_Link
-              header={'from  scratch'}
+              header={'from scratch'}
               subheader={'complete a to z tutorials'}
               inpageLink={'#fromScratch'}
             />
