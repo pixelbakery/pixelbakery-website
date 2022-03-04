@@ -133,7 +133,7 @@ function Contact_ContactForm_Form() {
           <div className='w-full flex flex-wrap gap-2'>
             <PhoneInput
               placeholder='phone (optional)'
-              className='form-border-b flex-grow'
+              className='form-border-b flex-grow  focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               country='US'
               name='phone'
               control={control}
@@ -148,7 +148,7 @@ function Contact_ContactForm_Form() {
               {...register('phone', {})}
             /> */}
             <input
-              className='form-border-b flex-grow'
+              className='form-border-b flex-grow focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='text'
               placeholder='company / entity'
               {...register('entity', {})}
@@ -164,7 +164,7 @@ function Contact_ContactForm_Form() {
             })}
           />
           <textarea
-            className='form-border-b w-full'
+            className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='sup?'
             rows={5}
             {...register('message', {

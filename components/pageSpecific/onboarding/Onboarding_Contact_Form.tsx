@@ -111,34 +111,34 @@ function Footer_Mailchimp() {
       >
         {/* name */}
         <input
-          className='col-span-2 md:col-span-1  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2 md:col-span-1  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='Name'
           {...register('name', { required: true })}
         />
         {/* company */}
         <input
-          className='col-span-2 md:col-span-1 font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2 md:col-span-1 font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='company/entity'
           {...register('company', {})}
         />
         <input
           type='url'
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           placeholder='website (must start with https://)'
           {...register('website', {})}
         />
         {/* email */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='email'
           placeholder='email'
           {...register('email', { required: true })}
         />
         {/* subject */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           type='text'
           placeholder='subject'
           {...register('subject', { required: true })}
@@ -146,7 +146,7 @@ function Footer_Mailchimp() {
         {/* message */}
         <textarea
           rows={4}
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text'
+          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-1 border-blue-dark text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           placeholder='tell us about your project idea'
           {...register('message', { required: true })}
         />
