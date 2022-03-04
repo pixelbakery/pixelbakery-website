@@ -14,12 +14,12 @@ PageHeader_VariableHeight.propTypes = {
 
 const primaryColor = 'peach'
 const accentColor = 'egg'
-const subheaderColor = 'egg '
+const subheaderColor = 'egg'
 
 const pattern1 = Pattern
 
 function PageHeader_VariableHeight({ header, subheader }) {
-  const playFrames = [
+  const playFrames: [number, number][] = [
     [0, 23],
     [24, 95],
   ]

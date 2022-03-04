@@ -23,7 +23,7 @@ const thisPatern = Pattern
 
 function PageHeader_VariableHeight({ header, subheader }) {
   function Pattern({ thisPatern }) {
-    const playFrames = [
+    const playFrames: [number, number][] = [
       [0, 23],
       [24, 95],
     ]
