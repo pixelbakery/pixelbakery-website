@@ -139,7 +139,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
             })}
           >
             <input
-              className='bg-cream text-2xl font-semibold py-4  px-8 text-blue-dark rounded-xl border-0 w-full my-2 cursor-text'
+              className='bg-cream text-2xl font-semibold py-4  px-8 text-blue-dark rounded-xl border-0 w-full my-2 cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='email'
               placeholder='email'
               {...register('email', { required: true })}
