@@ -10,7 +10,17 @@ export default function Services() {
   return (
     <div>
       <Services_Header serviceName='Emerging Media'>
-        <Lead>Coming Soon 😉 </Lead>
+        <Lead>Let&apos;s get interactive, baby. </Lead>
+        <p>
+          With the development and expansion of social media, mobile marketing, email marketing,
+          instant messaging, and various other digital platforms, it only makes sense that current
+          trends in marketing are ever-evolving. Why not evolve with them?
+        </p>
+        <p>
+          Here at PB, we like to stay up-to-date with the newest techniques and strategies that
+          share information in innovative, interactive ways. Emerging media allows you and your
+          brand to speak closer to your customers than ever before.
+        </p>
       </Services_Header>
       <Services_Subservices />
       <Services_Related />
