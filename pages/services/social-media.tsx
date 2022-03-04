@@ -10,7 +10,8 @@ export default function Services() {
   return (
     <div>
       <Services_Header serviceName='Social Media Kits'>
-        <Lead>Coming Soon 😉 </Lead>
+        <Lead>Engage with your audience on their favorite platforms.</Lead>
+        <p>More details coming soon 😉</p>
       </Services_Header>
       {/* <Services_Subservices />
       <Services_Related /> */}
