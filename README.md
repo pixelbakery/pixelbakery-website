@@ -112,3 +112,11 @@ Instead of using the Video component, use the VimeoVideo component instead. Even
 Here's an example using the following url: https://vimeo.com/246759522
 
 `<VimeoPlayer videoID={'246759522'} />`
+
+## APIs
+
+Here's a list of all the external API calls we make:
+
+- Monday.com
+- Sendgrid
+- Spotify
