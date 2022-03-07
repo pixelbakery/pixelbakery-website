@@ -27,9 +27,9 @@ const clientURL = 'https://backcountry.com'
 
 // Project Header
 const heroVideo = '669198523'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
-const projectIntroduction = 'copy copy copy'
+const projectSubhead = "Motion graphics magic for the G.O.A.T. outdoor retailer."
+const projectExcerpt = 'Turning (Gear)heads with motion graphic magic for the esteemed outdoor retailer, Backcountry.'
+const projectIntroduction = 'Backcountry, an online specialty retailer known for selling the highest-performing outdoor gear, reached out to Pixel Bakery, in need of logo, typeface, and customer experience animations to supplement a series of four YouTube ads for their brand.   <br/>  <br/>The deliverables to each video were to be unique, as each closing logo animation was a subtle nod to a different outdoor industry. Since these ads move so quickly, Pixel Bakery’s main objective was to produce tasteful, quick animations that were punchy, natural, and memorable.   <br/>  <br/>With a tight turnaround time of just under two weeks, the team immediately got to work. Multiple directional concepts were provided for each animation, giving the client a chance to see a handful of options for each deliverable before narrowing down their selections.   <br/>  <br/>Testimonial from client:   <br/>  <br/>Please pass this message along to the broader team. I cannot thank you and your team enough for the collaboration on this project. The animations look absolutely fantastic and everyone that has seen the videos are blown away. I appreciate your willingness to be nimble and adjust on the fly. This project would not have come together without Pixel Bakery and I am eternally grateful.   <br/>  <br/>A million thanks. '
 
 // credits
 const credits = [
