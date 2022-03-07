@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-maddie-work": "next dev -H 192.168.69.92",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
