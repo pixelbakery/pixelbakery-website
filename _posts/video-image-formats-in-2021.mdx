@@ -42,15 +42,19 @@ Okay, Now Onto The List
 
 Please let me know if I'm missing any in the comments below. This is absolutely an incomplete list. I've removed several obscure and unsupported types from the original post.
 
-| File Format / Codec | Maximum Alpha Bit-Depth | Browser Support | Media Type | Pros & Cons / Notes |
-| Apple Pro res 4444 | 16-bit | none | Video / .mov | Massive, uncompressed videos. Generally used for storing masters. |
-| HEVC / h.265 | 10-bit | [Limited to Safari](https://caniuse.com/hevc) | video / .HEVC | Meant to be the successor to h.264 |
-| WebM (VP8 or VP9 video codecs) | 12-bit | [Pretty Decent](https://caniuse.com/webm) | Video / .WebM | Note: Only Chrome will display alpha. Good info [here](https://stackoverflow.com/questions/56532287/video-with-transparency-how-to-display-alpha-channel-of-webm-files-correctly-on) |
-| OpenEXR | 32-bit | none | Image / .exr | has largest HDR spread |
-| PNG | 16-bit | [Completely Supported](https://caniuse.com/png-alpha) | Image / .png | Fun fact, you [can animate PNGs](https://ezgif.com/help/making-animated-png). |
-| TIFF | 32-bit | None | Image / .tiff | Lossy |
-| Animated PNG | 24-bit | [Pretty Decent](https://caniuse.com/apng) | Image / .apng | Way better option than Gifs |
-| GIF | 8-bit | Commonly Supported | Image / .gif | Note: Browsers generally do not support gif alpha layers. Generally are bulky with terrible compression. |
+
+|       File Format / Codec      | Maximum Alpha Bit-Depth |    Browser Support   |   Media Type  |                                            Pros & Cons / Notes                                           |   |
+|:------------------------------:|:-----------------------:|:--------------------:|:-------------:|:--------------------------------------------------------------------------------------------------------:|:-:|
+|       Apple Pro res 4444       |          16-bit         |         none         |  Video / .mov |                     Massive, uncompressed videos. Generally used for storing masters.                    |   |
+|          HEVC / h.265          |          10-bit         |   Limited to Safari  | video / .HEVC |                                    Meant to be the successor to h.264                                    |   |
+| WebM (VP8 or VP9 video codecs) |          12-bit         |     Pretty Decent    | Video / .WebM |                           Note: Only Chrome will display alpha. Good info here                           |   |
+|             OpenEXR            |          32-bit         |         none         |  Image / .exr |                                          has largest HDR spread                                          |   |
+|               PNG              |          16-bit         | Completely Supported |  Image / .png |                                      Fun fact, you can animate PNGs.                                     |   |
+|              TIFF              |          32-bit         |         None         | Image / .tiff |                                                   Lossy                                                  |   |
+|          Animated PNG          |          24-bit         |     Pretty Decent    | Image / .apng |                                        Way better option than Gifs                                       |   |
+|               GIF              |          8-bit          |  Commonly Supported  |  Image / .gif | Note: Browsers generally do not support gif alpha layers. Generally are bulky with terrible compression. |   |
+|                                |                         |                      |               |                                                                                                          |   |
+
 
 Note: h.264 AKA MP4 does NOT support alpha channels.
 
