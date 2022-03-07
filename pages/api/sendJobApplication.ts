@@ -1,6 +1,5 @@
 import mail from '@sendgrid/mail'
 import { join } from 'path'
-import formidable from 'formidable'
 const busboy = require('busboy')
 
 mail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -13,13 +12,6 @@ export const config = {
 export default async function sendJobApplication(req, res) {
   try {
     const { fields, files } = await parseReq(req)
-    // const { fields, files, err } = await new Promise((resolve, reject) => {
-    //   const form = formidable()
-    //   form.parse(req, (err, fields, files) => {
-    //     if (err) reject({ err })
-    //     resolve({ err, fields, files })
-    //   })
-    // })
 
     console.log({ fields, files })
 
@@ -55,7 +47,7 @@ function parseReq(req: any): Promise<any> {
             filename,
             encoding,
             mimeType,
-            data: fileData, // Buffer.from(chunks),
+            data: fileData,
           }
         })
     })
