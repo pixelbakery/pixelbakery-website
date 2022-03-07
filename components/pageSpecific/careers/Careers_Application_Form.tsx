@@ -68,8 +68,6 @@ export default function Careers_Application_Form({ allJobs }) {
       }
     })
 
-    formData.append('what', 'the heck')
-
     await fetch('/api/sendJobApplication', {
       method: 'POST',
       body: formData,
