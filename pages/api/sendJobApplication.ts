@@ -1,25 +1,89 @@
 import mail from '@sendgrid/mail'
-import fs from 'fs'
 import { join } from 'path'
+import formidable from 'formidable'
+const busboy = require('busboy')
+
 mail.setApiKey(process.env.SENDGRID_API_KEY)
 export const config = {
   api: {
-    bodyParser: {
-      sizeLimit: '15mb',
-    },
+    bodyParser: false,
   },
 }
-const peopleDirectory = join(process.cwd(), '/public/')
 
-export default async function sendOnboarding(req, res) {
-  const body = JSON.parse(req.body)
+export default async function sendJobApplication(req, res) {
+  try {
+    const { fields, files } = await parseReq(req)
+    // const { fields, files, err } = await new Promise((resolve, reject) => {
+    //   const form = formidable()
+    //   form.parse(req, (err, fields, files) => {
+    //     if (err) reject({ err })
+    //     resolve({ err, fields, files })
+    //   })
+    // })
 
-  const fs = require('fs')
-  const pathToAttachment = join(peopleDirectory, 'attachment.pdf')
-  const attachment = fs.readFileSync(pathToAttachment).toString('base64')
-  console.log(body.base64File)
+    console.log({ fields, files })
+
+    await sendMail(fields, files)
+
+    return res.status(500).json({ done: true })
+  } catch (e) {
+    console.error('error', e)
+    return res.status(500).json({ done: true })
+  }
+}
+
+function parseReq(req: any): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const fields = {}
+    const files = {}
+    const bb = busboy({ headers: req.headers })
+    bb.on('file', (name, file, info) => {
+      const { filename, encoding, mimeType, ...rest } = info
+      let fileData = null
+      file
+        .on('data', (data) => {
+          console.log(`File [${name}] got ${data.length} bytes`)
+          if (fileData === null) {
+            fileData = data
+          } else {
+            fileData = Buffer.concat([fileData, data])
+          }
+        })
+        .on('close', () => {
+          console.log(`File [${name}] done`)
+          files[name] = {
+            filename,
+            encoding,
+            mimeType,
+            data: fileData, // Buffer.from(chunks),
+          }
+        })
+    })
+    bb.on('field', (name, val, info) => {
+      fields[name] = val
+    })
+    bb.on('close', () => {
+      console.log('Done parsing form!')
+      resolve({ files, fields })
+    })
+    req.pipe(bb)
+  })
+}
+
+async function sendMail(body: any, files: any) {
+  const resume = files.resume
+
+  const tenMegabytes = 10 * 1000 * 1000
+  if (Buffer.byteLength(resume.data) > tenMegabytes) {
+    throw new Error('Resume is too large')
+  }
+  if (resume.mimeType !== 'application/pdf') {
+    throw new Error('Resume must be a pdf')
+  }
+
   await mail.send({
     to: `jordan@pixelbakery.com`,
+    // to: 'henry.sipp@hey.com',
     from: {
       email: 'careers@pixelbakery.com',
       name: 'Pixel Bakery Robot',
@@ -52,13 +116,11 @@ export default async function sendOnboarding(req, res) {
     },
     attachments: [
       {
-        content: `${body.base64File}`,
+        content: `${resume.data.toString('base64')}`,
         filename: 'attachment.pdf',
         type: 'application/pdf',
         disposition: 'attachment',
       },
     ],
   })
-
-  console.log(res.status(200).json({ status: 'Ok' }))
 }

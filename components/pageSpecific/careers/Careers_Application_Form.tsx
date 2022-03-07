@@ -17,22 +17,30 @@ export default function Careers_Application_Form({ allJobs }) {
     handleSubmit,
 
     formState: { errors },
-  } = useForm({})
+  } = useForm({
+    defaultValues: {
+      first_name: 'Henry',
+      middle_name: 'E',
+      last_name: 'Sipp',
+      email: 'henry.sipp@hey.com',
+      phone_number: '4026135110',
+      address_line_1: 'qweqwer',
+      address_line_2: 'qwerqwer',
+      about_personal: 'qwerqwer',
+      about_professional: 'qwerqwer',
+      why: 'asdf',
+    },
+  })
+
   const watchAllFields = watch()
   // Handle the  submit
   const onSubmit = (data) => {
     // setFile(base64File)
-    data.base64File = data.resume[0].toString('base64')
-    console.log(data.resume)
-    console.log(data.base64File)
-
+    // data.base64File = data.resume[0].toString('base64')
     // console.log(base64File)
-
-    //     SendToMailchimp(data)
     // resetField('email')
+    console.log({ data })
     SendToSendgrid(data)
-
-    console.log(errors)
   }
   // file upload
 
@@ -51,13 +59,30 @@ export default function Careers_Application_Form({ allJobs }) {
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
+    const formData = new FormData()
+    Object.keys(data).forEach((key) => {
+      if (key === 'resume') {
+        console.log(data[key])
+        formData.append(key, data[key][0], 'resume.pdf')
+      } else {
+        console.log('append', key, data[key])
+        formData.append(key, data[key])
+      }
+    })
+
+    formData.append('what', 'the heck')
+    console.log({ formData, asdf: Array.from(formData.entries()) })
+
     await fetch('/api/sendJobApplication', {
       method: 'POST',
-      body: JSON.stringify(data),
-    }).then((res) => res.json())
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then(console.log)
   }
-
-  console.log(errors)
 
   // const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
   return (
