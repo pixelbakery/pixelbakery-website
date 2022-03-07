@@ -14,13 +14,13 @@ const tags = [{ name: 'Creative Concepting', url: '/' }]
 
 //client info
 const client = 'SNACKLINS'
-const clientLogo = '/img/client-logos/Black-Sola-Logo.png'
-const clientURL = 'https://pupbox.com'
+const clientLogo = '/img/clients/1x/pixelbakery_client_SNACKLINS.png'
+const clientURL = 'https://snacklins.com/'
 
 // Project Header
 const heroVideo = '640466563'
-const projectSubhead = "i'm a big old subheader"
-const projectExcerpt = 'copy copy copy'
+const projectSubhead = 'big subhead'
+const projectExcerpt = 'An ongoing retainer with the tastiest plant crisps around.'
 const projectIntroduction = 'copy copy copy'
 
 // credits
