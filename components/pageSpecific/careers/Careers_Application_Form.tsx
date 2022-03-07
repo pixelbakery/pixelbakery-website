@@ -62,16 +62,13 @@ export default function Careers_Application_Form({ allJobs }) {
     const formData = new FormData()
     Object.keys(data).forEach((key) => {
       if (key === 'resume') {
-        console.log(data[key])
         formData.append(key, data[key][0], 'resume.pdf')
       } else {
-        console.log('append', key, data[key])
         formData.append(key, data[key])
       }
     })
 
     formData.append('what', 'the heck')
-    console.log({ formData, asdf: Array.from(formData.entries()) })
 
     await fetch('/api/sendJobApplication', {
       method: 'POST',
