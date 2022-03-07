@@ -48,3 +48,16 @@ const redirects = [
     permanent: true,
   },
 ]
+
+export function checkIfFilesAreTooBig(maxSize, files?: [File]): boolean {
+  let valid = true
+  if (files) {
+    files.map((file) => {
+      const size = file.size / 1024 / 1024
+      if (size > maxSize) {
+        valid = false
+      }
+    })
+  }
+  return valid
+}

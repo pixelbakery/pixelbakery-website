@@ -19,11 +19,26 @@ module.exports = {
   productionBrowserSourceMaps: true,
   async redirects() {
     return [
-      // {
-      //   source: '/',
-      //   destination: '/store',
-      //   permanent: false,
-      // },
+      {
+        source: '/monday',
+        destination: 'https://pixelbakery.monday.com',
+        permanent: true,
+      },
+      {
+        source: '/harvest',
+        destination: 'https://pixelbakery.harvestapp.com',
+        permanent: true,
+      },
+      {
+        source: '/book',
+        destination: 'https://calendly.com/pixelbakery',
+        permanent: true,
+      },
+      {
+        source: '/zoom',
+        destination: 'https://unl.zoom.us/j/91258744342?pwd=aTlldnpybXk3ZFNLVkNuSStFaEFKZz09',
+        permanent: true,
+      },
       {
         source: '/futurebakers/',
         destination: '/careers/',

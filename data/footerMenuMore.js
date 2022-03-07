@@ -9,10 +9,7 @@ export default [
     text: 'Nebraska Creative',
     url: 'https://nebraska-creative.com',
   },
-  {
-    text: 'Bakery Login',
-    url: '/login',
-  },
+
   {
     text: 'Motion Mixer',
     url: '/logo-animation',
@@ -20,6 +17,6 @@ export default [
 
   {
     text: 'Pay-What-Ya-Want Web Hosting',
-    url: '/logo-animation',
+    url: '/services/web-hosting',
   },
 ]
