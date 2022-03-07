@@ -17,7 +17,7 @@ export default async function sendJobApplication(req, res) {
 
     await sendMail(fields, files)
 
-    return res.status(500).json({ done: true })
+    return res.status(200).json({ done: true })
   } catch (e) {
     console.error('error', e)
     return res.status(500).json({ done: true })
