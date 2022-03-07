@@ -22,6 +22,8 @@ function Services_Header({ serviceName, children, className }: PropsWithChildren
             muted
             autoPlay
             loop
+            playsInline
+            controls={false}
             preload='true'
             className='absolute object-cover  w-full h-full'
           >

@@ -1,7 +1,7 @@
 export default {
   tierOne: {
     title: 'Essentials',
-    cost: '155',
+    cost: '1600',
     concepts: '1 concept',
     revisions: '1 round of revisions',
     transitionIn: '✅ Transition In',
@@ -16,7 +16,7 @@ export default {
   },
   tierTwo: {
     title: 'Standard',
-    cost: '155',
+    cost: '2600',
     concepts: '2 concepts',
     revisions: '2 rounds of revisions',
     transitionIn: '✅ Transition In',
@@ -31,7 +31,7 @@ export default {
   },
   tierThree: {
     title: 'Gourmet',
-    cost: '155',
+    cost: '2600',
     concepts: '3 concepts',
     revisions: '2 rounds of revisions',
     transitionIn: '✅ Transition In',
@@ -46,7 +46,7 @@ export default {
   },
   tierFour: {
     title: 'Kitchen sink',
-    cost: '155',
+    cost: '4600',
     concepts: '3 concepts',
     revisions: '2 rounds of revisions',
     transitionIn: '✅ Transition In',

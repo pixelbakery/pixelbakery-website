@@ -1,5 +1,7 @@
 import Education_Header_Link from './Education_Header_Link'
 import dynamic from 'next/dynamic'
+import Lead from '@typography/Lead'
+import H1 from '@typography/H1'
 
 const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
 
@@ -11,14 +13,9 @@ function Education_Header() {
       </div>
       <div className='bg-white col-span-4 sm:col-span-3  pt-24 lg:pt-12  h-full w-full overflow-hidden flex flex-col justify-center  z-10'>
         <div className='max-w-xl mx-auto px-8  py-8'>
-          <h1 className='text-5xl lg:text-7xl text-blue-dark leading-none mt-0 pt-0'>Education</h1>
-          <div className='text-peach mb-8 lg:mb-16 mt-4  pb-0 font-medium lg:font-semibold 2xl:text-lg lg:text-xl lowercase leading-tight'>
-            Our success is a direct result of the people that we meet, whether that be our
-            employees, our clients, or community members. As such, we believe in giving back to our
-            community through education. We are proponents of breaking down any barriers (e.g.
-            monetary costs) that prevent creativity and believe that everyone should have access to
-            high-quality educational experiences and resources.
-          </div>
+          <H1 className='text-5xl lg:text-7xl text-blue-dark leading-none mt-0 pt-0'>Education</H1>
+          <Lead color='peach'>Education should be accessable, free, and open-source.</Lead>
+
           <div>
             <Education_Header_Link
               header={'project files'}
