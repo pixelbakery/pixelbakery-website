@@ -15,6 +15,14 @@ export default async function sendJobApplication(req, res) {
 
     console.log({ fields, files })
 
+    const resume = files.resume
+    const tenMegabytes = 10 * 1000 * 1000
+    if (Buffer.byteLength(resume.data) > tenMegabytes) {
+      throw new Error('Resume is too large')
+    }
+    if (resume.mimeType !== 'application/pdf') {
+      throw new Error('Resume must be a pdf')
+    }
     await sendMail(fields, files)
 
     return res.status(200).json({ done: true })
@@ -64,14 +72,6 @@ function parseReq(req: any): Promise<any> {
 
 async function sendMail(body: any, files: any) {
   const resume = files.resume
-
-  const tenMegabytes = 10 * 1000 * 1000
-  if (Buffer.byteLength(resume.data) > tenMegabytes) {
-    throw new Error('Resume is too large')
-  }
-  if (resume.mimeType !== 'application/pdf') {
-    throw new Error('Resume must be a pdf')
-  }
 
   await mail.send({
     to: `jordan@pixelbakery.com`,
