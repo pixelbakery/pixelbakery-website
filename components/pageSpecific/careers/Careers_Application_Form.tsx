@@ -18,18 +18,7 @@ export default function Careers_Application_Form({ allJobs }) {
 
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      first_name: 'Henry',
-      middle_name: 'E',
-      last_name: 'Sipp',
-      email: 'henry.sipp@hey.com',
-      phone_number: '4026135110',
-      address_line_1: 'qweqwer',
-      address_line_2: 'qwerqwer',
-      about_personal: 'qwerqwer',
-      about_professional: 'qwerqwer',
-      why: 'asdf',
-    },
+    defaultValues: {},
   })
 
   const watchAllFields = watch()
