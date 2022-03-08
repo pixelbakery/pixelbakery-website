@@ -6,16 +6,28 @@ import { InlineWidget } from 'react-calendly'
 function Onboarding_Calendly() {
   return (
     <PageSection color='pink'>
-      <InnerWrapper className='-mx-4'>
+      <InnerWrapper className='-mx-4 md:mx-auto'>
         <H2 color='cream'>Schedule a meeting</H2>
-        <InlineWidget
-          url='https://calendly.com/pixelbakery/exploratory-meeting'
-          styles={{
-            height: '1250px',
-            width: '100%',
-            overflow: 'hidden',
-          }}
-        />
+        <div className='xl:hidden'>
+          <InlineWidget
+            url='https://calendly.com/pixelbakery/exploratory-meeting'
+            styles={{
+              height: '1250px',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          />
+        </div>
+        <div className='hidden xl:block'>
+          <InlineWidget
+            url='https://calendly.com/pixelbakery/exploratory-meeting'
+            styles={{
+              height: '800px',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          />
+        </div>
       </InnerWrapper>
     </PageSection>
   )
