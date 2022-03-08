@@ -1686,6 +1686,13 @@
   dependencies:
     "@types/estree" "*"
 
+"@types/busboy@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@types/busboy/-/busboy-1.3.0.tgz#c298cb392d0172f1171333d5cb71d60f63b13a38"
+  integrity sha512-Qx7ehfGO/k2yiTVpRIVIu16oVgbJpG65WLjEhbNSoTPdQEoRCorFUKHsSznyHmIkdvzOg2W3JWeewCmfSwcgeA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/chec__commerce.js@*", "@types/chec__commerce.js@^2.8.4":
   version "2.8.4"
   resolved "https://registry.yarnpkg.com/@types/chec__commerce.js/-/chec__commerce.js-2.8.4.tgz#9f671a1ebeb16ee2c21de0fd19cfaeb6c4c5a780"
@@ -2596,6 +2603,13 @@ builtins@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/builtins/-/builtins-1.0.3.tgz#cb94faeb61c8696451db36534e1422f94f0aee88"
   integrity sha1-y5T662HIaWRR2zZTThQi+U8K7og=
+
+busboy@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/busboy/-/busboy-1.4.0.tgz#7bb6ea83e672516ab62b7c3c418b5942f88b45bb"
+  integrity sha512-TytIELfX6IPn1OClqcBz0NFE6+JT9e3iW0ZpgnEl7ffsfDxvRZGHfPaSHGbrI443nSV3GutCDWuqLB6yHY92Ew==
+  dependencies:
+    streamsearch "^1.1.0"
 
 cacheable-request@^6.0.0:
   version "6.1.0"
@@ -7508,6 +7522,11 @@ state-toggle@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/state-toggle/-/state-toggle-1.0.3.tgz#e123b16a88e143139b09c6852221bc9815917dfe"
   integrity sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==
+
+streamsearch@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
+  integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 string-width@^2.0.0, string-width@^2.1.1:
   version "2.1.1"
