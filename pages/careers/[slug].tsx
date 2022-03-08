@@ -2,7 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
 import Link from 'next/link'
@@ -29,9 +28,6 @@ const components = {
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
-
-  Video: Video,
-  TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
 
