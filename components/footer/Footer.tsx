@@ -6,11 +6,12 @@ import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Mailchimp2 from 'components/footer/Footer_Croissant'
-import footerMenu from '@data/footerMenu'
-import footerMenuMore from '@data/footerMenuMore'
+import nav_footer_main from '@data/nav_footer_main'
+import nav_footer_sub from '@data/nav_footer_sub'
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { InstagramGallery } from '@parts/Instagram'
+import H3 from '@typography/H3'
 
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
@@ -34,7 +35,7 @@ export const Footer: NextPage = () => {
   return (
     <div>
       <footer
-        className='relative bg-peach px-6 lg:px-12 py-6 lg:py-24 lg:max-h-screen mb-4'
+        className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 xl:max-h-screen mb-4'
         id='footer'
       >
         <section
@@ -52,8 +53,8 @@ export const Footer: NextPage = () => {
               </div>
 
               <nav className=' pt-5 mt-3'>
-                <ul className='grid grid-cols-2 lg:grid-cols-1  text-left text-xl lg:text-4xl font-semibold gap-x-2 lg:font-black'>
-                  {footerMenu.map((navitem) => (
+                <ul className='grid grid-cols-2 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
+                  {nav_footer_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
                 </ul>
@@ -63,9 +64,9 @@ export const Footer: NextPage = () => {
             <div className='flex flex-col justify-between h-full md:pr-6'>
               <div className='self-center w-full hidden lg:block'>
                 <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
-                  <h3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
+                  <H3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
                     studio
-                  </h3>
+                  </H3>
                 </div>
                 <div>
                   <ul className='mt-3 text-center md:text-left'>
@@ -88,15 +89,15 @@ export const Footer: NextPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className='lg:pt-4 md:pr-4'>
+              <div className='xl:pt-4 md:pr-4'>
                 <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
-                  <h3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                  <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
                     more stuff
-                  </h3>
+                  </H3>
                 </div>
-                <nav className='flex justify-center'>
-                  <ul className='mt-3 grid grid-cols-2 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
-                    {footerMenuMore.map((navitem) => (
+                <nav className=''>
+                  <ul className='mt-3 mb-0 grid grid-cols-2 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
+                    {nav_footer_sub.map((navitem) => (
                       <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
                     ))}
                   </ul>
@@ -105,10 +106,10 @@ export const Footer: NextPage = () => {
             </div>
 
             <div className='flex flex-col justify-between h-full'>
-              <div className='text-center lg:mb-4'>
+              <div className='text-center xl:mb-4'>
                 <Footer_HappyCard />
               </div>
-              <div className='w-full lg:py-4 lg:my-3'>
+              <div className='w-full lg:py-4 xl:my-3'>
                 <div className='w-full' id='footer-social'>
                   <Footer_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
                 </div>
@@ -130,7 +131,7 @@ export const Footer: NextPage = () => {
               </div>
               <div className='hidden lg:block text-center lg:mt-3'>
                 <a
-                  className='text-cream  text-2xl font-extrabold'
+                  className='text-cream  text-2xl font-extrabold mb-0 pb-0 leading-none'
                   href='mailto:hello@pixelbakery.com'
                   target='_blank'
                   rel='noreferrer'

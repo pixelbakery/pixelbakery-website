@@ -60,7 +60,7 @@ const Recipes_SmallPost = ({
                   <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />
                 </span>
               </div>
-              <h2 className='mt-1 mb-0 pt-1 text-xl md:text-2xl font-semibold leading-none md:leading-tight text-blue-dark'>
+              <h2 className='mt-1 mb-0 pt-1 text-xl md:text-2xl font-semibold leading-none xl:leading-tight text-blue-dark'>
                 {title}
               </h2>
               <div className='flex-grow 2xl:flex-initial'>
