@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
+import H2 from '@typography/H2'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
 // CaseStudies_Description.propTypes = {
 //   header: PropTypes.string.isRequired,
 //   headerColor: PropTypes.string,
@@ -32,16 +35,25 @@ function CaseStudies_Description({ children, ...props }: Props) {
   if (props.headerColor == undefined) {
     headerColor = 'pink-light'
   } else headerColor = props.headerColor
+
   return (
-    <section className={cn('py-16 my-4', `bg-${bgColor}`)}>
-      <div className={cn('mx-auto px-8  sm:max-w-sm md:max-w-6xl')}>
-        {/* <GridCols columns={6} gap={4} /> */}
-        <h2 className={cn(' text-left mt-0 pt-0 text-4xl max-w-md', `text-${props.headerColor}`)}>
-          {props.header}
-        </h2>
-        <div className={cn(`text-${props.textColor}`)}>{children}</div>
-      </div>
-    </section>
+    <PageSection color={bgColor}>
+      <InnerWrapper>
+        <div className='grid grid-cols-1 lg:grid-cols-5'>
+          <div className='col-span-1 lg:col-span-2'>
+            <H2
+              className={cn(' text-left mt-0 pt-0 text-4xl max-w-md', `text-${props.headerColor}`)}
+            >
+              {props.header}
+            </H2>
+          </div>
+          <div className='col-span-1 lg:col-span-3'>
+            {' '}
+            <div className={cn(`max-w-lg text-${props.textColor}`)}>{children}</div>
+          </div>
+        </div>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 export default CaseStudies_Description

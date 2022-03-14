@@ -35,9 +35,18 @@ All icons are sized relative to the other icons. This gives the line thickness a
 
 ## Creating new case studies
 
-If you see the following error:
-`TypeError: undefined is not an object (evaluating 'prev.slug')`
-This means that the title in the datafile does not match the title in the project page.
+### Credits
+
+You can add a URL field if the person has a website (such as an IMDB) to link to. For example, it could look like this:
+
+```
+credits:
+  - name: Jordan Lambrecht
+    title: Creative Director
+    website: 'https://google.com'
+```
+
+Remove the URL line if you are not including it.
 
 ## Blog Posts
 

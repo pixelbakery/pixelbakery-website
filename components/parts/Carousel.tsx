@@ -9,12 +9,6 @@ import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import { ChevronRightIcon } from '@images/UI_Icons'
 
-const shimmer = (w, h) => `
-    <svg width="${w}+30" height="${h}+30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="g"><stop stop-color="rgba(56, 204, 255, 0.25)" offset="0%" /><stop stop-color="rgba(0, 81, 116, 0.25)" offset="50%" /><stop stop-color="rgba(56, 204, 255,0.25)" offset="100%" /></linearGradient></defs><rect width="${w}" height="${h}" fill="rgbq(56, 204, 255,0.25)" /><rect id="r" width="${w}" height="${h}" fill="url(#g)" /><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
-
-const toBase64 = (str) =>
-  typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)
-
 function Carousel({ slides }) {
   console.log(slides)
   function SetSlide({ slide }) {
@@ -56,7 +50,7 @@ function Carousel({ slides }) {
       >
         {slides.map((slide) => {
           return (
-            <SwiperSlide key={slide.src}className='bg-blue-dark'>
+            <SwiperSlide key={slide.src} className='bg-blue-dark'>
               <SetSlide slide={slide} />
             </SwiperSlide>
           )
