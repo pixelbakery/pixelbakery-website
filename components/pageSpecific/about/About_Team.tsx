@@ -47,10 +47,6 @@ function About_Team({ people }) {
   }
 
   const filtered = shuffled.filter((person) => person.active)
-
-  // filtered.forEach((person) => {
-  //   console.log(person.name)
-  // })
   const addHeadshot = filtered.map((person, index) => {
     return (
       <About_Team_Headshot

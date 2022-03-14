@@ -25,7 +25,6 @@ mail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function sendCroissant(req, res) {
   const body = JSON.parse(req.body)
-  console.log('Sendgrid API: ', body.email)
   const rand = Math.floor(Math.random() * pastries.length)
   const randomPastry = pastries[rand]
   const message = `

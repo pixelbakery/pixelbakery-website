@@ -9,7 +9,6 @@ import PostHeader from '@recipes/post-header'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { getAllPeople } from '@lib/api_person'
 const readingTime = require('reading-time')
-import ReactPlayer from 'react-player'
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
@@ -54,16 +53,7 @@ function shuffleArray(array) {
   }
   return array
 }
-export default function PostPage({
-  slug,
-  source,
-  filePath,
-  frontMatter,
-  ourPerson,
-  relatedPosts,
-  prev,
-  next,
-}) {
+export default function PostPage({ source, filePath, frontMatter, ourPerson, relatedPosts }) {
   const myContainer = useRef(null)
   const [readTime, setReadTime] = useState('')
   const childRef = useRef(null)
@@ -110,7 +100,7 @@ export default function PostPage({
           <Recipes_Post_Tags tags={frontMatter.tags} />
         </section>
       </div>
-      <PageSection color={'pink-light'}>
+      {/* <PageSection color={'pink-light'}>
         <InnerWrapper className='py-2 my-2'>
           <div className='flex justify-between'>
             <Link as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
@@ -140,7 +130,7 @@ export default function PostPage({
             </Link>
           </div>
         </InnerWrapper>
-      </PageSection>
+      </PageSection> */}
       <Recipes_Posts_Related relatedPosts={relatedPosts} />
     </Main>
   )
@@ -209,28 +199,28 @@ export const getStaticProps = async ({ params }) => {
     }
   }
 
-  const index = allPosts
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-    .findIndex((post) => post.data.title === data.title)
+  // const index = allPosts
+  //   .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+  //   .findIndex((post) => post.data.title === data.title)
 
-  const getPrev = (i) => {
-    if (i === 0) {
-      return allPosts[allPosts.length - 1]
-    } else {
-      return allPosts[i - 1]
-    }
-  }
+  // const getPrev = (i) => {
+  //   if (i === 0) {
+  //     return allPosts[allPosts.length - 1]
+  //   } else {
+  //     return allPosts[i - 1]
+  //   }
+  // }
 
-  const getNext = (i) => {
-    if (i === allPosts.length - 1) {
-      return allPosts[0]
-    } else {
-      return allPosts[i + 1]
-    }
-  }
+  // const getNext = (i) => {
+  //   if (i === allPosts.length - 1) {
+  //     return allPosts[0]
+  //   } else {
+  //     return allPosts[i + 1]
+  //   }
+  // }
 
-  const prev = getPrev(index)
-  const next = getNext(index)
+  // const prev = getPrev(index)
+  // const next = getNext(index)
 
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
 
@@ -249,8 +239,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       relatedPosts: relatedPosts,
-      prev: prev,
-      next: next,
+      // prev: prev,
+      // next: next,
       source: mdxSource,
       frontMatter: data,
       ourPerson: { ...ourPerson },

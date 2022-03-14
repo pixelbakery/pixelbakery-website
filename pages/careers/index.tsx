@@ -18,7 +18,6 @@ import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 
 const Careers = ({ allJobs }) => {
-  console.log('test')
   const openPositions = allJobs.filter((job) => job.data.openPositions && job.data.active)
   const apprenticeships = allJobs.filter((job) => job.data.apprenticeship && job.data.active)
 

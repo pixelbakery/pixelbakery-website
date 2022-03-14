@@ -4,7 +4,6 @@ mail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function sendOnboarding(req, res) {
   const body = JSON.parse(req.body)
-  console.log('Sendgrid API: ', body.email)
   const message = `
   <p>A new logo animation requesst form has been submitted. Here are the details:</p>
   <ul>
@@ -30,6 +29,4 @@ export default async function sendOnboarding(req, res) {
     text: message,
     html: message.replace(/\r\n/g, '<br>'),
   })
-
-  console.log(res.status(200).json({ status: 'Ok' }))
 }

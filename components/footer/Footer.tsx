@@ -19,7 +19,6 @@ export const Footer: NextPage = () => {
 
   const updateModal = () => {
     setTestModal(!testModalOpen)
-    console.log(testModalOpen)
   }
 
   // GSAP FOR MODAL
@@ -28,9 +27,7 @@ export const Footer: NextPage = () => {
     else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
     return () => {}
   })
-  // const updateStars = (star) => {
-  //   setSelectedStar(star)
-  // }
+
   const year = new Date().getFullYear()
   return (
     <div>

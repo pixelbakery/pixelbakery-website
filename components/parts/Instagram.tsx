@@ -17,7 +17,6 @@ export const InstagramGallery = (props: GalleryProps) => {
         return response.json()
       })
       .then((data) => {
-        // console.log({ data })
         if (data.hasOwnProperty('error')) {
           setLoading(false)
           setError(true)

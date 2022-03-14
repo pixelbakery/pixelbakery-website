@@ -43,7 +43,6 @@ function Education_TutorialRequests() {
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => SendToMonday(data)
-  console.log(errors)
 
   return (
     <PageSection>

@@ -15,7 +15,9 @@ function CaseStudies_Tags({ tags }) {
           <h3 className='text-center text-2xl text-pink mb-6'>here&apos;s what we did</h3>
           <div className='flex flex-row justify-center gap-3 flex-wrap'>
             {Object.values(tags).map(([index, tag]) => {
-              return <Pill text={tag} bgColor={'blue'} textColor={'blue-dark'} size={'sm'} />
+              return (
+                <Pill key={index} text={tag} bgColor={'blue'} textColor={'blue-dark'} size={'sm'} />
+              )
             })}
           </div>
         </div>

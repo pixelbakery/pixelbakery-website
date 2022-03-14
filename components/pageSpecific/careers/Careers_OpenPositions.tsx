@@ -3,8 +3,6 @@ import PageSection from '@parts/PageSection'
 import Careers_Card from './Careers_Card'
 import cn from 'classnames'
 function Careers_OpenPositions({ jobs, header, subheader }) {
-  // jobs.forEach((job) => console.log(job.data.title))
-
   return (
     <PageSection className='lg:py-12'>
       <InnerWrapper>

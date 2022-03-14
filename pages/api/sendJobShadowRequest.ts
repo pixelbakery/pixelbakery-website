@@ -4,8 +4,6 @@ mail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function sendOnboarding(req, res) {
   const body = JSON.parse(req.body)
-  console.log('Sendgrid API: ', body.email)
-  console.log('No Parents: ', body.checkNoParents)
   let agree1 = "I'm filling this out for myself: "
   let agree2 = 'I have at least 3 people in my group: '
   let agree3 = 'Signed up for the newsletter: '
@@ -50,6 +48,4 @@ export default async function sendOnboarding(req, res) {
     text: message,
     html: message.replace(/\r\n/g, '<br>'),
   })
-
-  console.log(res.status(200).json({ status: 'Ok' }))
 }
