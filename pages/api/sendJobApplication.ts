@@ -1,3 +1,4 @@
+import { getTodaysDate } from '@lib/helpers'
 import mail from '@sendgrid/mail'
 import { join } from 'path'
 const busboy = require('busboy')
@@ -72,6 +73,7 @@ function parseReq(req: any): Promise<any> {
 
 async function sendMail(body: any, files: any) {
   const resume = files.resume
+  const attachmentName = `${body.first_name}_${body.last_name}_${getTodaysDate()}_resume`
 
   await mail.send({
     to: `jordan@pixelbakery.com`,
@@ -109,7 +111,7 @@ async function sendMail(body: any, files: any) {
     attachments: [
       {
         content: `${resume.data.toString('base64')}`,
-        filename: 'attachment.pdf',
+        filename: `${attachmentName}.pdf`,
         type: 'application/pdf',
         disposition: 'attachment',
       },
