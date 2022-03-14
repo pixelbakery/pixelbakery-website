@@ -12,8 +12,10 @@ module.exports = {
       //     fs: false,
       //   },
       // },
-    })
-
+    }),
+      (config.resolve.alias = Object.assign({}, config.resolve.alias, {
+        'react-pdf': 'react-pdf/dist/entry.noworker.js',
+      }))
     return config
   },
   productionBrowserSourceMaps: true,
