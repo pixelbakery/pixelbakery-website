@@ -1,12 +1,9 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import DateFormatter from '@lib/date-formatter'
-import H2AndLead from '@typography/H2AndLead'
-
 import Careers_Card from './Careers_Card'
 import cn from 'classnames'
 function Careers_OpenPositions({ jobs, header, subheader }) {
-  jobs.forEach((job) => console.log(job.data.title))
+  // jobs.forEach((job) => console.log(job.data.title))
 
   return (
     <PageSection className='lg:py-12'>

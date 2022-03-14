@@ -108,7 +108,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
   // END GSAP
   return (
     <div className='flex flex-col justify-between mx-6'>
-      <div className='flex flex-col mt-12 lg:mt-24 justify-start'>
+      <div className='flex flex-col mt-12 xl:mt-24 justify-start'>
         <div className=' self-center'>
           <button
             onClick={handleOnClick}
@@ -119,19 +119,21 @@ function Footer_Mailchimp({ onModalUpdate }) {
 
           <h2
             color='cream'
-            className='font-bold max-w-md text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none 2xl:mb-20 mb-2 mt-3 text-cream'
+            className='font-bold max-w-md text-5xl sm:text-5xl xl:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none 2xl:mb-20 mb-2 mt-3 text-cream'
             dangerouslySetInnerHTML={{
               __html: message ? message : `a delicious surprise on us.`,
             }}
           ></h2>
-          <Lead
-            color='cream'
-            className={cn('opacity-100 transition-opacity duration-500 lg:mb-8', {
-              ['opacity-0 pointer-events-none']: submitted,
-            })}
+          <p
+            className={cn(
+              'text-cream leading-none max-w-lg opacity-100 transition-opacity duration-500 mb-4 md:mb-6 xl:mb-8 pb-0 xl:mb-4 text-xl xl:text-3xl',
+              {
+                ['opacity-0 pointer-events-none lg:mb-2 text-lg lg:text-lg']: submitted,
+              },
+            )}
           >
             enter your email below and we'll send you a free pastry
-          </Lead>
+          </p>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className={cn('opacity-100 transition-opacity duration-500 ', {
@@ -139,7 +141,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
             })}
           >
             <input
-              className='bg-cream text-2xl font-semibold py-4  px-8 text-blue-dark rounded-xl border-0 w-full my-2 cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='bg-cream text-xl xl:text-2xl font-semibold py-4  px-8 text-blue-dark rounded-xl border-0 w-full my-2 cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='email'
               placeholder='email'
               {...register('email', { required: true })}
@@ -149,7 +151,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
             <div className='my-2 flex justify-start '>
               <input
                 className={
-                  'rounded-lg bg-cream border-6 border-cream p-2 my-2 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
+                  'rounded-lg bg-cream border-6 border-cream p-1 xl:p-2 my-2 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
                 }
                 type='checkbox'
                 checked={checked}
@@ -158,7 +160,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
               />
               <label
                 className={
-                  'self-center cursor-pointer ml-3 text-cream font-bold font-xl leading-none my-0 py-0'
+                  'self-center cursor-pointer ml-3 text-cream font-medium xl:font-bold font-lg xl:font-2xl leading-none my-0 py-0'
                 }
                 htmlFor='check'
                 onClick={handleCheck}
@@ -169,7 +171,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
 
             <button
               type='submit'
-              className='px-6 py-3 bg-blue-dark rounded-lg my-3 font-bold text-2xl duration-300 hover:scale-98 text-cream shadow-lg'
+              className='px-6 py-3 bg-blue-dark rounded-lg my-3 font-bold text-xl xl:text-2xl duration-300 hover:scale-98 text-cream shadow-lg'
             >
               {'✨ Yummy! ✨ '}
             </button>
