@@ -10,7 +10,6 @@ import 'swiper/css/keyboard'
 import { ChevronRightIcon } from '@images/UI_Icons'
 
 function Carousel({ slides }) {
-  console.log(slides)
   function SetSlide({ slide }) {
     return (
       <div className='relative w-full aspect-w-4 aspect-h-3'>
@@ -43,8 +42,6 @@ function Carousel({ slides }) {
         keyboard={{
           enabled: true,
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
         className=' w-full aspect-w-4 aspect-h-3'
       >

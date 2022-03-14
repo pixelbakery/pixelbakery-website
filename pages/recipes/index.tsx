@@ -16,7 +16,6 @@ const Index = ({ allPosts }) => {
   const [displayed, setDisplayed] = useState(12)
 
   function handleDisplayed() {
-    console.log(displayed)
     if (displayed < Object.keys(allPosts).length) {
       setDisplayed(displayed + 12)
     } else setDisplayed(Object.keys(allPosts).length)

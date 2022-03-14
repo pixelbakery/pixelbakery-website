@@ -14,8 +14,6 @@ export default async function sendJobApplication(req, res) {
   try {
     const { fields, files } = await parseReq(req)
 
-    console.log({ fields, files })
-
     const resume = files.resume
     const tenMegabytes = 10 * 1000 * 1000
     if (Buffer.byteLength(resume.data) > tenMegabytes) {
@@ -43,7 +41,7 @@ function parseReq(req: any): Promise<any> {
       let fileData = null
       file
         .on('data', (data) => {
-          console.log(`File [${name}] got ${data.length} bytes`)
+          // console.log(`File [${name}] got ${data.length} bytes`)
           if (fileData === null) {
             fileData = data
           } else {
@@ -51,7 +49,7 @@ function parseReq(req: any): Promise<any> {
           }
         })
         .on('close', () => {
-          console.log(`File [${name}] done`)
+          // console.log(`File [${name}] done`)
           files[name] = {
             filename,
             encoding,
@@ -64,7 +62,7 @@ function parseReq(req: any): Promise<any> {
       fields[name] = val
     })
     bb.on('close', () => {
-      console.log('Done parsing form!')
+      // console.log('Done parsing form!')
       resolve({ files, fields })
     })
     req.pipe(bb)

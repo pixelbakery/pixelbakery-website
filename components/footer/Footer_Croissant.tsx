@@ -47,9 +47,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
         query: query,
         variables: JSON.stringify(vars),
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(JSON.stringify(res, null, 2)))
+    }).then((res) => res.json())
   }
 
   ////////////
@@ -57,7 +55,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
   ////////////
   async function SendToMailchimp(data) {
     if (checked) {
-      console.log('sending to mailchimp')
       await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -66,7 +63,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
         },
       })
     } else {
-      console.log('not sending to mailchimp')
       return
     }
   }
@@ -74,7 +70,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
-    console.log('sendgrid')
     await fetch('/api/sendCroissant', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -100,8 +95,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
     resetField('email')
     setSubmitted(true)
     setMessage('👩‍🍳 Nice. Check your inbox. <em>bon appetit</em>')
-
-    console.log(errors)
   }
   //////////////////
 

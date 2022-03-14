@@ -11,8 +11,6 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 
 const Work = ({ allCaseStudies }) => {
-  // console.log(allProjects)
-
   return (
     <Main className='max-w-screen overflow-hidden'>
       <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />

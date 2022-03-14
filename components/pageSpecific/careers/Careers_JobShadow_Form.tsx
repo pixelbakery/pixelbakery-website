@@ -49,9 +49,7 @@ function Careers_JobShadow_Form() {
         query: query,
         variables: JSON.stringify(vars),
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(JSON.stringify(res, null, 2)))
+    }).then((res) => res.json())
   }
 
   ////////////
@@ -60,7 +58,6 @@ function Careers_JobShadow_Form() {
   async function SendToMailchimp(data) {
     data.tag = 'Job Shadow'
     if (checked) {
-      console.log('sending to mailchimp')
       await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -69,7 +66,6 @@ function Careers_JobShadow_Form() {
         },
       })
     } else {
-      console.log('not sending to mailchimp')
       return
     }
   }
@@ -77,7 +73,6 @@ function Careers_JobShadow_Form() {
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
-    console.log('sendgrid')
     await fetch('/api/sendJobShadowRequest', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -107,8 +102,6 @@ function Careers_JobShadow_Form() {
     SendToMailchimp(data)
     resetField('email')
     setSubmitted(true)
-
-    console.log(errors)
   }
   //////////////////
 

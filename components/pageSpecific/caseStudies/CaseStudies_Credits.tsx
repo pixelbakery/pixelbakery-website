@@ -9,7 +9,7 @@ CaseStudies_Credits.propTypes = {
 
 function CaseStudies_Credits({ credits }) {
   const firstcolumn = Math.floor(credits.length / 2)
-  console.log(credits.length)
+
   const innerHtml = (name, title) => {
     return (
       <span>

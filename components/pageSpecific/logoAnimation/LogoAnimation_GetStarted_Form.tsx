@@ -20,9 +20,6 @@ export default function LogoAnimation_GetStarted_Form() {
   } = useForm()
   // Handle the submit
   const onSubmit = (data) => {
-    console.log(data)
-    console.log(errors)
-
     // SendToSendgrid(data)
     sendToMonday(data)
     SendToMailchimp(data)
@@ -37,8 +34,6 @@ export default function LogoAnimation_GetStarted_Form() {
     )
 
     setSubmitted(true)
-
-    console.log(errors)
   }
 
   ////////////
@@ -47,7 +42,6 @@ export default function LogoAnimation_GetStarted_Form() {
   async function SendToMailchimp(data) {
     data.tag = 'Logo Animation Form'
     if (checked) {
-      console.log('sending to mailchimp')
       await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -56,7 +50,6 @@ export default function LogoAnimation_GetStarted_Form() {
         },
       })
     } else {
-      console.log('not sending to mailchimp')
       return
     }
   }
@@ -93,15 +86,12 @@ export default function LogoAnimation_GetStarted_Form() {
         query: query,
         variables: JSON.stringify(vars),
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(JSON.stringify(res, null, 2)))
+    }).then((res) => res.json())
   }
   ///////////
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
-    console.log('sendgrid')
     await fetch('/api/sendLogoAnimation ', {
       method: 'POST',
       body: JSON.stringify(data),

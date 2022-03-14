@@ -8,7 +8,6 @@ function SolaTinyChef_OtherProjects({ title, client }) {
   const relatedProjects = allProjects.filter(
     (project) => project.client === client && project.title != title,
   )
-  console.log('related projects: ', relatedProjects.length)
   const setFirstTag = (tags) => {
     return [tags[0]]
   }

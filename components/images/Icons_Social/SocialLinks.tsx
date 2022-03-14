@@ -19,7 +19,6 @@ const Icon = ({ icon, title, titleId, className }) => {
 // If props 'height' and 'width' are passed, they will override textSize
 const SocialLinks = ({ iconName, ...props }) => {
   const link = getLinks[iconName]
-  // console.log(iconName)
   return (
     <div>
       <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
