@@ -1,32 +1,38 @@
-import Lead from '@typography/Lead'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import cn from 'classnames'
 import 'react-toastify/dist/ReactToastify.css'
-import ReactPDF, { PDFViewer, usePDF } from '@react-pdf/renderer'
-import CareersApplicationPDF from '@lib/careersApplicationPDF'
-import ReactDOM from 'react-dom'
+
 export default function Careers_Application_Form({ allJobs }) {
   const [submitted, setSubmitted] = useState(false)
 
-  // const [instance, update] = usePDF({ document })
+  const [file, setFile] = useState(null)
+  const [fileName, setFileName] = useState('')
+
+  // function handleUpload(event) {
+  //   setFile(event.target.files[0])
+  // }
   const {
     register,
     watch,
     handleSubmit,
-    resetField,
-    formState: { errors },
-  } = useForm()
-  const watchAllFields = watch()
-  // Handle the submit
-  const onSubmit = (data) => {
-    //     SendToMailchimp(data)
-    resetField('email')
-    setSubmitted(true)
-    //     setMessage('👩‍🍳 Nice. Check your inbox. <em>bon appetit</em>')
 
-    console.log(errors)
+    formState: { errors },
+  } = useForm({
+    defaultValues: {},
+  })
+
+  const watchAllFields = watch()
+  // Handle the  submit
+  const onSubmit = (data) => {
+    // setFile(base64File)
+    // data.base64File = data.resume[0].toString('base64')
+    // console.log(base64File)
+    // resetField('email')
+    console.log({ data })
+    SendToSendgrid(data)
   }
+  // file upload
+
   //   auth checkbox
   const [authorized, setAuthorized] = useState(false)
   const handleAuthorized = () => {
@@ -37,9 +43,32 @@ export default function Careers_Application_Form({ allJobs }) {
   const handleMailchimp = () => {
     setMailchimp(!mailchimp)
   }
-  console.log(errors)
 
-  const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
+  ///////////
+  // SENDGRID
+  ///////////
+  async function SendToSendgrid(data) {
+    const formData = new FormData()
+    Object.keys(data).forEach((key) => {
+      if (key === 'resume') {
+        formData.append(key, data[key][0], 'resume.pdf')
+      } else {
+        formData.append(key, data[key])
+      }
+    })
+
+    await fetch('/api/sendJobApplication', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then(console.log)
+  }
+
+  // const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='mx-auto max-w-4xl grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-10'>
@@ -55,21 +84,21 @@ export default function Careers_Application_Form({ allJobs }) {
             type='text'
             required
             placeholder='First'
-            {...register('name_first', {})}
+            {...register('first_name', {})}
           />
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             required
             type='text'
             placeholder='Middle'
-            {...register('name_middle', {})}
+            {...register('middle_name', {})}
           />
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             required
             type='text'
             placeholder='Last'
-            {...register('name_last', {})}
+            {...register('last_name', {})}
           />
         </div>
 
@@ -98,14 +127,14 @@ export default function Careers_Application_Form({ allJobs }) {
         </div>
 
         <div className='col-span-2 lg:col-span-1'>
-          <label className='required' htmlFor='phone'>
+          <label className='required' htmlFor='phone_number'>
             Phone Number
           </label>
           <input
             type='tel'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='Phone'
-            {...register('phone', {})}
+            {...register('phone_number', {})}
           />
         </div>
 
@@ -177,15 +206,15 @@ export default function Careers_Application_Form({ allJobs }) {
           <select
             required
             className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register}
+            {...register('education', {})}
           >
             <option value='High School Diploma'>High School Diploma</option>
-            <option value=' Still In College'> Still In College</option>
-            <option value=' Some College'> Some College</option>
-            <option value=" Bachelor's Degree"> Bachelor's Degree</option>
-            <option value=" Master's Degree"> Master's Degree</option>
-            <option value=' Ph.D'> Ph.D</option>
-            <option value=' Self-Educated'> Self-Educated</option>
+            <option value='Still In College'>Still In College</option>
+            <option value='Some College'>Some College</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Mas ter's Degree</option>
+            <option value='Ph.D'>Ph.D (bruh..)</option>
+            <option value='Self-Educated'>Self-Educated</option>
           </select>
         </div>
 
@@ -210,7 +239,7 @@ export default function Careers_Application_Form({ allJobs }) {
         </div>
 
         <div className='col-span-2'>
-          <label className='required' htmlFor='address1'>
+          <label className='required' htmlFor='address_line_1'>
             Address
           </label>
           <div className='flex flex-col gap-2'>
@@ -219,14 +248,14 @@ export default function Careers_Application_Form({ allJobs }) {
               type='text'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='Address'
-              {...register('address1', {})}
+              {...register('address_line_1', {})}
             />
             <input
               required
               type='text'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='City, State, Zip'
-              {...register('address2', {})}
+              {...register('address_line_2', {})}
             />
           </div>
         </div>
@@ -298,12 +327,26 @@ export default function Careers_Application_Form({ allJobs }) {
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             type='file'
+            onChange={setFile}
             placeholder='Upload Your Resume'
-            {...register('resume', {})}
+            {...register('resume', {
+              required: true,
+              validate: {
+                lessThan10MB: (files) => files[0]?.size < 10000000 || 'Max 10MB',
+                acceptedFormats: (files) => files[0].type === 'application/pdf',
+              },
+            })}
           />
+          {errors.resume?.type === 'lessThan10MB' && (
+            <p className='text-peach font-semibold italic'>Error: Must Be Under 10MB</p>
+          )}
+          <h1>{fileName}</h1>
+          {errors.resume?.type === 'acceptedFormats' && (
+            <p className='text-peach font-semibold italic'>Error: Must Be A PDF</p>
+          )}
           <p className='text-sm text-wine-400 mb-0 pb-0'>
-            Accepted file types: pdf, jpg, png, gif, jpeg, Max. file size: 20 MB. Please upload a
-            .pdf under 20MB. If you need help reducing your file size, check out:{' '}
+            Must be a PDF. Please upload a .pdf under 10MB. If you need help reducing your file
+            size, check out:{' '}
             <a href='ilovepdf.com' rel='noopener' target={'_blank'}>
               ilovepdf.com
             </a>

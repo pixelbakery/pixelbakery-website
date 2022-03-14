@@ -45,10 +45,11 @@ function Education_ProjectFiles({ projectFiles }: Props) {
         </H2>
         <p className='text-wine-500 font-medium text-lg max-w-md text-opacity-90 mb-12 mt-0 pt-0 '>
           Expanding educational opportunities is more possible now than ever before with
-          advancements in technology. PB believes open-sourcing our files is one of countless ways
-          we can break down legal, financial, or technical barriers that prevent creativity and
-          believe that everyone should have access to high-quality educational experiences and
-          resources.
+          advancements in technology. <br />
+          <br />
+          PB believes open-sourcing our files is one of countless ways we can break down legal,
+          financial, or technical barriers that prevent creativity and believe that everyone should
+          have access to high-quality educational experiences and resources.
         </p>
         <div className='mb-6 pb-6 pt-6'>
           <ul className='flex flex-wrap gap-8'>

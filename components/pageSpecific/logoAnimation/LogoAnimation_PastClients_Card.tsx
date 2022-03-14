@@ -15,6 +15,8 @@ function LogoAnimation_PastClients_Card({ video, client }) {
           loop
           muted
           showPortrait
+          background
+          dnt
           controls={false}
           responsive={true}
           className=' object-cover w-full h-full'

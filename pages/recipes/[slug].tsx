@@ -21,6 +21,10 @@ import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 import { useEffect } from 'react'
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
+import Link from 'next/link'
+import { ChevronRightIcon } from '@images/UI_Icons'
+import InnerWrapper from '@parts/InnerWrapper'
+import PageSection from '@parts/PageSection'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -50,7 +54,16 @@ function shuffleArray(array) {
   }
   return array
 }
-export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
+export default function PostPage({
+  slug,
+  source,
+  filePath,
+  frontMatter,
+  ourPerson,
+  relatedPosts,
+  prev,
+  next,
+}) {
   const myContainer = useRef(null)
   const [readTime, setReadTime] = useState('')
   const childRef = useRef(null)
@@ -97,7 +110,37 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
           <Recipes_Post_Tags tags={frontMatter.tags} />
         </section>
       </div>
+      <PageSection color={'pink-light'}>
+        <InnerWrapper className='py-2 my-2'>
+          <div className='flex justify-between'>
+            <Link as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
+              <a className='flex'>
+                <div className='w-20 self-center text-peach rotate-180'>
+                  <ChevronRightIcon />
+                </div>
+                <div className='flex flex-col justify-center'>
+                  <p className='text-peach font-semibold text-xl leading-none my-0 py-0 max-w-md'>
+                    {prev.data.title}
+                  </p>
+                </div>
+              </a>
+            </Link>
+            <Link as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
+              <a className='flex'>
+                <div className='flex flex-col justify-center'>
+                  <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
+                    {next.data.title}
+                  </p>
+                </div>
 
+                <div className='w-20 self-center text-peach'>
+                  <ChevronRightIcon />
+                </div>
+              </a>
+            </Link>
+          </div>
+        </InnerWrapper>
+      </PageSection>
       <Recipes_Posts_Related relatedPosts={relatedPosts} />
     </Main>
   )
@@ -166,6 +209,29 @@ export const getStaticProps = async ({ params }) => {
     }
   }
 
+  const index = allPosts
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .findIndex((post) => post.data.title === data.title)
+
+  const getPrev = (i) => {
+    if (i === 0) {
+      return allPosts[allPosts.length - 1]
+    } else {
+      return allPosts[i - 1]
+    }
+  }
+
+  const getNext = (i) => {
+    if (i === allPosts.length - 1) {
+      return allPosts[0]
+    } else {
+      return allPosts[i + 1]
+    }
+  }
+
+  const prev = getPrev(index)
+  const next = getNext(index)
+
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
 
   //END OF RELEVANT POSTS
@@ -183,6 +249,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       relatedPosts: relatedPosts,
+      prev: prev,
+      next: next,
       source: mdxSource,
       frontMatter: data,
       ourPerson: { ...ourPerson },
