@@ -18,7 +18,7 @@ export const jobFilePaths = fs.readdirSync(JOBS_PATH).filter((path) => /\.mdx?$/
 
 // CASE STUDIES
 
-// export const CASESTUDIES_PATH = path.join(process.cwd(), '_work')
-// export const CaseStudiesFilePaths = fs
-//   .readdirSync(CASESTUDIES_PATH)
-//   .filter((path) => /\.mdx?$/.test(path))
+export const CASESTUDIES_PATH = path.join(process.cwd(), '_caseStudies')
+export const caseStudyFilePaths = fs
+  .readdirSync(CASESTUDIES_PATH)
+  .filter((path) => /\.mdx?$/.test(path))

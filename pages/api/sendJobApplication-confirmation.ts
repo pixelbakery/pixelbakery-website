@@ -1,4 +1,7 @@
 import mail from '@sendgrid/mail'
+import { join } from 'path'
+import { getTodaysDate } from '@lib/helpers'
+const busboy = require('busboy')
 
 mail.setApiKey(process.env.SENDGRID_API_KEY)
 export const config = {
@@ -7,8 +10,70 @@ export const config = {
   },
 }
 
-export default async function sendMail(req: any, res: any) {
-  const body = JSON.parse(req.body)
+export default async function sendJobApplication(req, res) {
+  try {
+    const { fields, files } = await parseReq(req)
+
+    console.log({ fields, files })
+
+    const resume = files.resume
+    const tenMegabytes = 10 * 1000 * 1000
+    if (Buffer.byteLength(resume.data) > tenMegabytes) {
+      throw new Error('Resume is too large')
+    }
+    if (resume.mimeType !== 'application/pdf') {
+      throw new Error('Resume must be a pdf')
+    }
+    await sendMail(fields, files)
+
+    return res.status(200).json({ done: true })
+  } catch (e) {
+    console.error('error', e)
+    return res.status(500).json({ done: true })
+  }
+}
+
+function parseReq(req: any): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const fields = {}
+    const files = {}
+    const bb = busboy({ headers: req.headers })
+    bb.on('file', (name, file, info) => {
+      const { filename, encoding, mimeType, ...rest } = info
+      let fileData = null
+      file
+        .on('data', (data) => {
+          console.log(`File [${name}] got ${data.length} bytes`)
+          if (fileData === null) {
+            fileData = data
+          } else {
+            fileData = Buffer.concat([fileData, data])
+          }
+        })
+        .on('close', () => {
+          console.log(`File [${name}] done`)
+          files[name] = {
+            filename,
+            encoding,
+            mimeType,
+            data: fileData,
+          }
+        })
+    })
+    bb.on('field', (name, val, info) => {
+      fields[name] = val
+    })
+    bb.on('close', () => {
+      console.log('Done parsing form!')
+      resolve({ files, fields })
+    })
+    req.pipe(bb)
+  })
+}
+
+async function sendMail(body: any, files: any) {
+  const resume = files.resume
+  const attachmentName = `${body.first_name}_${body.last_name}_${getTodaysDate()}_resume`
 
   await mail.send({
     to: `${body.email}`,
@@ -16,7 +81,7 @@ export default async function sendMail(req: any, res: any) {
       email: 'careers@pixelbakery.com',
       name: 'Pixel Bakery Robot',
     },
-    subject: `Application Submitted – ${body.position}`,
+    subject: `Job Application: ${body.first_name} ${body.last_name} – ${body.position}`,
     templateId: 'd-d5c8482409ad476eb1c58b546f399f98',
     dynamicTemplateData: {
       about_personal: `${body.about_personal}`,
@@ -42,5 +107,13 @@ export default async function sendMail(req: any, res: any) {
       why: `${body.why}`,
       zodiac: `${body.zodiac}`,
     },
+    attachments: [
+      {
+        content: `${resume.data.toString('base64')}`,
+        filename: `${attachmentName}.pdf`,
+        type: 'application/pdf',
+        disposition: 'attachment',
+      },
+    ],
   })
 }
