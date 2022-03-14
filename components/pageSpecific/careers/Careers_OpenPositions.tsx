@@ -29,14 +29,7 @@ function Careers_OpenPositions({ jobs, header, subheader }) {
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4'>
           {jobs.map((job) => {
-            return (
-              <Careers_Card
-                title={job.data.title}
-                location={job.data.location}
-                commitment={job.data.commitment}
-                date={<DateFormatter dateString={job.data.date} />}
-              />
-            )
+            return <Careers_Card job={job} />
           })}
         </div>
       </InnerWrapper>

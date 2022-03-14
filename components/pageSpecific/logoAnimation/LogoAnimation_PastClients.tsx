@@ -6,11 +6,11 @@ import LogoAnimation_PastClients_Card from './LogoAnimation_PastClients_Card'
 
 function LogoAnimation_PastClients() {
   return (
-    <PageSection className='my-4 px-12 py-12' id='descriptions'>
+    <PageSection className='my-4 px-12 py-12 hidden md:block' id='descriptions'>
       <InnerWrapper className='mx-auto max-w-6xl'>
         <div className='mb-12'>
           <H2 className='pb-6'>Past Clients</H2>
-          <Lead>copy copy copy copy copy</Lead>
+          <Lead>Check out some of the other logo animations we&apos;ve done</Lead>
         </div>
         <div className='grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 lg:gap-16'>
           <LogoAnimation_PastClients_Card video='679264267' client='Sampson Construction' />

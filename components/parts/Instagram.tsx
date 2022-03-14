@@ -52,7 +52,7 @@ export const InstagramGallery = (props: GalleryProps) => {
   }
 
   return (
-    <div className='grid grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 gap-2 instagram-gallery'>
+    <div className='grid grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 lg:gap-2 instagram-gallery'>
       {instagramData.data.slice(0, props.count).map((item: any, index: any) => (
         <div
           key={index}

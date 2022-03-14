@@ -15,6 +15,9 @@ export default [
     text: 'we appreciate you.',
   },
   {
+    text: "You're a good person.",
+  },
+  {
     text: "i'm so damn proud of you.",
   },
   {
