@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import 'react-toastify/dist/ReactToastify.css'
-
+import pdf_jobApplicationon from '@lib/pdf_jobApplication'
 export default function Careers_Application_Form({ allJobs }) {
   const [submitted, setSubmitted] = useState(false)
 
@@ -24,12 +24,14 @@ export default function Careers_Application_Form({ allJobs }) {
   const watchAllFields = watch()
   // Handle the  submit
   const onSubmit = (data) => {
+    pdf_jobApplicationon()
     // setFile(base64File)
     // data.base64File = data.resume[0].toString('base64')
     // console.log(base64File)
     // resetField('email')
     console.log({ data })
     SendToSendgrid(data)
+    SendtosSendgridconfirmation(data)
   }
   // file upload
 
@@ -58,6 +60,26 @@ export default function Careers_Application_Form({ allJobs }) {
     })
 
     await fetch('/api/sendJobApplication', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then(console.log)
+  }
+  async function SendtosSendgridconfirmation(data) {
+    const formData = new FormData()
+    Object.keys(data).forEach((key) => {
+      if (key === 'resume') {
+        formData.append(key, data[key][0], 'resume.pdf')
+      } else {
+        formData.append(key, data[key])
+      }
+    })
+
+    await fetch('/api/sendJobApplication-confirmation', {
       method: 'POST',
       body: formData,
       headers: {

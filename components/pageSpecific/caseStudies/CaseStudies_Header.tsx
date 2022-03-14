@@ -34,21 +34,6 @@ function SolaTinyChef_Header({ ...props }) {
         <div className='relative block -mx-6 md:mx-0'>
           <Vimeo video={props.heroVideo} autoplay={false} showPortrait responsive={true} />
         </div>
-        <div className='mx-auto w-40 opacity-75 mt-20 mb-6'>
-          <Image
-            src={props.clientLogo}
-            layout='responsive'
-            width={'850px'}
-            blurDataURL='true'
-            height={'208px'}
-          />
-        </div>
-        <h2 className='mt-0 pt-0 mx-auto text-4xl max-w-sm text-center'>{props.projectSubhead}</h2>
-
-        <p
-          className='mx-auto py-4  mb-4 text-wine text-md max-w-md text-opacity-75'
-          dangerouslySetInnerHTML={{ __html: props.projectIntroduction }}
-        ></p>
       </div>
     </section>
   )
