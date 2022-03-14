@@ -2,59 +2,37 @@ import Link from 'next/link'
 import Button_Filled from '@parts/Button_Filled'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
-
+import nav_main from '@data/nav_main'
 import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
+const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
 
 function Home_Landing() {
   return (
-    <section className='lander  overflow-hidden w-full my-4 flex'>
-      <nav className='w-2/5 xl:w-1/3 max-w-lg bg-pink-light h-full hidden lg:flex flex-col py-10 px-16 '>
-        <div className=' w-full pr-40   text-pink fill-current'>
-          <Logo_Primary className='' />
+    <section className='lander overflow-hidden w-full my-4 flex'>
+      <nav className='w-2/5 xl:w-1/3 max-w-lg bg-pink-light h-full hidden lg:flex flex-col justify-center py-10 px-16 '>
+        <div className='w-24 xl:w-32 2xl:w-52 -mb-6'>
+          <div className=' w-full  text-pink fill-current '>
+            <Logo_Primary className='' />
+          </div>
         </div>
-        <div className='flex-grow w-fit px-4'>
+        <div className='w-fit '>
           <div className='h-full w-full flex flex-col justify-center ' id='homepage-main-nav'>
-            <ul className='mx-auto '>
-              <li className='my-1 '>
-                <Link href={'/work'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>work</a>
-                </Link>
-              </li>
-              <li className='my-1'>
-                <Link href={'/about'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>bakery</a>
-                </Link>
-              </li>
-              <li className='my-1'>
-                <Link href={'/education'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>education</a>
-                </Link>
-              </li>
-              <li className='my-1'>
-                <Link href={'/contact'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>contact us</a>
-                </Link>
-              </li>
-              <li className='my-1'>
-                <Link href={'/recipes'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>mom&apos;s recipes</a>
-                </Link>
-              </li>
-              <li className='my-2'>
-                <Link href={'/store'}>
-                  <a className='text-pink font-bold lowercase text-4xl'>company store</a>
-                </Link>
-              </li>
+            <ul className='grid grid-cols-1 gap-y-1  text-3xl 2xl:text-5xl  lowercase font-bold 2xl:font-extrabold text-pink'>
+              {nav_main.map((navItem) => {
+                return (
+                  <li className='block my-0 py-0 leading-none'>
+                    <Link href={navItem.url}>
+                      <a className=' '>{navItem.text}</a>
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>
         <div className=''>
-          <div className='text-blue font-bold text-2xl text-center w-full mb-0 pb-0'>
-            fresh puns & nice buns
-          </div>
-          <div className='flex justify-center w-full my-2'>
+          <div className='flex justify-center w-full xl:my-2'>
             <Button_Filled
               center={true}
               text={'Start something wonderful'}
@@ -65,7 +43,7 @@ function Home_Landing() {
             />
           </div>
           <div className='mx-auto w-full '>
-            <Nav_SocialLinks color={'blue'} textSize={'text-2xl md:text-3xl'} />
+            <Nav_SocialLinks color={'blue'} textSize={'text-xl xl:text-3xl'} />
           </div>
         </div>
       </nav>
