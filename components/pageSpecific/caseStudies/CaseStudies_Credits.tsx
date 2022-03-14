@@ -4,12 +4,12 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 CaseStudies_Credits.propTypes = {
-  credits: PropTypes.array.isRequired,
+  // credits: PropTypes.array.isRequired,
 }
 
 function CaseStudies_Credits({ credits }) {
   const firstcolumn = Math.floor(credits.length / 2)
-
+  console.log(credits.length)
   const innerHtml = (name, title) => {
     return (
       <span>
@@ -26,8 +26,8 @@ function CaseStudies_Credits({ credits }) {
           {credits.slice(start, end).map((credit) => {
             return (
               <li className='my-3' key={credit.name}>
-                {credit.url != undefined ? (
-                  <Link href={'https://www.imdb.com/name/nm10696864/'}>
+                {credit.website != undefined ? (
+                  <Link href={`${credit.website}`} passHref>
                     <a className='underline'>{innerHtml(credit.name, credit.title)}</a>
                   </Link>
                 ) : (
