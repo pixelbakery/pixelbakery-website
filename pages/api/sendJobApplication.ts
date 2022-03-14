@@ -43,7 +43,7 @@ function parseReq(req: any): Promise<any> {
       let fileData = null
       file
         .on('data', (data) => {
-          console.log(`File [${name}] got ${data.length} bytes`)
+          // console.log(`File [${name}] got ${data.length} bytes`)
           if (fileData === null) {
             fileData = data
           } else {
@@ -51,7 +51,7 @@ function parseReq(req: any): Promise<any> {
           }
         })
         .on('close', () => {
-          console.log(`File [${name}] done`)
+          // console.log(`File [${name}] done`)
           files[name] = {
             filename,
             encoding,
@@ -64,7 +64,6 @@ function parseReq(req: any): Promise<any> {
       fields[name] = val
     })
     bb.on('close', () => {
-      console.log('Done parsing form!')
       resolve({ files, fields })
     })
     req.pipe(bb)

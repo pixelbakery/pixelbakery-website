@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import 'react-toastify/dist/ReactToastify.css'
-import pdf_jobApplicationon from '@lib/pdf_jobApplication'
+
 export default function Careers_Application_Form({ allJobs }) {
   const [submitted, setSubmitted] = useState(false)
 
@@ -24,12 +24,6 @@ export default function Careers_Application_Form({ allJobs }) {
   const watchAllFields = watch()
   // Handle the  submit
   const onSubmit = (data) => {
-    pdf_jobApplicationon()
-    // setFile(base64File)
-    // data.base64File = data.resume[0].toString('base64')
-    // console.log(base64File)
-    // resetField('email')
-    console.log({ data })
     SendToSendgrid(data)
     SendtosSendgridconfirmation(data)
   }
@@ -65,9 +59,7 @@ export default function Careers_Application_Form({ allJobs }) {
       headers: {
         Accept: 'application/json',
       },
-    })
-      .then((res) => res.json())
-      .then(console.log)
+    }).then((res) => res.json())
   }
   async function SendtosSendgridconfirmation(data) {
     const formData = new FormData()
@@ -85,9 +77,7 @@ export default function Careers_Application_Form({ allJobs }) {
       headers: {
         Accept: 'application/json',
       },
-    })
-      .then((res) => res.json())
-      .then(console.log)
+    }).then((res) => res.json())
   }
 
   // const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
@@ -106,21 +96,21 @@ export default function Careers_Application_Form({ allJobs }) {
             type='text'
             required
             placeholder='First'
-            {...register('first_name', {})}
+            {...register('first_name' as never, {})}
           />
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             required
             type='text'
             placeholder='Middle'
-            {...register('middle_name', {})}
+            {...register('middle_name' as never, {})}
           />
           <input
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             required
             type='text'
             placeholder='Last'
-            {...register('last_name', {})}
+            {...register('last_name' as never, {})}
           />
         </div>
 
@@ -132,7 +122,7 @@ export default function Careers_Application_Form({ allJobs }) {
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             type='text'
             placeholder='(totally optional)'
-            {...register('pronoun', {})}
+            {...register('pronoun' as never, {})}
           />
         </div>
 
@@ -144,7 +134,7 @@ export default function Careers_Application_Form({ allJobs }) {
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             type='email'
             placeholder='hello@pixelbakery.com'
-            {...register('email', {})}
+            {...register('email' as never, {})}
           />
         </div>
 
@@ -156,7 +146,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='tel'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='Phone'
-            {...register('phone_number', {})}
+            {...register('phone_number' as never, {})}
           />
         </div>
 
@@ -168,7 +158,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='url'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='https://'
-            {...register('social', {})}
+            {...register('social' as never, {})}
           />
         </div>
 
@@ -180,7 +170,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='text'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='scorpio scorpio scorpio'
-            {...register('zodiac', {})}
+            {...register('zodiac' as never, {})}
           />
         </div>
 
@@ -190,7 +180,7 @@ export default function Careers_Application_Form({ allJobs }) {
           </label>
 
           <select
-            {...register('position', {})}
+            {...register('position' as never, {})}
             className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
           >
             {allJobs.map((job, index) => {
@@ -211,7 +201,7 @@ export default function Careers_Application_Form({ allJobs }) {
           <select
             required
             className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register('commitment', {})}
+            {...register('commitment' as never, {})}
           >
             <option value='Full-Time'>Full-Time</option>
             <option value='Part-Time'>Part-Time</option>
@@ -228,7 +218,7 @@ export default function Careers_Application_Form({ allJobs }) {
           <select
             required
             className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register('education', {})}
+            {...register('education' as never, {})}
           >
             <option value='High School Diploma'>High School Diploma</option>
             <option value='Still In College'>Still In College</option>
@@ -249,13 +239,13 @@ export default function Careers_Application_Form({ allJobs }) {
               className='w-1/2 border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='number'
               placeholder='hrs'
-              {...register('hours', {})}
+              {...register('hours' as never, {})}
             />
             <input
               className='w-1/2 border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='text'
               placeholder='$'
-              {...register('pay', {})}
+              {...register('pay' as never, {})}
             />
           </div>
         </div>
@@ -270,14 +260,14 @@ export default function Careers_Application_Form({ allJobs }) {
               type='text'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='Address'
-              {...register('address_line_1', {})}
+              {...register('address_line_1' as never, {})}
             />
             <input
               required
               type='text'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='City, State, Zip'
-              {...register('address_line_2', {})}
+              {...register('address_line_2' as never, {})}
             />
           </div>
         </div>
@@ -290,7 +280,7 @@ export default function Careers_Application_Form({ allJobs }) {
             required
             rows={5}
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register('about_personal', {})}
+            {...register('about_personal' as never, {})}
           />
         </div>
 
@@ -302,7 +292,7 @@ export default function Careers_Application_Form({ allJobs }) {
             required
             rows={5}
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register('about_professional', {})}
+            {...register('about_professional' as never, {})}
           />
         </div>
 
@@ -314,7 +304,7 @@ export default function Careers_Application_Form({ allJobs }) {
             required
             rows={5}
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-            {...register('why', {})}
+            {...register('why' as never, {})}
           />
         </div>
 
@@ -326,7 +316,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='text'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder="Please don't say Chris Brown"
-            {...register('band', {})}
+            {...register('band' as never, {})}
           />
         </div>
 
@@ -338,7 +328,7 @@ export default function Careers_Application_Form({ allJobs }) {
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             type='url'
             placeholder='https://'
-            {...register('website', {})}
+            {...register('website' as never, {})}
           />{' '}
         </div>
 
@@ -351,7 +341,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='file'
             onChange={setFile}
             placeholder='Upload Your Resume'
-            {...register('resume', {
+            {...register('resume' as never, {
               required: true,
               validate: {
                 lessThan10MB: (files) => files[0]?.size < 10000000 || 'Max 10MB',
@@ -397,7 +387,7 @@ export default function Careers_Application_Form({ allJobs }) {
               type='checkbox'
               checked={authorized}
               onClick={handleAuthorized}
-              {...register('authorized')}
+              {...register('authorized' as never)}
             />
             <label
               className={'cursor-pointer self-center text-sm font-normal leading-none my-0 py-0'}
@@ -432,7 +422,7 @@ export default function Careers_Application_Form({ allJobs }) {
               type='checkbox'
               checked={mailchimp}
               onClick={handleMailchimp}
-              {...register('mailchimp')}
+              {...register('mailchimp' as never)}
             />
             <label
               className={'cursor-pointer self-center text-sm font-normal leading-none my-0 py-0'}

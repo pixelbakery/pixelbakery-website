@@ -34,9 +34,7 @@ async function SendToMonday(data) {
       query: query5,
       variables: JSON.stringify(vars),
     }),
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(JSON.stringify(res, null, 2)))
+  }).then((res) => res.json())
 }
 
 function Contact_ContactForm_Form() {
@@ -51,7 +49,6 @@ function Contact_ContactForm_Form() {
   async function SendToMailchimp(data) {
     data.tag = 'Contact Form'
     if (checked) {
-      console.log('sending to mailchimp')
       await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -60,7 +57,6 @@ function Contact_ContactForm_Form() {
         },
       })
     } else {
-      console.log('not sending to mailchimp')
       return
     }
   }
@@ -68,7 +64,6 @@ function Contact_ContactForm_Form() {
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
-    console.log('sendgrid')
     await fetch('/api/sendContact', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -83,8 +78,6 @@ function Contact_ContactForm_Form() {
     formState: { errors, isValid },
   } = useForm()
 
-  console.log(errors)
-
   // Handle the submit
   const onSubmit = (data) => {
     // SendToSendgrid(data)
@@ -93,7 +86,6 @@ function Contact_ContactForm_Form() {
 
     setSubmitted(true)
     reset()
-    console.log(errors)
   }
   const [value, setValue] = useState()
 

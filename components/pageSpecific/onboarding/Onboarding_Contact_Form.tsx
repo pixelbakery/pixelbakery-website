@@ -1,5 +1,5 @@
 import Lead from '@typography/Lead'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import 'react-toastify/dist/ReactToastify.css'
@@ -38,9 +38,7 @@ function Footer_Mailchimp() {
         query: query,
         variables: JSON.stringify(vars),
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(JSON.stringify(res, null, 2)))
+    }).then((res) => res.json())
   }
 
   ////////////
@@ -49,7 +47,6 @@ function Footer_Mailchimp() {
   async function SendToMailchimp(data) {
     data.tag = 'Onboarding Form'
     if (checked) {
-      console.log('sending to mailchimp')
       await fetch('/api/mailchimp', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -58,7 +55,6 @@ function Footer_Mailchimp() {
         },
       })
     } else {
-      console.log('not sending to mailchimp')
       return
     }
   }
@@ -66,7 +62,6 @@ function Footer_Mailchimp() {
   // SENDGRID
   ///////////
   async function SendToSendgrid(data) {
-    console.log('sendgrid')
     await fetch('/api/sendOnboarding', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -96,8 +91,6 @@ function Footer_Mailchimp() {
     SendToMailchimp(data)
     resetField('email')
     setSubmitted(true)
-
-    console.log(errors)
   }
   //////////////////
 

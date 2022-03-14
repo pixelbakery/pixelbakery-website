@@ -29,7 +29,5 @@ export async function SendToMonday(data) {
       query: query,
       variables: JSON.stringify(vars),
     }),
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(JSON.stringify(res, null, 2)))
+  }).then((res) => res.json())
 }
