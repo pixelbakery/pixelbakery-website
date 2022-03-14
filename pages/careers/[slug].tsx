@@ -2,7 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
 import Link from 'next/link'
@@ -19,6 +18,7 @@ import Button_Filled from '@parts/Button_Filled'
 import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
+import DateFormatter from '@lib/date-formatter'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -28,9 +28,6 @@ const components = {
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
-
-  Video: Video,
-  TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
 
@@ -42,7 +39,6 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
         {/* <meta property='og:image' content={frontMatter.ogImage.url} /> */}
       </Head>
       <PageSection className='min-h-screen mt-32'>
-        {' '}
         <article>
           <InnerWrapper>
             <div className='max-w-2xl mx-auto'>
@@ -57,6 +53,9 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
               <H1 color='blue' className='text-6xl text-blue'>
                 {frontMatter.title}
               </H1>
+              <p className='text-sm italic'>
+                posted on <DateFormatter dateString={frontMatter.date} /> :
+              </p>
             </div>
           </InnerWrapper>
 

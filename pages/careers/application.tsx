@@ -13,7 +13,6 @@ import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 
 function Careers_Application({ allJobs }) {
-  console.log(allJobs)
   return (
     <Main>
       <PageHeader_VarH header='Application' subheader='get at it' />
