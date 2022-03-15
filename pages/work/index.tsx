@@ -15,20 +15,7 @@ const Work = ({ allCaseStudies }) => {
     <Main className='max-w-screen overflow-hidden'>
       <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />
       <Work_Services />
-      {/* <Work_Portfolio /> */}
-      {allCaseStudies.map((caseStudy) => {
-        return (
-          <Link
-            as={`/work/case-studies/${caseStudy.filePath.replace(/\.mdx?$/, '')}`}
-            href={`/work/case-studies/[slug]`}
-            passHref
-          >
-            <p>
-              {caseStudy.data.client} – {caseStudy.data.title}
-            </p>
-          </Link>
-        )
-      })}
+      <Work_Portfolio allCaseStudies={allCaseStudies} />
 
       <Work_Clients />
     </Main>

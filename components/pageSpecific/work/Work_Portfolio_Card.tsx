@@ -6,17 +6,16 @@ import Pill from '@parts/Pill'
 
 import cn from 'classnames'
 type MediaType = HTMLVideoElement | HTMLAudioElement
-function Work_Portfolio_Card(props) {
+function Work_Portfolio_Card({ project }) {
   const [isHovered, setHover] = useState(false)
-  const projID = `${props.client.replace(/[^A-Za-z]+/g, '')}-${props.name.replace(
+  const projID = `${project.data.client.replace(/[^A-Za-z]+/g, '')}-${project.data.title.replace(
     /[^A-Za-z]+/g,
     '',
   )}`
   const [tl, setTimeline] = useState(gsap.timeline({ paused: false }))
   const projID_title = `${projID}-title`
   const projID_tags = `${projID}-tags`
-
-  const handleHover = (e) => {
+  const handleHover = () => {
     setHover(!isHovered)
   }
 
@@ -49,18 +48,16 @@ function Work_Portfolio_Card(props) {
     }
   }, [isHovered])
 
-  const shimmer = (w, h) => `
-    <svg width="${w}+30" height="${h}+30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="g"><stop stop-color="rgba(56, 204, 255, 0.25)" offset="0%" /><stop stop-color="rgba(0, 81, 116, 0.25)" offset="50%" /><stop stop-color="rgba(56, 204, 255,0.25)" offset="100%" /></linearGradient></defs><rect width="${w}" height="${h}" fill="rgbq(56, 204, 255,0.25)" /><rect id="r" width="${w}" height="${h}" fill="url(#g)" /><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
-
-  const toBase64 = (str) =>
-    typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)
-
   return (
-    <Link href={props.url} passHref>
+    <Link
+      as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
+      href={`/work/case-studies/[slug]`}
+      passHref
+    >
       <article
         className='relative  aspect-16/9 bg-blue cursor-pointer origin-center transform duration-300 hover:scale-99 overflow-hidden'
-        onMouseOver={(event) => handleHover(event)}
-        onMouseOut={(event) => handleHover(event)}
+        onMouseOver={(event) => handleHover()}
+        onMouseOut={(event) => handleHover()}
       >
         <div
           className={cn(
@@ -72,12 +69,13 @@ function Work_Portfolio_Card(props) {
           )}
         >
           <Image
-            src={props.previewImg}
+            src={`/img/work/${project.data.vimeoPreviewImage}`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-            alt={''}
+            priority
+            blurDataURL={`/img/work/${project.data.vimeoPreviewImage}`}
+            alt={`animation or video production work created for ${project.data.client}`}
             quality={50}
           />
         </div>
@@ -88,12 +86,11 @@ function Work_Portfolio_Card(props) {
             preload='true'
             loop
             autoPlay={false}
-            poster={props.previewImg}
             onMouseOver={(event) => (event.target as MediaType).play()}
             onMouseOut={(event) => (event.target as MediaType).pause()}
             className='object-cover w-full h-full'
           >
-            <source src={props.hoverVideo} type='video/mp4' />
+            <source src={`/img/work/${project.data.vimeoPreviewVideo}`} type='video/mp4' />
           </video>
         </div>
         {/* This is the Scrim that sits on top of videos */}
@@ -112,7 +109,7 @@ function Work_Portfolio_Card(props) {
             id={projID_tags}
             className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
           >
-            {props.tags.map((tag) => (
+            {project.data.tags.map((tag) => (
               <Pill text={tag} bgColor={'blue'} textColor={'cream'} size='xs' key={tag} />
             ))}
           </div>
@@ -121,18 +118,18 @@ function Work_Portfolio_Card(props) {
             className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
           >
             <div className='detail drop-shadow-lg text-sm text-white text-shadow-md'>
-              {props.client}
+              {project.data.client}
             </div>
             <h3 className='detail drop-shadow-lg text-2xl text-white text-shadow-md'>
-              {props.name}
+              {project.data.title}
             </h3>
           </div>
         </div>
         <div
           className={cn('absolute bottom-0 left-0  mb-1 ml-1 z-40  lg:hidden py-2 px-4 bg-cream')}
         >
-          <div className='text-xs text-wine leading-none '>{props.client}</div>
-          <h3 className='  text-md text-wine leading-none'>{props.name}</h3>
+          <div className='text-xs text-wine leading-none '>{project.data.client}</div>
+          <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
         </div>
       </article>
     </Link>
