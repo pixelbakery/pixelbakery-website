@@ -35,6 +35,20 @@ All icons are sized relative to the other icons. This gives the line thickness a
 
 ## Creating new case studies
 
+### Project Previews
+
+Project previews are what is displayed on the /work page. There are three critical items that need to be added for this.
+
+1. A JPEG image still
+2. A short (less than 6 seconds) mp4 preview of the project
+3. An additional render of the preview video as a WebM
+
+These all MUST have the same file name. The naming convention is `client-name-project-name-preview`. For example:
+
+1. `first-honey-bee-better-preview.jpg`
+2. `first-honey-bee-better-preview.mp4`
+3. `first-honey-bee-better-preview.webm`
+
 ### Credits
 
 You can add a URL field if the person has a website (such as an IMDB) to link to. For example, it could look like this:
