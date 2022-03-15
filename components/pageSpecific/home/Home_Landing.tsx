@@ -21,7 +21,10 @@ function Home_Landing() {
             <ul className='grid grid-cols-1 gap-y-1  text-3xl 2xl:text-5xl  lowercase font-bold 2xl:font-extrabold text-pink'>
               {nav_main.map((navItem) => {
                 return (
-                  <li className='block my-0 py-0 leading-none'>
+                  <li
+                    key={navItem.text}
+                    className='block my-0 py-0 leading-none cursor-pointer duration-150 ease-in-out hover:scale-98'
+                  >
                     <Link href={navItem.url}>
                       <a className=' '>{navItem.text}</a>
                     </Link>
