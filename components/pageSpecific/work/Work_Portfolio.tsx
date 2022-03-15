@@ -7,43 +7,19 @@ import H2 from '@typography/H2'
 
 import Lead from '@typography/Lead'
 
-const Work_Portfolio = () => {
+const Work_Portfolio = ({ allCaseStudies }) => {
   const featuredProjNo = 4
 
-  const projectPath = (slug) => {
-    return `/work/case-studies/${slug}`
-  }
-  const projects = portfolio.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-
   const getFeaturedWork = () => {
-    return projects.slice(0, featuredProjNo).map((project) => {
-      return (
-        <Work_Portfolio_Card
-          key={project.title}
-          name={project.title}
-          client={project.client}
-          previewImg={project.previewImg}
-          hoverVideo={project.hoverVideo}
-          previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
-          url={projectPath(project.slug)}
-          tags={project.tags}
-        />
-      )
+    return allCaseStudies.slice(0, featuredProjNo).map((project, index) => {
+      return <Work_Portfolio_Card key={index} project={project} />
     })
   }
   const getOtherWork = () => {
-    return projects.slice(featuredProjNo).map((project, index) => {
+    return allCaseStudies.slice(featuredProjNo).map((project, index) => {
       return (
-        <div key={project.title} className={cn({ ['hidden md:block']: index > 5 })}>
-          <Work_Portfolio_Card
-            name={project.title}
-            client={project.client}
-            previewImg={project.previewImg}
-            hoverVideo={project.hoverVideo}
-            previewAlt={`${project.tags[0]} project ${project.name} for ${project.client}`}
-            url={projectPath(project.slug)}
-            tags={project.tags}
-          />
+        <div key={index} className={cn({ ['hidden md:block']: index > 5 })}>
+          <Work_Portfolio_Card project={project} />
         </div>
       )
     })

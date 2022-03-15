@@ -1,9 +1,11 @@
 import fs from 'fs'
+
+import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-import path from 'path'
+
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
@@ -17,8 +19,9 @@ import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
+import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
 
-export default function CaseStudy({ source, frontMatter }) {
+export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
   const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
@@ -71,14 +74,15 @@ export default function CaseStudy({ source, frontMatter }) {
         <MDXRemote {...source} components={components} />
       </article>
       <CaseStudies_Credits credits={frontMatter.credits} />
+      <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} />
     </Main>
   )
 }
 
 export const getStaticProps = async ({ params }) => {
   //MDX Stuff
-  const caseStudyFilePaths = path.join(CASESTUDIES_PATH, `${params.slug}.mdx`)
-  const source = fs.readFileSync(caseStudyFilePaths)
+  const temp = path.join(CASESTUDIES_PATH, `${params.slug}.mdx`)
+  const source = fs.readFileSync(temp)
   const { content, data } = matter(source)
 
   const mdxSource = await serialize(content, {
@@ -89,9 +93,22 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
+  const allCaseStudies = caseStudyFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
+      const { content, data } = matter(source)
+
+      return {
+        content,
+        data,
+        filePath,
+      }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
 
   return {
     props: {
+      allCaseStudies: allCaseStudies,
       source: mdxSource,
       frontMatter: data,
     },
