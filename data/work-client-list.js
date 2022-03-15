@@ -165,6 +165,12 @@ export default [
     active: true,
   },
   {
+    client: 'Kodiak Cakes',
+    logo: '/img/clients/pixelbakery_client_kodiaccakes.png',
+    url: 'https://kodiakcakes.com/',
+    active: true,
+  },
+  {
     clients: 'Kidwell',
     logo: '/img/clients/pixelbakery_client_kidwell.png',
     url: 'https://www.kidwellinc.com/',
@@ -266,10 +272,4 @@ export default [
     url: 'https://www.sweetminou.com/',
     active: false,
   },
-  {
-    client: 'Kodiak Cakes',
-    logo: '/img/clients/pixelbakery_client_kodiaccakes.png',
-    url: 'https://kodiakcakes.com/',
-    active: true,
-  }
 ]
