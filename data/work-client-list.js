@@ -266,4 +266,10 @@ export default [
     url: 'https://www.sweetminou.com/',
     active: false,
   },
+  {
+    client: 'Kodiak Cakes',
+    logo: '/img/clients/pixelbakery_client_kodiaccakes.png',
+    url: 'https://kodiakcakes.com/',
+    active: true,
+  }
 ]
