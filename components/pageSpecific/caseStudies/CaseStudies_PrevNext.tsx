@@ -4,10 +4,10 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 function CaseStudies_PrevNext({ title, allCaseStudies }) {
-  const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
-  temp.forEach((cs, index) => {
-    console.log(index, cs.data.client, cs.data.title)
-  })
+  // const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
+  // temp.forEach((cs, index) => {
+  //   console.log(index, cs.data.client, cs.data.title)
+  // })
   const index = allCaseStudies.findIndex(
     (project) => project.data.title.toLowerCase() === title.toLowerCase(),
   )
