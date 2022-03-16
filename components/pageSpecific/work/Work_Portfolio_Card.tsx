@@ -74,7 +74,7 @@ function Work_Portfolio_Card({ project }) {
             objectFit='cover'
             placeholder='blur'
             priority
-            blurDataURL={`/img/work/${project.data.vimeoPreviewImage}`}
+            blurDataURL={`/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}
             quality={50}
           />
@@ -90,7 +90,8 @@ function Work_Portfolio_Card({ project }) {
             onMouseOut={(event) => (event.target as MediaType).pause()}
             className='object-cover w-full h-full'
           >
-            <source src={`/img/work/${project.data.vimeoPreviewVideo}`} type='video/mp4' />
+            <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />
+            <source src={`/img/work/${project.data.vimeoPreview}.mp4`} type='video/mp4' />
           </video>
         </div>
         {/* This is the Scrim that sits on top of videos */}
