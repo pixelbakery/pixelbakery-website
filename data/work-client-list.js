@@ -10,7 +10,7 @@ export default [
   },
   {
     client: 'First Honey',
-    logo: '/img/clients/pixelbakery_client_firsthoney.png',
+    logo: '/img/clients/pixelbakery_client_first_honey.png',
     url: '/',
     active: true,
   },
@@ -160,7 +160,7 @@ export default [
   },
   {
     client: 'Karma Nuts',
-    logo: '/img/clients/pixelbakery_client_karmanuts.png',
+    logo: '/img/clients/pixelbakery_client_karma_nuts.png',
     url: 'https://www.karmanuts.com/',
     active: true,
   },
@@ -250,7 +250,7 @@ export default [
   },
   {
     client: 'Sunday Scaries',
-    logo: '/img/clients/pixelbakery_client_sundayscaries.png',
+    logo: '/img/clients/pixelbakery_client_sunday_scaries.png',
     url: 'https://sundayscaries.com/',
     active: true,
   },
