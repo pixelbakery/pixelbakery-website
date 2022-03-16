@@ -49,6 +49,12 @@ These all MUST have the same file name. The naming convention is `client-name-pr
 2. `first-honey-bee-better-preview.mp4`
 3. `first-honey-bee-better-preview.webm`
 
+Once the files are created and properly put into the /img/work/ directory, you can add the following YAML to the mdx file:
+
+`vimeoPreview: first-honey-bee-better-preview`
+
+The system will automatically add all of the appropriate file extensions needed when the page loads.
+
 ### Credits
 
 You can add a URL field if the person has a website (such as an IMDB) to link to. For example, it could look like this:
