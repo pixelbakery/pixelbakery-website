@@ -49,11 +49,6 @@ While we're here, let's also give our file a more user-friendly name than code.g
 
 We have our code ready to go, but we need to tell Gmail when to execute it. Select the Triggers nav item on the left. We'll need to create two different triggers for the two respective scripts. In the bottom right of the Triggers section, select Add Trigger. You'll leave most of the options alone, but we'll want to change the execution time. If we trigger our script every hour, Gmail will think we're trying to spam the system and block our script. Select the function you want to trigger, 'autoDelete', and change Select type of time-based trigger to 'Daily'. Repeat these steps with 'autoArchive'. Additionally, if you'd like to set up error reporting, you can do so in the right pane. I left my time as the default 'midnight to 1 am'.
 
-<video autoPlay muted controls='false' playsInline>
-<source src="/img/blog/PixelBakery.com_Gmail-Auto-Delete_Run-Script-1" />
-</video>
-![Image](https://pixelbakery.co/wp-content/uploads/2021/04/PixelBakery.com_Gmail-Auto-Delete_Run-Script-1.mp4)
-
 ## Step 05: Testing and Deployment
 
 We're almost done! All that's left is to do a test run to make sure everything is working correctly. Double-check your inbox to make sure there are a few test emails that have both labels 'archive me' and 'delete me' applied to them. Navigate back to the code editor and hit Run. If all goes according to plan, a new dialogue pane should pop up at the bottom of your window and output a ton of data. Do this one more time, but select the function autoArchive from the dropdown instead. Feel free to hit the run time a few more times if it times out due to the number of emails it needs to process. After your first run, double-check your trash folder to make sure your auto-filters aren't deleting anything they're not supposed to.
