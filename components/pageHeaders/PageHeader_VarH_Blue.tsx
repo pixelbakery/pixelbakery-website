@@ -57,7 +57,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
             [`bg-${primaryColor}`],
           )}
         >
-          <div className='w-fit px-6'>
+          <div className='w-fit px-12 mx-12'>
             <H1 color={accentColor}>{header}</H1>
             <div
               className={classNames('lowercase my-2 text-2xl font-bold', [

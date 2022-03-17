@@ -6,7 +6,7 @@ import Pattern from '@data/Patterns_Blue_Dark.json'
 
 import PropTypes from 'prop-types'
 import H1 from 'components/typography/H1'
-
+import PageHeader_TextBox from '@pageHeaders/PageHeader_TextBox'
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
@@ -50,25 +50,13 @@ function PageHeader_VariableHeight({ header, subheader }) {
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
         <Pattern thisPatern={thisPatern} />
       </div>
-      <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
-        <div
-          className={classNames(
-            'my-20 max-w-xs  sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center ',
-            [`bg-${primaryColor}`],
-          )}
-        >
-          <div className='w-fit px-6'>
-            <H1 color={accentColor}>{header}</H1>
-            <div
-              className={classNames('lowercase my-2 text-2xl font-bold', [
-                `text-${subheaderColor}`,
-              ])}
-            >
-              {subheader}
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHeader_TextBox
+        header={header}
+        primaryColor={primaryColor}
+        accentColor={accentColor}
+        subheader={subheader}
+        subheaderColor={subheaderColor}
+      />
     </div>
   )
 }
