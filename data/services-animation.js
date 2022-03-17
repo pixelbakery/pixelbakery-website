@@ -28,7 +28,7 @@ export default [
   },
   {
     service: 'Music Videos',
-    desc: 'Show us your dance moves. We love taking the spirit and meaning behind music and bringing the narative to life through animation.',
+    desc: 'Show us your dance moves. We love taking the spirit and meaning behind music and bringing the narrative to life through animation.',
     icon: '🍑',
   },
   {
