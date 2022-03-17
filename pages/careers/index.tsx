@@ -24,9 +24,9 @@ const Careers = ({ allJobs }) => {
   return (
     <Main id='careers-page'>
       <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />
-      <PageSection className='lg:pb-0' color=''>
+      <PageSection className='lg:pb-0' color='white'>
         <InnerWrapper className='lg:pb-0'>
-          <H2>Think you got what it takes?</H2>
+          <H2 color='pink'>Think you got what it takes?</H2>
           <div className='max-w-3xl'>
             <p>
               We’re a motion-focused creative shop, meaning while our most frequently requested

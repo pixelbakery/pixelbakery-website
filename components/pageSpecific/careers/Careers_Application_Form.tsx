@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
 import 'react-toastify/dist/ReactToastify.css'
+import router from 'next/router'
 
 export default function Careers_Application_Form({ allJobs }) {
   const [submitted, setSubmitted] = useState(false)
@@ -13,19 +15,22 @@ export default function Careers_Application_Form({ allJobs }) {
   // }
   const {
     register,
-    watch,
     handleSubmit,
 
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     defaultValues: {},
   })
 
-  const watchAllFields = watch()
+  // const watchAllFields = watch()
   // Handle the  submit
   const onSubmit = (data) => {
+    SendToMonday_JobApplication(data)
     SendToSendgrid(data)
     SendtosSendgridconfirmation(data)
+    if (isSubmitSuccessful) {
+      router.push('/careers/submitted')
+    }
   }
   // file upload
 
@@ -372,7 +377,7 @@ export default function Careers_Application_Form({ allJobs }) {
             type='text'
             className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='bc you totally follow us on insta'
-            {...register('hear', {})}
+            {...register('hear' as never, {})}
           />
         </div>
         <div className='col-span-2'>
@@ -433,8 +438,13 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
           </div>
         </div>
+        <p className='col-span-2 mt-12 text-sm italic text-wine-300'>
+          PS: Pixel Bakery Motion Studio is an equal opportunity employer. By submitting this
+          application you agree to allow us to check references and verify former employment.
+        </p>
       </div>
-      <p className='bg-white'>{JSON.stringify(watchAllFields, null, 2)}</p>
+
+      {/* <p className='bg-white'>{JSON.stringify(watchAllFields, null, 2)}</p> */}
     </form>
   )
 }

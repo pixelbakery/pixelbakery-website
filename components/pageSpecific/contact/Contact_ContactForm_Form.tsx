@@ -1,41 +1,9 @@
-import { useForm, Control } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 import { useState } from 'react'
 import Lead from '@typography/Lead'
-
+import { SendToMonday_ContactForm } from '@lib/api_sendToMonday'
 import PhoneInput from 'react-phone-number-input/react-hook-form-input'
-
-async function SendToMonday(data) {
-  const strippedPhone = data.phone.replace(/[^+\d]+/g, '')
-  const query5 =
-    'mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:2302656906, item_name:$subject, column_values:$columnVals) { id } }'
-  const vars = {
-    subject: data.subject,
-    columnVals: JSON.stringify({
-      text: data.name,
-      text0: data.entity,
-      //  date4: { date: getDate(), time: getTime() },
-      long_text: { text: data.message },
-      text6: data.name,
-      phone: { phone: strippedPhone, countryShortName: 'US' },
-      //  text6: { text: data.name },
-      email: { email: data.email, text: data.email },
-      checkbox: { checked: data.check.toString() },
-    }),
-  }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization:
-        'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEzOTI1NDQyNiwidWlkIjo2MjMxNTk0LCJpYWQiOiIyMDIyLTAxLTA0VDE3OjAxOjA1LjIwM1oiLCJwZXIiOiJtZTp3cml0ZSIsImFjdGlkIjoyODE2ODI0LCJyZ24iOiJ1c2UxIn0.nkdU5cHY8Ut9NHMUcyXqqz2ciKaR3BdNByVi5hIzsB8',
-    },
-    body: JSON.stringify({
-      query: query5,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
-}
 
 function Contact_ContactForm_Form() {
   const [checked, setChecked] = useState(true)
@@ -81,7 +49,7 @@ function Contact_ContactForm_Form() {
   // Handle the submit
   const onSubmit = (data) => {
     // SendToSendgrid(data)
-    SendToMonday(data)
+    SendToMonday_ContactForm(data)
     SendToMailchimp(data)
 
     setSubmitted(true)
