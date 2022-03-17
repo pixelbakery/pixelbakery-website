@@ -27,10 +27,6 @@ function Careers_Application({ allJobs }) {
         </InnerWrapper>
         <InnerWrapper>
           <Careers_Application_Form allJobs={allJobs} />
-          <p className='mt-12 text-sm italic text-wine-300'>
-            PS: Pixel Bakery Motion Studio is an equal opportunity employer. By submitting this
-            application you agree to allow us to check references and verify former employment.
-          </p>
         </InnerWrapper>
       </PageSection>
     </Main>

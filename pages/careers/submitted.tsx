@@ -1,30 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import InnerWrapper from '@parts/InnerWrapper'
+import Main from '@parts/Main'
+import PageSection from '@parts/PageSection'
+import H1 from '@typography/H1'
 import Link from 'next/link'
 
 function SubmissionConfirmation() {
   return (
-    <main>
-      <section id='' className='px-12 my-4 lander pt-20 bg-pink-light'>
-        <div className='mx-auto max-w-2xl flex flex-col justify-center h-full'>
-          <h1 className='peach text-4xl md:text-6xl text-blue mb-8'>
+    <Main>
+      <PageSection color='pink-light'>
+        <InnerWrapper className='pt-24'>
+          <H1 className='peach text-4xl md:text-6xl text-blue mb-8'>
             Thank you for your application.
-          </h1>
+          </H1>
           <p className='my-4 pb-2 text-lg font-md text-wine'>
             We received your application for a position with us. We'll be in touch shortly if we
             think you'll be a good fit here. If you have any questions, feel free to give Maddie a
             shout at{' '}
             <a href='mailto:maddie@pixelbakery.com' className='underline text-peach'>
-              maddie@pixelbakery.com
+              careers@pixelbakery.com
             </a>
             .
-          </p>
-
-          <p className='my-4 pb-2 text-lg font-md text-wine'>
-            If you don't hear back from us, don't be discouraged. We're a super small team and
-            bringing people on to our team is something we take very seriously. We still think
-            you're amazing and beautiful. You're always welcome to reapply later. Unless we think
-            ~~INSERT BAND HERE~~ sucks, then you might be out of luck.{' '}
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
@@ -37,7 +34,6 @@ function SubmissionConfirmation() {
             >
               Instagram
             </a>{' '}
-            ;)
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>👩‍🍳 💖 🍩,</p>
@@ -52,7 +48,7 @@ function SubmissionConfirmation() {
             </li>
             <li className='my-2'>
               {' '}
-              <Link href={'/about'}>
+              <Link href={'/about#twitch'}>
                 <a className='text-blue underline text-md'>Daydream about us →</a>
               </Link>
             </li>
@@ -68,9 +64,9 @@ function SubmissionConfirmation() {
               </Link>
             </li>
           </ul>
-        </div>
-      </section>
-    </main>
+        </InnerWrapper>
+      </PageSection>
+    </Main>
   )
 }
 

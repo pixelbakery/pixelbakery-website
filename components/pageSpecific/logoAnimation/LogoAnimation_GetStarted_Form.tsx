@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
-import Lead from '@typography/Lead'
-
+import { SendToMonday_LogoAnimation } from '@lib/api_sendToMonday'
 export default function LogoAnimation_GetStarted_Form() {
   const [checked, setChecked] = useState(true)
   const handleCheck = () => {
@@ -21,7 +20,7 @@ export default function LogoAnimation_GetStarted_Form() {
   // Handle the submit
   const onSubmit = (data) => {
     // SendToSendgrid(data)
-    sendToMonday(data)
+    SendToMonday_LogoAnimation(data)
     SendToMailchimp(data)
     // SendToMailchimp(data)
     resetField('email')
@@ -54,40 +53,6 @@ export default function LogoAnimation_GetStarted_Form() {
     }
   }
 
-  ////////////
-  // MONDAY
-  ////////////
-  async function sendToMonday(data) {
-    let logoPackage = data.package
-    if (data.package == 'kitchenSink') {
-      logoPackage = 'Kitchen Sink'
-    }
-    const query =
-      'mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:2315048602, item_name:$name, column_values:$columnVals) { id } }'
-    const vars = {
-      name: data.name,
-      columnVals: JSON.stringify({
-        status: logoPackage,
-        text: data.phone,
-        email: { email: data.email, text: data.email },
-        text6: data.entity,
-        long_text: { text: data.message },
-        checkbox: { checked: data.check.toString() },
-      }),
-    }
-    fetch('https://api.monday.com/v2', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEzOTI1NDQyNiwidWlkIjo2MjMxNTk0LCJpYWQiOiIyMDIyLTAxLTA0VDE3OjAxOjA1LjIwM1oiLCJwZXIiOiJtZTp3cml0ZSIsImFjdGlkIjoyODE2ODI0LCJyZ24iOiJ1c2UxIn0.nkdU5cHY8Ut9NHMUcyXqqz2ciKaR3BdNByVi5hIzsB8',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: JSON.stringify(vars),
-      }),
-    }).then((res) => res.json())
-  }
   ///////////
   // SENDGRID
   ///////////

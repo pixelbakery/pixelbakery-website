@@ -1,8 +1,9 @@
 import Lead from '@typography/Lead'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import 'react-toastify/dist/ReactToastify.css'
+import { SendToMonday_JobShadow } from '@lib/api_sendToMonday'
 
 function Careers_JobShadow_Form() {
   const [checked, setChecked] = useState(true)
@@ -19,37 +20,6 @@ function Careers_JobShadow_Form() {
   }
   const handleCheckNoParents = () => {
     setCheckedNoParents(!checkedNoParents)
-  }
-
-  ////////////
-  // MONDAY
-  ////////////
-  async function SendToMonday(data) {
-    const query =
-      'mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:2285407690, item_name:$name, column_values:$columnVals) { id } }'
-    const vars = {
-      name: data.name,
-      columnVals: JSON.stringify({
-        text: data.school,
-        email: { email: data.email, text: data.email },
-        long_text: { text: data.message },
-        checkbox: { checked: data.check.toString() },
-        checkbox9: { checked: data.checkNoParents.toString() },
-        checkbox2: { checked: data.check3People.toString() },
-      }),
-    }
-    fetch('https://api.monday.com/v2', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEzOTI1NDQyNiwidWlkIjo2MjMxNTk0LCJpYWQiOiIyMDIyLTAxLTA0VDE3OjAxOjA1LjIwM1oiLCJwZXIiOiJtZTp3cml0ZSIsImFjdGlkIjoyODE2ODI0LCJyZ24iOiJ1c2UxIn0.nkdU5cHY8Ut9NHMUcyXqqz2ciKaR3BdNByVi5hIzsB8',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: JSON.stringify(vars),
-      }),
-    }).then((res) => res.json())
   }
 
   ////////////
@@ -98,7 +68,7 @@ function Careers_JobShadow_Form() {
       message: 'Make sure your email is entered correctly.',
     })
     SendToSendgrid(data)
-    SendToMonday(data)
+    SendToMonday_JobShadow(data)
     SendToMailchimp(data)
     resetField('email')
     setSubmitted(true)
