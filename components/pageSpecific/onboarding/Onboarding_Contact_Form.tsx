@@ -3,43 +3,13 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import 'react-toastify/dist/ReactToastify.css'
-
+import { SendToMonday_Onboarding } from '@lib/api_sendToMonday'
 function Footer_Mailchimp() {
   const [checked, setChecked] = useState(true)
   const handleCheck = () => {
     setChecked(!checked)
   }
   const [submitted, setSubmitted] = useState(false)
-
-  ////////////
-  // MONDAY
-  ////////////
-  async function SendToMonday(data) {
-    const query =
-      'mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:2252381136, item_name:$name, column_values:$columnVals) { id } }'
-    const vars = {
-      name: data.name,
-      columnVals: JSON.stringify({
-        text: data.company,
-        email: { email: data.email, text: data.email },
-        text6: data.subject,
-        long_text: { text: data.message },
-        checkbox: { checked: data.check.toString() },
-      }),
-    }
-    fetch('https://api.monday.com/v2', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEzOTI1NDQyNiwidWlkIjo2MjMxNTk0LCJpYWQiOiIyMDIyLTAxLTA0VDE3OjAxOjA1LjIwM1oiLCJwZXIiOiJtZTp3cml0ZSIsImFjdGlkIjoyODE2ODI0LCJyZ24iOiJ1c2UxIn0.nkdU5cHY8Ut9NHMUcyXqqz2ciKaR3BdNByVi5hIzsB8',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: JSON.stringify(vars),
-      }),
-    }).then((res) => res.json())
-  }
 
   ////////////
   // MAILCHIMP
@@ -87,7 +57,7 @@ function Footer_Mailchimp() {
       message: 'Make sure your email is entered correctly.',
     })
     SendToSendgrid(data)
-    SendToMonday(data)
+    SendToMonday_Onboarding(data)
     SendToMailchimp(data)
     resetField('email')
     setSubmitted(true)

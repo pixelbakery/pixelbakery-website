@@ -22,6 +22,11 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: '/careers/apply',
+        destination: '/careers/application',
+        permanent: true,
+      },
+      {
         source: '/monday',
         destination: 'https://pixelbakery.monday.com',
         permanent: true,

@@ -88,7 +88,7 @@
     @apply border border-l-8 border-wine-100 px-8 lg:px-16 py-3 my-20 italic;
   }
   p {
-    @apply text-lg text-wine my-4 pb-3;
+    @apply text-lg text-wine my-4 pb-3 max-w-lg;
   }
 
   p a {

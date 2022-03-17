@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
 import cn from 'classnames'
+import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
 function Footer_Mailchimp({ onModalUpdate }) {
   const [checked, setChecked] = useState(true)
   const [modalOpen, setModal] = useState(!false)
@@ -27,33 +28,10 @@ function Footer_Mailchimp({ onModalUpdate }) {
   }
 
   ////////////
-  // MONDAY
-  ////////////
-  async function SendToMonday(data) {
-    data.tag = 'Croissants'
-    const query =
-      'mutation ($email: String!) { create_item (board_id:2222479021, item_name:$email) { id } }'
-    const vars = {
-      email: data.email,
-    }
-    fetch('https://api.monday.com/v2', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEzOTI1NDQyNiwidWlkIjo2MjMxNTk0LCJpYWQiOiIyMDIyLTAxLTA0VDE3OjAxOjA1LjIwM1oiLCJwZXIiOiJtZTp3cml0ZSIsImFjdGlkIjoyODE2ODI0LCJyZ24iOiJ1c2UxIn0.nkdU5cHY8Ut9NHMUcyXqqz2ciKaR3BdNByVi5hIzsB8',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: JSON.stringify(vars),
-      }),
-    }).then((res) => res.json())
-  }
-
-  ////////////
   // MAILCHIMP
   ////////////
   async function SendToMailchimp(data) {
+    data.tag = 'Croissants'
     if (checked) {
       await fetch('/api/mailchimp', {
         method: 'POST',
@@ -90,7 +68,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
   // Handle the submit
   const onSubmit = (data) => {
     SendToSendgrid(data)
-    SendToMonday(data)
+    SendToMonday_Croissants(data)
     SendToMailchimp(data)
     resetField('email')
     setSubmitted(true)
