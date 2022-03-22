@@ -69,7 +69,7 @@ function Work_Portfolio_Card({ project }) {
           )}
         >
           <Image
-            src={`/img/work/${project.data.vimeoPreviewImage}`}
+            src={`/img/work/${project.data.vimeoPreview}.jpg`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
