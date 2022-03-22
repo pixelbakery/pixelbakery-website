@@ -8,25 +8,29 @@ function CaseStudies_PrevNext({ title, allCaseStudies }) {
   // temp.forEach((cs, index) => {
   //   console.log(index, cs.data.client, cs.data.title)
   // })
-  const index = allCaseStudies.findIndex(
+  const allActiveCaseStudies = allCaseStudies.filter((project) => project.data.active)
+  const index = allActiveCaseStudies.findIndex(
     (project) => project.data.title.toLowerCase() === title.toLowerCase(),
   )
 
+  allActiveCaseStudies.forEach((cs, index) => {
+    console.log(index, ':', cs.data.title, cs.data.date)
+  })
   // console.log('index: ', index)
 
   const getPrev = (i) => {
     if (i === 0) {
-      return allCaseStudies[Object.keys(allCaseStudies).length - 1]
+      return allActiveCaseStudies[Object.keys(allActiveCaseStudies).length - 1]
     } else {
-      return allCaseStudies[i - 1]
+      return allActiveCaseStudies[i - 1]
     }
   }
 
   const getNext = (i) => {
-    if (i === Object.keys(allCaseStudies).length - 1) {
-      return allCaseStudies[0]
+    if (i === Object.keys(allActiveCaseStudies).length - 1) {
+      return allActiveCaseStudies[0]
     } else {
-      return allCaseStudies[i + 1]
+      return allActiveCaseStudies[i + 1]
     }
   }
 

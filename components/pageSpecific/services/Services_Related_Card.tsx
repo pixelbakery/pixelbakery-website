@@ -15,7 +15,7 @@ function Services_Related_Card({ project }) {
           />
         </div>
         <div className='relative w-full h-full  '>
-          <div className=' py-4 bg-cream inline-block'>
+          <div className=' py-4 inline-block'>
             <p className=' font-medium text-sm leading-none my-0  mb-0 pb-0  text-wine '>
               {project.client}
             </p>

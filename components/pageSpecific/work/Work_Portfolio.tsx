@@ -10,13 +10,14 @@ import Lead from '@typography/Lead'
 const Work_Portfolio = ({ allCaseStudies }) => {
   const featuredProjNo = 4
 
+  const allActiveCaseStudies = allCaseStudies.filter((project) => project.data.active)
   const getFeaturedWork = () => {
-    return allCaseStudies.slice(0, featuredProjNo).map((project, index) => {
+    return allActiveCaseStudies.slice(0, featuredProjNo).map((project, index) => {
       return <Work_Portfolio_Card key={index} project={project} />
     })
   }
   const getOtherWork = () => {
-    return allCaseStudies.slice(featuredProjNo).map((project, index) => {
+    return allActiveCaseStudies.slice(featuredProjNo).map((project, index) => {
       return (
         <div key={index} className={cn({ ['hidden md:block']: index > 5 })}>
           <Work_Portfolio_Card project={project} />
