@@ -6,7 +6,7 @@ export default [
     client: 'Daake',
     logo: '/img/clients/pixelbakery_client_daake.png',
     url: 'https://daake.com',
-    active: true,
+    active: false,
   },
   {
     client: 'First Honey',
@@ -270,6 +270,12 @@ export default [
     client: 'Sweet Minou',
     logo: '/img/clients/pixelbakery_client_sweetMinou.png',
     url: 'https://www.sweetminou.com/',
+    active: false,
+  },
+  {
+    client: 'Backcountry',
+    logo: '/img/clients/pixelbakery_client_backcountry.png',
+    url: 'https://www.backcountry.com/',
     active: false,
   },
 ]
