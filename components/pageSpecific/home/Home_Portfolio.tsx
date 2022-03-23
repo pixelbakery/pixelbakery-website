@@ -4,10 +4,11 @@ import H2 from '@typography/H2'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
 
 function Home_Portfolio({ allCaseStudies }) {
-  const featuredProj01 = allCaseStudies[0]
-  const featuredProj02 = allCaseStudies[1]
-  const featuredProj03 = allCaseStudies[2]
-  const featuredProj04 = allCaseStudies[3]
+  const activeCS = allCaseStudies.filter((cs) => cs.data.active)
+  const featuredProj01 = activeCS[0]
+  const featuredProj02 = activeCS[1]
+  const featuredProj03 = activeCS[2]
+  const featuredProj04 = activeCS[3]
   return (
     <section id='home-portfolio' className='bg-white py-8 my-4 px-6'>
       <div className='max-w-md md:max-w-3xl lg:max-w-6xl 2xl:max-w-full 2xl:px-12 mx-auto'>

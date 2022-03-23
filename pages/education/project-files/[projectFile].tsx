@@ -91,8 +91,8 @@ function EducationProject({ projectFile }: Props) {
                 Support Us
               </H2>
               <p className='max-w-lg text-cream font-medium text-xl'>
-                Appropriately morph flexible products with customer directed interfaces. Uniquely
-                seize 24/365 e-commerce through holistic interfaces. Enthusiastically empower.
+                If this project file helped you at all, feel free to give us a tip. All tips go
+                directly to the designer that worked on the project.
               </p>
             </div>
           </div>

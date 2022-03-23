@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-string-refs */
 // eslint-disable-next-line react/no-string-refs
-
+import nav_main from '@data/nav_main'
 import Nav_SocialLinks from './Nav_SocialLinks'
 import Link from 'next/link'
 import Logo_Primary from '@images/logo_primary'
@@ -28,49 +28,17 @@ function Nav_FullscreenMenu(props) {
                   <Logo_Primary className='object-contain w-full h-full' />
                 </div>
               </Link>
-              <div>
-                <Link href='/work' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    Work
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href='/about' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    About
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href='/contact' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    Contact
-                  </a>
-                </Link>
-              </div>
-              <div className=''>
-                <Link href='/education' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    Education
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href='/recipes' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    Mom&apos;s Recipes
-                  </a>
-                </Link>
-              </div>
-
-              <div>
-                <Link href='/store' passHref>
-                  <a className='' onClick={handleHamToggle}>
-                    Company Store
-                  </a>
-                </Link>
-              </div>
+              {nav_main.map((nav_item, index) => {
+                return (
+                  <div key={index}>
+                    <Link href={nav_item.url} passHref>
+                      <a className='' onClick={handleHamToggle}>
+                        {nav_item.text}
+                      </a>
+                    </Link>
+                  </div>
+                )
+              })}
             </div>
             <div className='mx-auto'>
               <div className='flex flex-center w-full mt-3'>

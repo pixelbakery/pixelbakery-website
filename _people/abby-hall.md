@@ -18,7 +18,7 @@ details:
   mostHatedBird: pigeon
   # favoriteBook:
   personalAesthetic: pastel sk8r girl
-  hobby: skateboarding, piano, and creating art
+  hobbies: skateboarding, piano, and creating art
 
   signs:
     sun: taurus
