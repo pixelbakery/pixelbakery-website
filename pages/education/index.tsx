@@ -1,6 +1,6 @@
 import { getAllProjectFiles } from '@lib/api_projectFile'
 import Education_Header from '@education/Education_Header'
-// import Education_Recent from '@education/Education_Recent'
+import Store_Maintenance from '@store/Store_Maintenance'
 import Education_MadeToOrder from '@education/Education_MadeToOrder'
 import Education_FromScratch from '@education/Education_FromScratch'
 import Education_ProjectFiles from '@education/Education_ProjectFiles'
@@ -34,6 +34,7 @@ function EducationPage({ allProjectFiles }: Props) {
           </div>
         </InnerWrapper>
       </PageSection>
+      <Store_Maintenance />
       <Education_ProjectFiles projectFiles={allProjectFiles} />
       {/* <Education_Recent /> */}
       <Education_FromScratch />

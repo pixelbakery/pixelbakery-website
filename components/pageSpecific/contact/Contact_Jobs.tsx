@@ -20,7 +20,7 @@ function Contact_Jobs() {
               to become part of our talent pool.
             </p>
             <Button_Filled
-              center={true}
+              center={false}
               link={'/careers#positions'}
               text={'get to work'}
               textColor={'cream'}

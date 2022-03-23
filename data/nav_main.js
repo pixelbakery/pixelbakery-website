@@ -9,6 +9,10 @@ export default [
     url: '/about',
   },
   {
+    text: 'Careers',
+    url: '/careers',
+  },
+  {
     text: 'Education',
     url: '/education',
   },

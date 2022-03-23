@@ -74,7 +74,7 @@ const StorePage: NextPage = ({ products }: any) => {
         <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
       </Head>
       <Navigation_Store />
-      <PageHeader_VarH header='Company Store' subheader='copy copy copy' />
+      <PageHeader_VarH header='Company Store' subheader='Freshly Baked Every Morning' />
       {/* <section className='mt-4 bg-blue-dark py-12 px-8 min-w-screen'>
         <div className='max-w-xl md:max-w-6xl mx-auto my-16 md:my-20 grid grid-cols-1 lg:grid-cols-9 gap-30'>
           <div className='cols-span-1 lg:col-span-3'>

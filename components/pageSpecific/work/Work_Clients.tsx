@@ -24,10 +24,12 @@ function Work_Clients() {
         <H2 color={'peach'}>Our lovely clients</H2>
         <Lead color='blue-dark'>
           Our story wouldn’t exist if it weren’t for all of the wonderful clients that have been on
-          this journey with us. From initial discovery meetings to seeing the final product, we
-          thrive in bringing a client’s vision to life. Check out some of our past and present
-          clients below.
+          this journey with us.
         </Lead>
+        <p>
+          From initial discovery meetings to seeing the final product, we thrive in bringing a
+          client’s vision to life. Check out some of our past and present clients below.
+        </p>
       </InnerWrapper>
       <InnerWrapper>
         <div className='mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>

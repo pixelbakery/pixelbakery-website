@@ -33,10 +33,12 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
                 preload='true'
                 loop
                 autoPlay={true}
-                poster={`/img/work/${project.data.vimeoPreviewImage}`}
+                poster={`/img/work/${project.data.vimeoPreview}.jpg`}
                 className='object-cover w-full h-full'
               >
-                <source src={`/img/work/${project.data.vimeoPreviewVideo}`} type='video/mp4' />
+                <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />
+
+                <source src={`/img/work/${project.data.vimeoPreview}.mp4`} type='video/mp4' />
               </video>
             </a>
           </Link>

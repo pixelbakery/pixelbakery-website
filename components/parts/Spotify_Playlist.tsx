@@ -14,14 +14,14 @@ export default function Spotify_Playlist({ playlistID }) {
   }
   return (
     <div className='bg-white h-full py-4 flex flex-col px-4'>
-      <div className='flex flex-col md:flex-row gap-12 md:my-4 md:py-4'>
+      <div className='flex flex-col xl:flex-row gap-12 xl:my-4 xl:py-4'>
         <a
           href={data.external_urls.spotify}
-          className={'hidden md:block cursor-pointer'}
+          className={'hidden xl:block cursor-pointer'}
           target='_blank'
           rel='noopener'
         >
-          <div className='absolute md:relative w-64 h-64'>
+          <div className='absolute xl:relative w-64 h-64'>
             <Image
               src={data.albumCoverImage}
               layout='fill'
@@ -43,7 +43,7 @@ export default function Spotify_Playlist({ playlistID }) {
             <H2 color='peach' className='mb-1 md:mb-0 2xl:mb-0'>
               {data.name}
             </H2>
-            <Lead className='mb-0 lg:mb-0'> {data.description ? data.description : ''}</Lead>
+            <Lead className='mb-0 xl:mb-0'> {data.description ? data.description : ''}</Lead>
             <a
               className='bg-peach  text-cream px-8 py-1 my-1 rounded-xl font-semibold drop-shadow-sm inline-block duration-300 transition-all ease-in-out hover:drop-shadow-xs hover:scale-98'
               href={data.external_urls.spotify}
@@ -53,23 +53,23 @@ export default function Spotify_Playlist({ playlistID }) {
               Play <span className=' my-auto ml-3'>▶</span>
             </a>
           </a>
-          <p className='text-xs md:text-md text-wine '>
+          <p className='text-xs md:text-sm xl:text-md text-wine '>
             {pluralize(data.followers.total, 'follower')}, {pluralize(data.tracks.total, 'song')},{' '}
             {data.albumLength}
           </p>
         </div>
       </div>
       <div className='bg-cream py-3 h-full overflow-auto'>
-        <div className='changeScrollbar h-full overflow-y-scroll bg-cream px-1 md:px-4 '>
-          <ul className='grid gap-1 md:gap-2'>
+        <div className='changeScrollbar h-full overflow-y-scroll bg-cream px-1 xl:px-4 '>
+          <ul className='grid gap-1 xl:gap-2'>
             {data.tracksSelected.map((track) => (
               <li className='my-0'>
                 <a href={track.songUrl} target={'_blank'} rel='noopener'>
-                  <div className='flex gap-1 md:gap-x-4'>
+                  <div className='flex gap-1 xl:gap-x-4'>
                     <img src={track.albumArt} className='h-12 w-12' />
 
                     <div className='flex flex-col justify-center'>
-                      <p className='line-clamp-2 text-wine mt-0 mb-1 py-0 leading-none text-sm md:text-md'>
+                      <p className='line-clamp-2 text-wine mt-0 mb-1 py-0 leading-none text-sm xl:text-md'>
                         {track.title}
                       </p>
                       <span className='line-clamp-1 my-0 py-0 leading-none text-wine text-opacity-75 text-xs'>

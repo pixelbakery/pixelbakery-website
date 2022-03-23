@@ -24,8 +24,8 @@ const Careers = ({ allJobs }) => {
   return (
     <Main id='careers-page'>
       <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />
-      <PageSection className='lg:pb-0' color='white'>
-        <InnerWrapper className='lg:pb-0'>
+      <PageSection className='' color='white'>
+        <InnerWrapper className='lg:pb-0 grid grid-cols-1 xl:grid-cols-2'>
           <H2 color='pink'>Think you got what it takes?</H2>
           <div className='max-w-3xl'>
             <p>
