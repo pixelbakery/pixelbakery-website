@@ -13,8 +13,8 @@ details:
   favoriteThing: literally any form of potato
   leastFavoriteThing: people smacking their food
   favoriteMovie: waves
-  hatedBird: crows probably? idek
-  hobby: cooking, watching food network, making spotify playlists, skincare/makeup
+  mostHatedBird: crows probably? idek
+  hobbies: cooking, watching food network, making spotify playlists, skincare/makeup
   joinedPB: november 2021
   # favoriteBook: string
   personalAesthetic: kardashian wannabe

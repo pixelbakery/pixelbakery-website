@@ -5,8 +5,8 @@ import Footer_HappyCard from 'components/footer/Footer_HappyCard'
 import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
-import Footer_Mailchimp2 from 'components/footer/Footer_Croissant'
-import nav_footer_main from '@data/nav_footer_main'
+import Footer_Croissant from 'components/footer/Footer_Croissant'
+import nav_main from '@data/nav_main'
 import nav_footer_sub from '@data/nav_footer_sub'
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
@@ -39,7 +39,7 @@ export const Footer: NextPage = () => {
           id='croissantModal'
           className='transform-gpu will-change-transform absolute w-full h-full top-0 left-0 bg-peach z-30'
         >
-          <Footer_Mailchimp2 onModalUpdate={updateModal} />
+          <Footer_Croissant onModalUpdate={updateModal} />
         </section>
 
         <div className='mx-auto max-w-6xl'>
@@ -51,7 +51,7 @@ export const Footer: NextPage = () => {
 
               <nav className=' pt-5 mt-3'>
                 <ul className='grid grid-cols-2 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
-                  {nav_footer_main.map((navitem) => (
+                  {nav_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
                 </ul>

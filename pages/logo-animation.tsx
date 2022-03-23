@@ -10,7 +10,7 @@ function LogoAnimation() {
     <main>
       <PageHeader_VariableHeight
         header={'Motion Mixer'}
-        subheader={'Bring your brand to life and animate your logo'}
+        subheader={'Bring your logo to life with an eye-catching and memorable animation'}
       />
       <LogoAnimation_Intro />
 

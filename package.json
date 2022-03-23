@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "dev-maddie-work": "next dev -H 192.168.69.92",
-    "dev-home": "next dev -H 192.168.86.249",
+    "dev-home": "next dev -H 192.168.86.247",
     "dev-work": "next dev -H 192.168.69.51",
     "build": "next build",
     "start": "next start",
