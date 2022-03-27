@@ -71,3 +71,14 @@ export function getTodaysDate() {
   const today = mm + '-' + dd + '-' + yyyy
   return today
 }
+
+export function shuffleArray(array) {
+  let i = array.length - 1
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array
+}
