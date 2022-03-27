@@ -33,9 +33,56 @@ All icons are set to 270x270px, regardless of their relation to other icons. Goo
 _Relative_
 All icons are sized relative to the other icons. This gives the line thickness a consistant weight
 
+## Template Files
+
+Below is a list of all templates needed to create dynamic content on the website.
+
+1. Visit the linked gist
+2. Click on the Raw button
+3. Copy/Paste the raw content into a newly made .mdx file
+4. Fill 'er out
+
+- [Case Studies](https://gist.github.com/jordanlambrecht/61bf8c478ec2189a2a3c51146e230535)
+
 ## Creating new case studies
 
-### Project Previews
+### Frontmatter Options
+
+As with everything else, you can enter frontmatter variables into the top of the file. A few things of note:
+
+- The client website must begin with https://
+- The date does not need to be accurate and is not shown anywhere live on the website. It is simply used for ordering the posts. The date format should be YYYY-MM
+- The naming convention for the client logo should be 'pixelbakery_client_clientname.png'. Make sure you use the appropriate illustrator file to generate these. They should be exported as greyscale PNGs with transparent backgrounds.
+- All available tags are commented out in the template gist listed above. Simply uncomment any tags you'd like to use or copy/paste them from here. Available tags are:
+
+- 2d animation
+- 3d animation
+- Motion design
+- 3d modeling
+- Artificial reality
+- film production
+- Post-production
+- Video Editing
+- Emerging Media
+- Drone / Aerial videography
+- Set Design
+- Casting & Talent Management
+- Sound design
+- Color grading
+- Web design
+- Product Photography
+- Compositing
+- Prototyping
+- UI / UX design
+- Web hosting
+- Ecommerce
+- Logo animation
+- Kinetic typography
+- Creative concepting
+- Scripting & storyboarding
+- Roll-out marketing plan
+
+#### Project Previews
 
 Project previews are what is displayed on the /work page. There are three critical items that need to be added for this.
 
@@ -55,15 +102,21 @@ Once the files are created and properly put into the /img/work/ directory, you c
 
 The system will automatically add all of the appropriate file extensions needed when the page loads.
 
-### Credits
+#### Credits
 
-You can add a URL field if the person has a website (such as an IMDB) to link to. For example, it could look like this:
+Credits should be listed in order of hierarchy. The credits should include past or current employees, outside vendors or contractors, talent, etc. Talent should _always_ be listed first and should include a link to their IMDB or website. You can add a URL field if the person has a website (such as an IMDB) to link to. Here's an example:
 
 ```
 credits:
   - name: Jordan Lambrecht
     title: Creative Director
     website: 'https://google.com'
+  - name: Samee Callahan
+    title: Associate Creative Director
+  - name: Daniel Hinz
+    title: Animation Lead
+  - name: Olivia Boldt
+    title: Project Manager
 ```
 
 Remove the URL line if you are not including it.
