@@ -5,7 +5,7 @@ import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import { CamelCaseToSentence } from '@lib/helpers'
 import { getAllPeople, getPersonBySlug } from '@lib/api_person'
 import matter from 'gray-matter'
-
+import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import markdownStyles from '@styles/markdown-styles.module.css'
 
@@ -65,8 +65,38 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
       </div>
     )
   }
+  const [firstName, lastName] = person.name.split(' ')
   return (
     <Main>
+      <NextSeo
+        title={`Pixel Bakery – ${person.name}`}
+        description={`${person.content}`}
+        openGraph={{
+          title: `Pixel Bakery – ${person.name}`,
+          description: `${person.content}`,
+          url: `https://pixelbakery.com/about/`,
+          type: 'profile',
+          profile: {
+            firstName: firstName,
+            lastName: lastName,
+            gender: `${person.pronoun}`,
+          },
+          images: [
+            {
+              url: `https://pixelbakery.com/${person.photos.headshotFun}`,
+              alt: `Pixel Bakery Design Studio funny headshot for ${person.name}, ${person.title}`,
+            },
+            {
+              url: `https://pixelbakery.com/${person.photos.headshotSerious}`,
+              alt: `Pixel Bakery Design Studio serious headshot for ${person.name}, ${person.title}`,
+            },
+            {
+              url: `https://pixelbakery.com/${person.photos.headshotSmiling}`,
+              alt: `Pixel Bakery Design Studio smiling headshot for ${person.name}, ${person.title}`,
+            },
+          ],
+        }}
+      />
       <Head>
         <title>PBDS | {person.name} </title>
       </Head>
