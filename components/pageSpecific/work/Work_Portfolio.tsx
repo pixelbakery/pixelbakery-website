@@ -1,5 +1,4 @@
 import Work_Portfolio_Card from './Work_Portfolio_Card'
-import portfolio from '@data/portfolio'
 import cn from 'classnames'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'

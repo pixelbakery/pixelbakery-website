@@ -3,19 +3,20 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
-function CaseStudies_PrevNext({ title, allCaseStudies }) {
+function CaseStudies_PrevNext({ allCaseStudies, title }) {
   // const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
   // temp.forEach((cs, index) => {
   //   console.log(index, cs.data.client, cs.data.title)
   // })
-  const allActiveCaseStudies = allCaseStudies.filter((project) => project.data.active)
+  const allActiveCaseStudies = allCaseStudies.filter((project) => project.active)
+
   const index = allActiveCaseStudies.findIndex(
     (project) => project.data.title.toLowerCase() === title.toLowerCase(),
   )
 
-  allActiveCaseStudies.forEach((cs, index) => {
-    console.log(index, ':', cs.data.title, cs.data.date)
-  })
+  // allActiveCaseStudies.forEach((cs, index) => {
+  //   console.log(index, ':', cs.data.title, cs.data.date)
+  // })
   // console.log('index: ', index)
 
   const getPrev = (i) => {

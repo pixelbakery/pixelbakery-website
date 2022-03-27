@@ -1,47 +1,30 @@
-import Card_Rounded from '@parts/Card_Rounded'
+import CaseStudies_OtherProjects_Card from '@caseStudies/CaseStudies_OtherProjects_Card'
 import PropTypes from 'prop-types'
-import allProjects from '@data/portfolio'
+import { shuffleArray } from '@lib/helpers'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+import H2 from '@typography/H2'
+
 SolaTinyChef_OtherProjects.propTypes = {
   otherProjects: PropTypes.array.isRequired,
 }
-function SolaTinyChef_OtherProjects({ title, client }) {
-  const relatedProjects = allProjects.filter(
-    (project) => project.client === client && project.title != title,
-  )
-  const setFirstTag = (tags) => {
-    return [tags[0]]
-  }
-  if (relatedProjects.length > 0) {
-    return (
-      <section className='my-4 bg-yellow pt-12 px-6 '>
-        <div className='mx-auto max-w-md lg:max-w-6xl'>
-          <h2 className='text-left mt-0 pt-0 text-4xl max-w-md '> {`other ${client} projects`}</h2>
-          <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-24'>
-            {relatedProjects.map((project) => {
-              return (
-                <div
-                  className='-mb-12 drop-shadow-md rounded-sm overflow-hidden'
-                  key={project.title}
-                >
-                  <Card_Rounded
-                    link={project.slug}
-                    aspectW={'4'}
-                    aspectY={'3'}
-                    img={project.previewImg}
-                    imgAlt={project.client + ' ' + project.name + ' ' + project.tag}
-                    tags={setFirstTag(project.tags)}
-                    head={project.title}
-                    subhead={project.client}
-                    tagBgColor={'cream'}
-                    tagtextColor={'wine'}
-                  />
-                </div>
-              )
-            })}
-          </div>
+
+function SolaTinyChef_OtherProjects({ title, allCaseStudies }) {
+  const notThisProject = allCaseStudies.filter((project) => project.title != title)
+
+  const relatedProjects = shuffleArray(notThisProject).slice(0, 3)
+
+  return (
+    <PageSection color='yellow'>
+      <InnerWrapper>
+        <H2>More Projects!</H2>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-8'>
+          {relatedProjects.map((project) => {
+            return <CaseStudies_OtherProjects_Card key={project.data.title} project={project} />
+          })}
         </div>
-      </section>
-    )
-  } else return null
+      </InnerWrapper>
+    </PageSection>
+  )
 }
 export default SolaTinyChef_OtherProjects
