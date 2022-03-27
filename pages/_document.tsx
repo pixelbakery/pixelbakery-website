@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 // import Footer from '../components/footer/Footer'
 export const GA_ANALYTICS_MEASUREMENT_ID = 'PC8M8GG'
 const isProd = process.env.NODE_ENV === 'production'
-
+import { DefaultSeo } from 'next-seo'
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -13,6 +13,20 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
+        <DefaultSeo
+          defaultTitle='Pixel Bakery'
+          description={
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+          }
+          openGraph={{
+            type: 'website',
+            description:
+              'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            locale: 'en_IE',
+            url: 'https://pixelbakery.com/',
+            site_name: 'Pixel Bakery Design Studio',
+          }}
+        />
         <Head>
           {isProd && (
             <>
