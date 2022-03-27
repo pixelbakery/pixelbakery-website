@@ -5,10 +5,27 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – Creative Strategy'
+        description={`From the initial discovery meeting to the final deliverable, our leadership team at Pixel
+          Bakery is all about strategizing the best way to deliver your message. Before any
+          pre-production on a project begins, PB develops a communication strategy and creative
+          brief based on a client's goals, pain points, and ideas.`}
+        openGraph={{
+          url: `https://pixelbakery.com/services/creative-strategy`,
+          title: 'Pixel Bakery – Services – Creative Strategy',
+          description: `From the initial discovery meeting to the final deliverable, our leadership team at Pixel
+          Bakery is all about strategizing the best way to deliver your message. Before any
+          pre-production on a project begins, PB develops a communication strategy and creative
+          brief based on a client's goals, pain points, and ideas.`,
+        }}
+      />
       <Services_Header serviceName='Creative Strategy'>
         <Lead>
           We&apos;re more than just designers – we&apos;re thinkers, strategizers, and consultants.
@@ -30,6 +47,6 @@ export default function Services() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </div>
+    </Main>
   )
 }

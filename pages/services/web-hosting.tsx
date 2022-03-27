@@ -5,10 +5,25 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Lead from '@typography/Lead'
 import Store_Maintenance from '@store/Store_Maintenance'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – Web Hosting'
+        description={`We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
+          We'll help you install Wordpress (if that's your jam) and provide you with security
+          updates as well as weekly backups.`}
+        openGraph={{
+          url: `https://pixelbakery.com/services/web-hosting`,
+          title: 'Pixel Bakery – Services – Web Hosting',
+          description: `We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
+          We'll help you install Wordpress (if that's your jam) and provide you with security
+          updates as well as weekly backups.`,
+        }}
+      />
       <Services_Header serviceName='Web Hosting'>
         <Lead>Because you deserve it.</Lead>
         <p>
@@ -20,6 +35,6 @@ export default function Services() {
       </Services_Header>
       <Services_AllServices />
       <Store_Maintenance />
-    </div>
+    </Main>
   )
 }

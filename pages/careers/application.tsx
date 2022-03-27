@@ -11,10 +11,24 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
+import { NextSeo } from 'next-seo'
 
 function Careers_Application({ allJobs }) {
   return (
     <Main>
+      <NextSeo
+        noindex={true}
+        title='Pixel Bakery – Careers – Application'
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/careers/application`,
+          title: 'Pixel Bakery | About',
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <PageHeader_VarH header='Application' subheader='get at it' />
       <PageSection>
         <InnerWrapper>

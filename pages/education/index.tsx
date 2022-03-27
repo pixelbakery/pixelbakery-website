@@ -9,12 +9,23 @@ import ProjectFile from 'types/projectFile'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 type Props = {
   allProjectFiles: ProjectFile[]
 }
 function EducationPage({ allProjectFiles }: Props) {
   return (
-    <main className='max-w-screen overflow-x-hidden' id='educationPage'>
+    <Main className='max-w-screen overflow-x-hidden' id='educationPage'>
+      <NextSeo
+        title='Pixel Bakery – Education'
+        description={`Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`}
+        openGraph={{
+          url: `https://pixelbakery.com/education`,
+          title: 'Pixel Bakery Design Studio',
+          description: `Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`,
+        }}
+      />
       <Education_Header />
       <PageSection>
         <InnerWrapper>
@@ -40,7 +51,7 @@ function EducationPage({ allProjectFiles }: Props) {
       <Education_FromScratch />
       <Education_MadeToOrder />
       <Education_TutorialRequests />
-    </main>
+    </Main>
   )
 }
 export default EducationPage

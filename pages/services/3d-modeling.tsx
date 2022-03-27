@@ -5,10 +5,24 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – 3D Modeling'
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/services/3d-modeling`,
+          title: 'Pixel Bakery – Services – 3D Modeling',
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <Services_Header serviceName='3D Modeling'>
         <Lead>Coming Soon 😉 </Lead>
       </Services_Header>
@@ -17,6 +31,6 @@ export default function Services() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </div>
+    </Main>
   )
 }

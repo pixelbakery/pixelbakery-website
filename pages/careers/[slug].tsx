@@ -19,7 +19,8 @@ import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-
+import { JobPostingJsonLd } from 'next-seo'
+import addMonths from 'date-fns/addMonths'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -32,8 +33,28 @@ const components = {
 }
 
 export default function JobsPage({ slug, source, filePath, frontMatter }) {
+  const datePostedISO = new Date(frontMatter.date).toISOString()
+  const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
+
   return (
     <Main>
+      <JobPostingJsonLd
+        datePosted={`${datePostedISO}`}
+        description={`Pixel Bakery is looking to hire a ${frontMatter.commitment} ${frontMatter.title}`}
+        hiringOrganization={{
+          name: 'Pixel Bakery Design Studio',
+          sameAs: 'https://pixelbakery.com',
+        }}
+        jobLocation={{
+          streetAddress: '2124 Y Street',
+          addressLocality: 'Lincoln',
+          addressRegion: 'NE',
+          postalCode: '68503',
+          addressCountry: 'USA',
+        }}
+        title={`${frontMatter.title}`}
+        validThrough={`${dateExpiredISO}`}
+      />
       <Head>
         <title>Careers – {frontMatter.title} | PBDS</title>
         {/* <meta property='og:image' content={frontMatter.ogImage.url} /> */}
@@ -44,7 +65,7 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
             <div className='max-w-2xl mx-auto'>
               <div className='pb-12'>
                 <Link href='/careers' passHref>
-                  <a className='border-b-2 pb-1 border-b-blue'> ← back to all careers</a>
+                  <a className='border-b-2 pb-1 border-b-blue text-blue'> ← back to all careers</a>
                 </Link>
               </div>
               <p className='my-0 py-0 leading-none text-4xl text-peach font-extrabold'>
@@ -54,7 +75,7 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
                 {frontMatter.title}
               </H1>
               <p className='text-sm italic'>
-                posted on <DateFormatter dateString={frontMatter.date} /> :
+                posted on <DateFormatter dateString={frontMatter.date} />:
               </p>
             </div>
           </InnerWrapper>

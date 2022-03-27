@@ -2,9 +2,17 @@
 
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 function PrivacyPolicy() {
   return (
     <Main id='' className='my-4'>
+      <NextSeo
+        noindex={true}
+        title='Pixel Bakery – Privacy Policy'
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+      />
       <PageHeader_VarH header='Privacy Policy' />
       <section className='mt-20 py-20'>
         <div className='mx-auto max-w-3xl'>

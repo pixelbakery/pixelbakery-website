@@ -5,6 +5,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
+
 import PostHeader from '@recipes/post-header'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { getAllPeople } from '@lib/api_person'
@@ -24,6 +25,7 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
+import { ArticleJsonLd, NextSeo } from 'next-seo'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -38,11 +40,6 @@ const components = {
   TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
-type Props = {
-  matchingAuthor: PersonType
-  ourPerson: PersonType
-}
-
 function shuffleArray(array) {
   let i = array.length - 1
   for (; i > 0; i--) {
@@ -53,7 +50,9 @@ function shuffleArray(array) {
   }
   return array
 }
-export default function PostPage({ source, filePath, frontMatter, ourPerson, relatedPosts }) {
+export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
+  const datePostedISO = new Date(frontMatter.date).toISOString()
+
   const myContainer = useRef(null)
   const [readTime, setReadTime] = useState('')
   const childRef = useRef(null)
@@ -73,12 +72,36 @@ export default function PostPage({ source, filePath, frontMatter, ourPerson, rel
 
   return (
     <Main>
+      <NextSeo
+        title={`PBDS – ${frontMatter.title}`}
+        description={`${frontMatter.excerpt}`}
+        openGraph={{
+          url: `https://pixelbakery.com/recipes/${slug}`,
+          title: `${frontMatter.title}`,
+          type: 'article',
+          description: `${frontMatter.excerpt}`,
+          article: {
+            publishedTime: `${datePostedISO}`,
+            tags: [`${frontMatter.categories[0]}`],
+          },
+          images: [
+            {
+              url: `https://pixelbakery.com${frontMatter.coverImage}`,
+              alt: `${frontMatter.title} written by ${frontMatter.author}`,
+            },
+          ],
+        }}
+      />
+      <ArticleJsonLd
+        type='Blog'
+        url={`https://pixelbakery.com/recipes/${slug}`}
+        title={`${frontMatter.title}`}
+        images={[`https://pixelbakery.com${frontMatter.coverImage}`]}
+        datePublished={`${datePostedISO}`}
+        authorName={`${frontMatter.author}`}
+        description={`${frontMatter.excerpt}`}
+      />
       <div className='mb-32'>
-        <Head>
-          <title>{frontMatter.title} | PBDS</title>
-          <meta property='og:image' content={frontMatter.ogImage.url} />
-        </Head>
-        <h1>{filePath}</h1>
         <PostHeader
           title={frontMatter.title}
           subtitle={frontMatter.subtitle}
@@ -140,6 +163,7 @@ export const getStaticProps = async ({ params }) => {
   //MDX Stuff
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
+
   const { content, data } = matter(source)
   //Author Stuff
   const allPeople = getAllPeople([
@@ -239,10 +263,12 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       relatedPosts: relatedPosts,
+      slug: params.slug,
       // prev: prev,
       // next: next,
       source: mdxSource,
       frontMatter: data,
+
       ourPerson: { ...ourPerson },
     },
   }

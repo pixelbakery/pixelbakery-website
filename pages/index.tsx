@@ -13,15 +13,23 @@ import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Home_Recipes from '@home/Home_Recipes'
 import Main from '@parts/Main'
-import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
 const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
-      <Head>
-        <title>Pixel Bakery</title>
-        <link rel='icon' href='/favicon.svg' />
-      </Head>
+      <NextSeo
+        title='Pixel Bakery Design Studio'
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com`,
+          title: 'Pixel Bakery Design Studio',
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <Home_Landing />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />

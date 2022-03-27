@@ -12,14 +12,32 @@ import H2 from '@typography/H2'
 import H1 from 'components/typography/H1'
 
 import Button_Filled from '@parts/Button_Filled'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 type Props = {
   projectFile: ProjectFileType
   content: string
+  excerpt: string
 }
 
 function EducationProject({ projectFile }: Props) {
   return (
-    <main id='' className=''>
+    <Main id='' className=''>
+      <NextSeo
+        title={`PBDS – ${projectFile.title} Project File`}
+        description={`${projectFile.excerpt}`}
+        openGraph={{
+          url: `https://pixelbakery.com/contact`,
+          title: 'Pixel Bakery Design Studio',
+          description: `${projectFile.excerpt}`,
+          images: [
+            {
+              url: `https://pixelbakery.com/${projectFile.coverImage}`,
+              alt: `${projectFile.excerpt}`,
+            },
+          ],
+        }}
+      />
       <section className='pt-32 md:pt-0 lander my-4 grid grid-cols-1 md:grid-cols-2'>
         <div className=' md:hidden relative col-span-1 aspect-4/3 h-full w-full md:overflow-hidden'>
           <Image
@@ -116,7 +134,7 @@ function EducationProject({ projectFile }: Props) {
           </div>
         </div>
       </section>
-    </main>
+    </Main>
   )
 }
 

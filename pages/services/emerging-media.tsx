@@ -5,10 +5,25 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – Emerging Media'
+        description={`With the development and expansion of social media, mobile marketing, email marketing,
+          instant messaging, and various other digital platforms, it only makes sense that current
+          trends in marketing are ever-evolving. Why not evolve with them?`}
+        openGraph={{
+          url: `https://pixelbakery.com/services/emerging-media`,
+          title: 'Pixel Bakery – Services – Emerging Media',
+          description: `With the development and expansion of social media, mobile marketing, email marketing,
+          instant messaging, and various other digital platforms, it only makes sense that current
+          trends in marketing are ever-evolving. Why not evolve with them?`,
+        }}
+      />
       <Services_Header serviceName='Emerging Media'>
         <Lead>Let&apos;s get interactive, baby. </Lead>
         <p>
@@ -27,6 +42,6 @@ export default function Services() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </div>
+    </Main>
   )
 }
