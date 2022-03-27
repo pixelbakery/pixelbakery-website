@@ -4,6 +4,7 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Lead from '@typography/Lead'
 import H2 from '@typography/H2'
+import Link from 'next/link'
 
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +17,7 @@ function Work_Clients() {
 
   const numRows = Math.floor(clientList.length / 2)
 
-  clientList.forEach((element, index) => {})
+  const activeClients = clientList.filter((client) => client.active)
 
   return (
     <PageSection>
@@ -33,27 +34,23 @@ function Work_Clients() {
       </InnerWrapper>
       <InnerWrapper>
         <div className='mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>
-          {clientList.map((client, index) =>
-            client.active ? (
-              <div key={client.client} className=' col-span-1 '>
-                <div className='relative w-full h-32'>
-                  <p>
-                    <Image
-                      layout='fill'
-                      objectFit='contain'
-                      src={client.logo}
-                      alt={client.client}
-                      className='w-full'
-                      quality={25}
-                      blurDataURL='blur'
-                    />
-                  </p>
+          {activeClients.map((client, index) => (
+            <div key={index} className='col-span-1'>
+              <Link href={client.url} passHref>
+                <div className='cursor-pointer duration-300 hover:scale-99 ease-in-out relative w-full h-32'>
+                  <Image
+                    layout='fill'
+                    objectFit='contain'
+                    src={client.logo}
+                    alt={client.client}
+                    className='w-full'
+                    quality={25}
+                    blurDataURL='blur'
+                  />
                 </div>
-              </div>
-            ) : (
-              ''
-            ),
-          )}
+              </Link>
+            </div>
+          ))}
         </div>
       </InnerWrapper>
     </PageSection>
