@@ -5,10 +5,21 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services() {
   return (
-    <div>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – Social Media'
+        description={`Engage with your audience on their favorite platforms.`}
+        openGraph={{
+          url: `https://pixelbakery.com/services/social-media`,
+          title: 'Pixel Bakery – Services – Social Media',
+          description: `Engage with your audience on their favorite platforms.`,
+        }}
+      />
       <Services_Header serviceName='Social Media Kits'>
         <Lead>Engage with your audience on their favorite platforms.</Lead>
         <p>More details coming soon 😉</p>
@@ -18,6 +29,6 @@ export default function Services() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </div>
+    </Main>
   )
 }

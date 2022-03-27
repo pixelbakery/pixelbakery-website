@@ -5,9 +5,15 @@ import LogoAnimation_PastClients from '@logoAnimation/LogoAnimation_PastClients'
 import Vimeo from '@u-wave/react-vimeo'
 import LogoAnimation_Tiers from '@logoAnimation/LogoAnimation_Tiers'
 import LogoAnimation_GetStarted from '@logoAnimation/LogoAnimation_GetStarted'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 function LogoAnimation() {
   return (
-    <main>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Logo Animation'
+        description={`bring your logo to life with an eye-catching and memorable animation`}
+      />
       <PageHeader_VariableHeight
         header={'Motion Mixer'}
         subheader={'Bring your logo to life with an eye-catching and memorable animation'}
@@ -24,7 +30,7 @@ function LogoAnimation() {
       <LogoAnimation_GetStarted />
       <LogoAnimation_Descriptions />
       <LogoAnimation_PastClients />
-    </main>
+    </Main>
   )
 }
 export default LogoAnimation

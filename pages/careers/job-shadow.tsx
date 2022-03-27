@@ -6,9 +6,27 @@ import H2 from '@typography/H2'
 import H2AndLead from '@typography/H2AndLead'
 import Lead from '@typography/Lead'
 import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'
+import { NextSeo } from 'next-seo'
 function JobShadow() {
   return (
     <Main>
+      <NextSeo
+        title='Pixel Bakery – Careers – Job Shadows'
+        description={`Whether you’re considering a career in design or you just want to come in and hang
+                out with us (we don’t blame you), there’s definitely an opportunity to come shadow
+                at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
+                and maybe give you a sneak-peek on what we plan to do! There are just a few
+                requirements.`}
+        openGraph={{
+          url: `https://pixelbakery.com/careers/job-shadow`,
+          title: 'Pixel Bakery | Careers | Job Shadow',
+          description: `Whether you’re considering a career in design or you just want to come in and hang
+                out with us (we don’t blame you), there’s definitely an opportunity to come shadow
+                at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
+                and maybe give you a sneak-peek on what we plan to do! There are just a few
+                requirements.`,
+        }}
+      />
       <PageHeader_VarH
         header='Job Shadows'
         subheader="Come learn what it's like to work at Pixel Bakery"

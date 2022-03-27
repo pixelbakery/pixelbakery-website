@@ -5,7 +5,6 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
@@ -20,6 +19,8 @@ import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
+import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
+import { NextSeo } from 'next-seo'
 
 export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
   const components = {
@@ -62,6 +63,23 @@ export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
 
   return (
     <Main>
+      <NextSeo
+        title={`PBDS – ${frontMatter.title}`}
+        description={frontMatter.excerpt}
+        openGraph={{
+          url: `https://pixelbakery.com/work/case-studies/${frontMatter.client}-${frontMatter.title}`,
+          title: frontMatter.title,
+          description: frontMatter.excerpt,
+          images: [
+            {
+              url: `https://pixelbakery.com/img/${frontMatter.vimeoPreview}`,
+              alt: frontMatter.excerpt,
+              type: 'image/jpeg',
+            },
+          ],
+          site_name: 'Pixel Bakery Design Studio',
+        }}
+      />
       <CaseStudies_Header
         client={frontMatter.client}
         clientURL={frontMatter.website}
@@ -70,11 +88,14 @@ export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
         projectExcerpt={frontMatter.excerpt}
         heroVideo={frontMatter.vimeoID}
       />
+      <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />
+
       <article id='blog-body-guts'>
         <MDXRemote {...source} components={components} />
       </article>
       <CaseStudies_Credits credits={frontMatter.credits} />
-      <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} />
+      <CaseStudies_OtherProjects title={frontMatter.title} allCaseStudies={allCaseStudies} />
+      {/* <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} /> */}
     </Main>
   )
 }
@@ -97,14 +118,14 @@ export const getStaticProps = async ({ params }) => {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { content, data } = matter(source)
-
       return {
         content,
         data,
         filePath,
       }
     })
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .filter((cs) => cs.data.active)
+    .sort((cs1, cs2) => (cs1.data.date > cs2.data.date ? -1 : 1))
 
   return {
     props: {

@@ -11,19 +11,21 @@ import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import cn from 'classnames'
 import { ChevronRightIcon } from '@images/UI_Icons'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 const Index = ({ allPosts }) => {
-  const [displayed, setDisplayed] = useState(12)
+  // const [displayed, setDisplayed] = useState(12)
 
-  function handleDisplayed() {
-    if (displayed < Object.keys(allPosts).length) {
-      setDisplayed(displayed + 12)
-    } else setDisplayed(Object.keys(allPosts).length)
-  }
+  // function handleDisplayed() {
+  //   if (displayed < Object.keys(allPosts).length) {
+  //     setDisplayed(displayed + 12)
+  //   } else setDisplayed(Object.keys(allPosts).length)
+  // }
 
   const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
   const secondaryPostNo = 8
-  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo, displayed)
+  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)
   const getFeaturedPosts = () => {
     return allPosts.slice(0, featuredPostNo).map((post, index) => {
       return (
@@ -63,7 +65,19 @@ const Index = ({ allPosts }) => {
     })
   }
   return (
-    <>
+    <Main>
+      <NextSeo
+        title="Pixel Bakery – Mom's Recipes"
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/recipes`,
+          title: "Pixel Bakery – Mom's Recipes",
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <PageHeader_VariableHeight
         header="Mom's Recipes"
         subheader='No word yet on her spaghetti, though'
@@ -82,7 +96,7 @@ const Index = ({ allPosts }) => {
         <div className='mx-auto max-w-md md:max-w-lg lg:max-w-6xl'>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </div>
-        <div className='my-14 mx-auto max-w-sm '>
+        {/* <div className='my-14 mx-auto max-w-sm '>
           <button
             onClick={() => handleDisplayed()}
             className={cn(
@@ -101,9 +115,9 @@ const Index = ({ allPosts }) => {
               </i>
             </div>
           </button>
-        </div>
+        </div> */}
       </PageSection>
-    </>
+    </Main>
   )
 }
 

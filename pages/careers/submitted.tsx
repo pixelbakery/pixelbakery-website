@@ -4,11 +4,13 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import H1 from '@typography/H1'
+import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
 function SubmissionConfirmation() {
   return (
     <Main>
+      <NextSeo noindex={true} title='Pixel Bakery – Careers – Application Submitted' />
       <PageSection color='pink-light'>
         <InnerWrapper className='pt-24'>
           <H1 className='peach text-4xl md:text-6xl text-blue mb-8'>
