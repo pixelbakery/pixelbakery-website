@@ -9,6 +9,7 @@ type ProjectFileType = {
   fileType: string
   uploadDate: string
   fileSize: string
+  excerpt: string
   coverImage: string
   downloadLink: string
   content: string

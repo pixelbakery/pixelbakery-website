@@ -10,12 +10,25 @@ import Person from 'types/person'
 import Main from '@parts/Main'
 import About_Awards from '@about/About_Awards'
 import About_Spotify from '@about/About_Spotify'
+import { NextSeo } from 'next-seo'
 type Props = {
   allPeople: Person[]
 }
 function About({ allPeople }: Props) {
   return (
     <Main>
+      <NextSeo
+        title='Pixel Bakery | About'
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/about`,
+          title: 'Pixel Bakery | About',
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <PageHeader_VariableHeight header='About' subheader='Just add flour.' />
       <About_Team people={allPeople} />
       <About_Values />

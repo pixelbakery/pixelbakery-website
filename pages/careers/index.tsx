@@ -16,6 +16,7 @@ import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
+import { NextSeo } from 'next-seo'
 
 const Careers = ({ allJobs }) => {
   const openPositions = allJobs.filter((job) => job.data.openPositions && job.data.active)
@@ -23,6 +24,25 @@ const Careers = ({ allJobs }) => {
 
   return (
     <Main id='careers-page'>
+      <NextSeo
+        title='Pixel Bakery | Careers'
+        description={` We’re a motion-focused creative shop, meaning while our most frequently requested
+              services are in the areas of animation, videography, and web design, we basically do
+              it all – from production on animated series in LA, to rebrands for local startups, to
+              print design to regional nonprofits. We are producers and we are creatives, and at the
+              end of the day we find our happiness and fulfillment from making great creative that
+              touches lives.`}
+        openGraph={{
+          url: `https://pixelbakery.com/careers`,
+          title: 'Pixel Bakery | About',
+          description: ` We’re a motion-focused creative shop, meaning while our most frequently requested
+              services are in the areas of animation, videography, and web design, we basically do
+              it all – from production on animated series in LA, to rebrands for local startups, to
+              print design to regional nonprofits. We are producers and we are creatives, and at the
+              end of the day we find our happiness and fulfillment from making great creative that
+              touches lives.`,
+        }}
+      />
       <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />
       <PageSection className='' color='white'>
         <InnerWrapper className='lg:pb-0 grid grid-cols-1 xl:grid-cols-2'>

@@ -8,11 +8,20 @@ import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
 import Main from '@parts/Main'
 import matter from 'gray-matter'
-import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
 const Work = ({ allCaseStudies }) => {
   return (
-    <Main className='max-w-screen overflow-hidden'>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Our Work'
+        description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
+        openGraph={{
+          url: `https://pixelbakery.com/work`,
+          title: 'Pixel Bakery – Our Work',
+          description: `We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`,
+        }}
+      />
       <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />
       <Work_Services />
       <Work_Portfolio allCaseStudies={allCaseStudies} />
@@ -35,7 +44,8 @@ export function getStaticProps() {
         filePath,
       }
     })
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .filter((cs) => cs.data.active)
+    .sort((cs1, cs2) => (cs1.data.date > cs2.data.date ? -1 : 1))
 
   return { props: { allCaseStudies } }
 }

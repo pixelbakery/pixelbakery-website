@@ -5,10 +5,24 @@ import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurProcess'
 import Lead from '@typography/Lead'
 import Store_Maintenance from '@store/Store_Maintenance'
+import Main from '@parts/Main'
+import { NextSeo } from 'next-seo'
 
 export default function Services_Animation() {
   return (
-    <main>
+    <Main>
+      <NextSeo
+        title='Pixel Bakery – Services – Animation'
+        description={
+          'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/services/animation`,
+          title: 'Pixel Bakery – Services – Animation',
+          description:
+            'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling',
+        }}
+      />
       <Services_Header serviceName='Animation'>
         <Lead color='peach'>
           We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling
@@ -25,6 +39,6 @@ export default function Services_Animation() {
       <Services_AllServices />
       <Services_OurProcess />
       <Store_Maintenance />
-    </main>
+    </Main>
   )
 }
