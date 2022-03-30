@@ -49,8 +49,8 @@ export const Footer: NextPage = () => {
                 <Logo_Type />
               </div>
 
-              <nav className=' pt-5 mt-3'>
-                <ul className='grid grid-cols-2 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
+              <nav className='hidden sm:block pt-5 mt-3'>
+                <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
                   {nav_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
@@ -58,7 +58,7 @@ export const Footer: NextPage = () => {
               </nav>
             </div>
 
-            <div className='flex flex-col justify-between h-full md:pr-6'>
+            <div className='hidden sm:flex flex-col justify-start h-full md:pr-6'>
               <div className='self-center w-full hidden lg:block'>
                 <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
                   <H3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
@@ -93,7 +93,7 @@ export const Footer: NextPage = () => {
                   </H3>
                 </div>
                 <nav className=''>
-                  <ul className='mt-3 mb-0 grid grid-cols-2 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
+                  <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
                     {nav_footer_sub.map((navitem) => (
                       <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
                     ))}
@@ -101,7 +101,24 @@ export const Footer: NextPage = () => {
                 </nav>
               </div>
             </div>
-
+            {/* Mobile Nav */}
+            <div className='md:hidden grid grid-cols-2 gap-y-0 gap-x-6'>
+              <ul className='flex flex-col gap-y-3'>
+                {nav_main.map((navitem, index) => (
+                  <div key={index} className={'font-extrabold text-xl leading-none'}>
+                    <Footer_Nav navitem={navitem} key={navitem.text} />
+                  </div>
+                ))}
+              </ul>
+              <ul className=' mb-0 flex flex-col gap-y-3'>
+                {nav_footer_sub.map((navitem, index) => (
+                  <div key={index}>
+                    <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
+                  </div>
+                ))}
+              </ul>
+            </div>
+            {/* End Mobile Nav */}
             <div className='flex flex-col justify-between h-full'>
               <div className='text-center xl:mb-4'>
                 <Footer_HappyCard />
