@@ -7,7 +7,7 @@ function Content_ContactForm() {
   return (
     <PageSection color='pink-light'>
       <InnerWrapper>
-        <H2 color='egg'>HMU.</H2>
+        <H2 color='blue-dark'>HMU.</H2>
         <Contact_ContactForm_Form />
       </InnerWrapper>
     </PageSection>

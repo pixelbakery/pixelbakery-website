@@ -12,13 +12,13 @@ function Home_Landing() {
     <section className='lander overflow-hidden w-full my-4 flex'>
       <nav className='w-2/5 xl:w-1/3 max-w-lg bg-egg h-full hidden lg:flex flex-col justify-center py-10 px-16 '>
         <div className='w-24 xl:w-32 2xl:w-52 -mb-6'>
-          <div className=' w-full  text-peach fill-current '>
+          <div className=' w-full  text-pink fill-current '>
             <Logo_Primary className='' />
           </div>
         </div>
         <div className='w-fit '>
           <div className='h-full w-full flex flex-col justify-center ' id='homepage-main-nav'>
-            <ul className='grid grid-cols-1 gap-y-1 xl:gap-y-2  text-3xl 2xl:text-5xl  lowercase font-bold 2xl:font-extrabold text-peach'>
+            <ul className='grid grid-cols-1 gap-y-1 xl:gap-y-2  text-3xl 2xl:text-5xl  lowercase font-bold 2xl:font-extrabold text-pink'>
               {nav_main.map((navItem) => {
                 return (
                   <li
@@ -46,7 +46,7 @@ function Home_Landing() {
             />
           </div>
           <div className='mx-auto w-full '>
-            <Nav_SocialLinks color={'blue'} textSize={'text-xl xl:text-3xl'} />
+            <Nav_SocialLinks color={'peach'} textSize={'text-xl xl:text-3xl'} />
           </div>
         </div>
       </nav>

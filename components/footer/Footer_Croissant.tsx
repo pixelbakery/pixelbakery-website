@@ -19,13 +19,13 @@ function Footer_Mailchimp({ onModalUpdate }) {
   const handleCheck = () => {
     setChecked(!checked)
   }
-  const handleModal = () => {
-    setModal(!modalOpen)
-    setSubmitted(false)
-  }
-  const handleSubmitted = () => {
-    setSubmitted(!submitted)
-  }
+  // const handleModal = () => {
+  //   setModal(!modalOpen)
+  //   setSubmitted(false)
+  // }
+  // const handleSubmitted = () => {
+  //   setSubmitted(!submitted)
+  // }
 
   ////////////
   // MAILCHIMP

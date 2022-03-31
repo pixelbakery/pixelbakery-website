@@ -52,8 +52,8 @@ function Contact_HangOut() {
           })}
         </ul>
       </InnerWrapper>
-      <div className='-mt-10 overflow-visible '>
-        <div className='-ml-6 md:ml-5 w-full flex flex-grow overflow-visible animate-horizontal pointer-events-none'>
+      <div className='overflow-visible relative'>
+        <div className='w-fit -mb-14 relative block mx-auto overflow-visible animate-horizontal pointer-events-none'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className={cn(' top-0 left-0 social-link text-blue-dark fill-yellow ')}
@@ -102,7 +102,7 @@ function Contact_HangOut() {
                   it's good to see you.
                 </span>
                 Pixel Bakery <br className='xl:hidden' /> Design Studio
-                <br /> 2124 Y St. Flat #208
+                <br /> 2124 Y Street Suite 112
                 <br /> Lincoln, NE 68503
               </div>
             </div>
@@ -120,7 +120,7 @@ function Contact_HangOut() {
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'/contact/schedule'} passHref>
+                    <Link href={'/onboarding#calendly'} passHref>
                       <a>schedule it</a>
                     </Link>
                   </li>

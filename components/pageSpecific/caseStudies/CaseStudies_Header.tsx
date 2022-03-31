@@ -24,20 +24,20 @@ function SolaTinyChef_Header({ ...props }) {
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
             {props.projectName}
           </H1>
-          <Lead
+          {/* <Lead
             color='wine'
             className='py-6 text-wine text-xl max-w-sm font-medium text-opacity-50'
           >
             {props.projectExcerpt}
-          </Lead>
-          <Link href={'/work'}>
+          </Lead> */}
+          {/* <Link href={'/work'}>
             <a className='text-blue text-md text-opacity-90 hover:text-opacity-75 pb-1 border-b border-b-blue'>
               ← back to all case studies
             </a>
-          </Link>
+          </Link> */}
         </div>
       </div>
-      <div className='2xl:px-12 max-w-8xl mx-auto'>
+      <div className='2xl:px-12 max-w-8xl mx-auto mt-20'>
         <Vimeo video={props.heroVideo} autoplay={false} showPortrait responsive={true} />
       </div>
     </section>
