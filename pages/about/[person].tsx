@@ -58,7 +58,7 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
   const previous = getPrev(personIndex)
   const next = getNext(personIndex)
 
-  console.log('prev: ', previous.name, ' next: ', next.name)
+  // console.log('prev: ', previous.name, ' next: ', next.name)
   activePeople.forEach((p, index) => {
     console.log(index, ': ', p.name)
   })
@@ -243,10 +243,10 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
           ) : (
             ''
           )}
-          <PageSection color={'pink-light'}>
+          {/* <PageSection color={'pink-light'}>
             <InnerWrapper className='py-2 my-2'>
               <div className='flex justify-between'>
-                <Link href={previous.slug}>
+                <Link href={previous.name}>
                   <a className='flex'>
                     <div className='w-20 self-center text-peach rotate-180'>
                       <ChevronRightIcon />
@@ -258,7 +258,7 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
                     </div>
                   </a>
                 </Link>
-                <Link href={next.slug}>
+                <Link href={next.name}>
                   <a className='flex'>
                     <div className='flex flex-col justify-center'>
                       <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0'>
@@ -273,7 +273,7 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
                 </Link>
               </div>
             </InnerWrapper>
-          </PageSection>
+          </PageSection> */}
         </>
       )}
     </Main>
