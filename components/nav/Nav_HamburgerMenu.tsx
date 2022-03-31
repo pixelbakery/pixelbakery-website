@@ -12,56 +12,6 @@ function Nav_HamburgerMenu() {
   const updateModal = () => {
     setHamToggle(!hamToggle)
   }
-
-  //responsible for enabling and disabling the fullscreen menu
-  // useEffect(() => {
-  //   // let boxes = [box1.current, box2.current, box3.current]
-  //   if (!hamToggle) {
-
-  //     // gsap.to(boxes, {
-  //     //   invalidateOnRefresh: true,
-  //     //   opacity: 1,
-  //     // })
-  //     gsap.to(fullscreen.current, {
-  //       autoAlpha: 0,
-  //     })
-  //   } else {
-  //     // gsap.to(boxes, {
-  //     //   opacity: 0,
-  //     // })
-  //     gsap.to(fullscreen.current, {
-  //       autoAlpha: 1,
-  //     })
-  //   }
-  // }, [hamToggle])
-
-  // const handleHamToggle = () => {
-  //   setActive(!isActive)
-  //   if (isActive) {
-  //     HandleHamOpen()
-  //     gsap.set('body', { className: 'px-4 bg-egg overflow-hidden overscroll-none ', delay: 0.5 })
-  //   } else {
-  //     handleHamClose()
-  //     gsap.set('body', {
-  //       className: 'px-4 bg-egg overflow-auto overscroll-auto ',
-  //       delay: 0.5,
-  //     })
-  //   }
-  // }
-  // useEffect(() => {
-  //   gsap.set('#fullscreenNav', { opacity: 0, autoAlpha: 0 })
-  // })
-
-  // function HandleHamOpen() {
-  //   // gsap.to('#fullscreenNav', { display: 'block' })
-  //   gsap.to('#fullscreenNav', { duration: 0.66, opacity: 1, autoAlpha: 1 })
-  //   //
-  // }
-  // const handleHamClose = () => {
-  //   gsap.to('#fullscreenNav', { duration: 0.66, opacity: 0, autoAlpha: 0 })
-  //   // gsap.set('#fullscreenNav', { display: 'none' })
-  // }
-
   return (
     <>
       <Nav_FullscreenMenu isActive={hamToggle} onModalUpdate={updateModal} />
@@ -74,7 +24,7 @@ function Nav_HamburgerMenu() {
       >
         <div
           className='group inline-block bg-cream rounded-lg transform transition-all duration-600 ease-in-out scale-100 opacity-100
-  hover:opacity-90 hover:scale-95 active:scale-97'
+hover:scale-95 active:scale-97'
         >
           <div className={cn(style.hamWrapper)}>
             <svg
