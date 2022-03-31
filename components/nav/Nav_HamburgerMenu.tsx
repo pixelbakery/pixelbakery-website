@@ -4,17 +4,17 @@ import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
-function Nav_HamburgerMenu() {
+function Nav_HamburgerMenu({ isActive, onModalUpdate }) {
   // const el = useRef()
-  const [hamToggle, setHamToggle] = useState(false)
+  // const [hamToggle, setHamToggle] = useState(false)
   const hamRef = useRef(null)
 
   const updateModal = () => {
-    setHamToggle(!hamToggle)
+    onModalUpdate(!isActive)
   }
   return (
     <>
-      <Nav_FullscreenMenu isActive={hamToggle} onModalUpdate={updateModal} />
+      {/* <Nav_FullscreenMenu isActive={hamToggle} onModalUpdate={updateModal} /> */}
 
       <div
         id='nav-ham'
@@ -28,7 +28,7 @@ hover:scale-95 active:scale-97'
         >
           <div className={cn(style.hamWrapper)}>
             <svg
-              className={cn(style.ham, style.hamRotate, { [style.active]: hamToggle })}
+              className={cn(style.ham, style.hamRotate, { [style.active]: isActive })}
               viewBox='0 0 100 100'
             >
               <path
