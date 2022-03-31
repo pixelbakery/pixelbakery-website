@@ -2,7 +2,7 @@ import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
 
 import About_Team from '@about/About_Team'
 import About_Values from '@about/About_Values'
-import About_Commitment from '@about/About_Commitment'
+
 import About_Twitch from '@about/About_Twitch'
 import About_Faq from '@about/About_Faq'
 import { getAllPeople } from '@lib/api_person'

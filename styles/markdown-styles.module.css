@@ -29,9 +29,8 @@
   @apply max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium;
 }
 
-
 .markdown blockquote {
-  @apply border border-l-8 border-wine-100 px-16 py-3 my-20 italic;
+  @apply border border-l-8 border-wine-100 px-16 py-3 my-12 italic;
 }
 
 .markdown a {

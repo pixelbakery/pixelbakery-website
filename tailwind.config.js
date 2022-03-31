@@ -1,12 +1,11 @@
-/* eslint-disable no-undef */
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       transparent: 'transparent',
+      cream: 'rgb(239, 232, 242)', //#EFE8F2},
       white: '#ffffff',
       egg: 'rgb(243, 244, 246)',
-      purple: 'rgb(32,250,32)',
       blue: {
         light: 'rgb(204, 238, 255)',
         DEFAULT: 'rgb(56, 204, 255)',
@@ -17,7 +16,6 @@ module.exports = {
         DEFAULT: 'rgb(255, 94, 100)',
       },
       yellow: 'rgb(250, 216, 105)',
-      meow: 'rgb(250, 216, 110)',
       pink: {
         extralight: '#FFEFFF',
         light: 'rgb(241, 231, 243)',
@@ -31,7 +29,6 @@ module.exports = {
         500: 'rgb(104, 102, 111)',
         DEFAULT: 'rgb(80, 78, 87)', //#504E57
       },
-      cream: 'rgb(239, 232, 242)', //#EFE8F2},
     },
 
     stroke: (theme) => theme('colors'),
