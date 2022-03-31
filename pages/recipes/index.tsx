@@ -13,6 +13,7 @@ import cn from 'classnames'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import InnerWrapper from '@parts/InnerWrapper'
 
 const Index = ({ allPosts }) => {
   // const [displayed, setDisplayed] = useState(12)
@@ -83,7 +84,7 @@ const Index = ({ allPosts }) => {
         subheader='No word yet on her spaghetti, though'
       />
       <PageSection>
-        <div className='mx-auto max-w-6xl'>
+        <InnerWrapper>
           <H2>Recent</H2>
           <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
             {getFeaturedPosts()}
@@ -91,11 +92,11 @@ const Index = ({ allPosts }) => {
           <div className='my-16 grid grid-cols-2  sm:grid-cols-4  gap-4 md:gap-y-20 md:gap-5'>
             {getSecondaryPosts()}
           </div>
-        </div>
+        </InnerWrapper>
 
-        <div className='mx-auto max-w-md md:max-w-lg lg:max-w-6xl'>
+        <InnerWrapper className='mx-auto max-w-md md:max-w-lg lg:max-w-6xl'>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </div>
+        </InnerWrapper>
         {/* <div className='my-14 mx-auto max-w-sm '>
           <button
             onClick={() => handleDisplayed()}
