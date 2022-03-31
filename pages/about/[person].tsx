@@ -22,12 +22,46 @@ import SocialLinks from '@images/Icons_Social/SocialLinks'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import Button_Filled from '@parts/Button_Filled'
+import { useState } from 'react'
 
-function Person({ prev, next, person, matchingAuthorPosts }) {
+function Person({ person, allPeople, matchingAuthorPosts }) {
   const router = useRouter()
   const socialList = person.socials
   const details = person.details
 
+  const activePeople = allPeople
+    .filter((person) => person.active)
+    .sort((person1, person2) => (person2.name > person1.name ? -1 : 1))
+
+  const personIndex = () => {
+    const personIndex = activePeople.findIndex(
+      (p) => p.name.toLowerCase() === person.name.toLowerCase(),
+    )
+    return personIndex
+  }
+  function getPrev(i) {
+    if (i === 0) {
+      return activePeople[activePeople.length - 1]
+    } else {
+      return activePeople[i - 1]
+    }
+  }
+
+  function getNext(i) {
+    if (i === activePeople.length - 1) {
+      return activePeople[0]
+    } else {
+      return activePeople[i + 1]
+    }
+  }
+
+  const previous = getPrev(personIndex)
+  const next = getNext(personIndex)
+
+  console.log('prev: ', previous.name, ' next: ', next.name)
+  activePeople.forEach((p, index) => {
+    console.log(index, ': ', p.name)
+  })
   function Details() {
     return (
       <InnerWrapper>
@@ -212,14 +246,14 @@ function Person({ prev, next, person, matchingAuthorPosts }) {
           <PageSection color={'pink-light'}>
             <InnerWrapper className='py-2 my-2'>
               <div className='flex justify-between'>
-                <Link href={prev.slug}>
+                <Link href={previous.slug}>
                   <a className='flex'>
                     <div className='w-20 self-center text-peach rotate-180'>
                       <ChevronRightIcon />
                     </div>
                     <div className='flex flex-col justify-center'>
                       <p className='text-peach font-semibold text-xl leading-none my-0 py-0'>
-                        {prev.name}
+                        {previous.name}
                       </p>
                     </div>
                   </a>
@@ -251,6 +285,7 @@ type Params = {
     person: string
     slug: string
     name: string
+    active: boolean
   }
 }
 export async function getStaticProps({ params }: Params) {
@@ -265,29 +300,9 @@ export async function getStaticProps({ params }: Params) {
     'email',
     'content',
   ])
-  const allPeople = getAllPeople(['name', 'slug'])
+  const allPeople = getAllPeople(['name', 'slug', 'active'])
+
   // Get current person in people object so we can see who comes before and after
-  const index = allPeople
-    .sort((person2, person1) => (person1.name > person2.name ? -1 : 1))
-    .findIndex((p) => p.name.toLowerCase() === person.name.toLowerCase())
-
-  const getPrev = (i) => {
-    if (i === 0) {
-      return allPeople[allPeople.length - 1]
-    } else {
-      return allPeople[i - 1]
-    }
-  }
-
-  const getNext = (i) => {
-    if (i === allPeople.length - 1) {
-      return allPeople[0]
-    } else {
-      return allPeople[i + 1]
-    }
-  }
-  const prev = getPrev(index)
-  const next = getNext(index)
 
   // Find any associated blog posts
   const allPosts = postFilePaths
@@ -313,8 +328,6 @@ export async function getStaticProps({ params }: Params) {
     props: {
       matchingAuthorPosts: matchingAuthorPosts,
       allPeople: allPeople,
-      prev: prev,
-      next: next,
       person: {
         ...person,
         content,

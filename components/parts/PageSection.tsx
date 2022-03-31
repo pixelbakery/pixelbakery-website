@@ -13,7 +13,7 @@ export default function PageSection({
   id,
 }: React.PropsWithChildren<Props>) {
   return (
-    <section className={cn('my-4 py-8 px-8 lg:py-32', `bg-${color}`, `${className}`)} id={id}>
+    <section className={cn('my-4 py-12 px-8 lg:py-32', `bg-${color}`, `${className}`)} id={id}>
       {children}
     </section>
   )
