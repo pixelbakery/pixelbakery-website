@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
+import cn from 'classnames'
+import Nav_FullscreenMenu from './Nav_FullscreenMenu'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Navbar() {
+  const [isHamActive, setHamToggle] = useState(false)
+
   function handleMouseEnter(e) {
     gsap.to(e.target, { scale: 0.975, ease: 'sine.inOut', duration: 0.15 })
   }
@@ -125,7 +129,7 @@ export default function Navbar() {
             onMouseEnter={handleMouseEnterLogo}
           >
             <Link href={'/'} passHref>
-              <a className='pointer-events-auto block relative  h-full w-full z-50 px-4 pt-3 my-0'>
+              <a className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0'>
                 <div
                   ref={logoWrapper}
                   className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
@@ -171,7 +175,7 @@ export default function Navbar() {
         </div>
         <div className=' overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
           <div
-            className='relative opacity-0 self-center'
+            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
             ref={box1}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -187,7 +191,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div
-            className='relative opacity-0 self-center'
+            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
             ref={box2}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -203,7 +207,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div
-            className='relative opacity-0 self-center'
+            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
             ref={box3}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -218,8 +222,8 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-          <div ref={hamRef} className=' navItem'>
-            <Nav_HamburgerNav />
+          <div ref={hamRef} className=''>
+            <Nav_HamburgerNav isActive={isHamActive} onModalUpdate={setHamToggle} />
           </div>
         </div>
       </div>
@@ -235,6 +239,7 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
+      <Nav_FullscreenMenu isActive={isHamActive} onModalUpdate={setHamToggle} />
     </>
   )
 }

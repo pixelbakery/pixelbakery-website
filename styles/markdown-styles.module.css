@@ -19,7 +19,7 @@
   @apply text-xl md:text-2xl mt-8 mb-4 leading-snug;
 }
 .markdown p {
-  @apply text-lg text-wine my-4 pb-3;
+  @apply text-lg text-wine my-4 pb-3 max-w-3xl;
 }
 .markdown img {
   @apply mx-auto my-4 mt-8;
