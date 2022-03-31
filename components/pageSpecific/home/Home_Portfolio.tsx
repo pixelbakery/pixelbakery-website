@@ -1,5 +1,6 @@
 import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
+import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
 
@@ -10,7 +11,7 @@ function Home_Portfolio({ allCaseStudies }) {
   const featuredProj03 = activeCS[2]
   const featuredProj04 = activeCS[3]
   return (
-    <section id='home-portfolio' className='bg-white py-8 my-4 px-6'>
+    <PageSection id='home-portfolio' className='bg-white py-8 my-4 px-6'>
       <div className='max-w-md md:max-w-3xl lg:max-w-6xl 2xl:max-w-full 2xl:px-12 mx-auto'>
         <InnerWrapper>
           <H2 color='blue-dark'>our best hits</H2>
@@ -56,7 +57,7 @@ function Home_Portfolio({ allCaseStudies }) {
           chevronDirection='right'
         />
       </div>
-    </section>
+    </PageSection>
   )
 }
 export default Home_Portfolio

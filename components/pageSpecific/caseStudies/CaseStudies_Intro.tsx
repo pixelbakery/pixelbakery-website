@@ -5,12 +5,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 import H2AndLead from '@typography/H2AndLead'
+import Lead from '@typography/Lead'
 export default function CaseStudiesIntro({ children, ...props }) {
   return (
     <PageSection className={cn('lg:py-12')}>
       <InnerWrapper className={cn('flex justify-center')}>
         <article className='grid grid-cols-1 lg:grid-cols-5 gap-x-16 xl:gap-x-24'>
-          <div className='col-span-1 lg:col-span-5 flex justify-center'>
+          {/* <div className='col-span-1 lg:col-span-5 flex justify-center'>
             <Link href={props.url} passHref>
               <a
                 rel='noOpener'
@@ -27,17 +28,12 @@ export default function CaseStudiesIntro({ children, ...props }) {
                 />
               </a>
             </Link>
-          </div>
-          <div className='col-span-1 lg:col-span-2'>
-            <H2AndLead
-              headerText={'Creative Brief'}
-              leadText={props.title}
-              headerColor={'peach'}
-              leadColor={'blue'}
-            />
+          </div> */}
+          <div className='col-span-1 lg:col-span-2 mt-3'>
+            <Lead color={'blue'}>{props.title}</Lead>
           </div>
 
-          <div className='col-span-1 lg:col-span-3  text-left text-lg '>{children}</div>
+          <div className='col-span-1 lg:col-span-3  text-left text-lg mt-0 pt-0'>{children}</div>
         </article>
       </InnerWrapper>
     </PageSection>
