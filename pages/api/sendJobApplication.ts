@@ -75,7 +75,7 @@ async function sendMail(body: any, files: any) {
   const attachmentName = `${body.first_name}_${body.last_name}_${getTodaysDate()}_resume`
 
   await mail.send({
-    to: `jordan@pixelbakery.com`,
+    to: `careers@pixelbakery.com`,
     // to: 'henry.sipp@hey.com',
     from: {
       email: 'careers@pixelbakery.com',
