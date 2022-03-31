@@ -1,45 +1,76 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import Nav_FullscreenMenu from './Nav_FullscreenMenu'
-import gsap from 'gsap'
 import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
 function Nav_HamburgerMenu() {
-  const [isActive, setActive] = useState(true)
+  // const el = useRef()
+  const [hamToggle, setHamToggle] = useState(false)
+  const hamRef = useRef(null)
 
-  const handleHamToggle = () => {
-    setActive(!isActive)
-    if (isActive) {
-      HandleHamOpen()
-      gsap.set('body', { className: 'px-4 bg-egg overflow-hidden overscroll-none ', delay: 0.5 })
-    } else {
-      handleHamClose()
-      gsap.set('body', {
-        className: 'px-4 bg-egg overflow-auto overscroll-auto ',
-        delay: 0.5,
-      })
-    }
+  const updateModal = () => {
+    setHamToggle(!hamToggle)
   }
-  useEffect(() => {
-    gsap.set('#fullscreenNav', { opacity: 0, autoAlpha: 0 })
-  })
 
-  function HandleHamOpen() {
-    // gsap.to('#fullscreenNav', { display: 'block' })
-    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 1, autoAlpha: 1 })
-    //
-  }
-  const handleHamClose = () => {
-    gsap.to('#fullscreenNav', { duration: 0.66, opacity: 0, autoAlpha: 0 })
-    // gsap.set('#fullscreenNav', { display: 'none' })
-  }
+  //responsible for enabling and disabling the fullscreen menu
+  // useEffect(() => {
+  //   // let boxes = [box1.current, box2.current, box3.current]
+  //   if (!hamToggle) {
+
+  //     // gsap.to(boxes, {
+  //     //   invalidateOnRefresh: true,
+  //     //   opacity: 1,
+  //     // })
+  //     gsap.to(fullscreen.current, {
+  //       autoAlpha: 0,
+  //     })
+  //   } else {
+  //     // gsap.to(boxes, {
+  //     //   opacity: 0,
+  //     // })
+  //     gsap.to(fullscreen.current, {
+  //       autoAlpha: 1,
+  //     })
+  //   }
+  // }, [hamToggle])
+
+  // const handleHamToggle = () => {
+  //   setActive(!isActive)
+  //   if (isActive) {
+  //     HandleHamOpen()
+  //     gsap.set('body', { className: 'px-4 bg-egg overflow-hidden overscroll-none ', delay: 0.5 })
+  //   } else {
+  //     handleHamClose()
+  //     gsap.set('body', {
+  //       className: 'px-4 bg-egg overflow-auto overscroll-auto ',
+  //       delay: 0.5,
+  //     })
+  //   }
+  // }
+  // useEffect(() => {
+  //   gsap.set('#fullscreenNav', { opacity: 0, autoAlpha: 0 })
+  // })
+
+  // function HandleHamOpen() {
+  //   // gsap.to('#fullscreenNav', { display: 'block' })
+  //   gsap.to('#fullscreenNav', { duration: 0.66, opacity: 1, autoAlpha: 1 })
+  //   //
+  // }
+  // const handleHamClose = () => {
+  //   gsap.to('#fullscreenNav', { duration: 0.66, opacity: 0, autoAlpha: 0 })
+  //   // gsap.set('#fullscreenNav', { display: 'none' })
+  // }
 
   return (
-    <div>
+    <>
+      <Nav_FullscreenMenu isActive={hamToggle} onModalUpdate={updateModal} />
+
       <div
         id='nav-ham'
         className='relative z-50 inline-block pointer-events-auto self-center  md:w-16 w-12 md:h-16 '
+        ref={hamRef}
+        onClick={updateModal}
       >
         <div
           className='group inline-block bg-cream rounded-lg transform transition-all duration-600 ease-in-out scale-100 opacity-100
@@ -47,9 +78,8 @@ function Nav_HamburgerMenu() {
         >
           <div className={cn(style.hamWrapper)}>
             <svg
-              className={cn(style.ham, style.hamRotate, { [style.active]: !isActive })}
+              className={cn(style.ham, style.hamRotate, { [style.active]: hamToggle })}
               viewBox='0 0 100 100'
-              onClick={handleHamToggle}
             >
               <path
                 className={cn(style.line, style.top)}
@@ -64,8 +94,7 @@ function Nav_HamburgerMenu() {
           </div>
         </div>
       </div>
-      <Nav_FullscreenMenu onClick={handleHamToggle} />
-    </div>
+    </>
   )
 }
 
