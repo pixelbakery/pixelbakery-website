@@ -48,7 +48,7 @@ function Contact_ContactForm_Form() {
 
   // Handle the submit
   const onSubmit = (data) => {
-    // SendToSendgrid(data)
+    SendToSendgrid(data)
     SendToMonday_ContactForm(data)
     SendToMailchimp(data)
 
@@ -63,12 +63,12 @@ function Contact_ContactForm_Form() {
         <Lead>Thanks for your message 😉  We&apos;ll get back to you asap. </Lead>
       ) : (
         <form
-          className='mx-auto max-w-2xl  flex flex-wrap gap-2'
+          className='mx-auto max-w-2xl  grid grid-cols-2 gap-4'
           onSubmit={handleSubmit(onSubmit)}
           data-netlify='true'
         >
           <input
-            className='form-border-b w-full'
+            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
             type='text'
             placeholder='name'
             {...register('name', {
@@ -77,7 +77,7 @@ function Contact_ContactForm_Form() {
             })}
           />
           <input
-            className='form-border-b w-full'
+            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
             type='email'
             placeholder='email'
             {...register('email', {
@@ -90,32 +90,32 @@ function Contact_ContactForm_Form() {
               },
             })}
           />
-          <div className='w-full flex flex-wrap gap-2'>
-            <PhoneInput
-              placeholder='phone (optional)'
-              className='form-border-b flex-grow  focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-              country='US'
-              name='phone'
-              control={control}
-              value={value}
-              onChange={setValue}
-            />
-            {/* 
+
+          <PhoneInput
+            placeholder='phone (optional)'
+            className='col-span-2 lg:col-span-1 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
+            country='US'
+            name='phone'
+            control={control}
+            value={value}
+            onChange={setValue}
+          />
+          {/* 
             <input
               className='form-border-b flex-grow'
               type='tel'
               placeholder='phone (optional)'
               {...register('phone', {})}
             /> */}
-            <input
-              className='form-border-b flex-grow focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-              type='text'
-              placeholder='company / entity'
-              {...register('entity', {})}
-            />
-          </div>
           <input
-            className='form-border-b w-full'
+            className='col-span-2 lg:col-span-1 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
+            type='text'
+            placeholder='company / entity'
+            {...register('entity', {})}
+          />
+
+          <input
+            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
             type='text'
             placeholder="what's this all about?"
             {...register('subject', {
@@ -124,7 +124,7 @@ function Contact_ContactForm_Form() {
             })}
           />
           <textarea
-            className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
             placeholder='sup?'
             rows={5}
             {...register('message', {

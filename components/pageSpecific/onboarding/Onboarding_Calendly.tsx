@@ -5,7 +5,7 @@ import { InlineWidget } from 'react-calendly'
 
 function Onboarding_Calendly() {
   return (
-    <PageSection color='pink'>
+    <PageSection color='pink' id='calendly'>
       <InnerWrapper className='-mx-4 md:mx-auto'>
         <H2 color='cream'>Schedule a meeting</H2>
         <div className='xl:hidden'>

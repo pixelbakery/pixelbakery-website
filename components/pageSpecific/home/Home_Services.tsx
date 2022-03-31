@@ -27,8 +27,8 @@ function Home_Services() {
   //   })
   // }, [])
   return (
-    <PageSection className='my-4 px-6 py-8 lg:py-16 bg-blue overflow-hidden' id='home-services'>
-      <InnerWrapper className='max-w-md  md:max-w-2xl xl:max-w-6xl mx-auto z-10'>
+    <PageSection color='blue' id='home-services'>
+      <InnerWrapper>
         <div className=' w-full flex flex-col '>
           <div className=' mb-16'>
             <H2
@@ -38,11 +38,11 @@ function Home_Services() {
               And we&apos;re great at what we do.{' '}
             </H2>
             <Lead color='cream'>
-              We are builders. This is our craft.
-              <br /> <br /> Our hobbies are our profession.
+              We are builders. This is our craft. <br />
+              Our hobbies are our profession.
             </Lead>
           </div>
-          <div className='mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 lg:grid-cols-3 justify-items-stretch -mt-2 mb-16'>
+          <div className='mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 lg:grid-cols-3 justify-items-stretch -mt-2 mb-16'>
             {services.map((service) => (
               <Work_Services_Card
                 service={service.service}
