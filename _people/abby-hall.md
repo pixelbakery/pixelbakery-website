@@ -26,7 +26,6 @@ details:
     moon: scorpio
 socials:
   instagram: https://www.instagram.com/abbyehall/
-  linkedin: https://linkedin.com
   # facebook:
   # spotify:
   # twitter:

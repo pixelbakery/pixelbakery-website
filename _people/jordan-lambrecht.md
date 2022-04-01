@@ -24,9 +24,9 @@ details:
     moon: cancer
 socials:
   instagram: https://instagram.com/jlambrecht265
-  # linkedIn: Url
+   linkedIn: https://www.linkedin.com/in/jordan-lambrecht-41393a80/
   # facebook: Url
-  # spotify: Url
+   spotify: https://open.spotify.com/user/1237293482?si=87ea482a32484038
   # twitter: Url
   # personalWebsite: Url
   # etsy: Url

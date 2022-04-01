@@ -28,8 +28,8 @@ socials:
   # facebook: Url
   # spotify: Url
   # twitter: Url
-  # personalWebsite: https://www.johnny-redd.com/
-  # etsy: https://www.etsy.com/shop/johnnyreddpdf
+  personalWebsite: https://www.johnny-redd.com/
+  etsy: https://www.etsy.com/shop/johnnyreddpdf
 photos:
   headshotSerious: /img/team/pixel-bakery-johnny-redd-serious.jpg
   headshotSmiling: /img/team/pixel-bakery-johnny-redd-smiling.jpg
