@@ -6,7 +6,7 @@ import cn from 'classnames'
 
 function Nav_HamburgerMenu({ isActive, onModalUpdate }) {
   // const el = useRef()
-  // const [hamToggle, setHamToggle] = useState(false)
+
   const hamRef = useRef(null)
 
   const updateModal = () => {
