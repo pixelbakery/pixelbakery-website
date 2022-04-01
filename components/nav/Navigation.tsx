@@ -44,13 +44,9 @@ export default function Navbar() {
   function handleMouseEnterLogo(e) {
     if (e.target) {
       gsap.to(line1.current, { scale: 1.05, ease: 'power2.out', duration: 0.17 })
-      gsap.to(line2.current, { scale: 0.8, ease: 'power2.out', duration: 0.17 }, '<75%')
-      gsap.to(line1.current, { scale: 1, ease: 'power2.in', duration: 0.17, delay: 0.06 }, '<33%')
-      gsap.to(
-        line2.current,
-        { scale: 0.75, ease: 'power2.in', duration: 0.17, delay: 0.06 },
-        '<25%',
-      )
+      gsap.to(line2.current, { scale: 0.8, ease: 'power2.out', duration: 0.17 })
+      gsap.to(line1.current, { scale: 1, ease: 'power2.in', duration: 0.17, delay: 0.06 })
+      gsap.to(line2.current, { scale: 0.75, ease: 'power2.in', duration: 0.17, delay: 0.06 })
     } else return
   }
 
