@@ -171,9 +171,9 @@ export const Footer: NextPage = () => {
           </div>
         </div>
       </footer>
-      <div className='my-4'>
+      {/* <div className='my-4'>
         <InstagramGallery count={14} />
-      </div>
+      </div> */}
     </div>
   )
 }
