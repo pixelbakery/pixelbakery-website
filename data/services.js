@@ -11,7 +11,7 @@ export default [
   },
   {
     service: 'Creative Concepting & Strategy',
-    url: '/services/creative-concepting',
+    url: '/services/creative-strategy',
   },
   {
     service: 'Commercial Video Production',
@@ -32,5 +32,9 @@ export default [
   {
     service: 'Pay-What-Ya-Want Web Hosting',
     url: '/services/web-hosting',
+  },
+  {
+    service: 'UI + UX Design',
+    url: '/services/ui-ux',
   },
 ]
