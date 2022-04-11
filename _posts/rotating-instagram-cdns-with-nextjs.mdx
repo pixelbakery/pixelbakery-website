@@ -1,0 +1,46 @@
+---
+title: 'Rotating Instagram CDNs with NextJS'
+subtitle: I recently ran into an issue where I wanted to use NextJS's image optimization feature to display several images from Instagram.
+excerpt: I recently ran into an issue where I wanted to use NextJS's image optimization feature to display several images from Instagram.
+# Cover Photos MUST be 4x3 resolution
+coverImage: /img/blog/Rotating-Instagram-CDNs.jpg
+date: '2022-02-11'
+categories: ['From the Desk of']
+tags: ['instagram', 'NextJS', 'Lincoln', 'Nebraska', 'designstudio', 'CDNs', 'pixel bakery']
+author:
+  name: Jordan Lambrecht
+ogImage:
+  url: /img/blog/Rotating-Instagram-CDNs.jpg
+---
+I recently ran into an issue where I wanted to use NextJS's image optimization feature to display several images from Instagram.
+
+NextJS requires you to define any domains you want to use for images in nextjs.config.js ahead of time. There's a ton of security reasons why this is important, but Instagram tumbles their cdn subdomain at random, so there's no way to account for every subdomain.
+
+Unfortunately, as of right now, NextJS also prohibits the use of wildcard subdomains. In the future, it would be great to have the ability to add `[https://*.cdninstagram.com](https://pixelbakery.medium.com/*.cdninstagram.com)` or add a fallback url.
+
+I did, however, notice that all of Instagram's CDN subdomains are valid. The images are not specifically stored on a single subdomain. You can replace the subdomain with any of their other ones and it still works.
+
+There doesn't seem to be a lot out there focused on a workaround, so here's what I came up with:
+
+In your nextJS.config.js file:
+
+>images: { domains: 
+[ 'scontent-akl1-1.cdninstagram.com', 
+], 
+},
+
+Out of the box, this isn't enough. It might work for a day, but it'll expire.
+
+When we call the image, we can replace the subdomain URL:
+
+><*Image* *layout*='fill' *objectFit*='cover' *className*='instagram-image' *key*={*index*} *src*={*item*.media_url.replace(/^[^.]*/, 'https://scontent-akl1-1')} *alt*={*item*.caption} *quality*={33}/>
+
+And it works!
+
+## Conclusion
+
+It's terribly frustrating that there isn't a better method of doing this. The only other option I discovered was [this medium post](https://medium.com/bb-tutorials-and-thoughts/next-js-how-to-proxy-to-backend-server-987174737331), which requires you to add an api request to set a proxy. I couldn't get it to work, which I'm sure is on me, so this solution was the best answer.
+
+It should be noted that this DOES open you up to security vulnerabilities, but they're negligible since we're using the same main domain (cdn.instagram.com).
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fp%2Fab45b58382ca&operation=register&redirect=https%3A%2F%2Fpixelbakery.medium.com%2Frotating-instagram-cdns-with-nextjs-ab45b58382ca&user=Pixel+Bakery&userId=c5edb7b5d543&source=-----ab45b58382ca---------------------clap_footer--------------)
