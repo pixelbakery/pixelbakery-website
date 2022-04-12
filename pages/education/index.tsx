@@ -10,11 +10,13 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import Main from '@parts/Main'
+import fs from 'fs'
 import { NextSeo } from 'next-seo'
-type Props = {
-  allProjectFiles: ProjectFile[]
-}
-function EducationPage({ allProjectFiles }: Props) {
+import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
+import matter from 'gray-matter'
+import path from 'path'
+
+function EducationPage({ allProjectFiles, allMadeToOrders }) {
   return (
     <Main className='max-w-screen overflow-x-hidden' id='educationPage'>
       <NextSeo
@@ -49,7 +51,7 @@ function EducationPage({ allProjectFiles }: Props) {
       <Education_ProjectFiles projectFiles={allProjectFiles} />
       {/* <Education_Recent /> */}
       <Education_FromScratch />
-      <Education_MadeToOrder />
+      <Education_MadeToOrder allMadeToOrders={allMadeToOrders} />
       <Education_TutorialRequests />
     </Main>
   )
@@ -57,6 +59,21 @@ function EducationPage({ allProjectFiles }: Props) {
 export default EducationPage
 
 export const getStaticProps = async () => {
+  // Made to Order (new system)
+  const allMadeToOrders = madeToOrderFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
+      const { content, data } = matter(source)
+
+      return {
+        content,
+        data,
+        filePath,
+      }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+
+  // Project Files (old system)
   const allProjectFiles = getAllProjectFiles([
     'slug',
     'title',
@@ -67,6 +84,6 @@ export const getStaticProps = async () => {
   ])
 
   return {
-    props: { allProjectFiles },
+    props: { allProjectFiles, allMadeToOrders },
   }
 }

@@ -22,3 +22,10 @@ export const CASESTUDIES_PATH = path.join(process.cwd(), '_caseStudies')
 export const caseStudyFilePaths = fs
   .readdirSync(CASESTUDIES_PATH)
   .filter((path) => /\.mdx?$/.test(path))
+
+//MADE TO ORDER TUTORIALS
+
+export const MADETOORDER_PATH = path.join(process.cwd(), '_madeToOrder')
+export const madeToOrderFilePaths = fs
+  .readdirSync(MADETOORDER_PATH)
+  .filter((path) => /\.mdx?$/.test(path))
