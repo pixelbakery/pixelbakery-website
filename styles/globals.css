@@ -29,6 +29,12 @@
     margin: 0;
     padding: 0;
   }
+  ::selection {
+    @apply bg-peach bg-opacity-90 text-white;
+  }
+  ::-moz-selection {
+    @apply bg-peach bg-opacity-90 text-white;
+  }
 
   input.form-border-b,
   textarea.form-border-b,
