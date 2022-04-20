@@ -96,7 +96,7 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
         type='Blog'
         url={`https://pixelbakery.com/recipes/${slug}`}
         title={`${frontMatter.title}`}
-        images={[`https://pixelbakery.com${frontMatter.coverImage}`]}
+        images={[`https://pixelbakery.com/${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={`${frontMatter.author}`}
         description={`${frontMatter.excerpt}`}
