@@ -1,6 +1,6 @@
 function Awwwards() {
   return (
-    <div className='fixed z-50 right-10 top-4'>
+    <div className='absolute md:fixed z-50 left-10 md:left-auto md:right-10 top-4'>
       <div id='awwwards'>
         <a href='https://www.awwwards.com/' target='_blank'>
           <svg width='53.08' height='171.358'>
