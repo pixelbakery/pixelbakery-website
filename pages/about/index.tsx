@@ -17,7 +17,7 @@ type Props = {
 function About({ allPeople }: Props) {
   return (
     <Main>
-      {/* <NextSeo
+      <NextSeo
         title='Pixel Bakery | About'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
@@ -28,13 +28,12 @@ function About({ allPeople }: Props) {
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
-      /> */}
+      />
       <PageHeader_VariableHeight header='About' subheader='Just add flour.' />
-      {/* <About_Team people={allPeople} /> */}
+      <About_Team people={allPeople} />
       <About_Values />
 
-      {/* <About_Spotify /> */}
-      {/* <About_Commitment /> */}
+      <About_Spotify />
 
       <About_Twitch />
       <About_Awards />
