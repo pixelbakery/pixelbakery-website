@@ -1,4 +1,5 @@
 @tailwind utilities;
+
 @layer utilities {
   /* Gilroy */
   @font-face {

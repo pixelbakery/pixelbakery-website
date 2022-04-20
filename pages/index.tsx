@@ -9,6 +9,7 @@ import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_WhatWeMake from '@home/Home_WhatWeMake'
 import Home_Services from '@home/Home_Services'
 import Home_Portfolio from '@home/Home_Portfolio'
+import Home_Awwwards from '@home/Home_Awwwards'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Home_Recipes from '@home/Home_Recipes'
@@ -26,10 +27,17 @@ const Home = ({ allPosts, allCaseStudies }) => {
         openGraph={{
           url: `https://pixelbakery.com`,
           title: 'Pixel Bakery Design Studio',
+          images: [
+            {
+              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+            },
+          ],
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
+      <Home_Awwwards />
       <Home_Landing />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />

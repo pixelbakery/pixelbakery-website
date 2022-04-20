@@ -1,13 +1,8 @@
 import H2 from '@typography/H2'
-
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
-import DateFormatter from '@lib/date-formatter'
-import Pill from '@parts/Pill'
-import Image from 'next/image'
-import Link from 'next/link'
-import Education_MadeToOrder_Card from './Education_MadeToOrder_Card'
+import Education_MadeToOrder_Card from '@education/Education_MadeToOrder_Card'
 
 function Education_MadeToOrder({ allMadeToOrders }) {
   return (
@@ -24,15 +19,10 @@ function Education_MadeToOrder({ allMadeToOrders }) {
           {allMadeToOrders.map((tutorial, index) => {
             return (
               <Education_MadeToOrder_Card
+                tutorial={tutorial}
                 key={index}
-                title={tutorial.data.title}
-                coverImage={tutorial.data.coverImage}
-                date={tutorial.data.date}
-                category={tutorial.data.category}
                 aspectW={'3'}
-                aspectY={'4'}
-                as={`/education/tutorials/${tutorial.filePath.replace(/\.mdx?$/, '')}`}
-                href={`/education/tutorials/[madeToOrder]`}
+                aspectH={'4'}
               />
             )
           })}

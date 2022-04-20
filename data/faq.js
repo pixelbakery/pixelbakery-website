@@ -30,7 +30,8 @@ export default [
   },
   {
     q: 'Do you do spec work?',
-    a: "Sure don't, and neither should you. See below:  <iframe class='w-full aspect-16/9 my-3' src='https://www.youtube.com/embed/essNmNOrQto'/>",
+    a: `Sure don't, and neither should you. See below:
+    <iframe class='w-full aspect-16/9 my-3'  src="https://www.youtube.com/embed/essNmNOrQto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
   },
   {
     q: 'Are you competitors with ad agencies?',

@@ -71,7 +71,7 @@ export const getStaticProps = async () => {
         filePath,
       }
     })
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .sort((mto1, mto2) => (mto1.data.date > mto2.data.date ? -1 : 1))
 
   // Project Files (old system)
   const allProjectFiles = getAllProjectFiles([
