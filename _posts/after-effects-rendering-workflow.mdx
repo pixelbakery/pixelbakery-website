@@ -1,8 +1,7 @@
 ---
-title: "After Effects Rendering Workflow"
+title: 'After Effects Rendering Workflow'
 subtitle: Hiya. Here’s a quick guide written for my students on what Pixel Bakery uses for our render workflow.
 excerpt: Hiya. Here’s a quick guide written for my students on what Pixel Bakery uses for our render workflow.
-# Cover Photos MUST be 4x3 resolution
 coverImage: /img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png
 date: '2018-02-19'
 categories: ['education']
@@ -12,6 +11,7 @@ author:
 ogImage:
   url: /img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png
 ---
+
 Hiya. Here's a quick guide written for my students on what Pixel Bakery uses for our render workflow. I figured it might be of some use to the general public, so I decided making a post about it would be beneficial to all. It's important to keep in mind that there's a lot of different solutions for render workflows and every studio has a unique take on it, but this is what we do. I know this tutorial is pretty long, but I wanted to be as in-depth as possible to cover all scenarios.
 
 ## Make it Big, Then Make it Small
@@ -30,29 +30,29 @@ First and foremost, take a look at how we organize our files. Every project has 
 
 I like to name my renders as follows. Let's pretend the client is named Pixel Bakery, this is our fifth version, and the project is called Sprinkle Machine
 
-Uncompressed render AKA the "master file": PB_SprinkleMachine_v5\
-Test / wireframe: PB_SprinkleMachine_RTESTv5\
+Uncompressed render AKA the "master file": PB_SprinkleMachine_v5
+Test / wireframe: PB_SprinkleMachine_RTESTv5
 Lower quality version such has h264: PB_SprinkleMachine_H264v5
 
 ## Rendering inside After Effects
 
 Okay. Let's get into it.
 
-1\. Select what you want to render as your work area from within your main composition by scrubbing to the beginning and hitting B on the keyboard, followed by scrubbing to the end and hitting N. This will adjust your work area.
+1. Select what you want to render as your work area from within your main composition by scrubbing to the beginning and hitting B on the keyboard, followed by scrubbing to the end and hitting N. This will adjust your work area.
 
-2\. Go to Composition > Add to Render Queue. General rule of thumb: always render your master file within AE instead of Media Encoder. Adding the additional step of bringing in AME inserts extra room for error in your renderings. With such crazy big workflows in animation, it's important to make swift, surgical strikes wherever you can.
+2. Go to Composition > Add to Render Queue. General rule of thumb: always render your master file within AE instead of Media Encoder. Adding the additional step of bringing in AME inserts extra room for error in your renderings. With such crazy big workflows in animation, it's important to make swift, surgical strikes wherever you can.
 
 ![](/img/blog/Screen-Shot-2018-02-18-at-4.06.03-PM.png)
 
 There's three main areas we want to pay attention to now. Output To, Output Module, and Render Settings.
 
-3\. Set Output To to our naming conventions.\
-4\. Open up Output Module
+3. Set Output To to our naming conventions.
+4. Open up Output Module
 
 ## Output Module
 
-Format: Quicktime\
-Depth: Trillions of Colors\
+Format: Quicktime
+Depth: Trillions of Colors
 Color: Premultiplied
 
 Click on Format Options and set your video codec to Apple ProRes 4444.
@@ -73,32 +73,32 @@ H.265: This is a newer codec with better compression algorithm than H.264. Howev
 
 ## Pros
 
--   Smaller file sizes
--   Higher quality than h.264
--   Newer standard that has more shelf life than h.264
+- Smaller file sizes
+- Higher quality than h.264
+- Newer standard that has more shelf life than h.264
 
 ## Cons
 
--   Way longer render times
--   Since it's so new, it's not universally implemented yet. You might find that some websites do not accept it yet
+- Way longer render times
+- Since it's so new, it's not universally implemented yet. You might find that some websites do not accept it yet
 
 Flip everything around and you have the pros/cons for h.264.
-
+;;
 ![](/img/blog/Screen-Shot-2018-02-19-at-8.25.45-PM.png)
 
-Format: H.264 or H.265\
-Make sure your height and width are the correct size\
-Frame Rate: 24\
-Field Order: Progressive\
-Aspect: Square Pixels\
-TV Standard: NTSC\
-Profile: Main or High\
-Check Render at Maximum Depth\
-Bitrate encoding: VBR, 2 pass\
-Target Bitrate: 16 (this depends on hd vs 4k etc, but we'll assume 1920×1080 for this)\
-Maximum bitrate: 40\
-Check Use Master Render Quality\
-Time Interpolation: Frame Sampling
+- Format: H.264 or H.265
+- Make sure your height and width are the correct size
+- Frame Rate: 24
+- Field Order: Progressive
+- Aspect: Square Pixels
+- TV Standard: NTSC
+- Profile: Main or High\
+- Check Render at Maximum Depth
+- Bitrate encoding: VBR, 2 pass
+- Target Bitrate: 16 (this depends on hd vs 4k etc, but we'll assume 1920×1080 for this)
+- Maximum bitrate: 40
+- Check Use Master Render Quality
+- Time Interpolation: Frame Sampling
 
 You can also tone down that target and max bitrate if you need smaller files. I won't go over the specifics of what each one does for now as this was more so to just give you an idea of what we do when rendering out things.
 

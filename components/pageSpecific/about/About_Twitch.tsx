@@ -18,7 +18,7 @@ const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), 
 
 function About_Twitch() {
   return (
-    <PageSection className='px-0 md:pt-48 pb-0 lg:pb-0' id='twitch'>
+    <section className='px-0 md:pt-48 pb-0 lg:pb-0' id='twitch'>
       <Head>
         <Script src='https://player.twitch.tv/js/embed/v1.js' />
       </Head>
@@ -62,7 +62,7 @@ function About_Twitch() {
           </div>
         </div>
       </div>
-    </PageSection>
+    </section>
   )
 }
 export default About_Twitch
