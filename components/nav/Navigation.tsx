@@ -125,7 +125,7 @@ export default function Navbar() {
             onMouseEnter={handleMouseEnterLogo}
           >
             <Link href={'/'} passHref>
-              <a className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0'>
+              <a className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'>
                 <div
                   ref={logoWrapper}
                   className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
