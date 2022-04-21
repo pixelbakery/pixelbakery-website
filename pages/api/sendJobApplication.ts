@@ -77,10 +77,7 @@ async function sendMail(body: any, files: any) {
   await mail.send({
     to: `careers@pixelbakery.com`,
     // to: 'henry.sipp@hey.com',
-    from: {
-      email: 'careers@pixelbakery.com',
-      name: 'Pixel Bakery Robot',
-    },
+    from: 'Pixel Bakery Robot',
     subject: `Job Application: ${body.first_name} ${body.last_name} – ${body.position}`,
     templateId: 'd-9c9d902a4d9f49da8d65e2176f582f23',
     dynamicTemplateData: {
