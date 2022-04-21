@@ -47,7 +47,7 @@ function EducationPage({ allProjectFiles, allMadeToOrders }) {
           </div>
         </InnerWrapper>
       </PageSection>
-      <Store_Maintenance />
+      {/* <Store_Maintenance /> */}
       <Education_ProjectFiles projectFiles={allProjectFiles} />
       {/* <Education_Recent /> */}
       <Education_FromScratch />
