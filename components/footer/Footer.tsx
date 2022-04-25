@@ -73,7 +73,7 @@ export const Footer: NextPage = () => {
                         target='_blank'
                         href='https://g.page/pixelbakery?share'
                       >
-                        2124 y st ste 208
+                        2124 y st ste 112
                         <br />
                         lincoln, ne 68503
                       </a>
