@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         source: '/book',
-        destination: 'https://calendly.com/pixelbakery',
+        destination: 'https://calendly.com/pixelbakery/exploratory-meeting',
         permanent: true,
       },
       {
