@@ -80,6 +80,7 @@ export const getStaticProps = async () => {
     'active',
     'subtitle',
     'coverImage',
+    'videoCoverImage',
     'category',
   ])
 

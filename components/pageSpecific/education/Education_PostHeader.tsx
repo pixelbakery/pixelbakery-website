@@ -1,11 +1,9 @@
 import DateFormatter from '../../../lib/date-formatter'
-import Author from 'types/author'
-import Link from 'next/link'
+
 import Image from 'next/image'
 import Pill from '@parts/Pill'
 import PersonType from 'types/person'
 import cn from 'classnames'
-import Video from 'react-player'
 import ReactPlayer from 'react-player'
 type Props = {
   title: string
