@@ -25,6 +25,7 @@ import Navigation_NoCallouts from '@nav/Navigation_NoCallouts'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
+import Navigation_Store from '@nav/Navigation_Store'
 
 export type CheckoutSchema = {
   firstName: string
@@ -258,7 +259,7 @@ let Checkout: NextPage = () => {
             <meta name='twitter:card' content='summary_large_image'></meta>
             <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
           </Head>
-          <Navigation_NoCallouts />
+          <Navigation_Store />
 
           {cart?.total_items > 0 ? (
             <PageSection className=' pt-24'>
