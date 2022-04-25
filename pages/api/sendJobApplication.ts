@@ -14,7 +14,7 @@ export default async function sendJobApplication(req, res) {
   try {
     const { fields, files } = await parseReq(req)
 
-    console.log({ fields, files })
+    // console.log({ fields, files })
 
     const resume = files.resume
     const tenMegabytes = 10 * 1000 * 1000
@@ -76,8 +76,7 @@ async function sendMail(body: any, files: any) {
 
   await mail.send({
     to: `careers@pixelbakery.com`,
-    // to: 'henry.sipp@hey.com',
-    from: 'Pixel Bakery Robot',
+    from: `careers@pixelbakery.com`,
     subject: `Job Application: ${body.first_name} ${body.last_name} – ${body.position}`,
     templateId: 'd-9c9d902a4d9f49da8d65e2176f582f23',
     dynamicTemplateData: {
