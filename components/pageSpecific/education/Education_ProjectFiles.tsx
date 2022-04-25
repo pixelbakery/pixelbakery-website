@@ -38,7 +38,7 @@ function Education_ProjectFiles({ projectFiles }: Props) {
     }
   }
   return (
-    <PageSection className='bg-pink-light'>
+    <PageSection className='bg-pink-light' id={'projectFiles'}>
       <InnerWrapper>
         <H2 color='blue' id={'project-files'}>
           Project Files
@@ -112,14 +112,26 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                   >
                     <div>
                       <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
-                        <Image
-                          src={projectFile.coverImage}
-                          alt={`${projectFile.title}} project file free for ${projectFile.category}`}
-                          layout='fill'
-                          objectFit='cover'
-                          blurDataURL='true'
-                          className='bg-peach'
-                        />
+                        {projectFile.videoCoverImage ? (
+                          <video
+                            autoPlay={true}
+                            playsInline
+                            muted
+                            loop
+                            className='object-cover w-full h-full'
+                          >
+                            <source src={projectFile.coverImage} type={'video/mp4'} />
+                          </video>
+                        ) : (
+                          <Image
+                            src={projectFile.coverImage}
+                            alt={`${projectFile.title}} project file free for ${projectFile.category}`}
+                            layout='fill'
+                            objectFit='cover'
+                            blurDataURL='true'
+                            className='bg-peach'
+                          />
+                        )}
                       </div>
                       <div className='mt-2 text-xs text-wine-200'>{`${projectFile.category}`}</div>
                       <h3 className='text-lg text-wine leading-none'>{projectFile.title}</h3>

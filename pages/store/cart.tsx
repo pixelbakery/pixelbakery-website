@@ -15,6 +15,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import Lead from '@typography/Lead'
 import Navigation_NoCallouts from '@nav/Navigation_NoCallouts'
+import Navigation_Store from '@nav/Navigation_Store'
 
 const CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
@@ -53,7 +54,7 @@ const CheckoutPage: NextPage = () => {
         <meta name='twitter:card' content='summary_large_image'></meta>
         <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
       </Head>
-      <Navigation_NoCallouts />
+      <Navigation_Store />
 
       <PageSection className={'pt-24 px-24'} color={'pink-white'}>
         <>
