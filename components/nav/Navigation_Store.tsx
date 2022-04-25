@@ -1,10 +1,13 @@
-import { useEffect } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
+
 import useCart from '@hooks/useCart'
+import Nav_FullscreenMenu from './Nav_FullscreenMenu'
+import { useState } from 'react'
 export default function Navigation_Store({}) {
+  const [isHamActive, setHamToggle] = useState(false)
   const { data: cart } = useCart()
   gsap.registerPlugin(ScrollTrigger)
   //   useEffect(() => {
@@ -47,7 +50,7 @@ export default function Navigation_Store({}) {
   //   })
 
   return (
-    <div className=''>
+    <div className='w-full'>
       <div
         className=' z-50 absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
@@ -59,9 +62,12 @@ export default function Navigation_Store({}) {
           </a>
         </Link>
       </div>
-      <div className='pointer-events-none fixed w-full top-0 mt-8 z-40 px-4 flex justify-end xl:justify-between'>
-        <div className='pr-8  h-full flex'>
-          <Nav_HamburgerNav />
+      <div className='pointer-events-none fixed w-full right-0 top-0 mt-8 z-40 px-4 flex justify-end xl:justify-between'>
+        <div className='pr-8  h-full flex justify-end w-full'>
+          <div className=' relative right-0 top-0  z-50'>
+            <Nav_HamburgerNav isActive={isHamActive} onModalUpdate={setHamToggle} />
+            <Nav_FullscreenMenu isActive={isHamActive} onModalUpdate={setHamToggle} />
+          </div>
 
           <Link href='/store/cart' passHref>
             <div className=' pointer-events-auto relative ml-4  z-50'>
