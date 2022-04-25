@@ -94,7 +94,7 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
             <div className=''>
               <Link href={'/'} passHref>
                 <a target='_blank' ref='noopener' className='block'>
-                  2124 y st ste 208
+                  2124 y st ste 112
                   <br />
                   lincoln, ne 68503
                 </a>
