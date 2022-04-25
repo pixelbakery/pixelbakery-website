@@ -13,6 +13,7 @@ type ProjectFileType = {
   coverImage: string
   downloadLink: string
   content: string
+  videoCoverImage: boolean
 }
 
 export default ProjectFileType

@@ -18,9 +18,11 @@ type Props = {
   projectFile: ProjectFileType
   content: string
   excerpt: string
+  videoCoverImage: boolean
 }
 
 function EducationProject({ projectFile }: Props) {
+  console.log(projectFile.downloadLink)
   return (
     <Main id='' className=''>
       <NextSeo
@@ -38,31 +40,49 @@ function EducationProject({ projectFile }: Props) {
           ],
         }}
       />
-      <section className='pt-32 md:pt-0 lander my-4 grid grid-cols-1 md:grid-cols-2'>
-        <div className=' md:hidden relative col-span-1 aspect-4/3 h-full w-full md:overflow-hidden'>
-          <Image
-            blurDataURL='true'
-            quality={90}
-            layout='fill'
-            objectFit='cover'
-            src={projectFile.coverImage}
-            className='absolute object-cover object-center w-full h-full'
-            alt='polaroid 3d model made in cinema 4d'
-          />
-        </div>
-        <div className='hidden md:block relative col-span-1 h-full w-full md:overflow-hidden'>
-          <Image
-            blurDataURL='true'
-            quality={90}
-            layout='fill'
-            objectFit='cover'
-            src={projectFile.coverImage}
-            className='absolute object-cover object-center w-full h-full'
-            alt={`${projectFile.title} project file made in ${projectFile.category}`}
-          />
-        </div>
+      <section className='pt-32 lg:pt-0 lander-education my-4 grid grid-cols-1 lg:grid-cols-2'>
+        {projectFile.videoCoverImage ? (
+          <>
+            <div className=' lg:hidden relative col-span-1  h-full w-full '>
+              <video autoPlay={true} playsInline muted loop className='object-cover w-full h-full'>
+                <source src={projectFile.coverImage} type={'video/mp4'} />
+              </video>
+            </div>
+            <div className='hidden lg:block relative col-span-1 h-full w-full '>
+              <video autoPlay={true} playsInline muted loop className='object-cover w-full h-full'>
+                <source src={projectFile.coverImage} type={'video/mp4'} />
+              </video>
+            </div>
+          </>
+        ) : (
+          <div>
+            <div className=' lg:hidden relative col-span-1  h-full w-full '>
+              <Image
+                blurDataURL='true'
+                quality={90}
+                layout='fill'
+                objectFit='cover'
+                src={projectFile.coverImage}
+                className='absolute object-cover object-center w-full h-full'
+                alt='polaroid 3d model made in cinema 4d'
+              />
+            </div>
+            <div className='hidden lg:block relative col-span-1 h-full w-full '>
+              <Image
+                blurDataURL='true'
+                quality={90}
+                layout='fill'
+                objectFit='cover'
+                src={projectFile.coverImage}
+                className='absolute object-cover object-center w-full h-full'
+                alt={`${projectFile.title} project file made in ${projectFile.category}`}
+              />
+            </div>
+          </div>
+        )}
+
         <div className='relative col-span-1 h-full w-full md:overflow-hidden flex flex-col justify-center'>
-          <div className='pt-12 md:pt-0 pb-12 md:pb-0 self-center w-full max-w-md lg:max-w-xl 4xl:max-w-2xl px-8 '>
+          <div className='pt-12 lg:pt-0 pb-12 md:lg-0 self-center w-full max-w-md lg:max-w-xl 4xl:max-w-2xl px-8 '>
             <div className='text-peach mb-0 pb-0 font-bold text-2xl xl:text-3xl lowercase'>
               Project File
             </div>
@@ -82,12 +102,13 @@ function EducationProject({ projectFile }: Props) {
                 className={markdownStyles['markdown']}
                 dangerouslySetInnerHTML={{ __html: projectFile.content }}
               />
+
               <div className='mt-8'>
                 <Button_Filled
                   center={false}
                   text='download'
                   chevronDirection='download'
-                  link='/'
+                  link={`${projectFile.downloadLink}`}
                   bgColor='blue'
                   textColor='cream'
                 />
@@ -156,6 +177,8 @@ export async function getStaticProps({ params }: Params) {
     'fileType',
     'category',
     'content',
+    'videoCoverImage',
+    'downloadLink',
   ])
 
   const content = await markdownToHtml(projectFile.content || '')
