@@ -25,6 +25,7 @@
       "@caseStudies/*": ["components/pageSpecific/caseStudies/*"],
       "@contact/*": ["components/pageSpecific/contact/*"],
       "@education/*": ["components/pageSpecific/education/*"],
+      "@emailGenerator/*": ["components/pageSpecific/emailGenerator/*"],
       "@home/*": ["components/pageSpecific/home/*"],
       "@onboarding/*": ["components/pageSpecific/onboarding/*"],
       "@recipes/*": ["components/pageSpecific/recipes/*"],
