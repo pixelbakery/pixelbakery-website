@@ -46,6 +46,7 @@
     "@vimeo/player": "^2.16.4",
     "busboy": "^1.4.0",
     "classnames": "^2.3.1",
+    "clipboard-polyfill": "2.8.5",
     "date-fns": "latest",
     "eslint-plugin-react": "^7.28.0",
     "formik": "^2.2.9",

@@ -48,3 +48,7 @@ export const Layout__ShoppingCart = ({ children }) => {
     </div>
   )
 }
+
+export const Layout__Blank = ({ children }) => {
+  return <div className='content'>{children}</div>
+}
