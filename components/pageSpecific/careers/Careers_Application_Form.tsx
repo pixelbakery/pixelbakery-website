@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
 import 'react-toastify/dist/ReactToastify.css'
 import router from 'next/router'
 
 export default function Careers_Application_Form({ allJobs }) {
-  const [submitted, setSubmitted] = useState(false)
-
+  // const [submitted, setSubmitted] = useState(false)
   const [file, setFile] = useState(null)
   const [fileName, setFileName] = useState('')
 
-  // function handleUpload(event) {
-  //   setFile(event.target.files[0])
-  // }
   const {
     register,
     handleSubmit,
@@ -26,11 +22,11 @@ export default function Careers_Application_Form({ allJobs }) {
   // Handle the  submit
   const onSubmit = (data) => {
     SendToMonday_JobApplication(data)
-    SendToSendgrid(data)
     SendtosSendgridconfirmation(data)
-    if (isSubmitSuccessful) {
-      router.push('/careers/submitted')
-    }
+    SendToSendgrid(data)
+    SendToMailchimp(data)
+
+    router.push('/careers/submitted')
   }
   // file upload
 
@@ -44,7 +40,23 @@ export default function Careers_Application_Form({ allJobs }) {
   const handleMailchimp = () => {
     setMailchimp(!mailchimp)
   }
-
+  ////////////
+  // MAILCHIMP
+  ////////////
+  async function SendToMailchimp(data) {
+    data.tag = 'Job Application'
+    if (mailchimp) {
+      await fetch('/api/mailchimp', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    } else {
+      return
+    }
+  }
   ///////////
   // SENDGRID
   ///////////
