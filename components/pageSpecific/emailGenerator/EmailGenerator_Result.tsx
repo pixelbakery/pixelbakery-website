@@ -41,14 +41,16 @@ const EmailGenerator_Result = (props) => {
                       <tr>
                         <td
                           style={{
-                            maxWidth: '150px',
+                            maxWidth: '130px',
                           }}
                         >
-                          <img
-                            style={{ width: '100%' }}
-                            src='https://pixelbakery.com/img/PB_Logo_Initials_darkBlue_EmailSignature.jpg'
-                            alt='logo'
-                          />
+                          <a href='https://pixelbakery.com' target={'_blank'}>
+                            <img
+                              style={{ width: '130px', height: '130px' }}
+                              src='https://pixelbakery.com/img/PB_Logo_Initials_darkBlue_EmailSignature.jpg'
+                              alt='logo'
+                            />
+                          </a>
                           <div
                             style={{
                               marginTop: '5px',
@@ -71,9 +73,9 @@ const EmailGenerator_Result = (props) => {
                                 <td style={{ textAlign: 'initial' }}>
                                   <span
                                     style={{
-                                      fontSize: '16.5px',
+                                      fontSize: '15.5px',
                                       fontWeight: '600',
-                                      lineHeight: '16.5px',
+                                      lineHeight: '15.5px',
                                       color: 'rgb(51,51,51)',
                                       fontFamily: 'Poppins,"Open Sans",Helvetica,sans-serif',
                                     }}
@@ -86,11 +88,12 @@ const EmailGenerator_Result = (props) => {
                                       style={{
                                         margin: 0,
                                         fontStyle: 'italic',
+                                        lineHeight: '13.5px',
                                       }}
                                     >
                                       <span
                                         style={{
-                                          fontSize: '15px',
+                                          fontSize: '13.5px',
                                           lineHeight: '15px',
                                           color: 'rgb(51,51,51)',
                                           fontFamily: 'Poppins,"Open Sans",Helvetica,sans-serif',
@@ -98,22 +101,6 @@ const EmailGenerator_Result = (props) => {
                                       >
                                         {user.jobTitle}
                                       </span>
-                                      {user.jobTitle && (
-                                        <span
-                                          style={{
-                                            fontSize: '14px',
-                                            lineHeight: '16px',
-                                            color: 'rgb(51,51,51)',
-                                            fontFamily: 'Poppins,"Open Sans",Helvetica,sans-serif',
-                                          }}
-                                        >
-                                          <span
-                                            style={{
-                                              color: 'rgb(51,51,51)',
-                                            }}
-                                          ></span>
-                                        </span>
-                                      )}
                                     </p>
                                   )}
 
