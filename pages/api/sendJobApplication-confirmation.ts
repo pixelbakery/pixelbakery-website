@@ -1,5 +1,4 @@
 import mail from '@sendgrid/mail'
-import { join } from 'path'
 import { getTodaysDate } from '@lib/helpers'
 const busboy = require('busboy')
 
@@ -62,7 +61,6 @@ function parseReq(req: any): Promise<any> {
       fields[name] = val
     })
     bb.on('close', () => {
-      // console.log('Done parsing form!')
       resolve({ files, fields })
     })
     req.pipe(bb)
