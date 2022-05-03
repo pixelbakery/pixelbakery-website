@@ -1,6 +1,5 @@
 import { getTodaysDate } from '@lib/helpers'
 import mail from '@sendgrid/mail'
-import { join } from 'path'
 const busboy = require('busboy')
 
 mail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -13,8 +12,6 @@ export const config = {
 export default async function sendJobApplication(req, res) {
   try {
     const { fields, files } = await parseReq(req)
-
-    // console.log({ fields, files })
 
     const resume = files.resume
     const tenMegabytes = 10 * 1000 * 1000
@@ -76,7 +73,10 @@ async function sendMail(body: any, files: any) {
 
   await mail.send({
     to: `careers@pixelbakery.com`,
-    from: `careers@pixelbakery.com`,
+    from: {
+      email: 'careers@pixelbakery.com',
+      name: 'Pixel Bakery Robot',
+    },
     subject: `Job Application: ${body.first_name} ${body.last_name} – ${body.position}`,
     templateId: 'd-9c9d902a4d9f49da8d65e2176f582f23',
     dynamicTemplateData: {
