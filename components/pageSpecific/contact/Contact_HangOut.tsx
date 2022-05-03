@@ -102,7 +102,7 @@ function Contact_HangOut() {
                   it's good to see you.
                 </span>
                 Pixel Bakery <br className='xl:hidden' /> Design Studio
-                <br /> 2124 Y Street Suite 112
+                <br /> 2124 Y Street Suite 122
                 <br /> Lincoln, NE 68503
               </div>
             </div>
