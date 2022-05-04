@@ -1,6 +1,6 @@
 import mail from '@sendgrid/mail'
 
-mail.setApiKey(process.env.SENDGRID_API_KEY)
+mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
 
 export default async function sendCroissant(req, res) {
   const body = JSON.parse(req.body)

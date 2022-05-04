@@ -2,7 +2,7 @@ import mail from '@sendgrid/mail'
 import { getTodaysDate } from '@lib/helpers'
 const busboy = require('busboy')
 
-mail.setApiKey(process.env.SENDGRID_API_KEY)
+mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
 export const config = {
   api: {
     bodyParser: false,

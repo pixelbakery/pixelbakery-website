@@ -1,10 +1,11 @@
-import H2 from '@typography/H2'
+// import H2 from '@typography/H2'
 import Image from 'next/image'
-import useSWR, { mutate } from 'swr'
+import useSWR from 'swr'
 import { Playlist } from '@lib/types'
 import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
-import Lead from '@typography/Lead'
+// import Lead from '@typography/Lead'
+import H3 from '@typography/H3'
 
 export default function Spotify_Playlist({ playlistID }) {
   const { data } = useSWR<Playlist>('/api/playlists', fetcher)
@@ -21,7 +22,7 @@ export default function Spotify_Playlist({ playlistID }) {
           target='_blank'
           rel='noopener'
         >
-          <div className='absolute xl:relative w-64 h-64'>
+          <div className='absolute xl:relative w-32 h-32'>
             <Image
               src={data.albumCoverImage}
               layout='fill'
@@ -40,10 +41,13 @@ export default function Spotify_Playlist({ playlistID }) {
             target='_blank'
             rel='noopener'
           >
-            <H2 color='peach' className='mb-1 md:mb-0 2xl:mb-0'>
+            <H3 color='peach' className='mb-1 md:mb-0 2xl:mb-0 mt-0 pt-0'>
               {data.name}
-            </H2>
-            <Lead className='mb-0 xl:mb-0'> {data.description ? data.description : ''}</Lead>
+            </H3>
+            <p className='italic text-wine-400 xl:mb-0 text-lg font-medium mt-0 pt-0 mb-0 pb-0'>
+              {' '}
+              {data.description ? data.description : ''}
+            </p>
             <a
               className='bg-peach  text-cream px-8 py-1 my-1 rounded-xl font-semibold drop-shadow-sm inline-block duration-300 transition-all ease-in-out hover:drop-shadow-xs hover:scale-98'
               href={data.external_urls.spotify}
@@ -53,7 +57,7 @@ export default function Spotify_Playlist({ playlistID }) {
               Play <span className=' my-auto ml-3'>▶</span>
             </a>
           </a>
-          <p className='text-xs md:text-sm xl:text-md text-wine '>
+          <p className=' my-1 py-0 text-xs md:text-sm xl:text-md text-wine '>
             {pluralize(data.followers.total, 'follower')}, {pluralize(data.tracks.total, 'song')},{' '}
             {data.albumLength}
           </p>
