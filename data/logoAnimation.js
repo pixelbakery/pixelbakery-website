@@ -31,7 +31,7 @@ export default {
   },
   tierThree: {
     title: 'Gourmet',
-    cost: '2600',
+    cost: '3600',
     concepts: '3 concepts',
     revisions: '2 rounds of revisions',
     transitionIn: '✅ Transition In',
