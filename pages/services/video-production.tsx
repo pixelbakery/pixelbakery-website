@@ -7,6 +7,7 @@ import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import Services_Modulation from '@services/Services_Modulation'
 
 export default function Services() {
   return (
@@ -38,11 +39,11 @@ export default function Services() {
           produce for your brand.
         </p>
       </Services_Header>
-      <Services_Subservices />
-      <Services_Related />
+      <Services_Modulation />
+      {/* <Services_Subservices /> */}
+      {/* <Services_Related /> */}
       <Services_AllServices />
       <Services_OurProcess />
-      <Store_Maintenance />
     </Main>
   )
 }

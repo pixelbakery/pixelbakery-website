@@ -14,7 +14,7 @@ function Services_AllServices() {
             <H2 color='blue-dark'>Some of our other talents</H2>
           </div>
 
-          <div className=' mx-auto flex flex-wrap col-span-12 md:grid-cols-8 -mt-2'>
+          <div className=' mx-auto flex flex-wrap col-span-12 -mt-2'>
             {services.map((services) => (
               <Services_AllServicess_Card service={services} key={services.service} />
             ))}
