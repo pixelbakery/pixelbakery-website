@@ -49,7 +49,7 @@ export const Footer: NextPage = () => {
                 <Logo_Type />
               </div>
 
-              <nav className='hidden sm:block pt-5 mt-3'>
+              <nav className='hidden lg:block pt-5 mt-3'>
                 <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
                   {nav_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
@@ -86,7 +86,7 @@ export const Footer: NextPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className='xl:pt-4 md:pr-4'>
+              <div className='xl:pt-4 md:pr-4 hidden lg:block'>
                 <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
                   <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
                     more stuff
@@ -102,7 +102,7 @@ export const Footer: NextPage = () => {
               </div>
             </div>
             {/* Mobile Nav */}
-            <div className='md:hidden grid grid-cols-2 gap-y-0 gap-x-6'>
+            <div className=' mx-auto lg:hidden grid grid-cols-2 gap-y-0 gap-x-6'>
               <ul className='flex flex-col gap-y-3'>
                 {nav_main.map((navitem, index) => (
                   <div key={index} className={'font-extrabold text-xl leading-none'}>
@@ -120,7 +120,7 @@ export const Footer: NextPage = () => {
             </div>
             {/* End Mobile Nav */}
             <div className='flex flex-col justify-between h-full'>
-              <div className='text-center xl:mb-4'>
+              <div className='mx-auto text-center xl:mb-4'>
                 <Footer_HappyCard />
               </div>
               <div className='w-full lg:py-4 xl:my-3'>
