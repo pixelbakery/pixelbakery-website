@@ -2,7 +2,7 @@ import { ChevronRightIcon } from '@images/UI_Icons/index'
 
 function Services_AllServices_Card({ service }) {
   return (
-    <article className='relative m-2 w-full md:w-1/5 flex-stretch hover:opacity-90 hover:scale-95'>
+    <article className='relative m-2 w-full md:w-1/4 xl:w-1/5 flex-stretch hover:opacity-90 hover:scale-95'>
       <div className='items-stretch border-4 border-pink overflow-hidden rounded-lg flex-grow flex flex-row md:flex-col md:justify-center px-8 py-2 h-40 '>
         <h4 className='my-auto md:mt-2 md:mb-4 font-bold text-xl font-Heading text-pink'>
           {service.service}

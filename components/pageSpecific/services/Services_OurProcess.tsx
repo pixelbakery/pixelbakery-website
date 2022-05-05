@@ -7,7 +7,7 @@ function Services_OurProcess() {
   return (
     <PageSection color='blue'>
       <InnerWrapper>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-x-8'>
           <H2 color='cream'>Our Process</H2>
           <div className='col-span-1'>
             <Lead color='blue-dark'>
