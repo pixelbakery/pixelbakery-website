@@ -22,7 +22,6 @@ type Props = {
 }
 
 function EducationProject({ projectFile }: Props) {
-  console.log(projectFile.downloadLink)
   return (
     <Main id='' className=''>
       <NextSeo
