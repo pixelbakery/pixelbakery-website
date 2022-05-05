@@ -8,7 +8,6 @@ import cn from 'classnames'
 // link={'/'} head={''} subhead={''} aspectW={''} aspectY={''} img={''} imgAlt={''} tags={["something", "something else"]} tagBgColor={"bg-cream"} tagTextColor={'text-wine'}
 
 function Card_Rounded({ project }) {
-  console.log(project.data.title)
   return (
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}

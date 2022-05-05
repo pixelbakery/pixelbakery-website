@@ -59,9 +59,9 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
   const next = getNext(personIndex)
 
   // console.log('prev: ', previous.name, ' next: ', next.name)
-  activePeople.forEach((p, index) => {
-    console.log(index, ': ', p.name)
-  })
+  // activePeople.forEach((p, index) => {
+  //   console.log(index, ': ', p.name)
+  // })
   function Details() {
     return (
       <InnerWrapper>
