@@ -1,38 +1,39 @@
 import Lottie from 'react-lottie-player'
-
 import classNames from 'classnames'
-
-import Pattern from '@data/Patterns_Blue.json'
-
 import PropTypes from 'prop-types'
-import H1 from 'components/typography/H1'
+import PageHeader_TextBox from './PageHeader_TextBox'
+import { useState, useEffect } from 'react'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
-  thisPatern: PropTypes.object,
+  pattern: PropTypes.object,
+  segments: PropTypes.array,
 }
 
 // Local Variables
-
 const primaryColor = 'blue'
 const accentColor = 'blue-dark'
 const subheaderColor = 'cream'
 
-const thisPatern = Pattern
-
 function PageHeader_VariableHeight({ header, subheader }) {
-  function Pattern({ thisPatern }) {
-    const playFrames: [number, number][] = [
-      [0, 23],
-      [24, 95],
-    ]
+  const playFrames: [number, number][] = [
+    [0, 23],
+    [24, 95],
+  ]
+  const LottieAnimation = () => {
+    const [animationData, setAnimationData] = useState(null)
 
+    useEffect(() => {
+      import('@data/Patterns_Blue.json').then(setAnimationData)
+    }, [])
+
+    if (!animationData) return <div>Loading...</div>
     return (
       <Lottie
-        animationData={thisPatern}
-        loop
+        animationData={animationData}
         segments={playFrames as any}
+        loop
         play
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
         style={{ height: '100%' }}
@@ -48,27 +49,15 @@ function PageHeader_VariableHeight({ header, subheader }) {
       id='topOfPage'
     >
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <Pattern thisPatern={thisPatern} />
+        <LottieAnimation />
       </div>
-      <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
-        <div
-          className={classNames(
-            'my-20 max-w-xs  sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center ',
-            [`bg-${primaryColor}`],
-          )}
-        >
-          <div className='w-fit px-12 mx-12'>
-            <H1 color={accentColor}>{header}</H1>
-            <div
-              className={classNames('lowercase my-2 text-2xl font-bold', [
-                `text-${subheaderColor}`,
-              ])}
-            >
-              {subheader}
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHeader_TextBox
+        header={header}
+        primaryColor={primaryColor}
+        accentColor={accentColor}
+        subheader={subheader}
+        subheaderColor={subheaderColor}
+      />
     </div>
   )
 }
