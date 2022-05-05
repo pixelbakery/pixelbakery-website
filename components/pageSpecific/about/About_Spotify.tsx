@@ -6,7 +6,6 @@ function About_Spotify() {
   return (
     <PageSection color='pink-light' className='h-screen' id='spotify'>
       <InnerWrapper className='h-full'>
-        {' '}
         <Spotify_Playlist playlistID={'3Ga7aZmRtBi3sLFbJ2Tz4e'} />
       </InnerWrapper>
     </PageSection>
