@@ -1,12 +1,9 @@
 import Lottie from 'react-lottie-player'
 
 import classNames from 'classnames'
-
-import Pattern from '@data/Patterns_Yellow.json'
-
 import PropTypes from 'prop-types'
-import H1 from 'components/typography/H1'
 import PageHeader_TextBox from './PageHeader_TextBox'
+import { useState, useEffect } from 'react'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -20,19 +17,25 @@ const primaryColor = 'yellow'
 const accentColor = 'peach'
 const subheaderColor = 'blue-dark '
 
-const pattern = Pattern
-
 function PageHeader_VariableHeight({ header, subheader }) {
   const playFrames: [number, number][] = [
     [0, 23],
     [24, 95],
   ]
-  function Pattern({ pattern }) {
+
+  const LottieAnimation = () => {
+    const [animationData, setAnimationData] = useState(null)
+
+    useEffect(() => {
+      import('@data/Patterns_Yellow.json').then(setAnimationData)
+    }, [])
+
+    if (!animationData) return <div>Loading...</div>
     return (
       <Lottie
-        animationData={pattern}
-        loop
+        animationData={animationData}
         segments={playFrames as any}
+        loop
         play
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
         style={{ height: '100%' }}
@@ -48,7 +51,7 @@ function PageHeader_VariableHeight({ header, subheader }) {
       id='topOfPage'
     >
       <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <Pattern pattern={pattern} />
+        <LottieAnimation />
       </div>
       <PageHeader_TextBox
         header={header}
