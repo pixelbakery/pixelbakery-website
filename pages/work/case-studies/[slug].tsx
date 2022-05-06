@@ -63,11 +63,11 @@ export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
   return (
     <Main>
       <NextSeo
-        title={`PBDS – ${frontMatter.title}`}
+        title={`${frontMatter.title} | Portfolio | Pixel Bakery`}
         description={frontMatter.excerpt}
         openGraph={{
           url: `https://pixelbakery.com/work/case-studies/${frontMatter.client}-${frontMatter.title}`,
-          title: frontMatter.title,
+          title: `${frontMatter.title} | Portfolio | Pixel Bakery`,
           description: frontMatter.excerpt,
           images: [
             {

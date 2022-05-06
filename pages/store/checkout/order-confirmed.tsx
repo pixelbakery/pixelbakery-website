@@ -9,7 +9,7 @@ function SubmissionConfirmation() {
   return (
     <main className='max-w-screen'>
       <Head>
-        <title>PBDS – Order Confirmed</title>
+        <title>Order Confirmed | Pixel Bakery</title>
       </Head>
       <Navigation />
 

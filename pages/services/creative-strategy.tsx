@@ -12,14 +12,14 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – Creative Strategy'
+        title='Creative Strategy | Services | Pixel Bakery'
         description={`From the initial discovery meeting to the final deliverable, our leadership team at Pixel
           Bakery is all about strategizing the best way to deliver your message. Before any
           pre-production on a project begins, PB develops a communication strategy and creative
           brief based on a client's goals, pain points, and ideas.`}
         openGraph={{
           url: `https://pixelbakery.com/services/creative-strategy`,
-          title: 'Pixel Bakery – Services – Creative Strategy',
+          title: 'Creative Strategy | Services | Pixel Bakery',
           description: `From the initial discovery meeting to the final deliverable, our leadership team at Pixel
           Bakery is all about strategizing the best way to deliver your message. Before any
           pre-production on a project begins, PB develops a communication strategy and creative

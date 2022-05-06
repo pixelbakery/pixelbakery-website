@@ -13,7 +13,7 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – Commercial Video Production'
+        title='Commercial Video Production | Services | Pixel Bakery'
         description={`Commercial video production can include video advertisements, TV commercials, YouTube
           pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
           give your brand more recognition and to boost your marketplace identity. With our
@@ -21,7 +21,7 @@ export default function Services() {
           produce for your brand.`}
         openGraph={{
           url: `https://pixelbakery.com/services/video-production`,
-          title: 'Pixel Bakery – Services – Commercial Video Production',
+          title: 'Commercial Video Production | Services | Pixel Bakery',
           description: `Commercial video production can include video advertisements, TV commercials, YouTube
           pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
           give your brand more recognition and to boost your marketplace identity. With our

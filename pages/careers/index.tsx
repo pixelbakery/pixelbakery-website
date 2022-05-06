@@ -25,7 +25,7 @@ const Careers = ({ allJobs }) => {
   return (
     <Main id='careers-page'>
       <NextSeo
-        title='Pixel Bakery | Careers'
+        title='Careers | Pixel Bakery'
         description={` We’re a motion-focused creative shop, meaning while our most frequently requested
               services are in the areas of animation, videography, and web design, we basically do
               it all – from production on animated series in LA, to rebrands for local startups, to
@@ -34,7 +34,7 @@ const Careers = ({ allJobs }) => {
               touches lives.`}
         openGraph={{
           url: `https://pixelbakery.com/careers`,
-          title: 'Pixel Bakery | About',
+          title: 'Careers | Pixel Bakery',
           description: ` We’re a motion-focused creative shop, meaning while our most frequently requested
               services are in the areas of animation, videography, and web design, we basically do
               it all – from production on animated series in LA, to rebrands for local startups, to

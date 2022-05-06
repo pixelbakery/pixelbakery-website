@@ -14,12 +14,19 @@ const Work = ({ allCaseStudies }) => {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Our Work'
+        title='Our Work | Pixel Bakery'
         description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
         openGraph={{
           url: `https://pixelbakery.com/work`,
-          title: 'Pixel Bakery – Our Work',
-          description: `We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`,
+          title: 'Our Work | Pixel Bakery',
+          images: [
+            {
+              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+            },
+          ],
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
       <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />

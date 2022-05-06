@@ -8,7 +8,7 @@ function PrivacyPolicy() {
     <Main id='' className='my-4'>
       <NextSeo
         noindex={true}
-        title='Pixel Bakery – Privacy Policy'
+        title='Privacy Policy | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }

@@ -12,13 +12,13 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – Web Hosting'
+        title='Web Hosting | Services | Pixel Bakery'
         description={`We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
           We'll help you install Wordpress (if that's your jam) and provide you with security
           updates as well as weekly backups.`}
         openGraph={{
           url: `https://pixelbakery.com/services/web-hosting`,
-          title: 'Pixel Bakery – Services – Web Hosting',
+          title: 'Web Hosting | Services | Pixel Bakery',
           description: `We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
           We'll help you install Wordpress (if that's your jam) and provide you with security
           updates as well as weekly backups.`,
