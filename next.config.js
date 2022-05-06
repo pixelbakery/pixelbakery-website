@@ -103,11 +103,6 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/recipes/johnny-redd-brings-the-pink-to-pixel',
-        destination: '/recipes/johnny-redd-brings-the-pink-to-pixel',
-        permanent: true,
-      },
-      {
         source: '/recipes/welcome-to-the-pixel-bakery-blog-leave-while-you-still-can',
         destination: '/recipes/welcome-to-the-pixel-bakery-blog',
         permanent: true,
