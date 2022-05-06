@@ -18,13 +18,13 @@ function Careers_Application({ allJobs }) {
     <Main>
       <NextSeo
         noindex={true}
-        title='Pixel Bakery – Careers – Application'
+        title='Application | Careers | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com/careers/application`,
-          title: 'Pixel Bakery | About',
+          title: 'Application | Careers | Pixel Bakery',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}

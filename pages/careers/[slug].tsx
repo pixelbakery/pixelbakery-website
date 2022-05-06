@@ -6,20 +6,16 @@ import Head from 'next/head'
 import path from 'path'
 import Link from 'next/link'
 import markdownStyles from '@styles/markdown-styles.module.css'
-
 import Main from '@parts/Main'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
-
-import Video from '@parts/Video'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'
 import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-import { JobPostingJsonLd } from 'next-seo'
+import { JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -38,6 +34,19 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
 
   return (
     <Main>
+      <NextSeo
+        noindex={true}
+        title={`${frontMatter.title} | Careers | Pixel Bakery`}
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/careers`,
+          title: `${frontMatter.title} | Careers | Pixel Bakery`,
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <JobPostingJsonLd
         datePosted={`${datePostedISO}`}
         description={`Pixel Bakery is looking to hire a ${frontMatter.commitment} ${frontMatter.title}`}
@@ -55,10 +64,6 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
         title={`${frontMatter.title}`}
         validThrough={`${dateExpiredISO}`}
       />
-      <Head>
-        <title>Careers – {frontMatter.title} | PBDS</title>
-        {/* <meta property='og:image' content={frontMatter.ogImage.url} /> */}
-      </Head>
       <PageSection className='min-h-screen mt-32'>
         <article>
           <InnerWrapper>

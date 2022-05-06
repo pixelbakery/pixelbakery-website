@@ -2,13 +2,13 @@ import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
 import EmailGenerator_Input from '@emailGenerator/EmailGenerator_Input'
 import EmailGenerator_Result from '@emailGenerator/EmailGenerator_Result'
+import { NextSeo } from 'next-seo'
 
-function EmailGenerator(props) {
+function EmailGenerator() {
   const [user, setUser] = useState([])
 
   const [title, setTitle] = useState({ title: '' })
@@ -38,6 +38,25 @@ function EmailGenerator(props) {
 
   return (
     <Main>
+      <NextSeo
+        noindex={true}
+        title='Email Generator | Pixel Bakery '
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com`,
+          title: 'Pixel Bakery Design Studio',
+          images: [
+            {
+              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+            },
+          ],
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+        }}
+      />
       <PageHeader_VarH header='Email Generator' />
       <PageSection className='mb-32'>
         <InnerWrapper>

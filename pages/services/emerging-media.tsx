@@ -12,13 +12,13 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – Emerging Media'
+        title='Emerging Media | Services | Pixel Bakery'
         description={`With the development and expansion of social media, mobile marketing, email marketing,
           instant messaging, and various other digital platforms, it only makes sense that current
           trends in marketing are ever-evolving. Why not evolve with them?`}
         openGraph={{
           url: `https://pixelbakery.com/services/emerging-media`,
-          title: 'Pixel Bakery – Services – Emerging Media',
+          title: 'Emerging Media | Services | Pixel Bakery',
           description: `With the development and expansion of social media, mobile marketing, email marketing,
           instant messaging, and various other digital platforms, it only makes sense that current
           trends in marketing are ever-evolving. Why not evolve with them?`,

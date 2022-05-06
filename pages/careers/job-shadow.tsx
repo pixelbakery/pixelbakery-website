@@ -11,7 +11,7 @@ function JobShadow() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Careers – Job Shadows'
+        title='Job Shadows | Careers | Pixel Bakery'
         description={`Whether you’re considering a career in design or you just want to come in and hang
                 out with us (we don’t blame you), there’s definitely an opportunity to come shadow
                 at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
@@ -19,7 +19,7 @@ function JobShadow() {
                 requirements.`}
         openGraph={{
           url: `https://pixelbakery.com/careers/job-shadow`,
-          title: 'Pixel Bakery | Careers | Job Shadow',
+          title: 'Job Shadows | Careers | Pixel Bakery',
           description: `Whether you’re considering a career in design or you just want to come in and hang
                 out with us (we don’t blame you), there’s definitely an opportunity to come shadow
                 at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,

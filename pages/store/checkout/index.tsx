@@ -248,7 +248,7 @@ let Checkout: NextPage = () => {
         <Main className='min-w-screen min-h-screen my-4 p-1 md:p-4 bg-egg'>
           <FormikEffect onChange={handleFormChange} />
           <Head>
-            <title>PBDS – Store – Checkout</title>
+            <title>Checkout | Store | Pixel Bakery</title>
             <meta name='description' content='Pixel Bakery store checkout' />
             <meta property='og:type' content='website' />
             <meta property='og:url' content='https://shop.pixelbakery.com' />

@@ -73,10 +73,10 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
       <Head>
-        <title>{'PBDS – Store – ' + product.name}</title>
+        <title>{`${product.name} | Store | Pixel Bakery`}</title>
         <meta name='description' content={product.description} />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://shop.pixelbakery.com' />
+        <meta property='og:url' content='https://pixelbakery.com/store' />
         <meta property='og:title' content={'PBDS – ' + product.name} />
         <meta property='og:description' content={product.description} />
         <meta property='og:image' content={product.assets[0].source} />

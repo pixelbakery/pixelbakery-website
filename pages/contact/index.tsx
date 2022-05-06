@@ -10,13 +10,13 @@ function Contact() {
   return (
     <Main id='contact-page'>
       <NextSeo
-        title='Pixel Bakery – Contact'
+        title='Contact | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com/contact`,
-          title: 'Pixel Bakery – Contact',
+          title: 'Contact | Pixel Bakery',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}

@@ -12,13 +12,13 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – 3D Modeling'
+        title='3D Modeling | Services | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com/services/3d-modeling`,
-          title: 'Pixel Bakery – Services – 3D Modeling',
+          title: '3D Modeling | Services | Pixel Bakery',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
