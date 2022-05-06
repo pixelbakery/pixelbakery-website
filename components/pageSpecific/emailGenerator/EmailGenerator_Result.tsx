@@ -41,14 +41,14 @@ const EmailGenerator_Result = (props) => {
                       <tr>
                         <td
                           style={{
-                            maxWidth: '130px',
+                            maxWidth: '125px',
                           }}
                         >
                           <a href='https://pixelbakery.com' target={'_blank'}>
                             <img
                               style={{ width: '125px', height: '125px' }}
-                              src='https://pixelbakery.com/img/PB_Logo_Initials_darkBlue_EmailSignature.jpg'
-                              alt='logo'
+                              src='https://pixelbakery.com/img/darkBlue_withCreamShadow_onBlue_concave.png'
+                              alt='Pixel Bakery logo'
                             />
                           </a>
                           <div
@@ -73,7 +73,7 @@ const EmailGenerator_Result = (props) => {
                                 <td style={{ textAlign: 'initial' }}>
                                   <span
                                     style={{
-                                      fontSize: '15.5px',
+                                      fontSize: '15.75px',
                                       fontWeight: '600',
                                       lineHeight: '16x',
                                       color: 'rgb(51,51,51)',
@@ -88,13 +88,14 @@ const EmailGenerator_Result = (props) => {
                                       style={{
                                         margin: 0,
                                         fontStyle: 'italic',
-                                        lineHeight: '13.5px',
+                                        lineHeight: '14.5px',
+                                        paddingBottom: '8px',
                                       }}
                                     >
                                       <span
                                         style={{
-                                          fontSize: '13.5px',
-                                          lineHeight: '15px',
+                                          fontSize: '14.5px',
+                                          lineHeight: '14.5px',
                                           color: 'rgb(51,51,51)',
                                           fontFamily: 'Poppins,"Open Sans",Helvetica,sans-serif',
                                         }}
@@ -113,7 +114,7 @@ const EmailGenerator_Result = (props) => {
                                               href={`tel:${user.phone}`}
                                               style={{
                                                 marginTop: '0px',
-                                                lineHeight: '14px',
+                                                lineHeight: '13.25px',
                                                 fontSize: '13px',
                                                 display: 'block',
                                                 textDecoration: 'none',
@@ -129,7 +130,7 @@ const EmailGenerator_Result = (props) => {
                                             style={{
                                               marginTop: '0px',
 
-                                              lineHeight: '14px',
+                                              lineHeight: '13.25px',
                                               fontSize: '13px',
                                               textDecoration: 'none',
                                               cursor: 'pointer',
@@ -163,10 +164,10 @@ const EmailGenerator_Result = (props) => {
                                           <span
                                             style={{
                                               display: 'block',
-                                              marginTop: '13px',
+                                              marginTop: '11px',
                                               marginBottom: '0px',
                                               paddingBottom: '0px',
-                                              lineHeight: '14px',
+                                              lineHeight: '13px',
                                               fontWeight: '600',
                                               fontSize: '14px',
                                               color: 'rgb(51,51,51)',
