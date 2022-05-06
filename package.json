@@ -12,7 +12,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svgr-logos": "svgr ./public/img/client-logos --out-dir ./components/Images/ClientLogos --typescript --svg-props fill=currentColor"
+    "svgr-logos": "svgr ./public/img/client-logos --out-dir ./components/Images/ClientLogos --typescript --svg-props fill=currentColor",
+    "db:push": "npx prisma db push",
+    "generate": "npx prisma generate"
   },
   "prettier": {
     "trailingComma": "all",

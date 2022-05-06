@@ -48,8 +48,6 @@ export default async function insta(req, res) {
   }
 
   const now = new Date()
-  const one_hour = 60 * 60 * 1000
-  const one_day = one_hour * 24
 
 
   if (info.last_token_refresh.getDay() !== now.getDay()) {
@@ -67,11 +65,8 @@ export default async function insta(req, res) {
     
   }
 
-
-  
-  
   let instaImages = []
-  if (info.last_image_refresh.getTime() - now.getTime() > one_day) {
+  if (info.last_image_refresh.getDay() !== now.getDay()) {
     await prisma.instagramLink.deleteMany({ })
     let images = await fetchImages(info.access_token)
     
