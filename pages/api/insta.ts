@@ -1,5 +1,4 @@
-import { PrismaClient } from '@prisma/client'
-
+import { prisma } from '@lib/db'
 
 async function fetchToken(previousToken: string) {
 
@@ -34,9 +33,8 @@ async function fetchImages(token: string) {
 }
 
 export default async function insta(req, res) {
-  const prisma = new PrismaClient()
 
-  let info = await prisma.info.findFirst()
+  let info = await prisma.info.findFirst({})
   if (!info) {
     info = await prisma.info.create({
       data: {
@@ -84,6 +82,12 @@ export default async function insta(req, res) {
     })
     
     instaImages = await Promise.all(promises)
+    info = await prisma.info.update({
+      where: { id: info.id },
+      data: { 
+        last_image_refresh: new Date(),
+      }
+    })  
   } else {
     instaImages = await prisma.instagramLink.findMany({})
   }
