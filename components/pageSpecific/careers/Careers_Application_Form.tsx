@@ -8,7 +8,7 @@ export default function Careers_Application_Form({ allJobs }) {
   // const [submitted, setSubmitted] = useState(false)
   const [file, setFile] = useState(null)
   const [fileName, setFileName] = useState('')
-
+  const [isLoading, setIsLoading] = useState(false)
   const {
     register,
     handleSubmit,
@@ -20,12 +20,17 @@ export default function Careers_Application_Form({ allJobs }) {
 
   // const watchAllFields = watch()
   // Handle the  submit
-  const onSubmit = (data) => {
-    SendToMonday_JobApplication(data)
-    SendtosSendgridconfirmation(data)
-    SendToSendgrid(data)
-    SendToMailchimp(data)
-
+  const onSubmit = async (data) => {
+    if (isLoading) { return } 
+    
+    setIsLoading(true)
+    await Promise.all([
+      SendToMonday_JobApplication(data),
+      SendtosSendgridconfirmation(data),
+      SendToSendgrid(data),
+      SendToMailchimp(data)
+    ])
+    setIsLoading(false)
     router.push('/careers/submitted')
   }
   // file upload
@@ -99,6 +104,7 @@ export default function Careers_Application_Form({ allJobs }) {
 
   // const test = ReactPDF.renderToStream(<CareersApplicationPDF data={'data'} />)
   return (
+    <>
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='mx-auto max-w-4xl grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-10'>
         <div className='col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-y-1 lg:gap-x-4'>
@@ -426,7 +432,8 @@ export default function Careers_Application_Form({ allJobs }) {
           <input
             className='my-3 py-2 px-12 cursor-pointer bg-blue text-cream rounded-md text-center inline-block drop-shadow-md hover:drop-shadow-sm font-bold text-2xl'
             type='submit'
-            value={'off she goes!'}
+            disabled={isLoading}
+            value={isLoading ? 'Submitting...' : 'off she goes!'}
           />
         </div>
 
@@ -458,5 +465,6 @@ export default function Careers_Application_Form({ allJobs }) {
 
       {/* <p className='bg-white'>{JSON.stringify(watchAllFields, null, 2)}</p> */}
     </form>
+    </>
   )
 }

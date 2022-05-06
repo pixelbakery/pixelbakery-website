@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
+
+import { useQuery } from 'react-query'
+
+
 interface GalleryProps {
   count: number
 }
@@ -8,36 +12,13 @@ interface GalleryProps {
 export const InstagramGallery = (props: GalleryProps) => {
   const [loading, setLoading] = useState<Boolean>(true)
   const [error, setError] = useState<Boolean>(false)
-  const [instagramData, setInstagramData] = useState<any>(null)
-  const accessToken =
-    'IGQVJXUmVjdC11cTl4VUY1YWpzcmFMVUR2OVpZAMVZAiMGVOWVVxRXVXLXFYMnduZAXpsT0EyUGNacl96dTJYSlRnd2FlWUFjbkNBN1dhVzRRamcya2k2MmJMQlowVVJVNzJDTG9zMWF2RC0yeklDZAE4yOAZDZD'
-  const fetchInstagramData = (url: string) => {
-    fetch(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        if (data.hasOwnProperty('error')) {
-          setLoading(false)
-          setError(true)
-        } else {
-          setInstagramData(data)
-          setLoading(false)
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-        setError(true)
-        setLoading(false)
-      })
-  }
-
-  useEffect(() => {
-    const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&limit=${props.count}&access_token=${accessToken}`
-    fetchInstagramData(url)
-  }, [])
-
-  if (loading) {
+  
+  const { data, isError, isLoading } = useQuery('instagram-images', async () => {
+    const res = await fetch('/api/insta').then((res) => res.json())
+    return res.images
+  })
+ 
+  if (isLoading) {
     return <div className='instagram-gallery'>LOADING...</div>
   }
 
@@ -52,7 +33,7 @@ export const InstagramGallery = (props: GalleryProps) => {
 
   return (
     <div className='grid grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 lg:gap-2 instagram-gallery'>
-      {instagramData.data.slice(0, props.count).map((item: any, index: any) => (
+      {data.slice(0, props.count).map((item: any, index: any) => (
         <div
           key={index}
           className={cn('bg-yellow col-span-1 instagram-item aspect-w-1 aspect-h-1', {
