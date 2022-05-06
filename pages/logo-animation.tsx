@@ -11,7 +11,7 @@ function LogoAnimation() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Logo Animation'
+        title='Logo Animation | Services | Pixel Bakery'
         description={`bring your logo to life with an eye-catching and memorable animation`}
       />
       <PageHeader_VariableHeight

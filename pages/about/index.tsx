@@ -18,13 +18,19 @@ function About({ allPeople }: Props) {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery | About'
+        title='About | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com/about`,
-          title: 'Pixel Bakery | About',
+          images: [
+            {
+              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+            },
+          ],
+          title: 'About | Pixel Bakery',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}

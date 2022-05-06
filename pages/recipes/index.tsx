@@ -68,7 +68,7 @@ const Index = ({ allPosts }) => {
   return (
     <Main>
       <NextSeo
-        title="Pixel Bakery – Mom's Recipes"
+        title="Mom's Recipes | Pixel Bakery"
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }

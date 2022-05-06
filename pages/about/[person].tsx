@@ -103,10 +103,10 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
   return (
     <Main>
       <NextSeo
-        title={`Pixel Bakery – ${person.name}`}
+        title={`${person.name} | About | Pixel Bakery`}
         description={`${person.content}`}
         openGraph={{
-          title: `Pixel Bakery – ${person.name}`,
+          title: `${person.name} | About | Pixel Bakery`,
           description: `${person.content}`,
           url: `https://pixelbakery.com/about/`,
           type: 'profile',
@@ -131,9 +131,6 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
           ],
         }}
       />
-      <Head>
-        <title>PBDS | {person.name} </title>
-      </Head>
       {router.isFallback ? (
         <p>Loading…</p>
       ) : (

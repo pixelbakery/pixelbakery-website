@@ -20,13 +20,13 @@ const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery Design Studio'
+        title='Home | Pixel Bakery'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com`,
-          title: 'Pixel Bakery Design Studio',
+          title: 'Home | Pixel Bakery',
           images: [
             {
               url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,

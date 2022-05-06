@@ -73,7 +73,7 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
   return (
     <Main>
       <NextSeo
-        title={`PBDS – ${frontMatter.title}`}
+        title={`${frontMatter.title} | Recipes | Pixel Bakery`}
         description={`${frontMatter.excerpt}`}
         openGraph={{
           url: `https://pixelbakery.com/recipes/${slug}`,

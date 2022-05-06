@@ -46,7 +46,7 @@ const EmailGenerator_Result = (props) => {
                         >
                           <a href='https://pixelbakery.com' target={'_blank'}>
                             <img
-                              style={{ width: '130px', height: '130px' }}
+                              style={{ width: '125px', height: '125px' }}
                               src='https://pixelbakery.com/img/PB_Logo_Initials_darkBlue_EmailSignature.jpg'
                               alt='logo'
                             />
@@ -75,7 +75,7 @@ const EmailGenerator_Result = (props) => {
                                     style={{
                                       fontSize: '15.5px',
                                       fontWeight: '600',
-                                      lineHeight: '15.5px',
+                                      lineHeight: '16x',
                                       color: 'rgb(51,51,51)',
                                       fontFamily: 'Poppins,"Open Sans",Helvetica,sans-serif',
                                     }}
@@ -113,7 +113,7 @@ const EmailGenerator_Result = (props) => {
                                               href={`tel:${user.phone}`}
                                               style={{
                                                 marginTop: '0px',
-                                                lineHeight: '13.5px',
+                                                lineHeight: '14px',
                                                 fontSize: '13px',
                                                 display: 'block',
                                                 textDecoration: 'none',
@@ -129,7 +129,7 @@ const EmailGenerator_Result = (props) => {
                                             style={{
                                               marginTop: '0px',
 
-                                              lineHeight: '13.5px',
+                                              lineHeight: '14px',
                                               fontSize: '13px',
                                               textDecoration: 'none',
                                               cursor: 'pointer',

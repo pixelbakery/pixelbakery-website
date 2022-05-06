@@ -25,11 +25,11 @@ function EducationProject({ projectFile }: Props) {
   return (
     <Main id='' className=''>
       <NextSeo
-        title={`PBDS – ${projectFile.title} Project File`}
+        title={`${projectFile.title} | Project Files | Pixel Bakery`}
         description={`${projectFile.excerpt}`}
         openGraph={{
           url: `https://pixelbakery.com/contact`,
-          title: 'Pixel Bakery Design Studio',
+          title: `${projectFile.title} | Project Files | Pixel Bakery`,
           description: `${projectFile.excerpt}`,
           images: [
             {

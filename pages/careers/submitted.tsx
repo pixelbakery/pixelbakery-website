@@ -10,7 +10,7 @@ import Link from 'next/link'
 function SubmissionConfirmation() {
   return (
     <Main>
-      <NextSeo noindex={true} title='Pixel Bakery – Careers – Application Submitted' />
+      <NextSeo noindex={true} title='Application Submitted | Careers | Pixel Bakery' />
       <PageSection color='pink-light'>
         <InnerWrapper className='pt-24'>
           <H1 className='peach text-4xl md:text-6xl text-blue mb-8'>

@@ -9,8 +9,19 @@ function Onboarding() {
   return (
     <Main id='page-onboarding'>
       <NextSeo
-        title='Pixel Bakery – Become a Client'
-        description={`Learn what it's like to be a Pixel Bakery client and get started with a project`}
+        title='Become a Client | Pixel Bakery'
+        description={`We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy.`}
+        openGraph={{
+          url: `https://pixelbakery.com/onboarding`,
+          images: [
+            {
+              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+            },
+          ],
+          title: 'Become a Client | Pixel Bakery',
+          description: `We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy.`,
+        }}
       />
       <PageHeader_VarH
         header='start something wonderful'

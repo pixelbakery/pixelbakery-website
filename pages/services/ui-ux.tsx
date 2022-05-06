@@ -12,11 +12,11 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Pixel Bakery – Services – UI/UX'
+        title='UI/UX | Services | Pixel Bakery'
         description={`Engage with your audience on their favorite platforms.`}
         openGraph={{
           url: `https://pixelbakery.com/services/ui-ux`,
-          title: 'Pixel Bakery – Services – UI/UX',
+          title: 'UI/UX | Services | Pixel Bakery',
           description: `Engage with your audience on their favorite platforms.`,
         }}
       />
