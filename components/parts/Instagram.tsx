@@ -1,10 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
-
 import { useQuery } from 'react-query'
-
-
 interface GalleryProps {
   count: number
 }
@@ -12,12 +9,12 @@ interface GalleryProps {
 export const InstagramGallery = (props: GalleryProps) => {
   const [loading, setLoading] = useState<Boolean>(true)
   const [error, setError] = useState<Boolean>(false)
-  
+
   const { data, isError, isLoading } = useQuery('instagram-images', async () => {
     const res = await fetch('/api/insta').then((res) => res.json())
     return res.images
   })
- 
+
   if (isLoading) {
     return <div className='instagram-gallery'>LOADING...</div>
   }
@@ -53,6 +50,8 @@ export const InstagramGallery = (props: GalleryProps) => {
                 <Image
                   layout='fill'
                   objectFit='cover'
+                  placeholder='blur'
+                  blurDataURL={item.media_url.replace(/^[^.]*/, 'https://scontent-akl1-1')}
                   className='instagram-image'
                   key={index}
                   src={item.media_url.replace(/^[^.]*/, 'https://scontent-akl1-1')}
