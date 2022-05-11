@@ -1,7 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
-import H2 from '@typography/H2'
 import { useState, useEffect } from 'react'
 import H2AndLead from '@typography/H2AndLead'
 
@@ -20,7 +19,6 @@ function Services_Modulation() {
         loop
         play
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-        style={{ height: '100%' }}
       />
     )
   }
@@ -28,7 +26,7 @@ function Services_Modulation() {
     <PageSection color='pink-light'>
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-5 gap-x-12'>
-          <div className=' col-span-1 lg:col-span-3'>
+          <div className='col-span-1 lg:col-span-3'>
             <LottieAnimation />
           </div>
           <div className='col-span-1 lg:col-span-2'>

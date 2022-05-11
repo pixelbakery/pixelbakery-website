@@ -7,8 +7,28 @@ import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import H1 from '@typography/H1'
+import { useState, useEffect } from 'react'
+import Lottie from 'react-lottie-player'
 
-export default function Services() {
+export default function Services_CreativeStrategy() {
+  const LottieAnimation = () => {
+    const [animationData, setAnimationData] = useState(null)
+
+    useEffect(() => {
+      import('@data/lottie_services/lottie_services_creativeStrategy.json').then(setAnimationData)
+    }, [])
+
+    if (!animationData) return <div>Loading...</div>
+    return (
+      <Lottie
+        animationData={animationData}
+        loop
+        play
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+      />
+    )
+  }
   return (
     <Main>
       <NextSeo
@@ -26,27 +46,36 @@ export default function Services() {
           brief based on a client's goals, pain points, and ideas.`,
         }}
       />
-      <Services_Header serviceName='Creative Strategy'>
-        <Lead>
-          We&apos;re more than just designers – we&apos;re thinkers, strategizers, and consultants.
-        </Lead>
-        <p>
-          From the initial discovery meeting to the final deliverable, our leadership team at Pixel
-          Bakery is all about strategizing the best way to deliver your message. Before any
-          pre-production on a project begins, PB develops a communication strategy and creative
-          brief based on a client&apos;s goals, pain points, and ideas.
-        </p>
-        <p>
-          Between a client&apos;s invaluable knowledge of their brand and our dedication to
-          providing a homogeneous brand experience from start to finish, PB knows that a unifying
-          theme that ties a project together is the key to a successful campaign.
-        </p>
-      </Services_Header>
-      {/* <Services_Subservices />
-      <Services_Related /> */}
+      <section className='lander-education my-4  overflow-hidden'>
+        <div className=' grid gap-y-16 md:gap-3 grid-cols-1 lg:grid-cols-2 h-full'>
+          <div className='relative bg-blue col-span-1 h-[50vh] lg:h-full'>
+            <LottieAnimation />
+          </div>
+          <div className='col-span-1 flex flex-col justify-center py-6 px-10 '>
+            <div className=' max-w-md mx-auto'>
+              <span className='mt-0 -mb-2 py-0 text-blue font-extrabold text-lg'>Services</span>
+              <H1 className='mt-0 pt-0 mb-3 text-blue-dark'>Creative Strategy</H1>
+              <Lead color='peach'>
+                We&apos;re more than just designers – we&apos;re thinkers, strategizers, and
+                consultants.
+              </Lead>
+              <p>
+                From the initial discovery meeting to the final deliverable, our leadership team at
+                Pixel Bakery is all about strategizing the best way to deliver your message. Before
+                any pre-production on a project begins, PB develops a communication strategy and
+                creative brief based on a client&apos;s goals, pain points, and ideas.
+              </p>
+              <p>
+                Between a client&apos;s invaluable knowledge of their brand and our dedication to
+                providing a homogeneous brand experience from start to finish, PB knows that a
+                unifying theme that ties a project together is the key to a successful campaign.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <Services_AllServices />
       <Services_OurProcess />
-      <Store_Maintenance />
     </Main>
   )
 }

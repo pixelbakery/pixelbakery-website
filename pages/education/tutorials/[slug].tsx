@@ -129,8 +129,7 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
                 Support Us
               </H2>
               <p className='max-w-lg text-cream font-medium text-xl'>
-                If this project file helped you at all, feel free to give us a tip. All tips go
-                directly to the designer that worked on the project.
+                If this project file helped you at all, feel free to give us a tip.
               </p>
             </div>
           </div>

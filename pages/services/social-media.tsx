@@ -28,7 +28,6 @@ export default function Services() {
       <Services_Related /> */}
       <Services_AllServices />
       <Services_OurProcess />
-      <Store_Maintenance />
     </Main>
   )
 }
