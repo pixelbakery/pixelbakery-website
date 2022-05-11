@@ -8,8 +8,28 @@ import Lead from '@typography/Lead'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import H1 from '@typography/H1'
+import { useState, useEffect } from 'react'
+import Lottie from 'react-lottie-player'
 
 export default function Services_Animation() {
+  const LottieAnimation = () => {
+    const [animationData, setAnimationData] = useState(null)
+
+    useEffect(() => {
+      import('@data/lottie_services/lottie_services_animation.json').then(setAnimationData)
+    }, [])
+
+    if (!animationData) return <div>Loading...</div>
+    return (
+      <Lottie
+        animationData={animationData}
+        loop
+        play
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+      />
+    )
+  }
   return (
     <Main>
       <NextSeo
@@ -24,17 +44,31 @@ export default function Services_Animation() {
             'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling',
         }}
       />
-      <Services_Header serviceName='Animation'>
-        <Lead color='peach'>
-          We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling
-        </Lead>
-        <p className='mt-6 leading-loose'>
-          Every animation project is full-service and includes project management, creative
-          concepting, sound design, storyboarding, and voiceover as needed. Whether you’re looking
-          for a lower thirds animation template or a sizzle reel of your company’s coolest products,
-          we’ve got you covered. Check out what else we have to offer below.
-        </p>
-      </Services_Header>
+      <section className='lander-education my-4  overflow-hidden'>
+        <div className=' grid gap-y-16 md:gap-3 grid-cols-1 lg:grid-cols-2 h-full'>
+          <div className='relative bg-blue-dark col-span-1 h-[50vh] lg:h-full'>
+            {/* <div className='relative w-full overflow-hidden h-full'> */}
+            {/* */}
+            {/* </div> */}
+            <LottieAnimation />
+          </div>
+          <div className='col-span-1 flex flex-col justify-center py-6 px-10 '>
+            <div className=' max-w-md mx-auto'>
+              <span className='mt-0 -mb-2 py-0 text-blue font-extrabold text-lg'>Services</span>
+              <H1 className='mt-0 pt-0 mb-3 text-blue-dark'>Animation</H1>
+              <Lead color='peach'>
+                We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling
+              </Lead>
+              <p className='mt-6 leading-loose'>
+                Every animation project is full-service and includes project management, creative
+                concepting, sound design, storyboarding, and voiceover as needed. Whether you’re
+                looking for a lower thirds animation template or a sizzle reel of your company’s
+                coolest products, we’ve got you covered. Check out what else we have to offer below.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <Services_Subservices />
       {/* <Services_Related /> */}
       <Services_Modulation />

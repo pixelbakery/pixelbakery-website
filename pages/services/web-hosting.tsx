@@ -31,7 +31,6 @@ export default function Services() {
         </p>
       </Services_Header>
       <Services_AllServices />
-      <Store_Maintenance />
     </Main>
   )
 }
