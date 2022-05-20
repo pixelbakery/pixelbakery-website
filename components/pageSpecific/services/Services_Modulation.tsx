@@ -3,6 +3,7 @@ import PageSection from '@parts/PageSection'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
 import { useState, useEffect } from 'react'
 import H2AndLead from '@typography/H2AndLead'
+import Lead from '@typography/Lead'
 
 function Services_Modulation() {
   const LottieAnimation = () => {
@@ -12,7 +13,14 @@ function Services_Modulation() {
       import('@data/modulation_animation.json').then(setAnimationData)
     }, [])
 
-    if (!animationData) return <div>Loading...</div>
+    if (!animationData)
+      return (
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      )
     return (
       <Lottie
         animationData={animationData}

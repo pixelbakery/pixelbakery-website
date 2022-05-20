@@ -27,7 +27,7 @@ const H2AndLead = ({
         )}
       >{`${headerText}`}</h2>
       <p
-        className={cn('text-2xl lg:text-3xl mt-0 font-bold leading-none max-w-lg', {
+        className={cn('text-2xl lg:text-3xl mt-0 font-bold leading-tight max-w-lg mb-0 pb-0', {
           [`text-${leadColor}`]: leadColor,
           [`text-wine`]: !leadColor,
         })}
