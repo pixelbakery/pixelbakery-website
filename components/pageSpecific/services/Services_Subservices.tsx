@@ -1,7 +1,5 @@
-import Servicess_Subservicess_Box from './Servicess_Subservices_Box'
+import Services_Subservices_Box from '@services/Services_Subservices_Box'
 import subservice from '@data/services-animation'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 
@@ -18,7 +16,7 @@ function Services_Subservices() {
         <div className=' col-span-5 lg:col-span-2 w-full   mx-auto'>
           <div>
             {subservice.map((subservice) => (
-              <Servicess_Subservicess_Box subservice={subservice} key={subservice.service} />
+              <Services_Subservices_Box subservice={subservice} key={subservice.service} />
             ))}
           </div>
         </div>
