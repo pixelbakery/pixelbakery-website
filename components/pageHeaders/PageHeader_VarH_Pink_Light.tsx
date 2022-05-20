@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import PageHeader_TextBox from './PageHeader_TextBox'
 import { useState, useEffect } from 'react'
+import Lead from '@typography/Lead'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -28,7 +29,14 @@ function PageHeader_VariableHeight({ header, subheader }) {
       import('@data/Patterns_Pink_Light.json').then(setAnimationData)
     }, [])
 
-    if (!animationData) return <div>Loading...</div>
+    if (!animationData)
+      return (
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      )
     return (
       <Lottie
         animationData={animationData}

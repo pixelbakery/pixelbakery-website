@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import cn from 'classnames'
 import { useQuery } from 'react-query'
+import Lead from '@typography/Lead'
 interface GalleryProps {
   count: number
 }
@@ -16,7 +17,16 @@ export const InstagramGallery = (props: GalleryProps) => {
   })
 
   if (isLoading) {
-    return <div className='instagram-gallery'>LOADING...</div>
+    return (
+      <div className='instagram-gallery'>
+        {' '}
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      </div>
+    )
   }
 
   if (error) {
