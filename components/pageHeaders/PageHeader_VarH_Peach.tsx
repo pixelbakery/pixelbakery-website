@@ -2,9 +2,9 @@ import Lottie from 'react-lottie-player'
 import classNames from 'classnames'
 import Pattern from '@data/Patterns_Peach.json'
 import PropTypes from 'prop-types'
-import H1 from 'components/typography/H1'
 import PageHeader_TextBox from './PageHeader_TextBox'
 import { useState, useEffect } from 'react'
+import Lead from '@typography/Lead'
 
 PageHeader_VariableHeight.propTypes = {
   header: PropTypes.string,
@@ -31,7 +31,14 @@ function PageHeader_VariableHeight({ header, subheader }) {
       import('@data/Patterns_Peach.json').then(setAnimationData)
     }, [])
 
-    if (!animationData) return <div>Loading...</div>
+    if (!animationData)
+      return (
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      )
     return (
       <Lottie
         animationData={animationData}

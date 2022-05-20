@@ -1,44 +1,59 @@
 import Link from 'next/link'
-import { ChevronRightIcon } from '@images/UI_Icons/index'
-import PropTypes from 'prop-types'
+import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
-Button_Outlined.propTypes = {
-  text: PropTypes.string,
-  link: PropTypes.string,
-  color: PropTypes.string,
-  chevronDirection: PropTypes.string,
+import PropTypes from 'prop-types'
+
+type Props = {
+  text: string
+  link: string
+  center?: boolean
+  color: string
+  chevronDirection?: string
 }
 
-function Button_Outlined({ text, link, color, chevronDirection }) {
+function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
   let chevronRotation = ''
   if (chevronDirection === 'right') {
-    return
+    chevronRotation = ''
   } else if (chevronDirection === 'down') {
     chevronRotation = 'rotate-90'
   } else if (chevronDirection === 'left') {
     chevronRotation = 'order-first rotate-180'
   } else if (chevronDirection === 'up') {
     chevronRotation = ' -rotate-90'
+  } else if (chevronDirection === 'download') {
+    chevronRotation = ''
+  } else {
+    chevronRotation = ''
   }
   return (
     <Link href={link} passHref>
       <div
         className={cn(
-          'cursor-pointer transform transition-all duration-500 hover:scale-98 my-2 max-w-lg py-2 rounded-xl px-6 w-full bg-transparent text-center border-2 border-',
-          color,
+          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
+          `border-${color} border-2`,
+          { ['mx-auto']: center },
         )}
       >
-        <div className={cn(' font-extrabold text-lg lowercase flex text-', color)}>
-          <div className='self-center flex-grow flex flex-col justify-center'>{text}</div>
+        <div className={cn('font-extrabold text-xl lowercase flex')}>
+          <div
+            className={cn(
+              'text-center flex-grow flex flex-col justify-center leading-none',
+              `text-${color}`,
+            )}
+          >
+            {text}
+          </div>
 
           <i
             className={cn(
               'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
               chevronRotation,
+              `text-${color}`,
             )}
           >
-            <ChevronRightIcon />
+            {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
           </i>
         </div>
       </div>
@@ -46,4 +61,4 @@ function Button_Outlined({ text, link, color, chevronDirection }) {
   )
 }
 
-export default Button_Outlined
+export default Button_Filled
