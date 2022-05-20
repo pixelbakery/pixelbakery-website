@@ -11,7 +11,7 @@ import H1 from '@typography/H1'
 import { useState, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
 
-export default function Services() {
+export default function Services_EmergingMedia() {
   const LottieAnimation = () => {
     const [animationData, setAnimationData] = useState(null)
 
@@ -19,7 +19,14 @@ export default function Services() {
       import('@data/lottie_services/lottie_services_emergingMedia.json').then(setAnimationData)
     }, [])
 
-    if (!animationData) return <div>Loading...</div>
+    if (!animationData)
+      return (
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      )
     return (
       <Lottie
         animationData={animationData}

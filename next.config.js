@@ -92,11 +92,11 @@ module.exports = {
         destination: '/store',
         permanent: true,
       },
-      {
-        source: '/services',
-        destination: '/work',
-        permanent: true,
-      },
+      // {
+      //   source: '/services',
+      //   destination: '/work',
+      //   permanent: true,
+      // },
       {
         source: '/work/case-studies',
         destination: '/work#projects',

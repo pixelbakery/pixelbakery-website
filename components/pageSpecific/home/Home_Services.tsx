@@ -4,28 +4,12 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
+import Link from 'next/link'
+import Button_Filled from '@parts/Button_Filled'
 // import gsap from 'gsap'
 // import { PbIconMixerAbs } from "../icons/abs/index";
 
 function Home_Services() {
-  // useEffect(() => {
-  //   const mixerTL = gsap.timeline({
-  //     defaults: {
-  //       y: -30,
-  //       rotation: gsap.utils.random(0, -15),
-  //       stagger: 0.1,
-  //       ease: 'sine.inOut',
-  //     },
-  //     repeat: -1,
-  //     yoyo: true,
-  //   })
-
-  //   mixerTL.to('#home-mixer', {
-  //     y: 30,
-  //     rotation: gsap.utils.random(-1, 15),
-  //     duration: 4,
-  //   })
-  // }, [])
   return (
     <PageSection color='blue' id='home-services'>
       <InnerWrapper>
@@ -42,7 +26,7 @@ function Home_Services() {
               Our hobbies are our profession.
             </Lead>
           </div>
-          <div className='mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 lg:grid-cols-3 justify-items-stretch -mt-2 mb-16'>
+          {/* <div className='mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 lg:grid-cols-3 justify-items-stretch -mt-2 mb-16'>
             {services.map((service) => (
               <Work_Services_Card
                 service={service.service}
@@ -50,6 +34,9 @@ function Home_Services() {
                 key={service.service}
               />
             ))}
+          </div> */}
+          <div className='max-w-md'>
+            <Work_Services_Card service={'See Everything We Create'} url={'/services'} />
           </div>
         </div>
       </InnerWrapper>

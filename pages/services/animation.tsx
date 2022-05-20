@@ -20,7 +20,14 @@ export default function Services_Animation() {
       import('@data/lottie_services/lottie_services_animation.json').then(setAnimationData)
     }, [])
 
-    if (!animationData) return <div>Loading...</div>
+    if (!animationData)
+      return (
+        <div className='w-full h-full flex flex-col justify-center'>
+          <Lead color='cream' className='self-center text-center'>
+            Loading
+          </Lead>
+        </div>
+      )
     return (
       <Lottie
         animationData={animationData}
