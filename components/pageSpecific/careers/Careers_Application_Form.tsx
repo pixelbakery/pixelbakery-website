@@ -162,6 +162,7 @@ export default function Careers_Application_Form({ allJobs }) {
               type='email'
               id='email'
               placeholder='hello@pixelbakery.com'
+              required
               {...register('email' as never, {})}
             />
           </div>
@@ -173,6 +174,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               id='tel-national'
               type='tel'
+              required
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='Phone'
               {...register('phone_number' as never, {})}
@@ -415,6 +417,7 @@ export default function Careers_Application_Form({ allJobs }) {
                   'rounded-lg bg-white  border-1  p-3 my-2 text-blue-dark cursor-pointer  drop-shadow-2xl focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
                 }
                 type='checkbox'
+                required
                 checked={authorized}
                 onClick={handleAuthorized}
                 {...register('authorized' as never)}
