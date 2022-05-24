@@ -25,14 +25,13 @@ export default function Careers_Application_Form({ allJobs }) {
       return
     }
 
-    setIsLoading(true)
+    await setIsLoading(true)
+    await SendToSendgrid(data)
     await SendToMonday_JobApplication(data)
     await SendtosSendgridconfirmation(data)
-    await SendToSendgrid(data)
     await SendToMailchimp(data)
-
-    setIsLoading(false)
-    router.push('/careers/submitted')
+    await router.push('/careers/submitted')
+    await setIsLoading(false)
   }
   // file upload
 
@@ -125,7 +124,6 @@ export default function Careers_Application_Form({ allJobs }) {
             />
             <input
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
-              required
               type='text'
               id='additional-name'
               placeholder='Middle'
@@ -440,7 +438,7 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
           <div className='col-span-2 my-2'>
             <button
-              className='my-3 py-2 px-12 cursor-pointer bg-blue text-cream rounded-md text-center inline-block drop-shadow-md hover:drop-shadow-sm font-bold text-2xl'
+              className='my-3 py-2 px-12 cursor-pointer bg-blue text-cream rounded-md text-center inline-block drop-shadow-md hover:drop-shadow-sm font-bold text-2xl disabled:bg-wine-300 disabled:cursor-progress disabled:hover:drop-shadow-md'
               type='submit'
               disabled={isLoading}
             >
