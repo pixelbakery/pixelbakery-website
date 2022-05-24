@@ -27,7 +27,7 @@ const Work_Portfolio = ({ allCaseStudies }) => {
 
   return (
     <>
-      <PageSection>
+      <PageSection id='projects'>
         <InnerWrapper>
           <H2 className='mb-6'>Work we&apos;re really really really proud of</H2>
           <Lead color='blue-dark'>

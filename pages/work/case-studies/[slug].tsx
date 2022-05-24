@@ -20,6 +20,7 @@ import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import { NextSeo } from 'next-seo'
+import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
 export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
   const components = {
@@ -93,6 +94,7 @@ export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
         <MDXRemote {...source} components={components} />
       </article>
       <CaseStudies_Credits credits={frontMatter.credits} />
+      <CaseStudies_CTA />
       <CaseStudies_OtherProjects title={frontMatter.title} allCaseStudies={allCaseStudies} />
       {/* <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} /> */}
     </Main>
