@@ -110,7 +110,7 @@ function Work_Portfolio_Card({ project }) {
             id={projID_tags}
             className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
           >
-            {project.data.tags.map((tag) => (
+            {project.data.tags.slice(0, 3).map((tag) => (
               <Pill text={tag} bgColor={'blue'} textColor={'cream'} size='xs' key={tag} />
             ))}
           </div>
