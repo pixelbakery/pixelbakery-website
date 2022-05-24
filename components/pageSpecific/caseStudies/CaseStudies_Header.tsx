@@ -17,19 +17,22 @@ SolaTinyChef_Header.propTypes = {
 
 function SolaTinyChef_Header({ ...props }) {
   return (
-    <section className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48  my-4  bg-white' id='topOfPage'>
+    <section
+      className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4  bg-white'
+      id='topOfPage'
+    >
       <div className='mx-auto max-w-6xl'>
         <div className='mb-6'>
           <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
             {props.projectName}
           </H1>
-          {/* <Lead
+          <Lead
             color='wine'
-            className='py-6 text-wine text-xl max-w-sm font-medium text-opacity-50'
+            className='pb-6 text-wine text-xl max-w-sm font-semibold text-opacity-75'
           >
             {props.projectExcerpt}
-          </Lead> */}
+          </Lead>
           {/* <Link href={'/work'}>
             <a className='text-blue text-md text-opacity-90 hover:text-opacity-75 pb-1 border-b border-b-blue'>
               ← back to all case studies
@@ -37,8 +40,14 @@ function SolaTinyChef_Header({ ...props }) {
           </Link> */}
         </div>
       </div>
-      <div className='2xl:px-12 max-w-8xl mx-auto mt-20'>
-        <Vimeo video={props.heroVideo} autoplay={false} showPortrait responsive={true} />
+      <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
+        <Vimeo
+          video={props.heroVideo}
+          autoplay={false}
+          showPortrait
+          responsive={true}
+          className={'relative'}
+        />
       </div>
     </section>
   )

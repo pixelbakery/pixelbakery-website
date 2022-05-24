@@ -95,6 +95,13 @@ module.exports = {
       skew: ['group-hover', 'active'],
       scale: ['group-hover', 'active'],
       backgroundColor: ['active'],
+      maxHeight: {
+        'screen-3/4': '75vh',
+        'screen-2/3': '66vh',
+        'screen-1/2': '50vh',
+        'screen-1/3': '33vh',
+        'screen-1/4': '25vh',
+      },
     },
   },
   plugins: [
