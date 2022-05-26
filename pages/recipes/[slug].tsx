@@ -26,6 +26,7 @@ import { ChevronRightIcon } from '@images/UI_Icons'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import { ArticleJsonLd, NextSeo } from 'next-seo'
+import TagManager from 'react-gtm-module'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -51,6 +52,15 @@ function shuffleArray(array) {
   return array
 }
 export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
+  useEffect(() => {
+    TagManager.dataLayer({
+      dataLayer: {
+        content_type: 'recipes',
+        author: `${frontMatter.author}`,
+      },
+    })
+  }, [])
+
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   const myContainer = useRef(null)

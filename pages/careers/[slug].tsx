@@ -17,6 +17,9 @@ import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
 import { JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
+import TagManager from 'react-gtm-module'
+import { useEffect } from 'react'
+
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -31,7 +34,14 @@ const components = {
 export default function JobsPage({ slug, source, filePath, frontMatter }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
-
+  useEffect(() => {
+    TagManager.dataLayer({
+      dataLayer: {
+        content_type: 'recipes',
+        author: `${frontMatter.author}`,
+      },
+    })
+  }, [])
   return (
     <Main>
       <NextSeo

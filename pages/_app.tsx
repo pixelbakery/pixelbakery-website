@@ -9,19 +9,25 @@ import {
 } from '../components/parts/Layout'
 import TagManager from 'react-gtm-module'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import * as ga from '@lib/ga'
+// import * as ga from '@lib/ga'
 import '@styles/globals.css'
 import '@styles/typography.css'
 
 const client = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const tagManagerArgs = {
+    gtmId: 'G-CN186FPM24',
+    events: {
+      sendUserInfo: 'userInfo',
+    },
+  }
   // Google Analytics...maybe?
   useEffect(() => {
     const handleRouteChange = (url) => {
-      ga.pageview(url as any)
+      // ga.pageview(url as any)
     }
-    TagManager.initialize({ gtmId: 'GTM-PC8M8GG' })
+    TagManager.initialize(tagManagerArgs)
   }, [])
 
   // Define the Layouts so we can use use them whenever

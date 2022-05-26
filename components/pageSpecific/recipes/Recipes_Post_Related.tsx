@@ -11,7 +11,7 @@ const Recipes_Posts_Related = ({ relatedPosts }) => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-16'>
           {relatedPosts.map((post) => {
             return (
-              <div>
+              <div key={post.filePath}>
                 <Recipes_FeaturedPost
                   as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
                   href={`/recipes/[slug]`}
