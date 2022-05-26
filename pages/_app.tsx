@@ -17,7 +17,7 @@ const client = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   const tagManagerArgs = {
-    gtmId: 'G-CN186FPM24',
+    gtmId: 'GTM-PC8M8GG',
     events: {
       sendUserInfo: 'userInfo',
     },
