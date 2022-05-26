@@ -6,7 +6,6 @@ import cn from 'classnames'
 import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
 function Footer_Mailchimp({ onModalUpdate }) {
   const [checked, setChecked] = useState(true)
-  const [modalOpen, setModal] = useState(!false)
   const [submitted, setSubmitted] = useState(false)
   const [message, setMessage] = useState('')
   const handleOnClick = (index) => {
