@@ -4,6 +4,7 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 export const GA_ANALYTICS_MEASUREMENT_ID = 'PC8M8GG'
 const isProd = process.env.NODE_ENV === 'production'
 import { DefaultSeo } from 'next-seo'
+import Script from 'next/script'
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -12,7 +13,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <DefaultSeo
           defaultTitle='Pixel Bakery'
           description={
@@ -50,11 +51,11 @@ class MyDocument extends Document {
         <Head>
           {isProd && (
             <>
-              <script
+              <Script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_ANALYTICS_MEASUREMENT_ID}`}
               />
-              <script
+              <Script
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                   __html: `

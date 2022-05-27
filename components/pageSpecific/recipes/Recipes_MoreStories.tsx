@@ -8,7 +8,7 @@ const MoreStories = ({ posts }) => {
       <H2>More Stories</H2>
       <div className='w-full grid grid-cols-1 '>
         {posts.map((post) => (
-          <div key={post.filepath}>
+          <div key={post.data.title}>
             <Recipes_SmallPost
               as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
               href={`/recipes/[slug]`}

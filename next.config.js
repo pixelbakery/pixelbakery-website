@@ -2,6 +2,27 @@
 // eslint-disable-next-line no-undef
 const React = require('react')
 module.exports = {
+  images: {
+    formats: ['image/webp'],
+    domains: [
+      'cdn.chec.io',
+      'pixelbakery.co',
+      'media.pixelbakery.com',
+      'pixelbakery.com',
+      'placeimg.com',
+      'scontent.cdninstagram.com',
+      'scontent-ort2-2.cdninstagram.com',
+      '*.cdninstagram.com',
+      'scontent-akl1-1.cdninstagram.com',
+      'i.scdn.co',
+      '*.scdn.co',
+      'scdn.co',
+      'mosaic.scdn.co',
+      'images234-focus-opensocial.googleusercontent.com',
+      'scontent.cdninstagram.com',
+      'scontent-akl1-1.cdninstagram.com',
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -448,25 +469,5 @@ module.exports = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  images: {
-    domains: [
-      'cdn.chec.io',
-      'pixelbakery.co',
-      'media.pixelbakery.com',
-      'pixelbakery.com',
-      'placeimg.com',
-      'scontent.cdninstagram.com',
-      'scontent-ort2-2.cdninstagram.com',
-      '*.cdninstagram.com',
-      'scontent-akl1-1.cdninstagram.com',
-      'i.scdn.co',
-      '*.scdn.co',
-      'scdn.co',
-      'mosaic.scdn.co',
-      'images234-focus-opensocial.googleusercontent.com',
-      'scontent.cdninstagram.com',
-      'scontent-akl1-1.cdninstagram.com',
-    ],
   },
 }
