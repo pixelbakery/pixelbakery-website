@@ -35,14 +35,17 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
   const tagManagerArgs = {
     dataLayer: {
       page: `${frontMatter.title}`,
+      content_type: `Job Postings`,
     },
-    dataLayerName: 'PageDataLayer',
+    events: {
+      sendUserInfo: 'userInfo',
+      content_group: 'Job Postings',
+    },
   }
-  TagManager.dataLayer(tagManagerArgs)
 
   useEffect(() => {
     TagManager.dataLayer(tagManagerArgs)
-  }, [])
+  }, [tagManagerArgs])
 
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
@@ -55,7 +58,7 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
-          url: `https://pixelbakery.com/careers`,
+          url: `https://pixelbakery.com/careers/${filePath}`,
           title: `${frontMatter.title} | Careers | Pixel Bakery`,
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
