@@ -11,6 +11,7 @@ import Services_Modulation from '@services/Services_Modulation'
 import H1 from '@typography/H1'
 import { useState, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
+import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
 export default function Services() {
   const LottieAnimation = () => {
@@ -83,6 +84,7 @@ export default function Services() {
       </section>
 
       <Services_Modulation />
+      <CaseStudies_CTA />
       {/* <Services_Subservices /> */}
       {/* <Services_Related /> */}
       <Services_AllServices />

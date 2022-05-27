@@ -22,15 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       sendUserInfo: 'userInfo',
     },
   }
-  // Google Analytics...maybe?
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      // ga.pageview(url as any)
-    }
-    TagManager.initialize(tagManagerArgs)
+    TagManager.dataLayer(tagManagerArgs)
   }, [])
-
-  // Define the Layouts so we can use use them whenever
+  // Define thTagManager.initialize(tagManagerArgs)e Layouts so we can use use them whenever
   const LayoutWithNav = () => {
     return (
       <Layout__HasNav>

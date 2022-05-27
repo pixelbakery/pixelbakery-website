@@ -32,16 +32,20 @@ const components = {
 }
 
 export default function JobsPage({ slug, source, filePath, frontMatter }) {
+  const tagManagerArgs = {
+    dataLayer: {
+      page: `${frontMatter.title}`,
+    },
+    dataLayerName: 'PageDataLayer',
+  }
+  TagManager.dataLayer(tagManagerArgs)
+
+  useEffect(() => {
+    TagManager.dataLayer(tagManagerArgs)
+  }, [])
+
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
-  useEffect(() => {
-    TagManager.dataLayer({
-      dataLayer: {
-        content_type: 'recipes',
-        author: `${frontMatter.author}`,
-      },
-    })
-  }, [])
   return (
     <Main>
       <NextSeo

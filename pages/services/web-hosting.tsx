@@ -4,6 +4,7 @@ import Lead from '@typography/Lead'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
 export default function Services() {
   return (
@@ -30,6 +31,7 @@ export default function Services() {
           <a href='mailto:jordan@pixelbakery.com'>jordan@pixelbakery.com</a>
         </p>
       </Services_Header>
+      <CaseStudies_CTA />
       <Services_AllServices />
     </Main>
   )

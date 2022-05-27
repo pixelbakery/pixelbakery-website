@@ -7,6 +7,7 @@ import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
 export default function Services() {
   return (
@@ -26,6 +27,7 @@ export default function Services() {
       </Services_Header>
       {/* <Services_Subservices />
       <Services_Related /> */}
+      <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurProcess />
     </Main>
