@@ -10,6 +10,7 @@ import { NextSeo } from 'next-seo'
 import H1 from '@typography/H1'
 import { useState, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
+import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
 export default function Services_3dModeling() {
   const LottieAnimation = () => {
@@ -79,6 +80,7 @@ export default function Services_3dModeling() {
       </section>
       {/* <Services_Subservices />
       <Services_Related /> */}
+      <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurProcess />
     </Main>
