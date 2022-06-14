@@ -66,7 +66,6 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
   const myContainer = useRef(null)
   const [readTime, setReadTime] = useState('')
   const childRef = useRef(null)
-
   useEffect(() => {
     //Sets Reading Time
     function extractContent(s) {
@@ -96,7 +95,7 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
           },
           images: [
             {
-              url: `https://pixelbakery.com${frontMatter.coverImage}`,
+              url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author}`,
             },
           ],

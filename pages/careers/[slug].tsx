@@ -18,7 +18,9 @@ import DateFormatter from '@lib/date-formatter'
 import { JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
 import TagManager from 'react-gtm-module'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { title } from 'process'
+import Image from 'next/image'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -31,8 +33,7 @@ const components = {
   Head,
 }
 
-export default function JobsPage({ slug, source, filePath, frontMatter }) {
-  console.log('yo:', slug)
+export default function JobsPage({ slug, source, frontMatter }) {
   const tagManagerArgs = {
     dataLayer: {
       page: `${frontMatter.title}`,
@@ -47,6 +48,16 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
   useEffect(() => {
     TagManager.dataLayer(tagManagerArgs)
   }, [tagManagerArgs])
+
+  const [coverImage, setCoverImage] = useState(handleCoverImage())
+  function handleCoverImage() {
+    if (frontMatter.coverImage != '') {
+      return `${frontMatter.coverImage}`
+    } else {
+      return `/img/pixel-bakery-samee-dan-1200x900.png`
+    }
+  }
+  // console.log('cover image:', coverImage)
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
   return (
@@ -54,14 +65,17 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
       <NextSeo
         noindex={true}
         title={`${frontMatter.title} | Careers | Pixel Bakery`}
-        description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-        }
+        description={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`}
         openGraph={{
           url: `https://pixelbakery.com/careers/${slug}`,
           title: `${frontMatter.title} | Careers | Pixel Bakery`,
-          description:
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+          images: [
+            {
+              url: `https://pixelbakery.com${coverImage}`,
+              alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
+            },
+          ],
+          description: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`,
         }}
       />
       <JobPostingJsonLd
@@ -72,7 +86,7 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
           sameAs: 'https://pixelbakery.com',
         }}
         jobLocation={{
-          streetAddress: '2124 Y Street',
+          streetAddress: '2124 Y Street Suite 122',
           addressLocality: 'Lincoln',
           addressRegion: 'NE',
           postalCode: '68503',
@@ -84,7 +98,7 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
       <PageSection className='min-h-screen mt-32'>
         <article>
           <InnerWrapper>
-            <div className='max-w-2xl mx-auto'>
+            <header className='max-w-2xl mx-auto'>
               <div className='pb-12'>
                 <Link href='/careers' passHref>
                   <a className='border-b-2 pb-1 border-b-blue text-blue'> ← back to all careers</a>
@@ -96,10 +110,21 @@ export default function JobsPage({ slug, source, filePath, frontMatter }) {
               <H1 color='blue' className='text-6xl text-blue'>
                 {frontMatter.title}
               </H1>
-              <p className='text-sm italic'>
+              <div className=' md:max-w-6xl mx-auto'>
+                <div className='w-full  aspect-w-4 aspect-h-3 bg-peach mb-24 mx-auto'>
+                  <Image
+                    layout='fill'
+                    objectFit='cover'
+                    className='object-center'
+                    src={coverImage}
+                    alt={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`}
+                  />
+                </div>
+              </div>
+              <p className='text-sm italic mt-0 pt-0'>
                 posted on <DateFormatter dateString={frontMatter.date} />:
               </p>
-            </div>
+            </header>
           </InnerWrapper>
 
           <InnerWrapper>
