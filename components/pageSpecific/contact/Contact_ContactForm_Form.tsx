@@ -65,7 +65,6 @@ function Contact_ContactForm_Form() {
         <form
           className='mx-auto max-w-2xl  grid grid-cols-2 gap-4'
           onSubmit={handleSubmit(onSubmit)}
-          data-netlify='true'
         >
           <input
             className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'

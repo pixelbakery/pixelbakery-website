@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { SendToMonday_LogoAnimation } from '@lib/api_sendToMonday'
@@ -70,7 +70,6 @@ export default function LogoAnimation_GetStarted_Form() {
           ['hidden opacity-0']: submitted,
         })}
         onSubmit={handleSubmit(onSubmit)}
-        data-netlify='true'
       >
         <input
           className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'

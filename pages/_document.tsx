@@ -1,10 +1,11 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 // import Nav from '../components/Navigation'
 // import Footer from '../components/footer/Footer'
-export const GA_ANALYTICS_MEASUREMENT_ID = 'PC8M8GG'
-const isProd = process.env.NODE_ENV === 'production'
+
 import { DefaultSeo } from 'next-seo'
-import Script from 'next/script'
+
+import { FB_PIXEL_ID } from '../lib/fpixel'
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -48,7 +49,16 @@ class MyDocument extends Document {
             ],
           }}
         />
-        <Head></Head>
+        <Head>
+          <noscript>
+            <img
+              height='1'
+              width='1'
+              style={{ display: 'none' }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        </Head>
         <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
           <Main />
 
