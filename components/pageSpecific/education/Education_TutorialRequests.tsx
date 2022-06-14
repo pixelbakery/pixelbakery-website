@@ -24,7 +24,6 @@ function Education_TutorialRequests() {
           <form
             className='mx-auto max-w-2xl  flex flex-wrap gap-2'
             onSubmit={handleSubmit(onSubmit)}
-            data-netlify='true'
           >
             <input
               className='form-border-b w-full'
