@@ -23,7 +23,6 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
     if (!isActive) {
       document.body.classList.remove('overflow-y-hidden')
       gsap.to(fsNavRef.current, {
-        invalidateOnRefresh: true,
         autoAlpha: 0,
       })
     } else {
