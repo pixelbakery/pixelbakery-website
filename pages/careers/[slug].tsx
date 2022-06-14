@@ -17,9 +17,7 @@ import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
 import { JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
-import TagManager from 'react-gtm-module'
 import { useEffect, useState } from 'react'
-import { title } from 'process'
 import Image from 'next/image'
 
 // Custom components/renderers to pass to MDX.
@@ -34,21 +32,6 @@ const components = {
 }
 
 export default function JobsPage({ slug, source, frontMatter }) {
-  const tagManagerArgs = {
-    dataLayer: {
-      page: `${frontMatter.title}`,
-      content_type: `Job Postings`,
-    },
-    events: {
-      sendUserInfo: 'userInfo',
-      content_group: 'Job Postings',
-    },
-  }
-
-  useEffect(() => {
-    TagManager.dataLayer(tagManagerArgs)
-  }, [tagManagerArgs])
-
   const [coverImage] = useState(handleCoverImage())
   function handleCoverImage() {
     if (frontMatter.coverImage != undefined) {
@@ -72,6 +55,8 @@ export default function JobsPage({ slug, source, frontMatter }) {
           images: [
             {
               url: `https://pixelbakery.com${coverImage}`,
+              width: 800,
+              height: 600,
               alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
             },
           ],

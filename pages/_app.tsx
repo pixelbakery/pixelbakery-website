@@ -1,31 +1,22 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import {
   Layout__HasNav,
   Layout__NavMobile,
   Layout__NoNav,
   Layout__Blank,
 } from '../components/parts/Layout'
-import TagManager from 'react-gtm-module'
 import { QueryClient, QueryClientProvider } from 'react-query'
-// import * as ga from '@lib/ga'
 import '@styles/globals.css'
 import '@styles/typography.css'
+import ReactGA from 'react-ga4'
+
+ReactGA.initialize('your GA measurement id')
+ReactGA.send('pageview')
 
 const client = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const tagManagerArgs = {
-    gtmId: 'GTM-PC8M8GG',
-    events: {
-      sendUserInfo: 'userInfo',
-    },
-  }
-  useEffect(() => {
-    TagManager.dataLayer(tagManagerArgs)
-  }, [])
-  // Define thTagManager.initialize(tagManagerArgs)e Layouts so we can use use them whenever
   const LayoutWithNav = () => {
     return (
       <Layout__HasNav>

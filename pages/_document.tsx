@@ -48,29 +48,7 @@ class MyDocument extends Document {
             ],
           }}
         />
-        <Head>
-          {isProd && (
-            <>
-              <Script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ANALYTICS_MEASUREMENT_ID}`}
-              />
-              <Script
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ANALYTICS_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-                }}
-              />
-            </>
-          )}
-        </Head>
+        <Head></Head>
         <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
           <Main />
 
