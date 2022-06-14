@@ -49,9 +49,9 @@ export default function JobsPage({ slug, source, frontMatter }) {
     TagManager.dataLayer(tagManagerArgs)
   }, [tagManagerArgs])
 
-  const [coverImage, setCoverImage] = useState(handleCoverImage())
+  const [coverImage] = useState(handleCoverImage())
   function handleCoverImage() {
-    if (frontMatter.coverImage != '') {
+    if (frontMatter.coverImage != undefined) {
       return `${frontMatter.coverImage}`
     } else {
       return `/img/pixel-bakery-samee-dan-1200x900.png`
@@ -63,19 +63,18 @@ export default function JobsPage({ slug, source, frontMatter }) {
   return (
     <Main>
       <NextSeo
-        noindex={true}
         title={`${frontMatter.title} | Careers | Pixel Bakery`}
         description={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`}
         openGraph={{
           url: `https://pixelbakery.com/careers/${slug}`,
           title: `${frontMatter.title} | Careers | Pixel Bakery`,
+          description: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`,
           images: [
             {
               url: `https://pixelbakery.com${coverImage}`,
               alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
             },
           ],
-          description: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`,
         }}
       />
       <JobPostingJsonLd
