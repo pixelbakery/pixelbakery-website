@@ -99,7 +99,6 @@ export default function Navbar() {
     ScrollTrigger.create({
       start: `${window.innerHeight / 2} top`,
       end: 'max',
-      invalidateOnRefresh: true,
       // markers: true,
       onToggle(self) {
         // prevent toggling when at the bottom of page
