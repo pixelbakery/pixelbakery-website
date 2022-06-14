@@ -59,16 +59,15 @@ function Home_Landing() {
         </div>
         <div className=' flex flex-col justify-center h-full w-full '>
           <div className='relative  self-center w-full max-w-3xl h-full'>
-            <div className=''>
-              <Image
-                layout='fill'
-                objectFit='contain'
-                blurDataURL='true'
-                src={'/img/pixelbakery_boxlogo.svg'}
-                alt='Pixel Bakery Design Studio'
-                className='object-enter'
-              />
-            </div>
+            <Image
+              layout='fill'
+              priority
+              objectFit='contain'
+              blurDataURL='true'
+              src={'/img/pixelbakery_boxlogo.svg'}
+              alt='Pixel Bakery Design Studio'
+              className='object-enter relative'
+            />
           </div>
         </div>
       </div>
