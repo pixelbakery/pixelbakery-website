@@ -79,8 +79,8 @@ export const Footer: NextPage = () => {
                       </a>
                     </li>
                     <li className='mt-3 text-xl text-cream'>
-                      <a href='tel:4024138366' target='_blank' rel='noreferrer'>
-                        402 413 8366
+                      <a href='tel:4023020323' target='_blank' rel='noreferrer'>
+                        402 302 0323
                       </a>
                     </li>
                   </ul>
