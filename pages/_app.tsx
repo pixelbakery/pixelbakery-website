@@ -14,6 +14,8 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 const client = new QueryClient()
 import * as gtag from '../lib/gtag'
+import NextSEO_LocalBusiness from '@parts/NextSEO_LocalBusiness'
+import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
@@ -87,6 +89,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <NextSEO_LocalBusiness />
+      <NextSEO_DefaultSEO />
       {/* Global Site Code Pixel - Facebook Pixel */}
       <Script
         id='fb-pixel'

@@ -5,26 +5,21 @@ import { serialize } from 'next-mdx-remote/serialize'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
-
-import PostHeader from '@recipes/post-header'
+import PostHeader from '@recipes/Recipes_Post_Header'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { getAllPeople } from '@lib/api_person'
 const readingTime = require('reading-time')
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import PersonType from 'types/person'
-import { ReactDOM, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Video from '@parts/Video'
 import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 import { useEffect } from 'react'
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
-import Link from 'next/link'
-import { ChevronRightIcon } from '@images/UI_Icons'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -50,6 +45,7 @@ function shuffleArray(array) {
   }
   return array
 }
+
 export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
@@ -69,51 +65,60 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
     return () => {}
   }, [])
 
+  //figure out author bio link for JSON schema
+  let authorURL
+  if (ourPerson.slug && ourPerson.photos.headshotSmiling != typeof undefined) {
+    authorURL = `https://pixelbakery.com/about/${ourPerson.slug}`
+  } else {
+    authorURL = 'https://pixelbakery.com/recipes'
+  }
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Recipes',
-            item: 'https://pixelbakery.com/recipes',
-          },
-          {
-            position: 2,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/recipes/${slug}`,
-          },
-        ]}
-      />
-      <NextSeo
-        title={`${frontMatter.title} | Recipes`}
-        description={`${frontMatter.excerpt}`}
-        openGraph={{
-          url: `https://pixelbakery.com/recipes/${slug}`,
-          title: `${frontMatter.title}`,
-          type: 'article',
-          description: `${frontMatter.excerpt}`,
-          article: {
-            publishedTime: `${datePostedISO}`,
-            tags: [`${frontMatter.categories[0]}`],
-          },
-          images: [
+      <>
+        <BreadcrumbJsonLd
+          itemListElements={[
             {
-              url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author}`,
+              position: 1,
+              name: 'Recipes',
+              item: 'https://pixelbakery.com/recipes',
             },
-          ],
-        }}
-      />
-      <ArticleJsonLd
-        type='Blog'
-        url={`https://pixelbakery.com/recipes/${slug}`}
-        title={`${frontMatter.title}`}
-        images={[`https://pixelbakery.com/${frontMatter.coverImage}`]}
-        datePublished={`${datePostedISO}`}
-        authorName={`${frontMatter.author}`}
-        description={`${frontMatter.excerpt}`}
-      />
+            {
+              position: 2,
+              name: `${frontMatter.title}`,
+              item: `https://pixelbakery.com/recipes/${slug}`,
+            },
+          ]}
+        />
+        <NextSeo
+          title={`${frontMatter.title} | Recipes`}
+          description={`${frontMatter.excerpt}`}
+          openGraph={{
+            url: `https://pixelbakery.com/recipes/${slug}`,
+            title: `${frontMatter.title}`,
+            type: 'article',
+            description: `${frontMatter.excerpt}`,
+            article: {
+              publishedTime: `${datePostedISO}`,
+              tags: [`${frontMatter.categories[0]}`],
+            },
+            images: [
+              {
+                url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
+                alt: `${frontMatter.title} written by ${frontMatter.author}`,
+              },
+            ],
+          }}
+        />
+        <ArticleJsonLd
+          url={`https://pixelbakery.com/recipes/${slug}`}
+          title={frontMatter.title}
+          images={[`https://pixelbakery.com/${frontMatter.coverImage}`]}
+          datePublished={`${datePostedISO}`}
+          authorName={[`${frontMatter.author.name}`]}
+          description={`${frontMatter.excerpt}`}
+        />
+      </>
+
       <div className='mb-32'>
         <PostHeader
           title={frontMatter.title}
