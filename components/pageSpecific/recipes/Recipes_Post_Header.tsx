@@ -17,7 +17,7 @@ type Props = {
   readTime: any
 }
 
-const PostHeader = ({
+const Recipes_Post_Header = ({
   title,
   subtitle,
   category,
@@ -128,4 +128,4 @@ const PostHeader = ({
   )
 }
 
-export default PostHeader
+export default Recipes_Post_Header

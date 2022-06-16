@@ -13,10 +13,8 @@ import Head from 'next/head'
 import cs from 'classnames'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
 import React from 'react'
 import Navigation_Store from '@nav/Navigation_Store'
-import Main from '@parts/Main'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -36,7 +34,6 @@ function CanIAddToCart(variantId) {
   currentVariant = variantId
 }
 const Store_Product: NextPage = ({ product }: { product: any }) => {
-  const [price, setPrice] = useState(product.price.raw)
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
 
   const [variant, setVariant] = useState({})
@@ -70,7 +67,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
     prependPrice = 'minimum price: '
   }
   return (
-    <Main id={'product-' + product.name} className=' bg-white relative'>
+    <main id={'product-' + product.name} className=' bg-white relative'>
       <BreadcrumbJsonLd
         itemListElements={[
           {
@@ -264,7 +261,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
         </div>
       </PageSection>
       <Store_Maintenance />
-    </Main>
+    </main>
   )
 }
 
