@@ -1,7 +1,7 @@
 /* eslint-disable react/no-children-prop */
 import { GetServerSideProps, NextPage } from 'next'
 import { useState } from 'react'
-
+import { BreadcrumbJsonLd, NextSeo, ProductJsonLd } from 'next-seo'
 import Store_Maintenance from '@store/Store_Maintenance'
 import PageSection from '@parts/PageSection'
 import commerce from '@lib/commerce'
@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import React from 'react'
 import Navigation_Store from '@nav/Navigation_Store'
+import Main from '@parts/Main'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
@@ -68,9 +69,61 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   if (product.conditionals.is_pay_what_you_want) {
     prependPrice = 'minimum price: '
   }
-
   return (
-    <main id={'product-' + product.name} className=' bg-white relative'>
+    <Main id={'product-' + product.name} className=' bg-white relative'>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Store',
+            item: 'https://pixelbakery.com/store',
+          },
+          {
+            position: 2,
+            name: `${product.name}`,
+            item: `https://pixelbakery.com/store/product/${product.permalink}`,
+          },
+        ]}
+      />
+      <NextSeo
+        title={`${product.name} | Store`}
+        description={`${product.description}`}
+        openGraph={{
+          url: `https://pixelbakery.com/store/product/${product.permalink}`,
+          images: [
+            {
+              url: `${product.image.url}`,
+              alt: `${product.description}`,
+              type: 'image/jpeg',
+              width: 720,
+              height: 540,
+            },
+          ],
+          title: `${product.name}`,
+          description: `${product.description}`,
+          site_name: 'Pixel Bakery',
+        }}
+        twitter={{
+          handle: '@pixelbakerylnk',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+      <ProductJsonLd
+        productName={`${product.name}`}
+        images={[`${product.image.url}`]}
+        description={`${product.description}`}
+        brand='Pixel Bakery'
+        offers={[
+          {
+            price: `${product.price.formatted}`,
+            priceCurrency: 'USD',
+            priceValidUntil: '2020-11-05',
+            availability: 'https://schema.org/InStock',
+            url: `https://pixelbakery.com/store/product/${product.permalink}`,
+          },
+        ]}
+      />
       <Head>
         <title>{`${product.name} | Store | Pixel Bakery`}</title>
         <meta name='description' content={product.description} />
@@ -211,7 +264,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
         </div>
       </PageSection>
       <Store_Maintenance />
-    </main>
+    </Main>
   )
 }
 

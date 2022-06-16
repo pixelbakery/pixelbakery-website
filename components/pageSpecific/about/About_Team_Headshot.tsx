@@ -14,12 +14,11 @@ function About_Team_Headshot({ ...props }) {
   return (
     <Link as={`/about/${props.url}`} href={`/about/[person]`} passHref>
       <a
-        className='relative w-full  aspect-w-3 aspect-h-4 col-span-1'
+        className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
         onMouseOver={handleHover}
         onMouseLeave={handleHover}
       >
         <Image
-          priority
           src={headshot}
           layout={'fill'}
           objectFit='cover'
@@ -31,7 +30,6 @@ function About_Team_Headshot({ ...props }) {
           blurDataURL={headshot}
         />
         <Image
-          priority
           src={headshotSmiling}
           layout={'fill'}
           objectFit='cover'

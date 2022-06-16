@@ -2,7 +2,7 @@ import About_Team_Headshot from '@about/About_Team_Headshot'
 
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
 function About_Team({ people }) {
   const [shuffled, setShuffle] = useState(Shuffle(people))
@@ -77,7 +77,7 @@ function About_Team({ people }) {
     <section className='my-4' id='team'>
       <div className='grid gap-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         {addHeadshot.map((person, index) => {
-          return person
+          return <Fragment key={index}>{person}</Fragment>
         })}
       </div>
     </section>

@@ -35,11 +35,11 @@ export default function Spotify_Playlist({ playlistID }) {
         </a>
 
         <div className='flex flex-col justify-end '>
-          <a
-            href={data.external_urls.spotify}
+          <div
+            // href={data.external_urls.spotify}
             className={'cursor-pointer'}
-            target='_blank'
-            rel='noopener'
+            // target='_blank'
+            // rel='noopener'
           >
             <H3 color='peach' className='mb-1 md:mb-0 2xl:mb-0 mt-0 pt-0'>
               {data.name}
@@ -56,7 +56,7 @@ export default function Spotify_Playlist({ playlistID }) {
             >
               Play <span className=' my-auto ml-3'>▶</span>
             </a>
-          </a>
+          </div>
           <p className=' my-1 py-0 text-xs md:text-sm xl:text-md text-wine '>
             {pluralize(data.followers.total, 'follower')}, {pluralize(data.tracks.total, 'song')},{' '}
             {data.albumLength}
@@ -66,8 +66,8 @@ export default function Spotify_Playlist({ playlistID }) {
       <div className='bg-cream py-3 h-full overflow-auto'>
         <div className='changeScrollbar h-full overflow-y-scroll bg-cream px-1 xl:px-4 '>
           <ul className='grid gap-1 xl:gap-2'>
-            {data.tracksSelected.map((track) => (
-              <li className='my-0'>
+            {data.tracksSelected.map((track, index) => (
+              <li className='my-0' key={index}>
                 <a href={track.songUrl} target={'_blank'} rel='noopener'>
                   <div className='flex gap-1 xl:gap-x-4'>
                     <img src={track.albumArt} className='h-12 w-12' />

@@ -19,7 +19,7 @@ function Onboarding() {
               alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
             },
           ],
-          title: 'Become a Client | Pixel Bakery',
+          title: 'Become a Client',
           description: `We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy.`,
         }}
       />

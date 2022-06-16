@@ -1,9 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-// import Nav from '../components/Navigation'
-// import Footer from '../components/footer/Footer'
 
-import { DefaultSeo } from 'next-seo'
-
+import NextSEO_LocalBusiness from '@parts/NextSEO_LocalBusiness'
+import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import { FB_PIXEL_ID } from '../lib/fpixel'
 
 class MyDocument extends Document {
@@ -15,40 +13,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <DefaultSeo
-          defaultTitle='Pixel Bakery'
-          description={
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-          }
-          openGraph={{
-            type: 'website',
-            description:
-              'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            locale: 'en_IE',
-            url: 'pixelbakery.com',
-            site_name: 'Pixel Bakery Design Studio',
-            images: [
-              {
-                url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-                width: 1200,
-                height: 900,
-                alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-              },
-              {
-                url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
-                width: 1080,
-                height: 810,
-                alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-              },
-              {
-                url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-                width: 1080,
-                height: 810,
-                alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-              },
-            ],
-          }}
-        />
+        <NextSEO_LocalBusiness />
+        <NextSEO_DefaultSEO />
         <Head>
           <noscript>
             <img
@@ -61,7 +27,6 @@ class MyDocument extends Document {
         </Head>
         <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
           <Main />
-
           <NextScript />
         </body>
       </Html>

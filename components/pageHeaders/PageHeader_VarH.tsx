@@ -12,7 +12,6 @@ const PageHeader_VarH_Blue_Dark = dynamic(() => import('./PageHeader_VarH_Blue_D
   ssr: true,
 })
 const PageHeader_VarH_Cream = dynamic(() => import('./PageHeader_VarH_Cream'), { ssr: true })
-// const PageHeader_VarH_Yellow = dynamic(() => import('./PageHeader_VarH_Yellow'), { ssr: true })
 
 PageHeader_VarH.propTypes = {
   header: PropTypes.string,
@@ -26,8 +25,6 @@ const patterns = [
   PageHeader_VarH_Blue,
   PageHeader_VarH_Blue_Dark,
   PageHeader_VarH_Cream,
-  // PageHeader_VarH_Blue_Dark_YellowAlt,
-  // PageHeader_VarH_Yellow,
 ]
 
 function PageHeader_VarH({ header, subheader }) {

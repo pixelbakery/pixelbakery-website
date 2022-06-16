@@ -15,7 +15,7 @@ import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-import { JobPostingJsonLd, NextSeo } from 'next-seo'
+import { BreadcrumbJsonLd, JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -45,12 +45,26 @@ export default function JobsPage({ slug, source, frontMatter }) {
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
   return (
     <Main>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Careers',
+            item: 'https://pixelbakery.com/careers',
+          },
+          {
+            position: 2,
+            name: `${frontMatter.title}`,
+            item: `https://pixelbakery.com/careers/${slug}`,
+          },
+        ]}
+      />
       <NextSeo
-        title={`${frontMatter.title} | Careers | Pixel Bakery`}
+        title={`${frontMatter.title} | Careers`}
         description={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`}
         openGraph={{
           url: `https://pixelbakery.com/careers/${slug}`,
-          title: `${frontMatter.title} | Careers | Pixel Bakery`,
+          title: `${frontMatter.title} | Careers`,
           description: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`,
           images: [
             {
@@ -63,11 +77,15 @@ export default function JobsPage({ slug, source, frontMatter }) {
         }}
       />
       <JobPostingJsonLd
+        title={`${frontMatter.title}`}
+        validThrough={`${dateExpiredISO}`}
         datePosted={`${datePostedISO}`}
         description={`Pixel Bakery is looking to hire a ${frontMatter.commitment} ${frontMatter.title}`}
+        employmentType={`FULL_TIME`}
         hiringOrganization={{
           name: 'Pixel Bakery Design Studio',
           sameAs: 'https://pixelbakery.com',
+          logo: 'https://www.pixelbakery.com/img/logos/initials/600x600px/darkBlue_withCreamShadow_onBlue_concave.png',
         }}
         jobLocation={{
           streetAddress: '2124 Y Street Suite 122',
@@ -76,8 +94,6 @@ export default function JobsPage({ slug, source, frontMatter }) {
           postalCode: '68503',
           addressCountry: 'USA',
         }}
-        title={`${frontMatter.title}`}
-        validThrough={`${dateExpiredISO}`}
       />
       <PageSection className='min-h-screen mt-32'>
         <article>

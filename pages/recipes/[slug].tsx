@@ -25,7 +25,7 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -71,8 +71,22 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
 
   return (
     <Main>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Recipes',
+            item: 'https://pixelbakery.com/recipes',
+          },
+          {
+            position: 2,
+            name: `${frontMatter.title}`,
+            item: `https://pixelbakery.com/recipes/${slug}`,
+          },
+        ]}
+      />
       <NextSeo
-        title={`${frontMatter.title} | Recipes | Pixel Bakery`}
+        title={`${frontMatter.title} | Recipes`}
         description={`${frontMatter.excerpt}`}
         openGraph={{
           url: `https://pixelbakery.com/recipes/${slug}`,
