@@ -26,6 +26,7 @@ export default function Spotify_Playlist({ playlistID }) {
             <Image
               src={data.albumCoverImage}
               layout='fill'
+              alt='Pixel Bakery Spotify Playlist'
               objectFit='cover'
               blurDataURL={data.albumCoverImage}
               quality={25}
@@ -70,7 +71,11 @@ export default function Spotify_Playlist({ playlistID }) {
               <li className='my-0' key={index}>
                 <a href={track.songUrl} target={'_blank'} rel='noopener'>
                   <div className='flex gap-1 xl:gap-x-4'>
-                    <img src={track.albumArt} className='h-12 w-12' />
+                    <img
+                      src={track.albumArt}
+                      className='h-12 w-12'
+                      alt={`${track.artist} – ${track.album}`}
+                    />
 
                     <div className='flex flex-col justify-center'>
                       <p className='line-clamp-2 text-wine mt-0 mb-1 py-0 leading-none text-sm xl:text-md'>

@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-undef
 const React = require('react')
 module.exports = {
+  // assetPrefix: 'https://media.pixelbakery.com/pb',
   images: {
     formats: ['image/webp'],
     domains: [
