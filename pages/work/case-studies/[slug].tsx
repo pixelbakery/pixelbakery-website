@@ -19,10 +19,10 @@ import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
-import { NextSeo } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 
-export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
+export default function CaseStudy({ allCaseStudies, source, slug, frontMatter }) {
   const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
@@ -60,24 +60,43 @@ export default function CaseStudy({ allCaseStudies, source, frontMatter }) {
 
     Head,
   }
-
+  console.log(slug)
   return (
     <Main>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Work',
+            item: 'https://pixelbakery.com/work',
+          },
+          {
+            position: 2,
+            name: `${frontMatter.title}`,
+            item: `https://pixelbakery.com/work/case-studies/${slug}`,
+          },
+        ]}
+      />
       <NextSeo
-        title={`${frontMatter.title} | Portfolio | Pixel Bakery`}
+        title={`${frontMatter.title} | Case Study`}
         description={frontMatter.excerpt}
         openGraph={{
-          url: `https://pixelbakery.com/work/case-studies/${frontMatter.client}-${frontMatter.title}`,
-          title: `${frontMatter.title} | Portfolio | Pixel Bakery`,
+          url: `https://pixelbakery.com/work/case-studies/${slug}`,
+          title: `${frontMatter.title}`,
           description: frontMatter.excerpt,
           images: [
             {
-              url: `https://pixelbakery.com/img/${frontMatter.vimeoPreview}`,
+              url: `https://pixelbakery.com/img/${frontMatter.vimeoPreview}.jpg`,
               alt: frontMatter.excerpt,
               type: 'image/jpeg',
             },
           ],
           site_name: 'Pixel Bakery Design Studio',
+        }}
+        twitter={{
+          handle: '@pixelbakerylnk',
+          site: '@site',
+          cardType: 'summary_large_image',
         }}
       />
       <CaseStudies_Header
@@ -130,6 +149,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
+      slug: params.slug,
       allCaseStudies: allCaseStudies,
       source: mdxSource,
       frontMatter: data,

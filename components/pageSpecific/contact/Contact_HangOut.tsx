@@ -1,14 +1,11 @@
 import { useEffect } from 'react'
-// import socialLinks from '@data/SocialUrls'
 import StrokeText from '@parts/StrokeText'
 import Link from 'next/link'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
-
 import cn from 'classnames'
 import gsap from 'gsap'
-
 import SocialUrls_Contact from '@data/SocialUrls_Contact'
 
 function Contact_HangOut() {

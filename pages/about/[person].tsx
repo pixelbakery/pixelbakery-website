@@ -5,26 +5,21 @@ import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import { CamelCaseToSentence } from '@lib/helpers'
 import { getAllPeople, getPersonBySlug } from '@lib/api_person'
 import matter from 'gray-matter'
-import { NextSeo } from 'next-seo'
-import Head from 'next/head'
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import markdownStyles from '@styles/markdown-styles.module.css'
 
 import markdownToHtml from '@lib/markdownToHtml'
 import Image from 'next/image'
-import Link from 'next/link'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H1 from 'components/typography/H1'
 import Lead from '@typography/Lead'
 import SocialLinks from '@images/Icons_Social/SocialLinks'
-
-import { ChevronRightIcon } from '@images/UI_Icons'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import Button_Filled from '@parts/Button_Filled'
-import { useState } from 'react'
 
-function Person({ person, allPeople, matchingAuthorPosts }) {
+function Person({ person, allPeople, slug, matchingAuthorPosts }) {
   const router = useRouter()
   const socialList = person.socials
   const details = person.details
@@ -102,11 +97,25 @@ function Person({ person, allPeople, matchingAuthorPosts }) {
   const [firstName, lastName] = person.name.split(' ')
   return (
     <Main>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'About',
+            item: 'https://pixelbakery.com/about',
+          },
+          {
+            position: 2,
+            name: `${person.name}`,
+            item: `https://pixelbakery.com/about/${person.slug}`,
+          },
+        ]}
+      />
       <NextSeo
-        title={`${person.name} | About | Pixel Bakery`}
+        title={`${person.name} – ${person.position} | Team`}
         description={`${person.content}`}
         openGraph={{
-          title: `${person.name} | About | Pixel Bakery`,
+          title: `${person.name} – ${person.position}`,
           description: `${person.content}`,
           url: `https://pixelbakery.com/about/`,
           type: 'profile',
@@ -295,6 +304,7 @@ export async function getStaticProps({ params }: Params) {
     'photos',
     'phone',
     'email',
+    'slug',
     'content',
   ])
   const allPeople = getAllPeople(['name', 'slug', 'active'])

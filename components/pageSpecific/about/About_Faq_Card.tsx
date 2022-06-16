@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import cn from 'classnames'
+
 type Props = {
-  faq: { a: string; q: string }
+  faq: { acceptedAnswerText: string; questionName: string }
   index: number
 }
 function About_Faq_Card({ faq, index }: Props) {
@@ -19,7 +20,7 @@ function About_Faq_Card({ faq, index }: Props) {
       <button className='relative w-full border-2 rounded-md bg-pink-light border-blue py-3 px-8 lg:px-12 question flex justify-between z-20'>
         <div className='self-center pr-9'>
           <p className='text-left text-pink font-medium lg:font-bold text-md lg:text-lg leading-tight my-0 py-0'>
-            {faq.q}
+            {faq.questionName}
           </p>
         </div>
 
@@ -42,7 +43,7 @@ function About_Faq_Card({ faq, index }: Props) {
         <div
           className='px-8 pt-4 md:px-24  text-blue-dark text-md'
           dangerouslySetInnerHTML={{
-            __html: faq.a,
+            __html: faq.acceptedAnswerText,
           }}
         />
       </div>
