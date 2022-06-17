@@ -14,11 +14,11 @@ function Services_Page() {
   return (
     <Main>
       <NextSeo
-        title='Services | Pixel Bakery'
+        title='Services'
         description={`We create beautiful digital moments using animation, motion design, video production, social media development, and ui + ux`}
         openGraph={{
           url: `https://pixelbakery.com/services`,
-          title: 'Services | Pixel Bakery',
+          title: 'Services',
           images: [
             {
               url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
