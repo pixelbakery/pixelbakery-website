@@ -1,4 +1,4 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
 import Main from '@parts/Main'
 import ServicesOverview_Intro from '@services/ServicesOverview_Intro'
 import ServicesOverview_Animation from '@services/ServicesOverview_Animation'
@@ -10,6 +10,8 @@ import ServicesOverview_SocialMedia from '@services/ServicesOverview_SocialMedia
 import ServicesOverview_More from '@services/ServicesOverview_More'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 function Services_Page() {
   return (
     <Main>

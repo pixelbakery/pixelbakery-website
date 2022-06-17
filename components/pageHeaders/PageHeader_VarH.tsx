@@ -27,15 +27,17 @@ const patterns = [
   PageHeader_VarH_Cream,
 ]
 
-function PageHeader_VarH({ header, subheader }) {
+function PageHeader_VarH({ header, subheader }): JSX.Element {
   const [randomNumber] = useState(Math.floor(Math.random() * patterns.length))
 
   const ThisPattern = patterns[randomNumber]
 
   return (
-    <header className='bg-blue'>
-      <ThisPattern header={header} subheader={subheader} />
-    </header>
+    <>
+      <header className='bg-blue'>
+        <ThisPattern header={header} subheader={subheader} />
+      </header>
+    </>
   )
 }
 export default PageHeader_VarH

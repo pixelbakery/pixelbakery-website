@@ -1,9 +1,11 @@
 import Main from '@parts/Main'
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import Onboarding_Calendly from '@onboarding/Onboarding_Calendly'
 import Onboarding_Contact from '@onboarding/Onboarding_Contact'
 import Onboarding_Expectations from '@onboarding/Onboarding_Expectations'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 
 function Onboarding() {
   return (

@@ -1,16 +1,13 @@
 import fs from 'fs'
 import matter from 'gray-matter'
+import dynamic from 'next/dynamic'
 import path from 'path'
-import { useState } from 'react'
 import MoreStories from '@recipes/Recipes_MoreStories'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
-
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import cn from 'classnames'
-import { ChevronRightIcon } from '@images/UI_Icons'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
 import InnerWrapper from '@parts/InnerWrapper'
@@ -79,10 +76,7 @@ const Index = ({ allPosts }) => {
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
-      <PageHeader_VariableHeight
-        header="Mom's Recipes"
-        subheader='No word yet on her spaghetti, though'
-      />
+      <PageHeader_VarH header="Mom's Recipes" subheader='No word yet on her spaghetti, though' />
       <PageSection>
         <InnerWrapper>
           <H2>Recent</H2>

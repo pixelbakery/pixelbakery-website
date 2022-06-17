@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '@parts/PageSection'
@@ -5,7 +6,8 @@ import Maintenance from '@store/Store_Maintenance'
 import commerce from '@lib/commerce'
 import Link from 'next/link'
 import useCart from '@hooks/useCart'
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import gsap from 'gsap'
 
 import Head from 'next/head'
