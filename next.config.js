@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 // eslint-disable-next-line no-undef
 const React = require('react')
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
-  assetPrefix: isProd ? 'https://cdn.mydomain.com' : '',
+  // assetPrefix: isProd ? 'https://cdn.pixelbakery.com' : '',
   images: {
     formats: ['image/webp'],
     domains: [
