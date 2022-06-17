@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 function PrivacyPolicy() {
   return (
     <Main id='' className='my-4'>
@@ -13,7 +15,7 @@ function PrivacyPolicy() {
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
       />
-      <PageHeader_VarH header='Privacy Policy' />
+      <PageHeader_VarH header='Privacy Policy' subheader={'yada yada yada'} />
       <section className='mt-20 py-20'>
         <div className='mx-auto max-w-3xl'>
           <h1 className='text-wine text-6xl text-center mb-12'>

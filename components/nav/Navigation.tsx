@@ -19,7 +19,7 @@ export default function Navbar() {
   const logoWrapper = useRef(null)
   const hamRef = useRef(null)
   const logo = useRef(null)
-  const logoBG = useRef(null)
+
   const box1 = useRef(null)
   const box2 = useRef(null)
   const box3 = useRef(null)

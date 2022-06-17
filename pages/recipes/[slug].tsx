@@ -2,7 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import path from 'path'
 import PostHeader from '@recipes/Recipes_Post_Header'
@@ -32,7 +31,6 @@ const components = {
   Carousel: Carousel,
   VimeoPlayer: VimeoPlayer,
   Video: Video,
-  TestComponent: dynamic(() => import('@pageHeaders/PageHeader_VarH')),
   Head,
 }
 function shuffleArray(array) {

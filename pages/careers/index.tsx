@@ -2,7 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
-
+import dynamic from 'next/dynamic'
 import Careers_Breadwinners from '@careers/Careers_Breadwinners'
 import Careers_OpenPositions from '@careers/Careers_OpenPositions'
 
@@ -10,7 +10,7 @@ import Careers_OpenPositions from '@careers/Careers_OpenPositions'
 // import Careers_Vendors from '@careers/Careers_Vendors'
 import Careers_Benefits from '@careers/Careers_Benefits'
 // import Careers_Culture from '@careers/Careers_Culture'
-import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 import Careers_JobShadow from '@careers/Careers_JobShadow'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
@@ -43,7 +43,7 @@ const Careers = ({ allJobs }) => {
               touches lives.`,
         }}
       />
-      <PageHeader_VariableHeight header='Future Bakers' subheader='Come rise with us' />
+      <PageHeader_VarH header='Future Bakers' subheader='Come rise with us' />
       <PageSection className='' color='white'>
         <InnerWrapper className='lg:pb-0 grid grid-cols-1 xl:grid-cols-2'>
           <H2 color='pink'>Think you got what it takes?</H2>

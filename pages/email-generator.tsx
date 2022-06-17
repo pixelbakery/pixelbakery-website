@@ -1,4 +1,6 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
@@ -57,7 +59,7 @@ function EmailGenerator() {
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
-      <PageHeader_VarH header='Email Generator' />
+      <PageHeader_VarH header='Email Generator' subheader={'ooh, shiney.'} />
       <PageSection className='mb-32'>
         <InnerWrapper>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12'>

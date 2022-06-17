@@ -4,7 +4,8 @@ import Work_Clients from '@work/Work_Clients'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import fs from 'fs'
 import path from 'path'
-import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 
 import Main from '@parts/Main'
 import matter from 'gray-matter'
@@ -29,7 +30,7 @@ const Work = ({ allCaseStudies }) => {
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
-      <PageHeader_VariableHeight header='What We Make' subheader='knead the dough, baby' />
+      <PageHeader_VarH header='What We Make' subheader='knead the dough, baby' />
       <Work_Services />
       <Work_Portfolio allCaseStudies={allCaseStudies} />
 

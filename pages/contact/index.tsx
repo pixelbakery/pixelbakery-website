@@ -1,4 +1,6 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import Contact_Clients from '@contact/Contact_Clients'
 import Contact_ContactForm from '@contact/Contact_ContactForm'
 import Contact_Jobs from '@contact/Contact_Jobs'

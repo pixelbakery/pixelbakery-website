@@ -1,4 +1,5 @@
-import PageHeader_VariableHeight from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 import LogoAnimation_Intro from '@logoAnimation/LogoAnimation_Intro'
 import LogoAnimation_Descriptions from '@logoAnimation/LogoAnimation_Descriptions'
 import LogoAnimation_PastClients from '@logoAnimation/LogoAnimation_PastClients'
@@ -14,7 +15,7 @@ function LogoAnimation() {
         title='Logo Animation | Services | Pixel Bakery'
         description={`bring your logo to life with an eye-catching and memorable animation`}
       />
-      <PageHeader_VariableHeight
+      <PageHeader_VarH
         header={'Motion Mixer'}
         subheader={'Bring your logo to life with an eye-catching and memorable animation'}
       />

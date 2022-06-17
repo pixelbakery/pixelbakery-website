@@ -1,8 +1,8 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
 import H2AndLead from '@typography/H2AndLead'
 import Lead from '@typography/Lead'
 import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'

@@ -1,4 +1,6 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import dynamic from 'next/dynamic'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
