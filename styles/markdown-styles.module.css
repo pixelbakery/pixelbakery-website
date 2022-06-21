@@ -40,5 +40,5 @@
   @apply my-6;
 }
 .markdown li {
-  @apply text-lg text-wine my-3   list-inside list-disc;
+  @apply text-lg text-wine my-3   list-outside list-disc;
 }

@@ -112,9 +112,9 @@
   /* ul {
     @apply my-6;
   } */
-  /* li {
-    @apply text-lg text-wine my-3   list-inside list-disc;
-  } */
+  li {
+    @apply list-outside list-disc;
+  }
   h1,
   h2,
   h3,
