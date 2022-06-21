@@ -151,7 +151,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
               </div>
               <div className='pt-12'>
                 <Link href='/careers' passHref>
-                  <a className='border-b-2 pb-1 border-b-blue'> ← back to all careers</a>
+                  <a className='border-b-2 pb-1 text-blue border-b-blue'> ← back to all careers</a>
                 </Link>
               </div>
             </div>
