@@ -18,6 +18,7 @@ function EducationPage({ allProjectFiles, allMadeToOrders }) {
   return (
     <Main className='max-w-screen overflow-x-hidden' id='educationPage'>
       <NextSeo
+        noindex={false}
         title='Education | Pixel Bakery'
         description={`Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`}
         openGraph={{
