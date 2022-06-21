@@ -121,18 +121,6 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
           },
         ]}
       />
-      <Head>
-        <title>{`${product.name} | Store | Pixel Bakery`}</title>
-        <meta name='description' content={product.description} />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://pixelbakery.com/store' />
-        <meta property='og:title' content={'PBDS – ' + product.name} />
-        <meta property='og:description' content={product.description} />
-        <meta property='og:image' content={product.assets[0].source} />
-        <meta name='twitter:site' content='@pixelbakerylnk'></meta>
-        <meta name='twitter:card' content='summary_large_image'></meta>
-        <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
-      </Head>
       <div className='d-sm-block'></div>
       <Navigation_Store />
 

@@ -13,12 +13,32 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Social Media | Services | Pixel Bakery'
+        title='Social Media | Services'
         description={`Engage with your audience on their favorite platforms.`}
         openGraph={{
           url: `https://pixelbakery.com/services/social-media`,
-          title: 'Social Media | Services | Pixel Bakery',
+          title: 'Social Media | Services',
           description: `Engage with your audience on their favorite platforms.`,
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
       <Services_Header serviceName='Social Media Kits'>

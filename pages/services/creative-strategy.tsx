@@ -38,18 +38,38 @@ export default function Services_CreativeStrategy() {
   return (
     <Main>
       <NextSeo
-        title='Creative Strategy | Services | Pixel Bakery'
+        title='Creative Strategy | Services'
         description={`From the initial discovery meeting to the final deliverable, our leadership team at Pixel
           Bakery is all about strategizing the best way to deliver your message. Before any
           pre-production on a project begins, PB develops a communication strategy and creative
           brief based on a client's goals, pain points, and ideas.`}
         openGraph={{
           url: `https://pixelbakery.com/services/creative-strategy`,
-          title: 'Creative Strategy | Services | Pixel Bakery',
+          title: 'Creative Strategy | Services',
           description: `From the initial discovery meeting to the final deliverable, our leadership team at Pixel
           Bakery is all about strategizing the best way to deliver your message. Before any
           pre-production on a project begins, PB develops a communication strategy and creative
           brief based on a client's goals, pain points, and ideas.`,
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
       <section className='lander-education my-4  overflow-hidden'>

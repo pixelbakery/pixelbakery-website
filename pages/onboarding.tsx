@@ -11,14 +11,28 @@ function Onboarding() {
   return (
     <Main id='page-onboarding'>
       <NextSeo
-        title='Become a Client | Pixel Bakery'
+        title='Become a Client'
         description={`We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy.`}
         openGraph={{
           url: `https://pixelbakery.com/onboarding`,
           images: [
             {
-              url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
-              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
           ],
           title: 'Become a Client',

@@ -19,7 +19,7 @@ function About({ allPeople }: Props) {
   return (
     <Main>
       <NextSeo
-        title='About | Pixel Bakery'
+        title='About'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
@@ -31,7 +31,7 @@ function About({ allPeople }: Props) {
               alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
             },
           ],
-          title: 'About | Pixel Bakery',
+          title: 'About',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
         }}

@@ -11,7 +11,7 @@ function JobShadow() {
   return (
     <Main>
       <NextSeo
-        title='Job Shadows | Careers | Pixel Bakery'
+        title='Job Shadows | Careers'
         description={`Whether you’re considering a career in design or you just want to come in and hang
                 out with us (we don’t blame you), there’s definitely an opportunity to come shadow
                 at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
@@ -19,12 +19,32 @@ function JobShadow() {
                 requirements.`}
         openGraph={{
           url: `https://pixelbakery.com/careers/job-shadow`,
-          title: 'Job Shadows | Careers | Pixel Bakery',
+          title: 'Job Shadows | Careers',
           description: `Whether you’re considering a career in design or you just want to come in and hang
                 out with us (we don’t blame you), there’s definitely an opportunity to come shadow
                 at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
                 and maybe give you a sneak-peek on what we plan to do! There are just a few
                 requirements.`,
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
       <PageHeader_VarH

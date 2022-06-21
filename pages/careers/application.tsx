@@ -20,15 +20,35 @@ function Careers_Application({ allJobs }) {
     <Main>
       <NextSeo
         noindex={true}
-        title='Application | Careers | Pixel Bakery'
+        title='Application | Careers'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com/careers/application`,
-          title: 'Application | Careers | Pixel Bakery',
+          title: 'Application | Careers',
           description:
             'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
       <PageHeader_VarH header='Application' subheader='get at it' />

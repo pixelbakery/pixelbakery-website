@@ -11,9 +11,9 @@ export default [
       "Our approach to creative is goal-oriented. Our clients come to us with a specific problem, objective, or pain point. Outside of direct sales metrics, it's a bit harder to measure ROI on videos. Our work is a part building the sum. This means that ROI is measured by brand integrety and engagement rather than dollars and checkouts.",
   },
   {
-    questionName: 'Are apprenticeships paid?',
+    questionName: 'Are internships paid?',
     acceptedAnswerText:
-      'Absolutely. We are fundamentally against the concept of unpaid apprenticeships/internships. Our apprentices are providing value to our company and thus deserve to be compensated at a competetive rate. ',
+      'Absolutely. We are fundamentally against the concept of unpaid internships/internships. Our apprentices are providing value to our company and thus deserve to be compensated at a competetive rate. ',
   },
   {
     questionName: 'My budget is $500, can I afford you?',
