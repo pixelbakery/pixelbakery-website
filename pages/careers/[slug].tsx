@@ -91,6 +91,12 @@ export default function JobsPage({ slug, source, frontMatter }) {
               height: 810,
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
+            {
+              url: `https://pixelbakery.com${coverImage}`,
+              width: 800,
+              height: 600,
+              alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
+            },
           ],
         }}
       />

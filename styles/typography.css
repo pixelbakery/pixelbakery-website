@@ -113,7 +113,7 @@
     @apply my-6;
   } */
   li {
-    @apply list-outside list-disc;
+    @apply list-outside;
   }
   h1,
   h2,
