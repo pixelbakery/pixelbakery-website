@@ -43,7 +43,7 @@ const CheckoutPage: NextPage = () => {
   return (
     <Main id='page-checkout' className='relative'>
       <Head>
-        <title>Cart | Store | Pixel Bakery</title>
+        <title>Cart | Store</title>
         <meta name='description' content='Pixel Bakery store cart' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://shop.pixelbakery.com' />

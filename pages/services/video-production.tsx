@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <Main>
       <NextSeo
-        title='Commercial Video Production | Services | Pixel Bakery'
+        title='Commercial Video Production | Services'
         description={`Commercial video production can include video advertisements, TV commercials, YouTube
           pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
           give your brand more recognition and to boost your marketplace identity. With our
@@ -45,12 +45,32 @@ export default function Services() {
           produce for your brand.`}
         openGraph={{
           url: `https://pixelbakery.com/services/video-production`,
-          title: 'Commercial Video Production | Services | Pixel Bakery',
+          title: 'Commercial Video Production | Services',
           description: `Commercial video production can include video advertisements, TV commercials, YouTube
           pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
           give your brand more recognition and to boost your marketplace identity. With our
           experience in both video production and animation, there are no limits to what we can
           produce for your brand.`,
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
 

@@ -60,11 +60,11 @@ const StorePage: NextPage = ({ products }: any) => {
     <Main id='page-store' className='min-w-screen'>
       <Head>
         <NextSeo
-          title='Store | Pixel Bakery'
+          title='Store'
           description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
           openGraph={{
             url: `https://pixelbakery.com/work`,
-            title: 'Store | Pixel Bakery',
+            title: 'Store',
             images: [
               {
                 url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,

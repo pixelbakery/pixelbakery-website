@@ -36,16 +36,36 @@ export default function Services_EmergingMedia() {
   return (
     <Main>
       <NextSeo
-        title='Emerging Media | Services | Pixel Bakery'
+        title='Emerging Media | Services'
         description={`With the development and expansion of social media, mobile marketing, email marketing,
           instant messaging, and various other digital platforms, it only makes sense that current
           trends in marketing are ever-evolving. Why not evolve with them?`}
         openGraph={{
           url: `https://pixelbakery.com/services/emerging-media`,
-          title: 'Emerging Media | Services | Pixel Bakery',
+          title: 'Emerging Media | Services',
           description: `With the development and expansion of social media, mobile marketing, email marketing,
           instant messaging, and various other digital platforms, it only makes sense that current
           trends in marketing are ever-evolving. Why not evolve with them?`,
+          images: [
+            {
+              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
         }}
       />
 

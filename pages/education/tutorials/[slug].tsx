@@ -54,11 +54,11 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
   return (
     <Main>
       <NextSeo
-        title={`${frontMatter.title} | Tutorials | Pixel Bakery`}
+        title={`${frontMatter.title} | Tutorials`}
         description={`${frontMatter.excerpt}`}
         openGraph={{
           url: `https://pixelbakery.com/education/tutorials/${slug}`,
-          title: `${frontMatter.title} | Tutorials | Pixel Bakery`,
+          title: `${frontMatter.title} | Tutorials`,
           type: 'article',
           description: `${frontMatter.excerpt}`,
           article: {
