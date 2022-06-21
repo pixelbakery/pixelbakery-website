@@ -24,7 +24,7 @@ function About_Commitment() {
               We only bring on 20 clients every year, so it's important that we build relationships
               with ones that align with our values. We seek out clients that:
             </p>
-            <ul className='list-decimal list-inside grid gap-y-4'>
+            <ul className='list-decimal list-outside grid gap-y-4'>
               <li className=' bg-cream py-4 px-6 rounded-lg drop-shadow-sm font-semibld'>
                 pay a living wage and care about the health and safety of their employees
               </li>

@@ -66,7 +66,7 @@ function PrivacyPolicy() {
             We use the information we collect in various ways, including to:
           </p>
 
-          <ul className='my-4 pb-4 text-wine text-md list-disc list-inside'>
+          <ul className='my-4 pb-4 text-wine text-md list-disc list-outside'>
             <li>Provide, operate, and maintain our website</li>
             <li>Improve, personalize, and expand our website</li>
             <li>Understand and analyze how you use our website</li>
