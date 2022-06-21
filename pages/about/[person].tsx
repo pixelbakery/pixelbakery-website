@@ -112,10 +112,10 @@ function Person({ person, allPeople, slug, matchingAuthorPosts }) {
         ]}
       />
       <NextSeo
-        title={`${person.name} – ${person.position} | Team`}
+        title={`${person.name} – ${person.title} | Team`}
         description={`${person.content}`}
         openGraph={{
-          title: `${person.name} – ${person.position}`,
+          title: `${person.name} – ${person.title}`,
           description: `${person.content}`,
           url: `https://pixelbakery.com/about/`,
           type: 'profile',
