@@ -122,6 +122,10 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
                 height: 810,
                 alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
               },
+              {
+                url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
+                alt: `${frontMatter.title} written by ${frontMatter.author}`,
+              },
             ],
           }}
         />

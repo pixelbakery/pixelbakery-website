@@ -104,9 +104,14 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
             },
             {
               url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
+              width: 1200,
+              height: 900,
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+            {
+              url: `https://pixelbakery.com/img/${frontMatter.vimeoPreview}.jpg`,
+              alt: frontMatter.excerpt,
+              type: 'image/jpeg',
             },
           ],
           site_name: 'Pixel Bakery Design Studio',

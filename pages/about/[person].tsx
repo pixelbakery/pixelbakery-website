@@ -117,7 +117,7 @@ function Person({ person, allPeople, slug, matchingAuthorPosts }) {
         openGraph={{
           title: `${person.name} – ${person.title}`,
           description: `${person.content}`,
-          url: `https://pixelbakery.com/about/`,
+          url: `https://pixelbakery.com/about/${person.slug}`,
           type: 'profile',
           profile: {
             firstName: firstName,
