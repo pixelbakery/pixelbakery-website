@@ -408,3 +408,25 @@
 .text-egg {
   color: rgb(243, 244, 246) !important;
 }
+.grid--wrapper {
+  display: grid;
+  grid-template-columns: 1fr min(65ch, calc(100% - 64px)) 1fr;
+  column-gap: 32px;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+.custom-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.unset-img {
+  width: 100%;
+}
+.unset-img > div {
+  position: unset !important;
+}

@@ -4,6 +4,7 @@ mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
 
 export default async function sendOnboarding(req, res) {
   const body = JSON.parse(req.body)
+
   const message = `
   <p>A new onboarding form has been submitted. Here are the details:</p>
   <ul>

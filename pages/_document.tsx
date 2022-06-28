@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
-import NextSEO_LocalBusiness from '@parts/NextSEO_LocalBusiness'
-import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import { FB_PIXEL_ID } from '../lib/fpixel'
 import { LocalBusinessJsonLd } from 'next-seo'
 
