@@ -1,4 +1,3 @@
-import Lead from '@typography/Lead'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'

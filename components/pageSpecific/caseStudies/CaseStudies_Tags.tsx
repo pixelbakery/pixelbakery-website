@@ -13,7 +13,7 @@ function CaseStudies_Tags({ tags }) {
     <PageSection color='blue-dark' className='lg:py-6'>
       <InnerWrapper color='blue-dark' className=' my-4 py-12'>
         <div className='mx-auto md:max-w-6 flex flex-col justify-center'>
-          <H3 className='text-center text-2xl text-pink mb-6  mx-auto'>here&apos;s what we did</H3>
+          <H3 className='text-center text-2xl text-pink mb-6 mx-auto'>here&apos;s what we did</H3>
           <div className='flex flex-row justify-center gap-3 flex-wrap max-w-3xl mx-auto'>
             {Object.values(tags).map(([index, tag]) => {
               return (

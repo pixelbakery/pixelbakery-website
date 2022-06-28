@@ -7,47 +7,68 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
+import 'swiper/css/navigation'
+
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-
+import Image_VarH from '@parts/Image_VarH'
 const slides = [
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipGrab.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipsDip.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_Tree.jpg',
-  '/img/case-studies/snacklins/SNACK_Q3-photo_18.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_07.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_08.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_01.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_02.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_03.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_04.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_05.jpg',
+  '/img/case-studies/snacklins/SNACK_Carousel_06.jpg',
 ]
-
+const divStyle = {
+  position: `unset !important;`,
+}
 function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
-      <div className=''>
-        <Image src={slide} width='100%' height='100%' layout='responsive' objectFit='cover' />
+      <div className=' flex flex-col justify-center'>
+        <img src={slide} className='block w-full  self-center object-contain ' />
       </div>
     )
   }
 
   const Carousel = () => {
     return (
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1.15}
-        keyboard={{
-          enabled: true,
-        }}
-        modules={[A11y, Keyboard]}
-        className='lg:hidden'
-      >
-        {slides.map((slide: string) => {
-          return (
-            <SwiperSlide key={slide} className='bg-blue hover:cursor-grab'>
-              <SetSlide slide={slide} />
-            </SwiperSlide>
-          )
-        })}
-      </Swiper>
+      <>
+        <Swiper
+          spaceBetween={15}
+          slidesPerView={1.15}
+          // centeredSlides={true}
+          keyboard={{
+            enabled: true,
+          }}
+          modules={[A11y, Keyboard, Pagination, Navigation]}
+          className='lg:hidden'
+          navigation={{
+            nextEl: '.carousel-button-next',
+            prevEl: '.carousel-button-prev',
+          }}
+          loop
+          pagination={{
+            clickable: true,
+            type: 'fraction',
+          }}
+        >
+          {slides.map((slide: string) => {
+            return (
+              <SwiperSlide key={slide} className='hover:cursor-grab bg-blue'>
+                <SetSlide slide={slide} />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+        <div className='flex flex-row flex-wrap justify-around text-pink mt-4 text-lg'>
+          <button className='carousel-button-prev'>prev</button>
+          <div className=' carousel-pagination  self-center block relative align-middle text-pink text-centerfont-italic'></div>
+          <button className='carousel-button-next'>next</button>
+        </div>
+      </>
     )
   }
   return (
@@ -55,6 +76,8 @@ function CaseStudies_Gallery() {
       {/* <Lightbox /> */}
       <PageSection>
         <InnerWrapper>
+          <div className='relative'></div>
+
           <H2>Product Photography</H2>
           <p>
             A SNACKLINS photoshoot is never complete without napkins covered in chip crumbs and a
@@ -64,7 +87,62 @@ function CaseStudies_Gallery() {
             captured in each image. All photo edits, composites, and color work are dialed-in to
             perfection by our in-house team.
           </p>
-          <Carousel />
+          <div className='2xl:hidden'>
+            <Carousel />
+          </div>
+          <div className='hidden 2xl:grid grid-cols-2 gap-x-6'>
+            {/* Left Images */}
+            <div className='col-span-1'>
+              <div className='grid grid-cols-2 gap-6'>
+                <div className='col-span-2'>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_01.png'}
+                    alt={''}
+                  />
+                </div>
+                <div className='col-span-1 '>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_02.jpg'}
+                    alt={''}
+                  />
+                </div>
+                <div className='col-span-1 '>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_03.jpg'}
+                    alt={''}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='col-span-1'>
+              <div className='grid grid-cols-2 gap-6'>
+                <div className='col-span-1'>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_05.jpg'}
+                    alt={''}
+                  />
+                </div>
+                <div className='col-span-1 '>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_04.jpg'}
+                    alt={''}
+                  />
+                </div>
+                <div className='col-span-2 '>
+                  <Image_VarH
+                    openInNewWindow={true}
+                    src={'/img/case-studies/snacklins/SNACK_06.jpg'}
+                    alt={''}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </InnerWrapper>
       </PageSection>
     </>

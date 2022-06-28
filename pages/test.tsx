@@ -11,11 +11,17 @@ import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
 import CaseStudies_Gallery from '@caseStudies/CaseStudies_Gallery'
 import CaseStudies_Gallery_Alt from '@caseStudies/CaseStudies_Gallery_Alt'
 import CaseStudies_Lightbox from '@caseStudies/CaseStudies_Lightbox'
+import CaseStudies_Header_Alt from '@caseStudies/CaseStudies_Header_Alt'
+import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
+import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
+
 function Test() {
   return (
     <Main>
       {/* <CaseStudies_Lightbox /> */}
-
+      <CaseStudies_Header_Alt />
+      <CaseStudies_ProjectIntro_Alt />
+      <CaseStudies_Gallery_Email />
       <CaseStudies_Gallery_Alt />
       <CaseStudies_Gallery />
       <CaseStudies_Testimonial />

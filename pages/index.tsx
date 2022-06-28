@@ -26,7 +26,7 @@ const Home = ({ allPosts, allCaseStudies }) => {
         }
         openGraph={{
           url: `https://pixelbakery.com`,
-          title: 'Home',
+          title: 'Pixel Bakery',
           images: [
             {
               url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',

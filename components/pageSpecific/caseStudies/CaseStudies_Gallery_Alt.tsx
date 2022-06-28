@@ -12,12 +12,12 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
 const slides = [
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipGrab.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipsDip.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_Tree.jpg',
-  '/img/case-studies/snacklins/SNACK_Q3-photo_18.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_07.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_08.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_1.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_2.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_3.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_4.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_5.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_6.jpg',
 ]
 
 function CaseStudies_Gallery() {
@@ -66,16 +66,50 @@ function CaseStudies_Gallery() {
   //       ></div>
   //     )
   //   }
+  const options = {
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  }
   const Carousel = () => {
     return (
       <Swiper
         spaceBetween={10}
         slidesPerView={1.15}
+        loop
+        breakpoints={{
+          640: {
+            slidesPerView: 2.15,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 3.15,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 3.25,
+            spaceBetween: 25,
+          },
+        }}
         keyboard={{
           enabled: true,
         }}
         modules={[A11y, Keyboard]}
-        className='lg:hidden'
+        // className='lg:hidden'
       >
         {slides.map((slide: string) => {
           return (
@@ -93,7 +127,7 @@ function CaseStudies_Gallery() {
       <PageSection color='blue-light' className=' border-b-24 border-t-24 border-blue'>
         <InnerWrapper>
           <H2>Organic Social</H2>
-          <p>
+          <p className='mb-12'>
             In the world of endless scroll and limitless social content, brand personality is
             EVERYTHING—that’s where we come in. Every month, our team works to blend seasonal,
             lifestyle, and wacky, just-for-fun content into a unique flavor only seen on the
