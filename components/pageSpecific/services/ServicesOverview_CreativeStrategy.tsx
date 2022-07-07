@@ -9,7 +9,14 @@ function ServicesOverview_CreativeStrategy() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 '>
         <div className='col-span-1 bg-blue h-full max-h-screen '>
           <div className='relative h-full w-full'>
-            <video className='h-full w-full object-cover' muted loop autoPlay playsInline>
+            <video
+              className='h-full w-full object-cover hideControls'
+              muted
+              loop
+              controls={false}
+              autoPlay
+              playsInline
+            >
               <source src='/img/PB_ServiceAniamtion_CreativeStrategy.mp4' type='video/mp4' />
             </video>
           </div>

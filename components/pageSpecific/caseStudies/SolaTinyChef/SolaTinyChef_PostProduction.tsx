@@ -9,7 +9,14 @@ function SolaTinyChef_PostProduction() {
         </div>
 
         <div className='relative top-0'>
-          <video muted autoPlay loop preload='true' className='scale-110 '>
+          <video
+            muted
+            autoPlay
+            controls={false}
+            loop
+            preload='true'
+            className='scale-110 hideControls '
+          >
             <source
               type='video/mp4; codecs="hvc1"'
               src='/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff-1.mov'
@@ -30,7 +37,14 @@ function SolaTinyChef_PostProduction() {
           opportunities after customer directed.
         </p>
         <div className='w-full mx-auto my-12'>
-          <video autoPlay playsInline muted loop className='mx-auto  w-full max-w-3xl'>
+          <video
+            autoPlay
+            controls={false}
+            playsInline
+            muted
+            loop
+            className='mx-auto hideControls w-full max-w-3xl'
+          >
             <source
               src={'/img/case-studies/sola-tiny-chef/pixel-bakery_sola-tiny-chef-animation.mp4'}
             />

@@ -5,6 +5,7 @@ export default [
   {
     text: 'call your mom.',
   },
+  { text: 'thank you for being you.' },
   {
     text: 'be kind to yourself.',
   },

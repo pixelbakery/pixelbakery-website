@@ -1,18 +1,6 @@
-import Vimeo from '@u-wave/react-vimeo'
-import PropTypes from 'prop-types'
 import H1 from '@typography/H1'
-import Lead from '@typography/Lead'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-CaseStudies_Header_Alt.propTypes = {
-  client: PropTypes.string.isRequired,
-  projectName: PropTypes.string,
-  projectExcerpt: PropTypes.string,
-  heroVideo: PropTypes.string,
-  clientLogo: PropTypes.string.isRequired,
-  projectSubhead: PropTypes.string.isRequired,
-  projectIntroduction: PropTypes.string,
-}
 
 function CaseStudies_Header_Alt({ ...props }) {
   const tags = ['copywriting', 'email campaigns', 'motion design', 'other things', 'more things']

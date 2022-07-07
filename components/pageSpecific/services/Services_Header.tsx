@@ -25,7 +25,7 @@ function Services_Header({ serviceName, children, className }: PropsWithChildren
             playsInline
             controls={false}
             preload='true'
-            className='absolute object-cover  w-full h-full'
+            className='absolute object-cover  w-full h-full hideControls'
           >
             <source src='/img/Pixel-Bakery_3D-Oven-Render.mp4' />
           </video>

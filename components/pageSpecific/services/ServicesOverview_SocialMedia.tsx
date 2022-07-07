@@ -8,7 +8,14 @@ function ServicesOverview_SocialMedia() {
     <PageSection_FullWidth id='social-media'>
       <div className='grid lg:grid-cols-2 gap-4 '>
         <div className='bg-yellow h-full max-h-screen'>
-          <video className='w-full h-full object-cover' muted autoPlay loop playsInline>
+          <video
+            className='w-full h-full object-cover hideControls'
+            muted
+            autoPlay
+            loop
+            playsInline
+            controls={false}
+          >
             <source src='/img/PB_ServiceAniamtion_SocialMedia.mp4' type='video/mp4' />
           </video>
         </div>

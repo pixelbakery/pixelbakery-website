@@ -150,7 +150,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
                 playsInline
                 id={product.name + '-video'}
                 controls={false}
-                className='my-0 px-0 object-cover inset-0 w-full rounded-md'
+                className='my-0 px-0 object-cover inset-0 w-full rounded-md hideControls'
               >
                 <source src={product.assets[0].url} type='video/mp4' />
               </video>

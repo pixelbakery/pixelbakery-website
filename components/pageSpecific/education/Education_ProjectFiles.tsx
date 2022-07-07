@@ -117,8 +117,9 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                             autoPlay={true}
                             playsInline
                             muted
+                            controls={false}
                             loop
-                            className='object-cover w-full h-full'
+                            className='object-cover w-full h-full hideControls'
                           >
                             <source src={projectFile.coverImage} type={'video/mp4'} />
                           </video>

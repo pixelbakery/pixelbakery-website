@@ -43,12 +43,26 @@ function EducationProject({ projectFile }: Props) {
         {projectFile.videoCoverImage ? (
           <>
             <div className=' lg:hidden relative col-span-1  h-full w-full '>
-              <video autoPlay={true} playsInline muted loop className='object-cover w-full h-full'>
+              <video
+                autoPlay={true}
+                playsInline
+                muted
+                controls={false}
+                loop
+                className='object-cover w-full h-full hideControls'
+              >
                 <source src={projectFile.coverImage} type={'video/mp4'} />
               </video>
             </div>
             <div className='hidden lg:block relative col-span-1 h-full w-full '>
-              <video autoPlay={true} playsInline muted loop className='object-cover w-full h-full'>
+              <video
+                autoPlay={true}
+                playsInline
+                muted
+                controls={false}
+                loop
+                className='object-cover w-full h-full hideControls'
+              >
                 <source src={projectFile.coverImage} type={'video/mp4'} />
               </video>
             </div>

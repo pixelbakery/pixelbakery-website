@@ -86,9 +86,10 @@ function Work_Portfolio_Card({ project }) {
             preload='true'
             loop
             autoPlay={false}
+            controls={false}
             onMouseOver={(event) => (event.target as MediaType).play()}
             onMouseOut={(event) => (event.target as MediaType).pause()}
-            className='object-cover w-full h-full'
+            className='object-cover w-full h-full hideControls'
           >
             <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />
             <source src={`/img/work/${project.data.vimeoPreview}.mp4`} type='video/mp4' />

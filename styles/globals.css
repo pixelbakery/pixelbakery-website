@@ -108,7 +108,7 @@
   }
   #home-sifter img {
   }
-  video::-webkit-media-controls {
+  video.hideControls::-webkit-media-controls {
     display: none;
   }
   .home-portfolio.block-right:before {

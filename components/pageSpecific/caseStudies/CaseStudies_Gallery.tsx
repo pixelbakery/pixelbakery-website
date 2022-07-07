@@ -57,8 +57,10 @@ function CaseStudies_Gallery() {
         >
           {slides.map((slide: string) => {
             return (
-              <SwiperSlide key={slide} className='hover:cursor-grab bg-blue'>
-                <SetSlide slide={slide} />
+              <SwiperSlide key={slide}>
+                <div className='hover:cursor-grab bg-blue'>
+                  <SetSlide slide={slide} />
+                </div>
               </SwiperSlide>
             )
           })}
