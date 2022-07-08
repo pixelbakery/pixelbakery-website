@@ -66,31 +66,13 @@ function CaseStudies_Gallery() {
   //       ></div>
   //     )
   //   }
-  const options = {
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-    },
-  }
+
   const Carousel = () => {
     return (
       <Swiper
         spaceBetween={10}
-        slidesPerView={1.15}
         loop
+        slidesPerView={'auto'}
         breakpoints={{
           640: {
             slidesPerView: 2.15,
@@ -111,6 +93,18 @@ function CaseStudies_Gallery() {
         modules={[A11y, Keyboard]}
         // className='lg:hidden'
       >
+        <SwiperSlide className='bg-blue hover:cursor-grab'>
+          <div className=''>
+            <video
+              playsInline
+              muted={false}
+              controls
+              poster='/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+            >
+              <source src='/img/case-studies/snacklins/snacklins_churro_announcement.mp4' />
+            </video>
+          </div>
+        </SwiperSlide>
         {slides.map((slide: string) => {
           return (
             <SwiperSlide key={slide} className='bg-blue hover:cursor-grab'>

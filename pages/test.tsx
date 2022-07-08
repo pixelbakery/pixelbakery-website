@@ -12,10 +12,10 @@ function Test() {
   return (
     <Main>
       <CaseStudies_Header_Alt />
-      {/* <CaseStudies_ProjectIntro_Alt /> */}
-      {/* <CaseStudies_Gallery_Email /> */}
-      {/* <CaseStudies_Gallery_Alt /> */}
-      {/* <CaseStudies_Gallery /> */}
+      <CaseStudies_ProjectIntro_Alt />
+      <CaseStudies_Gallery_Email />
+      <CaseStudies_Gallery_Alt />
+      <CaseStudies_Gallery />
       <CaseStudies_Testimonial />
       <CaseStudies_TikTok />
       <CaseStudies_CTA />

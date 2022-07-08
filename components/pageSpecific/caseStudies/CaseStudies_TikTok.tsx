@@ -113,9 +113,12 @@ function CaseStudies_TikTok() {
       <video
         controls
         muted={false}
-        className={'h-full w-auto  border-6 border-cream rounded-lg hover:cursor-grab'}
+        className={
+          'h-full w-auto  border-2 border-cream rounded-lg hover:cursor-grab drop-shadow-md'
+        }
         preload={'auto'}
         playsInline
+        poster={`${slide.videoPath}.jpg`}
       >
         <source src={`${slide.videoPath}.webm`} type='video/webm' />
         <source src={`${slide.videoPath}.mp4`} type='video/mp4' />
@@ -151,7 +154,6 @@ function CaseStudies_TikTok() {
         // onSwiper={setSwiperInstance}
         spaceBetween={20}
         slidesPerView={'auto'}
-        ref={swiperRef}
         navigation={{
           nextEl: '.carousel-button-next',
           prevEl: '.carousel-button-prev',
@@ -217,6 +219,12 @@ function CaseStudies_TikTok() {
 
         <h2 ref={titleRef} />
         <p className='text-cream'>
+          Not everything has to be a 20-person crew and a bunch of huge cameras. We believe in
+          meeting our audiences where they're at. Our generation wants something that feels organic,
+          authentic, and relatable. There's a tool for every job, and sometimes those tools are
+          iPhone cameras and selfie sticks.{' '}
+        </p>
+        <p className='text-cream'>
           At PB, we’re not afraid to jump into a new medium. When we were approached to take on
           SNACKLINS TikToks, we knew to call on one of our many Gen-Zers to get the job done. On a
           monthly basis, Maria and our creative director choose a TikTok trend that SNACKLINS can
@@ -224,7 +232,7 @@ function CaseStudies_TikTok() {
         </p>
         {/* <H2>{slideIndex.toString()}</H2> */}
         <Carousel />
-        <div className='flex flex-row justify-around text-cream mt-4 text-lg'>
+        <div className='flex flex-row justify-around text-cream mt-4 text-lg mx-auto max-w-3xl'>
           <button className='carousel-button-prev'>prev</button>
           <div className='text-center carousel-pagination font-italic'></div>
           <button className='carousel-button-next'>next</button>

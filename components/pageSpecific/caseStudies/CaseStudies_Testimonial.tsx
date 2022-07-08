@@ -23,8 +23,8 @@ function CaseStudies_Testimonial() {
               <div className='w-16'>
                 <div className='w-16 h-16 rounded-full overflow-hidden relative flex-grow'>
                   <Image
-                    src={'/img/team/pixel-bakery_blunder_jordan-lambrecht.jpeg'}
-                    alt={''}
+                    src={'/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg'}
+                    alt={'Jeremy Sherman is the marketing director for SNACKLINS in Washington, DC'}
                     layout={'fill'}
                     objectFit={'cover'}
                     className={''}

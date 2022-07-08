@@ -6,7 +6,7 @@ function CaseStudies_Header_Alt({ ...props }) {
   const tags = ['copywriting', 'email campaigns', 'motion design', 'other things', 'more things']
   return (
     <section
-      className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4 h-[75vh] bg-pink'
+      className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4 min-h-[75vh] max-h-screen bg-pink'
       id='topOfPage'
     >
       <div className='mx-auto max-w-6xl'>

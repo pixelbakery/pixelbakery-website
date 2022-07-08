@@ -45,15 +45,7 @@ function CaseStudies_Gallery() {
           }}
           modules={[A11y, Keyboard, Pagination, Navigation]}
           className='lg:hidden'
-          navigation={{
-            nextEl: '.carousel-button-next',
-            prevEl: '.carousel-button-prev',
-          }}
           loop
-          pagination={{
-            clickable: true,
-            type: 'fraction',
-          }}
         >
           {slides.map((slide: string) => {
             return (
@@ -65,11 +57,6 @@ function CaseStudies_Gallery() {
             )
           })}
         </Swiper>
-        <div className='flex flex-row flex-wrap justify-around text-pink mt-4 text-lg'>
-          <button className='carousel-button-prev'>prev</button>
-          <div className=' carousel-pagination  self-center block relative align-middle text-pink text-centerfont-italic'></div>
-          <button className='carousel-button-next'>next</button>
-        </div>
       </>
     )
   }

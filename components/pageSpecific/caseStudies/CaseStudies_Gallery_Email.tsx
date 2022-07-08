@@ -54,7 +54,7 @@ function CaseStudies_Gallery_Email() {
   return (
     <>
       {/* <Lightbox /> */}
-      <PageSection color='pink-light'>
+      <PageSection color='pink-light' className='z-20 relative'>
         <InnerWrapper>
           <H2>Emails</H2>
           <p>
