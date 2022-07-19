@@ -71,19 +71,19 @@ function CaseStudies_Gallery_Email() {
             <div className='grid grid-cols-3 gap-3 lg:gap-6'>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={'/img/case-studies/snacklins/SNACK_ChesapeakeEmail_v02.png'}
+                  src={`${process.env.NEXT_PUBLIC_IMG_SRC}/img/case-studies/snacklins/SNACK_ChesapeakeEmail_v02.png`}
                   openInNewWindow={true}
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={'/img/case-studies/snacklins/SNACK_Email_BFCM_Launch_v03.png'}
+                  src={`${process.env.NEXT_PUBLIC_IMG_SRC}/img/case-studies/snacklins/SNACK_Email_BFCM_Launch_v03.png`}
                   openInNewWindow={true}
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={'/img/case-studies/snacklins/SNACK_NachoEmail_v04.png'}
+                  src={`${process.env.NEXT_PUBLIC_IMG_SRC}/img/case-studies/snacklins/SNACK_NachoEmail_v04.png`}
                   openInNewWindow={true}
                 />
               </div>

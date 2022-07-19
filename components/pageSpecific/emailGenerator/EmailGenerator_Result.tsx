@@ -47,7 +47,7 @@ const EmailGenerator_Result = (props) => {
                           <a href='https://pixelbakery.com' target={'_blank'}>
                             <img
                               style={{ width: '125px', height: '125px' }}
-                              src='https://pixelbakery.com/img/darkBlue_withCreamShadow_onBlue_concave.png'
+                              src='https://cdn.pixelbakery.com/img/darkBlue_withCreamShadow_onBlue_concave.png'
                               alt='Pixel Bakery logo'
                             />
                           </a>

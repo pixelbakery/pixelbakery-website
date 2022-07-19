@@ -33,7 +33,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
                 preload='true'
                 loop
                 autoPlay={true}
-                poster={`/img/work/${project.data.vimeoPreview}.jpg`}
+                poster={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.jpg`}
                 className='object-cover w-full h-full'
               >
                 <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />

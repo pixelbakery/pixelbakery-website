@@ -17,7 +17,7 @@ class MyDocument extends Document {
             type='ProfessionalService'
             id='https://pixelbakery.com'
             name='Pixel Bakery Design Studio'
-            logo='https://pixelbakery.com/img/logos/initials/png/600x600px_transparent/pb_logo_initials_peach_onTransparent.png'
+            logo='https://cdn.pixelbakery.com/img/logos/initials/png/600x600px_transparent/pb_logo_initials_peach_onTransparent.png'
             description='A multi-disciplinary production studio based out of the midwest with an emphasis on animation, motion design, and commercial video production'
             url='https://pixelbakery.com'
             telephone='402-302-0323'
@@ -35,10 +35,10 @@ class MyDocument extends Document {
             map={'https://g.page/pixelbakery?share'}
             legalName='Pixel Bakery LLC'
             images={[
-              'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
-              'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              'https://pixelbakery.com/img/pixelbakery-mug-iloveyou.png',
-              'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
+              'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              'https://cdn.pixelbakery.com/img/pixelbakery-mug-iloveyou.png',
+              'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
             ]}
             sameAs={[
               'https://www.linkedin.com/company/pixelbakery',

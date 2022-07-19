@@ -67,7 +67,7 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
           },
           images: [
             {
-              url: `https://pixelbakery.com${frontMatter.coverImage}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_SRC}${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author}`,
             },
           ],
@@ -77,7 +77,7 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
         type='Blog'
         url={`https://pixelbakery.com/education/tutorials/${slug}`}
         title={`${frontMatter.title}`}
-        images={[`https://pixelbakery.com/${frontMatter.coverImage}`]}
+        images={[`${process.env.NEXT_PUBLIC_IMG_SRC}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={`${frontMatter.author}`}
         description={`${frontMatter.excerpt}`}
