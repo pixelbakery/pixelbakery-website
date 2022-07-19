@@ -86,7 +86,7 @@ function CaseStudies_Gallery() {
                 <div className='col-span-2'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_01.png'}
+                    src={'/img/case-studies/snacklins/SNACK_01.jpg'}
                     alt={''}
                   />
                 </div>
