@@ -3,22 +3,32 @@ title: 'Character Rigging with DUIK – Digitigrade'
 subtitle: AToday in class a lot of my students were struggling with the AutoRig function inside of DUIK.
 excerpt: Today in class a lot of my students were struggling with the AutoRig function inside of DUIK.
 # Cover Photos MUST be 4x3 resolution
-coverImage: /img/blog/4x3_cow1.jpeg
+coverImage: /img/blog/4x3_cow1.jpg
 date: '2018-02-01'
 categories: ['education']
-tags: ['walk cycles', 'puppet tool', 'DUIK', 'digitgrade', 'character rigging', 'autorig', ' after effects']
+tags:
+  [
+    'walk cycles',
+    'puppet tool',
+    'DUIK',
+    'digitgrade',
+    'character rigging',
+    'autorig',
+    ' after effects',
+  ]
 author:
-    name: Jordan Lambrecht
-    picture: /img/placeholder01.png
-    profileURL: '/'
+  name: Jordan Lambrecht
+  picture: /img/placeholder01.png
+  profileURL: '/'
 ogImage:
-  url: /img/blog/4x3_cow1.jpeg
+  url: /img/blog/4x3_cow1.jpg
 ---
+
 Today in class a lot of my students were struggling with the AutoRig function inside of DUIK. I wanted to put together a brief tutorial on how to properly rig a Digitigrade since I couldn't find any great pre-existing tutorials on it. I went with a simple cow that we're using for another client's project because it was already designed and I really appreciate how bare-bones it is. Now, a cow isn't technically a Digitigrade - it should be an Ungulate. However, rigging it as an Ungulate will be far more complex than we need for something like this that doesn't contain a lot of detail.
 
 Also, I know a lot of motion designers don't use the autorigging function within DUIK, but I wanted to help ease my students into the concept of rigging with a linear workflow before throwing them to the wolves. Let's get into it and make him moove. I really hate tutorials with lots of superfluous fluff in them, but I also am writing this as a guide for my students, so I'll bold out the really important steps for those of you that want it quick and dirty.
 
-If you haven't yet, you can [download DUIK from their website here.](https://rainboxprod.coop/en/tools/duik/)
+If you haven't yet, you can [download DUIK from their website here.](https://rxlaboratory.org/tools/duik/)
 
 ## Quick and Dirty
 
@@ -43,13 +53,13 @@ First we need to design our character out. I highly recommend working by hand an
 1.  Set your artboard to 1920×1080. After Effects will kindly take the size of our artboards for us and set our precomps to that.
 2.  Make sure you're working in an RGB colorspace. If you skip this step, it's going to look really bad.
 
-![](/img/blog/3x4_cow2-225x300.jpeg)
+![](https://cdn.pixelbakery.com/img/blog/3x4_cow2-225x300.jpg)
 
 3.  Crucify your character in Illustrator. Their arms, legs, tail, and head should be as outstretched to their natural limit. For us, that means out tail and legs will be stiff and straight.
 4.  Sort your body parts into working layers and sublayers. See below for how I organized mine. Notice how I did my naming conventions as well. These naming conventions will be brought over to After Effects, so we want to be sure to stay organized here.
 5.  Optional: I made my artboard 3840 px x 2160 px because, again, I like to have my workflow funnel the size of the character downwards. Start off big and scale down when needed in after effects so you don't have to worry about artifacting.
 
-![](/img/blog/16x9_cow3.jpeg)
+![](https://cdn.pixelbakery.com/img/blog/16x9_cow3.jpg)
 
 ## Step 2 - After Effects
 
@@ -67,13 +77,13 @@ Rinse and repeat this step for anything that's complex. Like if your arm and han
 
 Moving back to our Cow Rig composition, we want to scale our head precomp along with the rest of the body down to 50% to get them to fit on our 1920×1080 work area. You can do this by selecting the layer in the timeline, and hitting S.
 
-![](/img/blog/Screen-Shot-2018-02-01-at-6.00.03-PM.png)
+![](https://cdn.pixelbakery.com/img/blog/Screen-Shot-2018-02-01-at-6.00.03-PM.png)
 
 Note how in the image above, I also color coded my layers to stay organized. In a previous lecture, I mentioned that we need to parent our layers. This was incorrect as AutoRig will do that for us.
 
 We do, however, need to make sure our anchor points are properly set up. Grab the Pan Behind tool (hotkey Y) and drag the anchor point on each layer to correspond with where the joint will be. For example: if we have a leg, we want the anchor point to be where it connects to the hip.
 
-![](/img/blog/4x3_cow4-1024x768.jpeg)
+![](https://cdn.pixelbakery.com/img/blog/4x3_cow4-1024x768.jpg)
 
 ## Step 3 - Creating Bones with the Puppet Tool
 
@@ -81,7 +91,7 @@ Dope. So now we have a cow in After Effects. The next step is getting him ready 
 
 Make sure you name them correctly. Here's an image of where I placed my pins and with what naming conventions. From here, load up DUIK. Select all of the layers in the timeline that we used the puppet tool on. DUIK will do some computing and spit out our new bones. This is going to make your timeline pretty cluttered, but that's okay. We'll shy a bunch of stuff here in a bit to clean it up.
 
-![](/img/blog/3x4_cow5.jpeg)
+![](https://cdn.pixelbakery.com/img/blog/3x4_cow5.jpg)
 
 ## Step 4 - Using the AutoRig
 
@@ -91,6 +101,6 @@ The rest should be pretty automated if we set everything up correctly. Make sure
 
 Awesome. So now we have a ton of controller points. Let's keyframe them. The first thing I'm going to do is shy away everything that aren't my controllers. The shy feature is the little dude with the big nose in the timeline.
 
-![](/img/blog/16x9_cow6.jpeg)
+![](https://cdn.pixelbakery.com/img/blog/16x9_cow6.jpg)
 
 Next, I'm noticing that my legs aren't moving in the same way. They also get stretchy, which isn't really the look I'm going for. If I click on the respective leg controllers, I can select "Clockwise" and unselect "Auto-Stretch" in the Effect Controls panel. I'm not going to get into the specifics of keyframing or walk cycles in this, so the rest is up to you =]
