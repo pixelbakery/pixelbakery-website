@@ -5,6 +5,10 @@ export function CamelCaseToSentence(input) {
   return input
 }
 
+export function CapitalizeWord(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 export function RandomArrayItem(length) {
   return Math.floor(Math.random() * length)
 }
@@ -39,15 +43,6 @@ export function pluralize(count, itemName) {
   if (count === 1) return output
   else return (output += 's')
 }
-
-// async function redirects() {
-const redirects = [
-  {
-    source: '/original/',
-    destination: '/redirected/',
-    permanent: true,
-  },
-]
 
 export function checkIfFilesAreTooBig(maxSize, files?: [File]): boolean {
   let valid = true
