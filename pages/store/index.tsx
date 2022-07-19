@@ -67,7 +67,7 @@ const StorePage: NextPage = ({ products }: any) => {
             title: 'Store',
             images: [
               {
-                url: `https://pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+                url: `https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
                 alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
               },
             ],
@@ -80,7 +80,7 @@ const StorePage: NextPage = ({ products }: any) => {
           content='In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases made from our shop to our friends at the Child Advocacy Center.'
         />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://shop.pixelbakery.com' />
+        <meta property='og:url' content='https://pixelbakery.com/store' />
         <meta property='og:title' content='PBDS – Company Store' />
         <meta
           property='og:description'

@@ -99,9 +99,9 @@ function CaseStudies_Gallery() {
               playsInline
               muted={false}
               controls
-              poster='/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
-              <source src='/img/case-studies/snacklins/snacklins_churro_announcement.mp4' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.mp4' />
             </video>
           </div>
         </SwiperSlide>
