@@ -3,7 +3,7 @@
 import Image from 'next/image'
 
 //data
-import recentlyAdded from '@data/edu-reccentlyAdded'
+// import recentlyAdded from '@data/edu-reccentlyAdded'
 
 //parts
 import Part__RecentlyAdded from '@parts/Card_Rounded'

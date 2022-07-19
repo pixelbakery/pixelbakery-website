@@ -121,7 +121,6 @@
     "eslint": "^8.8.0",
     "eslint-config-next": "12.2.2",
     "eslint-config-prettier": "^8.5.0",
-    "link-check": "^5.1.0",
     "next-sitemap": "^3.0.5",
     "postcss": "^8.4.5",
     "prettier": "^2.5.0",

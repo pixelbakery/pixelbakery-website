@@ -19,11 +19,11 @@ function SolaTinyChef_PostProduction() {
           >
             <source
               type='video/mp4; codecs="hvc1"'
-              src='/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff-1.mov'
+              src='https://cdn.pixelbakery.com/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff-1.mov'
             />
             <source
               type='video/webm'
-              src='/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff_VP9.webm'
+              src='https://cdn.pixelbakery.com/img/case-studies/sola-tiny-chef/SOLA_TinyChef_WalkOff_VP9.webm'
             />
           </video>
         </div>
@@ -46,7 +46,9 @@ function SolaTinyChef_PostProduction() {
             className='mx-auto hideControls w-full max-w-3xl'
           >
             <source
-              src={'/img/case-studies/sola-tiny-chef/pixel-bakery_sola-tiny-chef-animation.mp4'}
+              src={
+                'https://cdn.pixelbakery.com/img/case-studies/sola-tiny-chef/pixel-bakery_sola-tiny-chef-animation.mp4'
+              }
             />
           </video>
         </div>

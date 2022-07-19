@@ -91,8 +91,14 @@ function Work_Portfolio_Card({ project }) {
             onMouseOut={(event) => (event.target as MediaType).pause()}
             className='object-cover w-full h-full hideControls'
           >
-            <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />
-            <source src={`/img/work/${project.data.vimeoPreview}.mp4`} type='video/mp4' />
+            <source
+              src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.webm`}
+              type='video/webm'
+            />
+            <source
+              src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.mp4`}
+              type='video/mp4'
+            />
           </video>
         </div>
         {/* This is the Scrim that sits on top of videos */}

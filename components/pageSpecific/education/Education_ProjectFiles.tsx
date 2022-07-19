@@ -121,7 +121,10 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                             loop
                             className='object-cover w-full h-full hideControls'
                           >
-                            <source src={projectFile.coverImage} type={'video/mp4'} />
+                            <source
+                              src={`https://cdn.pixelbakery.com/${projectFile.coverImage}`}
+                              type={'video/mp4'}
+                            />
                           </video>
                         ) : (
                           <Image

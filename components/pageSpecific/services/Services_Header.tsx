@@ -27,7 +27,7 @@ function Services_Header({ serviceName, children, className }: PropsWithChildren
             preload='true'
             className='absolute object-cover  w-full h-full hideControls'
           >
-            <source src='/img/Pixel-Bakery_3D-Oven-Render.mp4' />
+            <source src='https://cdn.pixelbakery.com/img/Pixel-Bakery_3D-Oven-Render.mp4' />
           </video>
         </div>
         <div className='col-span-1 flex flex-col justify-center py-6 px-10 '>

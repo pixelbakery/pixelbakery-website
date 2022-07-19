@@ -36,9 +36,15 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
                 poster={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.jpg`}
                 className='object-cover w-full h-full'
               >
-                <source src={`/img/work/${project.data.vimeoPreview}.webm`} type='video/webm' />
+                <source
+                  src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.webm`}
+                  type='video/webm'
+                />
 
-                <source src={`/img/work/${project.data.vimeoPreview}.mp4`} type='video/mp4' />
+                <source
+                  src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.mp4`}
+                  type='video/mp4'
+                />
               </video>
             </a>
           </Link>

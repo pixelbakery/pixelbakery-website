@@ -51,7 +51,10 @@ function EducationProject({ projectFile }: Props) {
                 loop
                 className='object-cover w-full h-full hideControls'
               >
-                <source src={projectFile.coverImage} type={'video/mp4'} />
+                <source
+                  src={`https://cdn.pixelbakery.com/${projectFile.coverImage}`}
+                  type={'video/mp4'}
+                />
               </video>
             </div>
             <div className='hidden lg:block relative col-span-1 h-full w-full '>
@@ -63,7 +66,10 @@ function EducationProject({ projectFile }: Props) {
                 loop
                 className='object-cover w-full h-full hideControls'
               >
-                <source src={projectFile.coverImage} type={'video/mp4'} />
+                <source
+                  src={`https://cdn.pixelbakery.com/${projectFile.coverImage}`}
+                  type={'video/mp4'}
+                />
               </video>
             </div>
           </>

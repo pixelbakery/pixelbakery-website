@@ -14,7 +14,7 @@ function SetSlide({ slide }) {
   return (
     <div className='relative w-full aspect-w-9 aspect-h-16'>
       <video>
-        <source src={slide.src} type={'video/mp4'} />
+        <source src={`https://cdn.pixelbakery.com/${slide.src}`} type={'video/mp4'} />
       </video>
     </div>
   )

@@ -17,7 +17,10 @@ function ServicesOverview_CreativeStrategy() {
               autoPlay
               playsInline
             >
-              <source src='/img/PB_ServiceAniamtion_CreativeStrategy.mp4' type='video/mp4' />
+              <source
+                src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_CreativeStrategy.mp4'
+                type='video/mp4'
+              />
             </video>
           </div>
         </div>

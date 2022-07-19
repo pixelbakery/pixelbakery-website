@@ -7,54 +7,54 @@ import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import InnerWrapper from '@parts/InnerWrapper'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // Do not put video file extension in the path. Must have TWO versions: an mp4 .h264 and a webm .v8
 const slides = [
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ComeOnBrain',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ComeOnBrain',
     title: 'Come On, Brain',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_DontBeRediculous',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_DontBeRediculous',
     title: `Don't Be Rediculous`,
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_EatYourVegetables',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_EatYourVegetables',
     title: 'Eat Your Vegetables',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HappySad',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HappySad',
     title: 'Happy Sad',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HelloYou',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HelloYou',
     title: 'Hello, You',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HotGirlShit',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HotGirlShit',
     title: 'Hot Girl Shit',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HowBizarre',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HowBizarre',
     title: 'How Bizarre',
   },
-  { videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ItWasMe', title: 'It Was Me' },
+  { videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ItWasMe', title: 'It Was Me' },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NobleQuest',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NobleQuest',
     title: 'Noble Quest',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NotIntoShortGuys',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NotIntoShortGuys',
     title: 'Not Into Short Guys',
   },
-  { videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Obsessed', title: 'Obsessed' },
+  { videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Obsessed', title: 'Obsessed' },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_PeopleCanDoHardThings',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_PeopleCanDoHardThings',
     title: 'People Can Do Hard Things',
   },
   {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Relationships',
+    videoPath: 'img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Relationships',
     title: 'Relationships',
   },
 ]
@@ -66,12 +66,9 @@ function CaseStudies_TikTok() {
   //   setListInCb(listRef.current)
   // }, [])
   // let [mySwiper, setMySwiper] = useState(null)
-  const [swiperInstance, setSwiperInstance] = useState(null)
+
   // let [slideIndex, setSlideIndex] = useState(slides[0].title)
-  function test(index) {
-    console.log('changed ', index.realIndex)
-    // setSlideIndex(index.realIndex)
-  }
+
   let titleRef = useRef(null)
   let swiperRef = useRef(null)
 
@@ -120,8 +117,8 @@ function CaseStudies_TikTok() {
         playsInline
         poster={`${slide.videoPath}.jpg`}
       >
-        <source src={`${slide.videoPath}.webm`} type='video/webm' />
-        <source src={`${slide.videoPath}.mp4`} type='video/mp4' />
+        <source src={`https://cdn.pixelbakery.com/${slide.videoPath}.webm`} type='video/webm' />
+        <source src={`https://cdn.pixelbakery.com/${slide.videoPath}.mp4`} type='video/mp4' />
       </video>
     )
   }

@@ -16,7 +16,10 @@ function ServicesOverview_SocialMedia() {
             playsInline
             controls={false}
           >
-            <source src='/img/PB_ServiceAniamtion_SocialMedia.mp4' type='video/mp4' />
+            <source
+              src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.mp4'
+              type='video/mp4'
+            />
           </video>
         </div>
         <div className='flex flex-col justify-center px-12  py-12'>
