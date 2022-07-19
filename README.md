@@ -202,3 +202,12 @@ Here's a list of all the external API calls we make:
 - Monday.com
 - Sendgrid
 - Spotify
+
+## AWS S3 CDN
+
+Run the following command to push to s3:
+`aws s3 sync public s3://cdn.pixelbakery.com --exclude "*.DS_Store"`
+
+Adding the flag `--delete` will remove any objects on the s3 bucket that are not on the local machine.
+
+Documentation for syncing can be found [here](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/sync.html)
