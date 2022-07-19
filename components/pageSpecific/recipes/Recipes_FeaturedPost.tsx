@@ -44,7 +44,6 @@ const Recipes_FeaturedPost = ({
           }
         >
           <Image
-            priority
             src={coverImage}
             layout='fill'
             objectFit='cover'

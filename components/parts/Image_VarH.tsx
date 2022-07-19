@@ -12,6 +12,7 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
         layout='fill'
         alt={props.alt}
         objectFit='contain'
+        blurDataURL={src}
         onLoad={({ target }) => {
           const { naturalWidth, naturalHeight } = target as HTMLImageElement
           setPaddingTop(`calc(100% / (${naturalWidth} / ${naturalHeight})`)

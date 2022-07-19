@@ -14,7 +14,6 @@ function CaseStudies_Header_Alt({ ...props }) {
           <div className='relative  h-16 w-16 self-center mb-2'>
             <Image
               layout='fill'
-              priority
               objectFit='contain'
               blurDataURL='true'
               src={'/img/clients/pixelbakery_client_SNACKLINS_color.svg'}

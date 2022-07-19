@@ -61,7 +61,6 @@ function Home_Landing() {
           <div className='relative  self-center w-full max-w-3xl h-full'>
             <Image
               layout='fill'
-              priority
               objectFit='contain'
               blurDataURL='true'
               src={'/img/pixelbakery_boxlogo.svg'}

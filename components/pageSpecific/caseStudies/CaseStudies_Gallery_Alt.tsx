@@ -24,7 +24,14 @@ function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
       <div className=''>
-        <Image src={slide} width='100%' height='100%' layout='responsive' objectFit='cover' />
+        <Image
+          src={slide}
+          width='100%'
+          height='100%'
+          layout='responsive'
+          objectFit='cover'
+          blurDataURL={slide}
+        />
       </div>
     )
   }

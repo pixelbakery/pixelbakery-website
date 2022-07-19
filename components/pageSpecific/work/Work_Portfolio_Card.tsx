@@ -73,7 +73,6 @@ function Work_Portfolio_Card({ project }) {
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            priority
             blurDataURL={`/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}
             quality={50}

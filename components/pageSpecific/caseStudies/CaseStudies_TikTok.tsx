@@ -115,7 +115,7 @@ function CaseStudies_TikTok() {
         }
         preload={'auto'}
         playsInline
-        poster={`${slide.videoPath}.jpg`}
+        poster={`https://cdn.pixelbakery.com/${slide.videoPath}.jpg`}
       >
         <source src={`https://cdn.pixelbakery.com/${slide.videoPath}.webm`} type='video/webm' />
         <source src={`https://cdn.pixelbakery.com/${slide.videoPath}.mp4`} type='video/mp4' />

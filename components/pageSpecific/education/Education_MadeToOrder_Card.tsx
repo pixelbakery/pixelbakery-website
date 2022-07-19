@@ -35,7 +35,6 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
           )}
         >
           <Image
-            priority
             src={tutorial.data.coverImage}
             layout='fill'
             objectFit='cover'

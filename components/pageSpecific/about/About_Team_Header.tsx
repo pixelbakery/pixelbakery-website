@@ -23,7 +23,6 @@ function About_Team_Header({ source, frontMatter }) {
           <div className='col-span-1 relative w-full aspect-3/4'>
             <div className=' max-w-lg'>
               <Image
-                priority
                 placeholder='blur'
                 blurDataURL={frontMatter.headshotFun}
                 src={frontMatter.headshotFun}
