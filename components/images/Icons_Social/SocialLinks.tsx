@@ -2,14 +2,12 @@
 
 import Link from 'next/link'
 import socialLinks from '@data/SocialUrls'
-import * as Icons from './Icons/index'
+import * as Icons from 'components/images/Icons_Social/Icons'
 import cn from 'classnames'
+import { CapitalizeWord } from '@lib/helpers'
+
 const getLinks = socialLinks
 
-function capitalizeFirstLetter(string) {
-  const lowered = string.toLowerCase()
-  return lowered.charAt(0).toUpperCase() + lowered.slice(1)
-}
 const Icon = ({ icon, title, titleId, className }) => {
   const TheIcon = icon
   return <TheIcon className={className} title={title} titleId={titleId} />
@@ -17,8 +15,8 @@ const Icon = ({ icon, title, titleId, className }) => {
 // Object Prop: iconName (mandatory)
 // className Props: color, textSize, width, height. Must be tailwind-defined classes.
 // If props 'height' and 'width' are passed, they will override textSize
-const SocialLinks = ({ iconName, ...props }) => {
-  const link = getLinks[iconName]
+const About_Team_SocialLinks = ({ iconName, ...props }) => {
+  const link = getLinks[`${iconName}`]
   return (
     <div>
       <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
@@ -34,9 +32,9 @@ const SocialLinks = ({ iconName, ...props }) => {
           >
             <Icon
               className={cn(props.height, props.width)}
-              icon={Icons[capitalizeFirstLetter(iconName)]}
-              title={iconName}
-              titleId={iconName}
+              icon={Icons[`${CapitalizeWord(iconName)}`]}
+              title={`${iconName}`}
+              titleId={`${iconName}`}
             />
           </i>
         </a>
@@ -44,4 +42,4 @@ const SocialLinks = ({ iconName, ...props }) => {
     </div>
   )
 }
-export default SocialLinks
+export default About_Team_SocialLinks

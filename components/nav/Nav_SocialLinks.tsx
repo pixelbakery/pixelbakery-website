@@ -39,11 +39,11 @@ function Nav_SocialLinks({ color, textSize }) {
         href={'https://twitch.tv/pixelbakery'}
       />
       <SocialLinks
-        iconName={'Linkedin'}
+        iconName={`LinkedIn`}
         color={color}
         textSize={textSize}
         size={'2xl'}
-        href={'https://www.linkedin.com/company/pixelbakery'}
+        href={'https://www.linkedin.com/company/7593086'}
       />
     </div>
   )

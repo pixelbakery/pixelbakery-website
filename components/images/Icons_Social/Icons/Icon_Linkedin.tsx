@@ -4,7 +4,7 @@ interface SVGRProps {
   titleId?: string
 }
 
-const SvgLinkedin = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgLinkedIn = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
@@ -20,4 +20,4 @@ const SvgLinkedin = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVG
   </svg>
 )
 
-export default SvgLinkedin
+export default SvgLinkedIn
