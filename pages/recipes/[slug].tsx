@@ -6,11 +6,11 @@ import Head from 'next/head'
 import path from 'path'
 import PostHeader from '@recipes/Recipes_Post_Header'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import { getAllPeople } from '@lib/api_person'
+import { shuffleArray } from '@lib/helpers'
 const readingTime = require('reading-time')
 import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
-import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import { useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Video from '@parts/Video'
@@ -20,6 +20,8 @@ import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
 
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
+import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
+import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -33,23 +35,21 @@ const components = {
   Video: Video,
   Head,
 }
-function shuffleArray(array) {
-  let i = array.length - 1
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-  return array
-}
 
-export default function PostPage({ slug, source, filePath, frontMatter, ourPerson, relatedPosts }) {
+export default function PostPage({
+  slug,
+  source,
+  frontMatter,
+  allPeople,
+  relatedPosts,
+  prev,
+  next,
+}) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
-
   const myContainer = useRef(null)
   const [readTime, setReadTime] = useState('')
   const childRef = useRef(null)
+
   useEffect(() => {
     //Sets Reading Time
     function extractContent(s) {
@@ -63,93 +63,19 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
     return () => {}
   }, [])
 
-  //figure out author bio link for JSON schema
-  let authorURL
-  if (ourPerson.slug && ourPerson.photos.headshotSmiling != typeof undefined) {
-    authorURL = `https://pixelbakery.com/about/${ourPerson.slug}`
-  } else {
-    authorURL = 'https://pixelbakery.com/recipes'
-  }
   return (
     <Main>
-      <>
-        <BreadcrumbJsonLd
-          itemListElements={[
-            {
-              position: 1,
-              name: 'Recipes',
-              item: 'https://pixelbakery.com/recipes',
-            },
-            {
-              position: 2,
-              name: `${frontMatter.title}`,
-              item: `https://pixelbakery.com/recipes/${slug}`,
-            },
-          ]}
-        />
-        <NextSeo
-          title={`${frontMatter.title} | Recipes`}
-          description={`${frontMatter.excerpt}`}
-          openGraph={{
-            url: `https://pixelbakery.com/recipes/${slug}`,
-            title: `${frontMatter.title}`,
-            type: 'article',
-            description: `${frontMatter.excerpt}`,
-            article: {
-              publishedTime: `${datePostedISO}`,
-              tags: [`${frontMatter.categories[0]}`],
-            },
-            images: [
-              {
-                url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
-                alt: `${frontMatter.title} written by ${frontMatter.author}`,
-              },
-              {
-                url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-                width: 1200,
-                height: 900,
-                alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-              },
-              {
-                url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
-                width: 1080,
-                height: 810,
-                alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-              },
-              {
-                url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-                width: 1080,
-                height: 810,
-                alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-              },
-              {
-                url: `https://pixelbakery.com/ ${frontMatter.coverImage}`,
-                alt: `${frontMatter.title} written by ${frontMatter.author}`,
-              },
-            ],
-          }}
-        />
-        <ArticleJsonLd
-          url={`https://pixelbakery.com/recipes/${slug}`}
-          title={frontMatter.title}
-          images={[`https://pixelbakery.com/${frontMatter.coverImage}`]}
-          datePublished={`${datePostedISO}`}
-          authorName={[`${frontMatter.author.name}`]}
-          description={`${frontMatter.excerpt}`}
-        />
-      </>
-
+      <Recipes_Post_SEO datePostedISO={datePostedISO} frontMatter={frontMatter} slug={slug} />
       <div className='mb-32'>
         <PostHeader
-          title={frontMatter.title}
-          subtitle={frontMatter.subtitle}
-          category={frontMatter.categories[0]}
-          coverImage={frontMatter.coverImage}
+          frontMatter={frontMatter}
+          // title={frontMatter.title}
+          // subtitle={frontMatter.subtitle}
+          // category={frontMatter.categories[0]}
           date={frontMatter.date}
-          author={frontMatter.author as any}
-          person={ourPerson as any}
           forwardedRef={childRef}
           readTime={readTime}
+          allPeople={allPeople}
         />
         <section className='px-6 mt-8 md:max-w-3xl mx-auto'>
           <article ref={myContainer} id='blog-body-guts'>
@@ -161,37 +87,8 @@ export default function PostPage({ slug, source, filePath, frontMatter, ourPerso
           <Recipes_Post_Tags tags={frontMatter.tags} />
         </section>
       </div>
-      {/* <PageSection color={'pink-light'}>
-        <InnerWrapper className='py-2 my-2'>
-          <div className='flex justify-between'>
-            <Link as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
-              <a className='flex'>
-                <div className='w-20 self-center text-peach rotate-180'>
-                  <ChevronRightIcon />
-                </div>
-                <div className='flex flex-col justify-center'>
-                  <p className='text-peach font-semibold text-xl leading-none my-0 py-0 max-w-md'>
-                    {prev.data.title}
-                  </p>
-                </div>
-              </a>
-            </Link>
-            <Link as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
-              <a className='flex'>
-                <div className='flex flex-col justify-center'>
-                  <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
-                    {next.data.title}
-                  </p>
-                </div>
 
-                <div className='w-20 self-center text-peach'>
-                  <ChevronRightIcon />
-                </div>
-              </a>
-            </Link>
-          </div>
-        </InnerWrapper>
-      </PageSection> */}
+      <Recipes_Post_GetPrevNextPost prev={prev} next={next} />
       <Recipes_Posts_Related relatedPosts={relatedPosts} />
     </Main>
   )
@@ -204,24 +101,15 @@ export const getStaticProps = async ({ params }) => {
 
   const { content, data } = matter(source)
   //Author Stuff
-  const allPeople = getAllPeople([
-    'name',
-    'slug',
-    'headshotSerious',
-    'headshotSmiling',
-    'photos',
-    'active',
-    'title',
-    'phone',
-    'email',
-    'content',
-  ])
 
-  // Get author bios
-  const matchingAuthor = allPeople.filter(
-    (person) => person.name.toUpperCase() === data.author.name.toUpperCase(),
-  )
-  const ourPerson = matchingAuthor[0]
+  const allPeople = peopleFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(PEOPLE_PATH, filePath))
+    const { data } = matter(source)
+    return {
+      data,
+      filePath,
+    }
+  })
 
   // RELEVANT POSTS
   const allPosts = postFilePaths.map((filePath) => {
@@ -229,7 +117,6 @@ export const getStaticProps = async ({ params }) => {
     const { content, data } = matter(source)
 
     return {
-      content,
       data,
       filePath,
     }
@@ -237,7 +124,6 @@ export const getStaticProps = async ({ params }) => {
 
   // Map the currentPost categories array to a Set for lookup in the filter
   const searchCategories = new Set(data.categories.map((category) => category.toUpperCase()))
-
   const matchingPosts = allPosts.filter((post) => {
     // If the currently iterated post title matches the currentPost return false (filter it out);
 
@@ -260,34 +146,36 @@ export const getStaticProps = async ({ params }) => {
       matchingPosts.push(morePosts[i])
     }
   }
-
-  // const index = allPosts
-  //   .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-  //   .findIndex((post) => post.data.title === data.title)
-
-  // const getPrev = (i) => {
-  //   if (i === 0) {
-  //     return allPosts[allPosts.length - 1]
-  //   } else {
-  //     return allPosts[i - 1]
-  //   }
-  // }
-
-  // const getNext = (i) => {
-  //   if (i === allPosts.length - 1) {
-  //     return allPosts[0]
-  //   } else {
-  //     return allPosts[i + 1]
-  //   }
-  // }
-
-  // const prev = getPrev(index)
-  // const next = getNext(index)
-
   const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
+  //end of get related posts
 
-  //END OF RELEVANT POSTS
-  //Back to MDX Stuff
+  //get previous and next posts
+  const index = allPosts
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .findIndex((post) => post.data.title === data.title)
+
+  const getPrev = (i) => {
+    if (i === 0) {
+      return allPosts[allPosts.length - 1]
+    } else if (i < 0) {
+      return allPosts[0]
+    } else {
+      return allPosts[i - 1]
+    }
+  }
+
+  const getNext = (i) => {
+    if (i === allPosts.length - 1) {
+      return allPosts[0]
+    } else {
+      return allPosts[i + 1]
+    }
+  }
+
+  const prev = getPrev(index)
+  const next = getNext(index)
+  //end get previous next posts
+
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
 
@@ -302,22 +190,19 @@ export const getStaticProps = async ({ params }) => {
     props: {
       relatedPosts: relatedPosts,
       slug: params.slug,
-      // prev: prev,
-      // next: next,
+      prev: prev,
+      next: next,
       source: mdxSource,
       frontMatter: data,
-
-      ourPerson: { ...ourPerson },
+      allPeople: allPeople,
     },
   }
 }
 
 export const getStaticPaths = async () => {
+  // Map the path into the static paths object required by Next.js
   const paths = postFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))
-
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {

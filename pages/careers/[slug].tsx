@@ -1,13 +1,21 @@
+//react imports
+import { useState } from 'react'
+
+//MDX & frontmatter imports
 import fs from 'fs'
+import path from 'path'
 import matter from 'gray-matter'
+import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+
+//nextJS imports
+import Image from 'next/image'
 import Head from 'next/head'
-import path from 'path'
 import Link from 'next/link'
-import markdownStyles from '@styles/markdown-styles.module.css'
 import Main from '@parts/Main'
-import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
+
+//utility & component imports
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Button_Filled from '@parts/Button_Filled'
@@ -15,19 +23,13 @@ import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-import { BreadcrumbJsonLd, JobPostingJsonLd, NextSeo } from 'next-seo'
 import addMonths from 'date-fns/addMonths'
-import { useState } from 'react'
-import Image from 'next/image'
 
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
+//css imports
+import markdownStyles from '@styles/markdown-styles.module.css'
+import Careers_SEO from '@careers/Careers_SEO'
+
 const components = {
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
   Head,
 }
 
@@ -40,85 +42,19 @@ export default function JobsPage({ slug, source, frontMatter }) {
       return `/img/pixel-bakery-samee-dan-1200x900.png`
     }
   }
-  // console.log('cover image:', coverImage)
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Careers',
-            item: 'https://pixelbakery.com/careers',
-          },
-          {
-            position: 2,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/careers/${slug}`,
-          },
-        ]}
+      <Careers_SEO
+        datePostedISO={datePostedISO}
+        dateExpiredISO={dateExpiredISO}
+        title={frontMatter.title}
+        commitment={frontMatter.commitment}
+        coverImage={coverImage}
+        slug={slug}
       />
-      <NextSeo
-        title={`${frontMatter.title} | Careers`}
-        description={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`}
-        openGraph={{
-          url: `https://pixelbakery.com/careers/${slug}`,
-          title: `${frontMatter.title} | Careers`,
-          description: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}. Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.`,
-          images: [
-            {
-              url: `https://pixelbakery.com${coverImage}`,
-              width: 800,
-              height: 600,
-              alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
-            },
-            {
-              url: 'https://pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://pixelbakery.com/img/pixel-bakery-office.jpeg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-            {
-              url: `https://pixelbakery.com${coverImage}`,
-              width: 800,
-              height: 600,
-              alt: `Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`,
-            },
-          ],
-        }}
-      />
-      <JobPostingJsonLd
-        title={`${frontMatter.title}`}
-        validThrough={`${dateExpiredISO}`}
-        datePosted={`${datePostedISO}`}
-        description={`Pixel Bakery is looking to hire a ${frontMatter.commitment} ${frontMatter.title}`}
-        employmentType={`FULL_TIME`}
-        hiringOrganization={{
-          name: 'Pixel Bakery Design Studio',
-          sameAs: 'https://pixelbakery.com',
-          logo: 'https://www.pixelbakery.com/img/logos/initials/600x600px/darkBlue_withCreamShadow_onBlue_concave.png',
-        }}
-        jobLocation={{
-          streetAddress: '2124 Y Street Suite 122',
-          addressLocality: 'Lincoln',
-          addressRegion: 'NE',
-          postalCode: '68503',
-          addressCountry: 'USA',
-        }}
-      />
+
       <PageSection className='min-h-screen mt-32'>
         <article>
           <InnerWrapper>
@@ -191,9 +127,6 @@ export const getStaticProps = async ({ params }) => {
   const jobsFilePath = path.join(JOBS_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(jobsFilePath)
   const { content, data } = matter(source)
-
-  //END OF RELEVANT POSTS
-  //Back to MDX Stuff
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
@@ -214,10 +147,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = jobFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))
-
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {
