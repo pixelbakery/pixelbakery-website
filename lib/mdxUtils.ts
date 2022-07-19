@@ -24,8 +24,11 @@ export const caseStudyFilePaths = fs
   .filter((path) => /\.mdx?$/.test(path))
 
 //MADE TO ORDER TUTORIALS
-
 export const MADETOORDER_PATH = path.join(process.cwd(), '_madeToOrder')
 export const madeToOrderFilePaths = fs
   .readdirSync(MADETOORDER_PATH)
   .filter((path) => /\.mdx?$/.test(path))
+
+//PEOPLE (Team Bios)
+export const PEOPLE_PATH = path.join(process.cwd(), '_people')
+export const peopleFilePaths = fs.readdirSync(PEOPLE_PATH).filter((path) => /\.mdx?$/.test(path))

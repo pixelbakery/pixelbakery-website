@@ -5,7 +5,7 @@ export default {
   Discord: 'https://discord.gg/ZJfGg76BUB',
   Facebook: 'https://www.facebook.com/pixelbakerylnk/',
   Instagram: 'https://instagram.com/pixelbakery',
-  Linkedin: 'https://www.linkedin.com/company/pixelbakery',
+  LinkedIn: 'https://www.linkedin.com/company/pixelbakery',
   Medium: 'https://pixelbakery.medium.com',
   Tiktok: 'https://www.tiktok.com/@pixelbakery',
   Twitch: 'https://twitch.tv/pixelbakery',
