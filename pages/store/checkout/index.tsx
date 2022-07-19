@@ -227,6 +227,7 @@ let Checkout: NextPage = () => {
           id: '',
           options: '',
         },
+        price: '',
         selected_options: [
           {
             group_id: '',
@@ -251,7 +252,7 @@ let Checkout: NextPage = () => {
             <title>Checkout | Store</title>
             <meta name='description' content='Pixel Bakery store checkout' />
             <meta property='og:type' content='website' />
-            <meta property='og:url' content='https://shop.pixelbakery.com' />
+            <meta property='og:url' content='https://pixelbakery.com/store' />
             <meta property='og:title' content='Pixel Bakery – Checkout' />
             <meta property='og:description' content='Pixel Bakery store checkout' />
             <meta property='og:image' content='/img/pixel-bakery-header.png' />
@@ -276,9 +277,9 @@ let Checkout: NextPage = () => {
                       <a className='underline py-2'>cart</a>
                     </Link>
                     <span className='mx-3 py-3'>/</span>
-                    <span className='py-3'>payment & shipping</span>
+                    <span className='py-3'>payment &amps; shipping</span>
                   </div>
-                  <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment & Shipping</h1>
+                  <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment &amps; Shipping</h1>
                 </header>
                 <div className='w-full grid grid-cols-5 items-start gap-12 '>
                   <div className='col-span-5 lg:col-span-5'>

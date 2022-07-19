@@ -46,7 +46,7 @@ const CheckoutPage: NextPage = () => {
         <title>Cart | Store</title>
         <meta name='description' content='Pixel Bakery store cart' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://shop.pixelbakery.com' />
+        <meta property='og:url' content='https://pixelbakery.com/store' />
         <meta property='og:title' content='Pixel Bakery – Cart' />
         <meta property='og:description' content='Pixel Bakery store cart' />
         <meta property='og:image' content='/img/pixel-bakery-header.png' />

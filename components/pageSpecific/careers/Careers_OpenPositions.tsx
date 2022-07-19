@@ -25,9 +25,9 @@ function Careers_OpenPositions({ jobs, header, subheader }) {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4'>
           {jobs
             .filter((job) => !job.internship)
-            .map((job) => {
+            .map((job, i) => {
               return (
-                <div key={header}>
+                <div key={i}>
                   <Careers_Card job={job} />
                 </div>
               )

@@ -65,7 +65,7 @@ function Footer_Mailchimp() {
   //////////////////
 
   return (
-    <>
+    <div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className={cn('opacity-100 transition-opacity duration-500 grid grid-cols-2 gap-4', {
@@ -145,7 +145,7 @@ function Footer_Mailchimp() {
       <div className={cn({ ['opacity-0 hidden']: !submitted }, { ['opacity-100 ']: submitted })}>
         <Lead>Thanks for your interest 🙂 We'll be in touch soon.</Lead>
       </div>
-    </>
+    </div>
   )
 }
 export default Footer_Mailchimp

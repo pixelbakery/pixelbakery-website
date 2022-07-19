@@ -3,10 +3,10 @@ import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Onboarding_ExpectationsRow from './Onboarding_Expectations_Row'
 import { gsap } from 'gsap'
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 function Onboarding_Expectations() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.set('#expectation-1 .expect-numb', { y: -200, rotation: gsap.utils.random(0, 15) })
     gsap.set('#expectation-2 .expect-numb', { x: -100, rotation: 5 })
     gsap.set('#expectation-3 .expect-numb', {

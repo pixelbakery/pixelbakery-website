@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import H2 from '@typography/H2'
 
@@ -36,7 +35,7 @@ function About_Twitch() {
           </Lead>
         </InnerWrapper>
       </PageSection>
-      <section className='px-0 md:pt-48 pb-0 lg:pb-0' id='twitch'>
+      <section className='px-0 md:pt-24 pb-0 lg:pb-0' id='twitch'>
         <Head>
           <Script src='https://player.twitch.tv/js/embed/v1.js' />
         </Head>
