@@ -43,3 +43,5 @@ yarn-error.log*
 
 .prettierignore
 
+public/img/
+public/img/*
