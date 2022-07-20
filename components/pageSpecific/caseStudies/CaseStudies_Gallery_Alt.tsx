@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
 const slides = [
-  '/img/case-studies/snacklins/SNACK_Social_1.jpg',
+  '/img/case-studies/snacklins/SNACK_Social_0.jpg',
   '/img/case-studies/snacklins/SNACK_Social_2.jpg',
   '/img/case-studies/snacklins/SNACK_Social_3.jpg',
   '/img/case-studies/snacklins/SNACK_Social_4.jpg',
@@ -110,7 +110,7 @@ function CaseStudies_Gallery() {
           <div className='w-full h-full'>
             <video
               className='w-full h-full'
-              playsInline
+              playsInline={true}
               muted={true}
               loop
               autoPlay={true}
@@ -126,7 +126,7 @@ function CaseStudies_Gallery() {
           <div className='w-full h-full'>
             <video
               className='w-full h-full'
-              playsInline
+              playsInline={true}
               muted={false}
               controls
               poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
@@ -140,7 +140,7 @@ function CaseStudies_Gallery() {
           <div className='w-full h-full'>
             <video
               className='w-full h-full'
-              playsInline
+              playsInline={true}
               loop
               autoPlay={true}
               muted={true}
@@ -164,7 +164,7 @@ function CaseStudies_Gallery() {
           <div className='w-full h-full'>
             <video
               className='w-full h-full'
-              playsInline
+              playsInline={true}
               muted={true}
               autoPlay={true}
               loop
@@ -180,7 +180,7 @@ function CaseStudies_Gallery() {
           <div className='w-full h-full'>
             <video
               className='w-full h-full'
-              playsInline
+              playsInline={true}
               loop
               muted={true}
               autoPlay={true}
