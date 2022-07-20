@@ -84,6 +84,7 @@ function Work_Portfolio_Card({ project }) {
             playsInline
             preload='true'
             loop
+            placeholder={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.jpg`}
             autoPlay={false}
             controls={false}
             onMouseOver={(event) => (event.target as MediaType).play()}

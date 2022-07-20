@@ -31,7 +31,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
           },
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_SRC}${frontMatter.coverImage}`,
+              url: `https://cdn.pixelbakery.com${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author}`,
             },
             {
@@ -53,7 +53,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_SRC}${frontMatter.coverImage}`,
+              url: `https://cdn.pixelbakery.com${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author}`,
             },
           ],
