@@ -118,7 +118,7 @@ function CaseStudies_Gallery() {
               // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.webm' />
-              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.mp4' />
             </video>
           </div>
         </SwiperSlide>
@@ -148,7 +148,7 @@ function CaseStudies_Gallery() {
               // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.webm' />
-              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.mp4' />
             </video>
           </div>
         </SwiperSlide>
@@ -172,7 +172,7 @@ function CaseStudies_Gallery() {
               // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.webm' />
-              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.mp4' />
             </video>
           </div>
         </SwiperSlide>
@@ -188,7 +188,7 @@ function CaseStudies_Gallery() {
               // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.webm' />
-              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.mp4' />
             </video>
           </div>
         </SwiperSlide>

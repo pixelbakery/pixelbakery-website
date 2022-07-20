@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
 
-function Lottie_bouncingTV() {
+function Lottie_BouncingTV() {
   const [animationData, setAnimationData] = useState(null)
   useEffect(() => {
-    import('@data/Lottie_bouncingTV.json').then(setAnimationData)
+    import('@data/Lottie_BouncingTV.json').then(setAnimationData)
   }, [])
 
   if (!animationData) return <></>
@@ -15,4 +15,4 @@ function Lottie_bouncingTV() {
   )
 }
 
-export default Lottie_bouncingTV
+export default Lottie_BouncingTV
