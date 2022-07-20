@@ -8,12 +8,12 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
   const ImageComponent = () => {
     return (
       <Image
-        src={src}
+        src={`${src}`}
         layout='fill'
         alt={props.alt}
         objectFit='contain'
         placeholder='blur'
-        blurDataURL={src}
+        blurDataURL={`${src}`}
         onLoad={({ target }) => {
           const { naturalWidth, naturalHeight } = target as HTMLImageElement
           setPaddingTop(`calc(100% / (${naturalWidth} / ${naturalHeight})`)

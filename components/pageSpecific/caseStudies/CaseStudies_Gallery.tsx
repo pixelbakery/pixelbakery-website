@@ -89,21 +89,21 @@ function CaseStudies_Gallery() {
             {/* Left Images */}
             <div className='col-span-1'>
               <div className='grid grid-cols-2 gap-6'>
-                <div className='col-span-2'>
+                <div className='col-span-2 relative'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_01.jpg'}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1 '>
+                <div className='col-span-1 relative'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_02.jpg'}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1 '>
+                <div className='col-span-1  relative'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_03.jpg'}
@@ -112,7 +112,7 @@ function CaseStudies_Gallery() {
                 </div>
               </div>
             </div>
-            <div className='col-span-1'>
+            <div className='col-span-1 relative'>
               <div className='grid grid-cols-2 gap-6'>
                 <div className='col-span-1'>
                   <Image_VarH
@@ -121,14 +121,14 @@ function CaseStudies_Gallery() {
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1 '>
+                <div className='col-span-1  relative'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_04.jpg'}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-2 '>
+                <div className='col-span-2 relative'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_06.jpg'}
