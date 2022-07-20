@@ -4,6 +4,11 @@ const withPlugins = require('next-compose-plugins')
 const config = {
   async redirects() {
     return [
+      // {
+      //   source: '/work/case-studies/snacklins-retainer',
+      //   destination: '/work/case-studies/snacklins-ongoing-retainer',
+      //   permanent: true,
+      // },
       {
         source: '/careers/apply',
         destination: '/careers/application',

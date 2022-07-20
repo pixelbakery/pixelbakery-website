@@ -68,6 +68,7 @@ class MyDocument extends Document {
             <img
               height='1'
               width='1'
+              alt='facebook auth'
               style={{ display: 'none' }}
               src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
             />

@@ -12,7 +12,7 @@ const withImageLoader = require('next-image-loader').withImageLoader
 const nextConfig = {
   // assetPrefix: isProd ? 'https://cdn.pixelbakery.com' : '',
   images: {
-    formats: ['image/webp'],
+    formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     domains: [
       'cdn.chec.io',

@@ -95,13 +95,13 @@ function Footer_Mailchimp({ onModalUpdate }) {
           ></h2>
           <p
             className={cn(
-              'text-cream leading-none max-w-lg opacity-100 transition-opacity duration-500 mb-4 md:mb-6 xl:mb-8 pb-0 xl:mb-4 text-xl xl:text-3xl',
+              'text-cream leading-none max-w-lg opacity-100 transition-opacity duration-500 mb-4 md:mb-6 pb-0 xl:mb-4 text-xl xl:text-3xl',
               {
                 ['opacity-0 pointer-events-none lg:mb-2 text-lg lg:text-lg']: submitted,
               },
             )}
           >
-            enter your email below and we'll send you a free pastry
+            enter your email below and we&apos;ll send you a free pastry
           </p>
           <form
             onSubmit={handleSubmit(onSubmit)}

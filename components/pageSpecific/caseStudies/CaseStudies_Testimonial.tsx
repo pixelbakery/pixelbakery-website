@@ -15,9 +15,9 @@ function CaseStudies_Testimonial() {
               “Pixel Bakery has been an incredible partners of ours for nearly 2 years. From
               photography, to graphic design, to creative direction they helped bring the SNACKLINS
               brand to life. They are flexible to our needs, super organized and responsive, and
-              deliver really great results. I think the thing that I'm most impressed by is their
-              ability to learn our brand and get better over time. That's the best thing you can ask
-              for in a partner.”
+              deliver really great results. I think the thing that I&amps;m most impressed by is
+              their ability to learn our brand and get better over time. That&amps;s the best thing
+              you can ask for in a partner.”
             </p>
             <div className='flex gap-x-4'>
               <div className='w-16'>
@@ -27,6 +27,8 @@ function CaseStudies_Testimonial() {
                     alt={'Jeremy Sherman is the marketing director for SNACKLINS in Washington, DC'}
                     layout={'fill'}
                     objectFit={'cover'}
+                    placeholder={'blur'}
+                    blurDataURL={'/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg'}
                     className={''}
                   />
                 </div>
@@ -45,6 +47,9 @@ function CaseStudies_Testimonial() {
                 src={'/img/case-studies/snacklins/SNACK_01.png'}
                 layout='fill'
                 objectFit='cover'
+                placeholder={'blur'}
+                blurDataURL={'/img/case-studies/snacklins/SNACK_01.png'}
+                alt='Food Photography produced by Pixel Bakery for SNACKLINS'
               />
             </div>
           </div>

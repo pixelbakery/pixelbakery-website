@@ -14,9 +14,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "svgr-logos": "svgr ./public/img/client-logos --out-dir ./components/Images/ClientLogos --typescript --svg-props fill=currentColor",
-    "db:push": "npx prisma db push",
-    "generate": "npx prisma generate"
+    "svgr-logos": "svgr ./public/img/client-logos --out-dir ./components/Images/ClientLogos --typescript --svg-props fill=currentColor"
   },
   "prettier": {
     "trailingComma": "all",
@@ -36,7 +34,6 @@
     "@mdx-js/loader": "^1.6.22",
     "@next/env": "^12.2.0",
     "@next/mdx": "^12.0.9",
-    "@prisma/client": "^3.13.0",
     "@react-pdf/renderer": "^2.1.1",
     "@sendgrid/mail": "^7.6.1",
     "@stripe/react-stripe-js": "^1.7.1",
@@ -70,7 +67,6 @@
     "next-mdx-enhanced": "^5.0.0",
     "next-mdx-remote": "^3.0.8",
     "next-seo": "^5.2.0",
-    "prisma": "^3.13.0",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-calendly": "^2.2.2",

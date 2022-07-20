@@ -12,6 +12,7 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
         layout='fill'
         alt={props.alt}
         objectFit='contain'
+        placeholder='blur'
         blurDataURL={src}
         onLoad={({ target }) => {
           const { naturalWidth, naturalHeight } = target as HTMLImageElement

@@ -72,23 +72,6 @@ function CaseStudies_TikTok() {
   let titleRef = useRef(null)
   let swiperRef = useRef(null)
 
-  const handleHelpMe = (slide) => {
-    console.log(slide.realIndex)
-
-    // setSwiperInstance(slide.realIndex)
-  }
-  useEffect(() => {
-    let text = titleRef.current
-    let swiper = swiperRef.current
-    // titleRef.current.textContent = titleRef.current.toString()
-    function idk() {
-      console.log('asdga')
-    }
-    if (handleHelpMe) {
-      idk()
-    }
-  }, [handleHelpMe])
-
   // useEffect(() => {
   //   let mySwiper = Swiper('.swiper-container', {
   //     loop: true,
@@ -111,7 +94,7 @@ function CaseStudies_TikTok() {
         controls
         muted={false}
         className={
-          'h-full w-auto  border-2 border-cream rounded-lg hover:cursor-grab drop-shadow-md'
+          'h-full w-auto  border border-cream rounded-md hover:cursor-grab drop-shadow-md shadow-lg'
         }
         preload={'auto'}
         playsInline
@@ -165,6 +148,10 @@ function CaseStudies_TikTok() {
           type: 'fraction',
         }}
         breakpoints={{
+          0: {
+            slidesPerView: 1.15,
+            spaceBetween: 10,
+          },
           640: {
             slidesPerView: 2.15,
             spaceBetween: 10,
@@ -184,7 +171,6 @@ function CaseStudies_TikTok() {
         modules={[Navigation, Pagination]}
         className=' w-full aspect-w-9 aspect-h-16'
         watchSlidesProgress={true}
-        onSlideChange={(s) => handleHelpMe(s)}
         // onActiveIndexChange={(s) => test(s)}
         loop
         // onSwiper={(swiper) => console.log(swiper)}
@@ -217,9 +203,9 @@ function CaseStudies_TikTok() {
         <h2 ref={titleRef} />
         <p className='text-cream'>
           Not everything has to be a 20-person crew and a bunch of huge cameras. We believe in
-          meeting our audiences where they're at. Our generation wants something that feels organic,
-          authentic, and relatable. There's a tool for every job, and sometimes those tools are
-          iPhone cameras and selfie sticks.{' '}
+          meeting our audiences where they&apos;re at. Our generation wants something that feels
+          organic, authentic, and relatable. There&apos;s a tool for every job, and sometimes those
+          tools are iPhone cameras and selfie sticks.{' '}
         </p>
         <p className='text-cream'>
           At PB, we’re not afraid to jump into a new medium. When we were approached to take on

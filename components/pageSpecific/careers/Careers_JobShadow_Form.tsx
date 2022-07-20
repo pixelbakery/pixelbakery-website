@@ -132,7 +132,7 @@ function Careers_JobShadow_Form() {
             htmlFor='checkNoParents'
             onClick={handleCheckNoParents}
           >
-            I'm filling this out for myself.
+            I&apos;m filling this out for myself.
           </label>
         </div>
         <div className='col-span-2 flex'>
@@ -186,7 +186,7 @@ function Careers_JobShadow_Form() {
         </button>
       </form>
       <div className={cn({ ['opacity-0 hidden']: !submitted }, { ['opacity-100 ']: submitted })}>
-        <Lead>Thanks for your interest 🙂 We'll be in touch soon.</Lead>
+        <Lead>Thanks for your interest 🙂 We&apos;ll be in touch soon.</Lead>
       </div>
     </>
   )

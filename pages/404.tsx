@@ -13,6 +13,8 @@ function FourOhFour() {
             layout='responsive'
             width='480px'
             height='269px'
+            placeholder='blur'
+            blurDataURL={`https://cdn.pixelbakery.com/img/imindanger.webp`}
             className='w-full'
             alt={"I'm in danger"}
           />

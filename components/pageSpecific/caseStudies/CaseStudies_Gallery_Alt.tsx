@@ -29,8 +29,10 @@ function CaseStudies_Gallery() {
           width='100%'
           height='100%'
           layout='responsive'
+          placeholder='blur'
           objectFit='cover'
           blurDataURL={slide}
+          alt='Snacklins Instagram posts that Pixel Bakery designed and managed'
         />
       </div>
     )
@@ -81,6 +83,10 @@ function CaseStudies_Gallery() {
         loop
         slidesPerView={'auto'}
         breakpoints={{
+          0: {
+            slidesPerView: 1.15,
+            spaceBetween: 10,
+          },
           640: {
             slidesPerView: 2.15,
             spaceBetween: 10,
@@ -100,18 +106,53 @@ function CaseStudies_Gallery() {
         modules={[A11y, Keyboard]}
         // className='lg:hidden'
       >
-        <SwiperSlide className='bg-blue hover:cursor-grab'>
-          <div className=''>
+        <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
+          <div className='w-full h-full'>
             <video
+              className='w-full h-full'
+              playsInline
+              muted={true}
+              loop
+              autoPlay={true}
+              controls={false}
+              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+            >
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.webm' />
+            </video>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
+          <div className='w-full h-full'>
+            <video
+              className='w-full h-full'
               playsInline
               muted={false}
               controls
               poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
             >
-              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.mp4' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_12.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_12.mp4' />
             </video>
           </div>
         </SwiperSlide>
+        <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
+          <div className='w-full h-full'>
+            <video
+              className='w-full h-full'
+              playsInline
+              loop
+              autoPlay={true}
+              muted={true}
+              controls={false}
+              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+            >
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.webm' />
+            </video>
+          </div>
+        </SwiperSlide>
+
         {slides.map((slide: string) => {
           return (
             <SwiperSlide key={slide} className='bg-blue hover:cursor-grab'>
@@ -119,6 +160,38 @@ function CaseStudies_Gallery() {
             </SwiperSlide>
           )
         })}
+        <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
+          <div className='w-full h-full'>
+            <video
+              className='w-full h-full'
+              playsInline
+              muted={true}
+              autoPlay={true}
+              loop
+              controls={false}
+              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+            >
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.webm' />
+            </video>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
+          <div className='w-full h-full'>
+            <video
+              className='w-full h-full'
+              playsInline
+              loop
+              muted={true}
+              autoPlay={true}
+              controls={false}
+              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+            >
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.webm' />
+              <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.webm' />
+            </video>
+          </div>
+        </SwiperSlide>
       </Swiper>
     )
   }

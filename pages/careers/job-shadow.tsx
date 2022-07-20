@@ -127,6 +127,7 @@ function JobShadow() {
                   className='underline text-white'
                   href='mailto:careers@pixelbakery.com'
                   target={'_blank'}
+                  rel='noreferrer'
                 >
                   careers@pixelbakery.com
                 </a>{' '}
@@ -136,7 +137,7 @@ function JobShadow() {
                   href='https://instagram.com/pixelbakery'
                   target={'_blank'}
                   className='underline text-white'
-                  rel='nofollow'
+                  rel='noreferrer'
                 >
                   @pixelbakerylnk
                 </a>

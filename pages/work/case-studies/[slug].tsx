@@ -17,10 +17,19 @@ import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
-import CaseStudies_PrevNext from '@caseStudies/CaseStudies_PrevNext'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
+import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
+
+//stuff built for snacklins
+import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
+import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
+import CaseStudies_Gallery from '@caseStudies/CaseStudies_Gallery'
+import CaseStudies_Gallery_Alt from '@caseStudies/CaseStudies_Gallery_Alt'
+import CaseStudies_Header_Alt from '@caseStudies/CaseStudies_Header_Alt'
+import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
+import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 
 export default function CaseStudy({ allCaseStudies, source, slug, frontMatter }) {
   const components = {
@@ -30,6 +39,14 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
     Carousel: Carousel,
     VimeoPlayer: VimeoPlayer,
     Video: Video,
+    //Stuff built for SNACKLINS
+    CaseStudies_Testimonial: CaseStudies_Testimonial,
+    CaseStudies_TikTok: CaseStudies_TikTok,
+    CaseStudies_Gallery: CaseStudies_Gallery,
+    CaseStudies_Gallery_Alt: CaseStudies_Gallery_Alt,
+    CaseStudies_Header_Alt: CaseStudies_Header_Alt,
+    CaseStudies_ProjectIntro_Alt: CaseStudies_ProjectIntro_Alt,
+    CaseStudies_Gallery_Email: CaseStudies_Gallery_Email,
     // PageSection: ({children}) => <PageSection children={children} />,
     PageSection: ({ children, color }) => <PageSection color={color}>{children}</PageSection>,
     CaseStudiesDescription: ({ children, ...props }) => (
@@ -57,84 +74,32 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
 
     h2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     CaseStudiesTags: () => <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />,
-
     Head,
   }
-  console.log(slug)
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Work',
-            item: 'https://pixelbakery.com/work',
-          },
-          {
-            position: 2,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/work/case-studies/${slug}`,
-          },
-        ]}
-      />
-      <NextSeo
-        title={`${frontMatter.title} | Case Study`}
-        description={frontMatter.excerpt}
-        openGraph={{
-          url: `https://pixelbakery.com/work/case-studies/${slug}`,
-          title: `${frontMatter.title}`,
-          description: frontMatter.excerpt,
-          images: [
-            {
-              url: `https://cdn.pixelbakery.com/img/${frontMatter.vimeoPreview}.jpg`,
-              alt: frontMatter.excerpt,
-              type: 'image/jpeg',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1200,
-              height: 900,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-            {
-              url: `https://cdn.pixelbakery.com/img/${frontMatter.vimeoPreview}.jpg`,
-              alt: frontMatter.excerpt,
-              type: 'image/jpeg',
-            },
-          ],
-          site_name: 'Pixel Bakery Design Studio',
-        }}
-        twitter={{
-          handle: '@pixelbakerylnk',
-          site: '@site',
-          cardType: 'summary_large_image',
-        }}
-      />
-      <CaseStudies_Header
-        client={frontMatter.client}
-        clientURL={frontMatter.website}
-        clientLogo={frontMatter.logo}
-        projectName={frontMatter.title}
-        projectExcerpt={frontMatter.excerpt}
-        heroVideo={frontMatter.vimeoID}
-      />
-      <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />
+      {!frontMatter.isCustomLayout ? (
+        <>
+          <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
+          <CaseStudies_Header
+            client={frontMatter.client}
+            clientURL={frontMatter.website}
+            clientLogo={frontMatter.logo}
+            projectName={frontMatter.title}
+            projectExcerpt={frontMatter.excerpt}
+            heroVideo={frontMatter.vimeoID}
+          />
+          <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />
+          <article id='blog-body-guts'>
+            <MDXRemote {...source} components={components} />
+          </article>
+        </>
+      ) : (
+        <article id='blog-body-guts'>
+          <MDXRemote {...source} components={components} />
+        </article>
+      )}
 
-      <article id='blog-body-guts'>
-        <MDXRemote {...source} components={components} />
-      </article>
       <CaseStudies_Credits credits={frontMatter.credits} />
       <CaseStudies_CTA />
       <CaseStudies_OtherProjects title={frontMatter.title} allCaseStudies={allCaseStudies} />

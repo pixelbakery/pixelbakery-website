@@ -1,6 +1,5 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-import Image from 'next/image'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 Home_Portfolio_Card.propTypes = {

@@ -20,7 +20,7 @@ export default function Spotify_Playlist({ playlistID }) {
           href={data.external_urls.spotify}
           className={'hidden xl:block cursor-pointer'}
           target='_blank'
-          rel='noopener'
+          rel='noreferrer'
         >
           <div className='absolute xl:relative w-32 h-32'>
             <Image
@@ -30,6 +30,7 @@ export default function Spotify_Playlist({ playlistID }) {
               objectFit='cover'
               blurDataURL={data.albumCoverImage}
               quality={25}
+              unoptimized={true}
               className='w-full h-full absolute'
             />
           </div>

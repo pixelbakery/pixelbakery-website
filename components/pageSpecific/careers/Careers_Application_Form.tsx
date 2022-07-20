@@ -111,7 +111,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <div className='col-span-1 lg:col-span-3'>
               <label className='required'> Full Name</label>
               <span className='text-sm text-wine-400 mt-0 mb-3 py-0 leading-none block'>
-                What your momma calls you when she's mad.
+                What your momma calls you when she&apos;s mad.
               </span>
             </div>
             <input
@@ -252,8 +252,8 @@ export default function Careers_Application_Form({ allJobs }) {
               <option value='High School Diploma'>High School Diploma</option>
               <option value='Still In College'>Still In College</option>
               <option value='Some College'>Some College</option>
-              <option value="Bachelor's Degree">Bachelor's Degree</option>
-              <option value="Master's Degree">Mas ter's Degree</option>
+              <option value="Bachelor's Degree">Bachelor&apos;s Degree</option>
+              <option value="Master's Degree">Master&apos;s Degree</option>
               <option value='Ph.D'>Ph.D (bruh..)</option>
               <option value='Self-Educated'>Self-Educated</option>
             </select>
@@ -340,7 +340,7 @@ export default function Careers_Application_Form({ allJobs }) {
 
           <div className='col-span-2 xl:col-span-1 '>
             <label className=' ' htmlFor='why'>
-              What's your favorite band?
+              What&apos;s your favorite band?
             </label>
             <input
               type='text'
@@ -430,10 +430,10 @@ export default function Careers_Application_Form({ allJobs }) {
             </div>
           </div>
           <div className='col-span-2 border-t border-wine pt-4 mt-4'>
-            <label>See? That wasn't too bad.</label>
+            <label>See? That wasn&apos;t too bad.</label>
             <p className='my-0 py-0'>
               Look it over, upload your resume, and send it off. Ditch the cover letter, chances are
-              we won't read it anyways. We'll be in touch.
+              we won&apos;t read it anyways. We&apos;ll be in touch.
             </p>
           </div>
           <div className='col-span-2 my-2'>

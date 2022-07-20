@@ -27,8 +27,14 @@ const divStyle = {
 function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
-      <div className=' flex flex-col justify-center'>
-        <img src={slide} className='block w-full  self-center object-contain ' />
+      <div className='h-full flex flex-col justify-center'>
+        <Image
+          layout='fill'
+          objectFit='cover'
+          alt={'Snacklins social posts that Pixel Bakery designed and animated'}
+          src={slide}
+          className='block w-full  self-center object-contain '
+        />
       </div>
     )
   }
@@ -87,21 +93,21 @@ function CaseStudies_Gallery() {
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_01.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1 '>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_02.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1 '>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_03.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
               </div>
@@ -112,21 +118,21 @@ function CaseStudies_Gallery() {
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_05.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1 '>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_04.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-2 '>
                   <Image_VarH
                     openInNewWindow={true}
                     src={'/img/case-studies/snacklins/SNACK_06.jpg'}
-                    alt={''}
+                    alt={'Snacklins food photography and social media design'}
                   />
                 </div>
               </div>

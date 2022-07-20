@@ -16,7 +16,7 @@ export default function Aboout_Faq() {
             <H2 color={'blue'} className='mb-4'>
               Some questions we get asked frequently
             </H2>
-            <Lead color='peach'>what's a website without one of these?</Lead>
+            <Lead color='peach'>what&apos;s a website without one of these?</Lead>
           </div>
           <div className='grid grid-cols-1 gap-y-4'>
             {faq.map((faq, index) => (

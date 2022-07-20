@@ -72,6 +72,7 @@ export const Footer: NextPage = () => {
                         className='text-cream text-xl'
                         target='_blank'
                         href='https://g.page/pixelbakery?share'
+                        rel='noreferrer'
                       >
                         2124 y st ste 122
                         <br />

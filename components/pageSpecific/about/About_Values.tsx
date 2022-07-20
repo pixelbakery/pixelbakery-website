@@ -19,7 +19,7 @@ function About_Values() {
             <div className='text-6xl font-black text-peach'>1</div>
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
-                we're all going to die
+                we&apos;re all going to die
               </Lead>
               <p className='py-4 text-xl text-wine mt-0'>
                 Life is fleeting, and you only have so many days to craft the world you’d like to
@@ -64,12 +64,13 @@ function About_Values() {
             <div className='text-6xl font-black text-peach'>4</div>
             <div>
               <Lead color='blue' className='mb-0 lg:mb-0 pb-0'>
-                You've got to be kind
+                You&apos;ve got to be kind
               </Lead>
               <p className='pt-4 mb-0 text-xl text-wine italic'>
-                “Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter. It's
-                round and wet and crowded. On the outside, babies, you’ve got a hundred years here.
-                There’s only one rule that I know of, babies-“God damn it, you’ve got to be kind.”
+                “Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter.
+                It&apos;s round and wet and crowded. On the outside, babies, you’ve got a hundred
+                years here. There’s only one rule that I know of, babies-“God damn it, you’ve got to
+                be kind.”
               </p>
               <cite className=' text-xl text-wine'>
                 <strong>– Kurt Vonnegut</strong>, God Bless You, Mr. Rosewater

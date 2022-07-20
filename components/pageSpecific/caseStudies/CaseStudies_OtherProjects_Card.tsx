@@ -7,7 +7,7 @@ import cn from 'classnames'
 //PROPS:
 // link={'/'} head={''} subhead={''} aspectW={''} aspectY={''} img={''} imgAlt={''} tags={["something", "something else"]} tagBgColor={"bg-cream"} tagTextColor={'text-wine'}
 
-function Card_Rounded({ project }) {
+function CaseStudies_OtherProjects_Card({ project }) {
   return (
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
@@ -26,6 +26,7 @@ function Card_Rounded({ project }) {
           src={`/img/work/${project.data.vimeoPreview}.jpg`}
           layout='fill'
           objectFit='cover'
+          placeholder='blur'
           blurDataURL={`/img/work/${project.data.vimeoPreview}.jpg`}
           quality={33}
           className=''
@@ -52,4 +53,4 @@ function Card_Rounded({ project }) {
     </Link>
   )
 }
-export default Card_Rounded
+export default CaseStudies_OtherProjects_Card

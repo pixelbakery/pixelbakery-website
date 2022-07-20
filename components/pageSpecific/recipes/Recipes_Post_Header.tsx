@@ -121,6 +121,7 @@ const Recipes_Post_Header = ({ date, frontMatter, allPeople, forwardedRef, readT
             className='object-center'
             src={frontMatter.coverImage}
             alt={frontMatter.title}
+            placeholder='blur'
             blurDataURL={frontMatter.coverImage}
             quality={100}
           />

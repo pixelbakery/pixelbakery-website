@@ -19,7 +19,7 @@ function About_Team_Header({ source, frontMatter }) {
   return (
     <PageSection color='cream'>
       <InnerWrapper className='mt-24'>
-        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-24  gap-y-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 xl:gap-x-24  gap-y-8'>
           <div className='col-span-1 relative w-full aspect-3/4'>
             <div className=' max-w-lg'>
               <Image

@@ -1,21 +1,8 @@
-import Image from 'next/image'
 import Vimeo from '@u-wave/react-vimeo'
-
-import PropTypes from 'prop-types'
-import Link from 'next/link'
 import H1 from '@typography/H1'
 import Lead from '@typography/Lead'
-SolaTinyChef_Header.propTypes = {
-  client: PropTypes.string.isRequired,
-  projectName: PropTypes.string,
-  projectExcerpt: PropTypes.string,
-  heroVideo: PropTypes.string,
-  clientLogo: PropTypes.string.isRequired,
-  projectSubhead: PropTypes.string.isRequired,
-  projectIntroduction: PropTypes.string,
-}
 
-function SolaTinyChef_Header({ ...props }) {
+function CaseStudies_Header({ ...props }) {
   return (
     <section
       className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4  bg-white'
@@ -33,11 +20,6 @@ function SolaTinyChef_Header({ ...props }) {
           >
             {props.projectExcerpt}
           </Lead>
-          {/* <Link href={'/work'}>
-            <a className='text-blue text-md text-opacity-90 hover:text-opacity-75 pb-1 border-b border-b-blue'>
-              ← back to all case studies
-            </a>
-          </Link> */}
         </div>
       </div>
       <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
@@ -52,4 +34,4 @@ function SolaTinyChef_Header({ ...props }) {
     </section>
   )
 }
-export default SolaTinyChef_Header
+export default CaseStudies_Header

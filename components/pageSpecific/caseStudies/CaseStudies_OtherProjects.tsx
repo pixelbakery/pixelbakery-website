@@ -1,16 +1,11 @@
 import CaseStudies_OtherProjects_Card from '@caseStudies/CaseStudies_OtherProjects_Card'
-import PropTypes from 'prop-types'
 import { shuffleArray } from '@lib/helpers'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'
 
-SolaTinyChef_OtherProjects.propTypes = {
-  otherProjects: PropTypes.array.isRequired,
-}
-
-function SolaTinyChef_OtherProjects({ title, allCaseStudies }) {
+function CaseStudies_OtherProjects({ title, allCaseStudies }) {
   const notThisProject = allCaseStudies.filter((project) => project.title != title)
 
   const relatedProjects = shuffleArray(notThisProject).slice(0, 3)
@@ -38,4 +33,4 @@ function SolaTinyChef_OtherProjects({ title, allCaseStudies }) {
     </PageSection>
   )
 }
-export default SolaTinyChef_OtherProjects
+export default CaseStudies_OtherProjects
