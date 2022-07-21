@@ -1,0 +1,13 @@
+{
+  "sourceBucket" : "cdn.pixelbakery.com",
+  "destinationBucket" : "arn:aws:s3:::cdn.pixelbakery.com",
+  "version" : "2016-11-30",
+  "creationTimestamp" : "1658278800000",
+  "fileFormat" : "CSV",
+  "fileSchema" : "Bucket, Key, VersionId, IsLatest, IsDeleteMarker, Size, LastModifiedDate, IsMultipartUploaded, BucketKeyStatus",
+  "files" : [ {
+    "key" : "cdn.pixelbakery.com/pb_cdn_inventory/data/844f91a7-87c7-4e07-b0ee-7b43255050d1.csv.gz",
+    "size" : 296649,
+    "MD5checksum" : "23fcd7f5e7d4c2b632b4284b8b41f581"
+  } ]
+}
