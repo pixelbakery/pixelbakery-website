@@ -125,12 +125,8 @@ function Work_Portfolio_Card({ project }) {
             id={projID_title}
             className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
           >
-            <div className='detail drop-shadow-lg text-sm text-white text-shadow-md'>
-              {project.data.client}
-            </div>
-            <h3 className='detail drop-shadow-lg text-2xl text-white text-shadow-md'>
-              {project.data.title}
-            </h3>
+            <div className='detail  text-sm text-white text-shadow-sm'>{project.data.client}</div>
+            <h3 className='detail text-2xl text-white text-shadow-sm'>{project.data.title}</h3>
           </div>
         </div>
         <div

@@ -70,7 +70,6 @@ function CaseStudies_TikTok() {
   // let [slideIndex, setSlideIndex] = useState(slides[0].title)
 
   let titleRef = useRef(null)
-  let swiperRef = useRef(null)
 
   // useEffect(() => {
   //   let mySwiper = Swiper('.swiper-container', {
@@ -94,7 +93,7 @@ function CaseStudies_TikTok() {
         controls
         muted={false}
         className={
-          'h-full w-auto  border border-cream rounded-md hover:cursor-grab drop-shadow-md shadow-lg'
+          ' w-auto  border border-cream rounded-md hover:cursor-grab drop-shadow-md shadow-lg'
         }
         preload={'auto'}
         playsInline

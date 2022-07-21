@@ -13,7 +13,7 @@ function CaseStudies_OtherProjects({ title, allCaseStudies }) {
   return (
     <PageSection color='yellow'>
       <InnerWrapper>
-        <H2>More Projects</H2>
+        <H2 color='blue-dark'>More Projects</H2>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-8'>
           {relatedProjects.map((project) => {
             return <CaseStudies_OtherProjects_Card key={project.data.title} project={project} />
@@ -24,7 +24,7 @@ function CaseStudies_OtherProjects({ title, allCaseStudies }) {
             text={`See 'Em All`}
             link={'/work#projects'}
             center={false}
-            bgColor={'peach'}
+            bgColor={'blue-dark'}
             textColor={'cream'}
             chevronDirection={'left'}
           />
