@@ -10,6 +10,16 @@ const config = {
       //   permanent: true,
       // },
       {
+        source: '/social-media-kits',
+        destination: '/services/social-media',
+        permanent: true,
+      },
+      {
+        source: '/services/social-media-kits',
+        destination: '/services/social-media',
+        permanent: true,
+      },
+      {
         source: '/careers/apply',
         destination: '/careers/application',
         permanent: true,

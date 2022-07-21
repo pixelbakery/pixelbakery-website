@@ -30,6 +30,7 @@ import CaseStudies_Gallery_Alt from '@caseStudies/CaseStudies_Gallery_Alt'
 import CaseStudies_Header_Alt from '@caseStudies/CaseStudies_Header_Alt'
 import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
+import InnerWrapper from '@parts/InnerWrapper'
 
 export default function CaseStudy({ allCaseStudies, source, slug, frontMatter }) {
   const components = {
@@ -71,7 +72,7 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
       </CaseStudiesIntro>
     ),
     H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
-
+    InnerWrapper: InnerWrapper,
     h2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     CaseStudiesTags: () => <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />,
     Head,

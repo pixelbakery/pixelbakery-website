@@ -2,26 +2,33 @@ import Services_Subservices_Box from '@services/Services_Subservices_Box'
 import subservice from '@data/services-animation'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+import H2AndLead from '@typography/H2AndLead'
 
 function Services_Subservices() {
   return (
-    <section>
-      <div className='grid grid-cols-5 mx-12'>
-        <div className=' col-span-5 lg:col-span-3 w-full md:h-screen  lg:sticky top-0 lg:overflow-auto'>
-          <div className='flex flex-col h-full justify-center lg:max-w-md mx-auto '>
-            <H2 color='wine'>there’s plenty of ways to butter your bread</H2>
-            <Lead color='blue'>and we’ve pretty much mastered all of them.</Lead>
+    <PageSection>
+      <InnerWrapper>
+        <div className='grid grid-cols-5 mx-12'>
+          <div className=' col-span-5 lg:col-span-5 w-full top-0'>
+            <div className=' '>
+              <H2AndLead
+                headerText={'there’s plenty of ways to butter your bread'}
+                headerColor={'wine'}
+                leadText={'and we’ve pretty much mastered them all'}
+                leadColor={'blue'}
+              />
+            </div>
           </div>
-        </div>
-        <div className=' col-span-5 lg:col-span-2 w-full   mx-auto'>
-          <div>
+          <div className='grid grid-cols-1 lg:grid-cols-2 col-span-5 lg:col-span-2 xl:col-span-5 w-full gap-x-12  mx-auto'>
             {subservice.map((subservice) => (
               <Services_Subservices_Box subservice={subservice} key={subservice.service} />
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </InnerWrapper>
+    </PageSection>
     // <section
     //   className=' py-16 grid grid-cols-2 w-full bg-white'
     //   id='services-animation-subservices overflow-hidden sticky'

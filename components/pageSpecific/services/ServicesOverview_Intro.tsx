@@ -30,10 +30,6 @@ const talents = [
     link: '#emerging-media',
   },
   {
-    service: 'UI + UX Design',
-    link: '#ui-ux',
-  },
-  {
     service: 'Web Hosting',
     link: '/services/web-hosting',
   },

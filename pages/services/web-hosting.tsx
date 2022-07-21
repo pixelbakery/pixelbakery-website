@@ -4,7 +4,7 @@ import Lead from '@typography/Lead'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-
+import Lottie_Animation from '@data/lottie_services/lottie_services_webHosting.json'
 export default function Services() {
   return (
     <Main>
@@ -41,8 +41,14 @@ export default function Services() {
           ],
         }}
       />
-      <Services_Header serviceName='Web Hosting'>
-        <Lead>Because you deserve it.</Lead>
+
+      <Services_Header
+        serviceName={'Web Hosting'}
+        isLottie={true}
+        subheader={'Because you deserve it'}
+        bgColor={'blue'}
+        LottieComponent={Lottie_Animation}
+      >
         <p>
           We offer this service to any Nebraskan. You&apos;re welcome to choose how much you can
           afford. We&apos;ll help you install Wordpress (if that&apos;s your jam) and provide you
@@ -50,6 +56,7 @@ export default function Services() {
           <a href='mailto:jordan@pixelbakery.com'>jordan@pixelbakery.com</a>
         </p>
       </Services_Header>
+
       <CaseStudies_CTA />
       <Services_AllServices />
     </Main>

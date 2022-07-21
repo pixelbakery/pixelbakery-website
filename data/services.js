@@ -33,8 +33,8 @@ export default [
     service: 'Pay-What-Ya-Want Web Hosting',
     url: '/services/web-hosting',
   },
-  {
-    service: 'UI + UX Design',
-    url: '/services/ui-ux',
-  },
+  // {
+  //   service: 'UI + UX Design',
+  //   url: '/services/ui-ux',
+  // },
 ]

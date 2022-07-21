@@ -17,6 +17,10 @@ function ServicesOverview_SocialMedia() {
             controls={false}
           >
             <source
+              src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.webm'
+              type='video/webm'
+            />
+            <source
               src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.mp4'
               type='video/mp4'
             />

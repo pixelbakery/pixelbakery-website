@@ -15,7 +15,7 @@ function Work_Services() {
               <H2 className='text-blue-dark pr-8'>We&apos;re a specialized team</H2>
             </div>
             <div className='col-span-2'>
-              <Lead color='pink'>we do a few things and we do it well.</Lead>
+              <Lead color='pink'>we do a few things and we do them well.</Lead>
               <Lead color='pink'>
                 we&apos;re like a scalpel; <br /> we operate with precision and intent.
               </Lead>
