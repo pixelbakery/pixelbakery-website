@@ -212,13 +212,15 @@ export default function Careers_Application_Form({ allJobs }) {
               {...register('position' as never, {})}
               className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             >
-              {allJobs.map((job, index) => {
-                return (
-                  <option key={index} value={job.data.title}>
-                    {job.data.title}
-                  </option>
-                )
-              })}
+              {allJobs
+                .filter((job) => job.data.active)
+                .map((job, index) => {
+                  return (
+                    <option key={index} value={job.data.title}>
+                      {job.data.title}
+                    </option>
+                  )
+                })}
               <option value={'other'}>Other</option>
             </select>
           </div>
