@@ -67,31 +67,33 @@ export default Home
 export function getStaticProps() {
   // Get all blog posts:
   const allPosts = postFilePaths
+
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }
     })
     .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .slice(0, 4)
 
   // Get all portfolio pieces:
   const allCaseStudies = caseStudyFilePaths
+
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }
     })
     .sort((cs1, cs2) => (cs1.data.date > cs2.data.date ? -1 : 1))
+    .slice(0, 4)
 
   return { props: { allPosts, allCaseStudies } }
 }

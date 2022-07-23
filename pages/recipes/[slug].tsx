@@ -18,8 +18,6 @@ import Recipes_Posts_Related from '@recipes/Recipes_Post_Related'
 import { useEffect } from 'react'
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
-
-import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 // Custom components/renderers to pass to MDX.
@@ -114,7 +112,7 @@ export const getStaticProps = async ({ params }) => {
   // RELEVANT POSTS
   const allPosts = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-    const { content, data } = matter(source)
+    const { data } = matter(source)
 
     return {
       data,

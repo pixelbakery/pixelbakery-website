@@ -114,10 +114,9 @@ export function getStaticProps() {
   const allJobs = jobFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(JOBS_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }

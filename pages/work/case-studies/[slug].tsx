@@ -18,7 +18,6 @@ import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
-import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
 
@@ -75,7 +74,6 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
     InnerWrapper: InnerWrapper,
     h2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     CaseStudiesTags: () => <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />,
-    Head,
   }
   return (
     <Main>

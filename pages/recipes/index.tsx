@@ -142,10 +142,9 @@ export function getStaticProps() {
   const allPosts = postFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }

@@ -10,7 +10,7 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 import Main from '@parts/Main'
 import matter from 'gray-matter'
 import Work_SEO from '@work/Work_SEO'
-import Work_Callout from '@work/Work_Callout'
+const Work_Callout = dynamic(() => import('@work/Work_Callout'))
 
 const Work = ({ allCaseStudies }) => {
   return (
@@ -30,10 +30,9 @@ export function getStaticProps() {
   const allCaseStudies = caseStudyFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }
