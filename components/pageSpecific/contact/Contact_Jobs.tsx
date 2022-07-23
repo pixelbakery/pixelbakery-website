@@ -28,33 +28,6 @@ function Contact_Jobs() {
               chevronDirection={'right'}
             />
           </div>
-
-          <div className=' lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 lg:gap-4'>
-            {/* <Button_Filled
-              center={true}
-              link={'/careers#positions'}
-              text={'get to work'}
-              textColor={'cream'}
-              bgColor={'blue'}
-              chevronDirection={'right'}
-            /> */}
-            {/* <Button_Filled
-              link={'/careers#vendors'}
-              center={true}
-              text={"get to freelancin'"}
-              textColor={'cream'}
-              bgColor={'blue'}
-              chevronDirection={'right'}
-            />
-            <Button_Filled
-              link={'/careers#talent'}
-              center={true}
-              text={"get to actin'"}
-              textColor={'cream'}
-              bgColor={'blue'}
-              chevronDirection={'right'}
-            />*/}
-          </div>
         </div>
       </InnerWrapper>
     </PageSection>

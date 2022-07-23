@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 function Video({ url, ...props }) {
   return (
     <>
-      <Script src='https://player.vimeo.com/api/player.js' />
+      <Script src='https://player.vimeo.com/api/player.js' strategy='lazyOnload' />
       <div className='markdown-video aspect-16/9'>
         <ReactPlayer
           url={url}
