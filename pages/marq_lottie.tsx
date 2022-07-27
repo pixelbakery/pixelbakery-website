@@ -8,7 +8,7 @@ import Button_Filled from '@parts/Button_Filled'
 function marq_lottie() {
   return (
     <>
-      <PageHeader_VarH />
+      <PageHeader_VarH header={'Marq Lottie Files'} />
       <InnerWrapper id='' color=''>
         <PageSection>
           <div className=' h-full max-h-screen'>
