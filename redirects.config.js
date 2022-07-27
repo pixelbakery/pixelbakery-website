@@ -7,6 +7,11 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/education/tutorials',
+    destination: '/education#madeToOrder',
+    permanent: true,
+  },
+  {
     source: '/social-media-kits',
     destination: '/services/social-media',
     permanent: true,
