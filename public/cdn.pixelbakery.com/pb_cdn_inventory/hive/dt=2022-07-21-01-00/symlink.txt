@@ -1,1 +1,0 @@
-s3://cdn.pixelbakery.com/cdn.pixelbakery.com/pb_cdn_inventory/data/5f469514-2a29-49d3-843a-452be5fda24d.csv.gz
