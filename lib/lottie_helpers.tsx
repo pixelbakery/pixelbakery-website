@@ -73,3 +73,51 @@ export const Lottie_VideoProduction = () => {
     />
   )
 }
+
+export const Lottie_Marq_MarchingSoldiers = () => {
+  const [animationData_Video, setAnimationData] = useState(null)
+  useEffect(() => {
+    import('@data/lottie/Marq_Lottie_MarchingSoldiers.json').then(setAnimationData)
+  }, [])
+
+  if (!animationData_Video)
+    return (
+      <div className='w-full h-full flex flex-col justify-center'>
+        <Lead color='cream' className='self-center text-center'>
+          Loading
+        </Lead>
+      </div>
+    )
+  return (
+    <Lottie
+      animationData={animationData_Video}
+      loop
+      play
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+    />
+  )
+}
+
+export const Lottie_Marq_FloatingUnicorn = () => {
+  const [animationData_Video, setAnimationData] = useState(null)
+  useEffect(() => {
+    import('@data/lottie/Marq_Lottie_FloatingUnicorn.json').then(setAnimationData)
+  }, [])
+
+  if (!animationData_Video)
+    return (
+      <div className='w-full h-full flex flex-col justify-center'>
+        <Lead color='cream' className='self-center text-center'>
+          Loading
+        </Lead>
+      </div>
+    )
+  return (
+    <Lottie
+      animationData={animationData_Video}
+      loop
+      play
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+    />
+  )
+}
