@@ -1,15 +1,12 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import ReactPlayer from 'react-player'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
+import { A11y, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
 
 const slides = [
   '/img/case-studies/snacklins/SNACK_Social_0.jpg',
@@ -37,45 +34,6 @@ function CaseStudies_Gallery() {
       </div>
     )
   }
-  //   const [lightboxOpen, setLightboxOpen] = useState(false)
-  //   const [lightboxItem, setLightboxItem] = useState(undefined)
-  //   const lightbox = useRef(null)
-
-  //   function handleLightboxItem(test: string) {
-  //     setLightboxItem(test)
-  //     console.log(test)
-  //     handleLightbox
-  //   }
-  //   function handleLightbox() {
-  //     setLightboxOpen(!lightboxOpen)
-  //   }
-
-  //   useEffect(() => {
-  //     if (!lightboxOpen) {
-  //       document.body.classList.remove('overflow-y-hidden')
-  //       gsap.to(lightbox.current, {
-  //         autoAlpha: 0,
-  //         duration: 1,
-  //       })
-  //     } else {
-  //       gsap.to(lightbox.current, {
-  //         duration: 1,
-  //         autoAlpha: 1,
-  //       })
-  //       document.body.classList.add('overflow-y-hidden')
-  //     }
-  //   }, [lightboxOpen])
-
-  //   const Lightbox = () => {
-  //     return (
-  //       <div
-  //         ref={lightbox}
-  //         onClick={handleLightbox}
-  //         className='opacity-0 bg-wine bg-opacity-60 fixed z-50 top-0 left-0 w-full h-full'
-  //       ></div>
-  //     )
-  //   }
-
   const Carousel = () => {
     return (
       <Swiper
@@ -107,7 +65,7 @@ function CaseStudies_Gallery() {
         // className='lg:hidden'
       >
         <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-          <div className='w-full h-full'>
+          <div className='w-full h-full aspect-w-1 aspect-h-1 '>
             <video
               className='w-full h-full'
               playsInline={true}
@@ -115,7 +73,7 @@ function CaseStudies_Gallery() {
               loop
               autoPlay={true}
               controls={false}
-              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.webm' />
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_11.mp4' />
@@ -123,13 +81,13 @@ function CaseStudies_Gallery() {
           </div>
         </SwiperSlide>
         <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-          <div className='w-full h-full'>
+          <div className='w-full h-full aspect-w-1 aspect-h-1 '>
             <video
               className='w-full h-full'
               playsInline={true}
               muted={false}
               controls
-              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_12.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_12.webm' />
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_12.mp4' />
@@ -137,7 +95,7 @@ function CaseStudies_Gallery() {
           </div>
         </SwiperSlide>
         <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-          <div className='w-full h-full'>
+          <div className='w-full h-full aspect-w-1 aspect-h-1 '>
             <video
               className='w-full h-full'
               playsInline={true}
@@ -145,7 +103,7 @@ function CaseStudies_Gallery() {
               autoPlay={true}
               muted={true}
               controls={false}
-              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.webm' />
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_10.mp4' />
@@ -161,7 +119,7 @@ function CaseStudies_Gallery() {
           )
         })}
         <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-          <div className='w-full h-full'>
+          <div className='w-full h-full aspect-w-1 aspect-h-1 '>
             <video
               className='w-full h-full'
               playsInline={true}
@@ -169,7 +127,7 @@ function CaseStudies_Gallery() {
               autoPlay={true}
               loop
               controls={false}
-              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.webm' />
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_9.mp4' />
@@ -177,7 +135,7 @@ function CaseStudies_Gallery() {
           </div>
         </SwiperSlide>
         <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-          <div className='w-full h-full'>
+          <div className='w-full h-full aspect-w-1 aspect-h-1 '>
             <video
               className='w-full h-full'
               playsInline={true}
@@ -185,7 +143,7 @@ function CaseStudies_Gallery() {
               muted={true}
               autoPlay={true}
               controls={false}
-              // poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/snacklins_churro_announcement.jpg'
+              poster='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.jpg'
             >
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.webm' />
               <source src='https://cdn.pixelbakery.com/img/case-studies/snacklins/SNACK_Social_8.mp4' />

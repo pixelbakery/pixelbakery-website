@@ -26,7 +26,7 @@ import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
 import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
 import CaseStudies_Gallery from '@caseStudies/CaseStudies_Gallery'
 import CaseStudies_Gallery_Alt from '@caseStudies/CaseStudies_Gallery_Alt'
-import CaseStudies_Header_Alt from '@caseStudies/CaseStudies_Header_Alt'
+import CaseStudies_Header_NoVideo from '@caseStudies/CaseStudies_Header_NoVideo'
 import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 import InnerWrapper from '@parts/InnerWrapper'
@@ -44,7 +44,7 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
     CaseStudies_TikTok: CaseStudies_TikTok,
     CaseStudies_Gallery: CaseStudies_Gallery,
     CaseStudies_Gallery_Alt: CaseStudies_Gallery_Alt,
-    CaseStudies_Header_Alt: CaseStudies_Header_Alt,
+    CaseStudies_Header_NoVideo: CaseStudies_Header_NoVideo,
     CaseStudies_ProjectIntro_Alt: CaseStudies_ProjectIntro_Alt,
     CaseStudies_Gallery_Email: CaseStudies_Gallery_Email,
     // PageSection: ({children}) => <PageSection children={children} />,

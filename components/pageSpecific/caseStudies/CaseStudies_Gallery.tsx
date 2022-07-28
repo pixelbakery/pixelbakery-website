@@ -27,12 +27,14 @@ const divStyle = {
 function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
-      <div className='h-full flex flex-col justify-center'>
+      <div className='h-full aspect-w-1 aspect-h-1 flex flex-col justify-center'>
         <Image
           layout='fill'
           objectFit='cover'
-          alt={'Snacklins social posts that Pixel Bakery designed and animated'}
+          alt={'Snacklins food and packaging photography that Pixel Bakery produced'}
           src={slide}
+          placeholder={'blur'}
+          blurDataURL={slide}
           className='block w-full  self-center object-contain '
         />
       </div>
@@ -85,7 +87,7 @@ function CaseStudies_Gallery() {
           <div className='2xl:hidden'>
             <Carousel />
           </div>
-          <div className='hidden 2xl:grid grid-cols-2 gap-x-6'>
+          <div className='hidden lg:grid grid-cols-2 gap-x-6'>
             {/* Left Images */}
             <div className='col-span-1'>
               <div className='grid grid-cols-2 gap-6'>

@@ -6,14 +6,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
+import { A11y, Keyboard } from 'swiper'
 import H3 from '@typography/H3'
 import Image from 'next/image'
 
 const slides = [
   {
     header: 'the client',
-    body: ' History says that’s how SNACKLINS vegan plant crisps were created. And soon after, they got their big break by making a deal with Mark Cuban on Shark Tank.',
+    body: 'History says that’s how SNACKLINS vegan plant crisps were created. And soon after, they got their big break by making a deal with Mark Cuban on Shark Tank. Can’t resist the crisps.',
   },
   {
     header: 'How it Started',
@@ -37,7 +37,22 @@ function CaseStudies_ProjectIntro_Alt() {
     return (
       <Swiper
         spaceBetween={25}
-        slidesPerView={1.15}
+        slidesPerView={'auto'}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.25,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 1.25,
+            spaceBetween: 25,
+          },
+
+          1024: {
+            slidesPerView: 3.25,
+            spaceBetween: 35,
+          },
+        }}
         keyboard={{
           enabled: true,
         }}
@@ -48,7 +63,7 @@ function CaseStudies_ProjectIntro_Alt() {
           return (
             <SwiperSlide
               key={index}
-              className='h-full self-stretch border-blue rounded-2xl border-2 hover:cursor-grab p-6'
+              className='h-full self-stretch flex border-blue rounded-2xl border-2 hover:cursor-grab p-6 max-w-md'
             >
               <SetSlide slide={slide} />
             </SwiperSlide>
@@ -59,20 +74,6 @@ function CaseStudies_ProjectIntro_Alt() {
   }
   return (
     <section className='my-5 lg:-my-5 py-0 lg:py-0  lg:overflow-visible z-10  flex relative'>
-      <div className='hidden lg:block lg:w-1/4 relative mx-auto'>
-        <div className='absolute  -bottom-5  -top-40 xl:top-0 -mb-20 -mt-20 origin-bottom right-0 left-0'>
-          <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100'>
-            <Image
-              src={'/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png'}
-              layout='fill'
-              objectFit='contain'
-              width={1568}
-              height={4337}
-              className={'relative origin-bottom bottom-0 h-full object-contain'}
-            />
-          </div>
-        </div>
-      </div>
       {/* <div className=' left-0 bg-yellow   h-full w-auto '>
         <div className='relative w-full left-0  right-0 -mt-20 mb-0 bottom-20 top-0 origin-bottom 2xl:h-[120%] h-full overflow-visible'>
           <Image
@@ -114,6 +115,20 @@ function CaseStudies_ProjectIntro_Alt() {
             </div>
           </div>
         </InnerWrapper>
+      </div>
+      <div className='hidden lg:block lg:w-1/4 relative mx-auto'>
+        <div className='absolute  -bottom-5  -top-40 xl:top-0 -mb-20 -mt-20 origin-bottom right-0 left-0'>
+          <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100'>
+            <Image
+              src={'/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png'}
+              layout='fill'
+              objectFit='contain'
+              width={1568}
+              height={4337}
+              className={'relative origin-bottom bottom-0 h-full object-contain'}
+            />
+          </div>
+        </div>
       </div>
     </section>
   )

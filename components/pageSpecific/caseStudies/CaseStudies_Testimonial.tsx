@@ -15,9 +15,9 @@ function CaseStudies_Testimonial() {
               “Pixel Bakery has been an incredible partners of ours for nearly 2 years. From
               photography, to graphic design, to creative direction they helped bring the SNACKLINS
               brand to life. They are flexible to our needs, super organized and responsive, and
-              deliver really great results. I think the thing that I&amps;m most impressed by is
-              their ability to learn our brand and get better over time. That&amps;s the best thing
-              you can ask for in a partner.”
+              deliver really great results. I think the thing that I'm most impressed by is their
+              ability to learn our brand and get better over time. That's the best thing you can ask
+              for in a partner.”
             </p>
             <div className='flex gap-x-4'>
               <div className='w-16'>
@@ -44,11 +44,11 @@ function CaseStudies_Testimonial() {
           <div className='col-span-5 md:col-span-2 xl:col-span-2 order-first xl:order-last block md:block 2xl:block'>
             <div className='w-full aspect-h-1 aspect-w-1'>
               <Image
-                src={'/img/case-studies/snacklins/SNACK_01.png'}
+                src={'/img/case-studies/snacklins/SNACK_01.jpg'}
                 layout='fill'
                 objectFit='cover'
                 placeholder={'blur'}
-                blurDataURL={'/img/case-studies/snacklins/SNACK_01.png'}
+                blurDataURL={'/img/case-studies/snacklins/SNACK_01.jpg'}
                 alt='Food Photography produced by Pixel Bakery for SNACKLINS'
               />
             </div>

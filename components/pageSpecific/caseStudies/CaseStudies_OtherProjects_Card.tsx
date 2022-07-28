@@ -23,7 +23,7 @@ function CaseStudies_OtherProjects_Card({ project }) {
           )}
         >
           <Image
-            alt={project.data.client + ' ' + project.data.name + ' ' + project.data.tags[0]}
+            alt={project.data.client + ' ' + project.data.title + ' ' + project.data.tags[0]}
             src={`/img/work/${project.data.vimeoPreview}.jpg`}
             layout='fill'
             objectFit='cover'
