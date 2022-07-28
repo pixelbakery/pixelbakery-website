@@ -14,7 +14,7 @@ import VimeoPlayer from '@parts/VimeoPlayer'
 import Button_Filled from '@parts/Button_Filled'
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
-import { ArticleJsonLd, NextSeo } from 'next-seo'
+import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import PostHeader from '@education/Education_PostHeader'
 import Pill from '@parts/Pill'
 import H2 from '@typography/H2'
@@ -74,13 +74,26 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
         }}
       />
       <ArticleJsonLd
-        type='Blog'
         url={`https://pixelbakery.com/education/tutorials/${slug}`}
         title={`${frontMatter.title}`}
         images={[`${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={`${frontMatter.author}`}
         description={`${frontMatter.excerpt}`}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Education',
+            item: 'https://pixelbakery.com/education',
+          },
+          {
+            position: 2,
+            name: `${frontMatter.title}`,
+            item: `https://pixelbakery.com/education/${slug}`,
+          },
+        ]}
       />
 
       <PostHeader
