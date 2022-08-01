@@ -16,6 +16,7 @@ const client = new QueryClient()
 import * as gtag from '../lib/gtag'
 import NextSEO_LocalBusiness from '@parts/NextSEO_LocalBusiness'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
+import { gtmVirtualPageView } from '../lib/gtag'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
@@ -69,6 +70,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Figure out which layout to use and build the page
   const router = useRouter()
   const path = router.pathname
+  useEffect(() => {
+    const mainDataLayer = {
+      pageTypeName: pageProps.page || null,
+      url: router.pathname,
+    }
+
+    gtmVirtualPageView(mainDataLayer)
+  }, [pageProps])
 
   useEffect(() => {
     // This pageview only triggers the first time (it's important for Pixel to have real information)
@@ -91,6 +100,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <NextSEO_LocalBusiness />
       <NextSEO_DefaultSEO />
+      <Script id='google-tag-manager' strategy='afterInteractive'>
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC8M8GG');`}
+      </Script>
       {/* Global Site Code Pixel - Facebook Pixel */}
       <Script
         id='fb-pixel'
@@ -111,12 +127,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
-        strategy='lazyOnload'
+        strategy='afterInteractive'
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
         id='gtag-init'
-        strategy='lazyOnload'
+        strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];

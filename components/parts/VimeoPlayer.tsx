@@ -8,9 +8,14 @@ function Video({ url, ...props }) {
       {props.title != '' ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
       <Vimeo
         video={props.videoID as string}
-        autoplay={false}
-        showPortrait={true}
+        muted={props.muted ? props.muted : false}
+        playsInline={props.playsInline ? props.playsInline : true}
+        autoplay={props.autoplay ? props.autoplay : false}
+        showPortrait={props.showPortrait ? props.showPortrait : true}
         responsive={true}
+        controls={props.controls ? props.controls : true}
+        loop={props.loop ? props.loop : false}
+        background={props.background ? props.background : false}
       />
     </div>
   )

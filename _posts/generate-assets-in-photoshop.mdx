@@ -122,10 +122,10 @@ There are three big things that we do:
 
 3\. The extension. What you put after the filename is what determines the image type and image quality. Again, there's a thousand options here and I'm not going to cover them all. PNGs and GIFs have slightly different syntax than JPGs, but the logic is the same. Examples:
 
-- Headshot.jpg100% This will generate a JPG image at 100% quality.
-- Headshot.jpg50% You guessed it: a JPG at 50% quality.
-- 200% 16×9/2x/Headshot@2x.jpg100% A little trickier: this generates an image that is twice as large, puts it in a subfolder named "2x", and appends the identifier "@2x" to the end of the image name. This is great for [developing responsive websites](https://css-tricks.com/planning-for-responsive-images/)that are designed to be retina-ready. This allows a website to only load the @2x version of the image if it detects a huge screen or retina display is being used.
-- 200% 16×9/2x/Headshot@2x.jpg100% 16×9/Headshot.jpg100% This one is a bit nuts to look at, but it's pretty straight forward. It's simply combining the first and the third bullet points and generating both.
+- `Headshot.jpg100%` This will generate a JPG image at 100% quality.
+- `Headshot.jpg50%` You guessed it: a JPG at 50% quality.
+- `200% 16×9/2x/Headshot@2x.jpg100%` A little trickier: this generates an image that is twice as large, puts it in a subfolder named "2x", and appends the identifier "@2x" to the end of the image name. This is great for [developing responsive websites](https://css-tricks.com/planning-for-responsive-images/) that are designed to be retina-ready. This allows a website to only load the @2x version of the image if it detects a huge screen or retina display is being used.
+- `200% 16×9/2x/Headshot@2x.jpg100% 16×9/Headshot.jpg100%` This one is a bit nuts to look at, but it's pretty straight forward. It's simply combining the first and the third bullet points and generating both.
 
 Advanced bonus tip: if you check out that aforementioned adobe help link, there's a section that will show you how to set up some defaults for Generate Assets in your Photoshop file. This lets you simplify a few of the variables (i.g only needing to type .jpg vs .jpg100%).
 

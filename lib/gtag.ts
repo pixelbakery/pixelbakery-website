@@ -16,3 +16,11 @@ export const event = ({ action, category, label, value }) => {
   })
 }
 //pulled from https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics
+
+//morganfeeney.com/how-to/integrate-google-tag-manager-with-next-js
+export const gtmVirtualPageView = (rest) => {
+  window.dataLayer?.push({
+    event: 'VirtualPageView',
+    ...rest,
+  })
+}

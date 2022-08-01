@@ -63,7 +63,8 @@ class MyDocument extends Document {
               },
             ]}
           />
-
+        </Head>
+        <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
           <noscript>
             <img
               height='1'
@@ -73,8 +74,14 @@ class MyDocument extends Document {
               src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
             />
           </noscript>
-        </Head>
-        <body className='px-4 bg-egg max-w-screen overflow-x-hidden'>
+          <noscript>
+            <iframe
+              src='https://www.googletagmanager.com/ns.html?id=GTM-PC8M8GG'
+              height='0'
+              width='0'
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
           <Main />
           <NextScript />
         </body>
