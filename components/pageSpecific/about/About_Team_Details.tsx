@@ -5,7 +5,6 @@ import Lead from '@typography/Lead'
 
 function About_Team_Details({ frontMatter }) {
   const details = frontMatter.details
-
   return (
     <PageSection>
       <InnerWrapper>

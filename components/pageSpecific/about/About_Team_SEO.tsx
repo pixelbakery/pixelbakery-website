@@ -1,6 +1,29 @@
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
+import PropTypes from 'prop-types'
+
+About_Team_SEO.propTypes = {
+  video: PropTypes.string,
+  client: PropTypes.string,
+}
+
 function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
+  const objectArray = Object.entries(frontMatter.details)
+  let details = [] as any
+  objectArray.forEach(([key, value]) => {
+    details[Object.keys(value).toString()] = Object.values(value).toString()
+  })
+
+  let desc = `The one and only, fantastically amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
+  if (details.personalAesthetic != undefined) {
+    desc = `${desc} ${details.personalAesthetic}`
+  }
+  desc = `${desc} ${frontMatter.title}`
+
+  if (details.leastFavoriteThing != undefined)
+    desc += `, and they really hate ${details.leastFavoriteThing}`
+  desc += '.'
+  console.log(desc)
   return (
     <>
       <BreadcrumbJsonLd
@@ -19,10 +42,10 @@ function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
       />
       <NextSeo
         title={`${frontMatter.name} – ${frontMatter.title} | Team`}
-        description={`${frontMatter.content}`}
+        description={desc}
         openGraph={{
           title: `${frontMatter.name} – ${frontMatter.title}`,
-          description: `${frontMatter.content}`,
+          description: `${desc}`,
           url: `https://pixelbakery.com/about/${frontMatter.slug}`,
           type: 'profile',
           profile: {

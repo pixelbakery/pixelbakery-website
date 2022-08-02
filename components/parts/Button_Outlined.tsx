@@ -2,8 +2,6 @@ import Link from 'next/link'
 import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
-import PropTypes from 'prop-types'
-
 type Props = {
   text: string
   link: string
