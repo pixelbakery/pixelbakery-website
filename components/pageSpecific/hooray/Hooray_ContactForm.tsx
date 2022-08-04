@@ -94,11 +94,11 @@ function Surprise_ContactForm() {
           <option className={'text-wine font-medium text-sm xl:text-xl'} value='' disabled selected>
             Shirt Size
           </option>
-          <option className={'text-wine font-medium text-sm xl:text-xl'} value='SM'>
-            SM
-          </option>
           <option className={'text-wine font-medium text-sm xl:text-xl'} value='XS'>
             XS
+          </option>
+          <option className={'text-wine font-medium text-sm xl:text-xl'} value='SM'>
+            SM
           </option>
           <option className={'text-wine font-medium text-sm xl:text-xl'} value='MD'>
             MD
