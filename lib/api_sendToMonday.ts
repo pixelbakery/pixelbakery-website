@@ -8,6 +8,7 @@ const MondayBoard_Croissants = process.env.NEXT_PUBLIC_MONDAY_BOARD_CROISSANT
 const MondayBoard_Tutorials = process.env.NEXT_PUBLIC_MONDAY_BOARD_TUTORIALS
 const MondayBoard_Logos = process.env.NEXT_PUBLIC_MONDAY_BOARD_LOGOS
 const MondayBoard_Contact = process.env.NEXT_PUBLIC_MONDAY_BOARD_CONTACTFORM
+const MondayBoard_InstagramMerchCampaign = process.env.NEXT_PUBLIC_MONDAY_BOARD_INSTAMERCHCAMPAIGN
 
 const MondayAuth = process.env.NEXT_PUBLIC_MONDAY_AUTH
 
@@ -204,4 +205,34 @@ export async function SendToMonday_Tutorials(data) {
       variables: JSON.stringify(vars),
     }),
   }).then((res) => res.json())
+}
+
+// 2022 Instagram Merch Campaign
+
+export async function SendToMonday_InstagramMerchCampaign(data) {
+  const query5 = `mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_InstagramMerchCampaign}, item_name:$name, column_values:$columnVals) { id } }`
+  const vars = {
+    name: data.name,
+    columnVals: JSON.stringify({
+      text: data.address,
+      dropdown5: data.size,
+      people0: data.instagram,
+      long_text: { text: data.message },
+      checkbox: { checked: data.check.toString() },
+    }),
+  }
+  fetch('https://api.monday.com/v2', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `${MondayAuth}`,
+    },
+    body: JSON.stringify({
+      query: query5,
+      variables: JSON.stringify(vars),
+    }),
+  }).then((res) => {
+    res.json()
+    console.log(res.json())
+  })
 }
