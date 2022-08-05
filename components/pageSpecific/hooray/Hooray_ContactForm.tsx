@@ -89,7 +89,8 @@ function Surprise_ContactForm() {
         {/* shirt size */}
         <select
           {...register('size' as never, {})}
-          className='col-span-1 border-0 rounded-md  text-sm xl:text-xl text-wine font-medium  px-6 cursor-pointer focus:ring-2 focus:border-blue  focus:ring-blue'
+          className='col-span-3 md:col-span-1 border-0 rounded-xl py-4 text-sm xl:text-xl text-wine-400 font-medium  px-6 cursor-pointer focus:ring-2 focus:border-blue  focus:ring-blue'
+          placeholder='test'
         >
           <option className={'text-wine font-medium text-sm xl:text-xl'} value='' disabled selected>
             Shirt Size
@@ -115,7 +116,7 @@ function Surprise_ContactForm() {
         </select>
         {/* address */}
         <input
-          className='col-span-2  font-medium py-4  px-8  rounded-xl border-0   text-sm xl:text-xl text-wine cursor-text focus:ring-2 focus:border-blue  focus:ring-blue'
+          className='col-span-3 md:col-span-2  font-medium py-4  px-8  rounded-xl border-0   text-sm xl:text-xl text-wine cursor-text focus:ring-2 focus:border-blue  focus:ring-blue'
           type='text'
           placeholder='1234 Baller Rd, Apt #420, Thatshitisgasville, 68503'
           {...register('address', { required: true })}
@@ -168,7 +169,14 @@ function Surprise_ContactForm() {
           Boom. Done. Thanks again for being a great human 🙂
         </Lead>
         <p className='text-white'>Here&apos;s a video of some cute capivaras vibing in Japan. </p>
-        <ReactPlayer url='https://www.youtube.com/watch?v=wCa08BwOOS4' />
+        <div className='w-full aspect-w-16 aspect-h-9'>
+          <ReactPlayer
+            playsinline
+            width='100%'
+            height='100%'
+            url='https://www.youtube.com/watch?v=wCa08BwOOS4'
+          />
+        </div>
       </div>
     </>
   )

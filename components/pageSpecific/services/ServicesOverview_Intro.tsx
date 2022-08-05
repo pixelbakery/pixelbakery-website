@@ -66,10 +66,10 @@ function ServicesOverview_Intro() {
           />
         </div>
         <div className=''>
-          <H3 className='text-blue-dark mt-10 mb-5 text-center mx-auto'>
+          <H3 className='text-blue-dark mt-10 mb-5 pb-2 text-center mx-auto'>
             Explore some of our talents
           </H3>
-          <div className='flex justify-center gap-x-4 gap-y-6 flex-wrap max-w-2xl mx-auto'>
+          <div className='flex justify-center gap-x-4 gap-y-6 flex-wrap max-w-2xl mx-auto pt-4'>
             {talents.map((talent) => {
               return (
                 <Link href={talent.link} passHref key={talent.link}>
