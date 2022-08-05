@@ -23,7 +23,6 @@ function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
   if (details.leastFavoriteThing != undefined)
     desc += `, and they really hate ${details.leastFavoriteThing}`
   desc += '.'
-  console.log(desc)
   return (
     <>
       <BreadcrumbJsonLd

@@ -1,15 +1,17 @@
+import Lead from '@typography/Lead'
 import Script from 'next/script'
 import ReactPlayer from 'react-player'
 
 function Video({ url, ...props }) {
   return (
-    <>
+    <div>
       <Script src='https://player.vimeo.com/api/player.js' strategy='lazyOnload' />
+      {props.title != '' ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
       <div className='markdown-video aspect-16/9'>
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}
-          poster={`https://cdn.pixelbakery.com/${props.poster}`}
+          poster={`https://cdn.pixelbakery.com${props.poster}`}
           width={'100%'}
           height={'100%'}
           loop={props.loop ? props.loop : false}
@@ -26,7 +28,7 @@ function Video({ url, ...props }) {
           ''
         )}
       </div>
-    </>
+    </div>
   )
 }
 export default Video

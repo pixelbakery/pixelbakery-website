@@ -54,16 +54,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     switch (true) {
       case path === '/':
         return LayoutHambOnly()
-        break
+
       case path === '/email-generator-results*':
         return LayoutBlank()
-        break
+
       case path.startsWith('/store'):
         return LayoutWithoutNav()
-        break
+
       default:
         return LayoutWithNav()
-        break
     }
   }
 

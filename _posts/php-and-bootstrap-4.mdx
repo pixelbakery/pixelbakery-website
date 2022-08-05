@@ -11,8 +11,6 @@ author:
   name: Jordan Lambrecht
   picture: /img/placeholder01.png
   profileURL: '/'
-ogImage:
-  url: /img/blog/tonybanana-1.jpg
 ---
 
 Hello hello. Here's a brief demo on how to integrate a php workflow with Bootstrap 4. Bootstrap 4 is a great framework to build off of because 1) a lot of the heavy lifting is already done for us, 2) it uses a great, responsive grid system, and 3) it's pretty dang fast. We're going to use PHP to make it even faster. Just keep in mind, we need to use this in a server environment. You'll either need to push files live via ftp or use a local development server like [MAMP](https://www.mamp.info/de/) or [WAMP](http://www.wampserver.com/en/).
@@ -43,36 +41,34 @@ This is where all the opening stuff will happen in your website. This is where y
 
 Before we start, we want to be able to tell the navigation file what page we're currently viewing. We can set the name of each page by placing the following line of code in every page file (index.php, about.php, etc).
 
-> &amp;lt;?php $page = "home"; ?&amp;gt;
+`<?php $page = "home" />`
 
 This creates a variable $page and sets it to "home".
 
 Now, inside our nav.php file, we can create our menu system like we would any other normal HTML document. The only thing that we'll really do differently is with our active menu styling. We want to visually tell the user which menu item is currently active and style that in our CSS differently than the other menu items. Normally we would do this on a page by page basis, but since we're operating out of one PHP file for the entire site's navigation, we're going to have to call a php function. This is where that $page variable comes into play.
 
-> &amp;lt;div class="collapse navbar-collapse" id="navbarResponsive"&amp;gt;
-> &amp;lt;ul class="navbar-nav ml-auto"&amp;gt;
-> &amp;lt;li class="nav-item &amp;gt;&amp;lt;?php echo ($page == "home" ? "active" : "")?&amp;gt; "&amp;amp;amp;amp;amp;amp;gt;
-&amp;amp;amp;amp;amp;amp;lt;a class="nav-link" href="/"
-&amp;amp;amp;amp;amp;amp;gt;Home&amp;amp;amp;amp;amp;amp;lt;/a&amp;
-amp;amp;amp;amp;amp;gt;
-&amp;amp;amp;amp;amp;amp;lt;/li&amp;amp;amp;amp;amp;amp;gt;
-&amp;amp;amp;amp;amp;amp;lt;li class="nav-item &amp;amp;amp;amp;amp;amp;lt;?php echo ($page == "about" ? "active" : "")?&amp;amp;amp;amp;amp;amp;gt;
-> "&amp;amp;amp;amp;amp;amp;gt;
-> &amp;amp;amp;amp;amp;amp;lt;a class="nav-link"
-> href="/about.php"&amp;amp;amp;amp;amp;amp;gt;About&amp;
-> amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;gt;
-> &lt;/li&gt;
-> &lt;/ul&gt;
-> &lt;/div&gt;
+```
+ <div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item >
+      <?php echo ($page == "home" ? "active" : "")?> 
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item <?php echo ($page == "about" ? "active" : "")?>
+    ">
+      <a class="nav-link" href="/about.php">About</a>
+    </li>
+  </ul>
+</div>
+ ```
 
 This function says "If the current $page is set to "home", add the class .active to this li. Pretty straight forward. Now we can customize the .active class in our stylesheet.css.
 
-> .active{
-
+```
+.active{
     border-bottom: 1px white dotted !important;
-
 }
-
+```
 ## Creating a Contact Section
 
 Okay, so let's say we have a section that we want to use repeatedly throughout the site. For this example, let's add a Contact Us section to our site. We want the contact section on both the home page and the about page, so it makes sense to create a new contactSection.php and have our pages reference that file. That way, if we want to swap out a phone number or form field, we can just do it once in the contactSection.php instead of editing all of our pages.
@@ -91,12 +87,13 @@ We're going to next the actual contact form in it's own php file to save space. 
 
 Another neat thing we can do since we're using php is make sure our copyright is automatically always the correct year. This avoids tackiness.
 
-> &amp;amp;amp;amp;amp;amp;lt;footer&amp;amp;amp;amp;amp;amp;gt;
-> &amp;amp;amp;amp;amp;amp;lt;div class="container text-center"&amp;amp;amp;amp;amp;amp;gt;
-> &amp;amp;amp;amp;amp;amp;lt;p&amp;amp;amp;amp;amp;amp;gt;Copyright &amp;amp;amp;amp;amp;amp;amp;copy; Noise &amp;amp;amp;amp;amp;amp;amp; Grain &amp;amp;amp;amp;amp;amp;lt;?php echo date("Y"); ?&amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;lt;/p&amp;amp;amp;amp;
-> amp;amp;gt;
-> &amp;amp;amp;amp;amp;amp;lt;/div&amp;amp;amp;amp;amp;amp;gt;
-> &amp;amp;amp;amp;amp;amp;lt;/footer&amp;amp;amp;amp;amp;amp;gt;
+``` 
+<footer>
+  <div class="container text-center">
+    <p>Copyright © Noise and Grain <?php echo date("Y"); ?> </p>
+  </div>
+ </footer>
+ ```
 
 ### Conclusion
 
@@ -116,14 +113,16 @@ We need to create / modify something called a .htaccess file. This is a configur
 
 2\. Drop the following code into the file:
 
-> RewriteEngine On
-> RewriteCond %{REQUEST_FILENAME} !-f
-> RewriteRule ^([^/]+)/$ $1.php
+```
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.php
 RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
-> RewriteRule (.\*)$ /$1/ [R=301,L]
+RewriteRule (.\*)$ /$1/ [R=301,L]
+```
 
 3\. Test it. This code should redirect website.com/link.php to website.com/link/
 

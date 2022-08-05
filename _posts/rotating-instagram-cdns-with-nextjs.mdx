@@ -24,17 +24,12 @@ There doesn't seem to be a lot out there focused on a workaround, so here's what
 
 In your nextJS.config.js file:
 
->images: { domains: 
-[ 'scontent-akl1-1.cdninstagram.com', 
-], 
-},
-
+`images: { domains: [ 'scontent-akl1-1.cdninstagram.com', ], }`
 Out of the box, this isn't enough. It might work for a day, but it'll expire.
 
 When we call the image, we can replace the subdomain URL:
 
-><*Image* *layout*='fill' *objectFit*='cover' *className*='instagram-image' *key*={*index*} *src*={*item*.media_url.replace(/^[^.]*/, 'https://scontent-akl1-1')} *alt*={*item*.caption} *quality*={33}/>
-
+`<Image layout='fill' objectFit='cover' className='instagram-image' key={index} src={item.media_url.replace(/^[^.]/, 'https://scontent-akl1-1')} alt={item.caption} quality={33}/>`
 And it works!
 
 ## Conclusion

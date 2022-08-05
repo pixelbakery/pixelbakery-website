@@ -62,10 +62,11 @@ function EmailGenerator() {
       <PageHeader_VarH header='Email Generator' subheader={'ooh, shiney.'} />
       <PageSection className='mb-32'>
         <InnerWrapper>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12'>
+          Jordan broke this page. IOU 😉
+          {/* <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12'>
             <EmailGenerator_Input setUser={setUser} />
             <EmailGenerator_Result user={user} />
-          </div>
+          </div> */}
         </InnerWrapper>
       </PageSection>
     </Main>

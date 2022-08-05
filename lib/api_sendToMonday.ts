@@ -38,9 +38,8 @@ export async function SendToMonday_JobApplication(data) {
       query: query,
       variables: JSON.stringify(vars),
     }),
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(JSON.stringify(res, null, 2)))
+  }).then((res) => res.json())
+  // .then((res) => console.log(JSON.stringify(res, null, 2)))
 }
 
 //Job Shadow
@@ -231,8 +230,5 @@ export async function SendToMonday_InstagramMerchCampaign(data) {
       query: query5,
       variables: JSON.stringify(vars),
     }),
-  }).then((res) => {
-    res.json()
-    console.log(res.json())
-  })
+  }).then((res) => res.json())
 }
