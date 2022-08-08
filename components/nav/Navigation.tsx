@@ -37,7 +37,7 @@ export default function Navbar() {
   const esign = useRef(null)
   const udio = useRef(null)
 
-  const el = useRef()
+  const el = useRef(null)
   const q = gsap.utils.selector(el)
   //logo hover
 
@@ -53,7 +53,9 @@ export default function Navbar() {
   //scrolly stuff
   useEffect(() => {
     let boxes = [box1.current, box2.current, box3.current, hamRef.current]
-
+    gsap.to(el.current, {
+      autoAlpha: 1,
+    })
     gsap.set(logo.current, { y: -140, scale: 0.8 })
     gsap.set(logoWrapper.current, { height: 80, width: 300, ease: 'back.inOut' })
     gsap.set(line2.current, { scale: 0.75, x: -26, y: -12, duration: 0.25 })
@@ -116,7 +118,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div ref={el} className={'z-40'}>
+      <div ref={el} className={'z-40 opacity-0'}>
         <div className='navItem origin-top-left ml-8 mt-8 fixed top-0 left-0 z-40 '>
           <div
             ref={logo}
