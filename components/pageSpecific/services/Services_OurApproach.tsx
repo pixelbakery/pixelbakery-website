@@ -18,7 +18,7 @@ function Services_OurApproach() {
             <p className='text-cream font-semibold text-xl max-w-lg'>
               Our method is to represent your brand in the most{' '}
               <Link href={'/recipes/why-authenticity-in-advertising-matters'} passHref>
-                <a className='text-blue-dark'>authentic and relatable</a>
+                <a className='text-blue-dark duration-200'>authentic and relatable</a>
               </Link>{' '}
               way possible.
             </p>

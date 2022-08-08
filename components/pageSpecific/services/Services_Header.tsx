@@ -75,19 +75,26 @@ function Services_Header({
   }
 
   return (
-    <section className='lander-education my-4  overflow-hidden'>
-      <div className=' grid gap-y-16 md:gap-3 grid-cols-1 lg:grid-cols-2 h-full'>
-        <div className={cn(`relative col-span-1 h-[50vh] lg:h-full`, `bg-${bgColor}`)}>
+    <section className='lander-services my-4  overflow-hidden lg:max-h-screen'>
+      <div className=' grid gap-y-12 md:gap-3 grid-cols-1 lg:grid-cols-2'>
+        <div
+          className={cn(
+            `overflow-hidden h-[66vh] col-span-1  lg:h-full origin-bottom`,
+            `bg-${bgColor}`,
+          )}
+        >
           <div
-            className={(cn(`relative bg-yellow col-span-1 h-[50vh] lg:h-full`), `bg-${bgColor}`)}
+            className={
+              (cn(` origin-bottom bg-yellow col-span-1 h-[33vh] lg:h-full`), `bg-${bgColor}`)
+            }
           >
             {isLottie ? <LottieAnimation /> : <VideoContent />}
           </div>
         </div>
-        <div className='col-span-1 flex flex-col justify-start py-6 px-10 '>
-          <div className='pt-20 md:pt-32 xl:pt-40 max-w-lg 4xl:max-w-3xl mx-auto'>
+        <div className=' col-span-1 flex flex-col justify-start py-6 px-10 '>
+          <div className='lg:pt-32 xl:pt-40 max-w-lg 4xl:max-w-3xl mx-auto'>
             <BackLink text={'Services'} href={'/services'} />
-            <H1 className='mt-0 pt-0 mb-0 2xl:mb-2 text-blue-dark'>{serviceName}</H1>
+            <H1 className='mt-2 pt-0 mb-4 2xl:mb-2 text-blue-dark'>{serviceName}</H1>
             <Lead color='peach'>{`${subheader}`}</Lead>
             {children}
           </div>

@@ -1,7 +1,5 @@
 import Services_Subservices_Box from '@services/Services_Subservices_Box'
 import subservice from '@data/services-animation'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2AndLead from '@typography/H2AndLead'
@@ -10,8 +8,8 @@ function Services_Subservices() {
   return (
     <PageSection>
       <InnerWrapper>
-        <div className='flex flex-col mx-12 gap-y-12'>
-          <div className=' col-span-5 lg:col-span-5 w-full top-0'>
+        <div className='flex flex-col gap-y-12  max-w-lg lg:max-w-full mx-auto'>
+          <div className=' col-span-5  w-full top-0'>
             <div className=' '>
               <H2AndLead
                 headerText={'there’s plenty of ways to butter your bread'}

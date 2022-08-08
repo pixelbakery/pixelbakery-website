@@ -33,7 +33,7 @@ function Services_Modulation() {
   return (
     <PageSection color='pink-light'>
       <InnerWrapper>
-        <div className='grid grid-cols-1 lg:grid-cols-5 gap-x-12'>
+        <div className=' grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-lg lg:max-w-full mx-auto'>
           <div className='col-span-1 lg:col-span-3'>
             <LottieAnimation />
           </div>
@@ -44,7 +44,7 @@ function Services_Modulation() {
               headerColor={'peach'}
               leadColor={'blue-dark'}
             />
-            <p>
+            <p className='mt-8'>
               When we build something, we build it to last. In order for our work to stand the test
               of time, it's important to make sure your campaigns are as far-reaching as possible.
               With that in mind, we produce work that can be 'modulated' into different time formats

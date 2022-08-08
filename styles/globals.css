@@ -198,7 +198,12 @@
   min-height: 66vh;
   max-height: calc(100vh - 2rem) !important;
 }
-
+@media (min-width: 1024px) {
+  .lander-services {
+    min-height: 66vh;
+    max-height: calc(100vh - 2rem) !important;
+  }
+}
 .clients {
   height: 80vh;
   max-height: 900px;

@@ -107,7 +107,7 @@
   }
 
   p a {
-    @apply underline text-peach underline-offset-4 hover:opacity-75;
+    @apply underline text-peach underline-offset-4 hover:opacity-75 duration-200;
   }
   /* ul {
     @apply my-6;

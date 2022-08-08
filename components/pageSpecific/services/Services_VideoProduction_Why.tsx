@@ -7,7 +7,7 @@ function Services_VideoProduction_Why() {
   return (
     <PageSection id='why-video'>
       <InnerWrapper>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12  max-w-lg lg:max-w-full mx-auto'>
           <div>
             <H2 color='blue'>Why Your Brand Needs Video Content</H2>
           </div>
