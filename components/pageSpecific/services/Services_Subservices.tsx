@@ -10,7 +10,7 @@ function Services_Subservices() {
   return (
     <PageSection>
       <InnerWrapper>
-        <div className='grid grid-cols-5 mx-12'>
+        <div className='flex flex-col mx-12 gap-y-12'>
           <div className=' col-span-5 lg:col-span-5 w-full top-0'>
             <div className=' '>
               <H2AndLead
@@ -21,7 +21,7 @@ function Services_Subservices() {
               />
             </div>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-2 col-span-5 lg:col-span-2 xl:col-span-5 w-full gap-x-12  mx-auto'>
+          <div className='w-full grid grid-cols-1 lg:grid-cols-2 4xl:grid-cols-3 gap-12 mx-auto'>
             {subservice.map((subservice) => (
               <Services_Subservices_Box subservice={subservice} key={subservice.service} />
             ))}
