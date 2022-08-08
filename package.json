@@ -77,6 +77,7 @@
     "tailwindcss": "3.1.7",
     "use-debounce": "8.0.3",
     "vimeo": "2.1.1",
+    "web-vitals": "^2.1.4",
     "yup": "0.32.11",
     "zustand": "4.0.0"
   },

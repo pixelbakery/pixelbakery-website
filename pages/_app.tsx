@@ -16,7 +16,8 @@ const client = new QueryClient()
 import * as gtag from '../lib/gtag'
 import NextSEO_LocalBusiness from '@parts/NextSEO_LocalBusiness'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
-import { gtmVirtualPageView } from '../lib/gtag'
+import { gtmVirtualPageView, sendToGoogleAnalytics } from '@lib/gtag'
+import { getCLS, getFID, getLCP } from 'web-vitals'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
@@ -85,6 +86,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     const handleRouteChange = (url) => {
       fbq.pageview()
       gtag.pageview(url)
+      getCLS(sendToGoogleAnalytics)
+      getFID(sendToGoogleAnalytics)
+      getLCP(sendToGoogleAnalytics)
     }
 
     router.events.on('routeChangeComplete', handleRouteChange)
