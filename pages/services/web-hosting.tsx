@@ -1,46 +1,17 @@
 import Services_Header from '@services/Services_Header'
 import Services_AllServices from '@services/Services_AllServices'
-import Lead from '@typography/Lead'
 import Main from '@parts/Main'
-import { NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Lottie_Animation from '@data/lottie_services/lottie_services_webHosting.json'
+import Services_SEO from '@services/Services_SEO'
+
 export default function Services() {
+  const desc = `We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
+          We'll help you install Wordpress (if that's your jam) and provide you with security
+          updates as well as weekly backups.`
   return (
     <Main>
-      <NextSeo
-        title='Web Hosting | Services'
-        description={`We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
-          We'll help you install Wordpress (if that's your jam) and provide you with security
-          updates as well as weekly backups.`}
-        openGraph={{
-          url: `https://pixelbakery.com/services/web-hosting`,
-          title: 'Web Hosting | Services',
-          description: `We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
-          We'll help you install Wordpress (if that's your jam) and provide you with security
-          updates as well as weekly backups.`,
-          images: [
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-        }}
-      />
+      <Services_SEO serviceName='Web Hosting' description={desc} path='web-hosting' />
 
       <Services_Header
         serviceName={'Web Hosting'}
@@ -56,7 +27,6 @@ export default function Services() {
           <a href='mailto:jordan@pixelbakery.com'>jordan@pixelbakery.com</a>
         </p>
       </Services_Header>
-
       <CaseStudies_CTA />
       <Services_AllServices />
     </Main>

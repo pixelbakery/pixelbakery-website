@@ -9,9 +9,10 @@ export default [
     url: '/about',
   },
   {
-    text: 'Careers',
-    url: '/careers',
+    text: 'Services',
+    url: '/services',
   },
+
   {
     text: 'Education',
     url: '/education',
@@ -21,11 +22,11 @@ export default [
     url: '/contact',
   },
   {
-    text: 'Company Shop',
-    url: '/store',
-  },
-  {
     text: "Mom's Recipes",
     url: '/recipes',
   },
+  // {
+  //   text: 'Company Store',
+  //   url: '/store',
+  // },
 ]

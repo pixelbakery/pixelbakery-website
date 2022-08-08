@@ -1,57 +1,18 @@
 import Services_Header from '@services/Services_Header'
 import Services_AllServices from '@services/Services_AllServices'
-import Services_OurProcess from '@services/Services_OurProcess'
+import Services_OurApproach from '@services/Services_OurApproach'
 import Main from '@parts/Main'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Link from 'next/link'
+import Services_SEO from '@services/Services_SEO'
 
 export default function Services() {
+  const desc = `Engage with your audience on their favorite platforms.`
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Services',
-            item: 'https://pixelbakery.com/services',
-          },
-          {
-            position: 2,
-            name: `Social Media Kits`,
-            item: `https://pixelbakery.com/services/social-media`,
-          },
-        ]}
-      />
-      <NextSeo
-        title='Social Media | Services'
-        description={`Engage with your audience on their favorite platforms.`}
-        openGraph={{
-          url: `https://pixelbakery.com/services/social-media`,
-          title: 'Social Media Kits | Services',
-          description: `Engage with your audience on their favorite platforms.`,
-          images: [
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-        }}
-      />
+      <Services_SEO serviceName='Social Media Kits' path='social-media' description={desc} />
+
       <Services_Header
         serviceName={'Social Media Kits'}
         isLottie={false}
@@ -75,7 +36,7 @@ export default function Services() {
       </Services_Header>
       <CaseStudies_CTA />
       <Services_AllServices />
-      <Services_OurProcess />
+      <Services_OurApproach />
     </Main>
   )
 }

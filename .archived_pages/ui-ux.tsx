@@ -1,7 +1,7 @@
 import Services_Header from '@services/Services_Header'
 import Services_Subservices from '@services/Services_Subservices'
 import Services_AllServices from '@services/Services_AllServices'
-import Services_OurProcess from '@services/Services_OurProcess'
+import Services_OurApproach from '@services/Services_OurApproach'
 import Store_Maintenance from '@store/Store_Maintenance'
 import Lead from '@typography/Lead'
 import Main from '@parts/Main'
@@ -45,7 +45,7 @@ export default function Services() {
       </Services_Header>
       <CaseStudies_CTA />
       <Services_AllServices />
-      <Services_OurProcess />
+      <Services_OurApproach />
     </Main>
   )
 }

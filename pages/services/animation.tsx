@@ -1,48 +1,19 @@
 import Services_Subservices from '@services/Services_Subservices'
 import Services_AllServices from '@services/Services_AllServices'
-import Services_OurProcess from '@services/Services_OurProcess'
+import Services_OurApproach from '@services/Services_OurApproach'
 import Services_Modulation from '@services/Services_Modulation'
 import Main from '@parts/Main'
-import { NextSeo } from 'next-seo'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Services_Header from '@services/Services_Header'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json'
+import Services_SEO from '@services/Services_SEO'
+import Services_Animation_Why from '@services/Services_Animation_Why'
 
 export default function Services_Animation() {
+  const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
   return (
     <Main>
-      <NextSeo
-        title='Animation | Services'
-        description={
-          'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
-        }
-        openGraph={{
-          url: `https://pixelbakery.com/services/animation`,
-          title: 'Animation | Services',
-          description:
-            'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling',
-          images: [
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-        }}
-      />
+      <Services_SEO serviceName='animation' description={desc} path={'animation'} />
       <Services_Header
         serviceName={'Animation'}
         isLottie={true}
@@ -59,12 +30,13 @@ export default function Services_Animation() {
           we’ve got you covered. Check out what else we have to offer below.
         </p>
       </Services_Header>
+      <Services_Animation_Why />
 
       <Services_Subservices />
       <Services_Modulation />
       <CaseStudies_CTA />
       <Services_AllServices />
-      <Services_OurProcess />
+      <Services_OurApproach />
     </Main>
   )
 }

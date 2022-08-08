@@ -1,16 +1,15 @@
 import { NextPage } from 'next'
-import Footer_Nav from 'components/footer/Footer_Nav'
+import Footer_Nav from '@footer/Footer_Nav_Link'
 import Footer_Nav_SubNav from 'components/footer/Footer_Nav_SubNav'
 import Footer_HappyCard from 'components/footer/Footer_HappyCard'
 import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Croissant from 'components/footer/Footer_Croissant'
-import nav_main from '@data/nav_main'
+import nav_footer_main from '@data/nav_footer_main'
 import nav_footer_sub from '@data/nav_footer_sub'
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
-import { InstagramGallery } from '@parts/Instagram'
 import H3 from '@typography/H3'
 
 export const Footer: NextPage = () => {
@@ -51,7 +50,7 @@ export const Footer: NextPage = () => {
 
               <nav className='hidden lg:block pt-5 mt-3'>
                 <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
-                  {nav_main.map((navitem) => (
+                  {nav_footer_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
                 </ul>
@@ -105,7 +104,7 @@ export const Footer: NextPage = () => {
             {/* Mobile Nav */}
             <div className=' mx-auto lg:hidden grid grid-cols-2 gap-y-0 gap-x-6'>
               <ul className='flex flex-col gap-y-3'>
-                {nav_main.map((navitem, index) => (
+                {nav_footer_main.map((navitem, index) => (
                   <div key={index} className={'font-extrabold text-xl leading-none'}>
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   </div>

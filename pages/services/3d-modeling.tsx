@@ -1,47 +1,19 @@
 import Services_AllServices from '@services/Services_AllServices'
-import Services_OurProcess from '@services/Services_OurProcess'
+import Services_OurProcess from '@services/Services_OurApproach'
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
 import H1 from '@typography/H1'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import BackLink from '@parts/BackLink'
 import Services_Header from '@services/Services_Header'
+import Services_SEO from '@services/Services_SEO'
 
 export default function Services_3dModeling() {
+  const desc =
+    'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
   return (
     <Main>
-      <NextSeo
-        title='3D Modeling | Services'
-        description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-        }
-        openGraph={{
-          url: `https://pixelbakery.com/services/3d-modeling`,
-          title: '3D Modeling | Services',
-          description:
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-          images: [
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-        }}
-      />
+      <Services_SEO serviceName='3D Modeling' description={desc} path='animation' />
 
       <Services_Header
         serviceName={'3D Modeling'}
