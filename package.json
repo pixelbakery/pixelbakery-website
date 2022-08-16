@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@chec/commerce.js": "2.8.0",
-    "@chec/react-commercejs-hooks": "0.3.4",
     "@mailchimp/mailchimp_marketing": "3.0.78",
     "@sendgrid/mail": "7.7.0",
     "@stripe/react-stripe-js": "1.10.0",

@@ -7,6 +7,21 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/portfolio',
+    destination: '/work',
+    permanent: true,
+  },
+  {
+    source: '/video-production',
+    destination: '/services/video-production',
+    permanent: true,
+  },
+  {
+    source: '/animation',
+    destination: '/services/animation',
+    permanent: true,
+  },
+  {
     source: '/education/tutorials',
     destination: '/education#madeToOrder',
     permanent: true,
@@ -47,6 +62,11 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/meet',
+    destination: 'https://unl.zoom.us/j/91258744342?pwd=aTlldnpybXk3ZFNLVkNuSStFaEFKZz09',
+    permanent: true,
+  },
+  {
     source: '/futurebakers/',
     destination: '/careers/',
     permanent: true,
@@ -80,6 +100,11 @@ const redirectsArray = [
   {
     source: '/motionmixer',
     destination: '/logo-animation',
+    permanent: true,
+  },
+  {
+    source: '/our-work',
+    destination: '/work',
     permanent: true,
   },
   {
