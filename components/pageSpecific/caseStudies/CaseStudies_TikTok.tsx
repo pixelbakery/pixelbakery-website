@@ -1,6 +1,6 @@
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
+import { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'

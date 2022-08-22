@@ -4,10 +4,12 @@ import PageSection from '@parts/PageSection'
 import { Lottie_Marq_MarchingSoldiers, Lottie_Marq_FloatingUnicorn } from '@lib/lottie_helpers'
 import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'
+import NoIndex from '@parts/NoIndex'
 
 function marq_lottie() {
   return (
     <>
+      <NoIndex />
       <PageHeader_VarH header={'Marq Lottie Files'} />
       <InnerWrapper id='' color=''>
         <PageSection>

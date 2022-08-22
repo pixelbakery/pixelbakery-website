@@ -6,13 +6,25 @@ type Props = {
   id?: string
   color?: string
   className?: string
+  disableSpacing?: boolean
 }
 
-const InnerWrapper = ({ id, color, children, className }: PropsWithChildren<Props>) => {
+const InnerWrapper = ({
+  id,
+  color,
+  children,
+  disableSpacing,
+  className,
+}: PropsWithChildren<Props>) => {
   return (
     <div
       id={id}
-      className={cn('max-w-md md:max-w-3xl xl:max-w-6xl mx-auto', `bg-${color}`, className)}
+      className={cn(
+        'max-w-md md:max-w-3xl xl:max-w-6xl mx-auto',
+        { [`bg-${color}`]: color != undefined },
+        { [`max-w-md md:max-w-3xl xl:max-w-6xl`]: !disableSpacing || disableSpacing === null },
+        className,
+      )}
     >
       {children}
     </div>

@@ -20,6 +20,7 @@ import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
+import CaseStudies_Storyboards from '@caseStudies/CaseStudies_Storyboards'
 
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
@@ -31,14 +32,20 @@ import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 import InnerWrapper from '@parts/InnerWrapper'
 
+//stuff built for Marq
+import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
+
 export default function CaseStudy({ allCaseStudies, source, slug, frontMatter }) {
   const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
-    Carousel: Carousel,
+    CaseStudies_Storyboards: CaseStudies_Storyboards,
     VimeoPlayer: VimeoPlayer,
     Video: Video,
+    //Stuff built for Marq
+    Marq_MarchingSolders: Marq_MarchingSolders,
+    Marq_Unicorn: Marq_Unicorn,
     //Stuff built for SNACKLINS
     CaseStudies_Testimonial: CaseStudies_Testimonial,
     CaseStudies_TikTok: CaseStudies_TikTok,

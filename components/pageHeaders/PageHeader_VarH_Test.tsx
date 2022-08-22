@@ -12,7 +12,7 @@ interface LottieProps {
 }
 
 const Lottie = ({ animationData }: LottieProps) => {
-  const element = useRef<HTMLDivElement>(null)
+  const element = useRef<HTMLDivElement>()
   const lottieInstance = useRef<any>()
 
   useEffect(() => {
