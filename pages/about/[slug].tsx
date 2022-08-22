@@ -14,9 +14,13 @@ import About_Team_Details from '@about/About_Team_Details'
 import About_Team_MatchingPosts from '@about/About_Team_MatchingPosts'
 import About_Team_Header from '@about/About_Team_Header'
 
+//MDX Components
+import About_Team_SpotifyPlaylist from '@about/About_Team_SpotifyPlaylist'
 function PersonPage({ slug, source, frontMatter, allPosts }) {
   const [firstName, lastName] = frontMatter.name.split(' ')
-
+  const components = {
+    About_Team_SpotifyPlaylist: About_Team_SpotifyPlaylist,
+  }
   return (
     <Main>
       <About_Team_SEO
@@ -27,6 +31,7 @@ function PersonPage({ slug, source, frontMatter, allPosts }) {
       />
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
+
       <About_Team_MatchingPosts frontMatter={frontMatter} allPosts={allPosts} />
     </Main>
   )

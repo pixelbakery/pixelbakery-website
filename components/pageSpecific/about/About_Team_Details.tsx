@@ -2,6 +2,7 @@ import { CamelCaseToSentence } from '@lib/helpers'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
+import About_Team_SpotifyPlaylist from './About_Team_SpotifyPlaylist'
 
 function About_Team_Details({ frontMatter }) {
   const details = frontMatter.details
@@ -30,6 +31,13 @@ function About_Team_Details({ frontMatter }) {
                 <li>☽ {frontMatter.signs.moon}</li>
               </ul>
             </div>
+          ) : (
+            ''
+          )}
+        </div>
+        <div>
+          {frontMatter.spotifyPlaylist != undefined ? (
+            <About_Team_SpotifyPlaylist playlistID={frontMatter.spotifyPlaylist} />
           ) : (
             ''
           )}

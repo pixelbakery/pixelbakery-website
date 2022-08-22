@@ -36,11 +36,11 @@ const Recipes_SmallPost = ({
                   layout='fill'
                   src={coverImage}
                   objectFit='cover'
-                  className='rounded-md'
+                  className='rounded-md  bg-blue'
                   placeholder='blur'
                   quality={25}
                   blurDataURL={coverImage}
-                  alt={`Cover image for ${title}`}
+                  alt={`${title} by ${author}`}
                 />
               </div>
             </a>
