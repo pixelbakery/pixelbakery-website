@@ -94,8 +94,11 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
             projectName={frontMatter.title}
             projectExcerpt={frontMatter.excerpt}
             heroVideo={frontMatter.vimeoID}
+            tags={frontMatter.tags}
+            logo={frontMatter.logo}
+            website={frontMatter.website}
           />
-          <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />
+          {/* <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} /> */}
           <article id='blog-body-guts'>
             <MDXRemote {...source} components={components} />
           </article>
