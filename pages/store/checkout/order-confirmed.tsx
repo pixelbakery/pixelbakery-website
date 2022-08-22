@@ -4,10 +4,12 @@ import next from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import Navigation from '@nav/Navigation'
+import NoIndex from '@parts/NoIndex'
 
 function SubmissionConfirmation() {
   return (
     <main className='max-w-screen'>
+      <NoIndex />
       <Head>
         <title>Order Confirmed</title>
       </Head>

@@ -1,4 +1,5 @@
 import InnerWrapper from '@parts/InnerWrapper'
+import NoIndex from '@parts/NoIndex'
 import PageSection from '@parts/PageSection'
 import React, { useState, useRef } from 'react'
 // import Vimeo from 'react-player/vimeo'
@@ -43,6 +44,7 @@ function Test() {
 
   return (
     <InnerWrapper>
+      <NoIndex />
       <PageSection>
         <div className=''>
           {/* <Video videoID={videoID} /> */}

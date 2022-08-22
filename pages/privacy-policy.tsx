@@ -9,7 +9,6 @@ function PrivacyPolicy() {
   return (
     <Main id='' className='my-4'>
       <NextSeo
-        noindex={true}
         title='Privacy Policy'
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'

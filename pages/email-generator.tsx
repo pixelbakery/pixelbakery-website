@@ -42,6 +42,7 @@ function EmailGenerator() {
     <Main>
       <NextSeo
         noindex={true}
+        nofollow={true}
         title='Email Generator '
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
