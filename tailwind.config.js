@@ -15,6 +15,7 @@ module.exports = {
         light: '#FFD9D3',
         DEFAULT: 'rgb(255, 94, 100)',
       },
+      error: '#ff0033',
       yellow: 'rgb(250, 216, 105)',
       pink: {
         extralight: '#FFEFFF',
