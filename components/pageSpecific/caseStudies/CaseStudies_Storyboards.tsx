@@ -24,7 +24,7 @@ function CaseStudies_Storyboards({
   headerColor,
 }: CarouselProps) {
   return (
-    <PageSection id={id} color={bgColor}>
+    <PageSection id={id} color={bgColor} className={'mt-0'}>
       <InnerWrapper>
         <H2 color={headerColor} className={'relative z-20'}>
           Storyboards

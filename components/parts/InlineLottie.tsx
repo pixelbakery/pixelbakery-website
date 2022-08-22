@@ -55,7 +55,7 @@ const Wrapper = ({ bgColor, children }: PropsWithChildren<Props>) => {
 export const Marq_Unicorn = ({ bgColor }) => {
   return (
     <Wrapper bgColor={bgColor}>
-      <div className='-mb-40 lg:-mb-64 2xl:-mb-72  max-w-sm lg:max-w-md  relative z-0'>
+      <div className='-mb-40 mt-4 lg:-mb-64 2xl:-mb-72  max-w-sm lg:max-w-md  relative z-0'>
         <Lottie
           animationData={require('@data/lottie/Marq_Lottie_FloatingUnicorn.json')}
           width={100}
