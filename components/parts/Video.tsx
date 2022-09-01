@@ -1,11 +1,9 @@
 import Lead from '@typography/Lead'
-import Script from 'next/script'
 import ReactPlayer from 'react-player'
 
 function Video({ url, ...props }) {
   return (
     <div>
-      <Script src='https://player.vimeo.com/api/player.js' strategy='lazyOnload' />
       {props.title != '' ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
       <div className='markdown-video aspect-16/9'>
         <ReactPlayer
