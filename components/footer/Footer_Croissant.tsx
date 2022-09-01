@@ -125,7 +125,7 @@ function Footer_Mailchimp({ onModalUpdate }) {
                 type='checkbox'
                 checked={checked}
                 onClick={handleCheck}
-                {...register('check', { required: true })}
+                {...register('check')}
               />
               <label
                 className={
