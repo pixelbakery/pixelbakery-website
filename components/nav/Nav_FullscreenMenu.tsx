@@ -88,68 +88,6 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
               </div>
             </div>
           </div>
-          {/* 
-          <div className='w-full md:w-1/3 flex flex-col justify-between h-full'>
-            <div className=''>
-              <Link href={'/'} passHref>
-                <a target='_blank' ref='noopener' className='block'>
-                  2124 y st ste 112
-                  <br />
-                  lincoln, ne 68503
-                </a>
-              </Link>
-              <Link href={'tel:4023020323'} passHref>
-                <a target='_blank' ref='noopener' className='block'>
-                  402 302 0323
-                </a>
-              </Link>
-            </div>
-            <div className=''>
-              <button className=' flex'>
-                <i className='inline-block w-12'>
-                  <svg
-                    id='Icon_feather-play-circle'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='-20 -20 145 145'
-                    className='pointer-events-auto object-contain w-full h-full stroke-blue-dark stroke-10 '
-                  >
-                    <path
-                      d='M102,52.5A49.5,49.5,0,1,1,52.5,3,49.5,49.5,0,0,1,102,52.5Z'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      className='fill-none '
-                    />
-                    <path
-                      d='M15,12,44.7,31.8,15,51.6Z'
-                      transform='translate(27.6 20.7)'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      className='fill-none '
-                    />
-                  </svg>
-                </i>
-                <span className='ml-2 self-center text-3xl text-blue-dark font-bold'>
-                  2021 Demo Reel
-                </span>
-              </button>
-            </div>
-            <div className=''>
-              <Link href={'mailto:hello@pixelbakery.com'} passHref>
-                <a target='_blank' ref='noOpener' className='block'>
-                  hello@pixelbakery.com
-                </a>
-              </Link>
-            </div>
-            <div className='flex flex-center w-full my-3 '>
-              <Button_Filled
-                text={'Start something wonderful'}
-                link={'/onboarding'}
-                bgColor={'pink'}
-                textColor={'pink-light'}
-                chevronDirection='right'
-              />
-            </div>
-          </div> */}
         </div>
       </div>
     </nav>
