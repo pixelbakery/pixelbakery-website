@@ -394,7 +394,20 @@
 .mainBody {
   background: transparent !important;
 }
-
+label.radio-button {
+  @apply border-blue border-2 bg-transparent rounded-xl font-semibold py-2   text-lg text-wine-500 cursor-pointer focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark peer-checked:bg-blue peer-checked:text-cream hover:scale-98 duration-300 mt-2 w-20 text-center;
+}
+input.form-input,
+textarea.form-input {
+  @apply border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark;
+}
+input.form-input.error,
+textarea.form-input.error {
+  @apply border-error focus:border-error focus:ring-error;
+}
+input.form-submit {
+  @apply bg-blue text-lg font-bold text-cream rounded-md px-8 py-3  cursor-pointer hover:scale-98 duration-300 disabled:hover:scale-100 disabled:bg-opacity-30;
+}
 .animate__fadeIn {
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
