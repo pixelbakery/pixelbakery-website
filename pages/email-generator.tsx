@@ -64,10 +64,10 @@ function EmailGenerator() {
       <PageSection className='mb-32'>
         <InnerWrapper>
           Jordan broke this page. IOU 😉
-          {/* <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12'>
-            <EmailGenerator_Input setUser={setUser} />
-            <EmailGenerator_Result user={user} />
-          </div> */}
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12'>
+            {/* <EmailGenerator_Input setUser={setUser} />
+            <EmailGenerator_Result user={user} /> */}
+          </div>
         </InnerWrapper>
       </PageSection>
     </Main>
