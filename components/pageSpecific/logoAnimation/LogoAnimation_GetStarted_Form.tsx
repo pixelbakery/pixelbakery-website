@@ -29,7 +29,7 @@ export default function LogoAnimation_GetStarted_Form() {
     resetField('name')
     resetField('message ')
     setSuccessMessage(
-      "Thanks! Your request has been submitted. We'll be in touch shortly to follow up. If you have any questions, feel free to email us at <a classname='text-peach border-b border-peach hover:text-opacity-75' href='mailto:hello@pixelbakery.com'>hello@pixelbakery.com</a>. ",
+      "Thanks! Your request has been submitted. We'll be in touch shortly to follow up.",
     )
 
     setSubmitted(true)

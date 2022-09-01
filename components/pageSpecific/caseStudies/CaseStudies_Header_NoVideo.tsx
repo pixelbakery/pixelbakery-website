@@ -45,11 +45,6 @@ function CaseStudies_Header_Alt({ ...props }) {
               })}
             </div>
           </div>
-          {/* <Link href={'/work'}>
-            <a className='text-blue text-md text-opacity-90 hover:text-opacity-75 pb-1 border-b border-b-blue'>
-              ← back to all case studies
-            </a>
-          </Link> */}
         </div>
       </div>
       {/* <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
