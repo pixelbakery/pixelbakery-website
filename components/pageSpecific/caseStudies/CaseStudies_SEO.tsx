@@ -22,11 +22,11 @@ function CaseStudies_SEO({ frontMatter, slug }) {
         description={frontMatter.excerpt}
         openGraph={{
           url: `https://pixelbakery.com/work/case-studies/${slug}`,
-          title: `${frontMatter.title}`,
-          description: frontMatter.excerpt,
+          title: `${frontMatter.client} – ${frontMatter.title}`,
+          description: `${frontMatter.excerpt} created for ${frontMatter.client}`,
           images: [
             {
-              url: `https://cdn.pixelbakery.com/img/${frontMatter.vimeoPreview}.jpg`,
+              url: `https://cdn.pixelbakery.com/img/work/${frontMatter.vimeoPreview}.jpg`,
               alt: frontMatter.excerpt,
               type: 'image/jpeg',
             },
