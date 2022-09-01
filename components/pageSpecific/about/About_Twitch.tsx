@@ -1,14 +1,9 @@
-import dynamic from 'next/dynamic'
 import H2 from '@typography/H2'
 
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import InnerWrapper from '@parts/InnerWrapper'
-import Script from 'next/script'
 
-const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), {
-  ssr: false,
-})
 import { TwitchPlayer } from 'react-twitch-embed'
 import { useRef } from 'react'
 import Loading from '@utility/Loading'
