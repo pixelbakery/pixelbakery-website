@@ -3,6 +3,10 @@ import mail from '@sendgrid/mail'
 mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
 
 export default async function sendOnboarding(req, res) {
+  let sendTo
+  if (process.env.NODE_ENV === 'development') sendTo = 'jordan@pixelbakery.com'
+  else sendTo = 'hello@pixelbakery.com'
+
   const body = JSON.parse(req.body)
   const message = `
   <p>A new onboarding form has been submitted. Here are the details:</p>
@@ -18,14 +22,17 @@ export default async function sendOnboarding(req, res) {
   `
 
   await mail.send({
-    to: `hello@pixelbakery.com`,
+    to: `${sendTo}`,
     from: {
       email: 'hello@pixelbakery.com',
       name: 'Pixel Bakery Robot',
     },
-    replyTo: `${body.email}`,
-    subject: `Onboarding Form: ${body.name}`,
+    replyTo: {
+      email: `${body.email}`,
+      name: `${body.name}`,
+    },
 
+    subject: `Onboarding Form: ${body.name}`,
     text: message,
     html: message.replace(/\r\n/g, '<br>'),
   })

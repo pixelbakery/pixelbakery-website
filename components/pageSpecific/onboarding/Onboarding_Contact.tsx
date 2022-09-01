@@ -1,7 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
 import Onboarding_Contact_Form from './Onboarding_Contact_Form'
 
 function Onboarding_Contact() {

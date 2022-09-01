@@ -79,7 +79,7 @@ export async function SendToMonday_Onboarding(data) {
       email: { email: data.email, text: data.email },
       text6: data.subject,
       long_text: { text: data.message },
-      checkbox: { checked: data.check.toString() },
+      // checkbox: { checked: data.check.toString() },
     }),
   }
   fetch('https://api.monday.com/v2', {
@@ -117,7 +117,8 @@ export async function SendToMonday_Croissants(data) {
 
 //Contact Form
 export async function SendToMonday_ContactForm(data) {
-  const strippedPhone = data.phone.replace(/[^+\d]+/g, '')
+  let strippedPhone = ''
+  if (data.phone != undefined) strippedPhone = data.phone.replace(/[^+\d]+/g, '')
   const query5 = `mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Contact}, item_name:$subject, column_values:$columnVals) { id } }`
   const vars = {
     subject: data.subject,
@@ -130,7 +131,6 @@ export async function SendToMonday_ContactForm(data) {
       phone: { phone: strippedPhone, countryShortName: 'US' },
       //  text6: { text: data.name },
       email: { email: data.email, text: data.email },
-      checkbox: { checked: data.check.toString() },
     }),
   }
   fetch('https://api.monday.com/v2', {

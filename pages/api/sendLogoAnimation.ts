@@ -23,7 +23,10 @@ export default async function sendOnboarding(req, res) {
       email: 'hello@pixelbakery.com',
       name: 'Pixel Bakery Robot',
     },
-    replyTo: `${body.email}`,
+    replyTo: {
+      email: `${body.email}`,
+      name: `${body.name}`,
+    },
     subject: `Motion Mixer Form: ${body.entity}`,
 
     text: message,

@@ -1,171 +1,167 @@
 import { useForm } from 'react-hook-form'
-
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
 import { useState } from 'react'
-import Lead from '@typography/Lead'
 import { SendToMonday_ContactForm } from '@lib/api_sendToMonday'
-import PhoneInput from 'react-phone-number-input/react-hook-form-input'
+import { SendToMailchimp, SendEmail_Contact } from '@lib/helpers'
+import {
+  ContactForm_NotInterested,
+  ContactForm_ThankYou,
+  ContactForm_Newsletter,
+  ContactForm_TextInput,
+  ContactForm_TextAreaInput,
+  ContactForm_EmailInput,
+  ContactForm_PhoneInput,
+  ContactForm_Errors,
+  ContactForm_Submit,
+  ContactForm_Solicitation,
+} from '@utility/ContactForm_Parts'
+
+interface FormInputs {
+  name: string
+  entity: string
+  multipleErrorInput: string
+  newsletter: boolean
+  message: string
+  soliciting: any
+  subject: boolean
+  phone: string
+  email: string
+}
+
+const yupValidation = Yup.object().shape({
+  name: Yup.string()
+    .required(`Please enter your name, stranger.`)
+    .min(5, `Your name is absolutely not that short`)
+    .matches(
+      /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
+      'Name can only contain Latin letters.',
+    )
+    .matches(/^\s*[\S]+(\s[\S]+)+\s*$/gms, 'Please enter your full name.'),
+  subject: Yup.string()
+    .required('Please enter a subject line.')
+    .min(12, `That's a pretty short subject line.`),
+  message: Yup.string()
+    .required('Please enter a message, you goose.')
+    .min(100, `Please write something a bit more... in-depth.`),
+  phone: Yup.string().test('len', 'Please enter a valid phone number', (val) => {
+    if (val === undefined) {
+      return true
+    }
+    return val.length === 0 || val.length === 10
+  }),
+  email: Yup.string()
+    .email(`There's no way that's an acutal email address.`)
+    .required(`We can't really do much without your email.`)
+    .min(6, `C'mon man that's not your email.`)
+    .max(255, `There's no way your email address is that long.`),
+  soliciting: Yup.string().required('Please select a solicitation answer.').nullable(),
+})
+// Handle the submit
+
+const onSubmit = (data, setHideForm, setSubmitted) => {
+  if (data.soliciting === 'true') setHideForm(true)
+  else {
+    SendEmail_Contact(data)
+    SendToMonday_ContactForm(data)
+    SendToMailchimp(data, 'Contact Form')
+    setSubmitted(true)
+  }
+}
+const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted, setHideForm }) => {
+  return (
+    <form
+      noValidate
+      className='mx-auto max-w-2xl  grid grid-cols-2 gap-4'
+      onSubmit={handleSubmit((data) => onSubmit(data, setHideForm, setSubmitted))}
+    >
+      <ContactForm_TextInput
+        register={register}
+        errors={errors}
+        fieldName={'name'}
+        placeHolder={'name'}
+        className='col-span-2'
+      />
+      <ContactForm_EmailInput
+        register={register}
+        errors={errors}
+        fieldName={'email'}
+        placeHolder={'email'}
+        className='col-span-2'
+      />
+      <ContactForm_PhoneInput
+        control={control}
+        errors={errors}
+        fieldName={'phone'}
+        placeHolder={'phone (optional)'}
+        className='col-span-2 lg:col-span-1'
+      />
+      <ContactForm_TextInput
+        register={register}
+        errors={errors}
+        fieldName={'entity'}
+        placeHolder={`company / entity`}
+        className={'col-span-2 lg:col-span-1'}
+      />
+      <ContactForm_TextInput
+        register={register}
+        errors={errors}
+        fieldName={'subject'}
+        placeHolder={`what's this all about?`}
+        className={'col-span-2'}
+      />
+      <ContactForm_TextAreaInput
+        register={register}
+        errors={errors}
+        fieldName={'message'}
+        className='col-span-2'
+        placeHolder='sup?'
+        rows={5}
+      />
+      <ContactForm_Newsletter register={register} />
+      <ContactForm_Solicitation register={register} errors={errors} />
+      <ContactForm_Submit valueText='Submit' disabled={hideForm} />
+      <ContactForm_Errors className={'col-span-2'} errors={errors} />
+    </form>
+  )
+}
 
 function Contact_ContactForm_Form() {
-  const [checked, setChecked] = useState(true)
   const [submitted, setSubmitted] = useState(false)
-  const handleCheck = () => {
-    setChecked(!checked)
-  }
-  ////////////
-  // MAILCHIMP
-  ////////////
-  async function SendToMailchimp(data) {
-    data.tag = 'Contact Form'
-    if (checked) {
-      await fetch('/api/mailchimp', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } else {
-      return
-    }
-  }
-  ///////////
-  // SENDGRID
-  ///////////
-  async function SendToSendgrid(data) {
-    await fetch('/api/sendContact', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }).then((res) => res.json())
+  const [hideForm, setHideForm] = useState(false)
+
+  const setFormOptions = {
+    criteriaMode: 'all',
+    reValidateMode: 'onChange',
+    resolver: yupResolver(yupValidation),
+    shouldFocusError: true,
+    shouldUnregister: false,
   }
 
   const {
-    control,
     register,
+    formState: { errors },
     handleSubmit,
     reset,
-    formState: { errors, isValid },
-  } = useForm()
-
-  // Handle the submit
-  const onSubmit = (data) => {
-    SendToSendgrid(data)
-    SendToMonday_ContactForm(data)
-    SendToMailchimp(data)
-
-    setSubmitted(true)
-    reset()
-  }
-  const [value, setValue] = useState()
+    control,
+  } = useForm<FormInputs>(setFormOptions as any)
 
   return (
     <div>
       {submitted ? (
-        <Lead>Thanks for your message 😉  We&apos;ll get back to you asap. </Lead>
+        <ContactForm_ThankYou />
+      ) : !hideForm ? (
+        <Form
+          register={register}
+          errors={errors}
+          control={control}
+          hideForm={hideForm}
+          handleSubmit={handleSubmit}
+          setSubmitted={setSubmitted}
+          setHideForm={setHideForm}
+        />
       ) : (
-        <form
-          className='mx-auto max-w-2xl  grid grid-cols-2 gap-4'
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <input
-            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            type='text'
-            placeholder='name'
-            {...register('name', {
-              required: { message: 'Please enter your name, stranger', value: true },
-              minLength: { message: "c'mon that's not your name", value: 4 },
-            })}
-          />
-          <input
-            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            type='email'
-            placeholder='email'
-            {...register('email', {
-              required: { message: 'Please enter your email.', value: true },
-              minLength: { message: "c'mon that's not your email", value: 4 },
-              pattern: {
-                value:
-                  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: 'Invalid email address',
-              },
-            })}
-          />
-
-          <PhoneInput
-            placeholder='phone (optional)'
-            className='col-span-2 lg:col-span-1 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            country='US'
-            name='phone'
-            control={control}
-            value={value}
-            onChange={setValue}
-          />
-          {/* 
-            <input
-              className='form-border-b flex-grow'
-              type='tel'
-              placeholder='phone (optional)'
-              {...register('phone', {})}
-            /> */}
-          <input
-            className='col-span-2 lg:col-span-1 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            type='text'
-            placeholder='company / entity'
-            {...register('entity', {})}
-          />
-
-          <input
-            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            type='text'
-            placeholder="what's this all about?"
-            {...register('subject', {
-              required: { message: 'Please enter a subject line', value: true },
-              minLength: { message: "That's a pretty short subject line", value: 6 },
-            })}
-          />
-          <textarea
-            className='col-span-2 border-2 border-blue bg-transparent rounded-xl w-half font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'
-            placeholder='sup?'
-            rows={5}
-            {...register('message', {
-              required: { message: 'Please enter a message, you goose.', value: true },
-              minLength: { message: 'Please write something a bit more... in-depth', value: 15 },
-            })}
-          />
-          {/* newsletter */}
-          <div className='col-span-2 flex my-4'>
-            <input
-              className={
-                'rounded-lg bg-cream border-2 border-blue-dark p-3 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-lg hover:scale-97 duration-300'
-              }
-              type='checkbox'
-              checked={checked}
-              onClick={handleCheck}
-              {...register('check')}
-            />
-            <label
-              className={
-                'self-center cursor-pointer ml-4 text-blue-dark  font-semibold leading-none my-0 py-0 '
-              }
-              htmlFor='check'
-              onClick={handleCheck}
-            >
-              Also sign up for the newsletter that we always forget to send out
-            </label>
-          </div>
-          <div>
-            <input
-              className='bg-blue text-lg font-bold text-cream rounded-md px-8 py-3  cursor-pointer hover:scale-98 duration-300 disabled:hover:scale-100 disabled:bg-opacity-30'
-              type='submit'
-            />
-          </div>
-          <div className='w-full text-peach'>
-            {errors.name && <div className='block '>{errors.name.message}</div>}
-            {errors.email && <div className='block '>{errors.email.message}</div>}
-            {errors.subject && <div className='error'>{errors.subject.message}</div>}
-            {errors.message && <div className='error'>{errors.message.message}</div>}
-            {errors.phone && <div className='error'>{errors.message.message}</div>}
-          </div>
-        </form>
+        <ContactForm_NotInterested />
       )}
     </div>
   )

@@ -85,3 +85,45 @@ export function shuffleArray(array) {
 export function generateRandomIntegerInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
+export async function SendToMailchimp(data, tag) {
+  data.tag = tag
+  if (data.checked === true || data.newsletter === true) {
+    await fetch('/api/mailchimp', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  } else {
+    return
+  }
+}
+
+export async function SendEmail_JobShadow(data) {
+  await fetch('/api/sendJobShadowRequest', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}
+
+export async function SendEmail_Contact(data) {
+  await fetch('/api/sendContact', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => res.json())
+}
+
+export async function SendEmail_Onboarding(data) {
+  await fetch('/api/sendOnboarding', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}
