@@ -7,6 +7,7 @@ import H2AndLead from '@typography/H2AndLead'
 import Lead from '@typography/Lead'
 import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'
 import { NextSeo } from 'next-seo'
+import Obfuscate from 'react-obfuscate'
 function JobShadow() {
   return (
     <Main>
@@ -123,14 +124,7 @@ function JobShadow() {
               </Lead>
               <p className='text-white text-2xl '>
                 Shoot us an email{' '}
-                <a
-                  className='underline text-white'
-                  href='mailto:careers@pixelbakery.com'
-                  target={'_blank'}
-                  rel='noreferrer'
-                >
-                  careers@pixelbakery.com
-                </a>{' '}
+                <Obfuscate email={'careers@pixelbakery.com'} className={'underline text-white'} />{' '}
                 with any questions. Fill out the form and we can get something scheduled. In the
                 meantime, go ahead and follow us on social media (
                 <a

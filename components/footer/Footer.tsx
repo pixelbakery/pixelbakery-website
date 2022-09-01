@@ -11,6 +11,7 @@ import nav_footer_sub from '@data/nav_footer_sub'
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import H3 from '@typography/H3'
+import Obfuscate from 'react-obfuscate'
 
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
@@ -79,9 +80,9 @@ export const Footer: NextPage = () => {
                       </a>
                     </li>
                     <li className='mt-3 text-xl text-cream'>
-                      <a href='tel:4023020323' target='_blank' rel='noreferrer'>
+                      <Obfuscate tel={'402-302-0323'} className={'text-cream  '}>
                         402 302 0323
-                      </a>
+                      </Obfuscate>
                     </li>
                   </ul>
                 </div>
@@ -144,14 +145,10 @@ export const Footer: NextPage = () => {
                 />
               </div>
               <div className='hidden lg:block text-center lg:mt-3'>
-                <a
-                  className='text-cream  text-2xl font-extrabold mb-0 pb-0 leading-none'
-                  href='mailto:hello@pixelbakery.com'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  hello@pixelbakery.com
-                </a>
+                <Obfuscate
+                  email={'hello@pixelbakery.com'}
+                  className={'text-cream  text-2xl font-extrabold mb-0 pb-0 leading-none'}
+                />
               </div>
             </div>
           </div>

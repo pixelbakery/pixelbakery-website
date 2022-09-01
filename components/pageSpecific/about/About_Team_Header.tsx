@@ -6,6 +6,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import SocialLinks from '@images/Icons_Social/SocialLinks'
 import Image from 'next/image'
 import Head from 'next/head'
+import Obfuscate from 'react-obfuscate'
 
 //CSS imports
 import markdownStyles from '@styles/markdown-styles.module.css'
@@ -43,12 +44,10 @@ function About_Team_Header({ source, frontMatter }) {
             </div>
             <div className='pb-8'>
               {frontMatter.email ? (
-                <a
-                  href={`mailto:${frontMatter.email}`}
-                  className='block italic text-peach cursor-pointer'
-                >
-                  {frontMatter.email}
-                </a>
+                <Obfuscate
+                  email={frontMatter.email}
+                  className={'block italic text-peach cursor-pointer'}
+                />
               ) : (
                 ''
               )}

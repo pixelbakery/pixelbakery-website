@@ -4,7 +4,7 @@ import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Lottie_Animation from '@data/lottie_services/lottie_services_webHosting.json'
 import Services_SEO from '@services/Services_SEO'
-
+import Obfuscate from 'react-obfuscate'
 export default function Services() {
   const desc = `We offer this service to any Nebraskan. You're welcome to choose how much you can afford.
           We'll help you install Wordpress (if that's your jam) and provide you with security
@@ -24,7 +24,7 @@ export default function Services() {
           We offer this service to any Nebraskan. You&apos;re welcome to choose how much you can
           afford. We&apos;ll help you install Wordpress (if that&apos;s your jam) and provide you
           with security updates as well as weekly backups. Email Jordan for more information:{' '}
-          <a href='mailto:jordan@pixelbakery.com'>jordan@pixelbakery.com</a>
+          <Obfuscate email={'jordan@pixelbakery.com'} />
         </p>
       </Services_Header>
       <CaseStudies_CTA />

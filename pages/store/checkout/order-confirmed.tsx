@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Navigation from '@nav/Navigation'
 import NoIndex from '@parts/NoIndex'
-
+import Obfuscate from 'react-obfuscate'
 function SubmissionConfirmation() {
   return (
     <main className='max-w-screen'>
@@ -26,10 +26,7 @@ function SubmissionConfirmation() {
             We received your order and we'll get right to work on it. You should be receiving an
             email confirmation here shortly. If you have any questions, feel free to give Maddie a
             shout at{' '}
-            <a href='mailto:maddie@pixelbakery.com' className='underline text-peach'>
-              maddie@pixelbakery.com
-            </a>
-            .
+            <Obfuscate email={'maddie@pixelbakery.com'} className={'underline text-peach'} />.
           </p>
 
           {/* { TODO: grab favorite band name from application and insert it below } */}
