@@ -1,6 +1,6 @@
 function Awwwards() {
   return (
-    <div className='absolute md:fixed z-50 left-10 md:left-auto md:right-10 top-4'>
+    <div className='absolute lg:fixed z-50 left-10 lg:left-auto lg:right-10 top-4'>
       <div id='awwwards'>
         <a href='https://www.awwwards.com/sites/pixel-bakery-design-studio' target='_blank'>
           <svg width='53.08' height='171.358'>
