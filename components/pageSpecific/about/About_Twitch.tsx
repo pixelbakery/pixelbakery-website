@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import H2 from '@typography/H2'
 
@@ -10,12 +9,19 @@ import Script from 'next/script'
 const ReactTwitchEmbedVideo = dynamic(() => import('react-twitch-embed-video'), {
   ssr: false,
 })
+import { TwitchPlayer } from 'react-twitch-embed'
+import { useRef } from 'react'
+import Loading from '@utility/Loading'
 // import ReactPlayer from 'react-player'
 // import { ReactTwitchEmbedVideo } from 'react-twitch-embed-video'
 // @ts-ignore
 //player.twitch.tv/js/embed/v1.js
 
 function About_Twitch() {
+  const embed = useRef()
+  const handleReady = (e) => {
+    embed.current = e
+  }
   return (
     <>
       <PageSection className='py-0 my-0 pb-0 mb-0 lg:pb-0 lg:mb-0 '>
@@ -41,17 +47,23 @@ function About_Twitch() {
         </InnerWrapper>
       </PageSection>
       <section className='px-0 pb-0 lg:pb-0' id='twitch'>
-        <Script src='https://player.twitch.tv/js/embed/v1.js' />
+        {/* <Script src='https://player.twitch.tv/js/embed/v1.js' strategy='lazyOnload' /> */}
 
         <div className='  z-10 max-w-8xl'>
-          <div
-            id='twitch-title'
-            className='z-20 lg:absolute bg-pink-light px-0 lg:px-20 w-full max-w-3xl place-self-center'
-          ></div>
           <div className=''>
-            <div className=' w-full aspect-w-16 aspect-h-9 bg-blue'>
-              <div className=' '>
-                <ReactTwitchEmbedVideo
+            <div className='relative w-full aspect-w-16 aspect-h-9 bg-blue'>
+              <TwitchPlayer
+                width={'100%'}
+                height={'100%'}
+                channel='pixelbakery'
+                playsInline={true}
+                hideControls={true}
+                autoplay
+                muted
+                onReady={handleReady}
+              />
+              <Loading />
+              {/* <ReactTwitchEmbedVideo
                   allowfullscreen={true}
                   autoplay
                   channel='pixelbakery'
@@ -61,8 +73,7 @@ function About_Twitch() {
                   height={'100%'}
                   onPlay={function noRefCheck() {}}
                   onReady={function noRefCheck() {}}
-                />
-              </div>
+                /> */}
             </div>
           </div>
         </div>
