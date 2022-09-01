@@ -30,14 +30,12 @@ module.exports = {
         500: 'rgb(104, 102, 111)',
         DEFAULT: 'rgb(80, 78, 87)', //#504E57
       },
+      current: 'currentColor',
+      none: 'none',
     },
 
     stroke: (theme) => theme('colors'),
     fill: (theme) => theme('colors'),
-    fill: {
-      current: 'currentColor',
-      none: 'none',
-    },
 
     fontFamily: {
       pbheading: 'Gilroy, Poppins, sans-serif',
