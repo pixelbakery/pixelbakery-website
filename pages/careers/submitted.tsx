@@ -6,7 +6,7 @@ import PageSection from '@parts/PageSection'
 import H1 from '@typography/H1'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-
+import Obfuscate from 'react-obfuscate'
 function SubmissionConfirmation() {
   return (
     <Main>
@@ -20,10 +20,7 @@ function SubmissionConfirmation() {
             We received your application for a position with us. We'll be in touch shortly if we
             think you'll be a good fit here. If you have any questions, feel free to give Maddie a
             shout at{' '}
-            <a href='mailto:maddie@pixelbakery.com' className='underline text-peach'>
-              careers@pixelbakery.com
-            </a>
-            .
+            <Obfuscate email={'careers@pixelbakery.com'} className={'underline text-peach'} />.
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>

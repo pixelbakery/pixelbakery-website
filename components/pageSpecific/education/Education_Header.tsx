@@ -2,14 +2,19 @@ import Education_Header_Link from './Education_Header_Link'
 import dynamic from 'next/dynamic'
 import Lead from '@typography/Lead'
 import H1 from '@typography/H1'
-
-const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
+const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'), {
+  ssr: false,
+})
 
 function Education_Header() {
   return (
     <section className='relative lander my-4 grid grid-cols-5 w-full'>
       <div className='bg-blue absolute lg:relative top-0 left-0 w-full h-full col-span-1 sm:col-span-2 z-0  '>
-        <Lottie_Blue_Dark />
+        <LottiePatternPlayer
+          animationData={require('@data/Patterns_Blue_Dark')}
+          width={100}
+          height={100}
+        />
       </div>
       <div className='bg-white col-span-4 sm:col-span-3  pt-24 lg:pt-12  h-full w-full overflow-hidden flex flex-col justify-center  z-10'>
         <div className='max-w-xl mx-auto px-8  py-8'>

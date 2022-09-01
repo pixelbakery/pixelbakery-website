@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
+import Lead from '@typography/Lead'
+const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: false })
 
 function randomize(myArray) {
   return myArray[Math.floor(Math.random() * myArray.length)]
@@ -10,82 +12,80 @@ PageHeader_VarH.propTypes = {
   subheader: PropTypes.string,
   playFrames: PropTypes.array,
 }
-const Blue = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: false })
 
+const Blue = ({ header, subheader }) => {
   return (
-    <PageHeader_VarH_Test
-      animationData={require('@data/Patterns_Blue.json')}
+    <PageHeader_VarH_Content
+      header={header}
       primaryColor={'blue'}
       accentColor={'blue-dark'}
-      subheaderColor={'cream'}
-      header={header}
       subheader={subheader}
+      subheaderColor={'cream'}
+      animationData={require('@data/Patterns_Blue.json')}
     />
   )
 }
 const Blue_Dark = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: true })
+  // const PageHeader_VarH_Content = require('./PageHeader_VarH_Content')
   return (
-    <PageHeader_VarH_Test
+    <PageHeader_VarH_Content
       animationData={require('@data/Patterns_Blue_Dark.json')}
       primaryColor={'blue-dark'}
-      accentColor={'blue'}
       subheaderColor={'cream'}
       subheader={subheader}
       header={header}
+      accentColor={'blue'}
     />
   )
 }
 const Cream = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: true })
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
-    <PageHeader_VarH_Test
+    <PageHeader_VarH_Content
       animationData={require('@data/Patterns_Cream.json')}
-      primaryColor={'cream'}
       accentColor={'peach'}
-      subheaderColor={'wine'}
+      primaryColor={'cream'}
+      subheaderColor={'blue-dark  '}
       subheader={subheader}
       header={header}
     />
   )
 }
 const Pink = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: true })
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
-    <PageHeader_VarH_Test
+    <PageHeader_VarH_Content
       animationData={require('@data/Patterns_Pink.json')}
       primaryColor={'pink'}
-      accentColor={'pink-light'}
-      subheaderColor={'cream text-opacity-75'}
+      subheaderColor={'pink-light '}
       subheader={subheader}
       header={header}
+      accentColor={'pink-light'}
     />
   )
 }
 const Pink_Light = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: true })
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
-    <PageHeader_VarH_Test
+    <PageHeader_VarH_Content
       animationData={require('@data/Patterns_Pink_Light.json')}
       primaryColor={'pink-light'}
-      accentColor={'pink'}
       subheaderColor={'blue-dark'}
       subheader={subheader}
       header={header}
+      accentColor={'pink'}
     />
   )
 }
 const Peach = ({ header, subheader }) => {
-  const PageHeader_VarH_Test = dynamic(() => import('./PageHeader_VarH_Test'), { ssr: true })
   return (
-    <PageHeader_VarH_Test
+    <PageHeader_VarH_Content
       animationData={require('@data/Patterns_Peach.json')}
       primaryColor={'peach'}
-      accentColor={'egg'}
       subheaderColor={'egg'}
       subheader={subheader}
       header={header}
+      accentColor={'egg'}
     />
   )
 }
@@ -96,7 +96,6 @@ function PageHeader_VarH({ header, subheader }) {
     <Blue_Dark header={header} subheader={subheader} />,
     <Pink header={header} subheader={subheader} />,
     <Pink_Light header={header} subheader={subheader} />,
-
     <Cream header={header} subheader={subheader} />,
     <Peach header={header} subheader={subheader} />,
   ])
@@ -113,7 +112,7 @@ function PageHeader_VarH({ header, subheader }) {
   //     console.log(randomNumber)
 
   //     element.current = (
-  //       <PageHeader_VarH_Test
+  //       <PageHeader_VarH_Content
   //         animationData={patterns[0].pattern}
   //         header={header}
   //         subheader={subheader}
@@ -130,6 +129,15 @@ function PageHeader_VarH({ header, subheader }) {
 
   // const ThisPattern = patterns[randomNumber]
 
-  return <header className='bg-blue'>{Rand}</header>
+  return (
+    <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
+      <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
+        <Lead color='cream' className='self-center text-center'>
+          Loading...
+        </Lead>
+      </div>
+      {Rand}
+    </header>
+  )
 }
 export default PageHeader_VarH

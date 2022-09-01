@@ -1,16 +1,16 @@
+// const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Work_Services from '@work/Work_Services'
 import Work_Portfolio from '@work/Work_Portfolio'
 import Work_Clients from '@work/Work_Clients'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import fs from 'fs'
 import path from 'path'
-import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 
 import Main from '@parts/Main'
 import matter from 'gray-matter'
 import Work_SEO from '@work/Work_SEO'
-const Work_Callout = dynamic(() => import('@work/Work_Callout'))
+import Work_Callout from '@work/Work_Callout'
 
 const Work = ({ allCaseStudies }) => {
   return (

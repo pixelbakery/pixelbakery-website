@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import H1 from '@typography/H1'
 
-function PageHeader_TextBox({ primaryColor, header, accentColor, subheader, subheaderColor }) {
+const PageHeader_TextBox = ({ primaryColor, header, accentColor, subheader, subheaderColor }) => {
   return (
     <div className='relative py-16 my-20 h-full flex flex-col justify-center bg-transparent '>
       <div

@@ -5,7 +5,10 @@ import dynamic from 'next/dynamic'
 import nav_main from '@data/nav_main'
 import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
-const Lottie_Blue_Dark = dynamic(() => import('@pageHeaders/Lottie_Blue_Dark'), { ssr: true })
+import LottieEasyBakePlayer from '@parts/LottieEasyBakePlayer'
+const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'), {
+  ssr: false,
+})
 
 function Home_Landing() {
   return (
@@ -13,7 +16,7 @@ function Home_Landing() {
       <nav className='w-2/5 xl:w-1/3 max-w-lg bg-egg h-full hidden lg:flex flex-col justify-center py-10 px-16 '>
         <div className='w-24 xl:w-32 2xl:w-52 -mb-6'>
           <div className=' w-full  text-pink fill-current '>
-            <Logo_Primary className='' />
+            <Logo_Primary />
           </div>
         </div>
         <div className='w-fit '>
@@ -55,18 +58,23 @@ function Home_Landing() {
           className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie'
           id='lottie'
         >
-          <Lottie_Blue_Dark />
+          <LottiePatternPlayer
+            animationData={require('@data/Patterns_Blue_Dark')}
+            width={100}
+            height={100}
+          />
         </div>
-        <div className=' flex flex-col justify-center h-full w-full '>
-          <div className='relative  self-center w-full max-w-3xl h-full'>
-            <Image
+        <div className=' flex justify-center h-full w-full'>
+          <div className='block  self-center w-2/3 lg:w-1/2 max-w-3xl '>
+            <LottieEasyBakePlayer />
+            {/* <Image
               layout='fill'
               objectFit='contain'
               blurDataURL='true'
               src={'/img/pixelbakery_boxlogo.svg'}
               alt='Pixel Bakery Design Studio'
               className='object-enter relative'
-            />
+            /> */}
           </div>
         </div>
       </div>
