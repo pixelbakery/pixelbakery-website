@@ -1,15 +1,12 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import ReactPlayer from 'react-player'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
+import { A11y, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
 import Image_VarH from '@parts/Image_VarH'
 
 const slides = [
@@ -60,7 +57,6 @@ function CaseStudies_Gallery_Email() {
   }
   return (
     <>
-      {/* <Lightbox /> */}
       <PageSection color='pink-light' className='z-20 relative'>
         <InnerWrapper>
           <H2>Emails</H2>

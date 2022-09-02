@@ -38,6 +38,9 @@ function Work_Portfolio_Card({ project }) {
         },
         '<=0.25',
       )
+    return () => {
+      tl.kill()
+    }
   }, [])
 
   useEffect(() => {
@@ -45,6 +48,9 @@ function Work_Portfolio_Card({ project }) {
       tl.play()
     } else if (!isHovered) {
       tl.reverse()
+    }
+    return () => {
+      tl.kill()
     }
   }, [isHovered])
 
@@ -56,8 +62,8 @@ function Work_Portfolio_Card({ project }) {
     >
       <article
         className='relative  aspect-16/9 bg-blue cursor-pointer origin-center transform duration-300 hover:scale-99 overflow-hidden'
-        onMouseOver={(event) => handleHover()}
-        onMouseOut={(event) => handleHover()}
+        onMouseOver={() => handleHover()}
+        onMouseOut={() => handleHover()}
       >
         <div
           className={cn(

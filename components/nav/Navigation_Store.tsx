@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import gsap from 'gsap/dist/gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 
 import useCart from '@hooks/useCart'
@@ -9,45 +7,6 @@ import { useState } from 'react'
 export default function Navigation_Store({}) {
   const [isHamActive, setHamToggle] = useState(false)
   const { data: cart } = useCart()
-  gsap.registerPlugin(ScrollTrigger)
-  //   useEffect(() => {
-  //     gsap.set('#logo', { y: -50 })
-  //     gsap.set('#logo-bg', { height: 100, width: 315, ease: 'sine.inOut' })
-  //     gsap.set(['#nav-ham'], { y: -10, opacity: 0 })
-
-  //     const navTL = gsap.timeline({})
-  //     navTL
-  //       .to('#logo', {
-  //         y: 0,
-  //         opacity: 1,
-  //         duration: 1,
-  //         delay: 1,
-  //         ease: 'back.out',
-  //       })
-  //       .to('#nav-ham', { opacity: 1, y: 0, duration: 0.33, ease: 'back.out,' }, '<33%')
-  //     document.onload = function () {
-  //       navTL.play()
-  //     }
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: '#topOfPage',
-  //         start: 'top',
-  //         end: 'top 50%',
-  //         toggleActions: 'play none reverse none',
-  //         // markers: true
-  //       },
-  //     })
-  //     tl.addLabel('start')
-
-  //       .to('#b', { x: -92, ease: 'sine.inOut', duration: 0.25 }, '<25%')
-
-  //       .to('#d', { x: 3, ease: 'sine.inOut', y: 10, duration: 0.25 }, '<')
-  //       .to('#s', { x: -140, ease: 'sine.inOut', y: 10, duration: 0.25 }, '<33%')
-  //       .to('#logo-bg', { height: 124, width: 90, ease: 'sine.inOut', duration: 0.25 }, '<')
-  //       .from('#logo-wrapper', { y: -9, ease: 'sine.inOut', duration: 0.25 }, '<')
-  //       .from('#logo', { scale: 0.8, ease: 'sine.inOut', duration: 0.25 }, '<')
-  //       .addLabel('end')
-  //   })
 
   return (
     <div className='w-full'>

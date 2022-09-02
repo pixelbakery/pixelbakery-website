@@ -14,7 +14,6 @@ function About_Team_SpotifyPlaylist({ playlistID }: spotifyPlaylist) {
         width='100%'
         height='485'
         frameBorder='0'
-        allowFullScreen={false}
         allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
       />
     </InnerWrapper>

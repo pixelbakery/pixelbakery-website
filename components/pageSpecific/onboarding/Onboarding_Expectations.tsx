@@ -102,7 +102,12 @@ function Onboarding_Expectations() {
         '<+=3',
       )
 
-    return () => {}
+    return () => {
+      tl_ExpectationOne.kill()
+      tl_ExpectationTwo.kill()
+      tl_ExpectationThree.kill()
+      tl_ExpectationFour.kill()
+    }
   }, [])
   return (
     <PageSection id='onboarding-expectations'>

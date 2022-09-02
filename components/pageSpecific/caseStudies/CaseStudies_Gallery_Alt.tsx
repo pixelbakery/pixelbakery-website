@@ -155,7 +155,6 @@ function CaseStudies_Gallery() {
   }
   return (
     <>
-      {/* <Lightbox /> */}
       <PageSection color='blue-light' className=' border-b-24 border-t-24 border-blue'>
         <InnerWrapper>
           <H2>Organic Social</H2>

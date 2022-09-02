@@ -14,6 +14,8 @@ PageHeader_VarH.propTypes = {
 }
 
 const Blue = ({ header, subheader }) => {
+  const anim = async () => await import('@data/Patterns_Blue.json')
+
   return (
     <PageHeader_VarH_Content
       header={header}
@@ -21,15 +23,17 @@ const Blue = ({ header, subheader }) => {
       accentColor={'blue-dark'}
       subheader={subheader}
       subheaderColor={'cream'}
-      animationData={require('@data/Patterns_Blue.json')}
+      animationData={anim}
     />
   )
 }
 const Blue_Dark = ({ header, subheader }) => {
   // const PageHeader_VarH_Content = require('./PageHeader_VarH_Content')
+  const anim = async () => await import('@data/Patterns_Blue_Dark.json')
+
   return (
     <PageHeader_VarH_Content
-      animationData={require('@data/Patterns_Blue_Dark.json')}
+      animationData={anim}
       primaryColor={'blue-dark'}
       subheaderColor={'cream'}
       subheader={subheader}
@@ -39,10 +43,11 @@ const Blue_Dark = ({ header, subheader }) => {
   )
 }
 const Cream = ({ header, subheader }) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
+  const anim = async () => await import('@data/Patterns_Cream.json')
+
   return (
     <PageHeader_VarH_Content
-      animationData={require('@data/Patterns_Cream.json')}
+      animationData={anim}
       accentColor={'peach'}
       primaryColor={'cream'}
       subheaderColor={'blue-dark  '}
@@ -52,10 +57,11 @@ const Cream = ({ header, subheader }) => {
   )
 }
 const Pink = ({ header, subheader }) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
+  const anim = async () => await import('@data/Patterns_Pink.json')
+
   return (
     <PageHeader_VarH_Content
-      animationData={require('@data/Patterns_Pink.json')}
+      animationData={anim}
       primaryColor={'pink'}
       subheaderColor={'pink-light '}
       subheader={subheader}
@@ -65,10 +71,11 @@ const Pink = ({ header, subheader }) => {
   )
 }
 const Pink_Light = ({ header, subheader }) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
+  const anim = async () => await import('@data/Patterns_Pink_Light.json')
+
   return (
     <PageHeader_VarH_Content
-      animationData={require('@data/Patterns_Pink_Light.json')}
+      animationData={anim}
       primaryColor={'pink-light'}
       subheaderColor={'blue-dark'}
       subheader={subheader}
@@ -78,9 +85,10 @@ const Pink_Light = ({ header, subheader }) => {
   )
 }
 const Peach = ({ header, subheader }) => {
+  const anim = async () => await import('@data/Patterns_Peach.json')
   return (
     <PageHeader_VarH_Content
-      animationData={require('@data/Patterns_Peach.json')}
+      animationData={anim}
       primaryColor={'peach'}
       subheaderColor={'egg'}
       subheader={subheader}

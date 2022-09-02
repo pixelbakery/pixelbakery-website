@@ -38,7 +38,7 @@ export default [
   {
     questionName: 'Do you do spec work?',
     acceptedAnswerText: `Sure don't, and neither should you. See below:
-    <iframe class='w-full aspect-16/9 my-3'  src="https://www.youtube.com/embed/essNmNOrQto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+    <iframe class='w-full aspect-16/9 my-3'  src="https://www.youtube.com/embed/essNmNOrQto" title="YouTube video player" frameborder="0" allow="encrypted-media;"></iframe>`,
   },
   {
     questionName: 'Are you competitors with ad agencies?',

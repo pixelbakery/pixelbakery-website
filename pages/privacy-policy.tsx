@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-
+import dynamic from 'next/dynamic'
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
-import dynamic from 'next/dynamic'
+
 function PrivacyPolicy() {
   return (
     <Main id='' className='my-4'>

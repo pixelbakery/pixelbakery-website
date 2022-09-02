@@ -38,7 +38,6 @@ export default function Navbar() {
   const udio = useRef(null)
 
   const el = useRef(null)
-  const q = gsap.utils.selector(el)
   //logo hover
 
   function handleMouseEnterLogo(e) {
@@ -114,6 +113,25 @@ export default function Navbar() {
         }
       },
     })
+    return () => {
+      tl.kill()
+      tl_logo.kill()
+      ScrollTrigger.killAll()
+      gsap.killTweensOf(logoWrapper.current)
+      gsap.killTweensOf(hamRef.current)
+      gsap.killTweensOf(logo.current)
+      gsap.killTweensOf(line1.current)
+      gsap.killTweensOf(line2.current)
+      gsap.killTweensOf(p.current)
+      gsap.killTweensOf(b.current)
+      gsap.killTweensOf(d.current)
+      gsap.killTweensOf(s.current)
+      gsap.killTweensOf(ixel.current)
+      gsap.killTweensOf(akery.current)
+      gsap.killTweensOf(esign.current)
+      gsap.killTweensOf(udio.current)
+      gsap.killTweensOf(el.current)
+    }
   }, [])
 
   return (

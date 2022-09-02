@@ -19,7 +19,9 @@ export default function useLoadingModal() {
       duration: 0.66,
     })
     tl_loadingModal.play
-    return () => {}
+    return () => {
+      tl_loadingModal.kill()
+    }
   }, [])
   // END GSAP
 }

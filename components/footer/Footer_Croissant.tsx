@@ -74,7 +74,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
   }
   //////////////////
 
-  // END GSAP
   return (
     <div className='flex flex-col justify-between mx-6'>
       <div className='flex flex-col mt-12 xl:mt-24 justify-start'>

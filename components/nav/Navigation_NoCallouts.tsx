@@ -1,21 +1,14 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import gsap from 'gsap/dist/gsap'
+import { gsap } from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Navbar() {
-  function handleMouseEnter(e) {
-    gsap.to(e.target, { scale: 0.975, ease: 'sine.inOut', duration: 0.15 })
-  }
-  function handleMouseLeave(e) {
-    gsap.to(e.target, { scale: 1, ease: 'sine.inOut', duration: 0.15 })
-  }
   const logoWrapper = useRef(null)
   const hamRef = useRef(null)
   const logo = useRef(null)
-  const logoBG = useRef(null)
 
   const line1 = useRef(null)
   const line2 = useRef(null)
@@ -37,13 +30,9 @@ export default function Navbar() {
   function handleMouseEnterLogo(e) {
     if (e.target) {
       gsap.to(line1.current, { scale: 1.05, ease: 'power2.out', duration: 0.17 })
-      gsap.to(line2.current, { scale: 0.8, ease: 'power2.out', duration: 0.17 }, '<75%')
-      gsap.to(line1.current, { scale: 1, ease: 'power2.in', duration: 0.17, delay: 0.06 }, '<33%')
-      gsap.to(
-        line2.current,
-        { scale: 0.75, ease: 'power2.in', duration: 0.17, delay: 0.06 },
-        '<25%',
-      )
+      gsap.to(line2.current, { scale: 0.8, ease: 'power2.out', duration: 0.17 })
+      gsap.to(line1.current, { scale: 1, ease: 'power2.in', duration: 0.17, delay: 0.06 })
+      gsap.to(line2.current, { scale: 0.75, ease: 'power2.in', duration: 0.17, delay: 0.06 })
     } else return
   }
 
@@ -99,6 +88,24 @@ export default function Navbar() {
         }
       },
     })
+    return () => {
+      tl_logo.kill()
+      ScrollTrigger.killAll()
+      gsap.killTweensOf(logoWrapper.current)
+      gsap.killTweensOf(hamRef.current)
+      gsap.killTweensOf(logo.current)
+      gsap.killTweensOf(line1.current)
+      gsap.killTweensOf(line2.current)
+      gsap.killTweensOf(p.current)
+      gsap.killTweensOf(b.current)
+      gsap.killTweensOf(d.current)
+      gsap.killTweensOf(s.current)
+      gsap.killTweensOf(ixel.current)
+      gsap.killTweensOf(akery.current)
+      gsap.killTweensOf(esign.current)
+      gsap.killTweensOf(udio.current)
+      gsap.killTweensOf(el.current)
+    }
   }, [])
 
   return (
@@ -157,7 +164,7 @@ export default function Navbar() {
         </div>
         <div className=' overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
           <div ref={hamRef} className=' navItem'>
-            <Nav_HamburgerNav />
+            <Nav_HamburgerNav isActive={undefined} onModalUpdate={undefined} />
           </div>
         </div>
       </div>

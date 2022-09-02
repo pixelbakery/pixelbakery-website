@@ -1,17 +1,13 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import ReactPlayer from 'react-player'
 import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import 'swiper/css/navigation'
-
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
 import Image_VarH from '@parts/Image_VarH'
 const slides = [
   '/img/case-studies/snacklins/SNACK_Carousel_01.jpg',
@@ -21,9 +17,7 @@ const slides = [
   '/img/case-studies/snacklins/SNACK_Carousel_05.jpg',
   '/img/case-studies/snacklins/SNACK_Carousel_06.jpg',
 ]
-const divStyle = {
-  position: `unset !important;`,
-}
+
 function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
@@ -70,7 +64,6 @@ function CaseStudies_Gallery() {
   }
   return (
     <>
-      {/* <Lightbox /> */}
       <PageSection>
         <InnerWrapper>
           <div className='relative'></div>

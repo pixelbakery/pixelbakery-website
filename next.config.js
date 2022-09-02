@@ -13,7 +13,11 @@ const { redirects } = require('./redirects.config.js')
 //     : (conf) => conf
 const withImageLoader = require('next-image-loader').withImageLoader
 module.exports = () => {
+  const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+  })
   const config = {
+    swcMinify: true,
     // assetPrefix: isProd ? 'https://cdn.pixelbakery.com' : '',
     images: {
       formats: ['image/avif', 'image/webp'],
@@ -54,6 +58,6 @@ module.exports = () => {
     redirects,
   }
 
-  const plugins = [withImageLoader]
+  const plugins = [withImageLoader, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), config)
 }

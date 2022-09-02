@@ -6,17 +6,7 @@ import Lead from '@typography/Lead'
 import H2 from '@typography/H2'
 import Link from 'next/link'
 
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import GsapClients from "../../js/GSAPclients";
-
 function Work_Clients() {
-  // useEffect(() => {
-  //   GsapClients();
-  // }, [])
-
-  const numRows = Math.floor(clientList.length / 2)
-
   const activeClients = clientList.filter((client) => client.active)
 
   return (

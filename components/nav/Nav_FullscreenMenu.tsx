@@ -4,9 +4,8 @@
 import nav_main from '@data/nav_main'
 import Nav_SocialLinks from './Nav_SocialLinks'
 import Link from 'next/link'
-import { useRef, useEffect, useState } from 'react'
-import gsap from 'gsap'
-import cn from 'classnames'
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
 import Logo_Primary from '@images/logo_primary'
 import Button_Filled from '@parts/Button_Filled'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
@@ -30,6 +29,10 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
         autoAlpha: 1,
       })
       document.body.classList.add('overflow-y-hidden')
+    }
+    return () => {
+      gsap.killTweensOf(fsNavRef.current)
+      gsap.killTweensOf(el.current)
     }
   }, [isActive])
 

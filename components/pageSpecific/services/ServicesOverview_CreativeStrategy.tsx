@@ -11,11 +11,11 @@ function ServicesOverview_CreativeStrategy() {
           <div className='relative h-full w-full'>
             <video
               className='h-full w-full object-cover hideControls'
+              playsInline
               muted
               loop
               controls={false}
               autoPlay
-              playsInline
             >
               <source
                 src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_CreativeStrategy.webm'

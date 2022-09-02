@@ -30,6 +30,7 @@
     "@hookform/error-message": "^2.0.0",
     "@hookform/resolvers": "^2.9.7",
     "@mailchimp/mailchimp_marketing": "3.0.78",
+    "@next/bundle-analyzer": "^12.2.5",
     "@sendgrid/mail": "7.7.0",
     "@stripe/react-stripe-js": "1.10.0",
     "@stripe/stripe-js": "1.35.0",

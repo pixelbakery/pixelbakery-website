@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import gsap from 'gsap'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Lead from '@typography/Lead'
