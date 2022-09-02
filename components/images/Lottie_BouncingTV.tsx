@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
-// import lottie from 'lottie-web'
-import lottie from 'lottie-web/build/player/lottie_light'
+
+import lottie from 'lottie-web'
 
 interface LottieProps {
   animationData: any

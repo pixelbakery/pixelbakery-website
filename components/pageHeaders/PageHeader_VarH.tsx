@@ -4,9 +4,15 @@ import PropTypes from 'prop-types'
 import Lead from '@typography/Lead'
 const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: false })
 
-function randomize(myArray) {
-  return myArray[Math.floor(Math.random() * myArray.length)]
-}
+import Patterns_Blue from '@data/Patterns_Blue.json' assert { type: 'json' }
+import Patterns_Blue_Dark from '@data/Patterns_Blue_Dark.json' assert { type: 'json' }
+import Patterns_Pink from '@data/Patterns_Pink.json' assert { type: 'json' }
+import Patterns_Pink_Light from '@data/Patterns_Pink_Light.json' assert { type: 'json' }
+import Patterns_Peach from '@data/Patterns_Peach.json' assert { type: 'json' }
+import Patterns_Cream from '@data/Patterns_Cream.json' assert { type: 'json' }
+
+import { RandomArrayItem } from '@lib/helpers'
+
 PageHeader_VarH.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
@@ -14,8 +20,6 @@ PageHeader_VarH.propTypes = {
 }
 
 const Blue = ({ header, subheader }) => {
-  const anim = async () => await import('@data/Patterns_Blue.json')
-
   return (
     <PageHeader_VarH_Content
       header={header}
@@ -23,17 +27,15 @@ const Blue = ({ header, subheader }) => {
       accentColor={'blue-dark'}
       subheader={subheader}
       subheaderColor={'cream'}
-      animationData={anim}
+      animationData={Patterns_Blue}
     />
   )
 }
 const Blue_Dark = ({ header, subheader }) => {
   // const PageHeader_VarH_Content = require('./PageHeader_VarH_Content')
-  const anim = async () => await import('@data/Patterns_Blue_Dark.json')
-
   return (
     <PageHeader_VarH_Content
-      animationData={anim}
+      animationData={Patterns_Blue_Dark}
       primaryColor={'blue-dark'}
       subheaderColor={'cream'}
       subheader={subheader}
@@ -43,11 +45,10 @@ const Blue_Dark = ({ header, subheader }) => {
   )
 }
 const Cream = ({ header, subheader }) => {
-  const anim = async () => await import('@data/Patterns_Cream.json')
-
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
-      animationData={anim}
+      animationData={Patterns_Cream}
       accentColor={'peach'}
       primaryColor={'cream'}
       subheaderColor={'blue-dark  '}
@@ -57,11 +58,10 @@ const Cream = ({ header, subheader }) => {
   )
 }
 const Pink = ({ header, subheader }) => {
-  const anim = async () => await import('@data/Patterns_Pink.json')
-
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
-      animationData={anim}
+      animationData={Patterns_Pink}
       primaryColor={'pink'}
       subheaderColor={'pink-light '}
       subheader={subheader}
@@ -71,11 +71,10 @@ const Pink = ({ header, subheader }) => {
   )
 }
 const Pink_Light = ({ header, subheader }) => {
-  const anim = async () => await import('@data/Patterns_Pink_Light.json')
-
+  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
-      animationData={anim}
+      animationData={Patterns_Pink_Light}
       primaryColor={'pink-light'}
       subheaderColor={'blue-dark'}
       subheader={subheader}
@@ -85,10 +84,9 @@ const Pink_Light = ({ header, subheader }) => {
   )
 }
 const Peach = ({ header, subheader }) => {
-  const anim = async () => await import('@data/Patterns_Peach.json')
   return (
     <PageHeader_VarH_Content
-      animationData={anim}
+      animationData={Patterns_Peach}
       primaryColor={'peach'}
       subheaderColor={'egg'}
       subheader={subheader}
@@ -107,35 +105,6 @@ function PageHeader_VarH({ header, subheader }) {
     <Cream header={header} subheader={subheader} />,
     <Peach header={header} subheader={subheader} />,
   ])
-  const [Rand] = useState(randomize(arr))
-  // PageHeader_VarH_Pink,
-  // PageHeader_VarH_Pink_Light,
-  // PageHeader_VarH_Blue,
-  // PageHeader_VarH_Blue_Dark,
-  // PageHeader_VarH_Cream,
-
-  // useEffect(() => {
-  //   if (element.current) {
-  //     setRandomNumber(Math.floor(Math.random() * patterns.length))
-  //     console.log(randomNumber)
-
-  //     element.current = (
-  //       <PageHeader_VarH_Content
-  //         animationData={patterns[0].pattern}
-  //         header={header}
-  //         subheader={subheader}
-  //         primaryColor={patterns[0].primaryColor}
-  //         accentColor={patterns[0].accentColor}
-  //         subheaderColor={patterns[0].subheaderColor}
-  //       />
-  //     )
-  //   }
-  //   return () => {
-  //     element.current = null
-  //   }
-  // }, [patterns])
-
-  // const ThisPattern = patterns[randomNumber]
 
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
@@ -144,7 +113,7 @@ function PageHeader_VarH({ header, subheader }) {
           Loading...
         </Lead>
       </div>
-      {Rand}
+      {arr[RandomArrayItem(arr.length)]}
     </header>
   )
 }
