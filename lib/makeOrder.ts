@@ -1,7 +1,7 @@
 export function makeOrder({ live, values, billingSameAsShipping }: any) {
-  const pwyw = live?.pay_what_you_want?.customer_set_price?.raw
-  const pay_what_you_want = pwyw && pwyw > 0 ? pwyw : live?.subtotal.raw
-
+  // const pwyw = live?.pay_what_you_want?.customer_set_price?.raw
+  // const pay_what_you_want = pwyw && pwyw > 0 ? pwyw : live?.subtotal.raw
+  const total = live?.subtotal.raw
   const shippingAddress = {
     name: 'Shipping',
     country: 'US',
@@ -35,7 +35,7 @@ export function makeOrder({ live, values, billingSameAsShipping }: any) {
     fulfillment: {
       shipping_method: live.shipping.id,
     },
-    pay_what_you_want,
+    total,
   }
 
   return newOrder

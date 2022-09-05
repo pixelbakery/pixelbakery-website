@@ -3,9 +3,6 @@
 /* eslint-disable */
 /* eslint-disable react/react-in-jsx-scope */
 import { Cart } from '@chec/commerce.js/types/cart'
-import { Live } from '@chec/commerce.js/types/live'
-import Link from 'next/link'
-
 import { useCheckoutState } from '@hooks/useCheckoutState'
 import useShippingSummary from '@hooks/useShippingSummary'
 import useTotals from '@hooks/useTotals'
@@ -16,12 +13,12 @@ type Props = {
   shipping?: {
     price: any
   }
-  onCostChange: any
+  // onCostChange: any
   cart?: Cart
 
   [key: string]: any
 }
-function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
+function Store_CartDetails({}: Props) {
   const { cart, live } = useCheckoutState()
   const { subtotal, total, totalWithTax, totalDue, tax } = useTotals()
 
@@ -48,10 +45,10 @@ function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
       })}
       <div className='border-t-2 my-2 pt-2  border-blue-dark'>
         <p className='text-right text-wine text-sm italic'>
-          minimum amount: {cart?.subtotal.formatted_with_symbol}
+          amount: {cart?.subtotal.formatted_with_symbol}
         </p>
       </div>
-      <div>
+      {/* <div>
         <p className='text-blue text-2xl font-semibold py-3'>Pay what you want</p>
         <p className='text-left text-wine text-md'>
           Adjust the slider below to change the price. All proceeds go to the{' '}
@@ -66,8 +63,8 @@ function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
           NOTE: Currently, you have to move the slider a little bit to successfully check out. If
           you'd like to pay the minimum price, simply slide it back all the way to the left.
         </p>
-      </div>
-      <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>
+      </div> */}
+      {/* <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>
         <input
           type='range'
           min={pwywMin}
@@ -81,7 +78,7 @@ function Store_CartDetails({ pwywMin, pwywMax, pwyw, onPwywChange }: Props) {
             ${Number(pwyw ?? 0).toFixed(2)}
           </span>
         </span>
-      </div>
+      </div> */}
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2'>tax {tax?.amount.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2 text-opacity-60'>

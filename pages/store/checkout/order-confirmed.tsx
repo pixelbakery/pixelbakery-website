@@ -1,6 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
-import next from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import Navigation from '@nav/Navigation'
@@ -29,15 +26,6 @@ function SubmissionConfirmation() {
             <Obfuscate email={'maddie@pixelbakery.com'} className={'underline text-peach'} />.
           </p>
 
-          {/* { TODO: grab favorite band name from application and insert it below } */}
-
-          <p className='my-4 pb-2 text-lg font-md text-wine'>
-            We redistribute all of our store proceeds directly back to our employees, which means
-            you're directly impacting someone cool's life when you purchase our merch. Except for
-            right now. Which, as you know because we've said it like 20 times, we're donating the
-            proceeds to the Child Advocacy Center.
-          </p>
-
           <p className='my-4 pb-2 text-lg font-md text-wine'>
             Also, be sure to follow us on{' '}
             <a
@@ -47,8 +35,8 @@ function SubmissionConfirmation() {
               className='underline text-peach'
             >
               Instagram
-            </a>
-            ;)
+            </a>{' '}
+            🫶
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>👩‍🍳 💖 🍩,</p>

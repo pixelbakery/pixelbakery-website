@@ -187,7 +187,6 @@ hover:opacity-90 hover:scale-98 active:scale-97'
           </div>
         </InnerWrapper>
       </PageSection>
-      <Store_Maintenance />
     </Main>
   )
 }

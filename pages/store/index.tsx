@@ -10,10 +10,9 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 
 import gsap from 'gsap'
 
-import Head from 'next/head'
 import Navigation_Store from '@nav/Navigation_Store'
 import Main from '@parts/Main'
-import { NextSeo } from 'next-seo'
+import Store_SEO from '@store/Store_SEO'
 export const getServerSideProps: GetServerSideProps = async () => {
   const products = await commerce.products.list()
   return {
@@ -58,39 +57,7 @@ const StorePage: NextPage = ({ products }: any) => {
 
   return (
     <Main id='page-store' className='min-w-screen'>
-      <Head>
-        <NextSeo
-          title='Store'
-          description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
-          openGraph={{
-            url: `https://pixelbakery.com/work`,
-            title: 'Store',
-            images: [
-              {
-                url: `https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
-                alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
-              },
-            ],
-            description:
-              'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-          }}
-        />
-        <meta
-          name='description'
-          content='In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases made from our shop to our friends at the Child Advocacy Center.'
-        />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://pixelbakery.com/store' />
-        <meta property='og:title' content='PBDS – Company Store' />
-        <meta
-          property='og:description'
-          content='In honor of Giving Tuesday, Pixel Bakery will be donating all proceeds of purchases made from our shop to our friends at the Child Advocacy Center.'
-        />
-        <meta property='og:image' content='/img/pixel-bakery-header.png' />
-        <meta name='twitter:site' content='@pixelbakerylnk'></meta>
-        <meta name='twitter:card' content='summary_large_image'></meta>
-        <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
-      </Head>
+      <Store_SEO />
       <Navigation_Store />
       <PageHeader_VarH header='Company Store' subheader='Freshly Baked Every Morning' />
       {/* <section className='mt-4 bg-blue-dark py-12 px-8 min-w-screen'>

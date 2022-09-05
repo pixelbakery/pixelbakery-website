@@ -1,4 +1,4 @@
-import { Checkout } from '@chec/commerce.js/features/checkout'
+// import { Checkout } from '@chec/commerce.js/features/checkout'
 import { Cart } from '@chec/commerce.js/types/cart'
 import { CheckoutToken } from '@chec/commerce.js/types/checkout-token'
 import { Live } from '@chec/commerce.js/types/live'

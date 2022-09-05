@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
-import { useDebounce } from 'use-debounce'
+// import { useDebounce } from 'use-debounce'
 import FormikEffect from '@parts/FormikEffect'
 import LoadingModal from '@parts/LoadingModal'
 import Store_BillingAddressForm from '@store/Store_BillingAddressForm'
@@ -16,12 +16,12 @@ import Store_ShippingAddressForm from '@store/Store_ShippingAddressForm'
 import { useCheckoutState } from '@hooks/useCheckoutState'
 import commerce from '@lib/commerce'
 import { makeOrder } from '@lib/makeOrder'
-import Store_Maintenance from '@store/Store_Maintenance'
 import useShippingOptions from '@hooks/useShippingOptions'
 import useSetShippingOption from '@hooks/useSetShippingOption'
-import useCheckPwyw from '@hooks/useCheckPwyw'
+// import useDiscountCode from '@hooks/useDiscountCode'
+
+// import useCheckPwyw from '@hooks/useCheckPwyw'
 import useSetTaxZone from '@hooks/useSetTaxZone'
-import Navigation_NoCallouts from '@nav/Navigation_NoCallouts'
 import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
@@ -53,6 +53,9 @@ export type CheckoutSchema = {
     state: string
     postalCode: string
   }
+  // discount:{
+  //   code: string
+  // }
   billing: {
     address: string
     city: string
@@ -70,16 +73,14 @@ let Checkout: NextPage = () => {
       .then(() => {})
   }, [fetchCart, fetchToken])
 
-  useEffect(() => {
-    let raw = live?.pay_what_you_want?.customer_set_price?.raw
-    // if (raw !== 0) {
-    setPwyw(raw)
-    //   checkPwyw({ customer_set_price: raw.toString() })
-    // }
-  }, [live?.pay_what_you_want?.customer_set_price?.raw])
+  // useEffect(() => {
+  //   let raw = live?.pay_what_you_want?.customer_set_price?.raw
+  //   setPwyw(raw)
+  // }, [live?.pay_what_you_want?.customer_set_price?.raw])
 
-  const checkPwyw = useCheckPwyw()
+  // const checkPwyw = useCheckPwyw()
   const [shippingDetails, setShippingDetails] = useState<CheckoutSchema['shipping']>()
+  // const [discountCode, setDiscountCode] = useState<CheckoutSchema['discount']>()
 
   const [shippingMethod, setShippingMethod] = useState<any>({})
   const [billingSameAsShipping, setBillingSameAsShipping] = useState(true)
@@ -88,17 +89,18 @@ let Checkout: NextPage = () => {
   const stripe = useStripe()
   const elements = useElements()
 
-  const pwywMax = cart?.line_items?.reduce((prev, curr) => {
-    return prev + curr.quantity * (curr.price.raw * 10)
-  }, 0)
-  const pwywMin = live?.pay_what_you_want.minimum.raw
+  // const pwywMax = cart?.line_items?.reduce((prev, curr) => {
+  //   return prev + curr.quantity * (curr.price.raw * 10)
+  // }, 0)
+  // const pwywMin = live?.pay_what_you_want.minimum.raw
 
-  const [pwyw, setPwyw] = useState(live?.pay_what_you_want?.minimum?.raw ?? 0)
-  const onPwywChange = (evt) => {
-    setPwyw(evt.target.value)
-  }
+  // const [pwyw, setPwyw] = useState(live?.pay_what_you_want?.minimum?.raw ?? 0)
+  // const onPwywChange = (evt) => {
+  //   setPwyw(evt.target.value)
+  // }
 
   const setShippingOption = useSetShippingOption()
+  // const applyDiscountCode = useDiscountCode()
   const setTaxZone = useSetTaxZone()
 
   const shippingOptions = useShippingOptions('US', shippingDetails?.state ?? 'US-NE')
@@ -108,14 +110,20 @@ let Checkout: NextPage = () => {
     setShippingMethod(evt.target.value ?? null)
     setShippingOption(evt.target.value, 'US', shippingDetails?.state ?? 'US-NE')
   }
-  const [customer_set_price] = useDebounce(pwyw, 300)
+
+  // const onDiscountChange = async (evt) => {
+
+  //   applyDiscountCode(evt.target.value ?? null)
+  //   applyDiscountCode(evt.target.value)
+  // }
+  // const [customer_set_price] = useDebounce(pwyw, 300)
 
   // On change of our slider, update PWYW
-  useEffect(() => {
-    if (customer_set_price) {
-      checkPwyw({ customer_set_price: customer_set_price.toString() })
-    }
-  }, [checkPwyw, customer_set_price])
+  // useEffect(() => {
+  //   if (customer_set_price) {
+  //     checkPwyw({ customer_set_price: customer_set_price.toString() })
+  //   }
+  // }, [checkPwyw, customer_set_price])
 
   const onSubmit = async (values) => {
     if (!stripe || !elements) {
@@ -193,6 +201,8 @@ let Checkout: NextPage = () => {
     nextValues: CheckoutSchema
   }) => {
     setShippingDetails(nextValues.shipping)
+    // setDiscountCode(nextValues.discountCode)
+
     if (JSON.stringify(prevValues.shipping) !== JSON.stringify(nextValues.shipping)) {
       if (nextValues.shipping.postalCode.toString().length === 5) {
         const { valid } = await setTaxZone({
@@ -237,6 +247,7 @@ let Checkout: NextPage = () => {
             option_name: '',
           },
         ],
+        // discount: '',
         billing: {
           address: '',
           city: '',
@@ -357,13 +368,13 @@ let Checkout: NextPage = () => {
                   </div>
 
                   <Store_CartDetails
-                    value={pwywMin}
-                    pwywMin={pwywMin}
-                    pwywMax={pwywMax}
-                    pwyw={pwyw}
-                    onPwywChange={onPwywChange}
+                    // value={pwywMin}
+                    // pwywMin={pwywMin}
+                    // pwywMax={pwywMax}
+                    // pwyw={pwyw}
+                    // onPwywChange={onPwywChange}
                     cost={0}
-                    onCostChange={undefined} // onCostChange={onPwywChange}
+                    // onCostChange={undefined} // onCostChange={onPwywChange}
                   />
                 </div>
                 {/* End Cart Details */}
@@ -391,7 +402,6 @@ let Checkout: NextPage = () => {
               </InnerWrapper>
             </PageSection>
           )}
-          <Store_Maintenance />
         </Main>
       )}
     </Formik>
