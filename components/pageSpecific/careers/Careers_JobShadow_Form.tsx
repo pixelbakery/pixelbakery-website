@@ -1,7 +1,7 @@
 import Lead from '@typography/Lead'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { SendToMonday_JobShadow } from '@lib/api_sendToMonday'
