@@ -17,6 +17,16 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/bakery',
+    destination: '/about',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/snacklins-retainer',
+    destination: '/work/case-studies/snacklins-content-kit',
+    permanent: true,
+  },
+  {
     source: '/animation',
     destination: '/services/animation',
     permanent: true,
