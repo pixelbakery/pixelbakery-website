@@ -8,7 +8,7 @@ import Lead from '@typography/Lead'
 import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'
 import { NextSeo } from 'next-seo'
 import Obfuscate from 'react-obfuscate'
-function JobShadow() {
+function Page_Careers_JobShadow() {
   return (
     <Main>
       <NextSeo
@@ -147,4 +147,4 @@ function JobShadow() {
     </Main>
   )
 }
-export default JobShadow
+export default Page_Careers_JobShadow
