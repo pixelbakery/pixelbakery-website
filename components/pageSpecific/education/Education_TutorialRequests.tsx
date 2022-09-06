@@ -26,35 +26,32 @@ function Education_TutorialRequests() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <input
-              className='form-border-b w-full'
+              className='form-input w-full'
               type='text'
               placeholder='name'
               {...register('name', { required: true })}
             />
             <input
-              className='form-border-b w-full'
+              className='form-input w-full'
               type='email'
               placeholder='email'
               {...register('email', { required: true })}
             />
 
             <input
-              className='form-border-b w-full'
+              className='form-input w-full'
               type='text'
               placeholder="what's this all about?"
               {...register('subject', {})}
             />
             <textarea
-              className='form-border-b w-full'
+              className='form-input w-full'
               placeholder='sup?'
               rows={5}
               {...register('message', {})}
             />
 
-            <input
-              className='bg-blue text-lg font-bold text-cream rounded-md px-8 py-3 '
-              type='submit'
-            />
+            <input className='form-submit' type='submit' />
           </form>
         </div>
       </InnerWrapper>

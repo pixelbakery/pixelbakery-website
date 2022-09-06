@@ -16,11 +16,12 @@ function Education_RecentlyAdded_Card({ props }) {
         <div className='absolute w-full h-full rounded overflow-hidden'>
           <Link href={props.link} passHref>
             <Image
-              src={props.image}
+              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.image}`}
               layout='fill'
               objectFit='cover'
               className=' object-center '
-              blurDataURL='true'
+              placeholder='blur'
+              blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.image}`}
               quality={50}
               alt={props.title}
             />
