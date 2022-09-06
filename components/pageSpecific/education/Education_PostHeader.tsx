@@ -18,9 +18,8 @@ type Props = {
   video: string
 }
 
-const PostHeader = ({
+const Education_PostHeader = ({
   title,
-  subtitle,
   category,
   coverImage,
   date,
@@ -49,13 +48,14 @@ const PostHeader = ({
           <div className='flex mt-3 mb-16'>
             <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
               <Image
-                blurDataURL='true'
+                placeholder='blur'
+                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
                 layout='fill'
                 objectFit='cover'
                 alt={author}
                 quality={25}
                 className='object-top scale-175 sc'
-                src={'/img/placeholder02.jpg'}
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
               />
             </div>
             <div className={cn('ml-8 flex flex-col justify-center self-center')}>
@@ -86,4 +86,4 @@ const PostHeader = ({
   )
 }
 
-export default PostHeader
+export default Education_PostHeader

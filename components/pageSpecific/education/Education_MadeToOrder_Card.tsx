@@ -27,7 +27,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
       passHref
     >
       <article>
-        <article
+        <div
           className={cn(
             'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ',
             `aspect-w-${aspectW}`,
@@ -35,11 +35,11 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
           )}
         >
           <Image
-            src={tutorial.data.coverImage}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            blurDataURL={tutorial.data.coverImage}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             quality={50}
             className='bg-blue'
             alt={`cover photo for ${tutorial.data.title}`}
@@ -48,7 +48,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
           <div className='mt-2 ml-2'>
             <Pill text={tutorial.data.category} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
-        </article>
+        </div>
         <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
           <div className=''>
             <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>

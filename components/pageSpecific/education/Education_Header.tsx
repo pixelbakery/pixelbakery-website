@@ -11,7 +11,7 @@ function Education_Header() {
     <section className='relative lander my-4 grid grid-cols-5 w-full'>
       <div className='bg-blue absolute lg:relative top-0 left-0 w-full h-full col-span-1 sm:col-span-2 z-0  '>
         <LottiePatternPlayer
-          animationData={require('@data/Patterns_Blue_Dark')}
+          animationData={require('@data/lottie_patterns/Patterns_Blue_Dark.json')}
           width={100}
           height={100}
         />

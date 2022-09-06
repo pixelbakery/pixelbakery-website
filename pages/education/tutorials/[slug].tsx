@@ -15,23 +15,20 @@ import Button_Filled from '@parts/Button_Filled'
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
-import PostHeader from '@education/Education_PostHeader'
+import dynamic from 'next/dynamic'
+const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: false })
+
 import Pill from '@parts/Pill'
 import H2 from '@typography/H2'
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
+import Education_SupportUs from '@education/Education_SupportUs'
+
 const components = {
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
   Carousel: Carousel,
   VimeoPlayer: VimeoPlayer,
   Video: Video,
 }
 
-export default function PostPage({ slug, allMadeToOrders, source, frontMatter }) {
+export default function Page_Education_Tutorials({ slug, source, frontMatter }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   const myContainer = useRef(null)
@@ -53,6 +50,25 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
 
   return (
     <Main>
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Education',
+            item: 'https://pixelbakery.com/education',
+          },
+          {
+            position: 2,
+            name: 'Tutorials',
+            item: 'https://pixelbakery.com/education#madeToOrder',
+          },
+          {
+            position: 3,
+            name: `${frontMatter.title}`,
+            item: `https://pixelbakery.com/education/tutorials/${slug}`,
+          },
+        ]}
+      />
       <NextSeo
         title={`${frontMatter.title} | Tutorials`}
         description={`${frontMatter.excerpt}`}
@@ -80,20 +96,6 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
         datePublished={`${datePostedISO}`}
         authorName={`${frontMatter.author}`}
         description={`${frontMatter.excerpt}`}
-      />
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Education',
-            item: 'https://pixelbakery.com/education',
-          },
-          {
-            position: 2,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/education/${slug}`,
-          },
-        ]}
       />
 
       <PostHeader
@@ -134,38 +136,7 @@ export default function PostPage({ slug, allMadeToOrders, source, frontMatter })
           </div>
         </div>
       </PageSection>
-      <section className='my-4 py-16 bg-blue'>
-        <div className='grid grid-cols-1 md:grid-cols-2 px-4'>
-          <div className='col-span-1 pb-12'>
-            <div className='max-w-md mx-auto'>
-              <H2 className='mt-0 pt-0' color='cream'>
-                Support Us
-              </H2>
-              <p className='max-w-lg text-cream font-medium text-xl'>
-                If this project file helped you at all, feel free to give us a tip.
-              </p>
-            </div>
-          </div>
-          <div className=' col-span-1  flex flex-col justify-center'>
-            <div className='relative h-fit'>
-              <iframe
-                scrolling='no'
-                className='w-full  inline-block bg-transparent'
-                id='kofiframe'
-                src='https://ko-fi.com/pixelbakery/?hidefeed=true&widget=true&embed=true&preview=true&transparent-background=true'
-                style={{
-                  border: 'none',
-                  width: '100%',
-                  padding: '4px',
-                  background: 'rgba(0,0,0,0) !important',
-                }}
-                height='800'
-                title='pixelbakery'
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Education_SupportUs />
     </Main>
   )
 }
@@ -187,22 +158,8 @@ export const getStaticProps = async ({ params }) => {
     scope: data,
   })
 
-  const allMadeToOrders = madeToOrderFilePaths
-    .map((filePath) => {
-      const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
-      const { content, data } = matter(source)
-      return {
-        content,
-        data,
-        filePath,
-      }
-    })
-    .filter((mto) => mto.data.active)
-    .sort((mto1, mto2) => (mto1.data.date > mto2.data.date ? -1 : 1))
-
   return {
     props: {
-      allMadeToOrders: allMadeToOrders,
       source: mdxSource,
       frontMatter: data,
     },

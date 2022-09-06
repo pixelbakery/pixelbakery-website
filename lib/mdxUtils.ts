@@ -32,3 +32,9 @@ export const madeToOrderFilePaths = fs
 //PEOPLE (Team Bios)
 export const PEOPLE_PATH = path.join(process.cwd(), '_people')
 export const peopleFilePaths = fs.readdirSync(PEOPLE_PATH).filter((path) => /\.mdx?$/.test(path))
+
+//PROJECT FILES
+export const PROJECTFILE_PATH = path.join(process.cwd(), '_projectFiles')
+export const projectFilesFilePaths = fs
+  .readdirSync(PROJECTFILE_PATH)
+  .filter((path) => /\.mdx?$/.test(path))

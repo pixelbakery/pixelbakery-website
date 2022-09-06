@@ -1,4 +1,3 @@
-import { getAllProjectFiles } from '@lib/api_projectFile'
 import Education_Header from '@education/Education_Header'
 import Education_MadeToOrder from '@education/Education_MadeToOrder'
 import Education_FromScratch from '@education/Education_FromScratch'
@@ -10,7 +9,12 @@ import H2 from '@typography/H2'
 import Main from '@parts/Main'
 import fs from 'fs'
 import { NextSeo } from 'next-seo'
-import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
+import {
+  madeToOrderFilePaths,
+  MADETOORDER_PATH,
+  projectFilesFilePaths,
+  PROJECTFILE_PATH,
+} from '@lib/mdxUtils'
 import matter from 'gray-matter'
 import path from 'path'
 
@@ -27,19 +31,19 @@ function EducationPage({ allProjectFiles, allMadeToOrders }) {
           description: `Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`,
           images: [
             {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
               width: 1200,
               height: 900,
               alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
               width: 1080,
               height: 810,
               alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
               width: 1080,
               height: 810,
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
@@ -67,7 +71,7 @@ function EducationPage({ allProjectFiles, allMadeToOrders }) {
         </InnerWrapper>
       </PageSection>
       {/* <Store_Maintenance /> */}
-      <Education_ProjectFiles projectFiles={allProjectFiles} />
+      {/* <Education_ProjectFiles allProjectFiles={allProjectFiles} /> */}
       {/* <Education_Recent /> */}
       <Education_FromScratch />
       <Education_MadeToOrder allMadeToOrders={allMadeToOrders} />
@@ -82,28 +86,30 @@ export const getStaticProps = async () => {
   const allMadeToOrders = madeToOrderFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
 
       return {
-        content,
         data,
         filePath,
       }
     })
     .sort((mto1, mto2) => (mto1.data.date > mto2.data.date ? -1 : 1))
 
-  // Project Files (old system)
-  const allProjectFiles = getAllProjectFiles([
-    'slug',
-    'title',
-    'active',
-    'subtitle',
-    'coverImage',
-    'videoCoverImage',
-    'category',
-  ])
+  // Project Files
+  // const allProjectFiles = projectFilesFilePaths
+  //   .map((filePath) => {
+  //     const source = fs.readFileSync(path.join(PROJECTFILE_PATH, filePath))
+  //     const { content, data } = matter(source)
+
+  //     return {
+  //       content,
+  //       data,
+  //       filePath,
+  //     }
+  //   })
+  //   .sort((pf1, pf2) => (pf1.data.date > pf2.data.date ? -1 : 1))
 
   return {
-    props: { allProjectFiles, allMadeToOrders },
+    props: { allMadeToOrders },
   }
 }

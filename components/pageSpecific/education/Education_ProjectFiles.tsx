@@ -13,17 +13,13 @@ import StrokeText from '@parts/StrokeText'
 
 // install Swiper modules
 
-type Props = {
-  projectFiles: ProjectFile[]
-}
-
-function Education_ProjectFiles({ projectFiles }: Props) {
+function Education_ProjectFiles({ allProjectFiles }) {
   const [activeFilter, setFilter] = useState('all')
 
-  const [filteredProjectFiles, setFilteredItems] = useState(projectFiles)
+  const [filteredProjectFiles, setFilteredItems] = useState(allProjectFiles)
 
   const allCategories = []
-  projectFiles.forEach(function (file, i) {
+  allProjectFiles.forEach(function (file, i) {
     allCategories.push(file.category)
   })
 
@@ -32,9 +28,9 @@ function Education_ProjectFiles({ projectFiles }: Props) {
     setFilter(filter)
 
     if (filter === 'all') {
-      setFilteredItems(projectFiles)
+      setFilteredItems(allProjectFiles)
     } else {
-      setFilteredItems(projectFiles.filter((file) => file.category === filter))
+      setFilteredItems(allProjectFiles.filter((file) => file.category === filter))
     }
   }
   return (
@@ -74,7 +70,7 @@ function Education_ProjectFiles({ projectFiles }: Props) {
             {filters.map((filter, index) => {
               return (
                 <li
-                  key={filter}
+                  key={index}
                   className={cn('-mt-12', {
                     ['fill-blue-dark text-blue-dark active']: filter === activeFilter,
                   })}
@@ -102,8 +98,8 @@ function Education_ProjectFiles({ projectFiles }: Props) {
               return (
                 <Link
                   key={projectFile.title}
-                  href={`/education/project-files/${projectFile.slug}`}
-                  passHref
+                  as={`/education/project-files/${projectFile.filePath.replace(/\.mdx?$/, '')}`}
+                  href={`/education/project-files/[slug]`}
                 >
                   <a
                     id={`${projectFile.title}`}
@@ -122,17 +118,18 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                             className='object-cover w-full h-full hideControls'
                           >
                             <source
-                              src={`https://cdn.pixelbakery.com/${projectFile.coverImage}`}
+                              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
                               type={'video/mp4'}
                             />
                           </video>
                         ) : (
                           <Image
-                            src={projectFile.coverImage}
+                            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
                             alt={`${projectFile.title}} project file free for ${projectFile.category}`}
                             layout='fill'
                             objectFit='cover'
-                            blurDataURL='true'
+                            placeholder='blur'
+                            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
                             className='bg-peach'
                           />
                         )}
