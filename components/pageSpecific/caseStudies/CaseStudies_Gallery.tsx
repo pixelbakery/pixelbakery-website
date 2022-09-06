@@ -21,14 +21,14 @@ const slides = [
 function CaseStudies_Gallery() {
   const SetSlide = ({ slide }) => {
     return (
-      <div className='h-full aspect-w-1 aspect-h-1 flex flex-col justify-center'>
+      <div className='h-full aspect-w-1 aspect-h-1 flex flex-col justify-center relative'>
         <Image
           layout='fill'
           objectFit='cover'
           alt={'Snacklins food and packaging photography that Pixel Bakery produced'}
-          src={slide}
+          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
           placeholder={'blur'}
-          blurDataURL={slide}
+          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
           className='block w-full  self-center object-contain '
         />
       </div>
@@ -87,21 +87,21 @@ function CaseStudies_Gallery() {
                 <div className='col-span-2 relative'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_01.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_01.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1 relative'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_02.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_02.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1  relative'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_03.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_03.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
@@ -112,21 +112,21 @@ function CaseStudies_Gallery() {
                 <div className='col-span-1'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_05.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_05.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-1  relative'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_04.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_04.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
                 <div className='col-span-2 relative'>
                   <Image_VarH
                     openInNewWindow={true}
-                    src={'/img/case-studies/snacklins/SNACK_06.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_06.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>

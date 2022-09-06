@@ -12,7 +12,7 @@ import About_Twitch from '@about/About_Twitch'
 import About_Faq from '@about/About_Faq'
 import About_Awards from '@about/About_Awards'
 import About_Spotify from '@about/About_Spotify'
-import About_FamilyPhotos from '@about/About_FamilyPhotos'
+// import About_FamilyPhotos from '@about/About_FamilyPhotos'
 
 function About({ allPeople }) {
   return (

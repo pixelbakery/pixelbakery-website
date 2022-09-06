@@ -32,6 +32,7 @@ import Careers_SEO from '@careers/Careers_SEO'
 const components = {
   Head,
 }
+const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
 
 export default function JobsPage({ slug, source, frontMatter }) {
   const [coverImage] = useState(handleCoverImage())
@@ -76,7 +77,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
                     layout='fill'
                     objectFit='cover'
                     className='object-center'
-                    src={coverImage}
+                    src={`${ImgPrefix}${coverImage}`}
                     alt={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`}
                   />
                 </div>

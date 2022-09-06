@@ -11,12 +11,13 @@ import Obfuscate from 'react-obfuscate'
 //CSS imports
 import markdownStyles from '@styles/markdown-styles.module.css'
 
-function About_Team_Header({ source, frontMatter }) {
+const About_Team_Header = ({ source, frontMatter }) => {
   const socialList = frontMatter.socials
 
   const components = {
     Head,
   }
+  const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
   return (
     <PageSection color='cream'>
       <InnerWrapper className='mt-24'>
@@ -25,8 +26,8 @@ function About_Team_Header({ source, frontMatter }) {
             <div className=' max-w-lg'>
               <Image
                 placeholder='blur'
-                blurDataURL={frontMatter.headshotFun}
-                src={frontMatter.headshotFun}
+                blurDataURL={`${ImgPrefix}${frontMatter.headshotFun}`}
+                src={`${ImgPrefix}${frontMatter.headshotFun}`}
                 layout='fill'
                 objectFit='cover'
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}

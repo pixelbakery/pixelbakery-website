@@ -1,13 +1,9 @@
-import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
-import matter from 'gray-matter'
-import path from 'path'
-import fs from 'fs'
 
-function About_Team_MatchingPosts({ allPosts, frontMatter }) {
+const About_Team_MatchingPosts = ({ allPosts, frontMatter }) => {
   const matchingAuthorPosts = allPosts
     .filter((p) => p.data.author.name.toUpperCase() === frontMatter.name.toUpperCase())
     .slice(0, 11)

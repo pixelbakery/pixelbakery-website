@@ -57,7 +57,7 @@ export const Marq_Unicorn = ({ bgColor }) => {
     <Wrapper bgColor={bgColor}>
       <div className='-mb-40 mt-4 lg:-mb-64 2xl:-mb-72  max-w-sm lg:max-w-md  relative z-0'>
         <Lottie
-          animationData={require('@data/lottie/Marq_Lottie_FloatingUnicorn.json')}
+          animationData={require('@data/lottie_misc/Marq_Lottie_FloatingUnicorn.json')}
           width={100}
           height={100}
         />
@@ -71,7 +71,7 @@ export const Marq_MarchingSolders = ({ bgColor }) => {
       <Wrapper bgColor={bgColor}>
         <div className='mt-12 w-full h-full overflow-hidden'>
           <Lottie
-            animationData={require('@data/lottie/Marq_Lottie_MarchingSoldiers.json')}
+            animationData={require('@data/lottie_misc/Marq_Lottie_MarchingSoldiers.json')}
             width={100}
             height={50}
           />

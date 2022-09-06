@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
 import cn from 'classnames'
 import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
+import { SendToMailchimp, SendEmail_Croissants } from '@lib/helpers'
 function Footer_Mailchimp({ onModalUpdate }) {
   const [checked, setChecked] = useState(true)
   const [submitted, setSubmitted] = useState(false)
   const [message, setMessage] = useState('')
-  const handleOnClick = (index) => {
+  const handleOnClick = () => {
     // this next line will update the state in the parent component
     onModalUpdate(false)
     setSubmitted(false)
@@ -17,41 +18,6 @@ function Footer_Mailchimp({ onModalUpdate }) {
   const handleCheck = () => {
     setChecked(!checked)
   }
-  // const handleModal = () => {
-  //   setModal(!modalOpen)
-  //   setSubmitted(false)
-  // }
-  // const handleSubmitted = () => {
-  //   setSubmitted(!submitted)
-  // }
-
-  ////////////
-  // MAILCHIMP
-  ////////////
-  async function SendToMailchimp(data) {
-    data.tag = 'Croissants'
-    if (checked) {
-      await fetch('/api/mailchimp', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } else {
-      return
-    }
-  }
-  ///////////
-  // SENDGRID
-  ///////////
-  async function SendToSendgrid(data) {
-    await fetch('/api/sendCroissant', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }).then((res) => res.json())
-  }
-
   //////////////////
   // REACT-HOOK-FORM
   //////////////////
@@ -65,9 +31,9 @@ function Footer_Mailchimp({ onModalUpdate }) {
 
   // Handle the submit
   const onSubmit = (data) => {
-    SendToSendgrid(data)
     SendToMonday_Croissants(data)
-    SendToMailchimp(data)
+    SendToMailchimp(data, 'Croissants')
+    SendEmail_Croissants(data)
     resetField('email')
     setSubmitted(true)
     setMessage('👩‍🍳 Nice. Check your inbox. <em>bon appetit</em>')

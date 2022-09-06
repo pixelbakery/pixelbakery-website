@@ -15,8 +15,9 @@ function CaseStudies_Header_Alt({ ...props }) {
             <Image
               layout='fill'
               objectFit='contain'
-              blurDataURL='true'
-              src={'/img/clients/pixelbakery_client_SNACKLINS_color.svg'}
+              placeholder='blur'
+              blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/pixelbakery_client_SNACKLINS_color.svg`}
+              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/pixelbakery_client_SNACKLINS_color.svg`}
               alt='Pixel Bakery Design Studio'
               className='object-enter relative'
             />
@@ -47,15 +48,6 @@ function CaseStudies_Header_Alt({ ...props }) {
           </div>
         </div>
       </div>
-      {/* <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
-        <Vimeo
-          video={props.heroVideo}
-          autoplay={false}
-          showPortrait
-          responsive={true}
-          className={'relative'}
-        />
-      </div> */}
     </section>
   )
 }

@@ -42,12 +42,12 @@ const Carousel = ({
         })}
       >
         <Image
-          src={slide.src}
+          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
           alt={slide.alt}
           placeholder='blur'
           layout='fill'
           objectFit={objectFit}
-          blurDataURL={slide.src}
+          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
         />
       </div>
     )

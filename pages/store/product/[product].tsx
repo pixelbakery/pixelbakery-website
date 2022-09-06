@@ -2,20 +2,17 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { useState } from 'react'
 import { BreadcrumbJsonLd, NextSeo, ProductJsonLd } from 'next-seo'
-import Store_Maintenance from '@store/Store_Maintenance'
 import PageSection from '@parts/PageSection'
 import commerce from '@lib/commerce'
 import Image from 'next/image'
 import useCart from '@hooks/useCart'
 import Store_VariantPicker from '@store/Store_VariantPicker'
 import Link from 'next/link'
-import Head from 'next/head'
 import cs from 'classnames'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import React from 'react'
 import Navigation_Store from '@nav/Navigation_Store'
-
+import { createElement } from 'react'
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -47,7 +44,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   }
 
   const renderHTML = (rawHTML: string) =>
-    React.createElement('div', { dangerouslySetInnerHTML: { __html: rawHTML } })
+    createElement('div', { dangerouslySetInnerHTML: { __html: rawHTML } })
   const toastMessage = () => renderHTML('🥳   &#8194;    added to cart  &#8194;  🎉')
   const notify = () => toast(toastMessage)
   const { data: cart, refetch } = useCart()
@@ -62,10 +59,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   }
 
   // check to see if it's a name your own price product
-  let prependPrice = ''
-  if (product.conditionals.is_pay_what_you_want) {
-    prependPrice = 'minimum price: '
-  }
+
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
       <BreadcrumbJsonLd
@@ -158,6 +152,8 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               <Image
                 layout='fill'
                 src={product.media.source}
+                placeholder='blur'
+                blurDataURL={product.media.source}
                 objectFit='cover'
                 className='inset-0'
                 alt={'pixel bakery ' + product.name}
@@ -175,7 +171,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               {product.name}
             </h1>
             <p className='text-blue text-3xl font-bold mt-1 md:mt-3 pb-0 mb-0'>
-              {prependPrice} {product.price.formatted_with_symbol}
+              {product.price.formatted_with_symbol}
             </p>
             <p className='mt-1 py-0 text-wine italic text-opacity-70'>
               {product.inventory.available === 0 ? (
@@ -248,7 +244,6 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
           </div>
         </div>
       </PageSection>
-      <Store_Maintenance />
     </main>
   )
 }

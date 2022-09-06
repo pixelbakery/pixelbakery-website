@@ -1,19 +1,25 @@
 import { useRef, useEffect } from 'react'
-
 import lottie from 'lottie-web'
 
 interface LottieProps {
-  animationData: any
+  anim: any
+  preserveAspectRatio?: boolean
 }
 
-export const Lottie_BouncingTV = ({ animationData }: LottieProps) => {
+const LottiePlayer = ({ anim, preserveAspectRatio }: LottieProps) => {
+  const animationData = anim
   const element = useRef<HTMLDivElement>(null)
   const lottieInstance = useRef<any>()
-
+  let aspect = 'xMidYMid slice'
+  if (preserveAspectRatio === false) aspect = ''
   useEffect(() => {
     lottieInstance.current = lottie.loadAnimation({
       animationData,
+      renderer: 'svg',
       container: element.current,
+      rendererSettings: {
+        preserveAspectRatio: aspect,
+      },
     })
 
     return () => {
@@ -24,3 +30,4 @@ export const Lottie_BouncingTV = ({ animationData }: LottieProps) => {
 
   return <div style={{ height: '100%', width: '100%' }} ref={element}></div>
 }
+export default LottiePlayer

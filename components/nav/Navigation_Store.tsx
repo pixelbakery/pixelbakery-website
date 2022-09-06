@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
-
 import useCart from '@hooks/useCart'
 import Nav_FullscreenMenu from './Nav_FullscreenMenu'
 import { useState } from 'react'
-export default function Navigation_Store({}) {
+
+const Navigation_Store = ({}) => {
   const [isHamActive, setHamToggle] = useState(false)
   const { data: cart } = useCart()
 
@@ -57,3 +57,4 @@ hover:opacity-90 hover:scale-97 active:scale-90'
     </div>
   )
 }
+export default Navigation_Store

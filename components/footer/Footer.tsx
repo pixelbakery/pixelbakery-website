@@ -15,7 +15,6 @@ import Obfuscate from 'react-obfuscate'
 
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
-  // const [selectedStar, setSelectedStar] = useState()
 
   const updateModal = () => {
     setTestModal(!testModalOpen)
@@ -128,11 +127,6 @@ export const Footer: NextPage = () => {
                 <div className='w-full' id='footer-social'>
                   <Footer_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
                 </div>
-                {/* <div className='w-full flex justify-center'>
-                  <span className='text-cream italic font-bold text-center text-lg'>
-                    fresh puns and nice buns
-                  </span>
-                </div> */}
               </div>
               <div className='hidden lg:flex justify-center w-full my-3'>
                 <Button_Filled
@@ -162,15 +156,12 @@ export const Footer: NextPage = () => {
             <span className='self-center text-center mt-4 md:mt-0 italic text-sm  text-cream'>
               © {year} Pixel Bakery Design Studio
               <br />
-              Made with love and flour in Lincoln, Nebraska & NW Arkansas
+              Made with love and flour in Lincoln, Nebraska &amp; NW Arkansas
             </span>
             <div className='hidden md:block' />
           </div>
         </div>
       </footer>
-      {/* <div className='my-4'>
-        <InstagramGallery count={14} />
-      </div> */}
     </div>
   )
 }

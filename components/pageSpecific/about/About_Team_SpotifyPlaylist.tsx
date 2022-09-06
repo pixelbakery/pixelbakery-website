@@ -1,6 +1,4 @@
 import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
 
 type spotifyPlaylist = {
   playlistID: string

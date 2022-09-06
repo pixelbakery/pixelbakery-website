@@ -32,19 +32,19 @@ function Services_SEO({ serviceName, path, description }: Props) {
             'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling',
           images: [
             {
-              url: 'https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
               width: 1200,
               height: 900,
               alt: `${description}`,
             },
             {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-office.jpg',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
               width: 1080,
               height: 810,
               alt: `${description}`,
             },
             {
-              url: 'https://cdn.pixelbakery.com/img/pixel-bakery-samee-dan-1200x900.png',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
               width: 1080,
               height: 810,
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',

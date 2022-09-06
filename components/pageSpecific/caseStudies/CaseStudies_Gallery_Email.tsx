@@ -1,60 +1,13 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { A11y, Keyboard } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
-import Image from 'next/image'
+
 import Image_VarH from '@parts/Image_VarH'
 
-const slides = [
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipGrab.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_ChipsDip.jpg',
-  '/img/case-studies/snacklins/SNACK_Q1-2022_Tree.jpg',
-  '/img/case-studies/snacklins/SNACK_Q3-photo_18.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_07.jpg',
-  '/img/case-studies/snacklins/SNACK_Q4-photo_08.jpg',
-]
-
-function CaseStudies_Gallery_Email() {
-  const SetSlide = ({ slide }) => {
-    return (
-      <div className=''>
-        <Image
-          src={slide}
-          width='100%'
-          height='100%'
-          layout='responsive'
-          objectFit='cover'
-          blurDataURL={slide}
-        />
-      </div>
-    )
-  }
-
-  const Carousel = () => {
-    return (
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1.15}
-        keyboard={{
-          enabled: true,
-        }}
-        modules={[A11y, Keyboard]}
-        className='lg:hidden'
-      >
-        {slides.map((slide: string) => {
-          return (
-            <SwiperSlide key={slide} className='bg-blue hover:cursor-grab'>
-              <SetSlide slide={slide} />
-            </SwiperSlide>
-          )
-        })}
-      </Swiper>
-    )
-  }
+const CaseStudies_Gallery_Email = () => {
   return (
     <>
       <PageSection color='pink-light' className='z-20 relative'>
@@ -74,19 +27,19 @@ function CaseStudies_Gallery_Email() {
             <div className='grid grid-cols-3 gap-3 lg:gap-6'>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={`/img/case-studies/snacklins/SNACK_ChesapeakeEmail_v02.jpg`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_ChesapeakeEmail_v02.jpg`}
                   openInNewWindow={true}
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={`/img/case-studies/snacklins/SNACK_Email_BFCM_Launch_v03.jpg`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Email_BFCM_Launch_v03.jpg`}
                   openInNewWindow={true}
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
-                  src={`/img/case-studies/snacklins/SNACK_NachoEmail_v04.jpg`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_NachoEmail_v04.jpg`}
                   openInNewWindow={true}
                 />
               </div>

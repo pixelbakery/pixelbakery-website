@@ -2,7 +2,7 @@ import Link from 'next/link'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 
-function Careers_Benefits() {
+const Careers_Benefits = () => {
   return (
     <PageSection color='pink-light' id='careers-benefits'>
       <InnerWrapper className='container grid grid-cols-1 md:grid-cols-5 gap-20 mx-auto py-4 max-w-7xl'>

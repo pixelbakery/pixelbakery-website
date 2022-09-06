@@ -127,3 +127,13 @@ export async function SendEmail_Onboarding(data) {
     // console.log(res.json())
   })
 }
+
+export async function SendEmail_Croissants(data) {
+  await fetch('/api/sendCroissant', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}

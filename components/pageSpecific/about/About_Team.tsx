@@ -34,31 +34,30 @@ const Header = () => {
     </div>
   )
 }
+const PeopleCard = ({ allPeople, leadIndex2 }) => (
+  <>
+    {allPeople.map((person, index) => (
+      <Fragment key={index}>
+        {index === leadIndex1 ? <Leader1 /> : ''}
+        {index === leadIndex2 ? <Leader2 /> : ''}
 
-function About_Team({ allPeople }) {
+        <About_Team_Headshot person={person} />
+      </Fragment>
+    ))}
+  </>
+)
+
+const About_Team = ({ allPeople }) => {
   let leadIndex2
   if (allPeople.length % 2 === 0) {
     leadIndex2 = allPeople.length - 3
   } else leadIndex2 = allPeople.length - 3
 
-  const PeopleCard = () => (
-    <>
-      {allPeople.map((person, index) => (
-        <Fragment key={index}>
-          {index === leadIndex1 ? <Leader1 /> : ''}
-          {index === leadIndex2 ? <Leader2 /> : ''}
-
-          <About_Team_Headshot person={person} />
-        </Fragment>
-      ))}
-    </>
-  )
-
   return (
     <section className='my-4' id='team'>
       <div className='grid gap-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
         <Header />
-        <PeopleCard />
+        <PeopleCard allPeople={allPeople} leadIndex2={leadIndex2} />
       </div>
     </section>
   )

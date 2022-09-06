@@ -4,7 +4,7 @@ import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import About_Team_SpotifyPlaylist from './About_Team_SpotifyPlaylist'
 
-function About_Team_Details({ frontMatter }) {
+const About_Team_Details = ({ frontMatter }) => {
   const details = frontMatter.details
   return (
     <PageSection>

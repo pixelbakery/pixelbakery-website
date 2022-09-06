@@ -1,18 +1,12 @@
 import H2 from '@typography/H2'
-
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import InnerWrapper from '@parts/InnerWrapper'
-
 import { TwitchPlayer } from 'react-twitch-embed'
 import { useRef } from 'react'
 import Loading from '@utility/Loading'
-// import ReactPlayer from 'react-player'
-// import { ReactTwitchEmbedVideo } from 'react-twitch-embed-video'
-// @ts-ignore
-//player.twitch.tv/js/embed/v1.js
 
-function About_Twitch() {
+const About_Twitch = () => {
   const embed = useRef()
   const handleReady = (e) => {
     embed.current = e
@@ -58,17 +52,6 @@ function About_Twitch() {
                 onReady={handleReady}
               />
               <Loading />
-              {/* <ReactTwitchEmbedVideo
-                  allowfullscreen={true}
-                  autoplay
-                  channel='pixelbakery'
-                  layout='video'
-                  muted
-                  width={'100%'}
-                  height={'100%'}
-                  onPlay={function noRefCheck() {}}
-                  onReady={function noRefCheck() {}}
-                /> */}
             </div>
           </div>
         </div>

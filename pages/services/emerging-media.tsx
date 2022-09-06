@@ -19,7 +19,7 @@ export default function Services_EmergingMedia() {
         isLottie={true}
         subheader={'AR? VR? Holograms? No Problem.'}
         bgColor={'blue-dark'}
-        LottieComponent={Lottie_Animation}
+        lottieComponent={Lottie_Animation}
       >
         <p>
           With the development and expansion of social media, mobile marketing, email marketing,

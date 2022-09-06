@@ -1,41 +1,16 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
-import { useState, useEffect } from 'react'
 import H2AndLead from '@typography/H2AndLead'
-import Lead from '@typography/Lead'
-
-function Services_Modulation() {
-  const LottieAnimation = () => {
-    const [animationData, setAnimationData] = useState(null)
-
-    useEffect(() => {
-      import('@data/modulation_animation.json').then(setAnimationData)
-    }, [])
-
-    if (!animationData)
-      return (
-        <div className='w-full h-full flex flex-col justify-center'>
-          <Lead color='cream' className='self-center text-center'>
-            Loading
-          </Lead>
-        </div>
-      )
-    return (
-      <Lottie
-        animationData={animationData}
-        loop
-        play
-        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-      />
-    )
-  }
+import dynamic from 'next/dynamic'
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), { ssr: false })
+import modulation_animation from '@data/lottie_misc/modulation_animation.json'
+const Services_Modulation = () => {
   return (
     <PageSection color='pink-light'>
       <InnerWrapper>
         <div className=' grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-lg lg:max-w-full mx-auto'>
           <div className='col-span-1 lg:col-span-3'>
-            <LottieAnimation />
+            <LottiePlayer anim={modulation_animation} preserveAspectRatio={false} />
           </div>
           <div className='col-span-1 lg:col-span-2'>
             <H2AndLead

@@ -64,26 +64,28 @@ const Recipes_Post_Header = ({ date, frontMatter, allPeople, forwardedRef, readT
               >
                 <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
                   <Image
-                    blurDataURL='true'
+                    placeholder='blur'
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                     layout='fill'
                     objectFit='cover'
                     alt={frontMatter.author.name}
                     quality={25}
                     className='object-top scale-175 sc'
-                    src={matchingBio.data.headshotSmiling}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                   />
                 </div>
               </Link>
             ) : (
               <div className='w-12 h-12 rounded-full relative overflow-hidden'>
                 <Image
-                  blurDataURL='true'
+                  placeholder='blur'
+                  blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
                   layout='fill'
                   objectFit='cover'
                   alt={frontMatter.author.name}
                   quality={25}
                   className='object-top scale-175 sc'
-                  src={`/img/placeholder01.png`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
                 />
               </div>
             )}
@@ -119,27 +121,14 @@ const Recipes_Post_Header = ({ date, frontMatter, allPeople, forwardedRef, readT
             layout='fill'
             objectFit='cover'
             className='object-center'
-            src={frontMatter.coverImage}
-            alt={frontMatter.title}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+            alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
             placeholder='blur'
-            blurDataURL={frontMatter.coverImage}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
             quality={100}
           />
         </div>
       </div>
-      {/* <div className='relative mb-24 w-full md:max-w-6xl mx-auto bg-peach z-10'>
-        <div className='relative top-0 left-0 w-full block h-full bg-peach z-10'>
-          <Image
-            layout='fill'
-            objectFit='cover'
-            blurDataURL='true'
-            quality={100}
-            className='object-top top-0 w-full h-full'
-            src={coverImage}
-            alt={title}
-          />
-        </div>
-      </div> */}
     </header>
   )
 }

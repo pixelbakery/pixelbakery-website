@@ -6,7 +6,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Lead from '@typography/Lead'
 import { FAQPageJsonLd } from 'next-seo'
 
-export default function Aboout_Faq() {
+const About_Faq = () => {
   return (
     <>
       <FAQPageJsonLd mainEntity={faq} />
@@ -28,3 +28,5 @@ export default function Aboout_Faq() {
     </>
   )
 }
+
+export default About_Faq

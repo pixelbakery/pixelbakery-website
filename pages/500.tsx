@@ -9,12 +9,12 @@ function FourOhFour() {
         <div className='mx-auto flex flex-col justify-center max-w-4xl h-full'>
           <h1 className='mb-12 text-center text-4xl text-blue'>500 - Server-side error occurred</h1>
           <Image
-            src={`/img/imindanger.webp`}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
             layout='responsive'
             width='480px'
             height='269px'
             placeholder='blur'
-            blurDataURL={`/img/imindanger.webp`}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
             className='w-full'
             alt={"I'm in danger"}
           />

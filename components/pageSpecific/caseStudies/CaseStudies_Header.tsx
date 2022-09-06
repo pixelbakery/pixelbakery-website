@@ -11,7 +11,11 @@ function CaseStudies_Header({ ...props }) {
       return (
         <div className='relative w-32 h-32'>
           <a href={`${props.website}`}>
-            <Image src={`/img/clients/${props.logo}`} layout={'fill'} objectFit={'contain'} />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
+              layout={'fill'}
+              objectFit={'contain'}
+            />
           </a>
         </div>
       )

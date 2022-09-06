@@ -21,14 +21,14 @@ function Card_Rounded(props) {
       >
         <Image
           alt={props.imgAlt}
-          src={props.img}
+          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
           layout='fill'
           objectFit='cover'
-          blurDataURL='true'
-          quality={100}
-          className=''
+          placeholder='blur'
+          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
+          quality={75}
         />
-        <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>
+        <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'} />
         <div
           className={
             'absolute w-100 h-100 bg-gradient-to-t via-transparent from-blue-dark  opacity-25'

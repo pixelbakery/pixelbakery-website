@@ -32,16 +32,16 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
                 preload='true'
                 loop
                 autoPlay={true}
-                poster={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.jpg`}
+                poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
                 className='object-cover w-full h-full'
               >
                 <source
-                  src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.webm`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`}
                   type='video/webm'
                 />
 
                 <source
-                  src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.mp4`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
                   type='video/mp4'
                 />
               </video>

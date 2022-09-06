@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
-// import { useDebounce } from 'use-debounce'
 import FormikEffect from '@parts/FormikEffect'
 import LoadingModal from '@parts/LoadingModal'
 import Store_BillingAddressForm from '@store/Store_BillingAddressForm'
@@ -290,9 +289,9 @@ let Checkout: NextPage = () => {
                       <a className='underline py-2'>cart</a>
                     </Link>
                     <span className='mx-3 py-3'>/</span>
-                    <span className='py-3'>payment &amps; shipping</span>
+                    <span className='py-3'>payment &amp; shipping</span>
                   </div>
-                  <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment &amps; Shipping</h1>
+                  <h1 className='text-peach text-6xl lg:text-8xl pt-4'> Payment &amp; Shipping</h1>
                 </header>
                 <div className='w-full grid grid-cols-5 items-start gap-12 '>
                   <div className='col-span-5 lg:col-span-5'>

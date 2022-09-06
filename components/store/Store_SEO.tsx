@@ -10,7 +10,7 @@ function Store_SEO() {
         title: 'Store',
         images: [
           {
-            url: `https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
+            url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
             alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
           },
         ],

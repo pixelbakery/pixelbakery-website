@@ -9,7 +9,7 @@ function Video({ url, ...props }) {
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}
-          poster={`https://cdn.pixelbakery.com${props.poster}`}
+          poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}`}
           width={'100%'}
           height={'100%'}
           loop={props.loop ? props.loop : false}

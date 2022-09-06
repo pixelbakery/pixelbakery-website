@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Button_Filled from '@parts/Button_Filled'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import nav_main from '@data/nav_main'
 import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
-import LottieEasyBakePlayer from '@parts/LottieEasyBakePlayer'
+import PixelBakery_EasyBakeOven from '@data/lottie_misc/PixelBakery_EasyBakeOven.json' assert { type: 'json' }
+
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+})
 const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'), {
   ssr: false,
 })
@@ -59,22 +62,14 @@ function Home_Landing() {
           id='lottie'
         >
           <LottiePatternPlayer
-            animationData={require('@data/Patterns_Blue_Dark')}
+            animationData={require('@data/lottie_patterns/Patterns_Blue_Dark')}
             width={100}
             height={100}
           />
         </div>
         <div className=' flex justify-center h-full w-full'>
           <div className='block  self-center w-2/3 lg:w-1/2 max-w-3xl '>
-            <LottieEasyBakePlayer />
-            {/* <Image
-              layout='fill'
-              objectFit='contain'
-              blurDataURL='true'
-              src={'/img/pixelbakery_boxlogo.svg'}
-              alt='Pixel Bakery Design Studio'
-              className='object-enter relative'
-            /> */}
+            <LottiePlayer anim={PixelBakery_EasyBakeOven} />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import PageSection from '@parts/PageSection'
 import awards from '@data/awards'
 import H2 from '@typography/H2'
 
-function About_Awards() {
+const About_Awards = () => {
   return (
     <PageSection color={'blue'} id='awards'>
       <InnerWrapper>

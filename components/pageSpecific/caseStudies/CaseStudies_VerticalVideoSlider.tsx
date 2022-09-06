@@ -2,10 +2,8 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import Image from 'next/image'
 // Import Swiper styles
 import 'swiper/css'
-
 import 'swiper/css/pagination'
 import 'swiper/css/keyboard'
 import { ChevronRightIcon } from '@images/UI_Icons'
@@ -14,7 +12,7 @@ function SetSlide({ slide }) {
   return (
     <div className='relative w-full aspect-w-9 aspect-h-16'>
       <video>
-        <source src={`https://cdn.pixelbakery.com/${slide.src}`} type={'video/mp4'} />
+        <source src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`} type={'video/mp4'} />
       </video>
     </div>
   )

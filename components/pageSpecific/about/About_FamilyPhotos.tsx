@@ -3,7 +3,8 @@ import PageSection from '@parts/PageSection'
 import Loading from '@utility/Loading'
 import Image from 'next/image'
 
-function About_FamilyPhotos() {
+const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
+const About_FamilyPhotos = () => {
   return (
     <PageSection className='sticky top-0 left-0' id='family-photos' color=''>
       <InnerWrapper className=' relative   -mb-64 lg:mb-0  pb-20'>
@@ -12,12 +13,12 @@ function About_FamilyPhotos() {
             <div className=' relative w-full aspect-1'>
               {/* Circle photo */}
               <Image
-                src='/img/family-photos/pixelbakery-familyphoto07.jpg'
+                src={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto07.jpg`}
                 layout='fill'
                 alt=''
                 objectFit='contain'
                 placeholder='blur'
-                blurDataURL='/img/family-photos/pixelbakery-familyphoto07.jpg'
+                blurDataURL={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto07.jpg`}
               />
               <Loading />
             </div>
@@ -34,14 +35,14 @@ function About_FamilyPhotos() {
                 loop
                 playsInline
                 controls={false}
-                poster='https://cdn.pixelbakery.com/img/family-photos/pixelbakery-yeehaw.jpg'
+                poster={`${ImgPrefix}/img/family-photos/pixelbakery-yeehaw.jpg`}
               >
                 <source
-                  src={`https://cdn.pixelbakery.com/img/family-photos/pixelbakery-yeehaw.webm`}
+                  src={`${ImgPrefix}/img/family-photos/pixelbakery-yeehaw.webm`}
                   type='video/webm'
                 />
                 <source
-                  src={`https://cdn.pixelbakery.com/img/family-photos/pixelbakery-yeehaw.mp4`}
+                  src={`${ImgPrefix}/img/family-photos/pixelbakery-yeehaw.mp4`}
                   type='video/mp4'
                 />
               </video>
@@ -52,12 +53,12 @@ function About_FamilyPhotos() {
             <div className='relative w-full aspect-w-4 aspect-h-3'>
               {/* Looking down */}
               <Image
-                src='/img/family-photos/pixelbakery-familyphoto08.jpg'
+                src={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto08.jpg`}
                 layout='fill'
                 alt='Lizzie Moore, Jordan Lambrecht, Samee Callahan, and Mitchell Guynan'
                 objectFit='contain'
                 placeholder='blur'
-                blurDataURL='/img/family-photos/pixelbakery-familyphoto08.jpg'
+                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto08.jpg`}
               />
             </div>
             <Loading />
@@ -74,14 +75,14 @@ function About_FamilyPhotos() {
                 loop
                 playsInline={true}
                 controls={false}
-                poster='https://cdn.pixelbakery.com/img/family-photos/pixel-bakery-jordan-dancing.jpg'
+                poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixel-bakery-jordan-dancing.jpg`}
               >
                 <source
-                  src={`/img/family-photos/pixel-bakery-jordan-dancing.webm`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixel-bakery-jordan-dancing.webm`}
                   type='video/webm'
                 />
                 <source
-                  src={`/img/family-photos/pixel-bakery-jordan-dancing.mp4`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixel-bakery-jordan-dancing.mp4`}
                   type='video/mp4'
                 />
               </video>
@@ -91,7 +92,7 @@ function About_FamilyPhotos() {
             <div className='relative w-full aspect-w-4 aspect-h-3 '>
               {/* Crew photo */}
               <Image
-                src='/img/family-photos/pixelbakery-familyphoto04.jpg'
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto04.jpg`}
                 layout='fill'
                 alt='The Pixel Bakery production team after shooting a pilot for a TV show'
                 objectFit='cover'
@@ -104,7 +105,7 @@ function About_FamilyPhotos() {
             <div className='relative w-full aspect-1'>
               {/* Wedding Photo */}
               <Image
-                src='/img/family-photos/pixelbakery-familyphoto02.jpg'
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto02.jpg`}
                 layout='fill'
                 alt=''
                 objectFit='cover'

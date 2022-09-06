@@ -23,12 +23,12 @@ function CaseStudies_Testimonial() {
               <div className='w-16'>
                 <div className='w-16 h-16 rounded-full overflow-hidden relative flex-grow'>
                   <Image
-                    src={'/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg'}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg`}
                     alt={'Jeremy Sherman is the marketing director for SNACKLINS in Washington, DC'}
                     layout={'fill'}
                     objectFit={'cover'}
                     placeholder={'blur'}
-                    blurDataURL={'/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg'}
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/Jeremy_Sherman_Headshot.jpg`}
                     className={''}
                   />
                 </div>
@@ -44,11 +44,11 @@ function CaseStudies_Testimonial() {
           <div className='col-span-5 md:col-span-2 xl:col-span-2 order-first xl:order-last block md:block 2xl:block'>
             <div className='w-full aspect-h-1 aspect-w-1'>
               <Image
-                src={'/img/case-studies/snacklins/SNACK_01.jpg'}
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_01.jpg`}
                 layout='fill'
                 objectFit='cover'
                 placeholder={'blur'}
-                blurDataURL={'/img/case-studies/snacklins/SNACK_01.jpg'}
+                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_01.jpg`}
                 alt='Food Photography produced by Pixel Bakery for SNACKLINS'
               />
             </div>

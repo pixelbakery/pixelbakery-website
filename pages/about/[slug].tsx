@@ -70,40 +70,6 @@ export async function getStaticProps({ params }) {
   }
 }
 
-// const allPeople = getAllPeople(['name', 'slug', 'active'])
-
-// Get current person in people object so we can see who comes before and after
-
-// Find any associated blog posts TEMP DISABLED
-
-// const allPosts = postFilePaths
-//   .map((filePath) => {
-//     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-//     const { content, data } = matter(source)
-
-//     return {
-//       content,
-//       data,
-//       filePath,
-//     }
-//   })
-//   .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-// const matchingAuthorPosts = allPosts.filter(
-//   (post) => post.data.author.name.toUpperCase() === person.name.toUpperCase(),
-// )
-
-//   const content = await markdownToHtml(person.content || '')
-//   return {
-//     props: {
-//       matchingAuthorPosts: matchingAuthorPosts,
-//       allPeople: allPeople,
-//       person: {
-//         ...person,
-//         content,
-//       },
-//     },
-//   }
-// }
 export const getStaticPaths = async () => {
   const paths = peopleFilePaths
     .map((path) => path.replace(/\.mdx?$/, ''))

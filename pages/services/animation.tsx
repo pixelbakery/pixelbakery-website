@@ -21,7 +21,7 @@ export default function Services_Animation() {
           'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
         }
         bgColor={'blue-dark'}
-        LottieComponent={Lottie_Animation}
+        lottieComponent={Lottie_Animation}
       >
         <p className='mt-6 leading-loose'>
           Every animation project is full-service and includes project management, creative

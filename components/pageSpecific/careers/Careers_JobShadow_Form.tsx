@@ -4,7 +4,6 @@ import * as Yup from 'yup'
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
-import 'react-toastify/dist/ReactToastify.css'
 import { SendToMonday_JobShadow } from '@lib/api_sendToMonday'
 import { SendToMailchimp, SendEmail_JobShadow } from '@lib/helpers'
 type FormInputs = {

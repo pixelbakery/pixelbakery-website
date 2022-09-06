@@ -22,8 +22,8 @@ export default function Services_CreativeStrategy() {
         isLottie={true}
         subheader={`We're more than just designers – we're thinkers, strategizers, and
                 consultants.`}
-        bgColor={'blue-dark'}
-        LottieComponent={Lottie_Animation}
+        bgColor={'blue'}
+        lottieComponent={Lottie_Animation}
       >
         <p>
           From the initial discovery meeting to the final deliverable, our leadership team at Pixel

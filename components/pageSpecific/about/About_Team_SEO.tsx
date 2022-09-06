@@ -1,13 +1,11 @@
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
-import PropTypes from 'prop-types'
-
-About_Team_SEO.propTypes = {
-  video: PropTypes.string,
-  client: PropTypes.string,
+interface About_Team_SEO {
+  video: string
+  client: string
 }
 
-function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
+const About_Team_SEO = ({ firstName, lastName, frontMatter, slug }) => {
   const objectArray = Object.entries(frontMatter.details)
   let details = [] as any
   objectArray.forEach(([key, value]) => {
@@ -45,7 +43,7 @@ function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
         openGraph={{
           title: `${frontMatter.name} – ${frontMatter.title}`,
           description: `${desc}`,
-          url: `https://pixelbakery.com/about/${frontMatter.slug}`,
+          url: `https://pixelbakery.com/about/${slug}`,
           type: 'profile',
           profile: {
             firstName: firstName,
@@ -54,15 +52,15 @@ function About_Team_SEO({ firstName, lastName, frontMatter, slug }) {
           },
           images: [
             {
-              url: `https://cdn.pixelbakery.com/${frontMatter.headshotFun}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotFun}`,
               alt: `Pixel Bakery Design Studio funny headshot for ${frontMatter.name}, ${frontMatter.title}`,
             },
             {
-              url: `https://cdn.pixelbakery.com/${frontMatter.headshotSerious}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotSerious}`,
               alt: `Pixel Bakery Design Studio serious headshot for ${frontMatter.name}, ${frontMatter.title}`,
             },
             {
-              url: `https://pixelbakery.com/${frontMatter.headshotSmiling}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotSmiling}`,
               alt: `Pixel Bakery Design Studio smiling headshot for ${frontMatter.name}, ${frontMatter.title}`,
             },
           ],

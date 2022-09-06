@@ -1,30 +1,40 @@
-import { Lottie_Animation } from '@lib/lottie_helpers'
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 function ServicesOverview_SocialMedia() {
   return (
     <PageSection_FullWidth id='social-media'>
       <div className='grid lg:grid-cols-2 gap-4 '>
         <div className='bg-yellow h-full max-h-screen'>
-          <video
-            className='w-full h-full object-cover hideControls'
-            muted
-            autoPlay
-            loop
-            playsInline
+          <ReactPlayer
+            muted={true}
+            playsinline={true}
+            autoPlay={true}
+            loop={true}
             controls={false}
-          >
-            <source
-              src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.webm'
-              type='video/webm'
-            />
-            <source
-              src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.mp4'
-              type='video/mp4'
-            />
-          </video>
+            width='100%'
+            height='100%'
+            className='bg-yellow'
+            url={[
+              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.webm`,
+              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`,
+            ]}
+            config={{
+              file: {
+                attributes: {
+                  autoPlay: true,
+                  loop: true,
+                  playsinline: true,
+                  muted: true,
+                  style: { width: '100%', height: '100%', objectFit: 'cover' },
+                  // poster: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,
+                },
+              },
+            }}
+          />
         </div>
         <div className='flex flex-col justify-center px-12  py-12'>
           <H2 color='blue-dark' className='mb-6 2xl:mb-10 '>

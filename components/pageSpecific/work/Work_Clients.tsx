@@ -31,11 +31,12 @@ function Work_Clients() {
                   <Image
                     layout='fill'
                     objectFit='contain'
-                    src={client.logo}
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
                     alt={client.client}
                     className='w-full'
                     quality={25}
-                    blurDataURL='blur'
+                    placeholder='blur'
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
                   />
                 </div>
               </Link>
@@ -47,27 +48,3 @@ function Work_Clients() {
   )
 }
 export default Work_Clients
-
-// <div className='px-12 mx-auto lg:px-24 py-4 lg:py-16 grid  grid-cols-6'>
-//   <div className='col-span-2'></div>
-//   <div className='col-span-4  flex justify-between'>
-//     <div className=' w-auto wrapper-clients overflow-hidden'>
-//       <div className='boxes ' id='boxCol'>
-//         {clientList.map((client) => (
-//           <div className='box absolute w-full ' key={client.client}>
-//             <div className='client-box-Image h-full overflow-hidden '>
-//               <Image
-//                 width='100%'
-//                 height='100%'
-//                 src={client.logo}
-//                 alt={client.client}
-//                 className='object-contain object-center h-full mx-auto'
-//               />
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <div className='scrim'> </div>
-//     </div>
-//   </div>
-// </div>

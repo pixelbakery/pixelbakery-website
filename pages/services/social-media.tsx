@@ -17,9 +17,9 @@ export default function Services() {
         serviceName={'Social Media Kits'}
         isLottie={false}
         subheader={'We create capitvating and engaging social ecosystems'}
-        bgColor={'blue-dark'}
-        videoSourceMP4={'https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.mp4'}
-        videoSourceWEBM={'https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.webm'}
+        bgColor={'yellow'}
+        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`}
+        videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.webm`}
       >
         <p className='mt-6 leading-loose'>
           You typically have 5 seconds to grab the attention of your user base on social media. In a

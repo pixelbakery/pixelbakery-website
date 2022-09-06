@@ -44,11 +44,11 @@ const Recipes_FeaturedPost = ({
           }
         >
           <Image
-            src={coverImage}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            blurDataURL={coverImage}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             quality={50}
             className='bg-blue'
             alt={`cover photo for ${title}`}

@@ -1,4 +1,8 @@
-import { Lottie_VideoProduction } from '@lib/lottie_helpers'
+import Lottie_VideoProduction from '@data/lottie_services/lottie_services_videoProduction.json' assert { type: 'json' }
+import dynamic from 'next/dynamic'
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+})
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
@@ -25,7 +29,7 @@ function ServicesOverview_VideoProduction() {
           />
         </div>
         <div className='bg-pink h-full max-h-screen order-first lg:order-last'>
-          <Lottie_VideoProduction />
+          <LottiePlayer anim={Lottie_VideoProduction} />
         </div>
       </div>
     </PageSection_FullWidth>

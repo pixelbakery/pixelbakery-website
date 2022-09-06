@@ -34,13 +34,13 @@ const Recipes_SmallPost = ({
               <div className='w-full h-full md:aspect-4/3  relative'>
                 <Image
                   layout='fill'
-                  src={coverImage}
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
                   objectFit='cover'
                   className='rounded-md  bg-blue'
                   placeholder='blur'
                   quality={25}
-                  blurDataURL={coverImage}
-                  alt={`${title} by ${author}`}
+                  blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
+                  alt={`${title}, by ${author.name}`}
                 />
               </div>
             </a>
@@ -48,15 +48,6 @@ const Recipes_SmallPost = ({
         </div>
         <div className='sm:w-3/5 flex flex-col '>
           <div className=' flex justify-start '>
-            {/* <div className='relative overflow-hidden rounded-full h-full aspect-1 mr-4'>
-                  <Image
-                    layout='fill'
-                    objectFit='cover'
-                    src={author.picture}
-                    className=''
-                    alt={`written by  ${author.name}`}
-                  />
-                </div> */}
             <span className='self-center  text-xs md:text-base text-wine-300  lg:order-1'>
               {author.name} <br className=' md:hidden' />
               <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />

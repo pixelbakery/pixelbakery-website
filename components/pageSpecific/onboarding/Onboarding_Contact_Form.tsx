@@ -1,8 +1,5 @@
-import Lead from '@typography/Lead'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import cn from 'classnames'
-import 'react-toastify/dist/ReactToastify.css'
 import { SendToMonday_Onboarding } from '@lib/api_sendToMonday'
 import { SendToMailchimp, SendEmail_Onboarding } from '@lib/helpers'
 import { yupResolver } from '@hookform/resolvers/yup'

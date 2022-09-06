@@ -5,7 +5,7 @@ type Props = {
   faq: { acceptedAnswerText: string; questionName: string }
   index: number
 }
-function About_Faq_Card({ faq, index }: Props) {
+const About_Faq_Card = ({ faq, index }: Props) => {
   const [open, setOpen] = useState(false)
   const onClick = () => setOpen(!open)
 

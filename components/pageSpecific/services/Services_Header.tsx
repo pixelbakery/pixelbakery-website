@@ -1,15 +1,19 @@
-import { ReactNode, PropsWithChildren, useEffect, useState } from 'react'
+import { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
 import H1 from '@typography/H1'
 import BackLink from '@parts/BackLink'
 import Lead from '@typography/Lead'
-import Lottie from 'react-lottie-player'
 
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+})
 type Props = {
   children?: ReactNode
   serviceName: string
   isLottie: boolean
-  LottieComponent?: any
+  lottieComponent?: any
   subheader: string
   videoSourceMP4?: string
   videoSourceWEBM?: string
@@ -19,77 +23,46 @@ type Props = {
 function Services_Header({
   isLottie,
   bgColor,
-  LottieComponent,
+  lottieComponent,
   serviceName,
   videoSourceMP4,
   videoSourceWEBM,
   subheader,
   children,
 }: PropsWithChildren<Props>) {
-  const LottieAnimation = () => {
-    const [animationData, setAnimationData] = useState(null)
-
-    useEffect(() => {
-      setAnimationData(LottieComponent)
-    }, [])
-
-    if (!animationData)
-      return (
-        <div className='w-full h-full flex flex-col justify-center'>
-          <Lead color='cream' className='self-center text-center'>
-            Loading
-          </Lead>
-        </div>
-      )
-    return (
-      <Lottie
-        animationData={LottieComponent}
-        loop
-        play
-        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-      />
-    )
-  }
   const VideoContent = () => {
     return (
-      <video
-        className='w-full h-full object-cover hideControls'
-        muted
-        autoPlay
-        loop
-        playsInline
+      <ReactPlayer
+        muted={true}
+        playsinline={true}
+        autoPlay={true}
+        loop={true}
         controls={false}
-      >
-        {videoSourceWEBM != undefined ? (
-          <source
-            // src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_SocialMedia.webm'
-            src={`${videoSourceWEBM}`}
-            type='video/webm'
-          />
-        ) : (
-          ''
-        )}
-        <source src={`${videoSourceMP4}`} type='video/mp4' />
-      </video>
+        width='100%'
+        height='100%'
+        className={`bg-${bgColor} w-full h-full relative  lg:object-cover`}
+        url={[`${videoSourceWEBM}`, `${videoSourceMP4}`]}
+        config={{
+          file: {
+            attributes: {
+              autoPlay: true,
+              loop: true,
+              playsinline: true,
+              muted: true,
+              class: 'object-contain lg:object-cover ',
+              style: { width: '100%', height: '100%' },
+            },
+          },
+        }}
+      />
     )
   }
 
   return (
     <section className='lander-services my-4  overflow-hidden lg:max-h-screen'>
       <div className=' grid gap-y-12 md:gap-3 grid-cols-1 lg:grid-cols-2'>
-        <div
-          className={cn(
-            `overflow-hidden h-[66vh] col-span-1  lg:h-full origin-bottom`,
-            `bg-${bgColor}`,
-          )}
-        >
-          <div
-            className={
-              (cn(` origin-bottom bg-yellow col-span-1 h-[33vh] lg:h-full`), `bg-${bgColor}`)
-            }
-          >
-            {isLottie ? <LottieAnimation /> : <VideoContent />}
-          </div>
+        <div className={cn(`overflow-hidden h-[66vh] col-span-1  lg:h-full`, `bg-${bgColor}`)}>
+          {isLottie ? <LottiePlayer anim={lottieComponent} /> : <VideoContent />}
         </div>
         <div className=' col-span-1 flex flex-col justify-start py-6 px-10 '>
           <div className='lg:pt-32 xl:pt-40 max-w-lg 4xl:max-w-3xl mx-auto'>

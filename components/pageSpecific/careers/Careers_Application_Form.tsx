@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
-import 'react-toastify/dist/ReactToastify.css'
+import { SendToMailchimp } from '@lib/helpers'
 import router from 'next/router'
 
 export default function Careers_Application_Form({ allJobs }) {
-  // const [submitted, setSubmitted] = useState(false)
   const [file, setFile] = useState(null)
   const [fileName, setFileName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -18,7 +17,6 @@ export default function Careers_Application_Form({ allJobs }) {
     defaultValues: {},
   })
 
-  // const watchAllFields = watch()
   // Handle the  submit
   const onSubmit = async (data) => {
     if (isLoading) {
@@ -29,7 +27,8 @@ export default function Careers_Application_Form({ allJobs }) {
     await SendToSendgrid(data)
     await SendToMonday_JobApplication(data)
     await SendtosSendgridconfirmation(data)
-    await SendToMailchimp(data)
+
+    await SendToMailchimp(data, 'Job Application')
     await router.push('/careers/submitted')
     await setIsLoading(false)
   }
@@ -45,23 +44,7 @@ export default function Careers_Application_Form({ allJobs }) {
   const handleMailchimp = () => {
     setMailchimp(!mailchimp)
   }
-  ////////////
-  // MAILCHIMP
-  ////////////
-  async function SendToMailchimp(data) {
-    data.tag = 'Job Application'
-    if (mailchimp) {
-      await fetch('/api/mailchimp', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } else {
-      return
-    }
-  }
+
   ///////////
   // SENDGRID
   ///////////
@@ -473,8 +456,6 @@ export default function Careers_Application_Form({ allJobs }) {
             application you agree to allow us to check references and verify former employment.
           </p>
         </div>
-
-        {/* <p className='bg-white'>{JSON.stringify(watchAllFields, null, 2)}</p> */}
       </form>
     </>
   )

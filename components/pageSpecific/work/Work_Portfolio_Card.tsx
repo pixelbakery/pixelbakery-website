@@ -5,7 +5,10 @@ import Link from 'next/link'
 import Pill from '@parts/Pill'
 
 import cn from 'classnames'
-type MediaType = HTMLVideoElement | HTMLAudioElement
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+
+// type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card({ project }) {
   const [isHovered, setHover] = useState(false)
   const projID = `${project.data.client.replace(/[^A-Za-z]+/g, '')}-${project.data.title.replace(
@@ -75,37 +78,43 @@ function Work_Portfolio_Card({ project }) {
           )}
         >
           <Image
-            src={`/img/work/${project.data.vimeoPreview}.jpg`}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            blurDataURL={`/img/work/${project.data.vimeoPreview}.jpg`}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}
             quality={50}
           />
         </div>
+
         <div className='absolute z-0 top-0 left-0 -right-1 -bottom-1'>
-          <video
-            muted
-            playsInline
-            preload='true'
-            loop
-            placeholder={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.jpg`}
-            autoPlay={false}
+          <ReactPlayer
+            muted={true}
+            playsinline={true}
+            loop={true}
             controls={false}
-            onMouseOver={(event) => (event.target as MediaType).play()}
-            onMouseOut={(event) => (event.target as MediaType).pause()}
-            className='object-cover w-full h-full hideControls'
-          >
-            <source
-              src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.webm`}
-              type='video/webm'
-            />
-            <source
-              src={`https://cdn.pixelbakery.com/img/work/${project.data.vimeoPreview}.mp4`}
-              type='video/mp4'
-            />
-          </video>
+            width='100%'
+            height='100%'
+            playing={isHovered}
+            className='bg-blue'
+            url={[
+              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
+              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
+            ]}
+            config={{
+              file: {
+                attributes: {
+                  autoPlay: false,
+                  loop: true,
+                  playsInline: true,
+                  muted: true,
+                  style: { width: '100%', height: '100%', objectFit: 'cover' },
+                  // poster: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,
+                },
+              },
+            }}
+          />
         </div>
         {/* This is the Scrim that sits on top of videos */}
         <div

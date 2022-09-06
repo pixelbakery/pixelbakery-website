@@ -4,8 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
-//PROPS:
-// link={'/'} head={''} subhead={''} aspectW={''} aspectY={''} img={''} imgAlt={''} tags={["something", "something else"]} tagBgColor={"bg-cream"} tagTextColor={'text-wine'}
 
 function CaseStudies_OtherProjects_Card({ project }) {
   return (
@@ -24,12 +22,12 @@ function CaseStudies_OtherProjects_Card({ project }) {
         >
           <Image
             alt={project.data.client + ' ' + project.data.title + ' ' + project.data.tags[0]}
-            src={`/img/work/${project.data.vimeoPreview}.jpg`}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             layout='fill'
             objectFit='cover'
             placeholder='blur'
-            blurDataURL={`/img/work/${project.data.vimeoPreview}.jpg`}
-            quality={33}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+            quality={35}
             className=''
           />
           <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>

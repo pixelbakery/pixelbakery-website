@@ -1,7 +1,5 @@
 import Recipes_FeaturedPost from './Recipes_FeaturedPost'
 
-import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-
 const Recipes_Posts_Related = ({ relatedPosts }) => {
   return (
     <section className='px-6 bg-pink-light py-12 my-4' id='blog-related'>

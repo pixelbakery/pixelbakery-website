@@ -1,7 +1,8 @@
-// import { Lottie_Animation } from '@lib/lottie_helpers'
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 function ServicesOverview_CreativeStrategy() {
   return (
@@ -9,23 +10,31 @@ function ServicesOverview_CreativeStrategy() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 '>
         <div className='col-span-1 bg-blue h-full max-h-screen '>
           <div className='relative h-full w-full'>
-            <video
-              className='h-full w-full object-cover hideControls'
-              playsInline
-              muted
-              loop
+            <ReactPlayer
+              muted={true}
+              playsinline={true}
+              autoPlay={true}
+              loop={true}
               controls={false}
-              autoPlay
-            >
-              <source
-                src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_CreativeStrategy.webm'
-                type='video/webm'
-              />
-              <source
-                src='https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_CreativeStrategy.mp4'
-                type='video/mp4'
-              />
-            </video>
+              width='100%'
+              height='100%'
+              className='bg-blue'
+              url={[
+                `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.webm`,
+                `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.mp4`,
+              ]}
+              config={{
+                file: {
+                  attributes: {
+                    autoPlay: true,
+                    loop: true,
+                    playsinline: true,
+                    muted: true,
+                    style: { width: '100%', height: '100%', objectFit: 'cover' },
+                  },
+                },
+              }}
+            />
           </div>
         </div>
         <div className='col-span-1 flex flex-col justify-center px-12  py-12'>

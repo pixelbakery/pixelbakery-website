@@ -6,19 +6,13 @@ const React = require('react')
 // const { withPlugins, extend } = require('next-compose-plugins')
 
 const { redirects } = require('./redirects.config.js')
-// const { default: next } = require('next')
-// const withImageLoader =
-//   process.env.NODE_ENV === 'production'
-//     ? require('next-image-loader').withImageLoader
-//     : (conf) => conf
-const withImageLoader = require('next-image-loader').withImageLoader
+
 module.exports = () => {
   const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
   })
   const config = {
     swcMinify: true,
-    // assetPrefix: isProd ? 'https://cdn.pixelbakery.com' : '',
     images: {
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
@@ -58,6 +52,6 @@ module.exports = () => {
     redirects,
   }
 
-  const plugins = [withImageLoader, withBundleAnalyzer]
+  const plugins = [withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), config)
 }

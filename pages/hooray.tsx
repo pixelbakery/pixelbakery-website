@@ -21,7 +21,7 @@ function surprise() {
           title: 'Hooray, A Surprise! | Pixel Bakery',
           images: [
             {
-              url: 'https://cdn.pixelbakery.com/img/hooray_a_surprise.jpg',
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/hooray_a_surprise.jpg`,
               alt: 'Maddie Hahn is very surprised.',
               type: 'image/jpeg',
             },

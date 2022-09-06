@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import Lead from '@typography/Lead'
 const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: false })
 
-import Patterns_Blue from '@data/Patterns_Blue.json' assert { type: 'json' }
-import Patterns_Blue_Dark from '@data/Patterns_Blue_Dark.json' assert { type: 'json' }
-import Patterns_Pink from '@data/Patterns_Pink.json' assert { type: 'json' }
-import Patterns_Pink_Light from '@data/Patterns_Pink_Light.json' assert { type: 'json' }
-import Patterns_Peach from '@data/Patterns_Peach.json' assert { type: 'json' }
-import Patterns_Cream from '@data/Patterns_Cream.json' assert { type: 'json' }
+import Patterns_Blue from '@data/lottie_patterns/Patterns_Blue.json' assert { type: 'json' }
+import Patterns_Blue_Dark from '@data/lottie_patterns/Patterns_Blue_Dark.json' assert { type: 'json' }
+import Patterns_Pink from '@data/lottie_patterns/Patterns_Pink.json' assert { type: 'json' }
+import Patterns_Pink_Light from '@data/lottie_patterns/Patterns_Pink_Light.json' assert { type: 'json' }
+import Patterns_Peach from '@data/lottie_patterns/Patterns_Peach.json' assert { type: 'json' }
+import Patterns_Cream from '@data/lottie_patterns/Patterns_Cream.json' assert { type: 'json' }
 
 import { RandomArrayItem } from '@lib/helpers'
 

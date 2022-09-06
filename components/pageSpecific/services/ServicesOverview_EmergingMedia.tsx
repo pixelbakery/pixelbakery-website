@@ -1,7 +1,11 @@
-import { Lottie_EmergingMedia } from '@lib/lottie_helpers'
+import Lottie_EmergingMedia from '@data/lottie_services/lottie_services_emergingMedia.json' assert { type: 'json' }
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
+import dynamic from 'next/dynamic'
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+})
 
 function ServicesOverview_EmergingMedia() {
   return (
@@ -24,7 +28,7 @@ function ServicesOverview_EmergingMedia() {
           />
         </div>
         <div className='bg-blue-dark h-full max-h-screen'>
-          <Lottie_EmergingMedia />
+          <LottiePlayer anim={Lottie_EmergingMedia} />
         </div>
       </div>
     </PageSection_FullWidth>

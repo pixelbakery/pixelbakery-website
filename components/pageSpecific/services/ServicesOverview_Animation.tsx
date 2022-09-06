@@ -1,14 +1,18 @@
-import { Lottie_Animation } from '@lib/lottie_helpers'
+import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json' assert { type: 'json' }
 import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
+import dynamic from 'next/dynamic'
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+})
 
 function ServicesOverview_Animation() {
   return (
     <PageSection_FullWidth id='animation'>
       <div className='grid lg:grid-cols-2 gap-4 '>
         <div className='bg-blue-dark h-full max-h-screen'>
-          <Lottie_Animation />
+          <LottiePlayer anim={Lottie_Animation} />
         </div>
         <div className='flex flex-col justify-center px-12 py-12'>
           <H2 color='blue-dark' className='mb-6 2xl:mb-10 '>

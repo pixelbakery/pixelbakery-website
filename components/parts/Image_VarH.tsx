@@ -24,13 +24,16 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
   return (
     <>
       {openInNewWindow ? (
-        <div className={'relative hover:scale-99 duration-300 ease-in-out'} style={{ paddingTop }}>
-          <Link href={src} passHref>
-            <a target={'_blank'} className={''}>
+        <Link href={src} passHref>
+          <a target={'_blank'}>
+            <div
+              className={'cursor-pointer relative hover:scale-99 duration-300 ease-in-out'}
+              style={{ paddingTop }}
+            >
               <ImageComponent />
-            </a>
-          </Link>
-        </div>
+            </div>
+          </a>
+        </Link>
       ) : (
         <div className='relative'>
           <ImageComponent />

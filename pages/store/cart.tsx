@@ -48,7 +48,7 @@ const CheckoutPage: NextPage = () => {
         <meta property='og:description' content='Pixel Bakery store cart' />
         <meta
           property='og:image'
-          content='https://cdn.pixelbakery.com/img/pixel-bakery-header.png'
+          content={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-header.png`}
         />
         <meta name='twitter:site' content='@pixelbakerylnk'></meta>
         <meta name='twitter:card' content='summary_large_image'></meta>

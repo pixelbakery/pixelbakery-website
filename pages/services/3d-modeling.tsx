@@ -1,10 +1,7 @@
 import Services_AllServices from '@services/Services_AllServices'
 import Services_OurProcess from '@services/Services_OurApproach'
 import Main from '@parts/Main'
-import { NextSeo } from 'next-seo'
-import H1 from '@typography/H1'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import BackLink from '@parts/BackLink'
 import Services_Header from '@services/Services_Header'
 import Services_SEO from '@services/Services_SEO'
 
@@ -20,8 +17,8 @@ export default function Services_3dModeling() {
         isLottie={false}
         subheader={'Cooler than 2D'}
         bgColor={'blue-dark'}
-        videoSourceMP4={'https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_3dModeling.mp4'}
-        videoSourceWEBM={'https://cdn.pixelbakery.com/img/PB_ServiceAniamtion_3dModeling.webm'}
+        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_3dModeling.mp4`}
+        videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_3dModeling.webm`}
       >
         <p>
           With the development and expansion of social media, mobile marketing, email marketing,

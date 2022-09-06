@@ -3,8 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import Head from 'next/head'
-import Carousel from '@parts/Carousel'
+
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import Video from '@parts/Video'
@@ -34,8 +33,9 @@ import InnerWrapper from '@parts/InnerWrapper'
 
 //stuff built for Marq
 import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
+import { shuffleArray } from '@lib/helpers'
 
-export default function CaseStudy({ allCaseStudies, source, slug, frontMatter }) {
+export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter }) {
   const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
@@ -111,7 +111,7 @@ export default function CaseStudy({ allCaseStudies, source, slug, frontMatter })
 
       <CaseStudies_Credits credits={frontMatter.credits} />
       <CaseStudies_CTA />
-      <CaseStudies_OtherProjects title={frontMatter.title} allCaseStudies={allCaseStudies} />
+      <CaseStudies_OtherProjects otherCaseStudies={otherCaseStudies} />
       {/* <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} /> */}
     </Main>
   )
@@ -144,11 +144,18 @@ export const getStaticProps = async ({ params }) => {
     .filter((cs) => cs.data.active)
     .sort((cs1, cs2) => (cs1.data.date > cs2.data.date ? -1 : 1))
 
+  // More Projects
+  // If we don't have any related posts, we still need to display something, so we'll select three posts at random
+
+  let otherCaseStudies = allCaseStudies.filter((cs) => cs.data.title != data.title)
+  shuffleArray(otherCaseStudies)
+  otherCaseStudies = otherCaseStudies.slice(0, 3)
+
   return {
     props: {
       slug: params.slug,
-      allCaseStudies: allCaseStudies,
       source: mdxSource,
+      otherCaseStudies: otherCaseStudies,
       frontMatter: data,
     },
   }
