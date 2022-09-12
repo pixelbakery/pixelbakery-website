@@ -46,7 +46,7 @@ const Education_PostHeader = ({
             <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{title}</h1>
           </div>
           <div className='flex mt-3 mb-16'>
-            <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+            <div className='w-12 h-12 rounded-full relative overflow-hidden'>
               <Image
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}

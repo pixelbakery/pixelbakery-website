@@ -136,7 +136,6 @@ export const getStaticProps = async ({ params }) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { content, data } = matter(source)
       return {
-        content,
         data,
         filePath,
       }
