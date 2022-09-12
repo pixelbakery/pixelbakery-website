@@ -2,12 +2,9 @@ import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import { Fragment } from 'react'
 
-const About_Team_MatchingPosts = ({ allPosts, frontMatter }) => {
-  const matchingAuthorPosts = allPosts
-    .filter((p) => p.data.author.name.toUpperCase() === frontMatter.name.toUpperCase())
-    .slice(0, 11)
-
+const About_Team_MatchingPosts = ({ matchingAuthorPosts }) => {
   return (
     <>
       {matchingAuthorPosts.length > 0 ? (

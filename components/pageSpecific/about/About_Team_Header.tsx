@@ -10,6 +10,7 @@ import Obfuscate from 'react-obfuscate'
 
 //CSS imports
 import markdownStyles from '@styles/markdown-styles.module.css'
+import Loading from '@utility/Loading'
 
 const About_Team_Header = ({ source, frontMatter }) => {
   const socialList = frontMatter.socials
@@ -23,7 +24,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
       <InnerWrapper className='mt-24'>
         <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 xl:gap-x-24  gap-y-8'>
           <div className='col-span-1 relative w-full aspect-3/4'>
-            <div className=' max-w-lg'>
+            <div className='relative max-w-lg aspect-w-3 aspect-h-4'>
               <Image
                 placeholder='blur'
                 blurDataURL={`${ImgPrefix}${frontMatter.headshotFun}`}
@@ -31,8 +32,10 @@ const About_Team_Header = ({ source, frontMatter }) => {
                 layout='fill'
                 objectFit='cover'
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}
+                // className={'bg-blue'}
               />
             </div>
+            <Loading />
           </div>
           <div className='col-span-1'>
             <div>
@@ -47,7 +50,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
               {frontMatter.email ? (
                 <Obfuscate
                   email={frontMatter.email}
-                  className={'block italic text-peach cursor-pointer'}
+                  className={'block italic text-peach cursor-pointer text-left'}
                 />
               ) : (
                 ''

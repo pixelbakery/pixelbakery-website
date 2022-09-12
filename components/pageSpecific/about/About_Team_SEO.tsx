@@ -5,7 +5,9 @@ interface About_Team_SEO {
   client: string
 }
 
-const About_Team_SEO = ({ firstName, lastName, frontMatter, slug }) => {
+const About_Team_SEO = ({ frontMatter, slug }) => {
+  const [firstName, lastName] = frontMatter.name.split(' ')
+
   const objectArray = Object.entries(frontMatter.details)
   let details = [] as any
   objectArray.forEach(([key, value]) => {
