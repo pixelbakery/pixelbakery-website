@@ -23,8 +23,8 @@ function PersonPage({ slug, source, frontMatter, matchingAuthorPosts, prevIndex,
       <About_Team_SEO frontMatter={frontMatter} slug={slug} />
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
-      {/* <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} /> */}
-      {/* <About_Team_PrevNext active={frontMatter.active} prev={prevIndex} next={nextIndex} /> */}
+      <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} />
+      <About_Team_PrevNext active={frontMatter.active} prev={prevIndex} next={nextIndex} />
     </Main>
   )
 }
@@ -43,54 +43,54 @@ export async function getStaticProps({ params }) {
   })
 
   // Find matching posts written by this person
-  // const matchingAuthorPosts = postFilePaths
-  //   .map((filePath) => {
-  //     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-  //     const { data } = matter(source)
-  //     return { data, filePath }
-  //   })
-  //   .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-  //   .filter((p) => p.data.author.toUpperCase() === data.name.toUpperCase())
-  //   .slice(0, 11)
+  const matchingAuthorPosts = postFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+      const { data } = matter(source)
+      return { data, filePath }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .filter((p) => p.data.author.name.toUpperCase() === data.name.toUpperCase())
+    .slice(0, 11)
 
-  // const allPeople = peopleFilePaths
-  //   .map((filePath) => {
-  //     const source = fs.readFileSync(path.join(PEOPLE_PATH, filePath))
-  //     const { data } = matter(source)
+  const allPeople = peopleFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(PEOPLE_PATH, filePath))
+      const { data } = matter(source)
 
-  //     return { filePath, data }
-  //   })
-  //   .filter((cs) => cs.data.active === true)
-  //   .sort((cs1, cs2) => (cs1.data.name < cs2.data.name ? -1 : 1))
+      return { filePath, data }
+    })
+    .filter((cs) => cs.data.active === true)
+    .sort((cs1, cs2) => (cs1.data.name < cs2.data.name ? -1 : 1))
 
   //Find the previous and next person on the roster, alphabetically by last name.
-  // let thisIndex,
-  //   prevIndex,
-  //   nextIndex = null
+  let thisIndex,
+    prevIndex,
+    nextIndex = null
 
-  // if (data.active != false) {
-  //   allPeople.map((p, index) => {
-  //     if (p.data.name === data.name) {
-  //       thisIndex = index
-  //     }
-  //   })
+  if (data.active != false) {
+    allPeople.map((p, index) => {
+      if (p.data.name === data.name) {
+        thisIndex = index
+      }
+    })
 
-  //   if (thisIndex != undefined && thisIndex === 0)
-  //     prevIndex = allPeople[Object.keys(allPeople).length - 1]
-  //   else prevIndex = allPeople[thisIndex - 1]
+    if (thisIndex != undefined && thisIndex === 0)
+      prevIndex = allPeople[Object.keys(allPeople).length - 1]
+    else prevIndex = allPeople[thisIndex - 1]
 
-  //   if (thisIndex != undefined && thisIndex === Object.keys(allPeople).length - 1)
-  //     nextIndex = allPeople[0]
-  //   else nextIndex = allPeople[thisIndex + 1]
-  // } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
+    if (thisIndex != undefined && thisIndex === Object.keys(allPeople).length - 1)
+      nextIndex = allPeople[0]
+    else nextIndex = allPeople[thisIndex + 1]
+  } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
 
   //End of prev/next search
 
   return {
     props: {
-      // matchingAuthorPosts: matchingAuthorPosts,
-      // nextIndex: nextIndex,
-      // prevIndex: prevIndex,
+      matchingAuthorPosts: matchingAuthorPosts,
+      nextIndex: nextIndex,
+      prevIndex: prevIndex,
       slug: params.slug,
       source: mdxSource,
       frontMatter: data,
