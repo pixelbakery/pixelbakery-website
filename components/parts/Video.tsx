@@ -1,7 +1,18 @@
 import Lead from '@typography/Lead'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 
-function Video({ url, ...props }) {
+interface video {
+  url: string
+  title?: string
+  autoPlay?: boolean
+  poster?: string
+  loop?: boolean
+  muted?: boolean
+  playsInline?: boolean
+  controls?: boolean
+  caption?: string
+}
+function Video({ url, ...props }: video) {
   return (
     <div>
       {props.title != '' ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
