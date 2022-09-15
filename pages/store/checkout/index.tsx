@@ -275,7 +275,7 @@ let Checkout: NextPage = () => {
           <Navigation_Store />
 
           {cart?.total_items > 0 ? (
-            <PageSection className=' pt-24'>
+            <PageSection className=' pt-24' id='checkout-info'>
               <LoadingModal visible={loading} />
 
               <InnerWrapper className='xl:max-w-3xl'>
@@ -389,7 +389,7 @@ let Checkout: NextPage = () => {
               </InnerWrapper>
             </PageSection>
           ) : (
-            <PageSection color={'white'}>
+            <PageSection color={'white'} id='empty-cart'>
               <InnerWrapper className='max-w-6xl mx-auto'>
                 <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                   well, that&apos;s a sad looking cart.{' '}

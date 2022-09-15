@@ -55,7 +55,11 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     CaseStudies_ProjectIntro_Alt: CaseStudies_ProjectIntro_Alt,
     CaseStudies_Gallery_Email: CaseStudies_Gallery_Email,
     // PageSection: ({children}) => <PageSection children={children} />,
-    PageSection: ({ children, color }) => <PageSection color={color}>{children}</PageSection>,
+    PageSection: ({ children, color, id }) => (
+      <PageSection color={color} id={id}>
+        {children}
+      </PageSection>
+    ),
     CaseStudiesDescription: ({ children, ...props }) => (
       <CaseStudies_Description
         header={props.header}

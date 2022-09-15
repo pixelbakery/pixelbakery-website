@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function CaseStudies_Testimonial() {
   return (
-    <PageSection color='pink-light' className=' border-t-32 border-t-pink'>
+    <PageSection color='pink-light' className=' border-t-32 border-t-pink' id={'testimonial'}>
       <InnerWrapper>
         <div className='grid grid-cols-5 gap-12'>
           <div className='col-span-5 md:col-span-3 xl:col-span-3'>

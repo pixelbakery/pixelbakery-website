@@ -10,19 +10,19 @@ function Work_Clients() {
   const activeClients = clientList.filter((client) => client.active)
 
   return (
-    <PageSection>
+    <PageSection id={'clients'} color={'white'}>
       <InnerWrapper>
-        <H2 color={'peach'}>Our lovely clients</H2>
-        <Lead color='blue-dark'>
-          Our story wouldn’t exist if it weren’t for all of the wonderful clients that have been on
-          this journey with us.
-        </Lead>
-        <p>
-          From initial discovery meetings to seeing the final product, we thrive in bringing a
-          client’s vision to life. Check out some of our past and present clients below.
-        </p>
-      </InnerWrapper>
-      <InnerWrapper>
+        <div className='mb-12'>
+          <H2 color={'peach'}>Our lovely clients</H2>
+          <Lead color='blue-dark'>
+            Our story wouldn’t exist if it weren’t for all of the wonderful clients that have been
+            on this journey with us.
+          </Lead>
+          <p>
+            From initial discovery meetings to seeing the final product, we thrive in bringing a
+            client’s vision to life. Check out some of our past and present clients below.
+          </p>
+        </div>
         <div className='mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>
           {activeClients.map((client, index) => (
             <div key={index} className='col-span-1'>

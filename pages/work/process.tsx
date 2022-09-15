@@ -7,7 +7,7 @@ import H2 from '@typography/H2'
 function Process() {
   return (
     <Main>
-      <PageSection>
+      <PageSection id='process'>
         <InnerWrapper>
           <H2>01. Discovery</H2>
         </InnerWrapper>

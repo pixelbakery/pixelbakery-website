@@ -110,7 +110,7 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
         forwardedRef={childRef}
         readTime={readTime}
       />
-      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto'>
+      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto' id='tutorial-body'>
         <article ref={myContainer} id='blog-body-guts'>
           <div className={markdownStyles['markdown']}>
             <MDXRemote {...source} components={components} />

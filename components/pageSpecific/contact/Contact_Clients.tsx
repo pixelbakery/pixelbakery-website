@@ -6,7 +6,7 @@ import Button_Filled from '@parts/Button_Filled'
 
 function Contct_Clients() {
   return (
-    <PageSection color='pink'>
+    <PageSection color='pink' id={'contact'}>
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 w-full gap-x-24'>
           <div className='col-span-1'>

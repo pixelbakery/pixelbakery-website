@@ -13,7 +13,7 @@ const About_Twitch = () => {
   }
   return (
     <>
-      <PageSection className='py-0 my-0 pb-0 mb-0 lg:pb-0 lg:mb-0 '>
+      <PageSection className='py-0 my-0 pb-0 mb-0 lg:pb-0 lg:mb-0' id={'twitch-intro'}>
         <InnerWrapper className='py-0 my-0'>
           <H2 color='peach' className=' lg:-mt-12'>
             Peep on us
@@ -35,27 +35,21 @@ const About_Twitch = () => {
           </Lead>
         </InnerWrapper>
       </PageSection>
-      <section className='px-0 pb-0 lg:pb-0' id='twitch'>
-        {/* <Script src='https://player.twitch.tv/js/embed/v1.js' strategy='lazyOnload' /> */}
-
-        <div className='  z-10 max-w-8xl'>
-          <div className=''>
-            <div className='relative w-full aspect-w-16 aspect-h-9 bg-blue'>
-              <TwitchPlayer
-                width={'100%'}
-                height={'100%'}
-                channel='pixelbakery'
-                playsInline={true}
-                hideControls={true}
-                autoplay
-                muted
-                onReady={handleReady}
-              />
-              <Loading />
-            </div>
-          </div>
+      <PageSection fullWidth id='twitch'>
+        <div className='relative w-full aspect-w-16 aspect-h-9 bg-peach z-10'>
+          <TwitchPlayer
+            width={'100%'}
+            height={'100%'}
+            channel='pixelbakery'
+            playsInline={true}
+            hideControls={true}
+            autoplay
+            muted
+            onReady={handleReady}
+          />
+          <Loading />
         </div>
-      </section>
+      </PageSection>
     </>
   )
 }

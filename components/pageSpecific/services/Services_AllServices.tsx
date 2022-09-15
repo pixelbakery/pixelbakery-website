@@ -8,7 +8,7 @@ import BackLink from '@parts/BackLink'
 
 function Services_AllServices() {
   return (
-    <PageSection>
+    <PageSection id={'all-services'}>
       <InnerWrapper>
         <div className='grid grid-cols-12  '>
           <div className='col-span-12 lg:col-span-4 flex flex-col justify-center max-w-lg lg:max-w-full mx-auto'>

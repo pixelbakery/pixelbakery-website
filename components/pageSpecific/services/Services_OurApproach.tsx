@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function Services_OurApproach() {
   return (
-    <PageSection color='blue'>
+    <PageSection color='blue' id={'our-approach'}>
       <InnerWrapper>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-x-8'>
           <H2 color='cream'>Our Approach</H2>

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function Recipes_Post_GetPrevNextPost({ prev, next }) {
   return (
-    <PageSection color={'pink-light'}>
+    <PageSection color={'pink-light'} id={'next-post'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
           <Link as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>

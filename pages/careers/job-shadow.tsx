@@ -52,7 +52,7 @@ function Page_Careers_JobShadow() {
         header='Job Shadows'
         subheader="Come learn what it's like to work at Pixel Bakery"
       />
-      <PageSection>
+      <PageSection id='job-shadow-info'>
         <InnerWrapper>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-24'>
             <div>
@@ -115,7 +115,7 @@ function Page_Careers_JobShadow() {
           </div>
         </InnerWrapper>
       </PageSection>
-      <PageSection color='blue'>
+      <PageSection color='blue' id='job-shadow-contact'>
         <InnerWrapper>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-20'>
             <div>

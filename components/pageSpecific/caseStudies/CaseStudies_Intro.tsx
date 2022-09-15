@@ -8,7 +8,7 @@ import H2AndLead from '@typography/H2AndLead'
 import Lead from '@typography/Lead'
 export default function CaseStudiesIntro({ children, ...props }) {
   return (
-    <PageSection className={cn('lg:py-12')}>
+    <PageSection className={cn('lg:py-12')} id={'intro'}>
       <InnerWrapper className={cn('flex justify-center')}>
         <article className='grid grid-cols-1 lg:grid-cols-5 gap-x-16 xl:gap-x-24'>
           {/* <div className='col-span-1 lg:col-span-5 flex justify-center'>

@@ -10,7 +10,7 @@ import Image_VarH from '@parts/Image_VarH'
 const CaseStudies_Gallery_Email = () => {
   return (
     <>
-      <PageSection color='pink-light' className='z-20 relative'>
+      <PageSection color='pink-light' className='z-20 relative' id={'gallery-emails'}>
         <InnerWrapper>
           <H2>Emails</H2>
           <p>

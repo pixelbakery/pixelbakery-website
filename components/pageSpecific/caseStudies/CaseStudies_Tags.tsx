@@ -1,16 +1,15 @@
 import Pill from '@parts/Pill'
-import PropTypes from 'prop-types'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H3 from '@typography/H3'
 
-CaseStudies_Tags.propTypes = {
-  tags: PropTypes.array.isRequired,
+interface tags {
+  tags: any
 }
 
-function CaseStudies_Tags({ tags }) {
+function CaseStudies_Tags({ tags }: tags) {
   return (
-    <PageSection color='blue-dark' className='lg:py-6'>
+    <PageSection color='blue-dark' className='lg:py-6' id={'tags'}>
       <InnerWrapper color='blue-dark' className=' my-4 py-12'>
         <div className='mx-auto md:max-w-6 flex flex-col justify-center'>
           <H3 className='text-center text-2xl text-pink mb-6 mx-auto'>here&apos;s what we did</H3>

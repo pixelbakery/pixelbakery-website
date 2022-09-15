@@ -14,7 +14,7 @@ function Education_TutorialRequests() {
   const onSubmit = (data) => SendToMonday_Tutorials(data)
 
   return (
-    <PageSection>
+    <PageSection id={'tutorial-requests'}>
       <InnerWrapper>
         <div>
           <H2 id='tutorial-requests'>Tutorial Requests</H2>

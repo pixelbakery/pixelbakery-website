@@ -46,9 +46,9 @@ function Footer_Mailchimp({ onModalUpdate }) {
         <div className=' self-center'>
           <button
             onClick={handleOnClick}
-            className='duration-300 ease-in-out hover:scale-98 -ml-2   text-blue-dark '
+            className='duration-300 ease-in-out hover:scale-95 hover:rotate-90 -ml-2   text-blue-dark '
           >
-            <Close className='h-12 w-12' />
+            <Close className='h-12 w-12 ' />
           </button>
 
           <h2

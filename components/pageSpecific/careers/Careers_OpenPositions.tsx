@@ -4,7 +4,7 @@ import Careers_Card from './Careers_Card'
 import cn from 'classnames'
 function Careers_OpenPositions({ jobs, header, subheader }) {
   return (
-    <PageSection className='lg:py-12'>
+    <PageSection className='lg:py-12' id={'open-positions'}>
       <InnerWrapper>
         <div className='mb-12'>
           <div className=''>

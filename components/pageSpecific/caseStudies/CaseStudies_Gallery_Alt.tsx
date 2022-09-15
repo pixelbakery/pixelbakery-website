@@ -173,10 +173,14 @@ const Carousel = () => {
   )
 }
 
-function CaseStudies_Gallery() {
+const CaseStudies_Gallery = () => {
   return (
     <>
-      <PageSection color='blue-light' className=' border-b-24 border-t-24 border-blue'>
+      <PageSection
+        color='blue-light'
+        className=' border-b-24 border-t-24 border-blue'
+        id={'gallery-alt'}
+      >
         <InnerWrapper>
           <H2>Organic Social</H2>
           <p className='mb-12'>

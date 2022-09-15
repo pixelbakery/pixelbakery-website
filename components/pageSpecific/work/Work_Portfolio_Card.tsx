@@ -3,7 +3,6 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
@@ -110,7 +109,6 @@ function Work_Portfolio_Card({ project }) {
                   playsInline: true,
                   muted: true,
                   style: { width: '100%', height: '100%', objectFit: 'cover' },
-                  // poster: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,
                 },
               },
             }}
@@ -133,15 +131,26 @@ function Work_Portfolio_Card({ project }) {
             className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
           >
             {project.data.tags.slice(0, 3).map((tag) => (
-              <Pill text={tag} bgColor={'blue'} textColor={'cream'} size='xs' key={tag} />
+              <Pill
+                text={tag}
+                bgColor={'blue'}
+                textColor={'cream'}
+                size='xs'
+                key={tag}
+                className={'hidden md:inline'}
+              />
             ))}
           </div>
           <div
             id={projID_title}
             className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
           >
-            <div className='detail  text-sm text-white text-shadow-sm'>{project.data.client}</div>
-            <h3 className='detail text-2xl text-white text-shadow-sm'>{project.data.title}</h3>
+            <div className='detail  text-sm text-white text-shadow-sm hidden lg:block'>
+              {project.data.client}
+            </div>
+            <h3 className='detail text-2xl text-white text-shadow-sm hidden lg:block'>
+              {project.data.title}
+            </h3>
           </div>
         </div>
         <div

@@ -5,7 +5,7 @@ import H2AndLead from '@typography/H2AndLead'
 
 function Careers_JobShadow() {
   return (
-    <PageSection color='pink'>
+    <PageSection color='pink' id={'job-shadows'}>
       <InnerWrapper>
         <H2AndLead
           headerText={'Looking for job shadows?'}

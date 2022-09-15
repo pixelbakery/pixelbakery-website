@@ -20,7 +20,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
   }
   const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
   return (
-    <PageSection color='cream'>
+    <PageSection color='cream' id={'bio-header'}>
       <InnerWrapper className='mt-24'>
         <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 xl:gap-x-24  gap-y-8'>
           <div className='col-span-1 relative w-full aspect-3/4'>

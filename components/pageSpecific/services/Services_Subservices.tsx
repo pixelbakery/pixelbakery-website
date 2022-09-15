@@ -6,7 +6,7 @@ import H2AndLead from '@typography/H2AndLead'
 
 function Services_Subservices() {
   return (
-    <PageSection>
+    <PageSection id={'sub-services'}>
       <InnerWrapper>
         <div className='flex flex-col gap-y-12  max-w-lg lg:max-w-full mx-auto'>
           <div className=' col-span-5  w-full top-0'>

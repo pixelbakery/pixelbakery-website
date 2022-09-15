@@ -23,7 +23,7 @@ function Contact_HangOut() {
     }
   }, [])
   return (
-    <PageSection className='overflow-visible '>
+    <PageSection className='overflow-visible ' id={'socials'}>
       <InnerWrapper>
         <H2 color='blue'>Let's hang out</H2>
 

@@ -19,7 +19,7 @@ function SetSlide({ slide }) {
 }
 function CaseStudies_VerticalVideoSlider({ slides }) {
   return (
-    <PageSection color='wine'>
+    <PageSection color='wine' id={'video-slider'}>
       <InnerWrapper>
         <div>
           <Swiper

@@ -5,7 +5,7 @@ import H1 from '@typography/H1'
 import Hooray_ContactForm from 'components/pageSpecific/hooray/Hooray_ContactForm'
 import { NextSeo } from 'next-seo'
 
-function surprise() {
+const Page_Hooray = () => {
   return (
     <>
       <NextSeo
@@ -28,7 +28,7 @@ function surprise() {
           ],
         }}
       />
-      <PageSection color='blue-dark' className='pt-44'>
+      <PageSection color='blue-dark' className='pt-44' id='hooray'>
         <InnerWrapper>
           <H1 className='2xl:max-w-3xl' color='blue'>
             Hooray, A Surprise 4 You
@@ -54,4 +54,4 @@ function surprise() {
   )
 }
 
-export default surprise
+export default Page_Hooray

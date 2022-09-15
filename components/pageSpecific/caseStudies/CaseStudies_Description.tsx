@@ -37,7 +37,7 @@ function CaseStudies_Description({ children, ...props }: Props) {
   } else headerColor = props.headerColor
 
   return (
-    <PageSection color={bgColor}>
+    <PageSection color={bgColor} id={'description'}>
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-5'>
           <div className='col-span-1 lg:col-span-2'>

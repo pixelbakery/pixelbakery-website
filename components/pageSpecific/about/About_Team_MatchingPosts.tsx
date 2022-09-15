@@ -8,7 +8,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts }) => {
   return (
     <>
       {matchingAuthorPosts.length > 0 ? (
-        <PageSection color='white'>
+        <PageSection color='white' id={'bio-postsByPerson'}>
           <InnerWrapper>
             <h2>Recent Posts</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>

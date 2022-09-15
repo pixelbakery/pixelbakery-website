@@ -56,7 +56,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
         slug={slug}
       />
 
-      <PageSection className='min-h-screen mt-32'>
+      <PageSection className='min-h-screen mt-32' id='job-posting'>
         <article>
           <InnerWrapper>
             <header className='max-w-2xl mx-auto'>

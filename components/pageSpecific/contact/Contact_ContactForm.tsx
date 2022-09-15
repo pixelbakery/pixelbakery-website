@@ -5,7 +5,7 @@ import H2 from '@typography/H2'
 
 function Content_ContactForm() {
   return (
-    <PageSection color='pink-light'>
+    <PageSection color='pink-light' id={'contact-form'}>
       <InnerWrapper>
         <H2 color='blue-dark'>HMU.</H2>
         <Contact_ContactForm_Form />

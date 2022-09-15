@@ -6,7 +6,7 @@ import Lead from '@typography/Lead'
 
 function Education_FromScratch() {
   return (
-    <PageSection className='bg-white'>
+    <PageSection className='bg-white' id={'from-scratch-intro'}>
       <InnerWrapper>
         <H2 id='from-scratch'>From Scratch</H2>
         <Lead className='max-w-md text-xl text-blue-dark leading-none my-6'>

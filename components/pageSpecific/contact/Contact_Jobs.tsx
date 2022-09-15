@@ -7,7 +7,7 @@ import Lead from '@typography/Lead'
 
 function Contact_Jobs() {
   return (
-    <PageSection className=' bg-wine '>
+    <PageSection className=' bg-wine ' id={'contact-careers'}>
       <InnerWrapper className=''>
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-12'>
           <div className='col-span-1'>

@@ -121,6 +121,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
       <PageSection
         className={'bg-cream  my-4 inset-0 py-20'}
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
+        id='product-item'
       >
         <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-4 md:gap-12 lg:gap-24'>
           <div className='block md:hidden col-span-1 mt-0 gap-6  '>

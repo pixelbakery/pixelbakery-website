@@ -7,7 +7,7 @@ import About_Team_SpotifyPlaylist from './About_Team_SpotifyPlaylist'
 const About_Team_Details = ({ frontMatter }) => {
   const details = frontMatter.details
   return (
-    <PageSection>
+    <PageSection id={'bio-details'}>
       <InnerWrapper>
         <div className='grid grid-cols-2 2xl:grid-cols-5 gap-y-6 gap-12 lg:gap-x-24 w-fit mx-auto'>
           {details.map((s, index) => {

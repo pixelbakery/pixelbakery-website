@@ -5,7 +5,7 @@ import Lead from '@typography/Lead'
 
 function CaseStudies_CTA() {
   return (
-    <PageSection color='blue-light' className='border-t-32 border-b-32 border-blue'>
+    <PageSection color='blue-light' className='border-t-32 border-b-32 border-blue' id={'cta'}>
       <InnerWrapper>
         <Lead color='blue-dark' className='text-center mx-auto'>
           Ready to expand your brand?

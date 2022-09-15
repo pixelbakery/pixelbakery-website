@@ -56,7 +56,7 @@ const CheckoutPage: NextPage = () => {
       </Head>
       <Navigation_Store />
 
-      <PageSection className={'pt-24 px-24'} color={'pink-white'}>
+      <PageSection className={'pt-24 px-24'} color={'pink-white'} id='cart'>
         <InnerWrapper>
           <Link href='/store' passHref>
             <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>

@@ -137,7 +137,7 @@ const Carousel = () => {
 }
 const CaseStudies_TikTok = () => {
   return (
-    <PageSection color='wine border-t-32 border-b-32 border-pink'>
+    <PageSection color='wine border-t-32 border-b-32 border-pink' id={'tiktok'}>
       <InnerWrapper>
         <H2 color='pink'>TikTok </H2>
         <p className='text-cream'>

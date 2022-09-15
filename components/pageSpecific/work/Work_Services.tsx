@@ -3,8 +3,8 @@ import services from '@data/services'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
-
 import Lead from '@typography/Lead'
+
 function Work_Services() {
   return (
     <PageSection color={'white'} id='whatwemake'>

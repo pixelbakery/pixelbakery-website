@@ -5,7 +5,7 @@ import Lead from '@typography/Lead'
 
 function Services_Animation_Why() {
   return (
-    <PageSection color='cream'>
+    <PageSection color='cream' id={'why-animation'}>
       <InnerWrapper>
         <div className='md:mx-12 lg:mx-0'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-lg lg:max-w-full mx-auto'>

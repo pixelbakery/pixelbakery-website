@@ -38,7 +38,7 @@ const Recipes_SmallPost = ({
                   objectFit='cover'
                   className='rounded-md  bg-blue'
                   placeholder='blur'
-                  quality={25}
+                  quality={50}
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
                   alt={`${title}, by ${author.name}`}
                 />

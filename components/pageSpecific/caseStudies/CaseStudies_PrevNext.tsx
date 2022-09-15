@@ -3,43 +3,19 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
-function CaseStudies_PrevNext({ allCaseStudies, title }) {
+function CaseStudies_PrevNext({ prev, next }) {
   // const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
   // temp.forEach((cs, index) => {
   //   console.log(index, cs.data.client, cs.data.title)
   // })
-  const allActiveCaseStudies = allCaseStudies.filter((project) => project.active)
-
-  const index = allActiveCaseStudies.findIndex(
-    (project) => project.data.title.toLowerCase() === title.toLowerCase(),
-  )
 
   // allActiveCaseStudies.forEach((cs, index) => {
   //   console.log(index, ':', cs.data.title, cs.data.date)
   // })
   // console.log('index: ', index)
 
-  const getPrev = (i) => {
-    if (i === 0) {
-      return allActiveCaseStudies[Object.keys(allActiveCaseStudies).length - 1]
-    } else {
-      return allActiveCaseStudies[i - 1]
-    }
-  }
-
-  const getNext = (i) => {
-    if (i === Object.keys(allActiveCaseStudies).length - 1) {
-      return allActiveCaseStudies[0]
-    } else {
-      return allActiveCaseStudies[i + 1]
-    }
-  }
-
-  const prev = getPrev(index)
-  const next = getNext(index)
-
   return (
-    <PageSection className='bg-pink-light py-2'>
+    <PageSection className='bg-pink-light py-2' id={'prev-next'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
           <Link
