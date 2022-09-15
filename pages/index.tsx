@@ -1,6 +1,3 @@
-import Head from 'next/head'
-
-// import InstagramFeed from "../components/instagramFeed";
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -14,43 +11,12 @@ import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Home_Recipes from '@home/Home_Recipes'
 import Main from '@parts/Main'
-import { NextSeo } from 'next-seo'
+import Home_SEO from '@home/Home_SEO'
 
 const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
-      <NextSeo
-        title='Home'
-        description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-        }
-        openGraph={{
-          url: `https://pixelbakery.com`,
-          title: 'Pixel Bakery',
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-          description:
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-        }}
-      />
+      <Home_SEO />
       <Home_Awwwards />
       <Home_Landing />
       <Home_WhoTheHeck />
@@ -67,11 +33,9 @@ export default Home
 export function getStaticProps() {
   // Get all blog posts:
   const allPosts = postFilePaths
-
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
       const { data } = matter(source)
-
       return {
         data,
         filePath,
@@ -82,11 +46,9 @@ export function getStaticProps() {
 
   // Get all portfolio pieces:
   const allCaseStudies = caseStudyFilePaths
-
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { data } = matter(source)
-
       return {
         data,
         filePath,
