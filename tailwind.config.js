@@ -42,6 +42,11 @@ module.exports = {
       body: 'Poppins, sans-serif',
     },
     extend: {
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+        '10xl': '104rem',
+      },
       fontSize: {
         '18xl': '18rem',
         '20xl': '20rem',
