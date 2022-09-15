@@ -2,11 +2,14 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import Vimeo from '@u-wave/react-vimeo'
+import dynamic from 'next/dynamic'
+const Video = dynamic(() => import('@parts/Video'), {
+  ssr: false,
+})
 
 function Home_WhatWeMake() {
   return (
-    <PageSection>
+    <PageSection id={'services-cta'}>
       <InnerWrapper>
         <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 mb-12 lg:mb-24'>
           <div>
@@ -26,7 +29,7 @@ function Home_WhatWeMake() {
           </div>
         </div>
         <div className=' w-full'>
-          <Vimeo video={'523920082'} responsive={true} controls={true} />
+          <Video url='https://vimeo.com/523920082' />
         </div>
       </InnerWrapper>
     </PageSection>
