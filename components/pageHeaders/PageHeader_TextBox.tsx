@@ -12,7 +12,9 @@ const PageHeader_TextBox = ({ primaryColor, header, accentColor, subheader, subh
       >
         <div className='w-fit px-6 mx-12'>
           <H1 color={accentColor}>{header}</H1>
-          <div className={cn('lowercase my-2 text-2xl font-bold', [`text-${subheaderColor}`])}>
+          <div
+            className={cn('lowercase my-2 text-2xl font-bold italic', [`text-${subheaderColor}`])}
+          >
             {subheader}
           </div>
         </div>

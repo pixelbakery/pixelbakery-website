@@ -6,15 +6,17 @@ type Props = {
   color?: string
   id?: string
   className?: string
+  noMargins?: boolean
 }
 
-const Lead = ({ color, children, className }: PropsWithChildren<Props>) => {
+const Lead = ({ color, children, className, noMargins }: PropsWithChildren<Props>) => {
   return (
     <p
       className={cn(
-        'text-2xl lg:text-3xl mt-0 font-bold lg:mb-12 leading-tight max-w-lg',
-        [`text-${color}`],
-        [`${className}`],
+        'text-2xl lg:text-3xl mt-0 font-bold leading-tight max-w-lg',
+        { [`lg:mb-12 `]: !noMargins },
+        { [`text-${color}`]: color != undefined && 'text-blue' },
+        { [`${className}`]: className },
       )}
     >
       {children}
