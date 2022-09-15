@@ -62,8 +62,8 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/book',
-    destination: 'https://calendly.com/pixelbakery/exploratory-meeting',
+    source: '/calendly',
+    destination: '/book',
     permanent: true,
   },
   {
