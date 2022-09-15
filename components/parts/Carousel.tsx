@@ -18,6 +18,25 @@ type CarouselProps = {
   slideColor?: string
   textColor?: string
 }
+function SetSlide({ slide, aspectW, aspectH, objectFit }) {
+  return (
+    <div
+      className={cn('relative w-full', {
+        [`aspect-w-4 aspect-h-3`]: aspectW === undefined && aspectH === undefined,
+        [`aspect-w-${aspectW} aspect-h-${aspectH}`]: aspectW != undefined && aspectH != undefined,
+      })}
+    >
+      <Image
+        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
+        alt={slide.alt}
+        placeholder='blur'
+        layout='fill'
+        objectFit={objectFit}
+        blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
+      />
+    </div>
+  )
+}
 const Carousel = ({
   slides,
   aspectH,
@@ -33,25 +52,6 @@ const Carousel = ({
   let navColor
   if (textColor === undefined || textColor === '') navColor = 'text-blue-dark'
   else navColor = `text-${textColor}`
-  function SetSlide({ slide }) {
-    return (
-      <div
-        className={cn('relative w-full', {
-          [`aspect-w-4 aspect-h-3`]: aspectW === undefined && aspectH === undefined,
-          [`aspect-w-${aspectW} aspect-h-${aspectH}`]: aspectW != undefined && aspectH != undefined,
-        })}
-      >
-        <Image
-          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
-          alt={slide.alt}
-          placeholder='blur'
-          layout='fill'
-          objectFit={objectFit}
-          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
-        />
-      </div>
-    )
-  }
 
   return (
     <div>
@@ -77,7 +77,7 @@ const Carousel = ({
         {slides.map((slide) => {
           return (
             <SwiperSlide key={slide.src} className={cn('cursor-grab', [slideBGColor])}>
-              <SetSlide slide={slide} />
+              <SetSlide slide={slide} aspectW={aspectW} aspectH={aspectH} objectFit={objectFit} />
             </SwiperSlide>
           )
         })}
