@@ -49,7 +49,7 @@ const Recipes_FeaturedPost = ({
             objectFit='cover'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-            quality={50}
+            quality={25}
             className='bg-blue'
             alt={`cover photo for ${title}`}
           />
@@ -58,13 +58,6 @@ const Recipes_FeaturedPost = ({
             {' '}
             <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
-
-          {/* <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div> */}
-          {/* <div
-            className={
-              'absolute w-100 h-100 bg-gradient-to-t via-transparent from-blue-dark  opacity-50'
-            }
-          ></div> */}
         </article>
         <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
           <div className=''>
