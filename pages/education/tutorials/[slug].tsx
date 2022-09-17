@@ -16,11 +16,19 @@ import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
 import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import dynamic from 'next/dynamic'
-const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: false })
-
+const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: true })
+const Education_MadeToOrder_GetPrevNextPost = dynamic(
+  () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
+  {
+    ssr: false,
+  },
+)
 import Pill from '@parts/Pill'
 import H2 from '@typography/H2'
 import Education_SupportUs from '@education/Education_SupportUs'
+import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
+import { JsonStringify } from '@lib/helpers'
+import next from 'next'
 
 const components = {
   Carousel: Carousel,
@@ -28,7 +36,13 @@ const components = {
   Video: Video,
 }
 
-export default function Page_Education_Tutorials({ slug, source, frontMatter }) {
+export default function Page_Education_Tutorials({
+  slug,
+  source,
+  frontMatter,
+  nextIndex,
+  prevIndex,
+}) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   const myContainer = useRef(null)
@@ -47,57 +61,14 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
     setReadTime(stats.text)
     return () => {}
   }, [])
-
+  console.log(prevIndex.filePath)
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Education',
-            item: 'https://pixelbakery.com/education',
-          },
-          {
-            position: 2,
-            name: 'Tutorials',
-            item: 'https://pixelbakery.com/education#madeToOrder',
-          },
-          {
-            position: 3,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/education/tutorials/${slug}`,
-          },
-        ]}
+      <Education_MadeToOrder_SEO
+        frontMatter={frontMatter}
+        slug={slug}
+        datePostedISO={datePostedISO}
       />
-      <NextSeo
-        title={`${frontMatter.title} | Tutorials`}
-        description={`${frontMatter.excerpt}`}
-        openGraph={{
-          url: `https://pixelbakery.com/education/tutorials/${slug}`,
-          title: `${frontMatter.title} | Tutorials`,
-          type: 'article',
-          description: `${frontMatter.excerpt}`,
-          article: {
-            publishedTime: `${datePostedISO}`,
-            tags: [`${frontMatter.category}`],
-          },
-          images: [
-            {
-              url: `${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author}`,
-            },
-          ],
-        }}
-      />
-      <ArticleJsonLd
-        url={`https://pixelbakery.com/education/tutorials/${slug}`}
-        title={`${frontMatter.title}`}
-        images={[`${frontMatter.coverImage}`]}
-        datePublished={`${datePostedISO}`}
-        authorName={`${frontMatter.author}`}
-        description={`${frontMatter.excerpt}`}
-      />
-
       <PostHeader
         title={frontMatter.title}
         video={frontMatter.video}
@@ -105,8 +76,9 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
         category={`${frontMatter.category} Tutorial`}
         coverImage={frontMatter.coverImage}
         date={frontMatter.date}
-        author={frontMatter.author}
-        person={frontMatter.author}
+        author={frontMatter.author.name}
+        person={frontMatter.author.name}
+        authorUrl={frontMatter.author.url}
         forwardedRef={childRef}
         readTime={readTime}
       />
@@ -137,6 +109,7 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
         </div>
       </PageSection>
       <Education_SupportUs />
+      <Education_MadeToOrder_GetPrevNextPost prev={prevIndex} next={nextIndex} />
     </Main>
   )
 }
@@ -157,9 +130,44 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
+  const allTutorials = madeToOrderFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
+      const { data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
 
+      return { filePath, data }
+    })
+    .filter((cs) => cs.data.active === true)
+    .sort((cs1, cs2) => (cs1.data.date < cs2.data.date ? -1 : 1))
+  //Find the previous and next person on the roster, alphabetically by last name.
+  let thisIndex,
+    prevIndex,
+    nextIndex = null
+
+  if (data.active != false) {
+    allTutorials.map((p, index) => {
+      if (p.data.title === data.title) {
+        thisIndex = index
+      }
+    })
+
+    if (thisIndex != undefined && thisIndex === 0)
+      prevIndex = allTutorials[Object.keys(allTutorials).length - 1]
+    else prevIndex = allTutorials[thisIndex - 1]
+
+    if (thisIndex != undefined && thisIndex === Object.keys(allTutorials).length - 1)
+      nextIndex = allTutorials[0]
+    else nextIndex = allTutorials[thisIndex + 1]
+  } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
+
+  //End of prev/next search
+
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
+      nextIndex: nextIndex,
+      prevIndex: prevIndex,
       source: mdxSource,
       frontMatter: data,
     },

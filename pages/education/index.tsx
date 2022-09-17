@@ -15,6 +15,7 @@ import Education_MadeToOrder from '@education/Education_MadeToOrder'
 import Education_FromScratch from '@education/Education_FromScratch'
 // import Education_ProjectFiles from '@education/Education_ProjectFiles'
 import Education_TutorialRequests from '@education/Education_TutorialRequests'
+import { JsonStringify } from '@lib/helpers'
 
 function EducationPage({ allMadeToOrders }) {
   return (
@@ -39,7 +40,7 @@ export const getStaticProps = async () => {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
       const { data } = matter(source)
-
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
         filePath,
