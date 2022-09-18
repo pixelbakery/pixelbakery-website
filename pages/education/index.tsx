@@ -1,21 +1,16 @@
 import Main from '@parts/Main'
 import fs from 'fs'
-import {
-  madeToOrderFilePaths,
-  MADETOORDER_PATH,
-  // projectFilesFilePaths,
-  // PROJECTFILE_PATH,
-} from '@lib/mdxUtils'
+import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
+import dynamic from 'next/dynamic'
 import matter from 'gray-matter'
 import path from 'path'
+const Education_Header = dynamic(() => import('@education/Education_Header'))
 import Education_SEO from '@education/Education_SEO'
 import Education_Why from '@education/Education_Why'
-import Education_Header from '@education/Education_Header'
-import Education_MadeToOrder from '@education/Education_MadeToOrder'
+const Education_MadeToOrder = dynamic(() => import('@education/Education_MadeToOrder'))
 import Education_FromScratch from '@education/Education_FromScratch'
-// import Education_ProjectFiles from '@education/Education_ProjectFiles'
 import Education_TutorialRequests from '@education/Education_TutorialRequests'
-import { JsonStringify } from '@lib/helpers'
+import BackToTop from '@utility/BackToTop'
 
 function EducationPage({ allMadeToOrders }) {
   return (
@@ -23,12 +18,10 @@ function EducationPage({ allMadeToOrders }) {
       <Education_SEO />
       <Education_Header />
       <Education_Why />
-      {/* <Store_Maintenance /> */}
-      {/* <Education_ProjectFiles allProjectFiles={allProjectFiles} /> */}
-      {/* <Education_Recent /> */}
       <Education_FromScratch />
       <Education_MadeToOrder allMadeToOrders={allMadeToOrders} />
       <Education_TutorialRequests />
+      <BackToTop />
     </Main>
   )
 }
@@ -47,20 +40,6 @@ export const getStaticProps = async () => {
       }
     })
     .sort((mto1, mto2) => (mto1.data.date > mto2.data.date ? -1 : 1))
-
-  // Project Files
-  // const allProjectFiles = projectFilesFilePaths
-  //   .map((filePath) => {
-  //     const source = fs.readFileSync(path.join(PROJECTFILE_PATH, filePath))
-  //     const { content, data } = matter(source)
-
-  //     return {
-  //       content,
-  //       data,
-  //       filePath,
-  //     }
-  //   })
-  //   .sort((pf1, pf2) => (pf1.data.date > pf2.data.date ? -1 : 1))
 
   return {
     props: { allMadeToOrders },

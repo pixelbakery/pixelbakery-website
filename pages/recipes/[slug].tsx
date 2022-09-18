@@ -20,13 +20,14 @@ import VimeoPlayer from '@parts/VimeoPlayer'
 
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
-const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: true })
+import BackToTop from '@utility/BackToTop'
+const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: false })
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: true })
 
 const Recipes_Post_GetPrevNextPost = dynamic(
   () => import('@recipes/Recipes_Post_GetPrevNextPost'),
   {
-    ssr: true,
+    ssr: false,
   },
 )
 
@@ -50,7 +51,6 @@ export default function PostPage({
   frontMatter,
   matchingBio,
   relatedPosts,
-  allPosts,
   // thisIndex,
   // nextIndex,
   // prevIndex,
@@ -100,6 +100,7 @@ export default function PostPage({
 
       <Recipes_Post_GetPrevNextPost prev={prev} next={next} />
       <Recipes_Post_Related relatedPosts={relatedPosts} />
+      <BackToTop />
     </Main>
   )
 }
