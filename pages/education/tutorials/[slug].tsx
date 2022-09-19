@@ -10,25 +10,32 @@ import Main from '@parts/Main'
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 const readingTime = require('reading-time')
 import Video from '@parts/Video'
-import VimeoPlayer from '@parts/VimeoPlayer'
-import Button_Filled from '@parts/Button_Filled'
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
-import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import dynamic from 'next/dynamic'
-const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: false })
-
-import Pill from '@parts/Pill'
-import H2 from '@typography/H2'
+const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: true })
+const Education_MadeToOrder_GetPrevNextPost = dynamic(
+  () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
+  {
+    ssr: true,
+  },
+)
 import Education_SupportUs from '@education/Education_SupportUs'
+import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
+import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
 const components = {
   Carousel: Carousel,
-  VimeoPlayer: VimeoPlayer,
   Video: Video,
 }
 
-export default function Page_Education_Tutorials({ slug, source, frontMatter }) {
+export default function Page_Education_Tutorials({
+  slug,
+  source,
+  frontMatter,
+  nextIndex,
+  prevIndex,
+}) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   const myContainer = useRef(null)
@@ -47,57 +54,13 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
     setReadTime(stats.text)
     return () => {}
   }, [])
-
   return (
     <Main>
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Education',
-            item: 'https://pixelbakery.com/education',
-          },
-          {
-            position: 2,
-            name: 'Tutorials',
-            item: 'https://pixelbakery.com/education#madeToOrder',
-          },
-          {
-            position: 3,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/education/tutorials/${slug}`,
-          },
-        ]}
+      <Education_MadeToOrder_SEO
+        frontMatter={frontMatter}
+        slug={slug}
+        datePostedISO={datePostedISO}
       />
-      <NextSeo
-        title={`${frontMatter.title} | Tutorials`}
-        description={`${frontMatter.excerpt}`}
-        openGraph={{
-          url: `https://pixelbakery.com/education/tutorials/${slug}`,
-          title: `${frontMatter.title} | Tutorials`,
-          type: 'article',
-          description: `${frontMatter.excerpt}`,
-          article: {
-            publishedTime: `${datePostedISO}`,
-            tags: [`${frontMatter.category}`],
-          },
-          images: [
-            {
-              url: `${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author}`,
-            },
-          ],
-        }}
-      />
-      <ArticleJsonLd
-        url={`https://pixelbakery.com/education/tutorials/${slug}`}
-        title={`${frontMatter.title}`}
-        images={[`${frontMatter.coverImage}`]}
-        datePublished={`${datePostedISO}`}
-        authorName={`${frontMatter.author}`}
-        description={`${frontMatter.excerpt}`}
-      />
-
       <PostHeader
         title={frontMatter.title}
         video={frontMatter.video}
@@ -105,37 +68,21 @@ export default function Page_Education_Tutorials({ slug, source, frontMatter }) 
         category={`${frontMatter.category} Tutorial`}
         coverImage={frontMatter.coverImage}
         date={frontMatter.date}
-        author={frontMatter.author}
-        person={frontMatter.author}
+        author={frontMatter.author.name}
+        person={frontMatter.author.name}
+        authorUrl={frontMatter.author.url}
         forwardedRef={childRef}
         readTime={readTime}
       />
-      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto' id='tutorial-body'>
+      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto mb-8 lg:mb-8' id='tutorial-body'>
         <article ref={myContainer} id='blog-body-guts'>
           <div className={markdownStyles['markdown']}>
             <MDXRemote {...source} components={components} />
           </div>
         </article>
-
-        <div className='my-4 pt-12 max-w-3xl mx-auto'>
-          <h3 className='text-blue font-semibold text-3xl mb-4'>Tags</h3>
-          <div className='flex justify-start flex-wrap gap-2'>
-            {frontMatter.tags.map((tag) => {
-              return <Pill key={tag} text={tag} bgColor='pink-light' textColor='pink' size='sm' />
-            })}
-          </div>
-          <div className='mt-12'>
-            <Button_Filled
-              center={true}
-              text='we got more'
-              link='/education#madeToOrder'
-              bgColor='blue'
-              textColor='cream'
-              chevronDirection='left'
-            />
-          </div>
-        </div>
       </PageSection>
+      <Education_MadeToOrder_Tags tags={frontMatter.tags} />
+      <Education_MadeToOrder_GetPrevNextPost prev={prevIndex} next={nextIndex} />
       <Education_SupportUs />
     </Main>
   )
@@ -146,20 +93,51 @@ export const getStaticProps = async ({ params }) => {
   const temp = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())
   const source = fs.readFileSync(temp)
   const { content, data } = matter(source)
-
-  //END OF RELEVANT POSTS
-  //Back to MDX Stuff
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
     },
     scope: data,
   })
+  const allTutorials = madeToOrderFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
+      const { data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
 
+      return { filePath, data }
+    })
+    .filter((cs) => cs.data.active === true)
+    .sort((cs1, cs2) => (cs1.data.date < cs2.data.date ? -1 : 1))
+
+  let thisIndex,
+    prevIndex,
+    nextIndex = null
+
+  if (data.active != false) {
+    allTutorials.map((p, index) => {
+      if (p.data.date === data.date) {
+        thisIndex = index
+      }
+    })
+
+    if (thisIndex != undefined && thisIndex === 0)
+      prevIndex = allTutorials[Object.keys(allTutorials).length - 1]
+    else prevIndex = allTutorials[thisIndex - 1]
+
+    if (thisIndex != undefined && thisIndex === Object.keys(allTutorials).length - 1)
+      nextIndex = allTutorials[0]
+    else nextIndex = allTutorials[thisIndex + 1]
+  } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
+
+  //End of prev/next search
+
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
+      nextIndex: nextIndex,
+      prevIndex: prevIndex,
       source: mdxSource,
       frontMatter: data,
     },
@@ -168,10 +146,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = madeToOrderFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))
-
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {

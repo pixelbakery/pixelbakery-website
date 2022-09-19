@@ -5,6 +5,7 @@ import Pill from '@parts/Pill'
 import PersonType from 'types/person'
 import cn from 'classnames'
 import ReactPlayer from 'react-player'
+import Link from 'next/link'
 type Props = {
   title: string
   subtitle: string
@@ -16,6 +17,7 @@ type Props = {
   forwardedRef: any
   readTime: any
   video: string
+  authorUrl: string
 }
 
 const Education_PostHeader = ({
@@ -26,15 +28,17 @@ const Education_PostHeader = ({
   author,
   video,
   person,
+  authorUrl,
   forwardedRef,
   readTime,
 }: Props) => {
-  let profilePic
-  if (person.slug && person.photos.headshotSmiling != typeof undefined) {
-    profilePic = person.photos.headshotSmiling
-  } else {
-    profilePic = '/img/placeholder01.png'
-  }
+  // let profilePic
+  // if (person.slug && person.photos.headshotSmiling != typeof undefined) {
+  //   profilePic = person.photos.headshotSmiling
+  // } else {
+  //   profilePic = '/img/placeholder01.png'
+  // }
+  const profilePic = '/img/placeholder01.png'
   return (
     <header className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
@@ -65,7 +69,18 @@ const Education_PostHeader = ({
                 <span ref={forwardedRef}>{readTime}</span>
               </div>
 
-              <div className='text-sm text-wine'>Written by {author}</div>
+              <div className='text-sm text-wine'>
+                Written by{' '}
+                <span>
+                  {authorUrl ? (
+                    <Link href={authorUrl} passHref>
+                      <a className='text-blue underline'>{author}</a>
+                    </Link>
+                  ) : (
+                    author
+                  )}
+                </span>
+              </div>
             </div>
           </div>
         </div>
