@@ -26,7 +26,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
       href={`/education/tutorials/[slug]`}
       passHref
     >
-      <a>
+      <article>
         <div
           className={cn(
             'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ',
@@ -49,14 +49,14 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
             <Pill text={tutorial.data.category} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
         </div>
-        <div className='cursor-pointer mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+        <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
           <div className=''>
             <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
               {tutorial.data.title}
             </h3>
           </div>
         </div>
-      </a>
+      </article>
     </Link>
   )
 }
