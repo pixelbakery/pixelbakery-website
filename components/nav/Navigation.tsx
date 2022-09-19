@@ -147,11 +147,11 @@ export default function Navbar() {
               <a className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'>
                 <div
                   ref={logoWrapper}
-                  className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
+                  className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
                 >
                   <div
                     ref={line1}
-                    className=' pointer-events-none relative block overflow-visible tracking-normal text-left whitespace-nowrap'
+                    className='relative block overflow-visible tracking-normal text-left whitespace-nowrap'
                   >
                     <span ref={p} className='inline-block'>
                       p
@@ -168,7 +168,7 @@ export default function Navbar() {
                   </div>
                   <div
                     ref={line2}
-                    className='pointer-events-none select-none cursor-none relative block tracking-wide  text-left whitespace-nowrap'
+                    className='relative block tracking-wide  text-left whitespace-nowrap'
                   >
                     <span ref={d} className='inline-block'>
                       d
@@ -188,24 +188,21 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className='pointer-events-none select-none cursor-none overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
+        <div className=' overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
           <div
-            className={cn(
-              'pointer-events-none select-none cursor-nonerelative opacity-0 self-center',
-              { ['opacity-0 hidden']: isHamActive },
-            )}
+            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
             ref={box1}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <Link href={'/about'} passHref>
-              <a
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
+              <div
+                className='bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-peach tracking-wide lowercase '
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 who we are
-              </a>
+              </div>
             </Link>
           </div>
           <div
@@ -215,13 +212,13 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <Link href={'/work'} passHref>
-              <a
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
+              <div
+                className=' bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-peach tracking-wide lowercase'
                 onMouseEnter={handleMouseEnter}
                 onMouseOut={handleMouseLeave}
               >
                 what we make
-              </a>
+              </div>
             </Link>
           </div>
           <div
@@ -231,13 +228,13 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <Link href={'/onboarding'} passHref>
-              <a
-                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
+              <div
+                className='bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
                 onMouseEnter={handleMouseEnter}
                 onMouseOut={handleMouseLeave}
               >
                 start a project
-              </a>
+              </div>
             </Link>
           </div>
           <div ref={hamRef} className=''>
