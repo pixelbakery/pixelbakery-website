@@ -10,29 +10,22 @@ import Main from '@parts/Main'
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 const readingTime = require('reading-time')
 import Video from '@parts/Video'
-import VimeoPlayer from '@parts/VimeoPlayer'
-import Button_Filled from '@parts/Button_Filled'
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
-import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import dynamic from 'next/dynamic'
 const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: true })
 const Education_MadeToOrder_GetPrevNextPost = dynamic(
   () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
   {
-    ssr: false,
+    ssr: true,
   },
 )
-import Pill from '@parts/Pill'
-import H2 from '@typography/H2'
 import Education_SupportUs from '@education/Education_SupportUs'
 import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
-import { JsonStringify } from '@lib/helpers'
-import next from 'next'
+import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
 const components = {
   Carousel: Carousel,
-  VimeoPlayer: VimeoPlayer,
   Video: Video,
 }
 
@@ -61,7 +54,6 @@ export default function Page_Education_Tutorials({
     setReadTime(stats.text)
     return () => {}
   }, [])
-  console.log(prevIndex.filePath)
   return (
     <Main>
       <Education_MadeToOrder_SEO
@@ -82,34 +74,16 @@ export default function Page_Education_Tutorials({
         forwardedRef={childRef}
         readTime={readTime}
       />
-      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto' id='tutorial-body'>
+      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto mb-8 lg:mb-8' id='tutorial-body'>
         <article ref={myContainer} id='blog-body-guts'>
           <div className={markdownStyles['markdown']}>
             <MDXRemote {...source} components={components} />
           </div>
         </article>
-
-        <div className='my-4 pt-12 max-w-3xl mx-auto'>
-          <h3 className='text-blue font-semibold text-3xl mb-4'>Tags</h3>
-          <div className='flex justify-start flex-wrap gap-2'>
-            {frontMatter.tags.map((tag) => {
-              return <Pill key={tag} text={tag} bgColor='pink-light' textColor='pink' size='sm' />
-            })}
-          </div>
-          <div className='mt-12'>
-            <Button_Filled
-              center={true}
-              text='we got more'
-              link='/education#madeToOrder'
-              bgColor='blue'
-              textColor='cream'
-              chevronDirection='left'
-            />
-          </div>
-        </div>
       </PageSection>
-      <Education_SupportUs />
+      <Education_MadeToOrder_Tags tags={frontMatter.tags} />
       <Education_MadeToOrder_GetPrevNextPost prev={prevIndex} next={nextIndex} />
+      <Education_SupportUs />
     </Main>
   )
 }
@@ -119,11 +93,7 @@ export const getStaticProps = async ({ params }) => {
   const temp = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())
   const source = fs.readFileSync(temp)
   const { content, data } = matter(source)
-
-  //END OF RELEVANT POSTS
-  //Back to MDX Stuff
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
@@ -140,14 +110,14 @@ export const getStaticProps = async ({ params }) => {
     })
     .filter((cs) => cs.data.active === true)
     .sort((cs1, cs2) => (cs1.data.date < cs2.data.date ? -1 : 1))
-  //Find the previous and next person on the roster, alphabetically by last name.
+
   let thisIndex,
     prevIndex,
     nextIndex = null
 
   if (data.active != false) {
     allTutorials.map((p, index) => {
-      if (p.data.title === data.title) {
+      if (p.data.date === data.date) {
         thisIndex = index
       }
     })
@@ -176,10 +146,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = madeToOrderFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))
-
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {

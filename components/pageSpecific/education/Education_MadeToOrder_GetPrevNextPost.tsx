@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
   return (
-    <PageSection color={'pink-light'} id={'next-post'}>
-      <InnerWrapper className='py-2 my-2'>
+    <PageSection color={'pink-light'} id={'next-post'} disableSpacing={true}>
+      <InnerWrapper className='py-12 my-2' disableSpacing={false}>
         <div className='flex justify-between'>
           <Link
             as={`/education/tutorials/${prev.filePath.replace(/\.mdx?$/, '')}`}
