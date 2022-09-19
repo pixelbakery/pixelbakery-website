@@ -15,7 +15,7 @@ interface video {
 function Video({ url, ...props }: video) {
   return (
     <div>
-      {props.title != undefined ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
+      {props.title != '' ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
       <div className='markdown-video aspect-16/9'>
         <ReactPlayer
           url={url}
@@ -28,7 +28,7 @@ function Video({ url, ...props }: video) {
           playsInline={props.playsInline ? props.playsInline : false}
           controls={props.controls ? props.controls : true}
         />
-        {props.caption != undefined ? (
+        {props.caption ? (
           <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '>
             {' '}
             {props.caption}

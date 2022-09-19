@@ -137,7 +137,3 @@ export async function SendEmail_Croissants(data) {
     // console.log(res.json())
   })
 }
-
-export function JsonStringify(data) {
-  return JSON.parse(JSON.stringify(data))
-}

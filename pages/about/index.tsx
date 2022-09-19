@@ -6,22 +6,18 @@ import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
 import Main from '@parts/Main'
 import About_SEO from '@about/About_SEO'
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), { ssr: false })
-const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
-
 import About_Team from '@about/About_Team'
 import About_Values from '@about/About_Values'
 import About_Twitch from '@about/About_Twitch'
 import About_Faq from '@about/About_Faq'
 import About_Awards from '@about/About_Awards'
 import About_Spotify from '@about/About_Spotify'
-
 // import About_FamilyPhotos from '@about/About_FamilyPhotos'
 
 function About({ allPeople }) {
   return (
     <Main>
       <About_SEO />
-      <BackToTop />
       <PageHeader_VarH header='About' subheader='Just add flour.' />
       <About_Team allPeople={allPeople} />
       <About_Values />

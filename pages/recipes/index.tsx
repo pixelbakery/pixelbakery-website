@@ -9,58 +9,10 @@ import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Main from '@parts/Main'
-
+import { NextSeo } from 'next-seo'
 import InnerWrapper from '@parts/InnerWrapper'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 
-import BackToTop from '@utility/BackToTop'
-import Recipes_SEO from '@recipes/Recipes_SEO'
-let counter = 0
-const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
-const secondaryPostNo = 8
-
-const getFeaturedPosts = ({ allPosts }) => {
-  return allPosts.slice(0, featuredPostNo).map((post, index) => {
-    return (
-      <Recipes_FeaturedPost
-        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-        href={`/recipes/[slug]`}
-        key={post.filePath}
-        title={post.data.title}
-        author={post.data.author}
-        categories={post.data.categories}
-        date={post.data.date}
-        aspectW={'4'}
-        aspectY={'3'}
-        coverImage={post.data.coverImage}
-        excerpt={post.data.excerpt}
-      />
-    )
-  })
-}
-
-const getSecondaryPosts = ({ allPosts }) => {
-  return allPosts.slice(featuredPostNo, secondaryPostNo + featuredPostNo).map((post) => {
-    return (
-      <Recipes_FeaturedPost
-        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-        href={`/recipes/[slug]`}
-        key={post.filePath}
-        title={post.data.title}
-        author={post.data.author}
-        categories={post.data.categories}
-        date={post.data.date}
-        aspectW={'3'}
-        aspectY={'4'}
-        coverImage={post.data.coverImage}
-        excerpt={post.data.excerpt}
-      />
-    )
-  })
-}
-const Page_Recipes = ({ allPosts }) => {
+const Index = ({ allPosts }) => {
   // const [displayed, setDisplayed] = useState(12)
 
   // function handleDisplayed() {
@@ -68,68 +20,130 @@ const Page_Recipes = ({ allPosts }) => {
   //     setDisplayed(displayed + 12)
   //   } else setDisplayed(Object.keys(allPosts).length)
   // }
-  const [totalPages, setTotalPages] = useState<number>(0)
-  const [currentPage, setCurrentPage] = useState<number>(secondaryPostNo + featuredPostNo + 5)
 
-  const { pathname, query } = useRouter()
-  useEffect(() => {
-    const numberOfPages = allPosts.length
-    // const currentCounter = query.counter ? parseInt(query.counter as any) : 0
-    setTotalPages(numberOfPages)
-  }, [])
-  const router = useRouter()
-
-  useEffect(() => {
-    // The counter changed!
-    if (currentPage <= totalPages) setCurrentPage(currentPage + 5)
-  }, [router.query.counter])
-
-  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo, currentPage)
-
+  const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
+  const secondaryPostNo = 8
+  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)
+  const getFeaturedPosts = () => {
+    return allPosts.slice(0, featuredPostNo).map((post, index) => {
+      return (
+        <Recipes_FeaturedPost
+          as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+          href={`/recipes/[slug]`}
+          key={post.filePath}
+          title={post.data.title}
+          author={post.data.author}
+          categories={post.data.categories}
+          date={post.data.date}
+          aspectW={'4'}
+          aspectY={'3'}
+          coverImage={post.data.coverImage}
+          excerpt={post.data.excerpt}
+        />
+      )
+    })
+  }
+  const getSecondaryPosts = () => {
+    return allPosts.slice(featuredPostNo, secondaryPostNo + featuredPostNo).map((post) => {
+      return (
+        <Recipes_FeaturedPost
+          as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+          href={`/recipes/[slug]`}
+          key={post.filePath}
+          title={post.data.title}
+          author={post.data.author}
+          categories={post.data.categories}
+          date={post.data.date}
+          aspectW={'3'}
+          aspectY={'4'}
+          coverImage={post.data.coverImage}
+          excerpt={post.data.excerpt}
+        />
+      )
+    })
+  }
   return (
     <Main>
-      <Recipes_SEO />
-      <BackToTop />
+      <NextSeo
+        title="Mom's Recipes"
+        description={
+          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        }
+        openGraph={{
+          url: `https://pixelbakery.com/recipes`,
+          title: "Pixel Bakery – Mom's Recipes",
+          description:
+            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
+              width: 1080,
+              height: 810,
+              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+            {
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
+              width: 1080,
+              height: 810,
+              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+            },
+          ],
+        }}
+      />
       <PageHeader_VarH header="Mom's Recipes" subheader='No word yet on her spaghetti, though' />
-      <PageSection id='recent-posts'>
+      <PageSection>
         <InnerWrapper>
           <H2>Recent</H2>
           <div className='my-16 grid grid-cols-1  sm:grid-cols-2  gap-4 md:gap-10'>
-            {getFeaturedPosts({ allPosts })}
+            {getFeaturedPosts()}
           </div>
           <div className='my-16 grid grid-cols-2  sm:grid-cols-4  gap-4 md:gap-y-20 md:gap-5'>
-            {getSecondaryPosts({ allPosts })}
+            {getSecondaryPosts()}
           </div>
         </InnerWrapper>
 
-        <InnerWrapper className='my-24 relative py-24 lg:py-24' disableSpacing>
+        <InnerWrapper className='mx-auto max-w-md md:max-w-lg lg:max-w-6xl'>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-
-          {currentPage <= totalPages ? (
-            <div className='w-full flex justify-center my-12'>
-              <Link href={{ pathname: pathname, query: { counter: currentPage } }} shallow passHref>
-                <a className='relative  bg-blue mx-auto py-4 px-24 rounded-md text-cream font-semibold text-xl duration-300 ease-in-out hover:scale-99 drop-shadow-lg hover:drop-shadow-sm'>
-                  Show More 👇
-                </a>
-              </Link>
-            </div>
-          ) : (
-            ''
-          )}
         </InnerWrapper>
+        {/* <div className='my-14 mx-auto max-w-sm '>
+          <button
+            onClick={() => handleDisplayed()}
+            className={cn(
+              'cursor-pointer transform transition-all duration-500 hover:scale-99 my-2 max-w-lg py-2 rounded-xl px-6 w-full bg-transparent text-center border-2 border-blue text-blue',
+            )}
+          >
+            <div className={cn(' font-extrabold text-lg lowercase flex')}>
+              <div className='self-center flex-grow flex flex-col justify-center'>Load More</div>
+
+              <i
+                className={cn(
+                  'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center rotate-90',
+                )}
+              >
+                <ChevronRightIcon />
+              </i>
+            </div>
+          </button>
+        </div> */}
       </PageSection>
     </Main>
   )
 }
 
-export default Page_Recipes
+export default Index
 
 export function getStaticProps() {
   const allPosts = postFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
       const { data } = matter(source)
-      data.date = JSON.parse(JSON.stringify(data.date))
+
       return {
         data,
         filePath,
@@ -137,5 +151,5 @@ export function getStaticProps() {
     })
     .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
 
-  return { props: { allPosts, initialPropsCounter: counter } }
+  return { props: { allPosts } }
 }

@@ -1,20 +1,24 @@
-import DateFormatter from '@lib/date-formatter'
+import DateFormatter from '../../../lib/date-formatter'
+import Author from 'types/author'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
+import PersonType from 'types/person'
 import cn from 'classnames'
-import Video from '@parts/Video'
-import Loading from '@utility/Loading'
-
+import { useState } from 'react'
 type Props = {
   date?: string
   forwardedRef: any
   frontMatter: any
   readTime: any
-  matchingBio: any
+  allPeople: any
 }
 
-const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, readTime }: Props) => {
+const Recipes_Post_Header = ({ date, frontMatter, allPeople, forwardedRef, readTime }: Props) => {
+  const matchingBio = allPeople.find(
+    (p) => p.data.name.toUpperCase() === frontMatter.author.name.toUpperCase(),
+  )
+
   // let profilePic
   // if (matchingBio.slug && matchingBio.data.headshotSmiling != typeof undefined) {
   //   profilePic = matchingBio.headshotSmiling
@@ -53,27 +57,25 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
           </div>
           <div className='flex mt-3 mb-16'>
             {matchingBio ? (
-              // If there's a matching bio, use their headshot and link to their bio page
               <Link
                 as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/about/[slug]`}
                 passHref
               >
-                <a className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+                <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
                   <Image
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                     layout='fill'
                     objectFit='cover'
                     alt={frontMatter.author.name}
-                    quality={20}
+                    quality={25}
                     className='object-top scale-175 sc'
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                   />
-                </a>
+                </div>
               </Link>
             ) : (
-              // If there isn't a match, use a placeholder image and don't link anywhere
               <div className='w-12 h-12 rounded-full relative overflow-hidden'>
                 <Image
                   placeholder='blur'
@@ -113,26 +115,19 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
           </div>
         </div>
       </section>
-      <div className=' md:max-w-6xl mx-auto mb-24 '>
-        {frontMatter.video != null ? (
-          <div className='w-full   bg-peach mx-auto'>
-            <Video url={frontMatter.video} poster={frontMatter.coverImage} />
-          </div>
-        ) : (
-          <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
-            <Image
-              layout='fill'
-              objectFit='cover'
-              className='object-center'
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-              alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
-              placeholder='blur'
-              blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-              quality={100}
-            />
-            <Loading />
-          </div>
-        )}
+      <div className=' md:max-w-6xl mx-auto'>
+        <div className='w-full  aspect-w-4 aspect-h-3 bg-peach mb-24 mx-auto'>
+          <Image
+            layout='fill'
+            objectFit='cover'
+            className='object-center'
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+            alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
+            placeholder='blur'
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+            quality={100}
+          />
+        </div>
       </div>
     </header>
   )
