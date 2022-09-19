@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
 import Video from '@parts/Video'
+import Loading from '@utility/Loading'
 
 type Props = {
   date?: string
@@ -58,7 +59,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
                 href={`/about/[slug]`}
                 passHref
               >
-                <div className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+                <a className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
                   <Image
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
@@ -69,7 +70,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
                     className='object-top scale-175 sc'
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                   />
-                </div>
+                </a>
               </Link>
             ) : (
               // If there isn't a match, use a placeholder image and don't link anywhere
@@ -115,10 +116,10 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
       <div className=' md:max-w-6xl mx-auto mb-24 '>
         {frontMatter.video != null ? (
           <div className='w-full   bg-peach mx-auto'>
-            <Video url={frontMatter.video} poster={frontMatter.coverImage}></Video>
+            <Video url={frontMatter.video} poster={frontMatter.coverImage} />
           </div>
         ) : (
-          <div className='w-full  aspect-w-4 aspect-h-3 bg-peach mx-auto'>
+          <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
             <Image
               layout='fill'
               objectFit='cover'
@@ -129,6 +130,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               quality={100}
             />
+            <Loading />
           </div>
         )}
       </div>
