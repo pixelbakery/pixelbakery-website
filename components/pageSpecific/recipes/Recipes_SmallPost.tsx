@@ -40,7 +40,7 @@ const Recipes_SmallPost = ({
                   placeholder='blur'
                   quality={50}
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-                  alt={`${title}, by ${author.name}`}
+                  alt={`${title}, by ${author}`}
                 />
               </div>
             </a>
@@ -49,7 +49,7 @@ const Recipes_SmallPost = ({
         <div className='sm:w-3/5 flex flex-col '>
           <div className=' flex justify-start '>
             <span className='self-center  text-xs md:text-base text-wine-300  lg:order-1'>
-              {author.name} <br className=' md:hidden' />
+              {author} <br className=' md:hidden' />
               <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />
             </span>
           </div>
@@ -68,7 +68,7 @@ const Recipes_SmallPost = ({
             </div>
           </div>
           <div className=' mt-1'>
-            <Pill text={categories[0]} bgColor='blue' textColor='cream' size={'xs'} />
+            <Pill text={categories[0].toString()} bgColor='blue' textColor='cream' size={'xs'} />
           </div>
         </div>
       </div>
