@@ -22,11 +22,9 @@ function BackToTop() {
   useEffect(() => {
     if (!showTopButton) {
       gsap.to(elem.current, 0.75, { autoAlpha: 0 })
-      console.log('hiding button')
     } else if (showTopButton) {
       pointer.current.innerText = '☝️'
       gsap.to(elem.current, 0.75, { autoAlpha: 1 })
-      console.log('showing button')
     }
 
     return () => {}

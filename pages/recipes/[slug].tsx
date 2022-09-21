@@ -4,7 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import path from 'path'
-
+import { isBefore, parseISO, sub } from 'date-fns'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { shuffleArray } from '@lib/helpers'
 const readingTime = require('reading-time')
@@ -21,13 +21,13 @@ import VimeoPlayer from '@parts/VimeoPlayer'
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
 import BackToTop from '@utility/BackToTop'
-const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: false })
-const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: true })
+const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: true })
+const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: false })
 
 const Recipes_Post_GetPrevNextPost = dynamic(
   () => import('@recipes/Recipes_Post_GetPrevNextPost'),
   {
-    ssr: false,
+    ssr: true,
   },
 )
 
@@ -47,14 +47,16 @@ const components = {
 
 export default function PostPage({
   slug,
+  freshPosts,
   source,
   frontMatter,
   matchingBio,
-  relatedPosts,
+  // relatedPosts,
   // thisIndex,
   // nextIndex,
   // prevIndex,
   prev,
+
   next,
 }) {
   const datePostedISO = new Date(JSON.parse(JSON.stringify(frontMatter.date))).toISOString()
@@ -81,7 +83,7 @@ export default function PostPage({
       <div className='mb-32'>
         <Recipes_Post_Header
           frontMatter={frontMatter}
-          date={frontMatter.date}
+          date={datePostedISO}
           forwardedRef={childRef}
           readTime={readTime}
           matchingBio={matchingBio}
@@ -99,7 +101,7 @@ export default function PostPage({
       </div>
 
       <Recipes_Post_GetPrevNextPost prev={prev} next={next} />
-      <Recipes_Post_Related relatedPosts={relatedPosts} />
+      <Recipes_Post_Related relatedPosts={freshPosts} />
       <BackToTop />
     </Main>
   )
@@ -133,60 +135,15 @@ export const getStaticProps = async ({ params }) => {
     }
   })
 
-  // Map the currentPost categories array to a Set for lookup in the filter
-  const searchCategories = new Set(data.categories.map((category) => category.toUpperCase()))
-  const matchingPosts = allPosts.filter((post) => {
-    // If the currently iterated post title matches the currentPost return false (filter it out);
-
-    if (post.data.title === data.title) {
-      return false
-    }
-    // Otherwise, check if the currently iterated post has some() categories in common with currentPost
-    return post.data.categories.some((category) => searchCategories.has(category.toUpperCase()))
-  })
-  // If we don't have any related posts, we still need to display something, so we'll select three posts at random
-  if (matchingPosts.length < 3) {
-    const morePosts = allPosts
-    allPosts.forEach(function (post, i) {
-      if (post.data.title === post.data.title) {
-        morePosts.splice(i, 1)
-      }
-    })
-    shuffleArray(morePosts)
-    for (let i = 0; i < 5 - matchingPosts.length; i++) {
-      matchingPosts.push(morePosts[i])
-    }
-  }
-  const relatedPosts = shuffleArray(matchingPosts).slice(0, 3)
-  //end of get related posts
-
-  //get previous and next posts
-  const index = allPosts
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-    .findIndex((post) => post.data.title === data.title)
-
-  const getPrev = (i) => {
-    if (i === 0) {
-      return allPosts[allPosts.length - 1]
-    } else if (i < 0) {
-      return allPosts[0]
-    } else {
-      return allPosts[i - 1]
-    }
-  }
-
-  const getNext = (i) => {
-    if (i === allPosts.length - 1) {
-      return allPosts[0]
-    } else {
-      return allPosts[i + 1]
-    }
-  }
-
-  const prev = getPrev(index)
-  const next = getNext(index)
-  // Find the previous and next person on the roster, alphabetically by last name.
-  let thisIndex, prevIndex, nextIndex
+  const TwoYearsAgo = sub(new Date(), { years: 2 })
+  // const test = isBefore(parseISO(data.date), TwoYearsAgo)
+  let freshPosts = allPosts.filter((p) => isBefore(parseISO(p.data.date), TwoYearsAgo) === false)
+  freshPosts = shuffleArray(freshPosts).slice(0, 3)
+  // const freshPosts = getFreshPosts.slice(0, 4)
+  // Find the previous and next post on the list, sorted by date.
+  let thisIndex = null,
+    prevIndex = null,
+    nextIndex = null
 
   allPosts
     .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
@@ -220,10 +177,10 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      relatedPosts: relatedPosts,
       slug: params.slug,
       prev: prevIndex,
       matchingBio: matchingBio,
+      freshPosts: freshPosts,
       // thisIndex,
       // nextIndex,
       // prevIndex,

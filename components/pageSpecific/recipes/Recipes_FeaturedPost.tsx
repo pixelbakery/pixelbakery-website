@@ -33,6 +33,7 @@ const Recipes_FeaturedPost = ({
 }) => {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
+
   return (
     <Link as={`${as}`} href={`${href}`} passHref>
       <a>
@@ -55,14 +56,13 @@ const Recipes_FeaturedPost = ({
           />
 
           <div className='mt-2 ml-2'>
-            {' '}
             <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
         </article>
         <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
           <div className=''>
             <div className='text-sm text-wine text-opacity-75'>
-              <span className='hidden md:inline'>{author.name} – </span>{' '}
+              <span className='hidden md:inline'>{author} – </span>{' '}
               <DateFormatter dateString={date} />
             </div>
             <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>

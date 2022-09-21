@@ -47,6 +47,7 @@ export async function getStaticProps({ params }) {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
       const { data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
       return { data, filePath }
     })
     .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))

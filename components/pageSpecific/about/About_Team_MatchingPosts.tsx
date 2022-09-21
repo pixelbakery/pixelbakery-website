@@ -19,7 +19,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts }) => {
                     href={`/recipes/[slug]`}
                     key={post.filePath}
                     title={post.data.title}
-                    author={post.data.author}
+                    author={post.data.author.name}
                     categories={post.data.categories}
                     date={post.data.date}
                     aspectW={'4'}

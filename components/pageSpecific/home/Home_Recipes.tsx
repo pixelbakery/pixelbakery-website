@@ -1,4 +1,3 @@
-import Recipes_SmallPost from '../recipes/Recipes_SmallPost'
 import Button_Filled from '@parts/Button_Filled'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import PageSection from '@parts/PageSection'
@@ -13,7 +12,7 @@ const getSecondaryPosts = ({ allPosts }) => {
         href={`/recipes/[slug]`}
         key={post.filePath}
         title={post.data.title}
-        author={post.data.author}
+        author={post.data.author.name}
         categories={post.data.categories}
         date={post.data.date}
         aspectW={'3'}
