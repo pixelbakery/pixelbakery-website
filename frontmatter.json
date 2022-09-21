@@ -30,13 +30,6 @@
           "type": "image"
         },
         {
-          "title": "Video Header Link",
-          "name": "video",
-          "type": "string",
-          "single": true,
-          "default": null
-        },
-        {
           "title": "Is in draft",
           "name": "draft",
           "type": "draft"
@@ -220,7 +213,7 @@
           "title": "Video Header Link",
           "name": "video",
           "type": "string",
-          "default": null,
+          "default": "",
           "single": true
         },
         {
@@ -480,7 +473,7 @@
     "after effects",
     "alpha channels",
     "animated music videos",
-    "announcements",
+    "Announcements",
     "apache",
     "art",
     "artists",
@@ -565,7 +558,7 @@
     "multimedia designer",
     "music",
     "music videos",
-    "new hire",
+    "New Hire",
     "non profit",
     "omaha",
     "pandemic",
@@ -629,7 +622,6 @@
     "Press & Media",
     "Research",
     "amplify & educate",
-    "announcements",
     "awards",
     "behind the scenes",
     "community engagement",
@@ -638,7 +630,7 @@
     "education",
     "from the desk",
     "from the desk of",
-    "interview",
+    "Interview",
     "new hire",
     "new hires",
     "press & media",
