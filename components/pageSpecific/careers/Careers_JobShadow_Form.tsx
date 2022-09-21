@@ -60,8 +60,6 @@ function Careers_JobShadow_Form() {
   function onSubmit(data) {
     data.preventDefault()
     // recaptchaRef.current.execute()
-    console.log(errors)
-    console.log(JSON.stringify(data, null, 4))
     SendEmail_JobShadow(data)
     SendToMonday_JobShadow(data)
     SendToMailchimp(data, 'Job Shadow')

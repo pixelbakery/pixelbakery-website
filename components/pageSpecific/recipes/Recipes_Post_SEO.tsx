@@ -32,7 +32,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author}`,
+              alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
@@ -54,7 +54,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author}`,
+              alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
             },
           ],
         }}

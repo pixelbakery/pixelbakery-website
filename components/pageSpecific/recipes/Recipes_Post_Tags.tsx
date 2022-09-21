@@ -10,7 +10,9 @@ function Recipes_Post_Tags({ tags }: Props) {
       <h3 className='text-blue font-semibold text-3xl mb-4'>Tags</h3>
       <div className='flex justify-start flex-wrap gap-2'>
         {tags.map((tag) => {
-          return <Pill key={tag} text={tag} bgColor='pink-light' textColor='pink' size='sm' />
+          return (
+            <Pill key={tag} text={tag.toString()} bgColor='pink-light' textColor='pink' size='sm' />
+          )
         })}
       </div>
       <div className='mt-12'>

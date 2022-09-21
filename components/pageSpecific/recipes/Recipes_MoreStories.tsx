@@ -16,7 +16,7 @@ const MoreStories = ({ posts }) => {
               categories={post.data.categories}
               coverImage={post.data.coverImage}
               date={post.data.date}
-              author={post.data.author}
+              author={post.data.author.name}
               excerpt={post.data.excerpt}
             />
           </div>
