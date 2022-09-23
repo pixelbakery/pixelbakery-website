@@ -1,13 +1,36 @@
+import Button_Filled from '@parts/Button_Filled'
 import Lead from '@typography/Lead'
 import cn from 'classnames'
 import { useState } from 'react'
 import { Controller } from 'react-hook-form'
 import NumberFormat from 'react-number-format'
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+async function handleDoubleDown(e) {
+  for (let i = 1; i < 4; i++) {
+    await sleep(400)
+    window.open('https://youtu.be/OmIGBB2m-_I?t=70', '_blank')
+    await sleep(1200)
+    console.log('ran')
+    window.focus()
+  }
+  sleep(1200)
+  window.location.replace('https://youtu.be/OmIGBB2m-_I?t=70')
+}
 export const ContactForm_NotInterested = () => {
   return (
-    <div id='notInterested' className='py-12'>
+    <div id='notInterested' className='py-12 relative'>
       <Lead color='blue'>Thank you for your interest.</Lead>
       <p>We are currently not seeking outside partnerships.</p>
+      <a
+        onClick={(e) => handleDoubleDown(e)}
+        className={
+          'bg-blue text-xl my-4 cursor-pointer relative inline-block text-cream px-8 py-4 font-semibold rounded-sm hover:scale-98 duration-300 ease-in-out'
+        }
+      >
+        But this is really worth it
+      </a>
     </div>
   )
 }
