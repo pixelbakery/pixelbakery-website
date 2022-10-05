@@ -4,7 +4,7 @@ function Store_SEO() {
   return (
     <NextSeo
       title='Store – Pixel Bakery'
-      description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
+      description={`Freshly baked every morning. Come check out some of the things that you can put on and/or around your body.`}
       canonical={`https://pixelbakery.com/store`}
       openGraph={{
         url: `https://pixelbakery.com/store`,
