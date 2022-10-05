@@ -42,6 +42,7 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
       <NextSeo
         title={`${frontMatter.name} – ${frontMatter.title} | Team`}
         description={desc}
+        canonical={`https://pixelbakery.com/about/${slug}`}
         openGraph={{
           title: `${frontMatter.name} – ${frontMatter.title}`,
           description: `${desc}`,

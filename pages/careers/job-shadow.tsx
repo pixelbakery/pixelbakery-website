@@ -18,6 +18,7 @@ function Page_Careers_JobShadow() {
                 at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
                 and maybe give you a sneak-peek on what we plan to do! There are just a few
                 requirements.`}
+        canonical={`https://pixelbakery.com/careers/job-shadow`}
         openGraph={{
           url: `https://pixelbakery.com/careers/job-shadow`,
           title: 'Job Shadows | Careers',

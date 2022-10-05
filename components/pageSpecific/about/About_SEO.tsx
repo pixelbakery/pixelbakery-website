@@ -4,6 +4,7 @@ const About_SEO = () => {
   return (
     <NextSeo
       title='About'
+      canonical={`https://pixelbakery.com/about`}
       description={
         'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
       }

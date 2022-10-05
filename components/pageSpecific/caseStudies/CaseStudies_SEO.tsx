@@ -20,6 +20,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
       <NextSeo
         title={`${frontMatter.title} | Case Study`}
         description={frontMatter.excerpt}
+        canonical={`https://pixelbakery.com/work/case-studies/${slug}`}
         openGraph={{
           url: `https://pixelbakery.com/work/case-studies/${slug}`,
           title: `${frontMatter.client} – ${frontMatter.title}`,

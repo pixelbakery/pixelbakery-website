@@ -7,9 +7,11 @@ function Home_SEO() {
       description={
         'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
       }
+      canonical={`https://pixelbakery.com`}
       openGraph={{
         url: `https://pixelbakery.com`,
         title: 'Pixel Bakery',
+
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

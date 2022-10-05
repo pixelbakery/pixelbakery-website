@@ -79,6 +79,8 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
       <NextSeo
         title={`${product.name} | Store`}
         description={`${product.description}`}
+        canonical={`https://pixelbakery.com/store/product/${product.permalink}`}
+
         openGraph={{
           url: `https://pixelbakery.com/store/product/${product.permalink}`,
           images: [

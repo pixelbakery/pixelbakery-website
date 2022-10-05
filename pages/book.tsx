@@ -7,6 +7,7 @@ function book() {
       <NextSeo
         title='Schedule Meeting'
         description={`Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`}
+        canonical={`https://pixelbakery.com/book`}
         openGraph={{
           url: `https://pixelbakery.com`,
           title: 'Pixel Bakery',
