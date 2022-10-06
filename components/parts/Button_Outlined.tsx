@@ -27,9 +27,9 @@ function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
   }
   return (
     <Link hrefLang={'en-US'} href={link} passHref>
-      <div
+      <a
         className={cn(
-          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
+          'block relative my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
           `border-${color} border-2`,
           { ['mx-auto']: center },
         )}
@@ -54,7 +54,7 @@ function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
             {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
           </i>
         </div>
-      </div>
+      </a>
     </Link>
   )
 }

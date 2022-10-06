@@ -3,7 +3,6 @@ import services from '@data/services'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
 import BackLink from '@parts/BackLink'
 
 function Services_AllServices() {
