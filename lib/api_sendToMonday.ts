@@ -131,6 +131,7 @@ export async function SendToMonday_ContactForm(data) {
       phone: { phone: strippedPhone, countryShortName: 'US' },
       //  text6: { text: data.name },
       email: { email: data.email, text: data.email },
+      status0: data.soliciting,
     }),
   }
   fetch('https://api.monday.com/v2', {

@@ -25,6 +25,7 @@ function Services_SEO({ serviceName, path, description }: Props) {
       <NextSeo
         title={`${CapitalizeWord(serviceName)} | Services`}
         description={`${description}`}
+        canonical={`https://pixelbakery.com/services/${path}`}
         openGraph={{
           url: `https://pixelbakery.com/services/${path}`,
           title: `${CapitalizeWord(serviceName)} | Services`,

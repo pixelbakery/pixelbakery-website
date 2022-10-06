@@ -112,6 +112,7 @@ const CaseStudies_ProjectIntro_Alt = () => {
               layout='fill'
               objectFit='contain'
               placeholder='blur'
+              alt='Product Photography created for SNACKLINS'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
               className={'relative origin-bottom bottom-0 h-full object-contain'}
             />

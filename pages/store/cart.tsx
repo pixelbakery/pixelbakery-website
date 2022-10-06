@@ -71,10 +71,7 @@ const CheckoutPage: NextPage = () => {
 
           <div className='bg-cream px-3 md:px-16 pb-16 pt-8 my-2'>
             {cart?.line_items?.length! > 0 ? (
-              <button
-                onClick={clearCart}
-                className='text-blue border rounded-md text-md font-light px-3 py-1'
-              >
+              <button onClick={clearCart} className='text-blue border rounded-md text-md px-3 py-1'>
                 clear cart
               </button>
             ) : null}

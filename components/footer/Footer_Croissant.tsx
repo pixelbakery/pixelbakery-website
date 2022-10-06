@@ -51,13 +51,13 @@ function Footer_Mailchimp({ onModalUpdate }) {
             <Close className='h-12 w-12 ' />
           </button>
 
-          <h2
+          <p
             color='cream'
-            className='font-bold max-w-md text-5xl sm:text-5xl xl:text-6xl 2xl:text-7xl 2xl:max-w-4xl leading-none 2xl:mb-20 mb-2 mt-3 text-cream'
+            className='font-bold max-w-md text-4xl sm:text-5xl xl:text-5xl 2xl:text-6xl 2xl:max-w-4xl leading-none 2xl:mb-20 mb-2 mt-3 text-cream'
             dangerouslySetInnerHTML={{
               __html: message ? message : `a delicious surprise on us.`,
             }}
-          ></h2>
+          ></p>
           <p
             className={cn(
               'text-cream leading-none max-w-lg opacity-100 transition-opacity duration-500 mb-4 md:mb-6 pb-0 xl:mb-4 text-xl xl:text-3xl',

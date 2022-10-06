@@ -2,7 +2,7 @@
 import classNames from 'classnames'
 import LottiePatternPlayer from '@parts/LottiePatternPlayer'
 import dynamic from 'next/dynamic'
-const PageHeader_TextBox = dynamic(() => import('./PageHeader_TextBox'), { ssr: true })
+const PageHeader_TextBox = dynamic(() => import('./PageHeader_TextBox'), { ssr: false })
 
 const PageHeader_VariableHeight = ({
   animationData,

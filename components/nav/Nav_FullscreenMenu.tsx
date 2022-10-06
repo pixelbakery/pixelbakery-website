@@ -41,54 +41,52 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
       ref={fsNavRef}
       id='fullscreenNav'
       className={
-        'opacity-0 pointer-events-auto  p-4 fixed w-screen h-screen z-40  bg-cream top-0 right-0'
+        'opacity-0 pointer-events-auto  p-4 fixed w-screen h-screen z-40  bg-cream top-0 right-0 '
       }
     >
-      <div className='relative w-full h-full bg-blue px-6 py-12'>
-        <div className='relative z-20 mx-auto max-w-6xl flex justify-center h-full w-full'>
-          <div className='w-full xl:w-2/3 flex flex-col justify-center '>
-            {/* Main menu */}
-
-            <div className=' mx-auto flex flex-col justify-center mb-3 2xl:mb-6 xl:mb-12 gap-2 2xl:gap-3 flex-wrap font-extrabold text-blue-dark text-2xl xl:text-4xl 2xl:text-6xl leading-none text-center lowercase'>
-              <Link href='/'>
-                <div
-                  className='self-center cursor-pointer duration-300 ease-in-out hover:scale-99 text-blue-dark w-28 md:w-32 xl:w-40'
-                  onClick={handleLinkClick}
-                >
-                  <Logo_Primary className='object-contain w-full h-full' />
-                </div>
-              </Link>
-              <div className='grid grid-cols-1 gap-y-3 md:gap-y-2  lg:-mt-6' ref={el}>
-                {nav_main.map((nav_item, index) => {
-                  return (
-                    <div key={index} className='duration-300 ease-in-out hover:scale-99'>
-                      <Link href={nav_item.url} passHref>
-                        <a className='' onClick={handleLinkClick}>
-                          {nav_item.text}
-                        </a>
-                      </Link>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-            <div className='mx-auto'>
+      <div className=' w-full h-full bg-blue px-6 py-12 flex flex-col justify-center'>
+        <div className='relative z-20 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 justify-center'>
+          {/* Main menu */}
+          <div className='col-span-1 h-full flex flex-center lg:flex-start'>
+            <Link href='/'>
               <div
-                className='flex flex-center w-full mt-3 md:mt-0 2xl:mt-3'
+                className='mx-auto self-center lg:self-start cursor-pointer duration-300 ease-in-out hover:scale-99 text-blue-dark w-28 md:w-32 xl:w-1/2'
                 onClick={handleLinkClick}
               >
-                <Button_Filled
-                  center={true}
-                  text={'Start something wonderful'}
-                  link={'/onboarding'}
-                  bgColor={'peach'}
-                  textColor={'pink-light'}
-                  chevronDirection='right'
-                />
+                <Logo_Primary className='object-contain w-full h-full' />
               </div>
-              <div className='flex w-full'>
-                <Nav_SocialLinks color={'blue-dark'} textSize={'text-2xl md:text-3xl'} />
-              </div>
+            </Link>
+          </div>
+          <div className=' self-center mx-auto flex flex-col justify-center lg:justify-start mb-3 2xl:mb-6 xl:mb-12 gap-2 2xl:gap-3 flex-wrap font-extrabold text-blue-dark text-2xl md:text-5xl xl:text-6xl 2xl:text-6xl leading-none text-center lg:text-left lowercase'>
+            <div className='grid grid-cols-1 gap-y-3 md:gap-y-2 lg:gap-y-3' ref={el}>
+              {nav_main.map((nav_item, index) => {
+                return (
+                  <div key={index} className='duration-300 ease-in-out hover:scale-99'>
+                    <Link href={nav_item.url} passHref>
+                      <a className='' onClick={handleLinkClick}>
+                        {nav_item.text}
+                      </a>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div
+              className='flex flex-center w-full mt-3 md:mt-0 lg:mt-8 2xl:mt-3'
+              onClick={handleLinkClick}
+            >
+              <Button_Filled
+                center={false}
+                text={'Start something wonderful'}
+                link={'/onboarding'}
+                bgColor={'peach'}
+                textColor={'pink-light'}
+                chevronDirection='right'
+              />
+            </div>
+            <div className='flex w-full h-full'>
+              <Nav_SocialLinks color={'blue-dark'} textSize={'text-2xl md:text-3xl'} />
             </div>
           </div>
         </div>

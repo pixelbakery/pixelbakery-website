@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Navigation_Store from '@nav/Navigation_Store'
 import { createElement } from 'react'
+import H1 from '@typography/H1'
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { product: permalink } = context.params
 
@@ -79,6 +80,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
       <NextSeo
         title={`${product.name} | Store`}
         description={`${product.description}`}
+        canonical={`https://pixelbakery.com/store/product/${product.permalink}`}
         openGraph={{
           url: `https://pixelbakery.com/store/product/${product.permalink}`,
           images: [
@@ -123,7 +125,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
         innerMaxWidth={'max-w-screen-sm md:max-w-screen-md lg:max-w-7xl'}
         id='product-item'
       >
-        <div className='mt-20 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-4 md:gap-12 lg:gap-24'>
+        <div className='mt-24 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 items-center gap-4 md:gap-12 lg:gap-24'>
           <div className='block md:hidden col-span-1 mt-0 gap-6  '>
             <div className='w-full  flex flex-row justify-start text-left mt-0 pb-3 '>
               <div>
@@ -132,9 +134,6 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
                 </Link>
               </div>
             </div>
-            <h1 className=' text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
-              {product.name}
-            </h1>
           </div>
           <div className='mt-0 col-span-1 relative flex flex-col self-start'>
             {product.assets[0].file_extension === 'mp4' ? (
@@ -168,9 +167,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
             </div>
           </div>
           <div className='col-span-1  gap-6  '>
-            <h1 className=' hidden md:block text-6xl font-extrabold text-blue-dark leading-none my-0 py-0'>
-              {product.name}
-            </h1>
+            <H1 color='blue-dark'>{product.name}</H1>
             <p className='text-blue text-3xl font-bold mt-1 md:mt-3 pb-0 mb-0'>
               {product.price.formatted_with_symbol}
             </p>

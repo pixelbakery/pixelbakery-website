@@ -13,6 +13,7 @@ function LogoAnimation() {
     <Main>
       <NextSeo
         title='Logo Animation | Services'
+        canonical={`https://pixelbakery.com/logo-animation`}
         description={`Bring your logo to life with an eye-catching and memorable animation`}
         openGraph={{
           url: `https://pixelbakery.com/logo-animation`,

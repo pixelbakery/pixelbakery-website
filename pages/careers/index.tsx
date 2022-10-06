@@ -34,6 +34,7 @@ const Careers = ({ allJobs }) => {
               print design to regional nonprofits. We are producers and we are creatives, and at the
               end of the day we find our happiness and fulfillment from making great creative that
               touches lives.`}
+        canonical={`https://pixelbakery.com/careers`}
         openGraph={{
           url: `https://pixelbakery.com/careers`,
           title: 'Careers',

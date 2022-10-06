@@ -61,24 +61,15 @@ const getSecondaryPosts = ({ allPosts }) => {
   })
 }
 const Page_Recipes = ({ allPosts }) => {
-  // const [displayed, setDisplayed] = useState(12)
-
-  // function handleDisplayed() {
-  //   if (displayed < Object.keys(allPosts).length) {
-  //     setDisplayed(displayed + 12)
-  //   } else setDisplayed(Object.keys(allPosts).length)
-  // }
   const [totalPages, setTotalPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(secondaryPostNo + featuredPostNo + 5)
-
   const { pathname, query } = useRouter()
-  useEffect(() => {
-    const numberOfPages = allPosts.length
-    // const currentCounter = query.counter ? parseInt(query.counter as any) : 0
-    setTotalPages(numberOfPages)
-  }, [])
   const router = useRouter()
 
+  useEffect(() => {
+    const numberOfPages = allPosts.length
+    setTotalPages(numberOfPages)
+  }, [])
   useEffect(() => {
     // The counter changed!
     if (currentPage <= totalPages) setCurrentPage(currentPage + 5)

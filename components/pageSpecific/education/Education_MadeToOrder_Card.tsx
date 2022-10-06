@@ -46,7 +46,12 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
           />
 
           <div className='mt-2 ml-2'>
-            <Pill text={tutorial.data.category} bgColor={'blue'} textColor={'cream'} size='xs' />
+            <Pill
+              text={tutorial.data.category.toString()}
+              bgColor={'blue'}
+              textColor={'cream'}
+              size='xs'
+            />
           </div>
         </div>
         <div className='cursor-pointer mt-2 z-20 h-100 p-2 flex flex-col justify-between'>

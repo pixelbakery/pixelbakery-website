@@ -5,7 +5,7 @@ const Recipes_SEO = () => {
     <NextSeo
       title="Mom's Recipes"
       description={
-        'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+        'Sometimes we say smart things, and sometimes we have things we want to say. You can find all those things here.'
       }
       canonical='https://pixelbakery.com/recipes'
       openGraph={{
