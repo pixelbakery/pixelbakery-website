@@ -45,12 +45,12 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
       }
     >
       <div className=' w-full h-full bg-blue px-6 py-12 flex flex-col justify-center'>
-        <div className='relative z-20 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 justify-center'>
+        <div className='relative z-20 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 justify-center gap-x-12'>
           {/* Main menu */}
           <div className='col-span-1 h-full flex flex-center lg:flex-start'>
             <Link hrefLang={'en-US'} href='/'>
               <div
-                className='mx-auto self-center lg:self-start cursor-pointer duration-300 ease-in-out hover:scale-99 text-blue-dark w-28 md:w-32 xl:w-1/2'
+                className='mx-auto self-center lg:self-start cursor-pointer duration-300 ease-in-out hover:scale-99 text-blue-dark w-32 lg:w-full lg:max-w-xs'
                 onClick={handleLinkClick}
               >
                 <Logo_Primary className='object-contain w-full h-full' />
