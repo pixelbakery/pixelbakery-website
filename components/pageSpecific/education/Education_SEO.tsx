@@ -5,6 +5,7 @@ function Education_SEO() {
       noindex={false}
       title='Education'
       description={`Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`}
+      canonical={`https://pixelbakery.com/education`}
       openGraph={{
         url: `https://pixelbakery.com/education`,
         title: 'Pixel Bakery Design Studio',

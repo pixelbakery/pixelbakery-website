@@ -18,6 +18,7 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                 <p className='text-peach font-semibold text-xl leading-none my-0 py-0 max-w-md'>
                   {prev.data.title}
                 </p>
+                <span className='mb-1 italic text-wine'>By {prev.data.author.name}</span>
               </div>
             </a>
           </Link>
@@ -27,6 +28,7 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                 <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
                   {next.data.title}
                 </p>
+                <span className='mb-1 italic text-wine'>By {next.data.author.name}</span>
               </div>
 
               <div className='w-20 self-center text-peach'>

@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const path = router.pathname
   useEffect(() => {
     const mainDataLayer = {
-      pageTypeName: pageProps.page || null,
+      pageTypeName: (pageProps as any).page || null,
       url: router.pathname,
     }
 

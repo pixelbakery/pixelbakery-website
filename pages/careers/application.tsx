@@ -24,6 +24,7 @@ function Careers_Application({ allJobs }) {
         description={
           'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
         }
+        canonical={`https://pixelbakery.com/careers/application`}
         openGraph={{
           url: `https://pixelbakery.com/careers/application`,
           title: 'Application | Careers',

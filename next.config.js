@@ -12,6 +12,44 @@ module.exports = () => {
     enabled: process.env.ANALYZE === 'true',
   })
   const config = {
+    async headers() {
+      return [
+        {
+          source: '/(.*)',
+
+          headers: [
+            {
+              key: 'X-Frame-Options',
+              value: 'DENY',
+            },
+            {
+              key: 'X-Content-Type-Options',
+              value: 'nosniff',
+            },
+            {
+              key: 'Referrer-Policy',
+              value: 'strict-origin-when-cross-origin',
+            },
+            {
+              key: 'Permissions-Policy',
+              value: 'camera=(); battery=(); geolocation=(); microphone=()',
+            },
+            {
+              key: 'X-XSS-Protection',
+              value: '1; mode=block',
+            },
+            {
+              key: 'Strict-Transport-Security',
+              value: 'max-age=31536000',
+            },
+            {
+              key: 'X-DNS-Prefetch-Control',
+              value: 'on',
+            },
+          ],
+        },
+      ]
+    },
     swcMinify: true,
     images: {
       formats: ['image/avif', 'image/webp'],
@@ -39,7 +77,7 @@ module.exports = () => {
         'scontent-akl1-1.cdninstagram.com',
       ],
     },
-    productionBrowserSourceMaps: true,
+    // productionBrowserSourceMaps: true,
     reactStrictMode: false,
     eslint: {
       // Warning: This allows production builds to successfully complete even if

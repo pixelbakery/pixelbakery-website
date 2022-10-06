@@ -13,9 +13,8 @@ function Contact() {
     <Main id='contact-page'>
       <NextSeo
         title='Contact'
-        description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-        }
+        description={`Come visit, email, call, stalk, harass, admire, or hang out with us. We love other humans.`}
+        canonical={`https://pixelbakery.com/contact`}
         openGraph={{
           url: `https://pixelbakery.com/contact`,
           title: 'Contact',

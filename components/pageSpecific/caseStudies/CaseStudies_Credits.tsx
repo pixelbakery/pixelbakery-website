@@ -44,7 +44,7 @@ function CaseStudies_Credits({ credits }) {
   return (
     <section className='px-6 my-4 py-12' id='credits'>
       <div className='mx-auto max-w-md   lg:max-w-6xl'>
-        <h2 className='text-left mt-0 pt-0 text-4xl max-w-md '> credits</h2>
+        <h2 className='text-left mt-0 pt-0 text-4xl max-w-md '> Credits</h2>
         <div className=' mx-auto flex justify-center'>
           {setCreditColumn(0, firstcolumn)}
           {setCreditColumn(firstcolumn, credits.length)}

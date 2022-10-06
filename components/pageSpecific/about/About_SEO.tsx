@@ -4,9 +4,8 @@ const About_SEO = () => {
   return (
     <NextSeo
       title='About'
-      description={
-        'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-      }
+      canonical={`https://pixelbakery.com/about`}
+      description={`We're is a ragtag team of scrappy designers, animators, and producers. we create intentional moments for exciting people that share our passions.`}
       openGraph={{
         url: `https://pixelbakery.com/about`,
         images: [

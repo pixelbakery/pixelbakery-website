@@ -1,5 +1,8 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.seoDescriptionField": "excerpt",
+  "frontMatter.taxonomy.seoSlugLength":75,
+  "frontMatter.taxonomy.seoDescriptionLength":155,
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -672,8 +675,7 @@
         "dashboard.data.view",
         "dashboard.snippets.manage",
         "dashboard.snippets.view",
-        "dashboard.taxonomy.view",
-        "dashboard.taxonomy.manage"
+        "dashboard.taxonomy.view"
       ]
     }
   ],

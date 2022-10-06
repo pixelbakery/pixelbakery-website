@@ -28,11 +28,12 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
         ]}
       />
       <NextSeo
-        title={`${frontMatter.title} | Tutorials`}
+        title={`${frontMatter.title}`}
         description={`${frontMatter.excerpt}`}
+        canonical={`https://pixelbakery.com/education/tutorials/${slug}`}
         openGraph={{
           url: `https://pixelbakery.com/education/tutorials/${slug}`,
-          title: `${frontMatter.title} | Tutorials`,
+          title: `${frontMatter.title}`,
           type: 'article',
           description: `${frontMatter.excerpt}`,
           article: {

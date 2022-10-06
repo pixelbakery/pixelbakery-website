@@ -60,12 +60,14 @@ const yupValidation = Yup.object().shape({
 // Handle the submit
 
 const onSubmit = (data, setHideForm, setSubmitted) => {
-  if (data.soliciting === 'true') setHideForm(true)
-  else {
+  SendToMonday_ContactForm(data)
+  if (data.soliciting === 'false') {
     SendEmail_Contact(data)
-    SendToMonday_ContactForm(data)
     SendToMailchimp(data, 'Contact Form')
     setSubmitted(true)
+  } else {
+    //tell them to fuck off if they're trying to sell us SEO bullshit
+    setHideForm(true)
   }
 }
 const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted, setHideForm }) => {

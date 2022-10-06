@@ -10,9 +10,8 @@ function PrivacyPolicy() {
     <Main id='' className='my-4'>
       <NextSeo
         title='Privacy Policy'
-        description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
-        }
+        canonical={`https://pixelbakery.com/privacy-policy`}
+        description={`Here you can find the details of Pixel Bakery's Privacy Policy.`}
       />
       <PageHeader_VarH header='Privacy Policy' subheader={'yada yada yada'} />
       <section className='mt-20 py-20'>
