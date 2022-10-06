@@ -88,9 +88,9 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
   }
   return (
     <Main>
+      <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
       {!frontMatter.isCustomLayout ? (
         <>
-          <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
           <CaseStudies_Header
             client={frontMatter.client}
             clientURL={frontMatter.website}
