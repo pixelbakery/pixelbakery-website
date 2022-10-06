@@ -675,8 +675,7 @@
         "dashboard.data.view",
         "dashboard.snippets.manage",
         "dashboard.snippets.view",
-        "dashboard.taxonomy.view",
-        "dashboard.taxonomy.manage"
+        "dashboard.taxonomy.view"
       ]
     }
   ],
