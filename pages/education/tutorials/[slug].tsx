@@ -138,6 +138,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       nextIndex: nextIndex,
       prevIndex: prevIndex,
+      slug: params.slug,
       source: mdxSource,
       frontMatter: data,
     },

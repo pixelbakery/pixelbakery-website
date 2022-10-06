@@ -73,8 +73,10 @@ const Education_PostHeader = ({
                 Written by{' '}
                 <span>
                   {authorUrl ? (
-                    <Link href={authorUrl} passHref>
-                      <a className='text-blue underline'>{author}</a>
+                    <Link hrefLang={'en-US'} href={authorUrl} passHref>
+                      <a hrefLang={'en-US'} className='text-blue underline'>
+                        {author}
+                      </a>
                     </Link>
                   ) : (
                     author

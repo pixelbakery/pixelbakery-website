@@ -374,7 +374,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <p className='text-sm text-wine-400 mb-0 pb-0'>
               Must be a PDF. Please upload a .pdf under 10MB. If you need help reducing your file
               size, check out:{' '}
-              <a href='ilovepdf.com' rel='noopener' target={'_blank'}>
+              <a hrefLang={'en-US'} href='ilovepdf.com' rel='noopener' target={'_blank'}>
                 ilovepdf.com
               </a>
             </p>

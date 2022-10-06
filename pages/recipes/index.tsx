@@ -71,7 +71,6 @@ const Page_Recipes = ({ allPosts }) => {
     setTotalPages(numberOfPages)
   }, [])
   useEffect(() => {
-    // The counter changed!
     if (currentPage <= totalPages) setCurrentPage(currentPage + 5)
   }, [router.query.counter])
 
@@ -95,11 +94,18 @@ const Page_Recipes = ({ allPosts }) => {
 
         <InnerWrapper className='my-24 relative py-24 lg:py-24' disableSpacing>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-
           {currentPage <= totalPages ? (
             <div className='w-full flex justify-center my-12'>
-              <Link href={{ pathname: pathname, query: { counter: currentPage } }} shallow passHref>
-                <a className='relative  bg-blue mx-auto py-4 px-24 rounded-md text-cream font-semibold text-xl duration-300 ease-in-out hover:scale-99 drop-shadow-lg hover:drop-shadow-sm'>
+              <Link
+                hrefLang={'en-US'}
+                href={{ pathname: pathname, query: { counter: currentPage } }}
+                shallow
+                passHref
+              >
+                <a
+                  hrefLang={'en-US'}
+                  className='relative  bg-blue mx-auto py-4 px-24 rounded-md text-cream font-semibold text-xl duration-300 ease-in-out hover:scale-99 drop-shadow-lg hover:drop-shadow-sm'
+                >
                   Show More 👇
                 </a>
               </Link>

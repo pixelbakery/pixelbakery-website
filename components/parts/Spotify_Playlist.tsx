@@ -71,7 +71,7 @@ export default function Spotify_Playlist({ playlistID }) {
           <ul className='grid gap-1 xl:gap-2'>
             {data.tracksSelected.map((track, index) => (
               <li className='my-0' key={index}>
-                <a href={track.songUrl} target={'_blank'} rel='noopener'>
+                <a hrefLang={'en-US'} href={track.songUrl} target={'_blank'} rel='noopener'>
                   <div className='flex gap-1 xl:gap-x-4'>
                     <div className='relative h-12 w-12'>
                       <Image

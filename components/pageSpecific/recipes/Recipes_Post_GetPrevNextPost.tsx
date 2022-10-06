@@ -9,8 +9,12 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
     <PageSection color={'pink-light'} id={'next-post'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
-          <Link as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
-            <a className='flex'>
+          <Link
+            hrefLang={'en-US'}
+            as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`}
+            href={`/recipes/[slug]`}
+          >
+            <a hrefLang={'en-US'} className='flex'>
               <div className='w-20 self-center text-peach rotate-180'>
                 <ChevronRightIcon />
               </div>
@@ -22,8 +26,12 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
               </div>
             </a>
           </Link>
-          <Link as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`} href={`/recipes/[slug]`}>
-            <a className='flex'>
+          <Link
+            hrefLang={'en-US'}
+            as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`}
+            href={`/recipes/[slug]`}
+          >
+            <a hrefLang={'en-US'} className='flex'>
               <div className='flex flex-col justify-center'>
                 <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
                   {next.data.title}

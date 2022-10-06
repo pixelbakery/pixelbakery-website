@@ -11,7 +11,7 @@ type Props = {
 }
 function ComponentName({ header, subheader, inpageLink }: Props) {
   return (
-    <Link href={inpageLink} scroll={false} passHref>
+    <Link hrefLang={'en-US'} href={inpageLink} scroll={false} passHref>
       <div className='px-6 lg:px-12 py-12 sm:py-14 h-20 my-3 md:my-4 cursor-pointer  border-2 border-pink rounded-xl flex flex-col justify-center transition duration-400 ease-in-out transform hover:scale-101'>
         <Lead color={'pink'} className='mb-0 pb-0 lg:mb-0'>
           {header}

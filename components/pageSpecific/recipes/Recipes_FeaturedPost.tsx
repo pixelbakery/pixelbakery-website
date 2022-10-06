@@ -35,7 +35,7 @@ const Recipes_FeaturedPost = ({
   const aspectH = ' aspect-h-' + props.aspectY
 
   return (
-    <Link as={`${as}`} href={`${href}`} passHref>
+    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref>
       <a>
         <article
           className={

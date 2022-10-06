@@ -58,8 +58,10 @@ const CheckoutPage: NextPage = () => {
 
       <PageSection className={'pt-24 px-24'} color={'pink-white'} id='cart'>
         <InnerWrapper>
-          <Link href='/store' passHref>
-            <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
+          <Link hrefLang={'en-US'} href='/store' passHref>
+            <a hrefLang={'en-US'} className='block text-blue text-md cursor-pointer py-3'>
+              ← Back to store{' '}
+            </a>
           </Link>
           <H1 color={'pink'}>
             Chikity
@@ -93,7 +95,7 @@ const CheckoutPage: NextPage = () => {
                           href='/store/product/[product]'
                           as={`/store/product/${item.permalink}`}
                         >
-                          <a className=''>
+                          <a hrefLang={'en-US'} className=''>
                             <Image
                               layout='fill'
                               objectFit='cover'
@@ -153,8 +155,10 @@ hover:opacity-90 hover:scale-98 active:scale-97'
               <div>
                 <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                   well, that&apos;s a sad looking cart.{' '}
-                  <Link href='/store' passHref>
-                    <a className='underline text-blue'>make it less sad</a>
+                  <Link hrefLang={'en-US'} href='/store' passHref>
+                    <a hrefLang={'en-US'} className='underline text-blue'>
+                      make it less sad
+                    </a>
                   </Link>
                   .
                 </h3>
@@ -162,11 +166,13 @@ hover:opacity-90 hover:scale-98 active:scale-97'
             )}
           </div>
           <div className=' flex flex-col md:flex-row justify-between'>
-            <Link href='/store' passHref>
-              <a className='block text-blue text-md cursor-pointer py-3'>← Back to store </a>
+            <Link hrefLang={'en-US'} href='/store' passHref>
+              <a hrefLang={'en-US'} className='block text-blue text-md cursor-pointer py-3'>
+                ← Back to store{' '}
+              </a>
             </Link>
             {cart?.line_items?.length! > 0 ? (
-              <Link href='/store/checkout' passHref>
+              <Link hrefLang={'en-US'} href='/store/checkout' passHref>
                 <button
                   className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
   hover:opacity-90 hover:scale-99 active:scale-97'

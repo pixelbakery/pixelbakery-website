@@ -18,6 +18,11 @@ function NextSEO_DefaultSEO() {
       facebook={{
         appId: '4076929202366682',
       }}
+      twitter={{
+        handle: '@pixelbakerylnk',
+        site: '@pixelbakerylnk',
+        cardType: 'summary_large_image',
+      }}
     />
   )
 }

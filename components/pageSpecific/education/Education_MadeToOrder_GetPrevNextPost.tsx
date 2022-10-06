@@ -12,7 +12,7 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
             as={`/education/tutorials/${prev.filePath.replace(/\.mdx?$/, '')}`}
             href={`/education/tutorials/[slug]`}
           >
-            <a className='flex'>
+            <a hrefLang={'en-US'} className='flex'>
               <div className='w-20 self-center text-peach rotate-180'>
                 <ChevronRightIcon />
               </div>
@@ -27,7 +27,7 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
             as={`/education/tutorials/${next.filePath.replace(/\.mdx?$/, '')}`}
             href={`/education/tutorials/[slug]`}
           >
-            <a className='flex'>
+            <a hrefLang={'en-US'} className='flex'>
               <div className='flex flex-col justify-center'>
                 <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
                   {next.data.title}

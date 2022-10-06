@@ -23,7 +23,7 @@ function CaseStudies_PrevNext({ prev, next }) {
             href={`/work/case-studies/[slug]`}
             passHref
           >
-            <a className='flex'>
+            <a hrefLang={'en-US'} className='flex'>
               <div className='w-20 self-center text-peach rotate-180'>
                 <ChevronRightIcon />
               </div>
@@ -43,7 +43,7 @@ function CaseStudies_PrevNext({ prev, next }) {
             href={`/work/case-studies/[slug]`}
             passHref
           >
-            <a className='flex justify-end'>
+            <a hrefLang={'en-US'} className='flex justify-end'>
               <div className='self-center'>
                 <p className='text-wine-400 font-medium text-md leading-none mb-1 mt-0 pt-0'>
                   {next.data.client}

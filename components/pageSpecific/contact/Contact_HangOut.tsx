@@ -31,7 +31,7 @@ function Contact_HangOut() {
           {SocialUrls_Contact.map((URL, index) => {
             return (
               <li key={URL.name} className={cn('-mt-12')}>
-                <Link href={URL.url} passHref>
+                <Link hrefLang={'en-US'} href={URL.url} passHref>
                   <a>
                     <StrokeText
                       text={URL.name}
@@ -107,17 +107,19 @@ function Contact_HangOut() {
               <div className=' mx-auto xl:mx-auto w-max'>
                 <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
                   <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'/about#twitch'} passHref>
+                    <Link hrefLang={'en-US'} href={'/about#twitch'} passHref>
                       <a>are we home?</a>
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'https://g.page/pixelbakery?share'} passHref>
-                      <a target='_blank'>map it</a>
+                    <Link hrefLang={'en-US'} href={'https://g.page/pixelbakery?share'} passHref>
+                      <a hrefLang={'en-US'} target='_blank'>
+                        map it
+                      </a>
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'/onboarding#calendly'} passHref>
+                    <Link hrefLang={'en-US'} href={'/onboarding#calendly'} passHref>
                       <a>schedule it</a>
                     </Link>
                   </li>

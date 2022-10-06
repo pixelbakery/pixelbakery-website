@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 function Careers_Breadwinners() {
   return (
-    <Link href={'/'} passHref>
+    <Link hrefLang={'en-US'} href={'/'} passHref>
       <PageSection id='breadwinners' color='blue-dark' className=' py-0 lg:py-4 xl:py-12 xl:mt-24'>
         <InnerWrapper>
           <H2 className='text-cream text-2xl'>breadwinner program</H2>

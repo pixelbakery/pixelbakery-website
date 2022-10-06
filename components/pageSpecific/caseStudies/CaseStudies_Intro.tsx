@@ -12,7 +12,7 @@ export default function CaseStudiesIntro({ children, ...props }) {
       <InnerWrapper className={cn('flex justify-center')}>
         <article className='grid grid-cols-1 lg:grid-cols-5 gap-x-16 xl:gap-x-24'>
           {/* <div className='col-span-1 lg:col-span-5 flex justify-center'>
-            <Link href={props.url} passHref>
+            <Link hrefLang={'en-US'} href={props.url} passHref>
               <a
                 rel='noOpener'
                 className='block relative self-start  w-32 h-32 xl:w-40 xl:h-40 opacity-75 cursor-pointer hover:opacity-60 mb-24'

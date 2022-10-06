@@ -52,8 +52,8 @@ function Store_CartDetails({}: Props) {
         <p className='text-blue text-2xl font-semibold py-3'>Pay what you want</p>
         <p className='text-left text-wine text-md'>
           Adjust the slider below to change the price. All proceeds go to the{' '}
-          <Link href='https://smallvoices.org' passHref>
-            <a target='_blank' className='text-peach underline'>
+          <Link hrefLang={'en-US'} href='https://smallvoices.org' passHref>
+            <a hrefLang={'en-US'} target='_blank' className='text-peach underline'>
               Child Advocacy Center
             </a>
           </Link>

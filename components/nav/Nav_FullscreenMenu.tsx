@@ -48,7 +48,7 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
         <div className='relative z-20 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 justify-center'>
           {/* Main menu */}
           <div className='col-span-1 h-full flex flex-center lg:flex-start'>
-            <Link href='/'>
+            <Link hrefLang={'en-US'} href='/'>
               <div
                 className='mx-auto self-center lg:self-start cursor-pointer duration-300 ease-in-out hover:scale-99 text-blue-dark w-28 md:w-32 xl:w-1/2'
                 onClick={handleLinkClick}
@@ -62,8 +62,8 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
               {nav_main.map((nav_item, index) => {
                 return (
                   <div key={index} className='duration-300 ease-in-out hover:scale-99'>
-                    <Link href={nav_item.url} passHref>
-                      <a className='' onClick={handleLinkClick}>
+                    <Link hrefLang={'en-US'} href={nav_item.url} passHref>
+                      <a hrefLang={'en-US'} className='' onClick={handleLinkClick}>
                         {nav_item.text}
                       </a>
                     </Link>
@@ -73,11 +73,11 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
             </div>
 
             <div
-              className='flex flex-center w-full mt-3 md:mt-0 lg:mt-8 2xl:mt-3'
+              className='flex justify-center w-full mt-3 md:mt-0 lg:mt-8 2xl:mt-3'
               onClick={handleLinkClick}
             >
               <Button_Filled
-                center={false}
+                center={true}
                 text={'Start something wonderful'}
                 link={'/onboarding'}
                 bgColor={'peach'}
@@ -85,7 +85,7 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
                 chevronDirection='right'
               />
             </div>
-            <div className='flex w-full h-full'>
+            <div className='mx-auto h-full'>
               <Nav_SocialLinks color={'blue-dark'} textSize={'text-2xl md:text-3xl'} />
             </div>
           </div>

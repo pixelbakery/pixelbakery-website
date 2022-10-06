@@ -33,7 +33,7 @@ const StorePage: NextPage = ({ products }: any) => {
         <Store_TheGoods />
         <div className='pt-8 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8'>
           {products.data.map((product) => (
-            <Link key={product.id} href={`/store/product/${product.permalink}`}>
+            <Link hrefLang={'en-US'} key={product.id} href={`/store/product/${product.permalink}`}>
               <a
                 className='overflow-hidden transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-99 active:scale-97'

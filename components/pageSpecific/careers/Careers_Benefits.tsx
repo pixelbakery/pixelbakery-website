@@ -25,8 +25,10 @@ const Careers_Benefits = () => {
                 <li className='my-3 benefit'>💸 4% 401k match</li>
                 <li className='my-3 benefit'>
                   ☕️ open tab at{' '}
-                  <Link href='https://reactor.coffee' passHref>
-                    <a target='_blank'>Reactor Coffee</a>
+                  <Link hrefLang={'en-US'} href='https://reactor.coffee' passHref>
+                    <a hrefLang={'en-US'} target='_blank'>
+                      Reactor Coffee
+                    </a>
                   </Link>
                 </li>
                 <li className='my-3 benefit'>📚 monthly book stipend</li>

@@ -1,15 +1,13 @@
 import Link from 'next/link'
-import Head from 'next/head'
 import Navigation from '@nav/Navigation'
-import NoIndex from '@parts/NoIndex'
+
 import Obfuscate from 'react-obfuscate'
+import { NextSeo } from 'next-seo'
 function SubmissionConfirmation() {
   return (
     <main className='max-w-screen'>
-      <NoIndex />
-      <Head>
-        <title>Order Confirmed</title>
-      </Head>
+      <NextSeo noindex={true} nofollow={true} title='Order Confirmed | Shop' />
+
       <Navigation />
 
       <section
@@ -45,14 +43,21 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link href={'/store'} passHref>
-                <a className='text-blue underline text-md'>← Back to the company store</a>
+              <Link hrefLang={'en-US'} href={'/store'} passHref>
+                <a hrefLang={'en-US'} className='text-blue underline text-md'>
+                  ← Back to the company store
+                </a>
               </Link>
             </li>
             <li className='my-2'>
               {' '}
-              <Link href={'https://twitch.tv/pixelbakery'} passHref>
-                <a className='text-blue underline text-md' target='_blank' rel='noreferrer'>
+              <Link hrefLang={'en-US'} href={'https://twitch.tv/pixelbakery'} passHref>
+                <a
+                  hrefLang={'en-US'}
+                  className='text-blue underline text-md'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   {' '}
                   Daydream about us →
                 </a>

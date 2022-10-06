@@ -157,8 +157,11 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                   textColor='cream'
                 />
               </div>
-              <Link href={'/education#projectFiles'} passHref>
-                <a className=' text-blue border-b border-blue inline-block px-1 pb-1'>
+              <Link hrefLang={'en-US'} href={'/education#projectFiles'} passHref>
+                <a
+                  hrefLang={'en-US'}
+                  className=' text-blue border-b border-blue inline-block px-1 pb-1'
+                >
                   <span> ← all project files</span>
                 </a>
               </Link>

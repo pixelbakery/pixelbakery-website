@@ -44,7 +44,7 @@ const EmailGenerator_Result = (props) => {
                             maxWidth: '125px',
                           }}
                         >
-                          <a href='https://pixelbakery.com' target={'_blank'}>
+                          <a hrefLang={'en-US'} href='https://pixelbakery.com' target={'_blank'}>
                             <img
                               style={{ width: '125px', height: '125px' }}
                               src='https://cdn.pixelbakery.com/img/darkBlue_withCreamShadow_onBlue_concave.png'

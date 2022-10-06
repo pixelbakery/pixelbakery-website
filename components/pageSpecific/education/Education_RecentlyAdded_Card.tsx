@@ -14,7 +14,7 @@ function Education_RecentlyAdded_Card({ props }) {
         }
       >
         <div className='absolute w-full h-full rounded overflow-hidden'>
-          <Link href={props.link} passHref>
+          <Link hrefLang={'en-US'} href={props.link} passHref>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.image}`}
               layout='fill'

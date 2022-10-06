@@ -31,8 +31,10 @@ function Home_Landing() {
                     key={navItem.text}
                     className='block my-0 py-0 leading-none cursor-pointer duration-150 ease-in-out hover:scale-98'
                   >
-                    <Link href={navItem.url}>
-                      <a className=' '>{navItem.text}</a>
+                    <Link hrefLang={'en-US'} href={navItem.url}>
+                      <a hrefLang={'en-US'} className=' '>
+                        {navItem.text}
+                      </a>
                     </Link>
                   </li>
                 )

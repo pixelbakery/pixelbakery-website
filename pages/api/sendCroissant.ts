@@ -38,7 +38,7 @@ export default async function sendCroissant(req, res) {
         src='${randomPastry}'
       /><br>
 
- <p style="margin-top:20pt;">    To show your appreciation, follow us on <a style="color:#ed6969" href="https://instagram.com/pixelbakery"><u><stong>instagram</stong></u></a>.</p>
+ <p style="margin-top:20pt;">    To show your appreciation, follow us on <a hrefLang={'en-US'} style="color:#ed6969" href="https://instagram.com/pixelbakery"><u><stong>instagram</stong></u></a>.</p>
      
      <p ><strong>Wow! Delicious!</strong></p>
     <p>You're welcome, you lucky duck. Stop by for another anytime. But not too many times. This ain't a charity.</p>

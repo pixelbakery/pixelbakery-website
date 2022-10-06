@@ -9,7 +9,12 @@ const About_Team_Headshot = ({ person }) => {
   const handleHover = () => setHover(!hover)
 
   return (
-    <Link as={`/about/${person.filePath.replace(/\.mdx?$/, '')}`} href={`/about/[slug]`} passHref>
+    <Link
+      hrefLang={'en-US'}
+      as={`/about/${person.filePath.replace(/\.mdx?$/, '')}`}
+      href={`/about/[slug]`}
+      passHref
+    >
       <a
         className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
         onMouseOver={handleHover}

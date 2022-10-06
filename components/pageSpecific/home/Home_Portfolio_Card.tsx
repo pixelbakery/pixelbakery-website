@@ -25,7 +25,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
             href={`/work/case-studies/[slug]`}
             passHref
           >
-            <a className='cursor-pointer'>
+            <a hrefLang={'en-US'} className='cursor-pointer'>
               <video
                 muted
                 playsInline

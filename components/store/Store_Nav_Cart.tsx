@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Store_Nav_Cart() {
   return (
-    <Link href='/store/cart' passHref>
+    <Link hrefLang={'en-US'} href='/store/cart' passHref>
       <div className='absolute right-0 top-0 mr-8 mt-8 '>
         <div
           className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100

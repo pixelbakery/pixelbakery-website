@@ -27,8 +27,10 @@ function CaseStudies_Credits({ credits }) {
             return (
               <li className='my-3' key={credit.name}>
                 {credit.website != undefined ? (
-                  <Link href={`${credit.website}`} passHref>
-                    <a className='underline'>{innerHtml(credit.name, credit.title)}</a>
+                  <Link hrefLang={'en-US'} href={`${credit.website}`} passHref>
+                    <a hrefLang={'en-US'} className='underline'>
+                      {innerHtml(credit.name, credit.title)}
+                    </a>
                   </Link>
                 ) : (
                   innerHtml(credit.name, credit.title)

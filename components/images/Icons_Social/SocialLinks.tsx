@@ -19,8 +19,12 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
   const link = getLinks[`${iconName}`]
   return (
     <div>
-      <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
-        <a rel='nofollow' className='mx-1 '>
+      <Link
+        hrefLang={'en-US'}
+        href={props.href ? props.href : link != undefined ? link : ''}
+        passHref
+      >
+        <a hrefLang={'en-US'} rel='nofollow' className='mx-1 block'>
           <i
             className={cn(
               'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',

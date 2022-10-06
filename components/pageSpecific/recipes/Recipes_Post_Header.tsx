@@ -59,7 +59,10 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
                 href={`/about/[slug]`}
                 passHref
               >
-                <a className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'>
+                <a
+                  hrefLang={'en-US'}
+                  className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
+                >
                   <Image
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
@@ -103,7 +106,10 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
                     href={`/about/[slug]`}
                     passHref
                   >
-                    <a className='text-peach'> {frontMatter.author.name}</a>
+                    <a hrefLang={'en-US'} className='text-peach'>
+                      {' '}
+                      {frontMatter.author.name}
+                    </a>
                   </Link>
                 </div>
               ) : (

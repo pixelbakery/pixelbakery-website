@@ -12,8 +12,8 @@ function Careers_Casting() {
         </div>
         <div className='w-1/2 py-12'>
           <div className='grid grid-cols-2 gap-8'>
-            <Link href={'/'}>
-              <a className='col-span-1'>
+            <Link hrefLang={'en-US'} href={'/'}>
+              <a hrefLang={'en-US'} className='col-span-1'>
                 <article className='w-full h-44  px-8 py-12 flex flex-col justify-center border-4 border-pink rounded-lg'>
                   <small className='text-blue text-xs place-self-start'>animal</small>
                   <h3 className='text-2xl text-pink font-bold'>happy bunnies</h3>
@@ -21,8 +21,8 @@ function Careers_Casting() {
               </a>
             </Link>
 
-            <Link href={'/'} passHref>
-              <a className='col-span-1'>
+            <Link hrefLang={'en-US'} href={'/'} passHref>
+              <a hrefLang={'en-US'} className='col-span-1'>
                 <article className='w-full h-44 px-8 py-10 flex flex-col justify-center border-4 border-pink rounded-lg'>
                   <small className='text-blue text-xs place-self-start'>human</small>
                   <h3 className='text-2xl text-pink font-bold'>parka girl 1</h3>
@@ -30,8 +30,8 @@ function Careers_Casting() {
               </a>
             </Link>
 
-            <Link href={'/'} passHref>
-              <a className='col-span-1'>
+            <Link hrefLang={'en-US'} href={'/'} passHref>
+              <a hrefLang={'en-US'} className='col-span-1'>
                 <article className='w-full h-44 px-8 py-12 flex flex-col justify-center border-4 border-pink rounded-lg'>
                   <small className='text-blue text-xs place-self-start'>human</small>
                   <h3 className='text-2xl text-pink font-bold'>lemonade boy</h3>

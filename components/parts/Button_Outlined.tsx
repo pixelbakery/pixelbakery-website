@@ -26,7 +26,7 @@ function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
     chevronRotation = ''
   }
   return (
-    <Link href={link} passHref>
+    <Link hrefLang={'en-US'} href={link} passHref>
       <div
         className={cn(
           ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',

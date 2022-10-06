@@ -117,8 +117,11 @@ export default function Navbar() {
             className='bg-cream rounded-md origin-top-left hidden xl:block  '
             onMouseEnter={handleMouseEnterLogo}
           >
-            <Link href={'/'} passHref>
-              <a className='pointer-events-auto block relative  h-full w-full z-50 px-4 pt-3 my-0'>
+            <Link hrefLang={'en-US'} href={'/'} passHref>
+              <a
+                hrefLang={'en-US'}
+                className='pointer-events-auto block relative  h-full w-full z-50 px-4 pt-3 my-0'
+              >
                 <div
                   ref={logoWrapper}
                   className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
@@ -173,8 +176,8 @@ export default function Navbar() {
         className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
-        <Link href={'/'}>
-          <a className='text-4xl font-extrabold text-peach leading-none'>
+        <Link hrefLang={'en-US'} href={'/'}>
+          <a hrefLang={'en-US'} className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
           </a>
