@@ -5,18 +5,19 @@ import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import dynamic from 'next/dynamic'
 import Careers_Breadwinners from '@careers/Careers_Breadwinners'
 import Careers_OpenPositions from '@careers/Careers_OpenPositions'
-
-// import Careers_Casting from '@careers/Careers_Casting'
-// import Careers_Vendors from '@careers/Careers_Vendors'
+import Careers_SEO from '@careers/Careers_SEO'
 import Careers_Benefits from '@careers/Careers_Benefits'
-// import Careers_Culture from '@careers/Careers_Culture'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent header={'Future Bakers'} subheader={'Come Rise With Us'} />
+  ),
+  ssr: false,
+})
+
 import Careers_JobShadow from '@careers/Careers_JobShadow'
 import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@typography/H2'
-import { NextSeo } from 'next-seo'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+import Careers_Intro from '@careers/Careers_Intro'
 
 const Careers = ({ allJobs }) => {
   const openPositions = allJobs.filter(
@@ -26,64 +27,9 @@ const Careers = ({ allJobs }) => {
 
   return (
     <Main id='careers-page'>
-      <NextSeo
-        title='Careers'
-        description={` We’re a motion-focused creative shop, meaning while our most frequently requested
-              services are in the areas of animation, videography, and web design, we basically do
-              it all – from production on animated series in LA, to rebrands for local startups, to
-              print design to regional nonprofits. We are producers and we are creatives, and at the
-              end of the day we find our happiness and fulfillment from making great creative that
-              touches lives.`}
-        canonical={`https://pixelbakery.com/careers`}
-        openGraph={{
-          url: `https://pixelbakery.com/careers`,
-          title: 'Careers',
-          description: ` We’re a motion-focused creative shop, meaning while our most frequently requested
-              services are in the areas of animation, videography, and web design, we basically do
-              it all – from production on animated series in LA, to rebrands for local startups, to
-              print design to regional nonprofits. We are producers and we are creatives, and at the
-              end of the day we find our happiness and fulfillment from making great creative that
-              touches lives.`,
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
-          ],
-        }}
-      />
+      <Careers_SEO />
       <PageHeader_VarH header='Future Bakers' subheader='Come rise with us' />
-      <PageSection className='' color='white' id='careers-intro'>
-        <InnerWrapper className='lg:pb-0 grid grid-cols-1 xl:grid-cols-2'>
-          <H2 color='pink'>Think you got what it takes?</H2>
-          <div className='max-w-3xl'>
-            <p>
-              We’re a motion-focused creative shop, meaning while our most frequently requested
-              services are in the areas of animation, videography, and web design, we basically do
-              it all – from production on animated series in LA, to rebrands for local startups, to
-              print design to regional nonprofits. We are producers and we are creatives, and at the
-              end of the day we find our happiness and fulfillment from making great creative that
-              touches lives.
-            </p>
-
-            <p>We hope you come make awesome things with us.</p>
-          </div>
-        </InnerWrapper>
-      </PageSection>
+      <Careers_Intro />
       <Careers_OpenPositions
         jobs={openPositions}
         header={'Open Positions'}
@@ -96,15 +42,9 @@ const Careers = ({ allJobs }) => {
           'For those that are still in school or eager to learn, we offer internships to show you the ropes.'
         }
       />
-
       <Careers_Breadwinners />
-
-      {/* <Careers_Casting /> */}
-      {/* <Careers_Vendors /> */}
       <Careers_Benefits />
       <Careers_JobShadow />
-
-      {/* <Careers_Culture /> */}
     </Main>
   )
 }
