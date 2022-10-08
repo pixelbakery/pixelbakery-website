@@ -5,7 +5,12 @@ import path from 'path'
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
 import Main from '@parts/Main'
 import About_SEO from '@about/About_SEO'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), { ssr: false })
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => <PageHeader_LoadingContent header={'About'} subheader={'Just add flour.'} />,
+  ssr: false,
+})
+
 const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
 
 import About_Team from '@about/About_Team'

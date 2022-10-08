@@ -1,18 +1,20 @@
+import Home_Landing from '@home/Home_Landing'
+
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import dynamic from 'next/dynamic'
-const Home_Services = dynamic(() => import('@home/Home_Services'), { ssr: true })
-const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: true })
+import Main from '@parts/Main'
 
-import Home_Landing from '@home/Home_Landing'
+import dynamic from 'next/dynamic'
 import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_WhatWeMake from '@home/Home_WhatWeMake'
-// import Home_Awwwards from '@home/Home_Awwwards'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import Home_Recipes from '@home/Home_Recipes'
-import Main from '@parts/Main'
+const Home_Services = dynamic(() => import('@home/Home_Services'))
+const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'))
+
+// import Home_Awwwards from '@home/Home_Awwwards'
+const Home_Recipes = dynamic(() => import('@home/Home_Recipes'))
 import Home_SEO from '@home/Home_SEO'
 
 const Home = ({ allPosts, allCaseStudies }) => {

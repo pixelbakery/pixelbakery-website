@@ -2,22 +2,30 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import dynamic from 'next/dynamic'
 import path from 'path'
-import MoreStories from '@recipes/Recipes_MoreStories'
+
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
-import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent
+      header={"Mon's Recipes"}
+      subheader={'No word yet on her spaghetti, though'}
+    />
+  ),
+  ssr: false,
+})
+const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: false })
+const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: false })
+
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Main from '@parts/Main'
 
 import InnerWrapper from '@parts/InnerWrapper'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 import BackToTop from '@utility/BackToTop'
 import Recipes_SEO from '@recipes/Recipes_SEO'
-let counter = 0
+// let counter = 0
 const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
 const secondaryPostNo = 8
 
@@ -61,20 +69,20 @@ const getSecondaryPosts = ({ allPosts }) => {
   })
 }
 const Page_Recipes = ({ allPosts }) => {
-  const [totalPages, setTotalPages] = useState<number>(0)
-  const [currentPage, setCurrentPage] = useState<number>(secondaryPostNo + featuredPostNo + 5)
-  const { pathname, query } = useRouter()
-  const router = useRouter()
+  // const [totalPages, setTotalPages] = useState<number>(0)
+  // const [currentPage, setCurrentPage] = useState<number>(secondaryPostNo + featuredPostNo + 5)
+  // const { pathname, query } = useRouter()
+  // const router = useRouter()
 
-  useEffect(() => {
-    const numberOfPages = allPosts.length
-    setTotalPages(numberOfPages)
-  }, [])
-  useEffect(() => {
-    if (currentPage <= totalPages) setCurrentPage(currentPage + 5)
-  }, [router.query.counter])
+  // useEffect(() => {
+  //   const numberOfPages = allPosts.length
+  //   setTotalPages(numberOfPages)
+  // }, [])
+  // useEffect(() => {
+  //   if (currentPage <= totalPages) setCurrentPage(currentPage + 5)
+  // }, [router.query.counter])
 
-  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo, currentPage)
+  const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)
 
   return (
     <Main>
@@ -93,8 +101,8 @@ const Page_Recipes = ({ allPosts }) => {
         </InnerWrapper>
 
         <InnerWrapper className='my-24 relative py-24 lg:py-24' disableSpacing>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          {currentPage <= totalPages ? (
+          {morePosts.length > 0 && <Recipes_MoreStories posts={morePosts} />}
+          {/* {currentPage <= totalPages ? (
             <div className='w-full flex justify-center my-12'>
               <Link
                 hrefLang={'en-US'}
@@ -112,7 +120,7 @@ const Page_Recipes = ({ allPosts }) => {
             </div>
           ) : (
             ''
-          )}
+          )} */}
         </InnerWrapper>
       </PageSection>
     </Main>
@@ -134,5 +142,5 @@ export function getStaticProps() {
     })
     .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
 
-  return { props: { allPosts, initialPropsCounter: counter } }
+  return { props: { allPosts } }
 }

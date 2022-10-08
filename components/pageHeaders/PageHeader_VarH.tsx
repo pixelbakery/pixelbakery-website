@@ -2,7 +2,9 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
 import Lead from '@typography/Lead'
-const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: false })
+const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), {
+  ssr: false,
+})
 
 import Patterns_Blue from '@data/lottie_patterns/Patterns_Blue.json' assert { type: 'json' }
 import Patterns_Blue_Dark from '@data/lottie_patterns/Patterns_Blue_Dark.json' assert { type: 'json' }
@@ -108,11 +110,13 @@ function PageHeader_VarH({ header, subheader }) {
 
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
-      <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
-        <Lead color='cream' className='self-center text-center'>
-          Loading...
-        </Lead>
-      </div>
+      {/* <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
+        <p>
+          <Lead color='cream' className='self-center text-center'>
+            Loading...
+          </Lead>
+        </p>
+      </div> */}
       {arr[RandomArrayItem(arr.length)]}
     </header>
   )
