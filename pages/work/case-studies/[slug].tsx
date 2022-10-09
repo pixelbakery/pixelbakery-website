@@ -97,6 +97,7 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
             clientLogo={frontMatter.logo}
             projectName={frontMatter.title}
             projectExcerpt={frontMatter.excerpt}
+            poster={frontMatter.vimeoPreview}
             heroVideo={frontMatter.vimeoID}
             tags={frontMatter.tags}
             logo={frontMatter.logo}

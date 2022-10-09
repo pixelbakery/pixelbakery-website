@@ -1,5 +1,11 @@
-import Home_Landing from '@home/Home_Landing'
-
+const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
+  loading: () => (
+    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
+  ssr: false,
+})
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'

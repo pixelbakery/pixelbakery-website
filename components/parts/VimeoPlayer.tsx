@@ -1,4 +1,3 @@
-import H3 from '@typography/H3'
 import Lead from '@typography/Lead'
 import Vimeo from '@u-wave/react-vimeo'
 

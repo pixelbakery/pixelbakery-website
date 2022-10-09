@@ -20,14 +20,24 @@ function Video({ url, ...props }: video) {
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}
-          poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}`}
+          playing={props.autoPlay ? props.autoPlay : false}
+          poster={props.poster ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}` : ''}
           width={'100%'}
           height={'100%'}
           loop={props.loop ? props.loop : false}
           muted={props.muted ? props.muted : false}
-          playsInline={props.playsInline ? props.playsInline : false}
+          playsinline={props.playsInline ? props.playsInline : false}
           controls={props.controls ? props.controls : true}
+          className={'videoWrapper'}
+          config={{
+            vimeo: {
+              playerOptions: {
+                playsinline: true,
+              },
+            },
+          }}
         />
+
         {props.caption != undefined ? (
           <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '>
             {' '}

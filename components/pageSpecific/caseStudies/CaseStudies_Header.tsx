@@ -1,9 +1,8 @@
-import Vimeo from '@u-wave/react-vimeo'
+import Video from '@parts/Video'
 import H1 from '@typography/H1'
-import Lead from '@typography/Lead'
 import Pill from '@parts/Pill'
 import Image from 'next/image'
-
+// import Player from 'components/player/Player'
 function CaseStudies_Header({ ...props }) {
   const Logo = () => {
     if (props.logo === undefined) return
@@ -67,13 +66,16 @@ function CaseStudies_Header({ ...props }) {
         </div>
       </div> */}
       <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
-        <Vimeo
-          video={props.heroVideo}
-          autoplay={false}
-          showPortrait
-          responsive={true}
-          className={'relative'}
+        <Video
+          url={`https://vimeo.com/${props.heroVideo}`}
+          autoPlay={false}
+
+          // poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${props.poster}.jpg`}
         />
+        {/* <Player
+          url={props.heroVideo}
+          light={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${props.poster}.jpg`}
+        /> */}
       </div>
     </section>
   )

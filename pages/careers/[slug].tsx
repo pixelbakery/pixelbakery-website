@@ -27,7 +27,7 @@ import addMonths from 'date-fns/addMonths'
 
 //css imports
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Careers_SEO from '@careers/Careers_SEO'
+import Careers_SEO from '@careers/Careers_Post_SEO'
 
 const components = {
   Head,
