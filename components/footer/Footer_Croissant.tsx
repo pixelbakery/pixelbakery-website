@@ -4,7 +4,7 @@ import Close from '@images/Close'
 import cn from 'classnames'
 import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
 import { SendToMailchimp, SendEmail_Croissants } from '@lib/helpers'
-function Footer_Mailchimp({ onModalUpdate }) {
+function Footer_Croissant({ onModalUpdate }) {
   const [checked, setChecked] = useState(true)
   const [submitted, setSubmitted] = useState(false)
   const [message, setMessage] = useState('')
@@ -115,4 +115,4 @@ function Footer_Mailchimp({ onModalUpdate }) {
     </div>
   )
 }
-export default Footer_Mailchimp
+export default Footer_Croissant
