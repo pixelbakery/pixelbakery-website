@@ -46,7 +46,7 @@ class MyDocument extends Document {
               'https://twitch.tv/pixelbakery',
               'https://www.youtube.com/c/pixelbakery',
               'https://instagram.com/pixelbakery',
-              'http://facebook.com/pixelbakerylnk',
+              'https://facebook.com/pixelbakerylnk',
               'https://www.pinterest.com/pixelbakerylnk/',
               'https://twitter.com/pixelbakerylnk',
               'https://github.com/pixelbakery',

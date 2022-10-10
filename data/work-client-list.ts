@@ -129,12 +129,6 @@ export default [
     active: true,
   },
   {
-    client: 'ilair',
-    logo: '/img/clients/pixelbakery_client_ilair.png',
-    url: 'http://www.ilair.org/',
-    active: false,
-  },
-  {
     client: 'Ink Alley',
     logo: '/img/clients/pixelbakery_client_ink.png',
     url: 'https://www.inkalleyshirts.com/',
@@ -227,7 +221,7 @@ export default [
   {
     clients: 'Punch It Entertainment',
     logo: '/img/clients/pixelbakery_client_punchit.png',
-    url: 'http://punchitent.com/',
+    url: 'https://punchitent.com/',
     active: false,
   },
   {

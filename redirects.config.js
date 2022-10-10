@@ -178,11 +178,6 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/recipes/a-sprinkle-of-inspiration',
-    destination: '/recipes/a-sprinkle-of-inspiration',
-    permanent: true,
-  },
-  {
     source: '/recipes/our-top-10-films-of-all-time-in-no-particular-order',
     destination: '/recipes/our-top-10-films',
     permanent: true,

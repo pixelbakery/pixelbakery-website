@@ -67,7 +67,7 @@ function Careers_SEO({ ...props }) {
         hiringOrganization={{
           name: 'Pixel Bakery Design Studio',
           sameAs: 'https://pixelbakery.com',
-          logo: 'https://www.pixelbakery.com/img/logos/initials/600x600px/darkBlue_withCreamShadow_onBlue_concave.png',
+          logo: 'https://pixelbakery.com/img/logos/initials/600x600px/darkBlue_withCreamShadow_onBlue_concave.png',
         }}
         jobLocation={{
           streetAddress: '2124 Y Street Suite 122',

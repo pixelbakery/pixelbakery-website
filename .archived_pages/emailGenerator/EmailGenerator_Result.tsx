@@ -176,7 +176,7 @@ const EmailGenerator_Result = (props) => {
                                             Pixel Bakery Design Studio
                                           </span>
                                           <a
-                                            href='https://www.pixelbakery.com'
+                                            href='https://pixelbakery.com'
                                             style={{
                                               textDecoration: 'none',
                                               color: 'rgb(237, 105, 112)',
