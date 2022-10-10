@@ -48,6 +48,7 @@ module.exports = () => {
     },
     swcMinify: true,
     images: {
+      minimumCacheTTL: 31536000,
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
       domains: [

@@ -36,7 +36,7 @@ const About_Team_Headshot = ({ person }) => {
           layout={'fill'}
           objectFit='cover'
           className='absolute top-0 left-0  w-full h-full object-cover z-10'
-          alt={'pixel bakery ' + person.data.name}
+          alt={'pixel bakery ' + person.data.name + ', ' + person.data.title + ' company headshot'}
           placeholder={'blur'}
           blurDataURL={`${ImgPrefix}${person.data.headshotSmiling}`}
         />

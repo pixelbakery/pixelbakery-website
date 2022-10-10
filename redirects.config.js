@@ -168,11 +168,6 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/recipes/our-2018-addy-award-winning-work',
-    destination: '/recipes/our-2018-addy-award-winning-work',
-    permanent: true,
-  },
-  {
     source: '/recipes/php-and-bootstrap-4-how-to-get-set-up',
     destination: '/recipes/php-and-bootstrap-4',
     permanent: true,
