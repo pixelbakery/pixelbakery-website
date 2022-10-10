@@ -5,12 +5,12 @@ function NextSEO_DefaultSEO() {
     <DefaultSeo
       defaultTitle='Pixel Bakery Design Studio'
       description={
-        'A multi-disciplinary production studio focused on animation, motion design, emerging media, and commercial film production.'
+        'Pixel Bakery is a production studio focused on animation, motion design, video production, and product photography in Lincoln, Nebraska.'
       }
       openGraph={{
         type: 'website',
         description:
-          'A multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+          'Pixel Bakery is a Nebraska-based multi-disciplinary production studio focused on animation, motion design, and video production.',
         locale: 'en_IE',
         url: 'pixelbakery.com',
         site_name: 'Pixel Bakery Design Studio',

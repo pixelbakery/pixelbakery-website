@@ -31,10 +31,6 @@ module.exports = () => {
               value: 'strict-origin-when-cross-origin',
             },
             {
-              key: 'Permissions-Policy',
-              value: 'camera=(); battery=(); geolocation=(); microphone=()',
-            },
-            {
               key: 'X-XSS-Protection',
               value: '1; mode=block',
             },
