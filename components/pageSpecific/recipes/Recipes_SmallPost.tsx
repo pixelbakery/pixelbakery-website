@@ -49,7 +49,7 @@ const Recipes_SmallPost = ({
         <div className='sm:w-3/5 flex flex-col '>
           <div className=' flex justify-start '>
             <span className='self-center  text-xs md:text-base text-wine-300  lg:order-1'>
-              {author} <br className=' md:hidden' />
+              {`${author}`} <br className=' md:hidden' />
               <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} />
             </span>
           </div>

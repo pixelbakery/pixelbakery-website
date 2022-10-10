@@ -62,8 +62,8 @@ function Work_Portfolio_Card({ project }) {
       href={`/work/case-studies/[slug]`}
       passHref
     >
-      <article
-        className='relative  aspect-16/9 bg-blue cursor-pointer origin-center transform duration-300 hover:scale-99 overflow-hidden'
+      <a
+        className='relative block  aspect-16/9 bg-blue cursor-pointer origin-center transform duration-300 hover:scale-99 overflow-hidden'
         onMouseOver={() => handleHover()}
         onMouseOut={() => handleHover()}
       >
@@ -159,7 +159,7 @@ function Work_Portfolio_Card({ project }) {
           <div className='text-xs text-wine leading-none '>{project.data.client}</div>
           <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
         </div>
-      </article>
+      </a>
     </Link>
   )
 }

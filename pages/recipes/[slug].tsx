@@ -21,7 +21,7 @@ import VimeoPlayer from '@parts/VimeoPlayer'
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
 import BackToTop from '@utility/BackToTop'
-const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: false })
+import Recipes_Post_Header from '@recipes/Recipes_Post_Header'
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: false })
 
 const Recipes_Post_GetPrevNextPost = dynamic(
