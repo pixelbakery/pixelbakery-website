@@ -13,11 +13,11 @@ import Video from '@parts/Video'
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: true })
+const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: false })
 const Education_MadeToOrder_GetPrevNextPost = dynamic(
   () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
   {
-    ssr: true,
+    ssr: false,
   },
 )
 import Education_SupportUs from '@education/Education_SupportUs'

@@ -14,8 +14,8 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ),
   ssr: false,
 })
-const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: true })
-const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: true })
+const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: false })
+const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: false })
 
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'

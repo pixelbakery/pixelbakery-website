@@ -14,8 +14,8 @@ import About_Team_Details from '@about/About_Team_Details'
 import About_Team_MatchingPosts from '@about/About_Team_MatchingPosts'
 
 import dynamic from 'next/dynamic'
-const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: true })
-const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: true })
+const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: false })
+const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: false })
 
 function PersonPage({ slug, source, frontMatter, matchingAuthorPosts, prevIndex, nextIndex }) {
   return (
