@@ -10,17 +10,27 @@ import Video from '@parts/Video'
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
 import H2 from '@typography/H2'
-import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
-import CaseStudiesIntro from '@caseStudies/CaseStudies_Intro'
 import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
-import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
+const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
+  ssr: false,
+})
+const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
+  ssr: false,
+})
+const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
+  ssr: false,
+})
+const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
+  ssr: false,
+})
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
-import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
-import CaseStudies_Storyboards from '@caseStudies/CaseStudies_Storyboards'
 
+const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_Storyboards'), {
+  ssr: false,
+})
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
 import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
@@ -34,6 +44,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 //stuff built for Marq
 import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
+import dynamic from 'next/dynamic'
 
 export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter }) {
   const components = {
@@ -72,14 +83,14 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
       </CaseStudies_Description>
     ),
     CaseStudiesIntro: ({ title, children }) => (
-      <CaseStudiesIntro
+      <CaseStudies_Intro
         title={title}
         url={frontMatter.website}
         client={frontMatter.client}
         logo={frontMatter.logo}
       >
         {children}
-      </CaseStudiesIntro>
+      </CaseStudies_Intro>
     ),
     H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     InnerWrapper: InnerWrapper,

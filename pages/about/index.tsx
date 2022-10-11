@@ -32,7 +32,7 @@ function About({ allPeople }) {
       <About_Values />
       {/* <About_FamilyPhotos /> */}
       <About_Spotify />
-      <About_Twitch />
+      {/* <About_Twitch /> */}
       <About_Awards />
       <About_Faq />
     </Main>

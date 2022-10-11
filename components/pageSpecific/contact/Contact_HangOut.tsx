@@ -7,7 +7,6 @@ import H2 from '@typography/H2'
 import cn from 'classnames'
 import gsap from 'gsap'
 import SocialUrls_Contact from '@data/SocialUrls_Contact'
-
 function Contact_HangOut() {
   useEffect(() => {
     gsap.set('.animate-horizontal', { x: 0 })

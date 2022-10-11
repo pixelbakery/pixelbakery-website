@@ -20,7 +20,8 @@ const Education_MadeToOrder_GetPrevNextPost = dynamic(
     ssr: false,
   },
 )
-import Education_SupportUs from '@education/Education_SupportUs'
+const Education_SupportUs = dynamic(() => import('@education/Education_SupportUs'), { ssr: false })
+
 import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
 import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
