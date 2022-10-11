@@ -190,9 +190,14 @@
 .lander {
   height: calc(100vh - 2rem);
 }
-
+@media (min-width: 786px) {
+  .lander-responsive {
+    height: calc(100vh - 2rem) !important;
+  }
+}
 @media (min-width: 1024px) {
-  .lander-education {
+  .lander-education,
+  .lander-responsive {
     height: calc(100vh - 2rem) !important;
   }
 }

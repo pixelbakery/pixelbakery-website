@@ -1,3 +1,13 @@
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import Main from '@parts/Main'
+
+import dynamic from 'next/dynamic'
+import Home_WhatWeMake from '@home/Home_WhatWeMake'
+import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
+import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+const Home_Services = dynamic(() => import('@home/Home_Services'), { ssr: false })
 const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
   loading: () => (
     <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
@@ -6,21 +16,12 @@ const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
   ),
   ssr: false,
 })
-import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import Main from '@parts/Main'
+const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), { ssr: false })
 
-import dynamic from 'next/dynamic'
-import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
-import Home_WhatWeMake from '@home/Home_WhatWeMake'
-import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-const Home_Services = dynamic(() => import('@home/Home_Services'))
-const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'))
+const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
 
 // import Home_Awwwards from '@home/Home_Awwwards'
-const Home_Recipes = dynamic(() => import('@home/Home_Recipes'))
+const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), { ssr: false })
 import Home_SEO from '@home/Home_SEO'
 
 const Home = ({ allPosts, allCaseStudies }) => {

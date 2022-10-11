@@ -58,7 +58,7 @@ function Home_Landing() {
           </div>
         </div>
       </nav>
-      <div className='relative flex-grow bg-blue h-full overflow-hidden'>
+      <div className='relative flex-grow bg-blue h-full overflow-hidden player-wrapper'>
         <div
           className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie'
           id='lottie'

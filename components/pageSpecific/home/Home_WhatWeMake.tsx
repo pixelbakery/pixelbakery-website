@@ -2,15 +2,11 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import dynamic from 'next/dynamic'
-const Video = dynamic(() => import('@parts/Video'), {
-  ssr: false,
-})
 
 function Home_WhatWeMake() {
   return (
-    <PageSection id={'services-cta'}>
-      <InnerWrapper>
+    <PageSection id={'services-cta'} className={'relative'}>
+      <InnerWrapper className='relative z-20'>
         <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 mb-12 lg:mb-24'>
           <div>
             <div className='text-pink text-2xl  2xl:text-4xl  leading-noone font-bold'>
@@ -27,9 +23,6 @@ function Home_WhatWeMake() {
               visions and not taking any shortcuts.
             </Lead>
           </div>
-        </div>
-        <div className=' w-full'>
-          <Video url='https://vimeo.com/523920082' />
         </div>
       </InnerWrapper>
     </PageSection>
