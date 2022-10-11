@@ -1,6 +1,6 @@
 import Lead from '@typography/Lead'
 import ReactPlayer from 'react-player/lazy'
-
+import cn from 'classnames'
 interface video {
   url: string
   title?: string
@@ -11,12 +11,18 @@ interface video {
   playsInline?: boolean
   controls?: boolean
   caption?: string
+  className?: string
 }
 function Video({ url, ...props }: video) {
   return (
     <div>
       {props.title != undefined ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
-      <div className='markdown-video aspect-16/9'>
+      <div
+        className={cn(
+          { ['markdown-video aspect-16/9']: props.className === undefined },
+          { [`${props.className}`]: props.className },
+        )}
+      >
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}
