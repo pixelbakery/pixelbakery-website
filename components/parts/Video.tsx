@@ -35,9 +35,6 @@ function Video({ url, ...props }: video) {
           playsinline={props.playsInline ? props.playsInline : false}
           controls={props.controls ? props.controls : true}
           className={'videoWrapper'}
-          fileConfig={{
-            attributes: { poster: 'https://cdn.pixelbakery.com/img/placeholder01.jpg' },
-          }}
           config={{
             vimeo: {
               playerOptions: {

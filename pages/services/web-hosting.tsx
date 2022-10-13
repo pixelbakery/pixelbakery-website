@@ -12,13 +12,12 @@ export default function Services() {
   return (
     <Main>
       <Services_SEO serviceName='Web Hosting' description={desc} path='web-hosting' />
-
       <Services_Header
         serviceName={'Web Hosting'}
         isLottie={true}
         subheader={'Because you deserve it'}
         bgColor={'blue'}
-        LottieComponent={Lottie_Animation}
+        lottieComponent={Lottie_Animation}
       >
         <p>
           We offer this service to any Nebraskan. You&apos;re welcome to choose how much you can

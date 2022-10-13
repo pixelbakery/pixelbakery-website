@@ -15,14 +15,19 @@ const Video = dynamic(() => import('@parts/Video'), {
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: false })
-const Education_MadeToOrder_GetPrevNextPost = dynamic(
-  () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
-  {
-    ssr: false,
-  },
-)
-const Education_SupportUs = dynamic(() => import('@education/Education_SupportUs'), { ssr: false })
+// import Education_PostHeader from '@education/Education_PostHeader'
+const Education_PostHeader = dynamic(() => import('@education/Education_PostHeader'), {
+  ssr: false,
+})
+import Education_MadeToOrder_GetPrevNextPost from '@education/Education_MadeToOrder_GetPrevNextPost'
+// const Education_MadeToOrder_GetPrevNextPost = dynamic(
+//   () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
+//   {
+//     ssr: false,
+//   },
+// )
+import Education_SupportUs from '@education/Education_SupportUs'
+// const Education_SupportUs = dynamic(() => import('@education/Education_SupportUs'), { ssr: false })
 import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
 import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
@@ -63,7 +68,7 @@ export default function Page_Education_Tutorials({
         slug={slug}
         datePostedISO={datePostedISO}
       />
-      <PostHeader
+      <Education_PostHeader
         title={frontMatter.title}
         video={frontMatter.video}
         subtitle={frontMatter.subtitle}

@@ -34,7 +34,6 @@ function Services_AllServices_Card_Body({
               ['group-hover:text-blue']: isFilled && !detailsHoverColor,
               [`group-hover:text-${detailsHoverColor}`]: isFilled && detailsHoverColor,
             },
-
             {
               ['text-cream']: !isFilled,
             },

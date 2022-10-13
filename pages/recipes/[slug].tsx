@@ -22,16 +22,16 @@ import VimeoPlayer from '@parts/VimeoPlayer'
 
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
-import BackToTop from '@utility/BackToTop'
 import Recipes_Post_Header from '@recipes/Recipes_Post_Header'
+import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: false })
 
-const Recipes_Post_GetPrevNextPost = dynamic(
-  () => import('@recipes/Recipes_Post_GetPrevNextPost'),
-  {
-    ssr: false,
-  },
-)
+// const Recipes_Post_GetPrevNextPost = dynamic(
+//   () => import('@recipes/Recipes_Post_GetPrevNextPost'),
+//   {
+//     ssr: false,
+//   },
+// )
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -99,7 +99,6 @@ export default function PostPage({
 
       <Recipes_Post_GetPrevNextPost prev={prev} next={next} />
       <Recipes_Post_Related relatedPosts={freshPosts} />
-      <BackToTop />
     </Main>
   )
 }

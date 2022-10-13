@@ -9,7 +9,7 @@ import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
 
-import Video from '@parts/Video'
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import VimeoPlayer from '@parts/VimeoPlayer'
 import Button_Filled from '@parts/Button_Filled'
 
@@ -19,6 +19,7 @@ import H1 from '@typography/H1'
 import Link from 'next/link'
 import Image from 'next/image'
 import Education_SupportUs from '@education/Education_SupportUs'
+import dynamic from 'next/dynamic'
 
 const components = {
   Carousel: Carousel,

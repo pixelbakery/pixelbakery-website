@@ -9,8 +9,8 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
 import Contact_Clients from '@contact/Contact_Clients'
 import Contact_ContactForm from '@contact/Contact_ContactForm'
 import Contact_Jobs from '@contact/Contact_Jobs'
-
-const Contact_HangOut = dynamic(() => import('@contact/Contact_HangOut'), { ssr: false })
+import Contact_HangOut from '@contact/Contact_HangOut'
+// const Contact_HangOut = dynamic(() => import('@contact/Contact_HangOut'), { ssr: false })
 
 import Main from '@parts/Main'
 

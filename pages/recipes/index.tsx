@@ -14,16 +14,16 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ),
   ssr: false,
 })
-const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: false })
-const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: false })
+import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import Recipes_MoreStories from '@recipes/Recipes_MoreStories'
+// const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: false })
+// const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: false })
 
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Main from '@parts/Main'
 
 import InnerWrapper from '@parts/InnerWrapper'
-
-import BackToTop from '@utility/BackToTop'
 import Recipes_SEO from '@recipes/Recipes_SEO'
 // let counter = 0
 const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
@@ -74,7 +74,6 @@ const Page_Recipes = ({ allPosts }) => {
   return (
     <Main>
       <Recipes_SEO />
-      <BackToTop />
       <PageHeader_VarH header="Mom's Recipes" subheader='No word yet on her spaghetti, though' />
       <PageSection id='recent-posts'>
         <InnerWrapper>

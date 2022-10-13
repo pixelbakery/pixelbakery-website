@@ -11,8 +11,6 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ssr: false,
 })
 
-const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
-
 import About_Team from '@about/About_Team'
 import About_Values from '@about/About_Values'
 import About_Twitch from '@about/About_Twitch'
@@ -26,7 +24,6 @@ function About({ allPeople }) {
   return (
     <Main>
       <About_SEO />
-      <BackToTop />
       <PageHeader_VarH header='About' subheader='Just add flour.' />
       <About_Team allPeople={allPeople} />
       <About_Values />

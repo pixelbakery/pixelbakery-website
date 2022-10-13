@@ -19,9 +19,10 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ),
   ssr: false,
 })
-const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
-const Work_Portfolio = dynamic(() => import('@work/Work_Portfolio'), { ssr: false })
-const Work_Clients = dynamic(() => import('@work/Work_Clients'), { ssr: false })
+import Work_Portfolio from '@work/Work_Portfolio'
+import Work_Clients from '@work/Work_Clients'
+// const Work_Portfolio = dynamic(() => import('@work/Work_Portfolio'), { ssr: false })
+// const Work_Clients = dynamic(() => import('@work/Work_Clients'), { ssr: false })
 
 const Work = ({ allCaseStudies }) => {
   return (
@@ -32,7 +33,6 @@ const Work = ({ allCaseStudies }) => {
       <Work_Callout />
       <Work_Portfolio allCaseStudies={allCaseStudies} />
       <Work_Clients />
-      <BackToTop />
     </Main>
   )
 }

@@ -4,13 +4,14 @@ import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 import dynamic from 'next/dynamic'
 import matter from 'gray-matter'
 import path from 'path'
-const Education_Header = dynamic(() => import('@education/Education_Header'))
+// const Education_Header = dynamic(() => import('@education/Education_Header'))
+import Education_Header from '@education/Education_Header'
 import Education_SEO from '@education/Education_SEO'
 import Education_Why from '@education/Education_Why'
-const Education_MadeToOrder = dynamic(() => import('@education/Education_MadeToOrder'))
+import Education_MadeToOrder from '@education/Education_MadeToOrder'
+// const Education_MadeToOrder = dynamic(() => import('@education/Education_MadeToOrder'))
 import Education_FromScratch from '@education/Education_FromScratch'
 import Education_TutorialRequests from '@education/Education_TutorialRequests'
-import BackToTop from '@utility/BackToTop'
 
 function EducationPage({ allMadeToOrders }) {
   return (
@@ -21,7 +22,6 @@ function EducationPage({ allMadeToOrders }) {
       <Education_FromScratch />
       <Education_MadeToOrder allMadeToOrders={allMadeToOrders} />
       <Education_TutorialRequests />
-      <BackToTop />
     </Main>
   )
 }

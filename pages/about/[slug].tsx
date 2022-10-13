@@ -9,16 +9,17 @@ import { serialize } from 'next-mdx-remote/serialize'
 import Main from '@parts/Main'
 import remarkGfm from 'remark-gfm'
 
+import About_Team_Header from '@about/About_Team_Header'
+import About_Team_PrevNext from '@about/About_Team_PrevNext'
 import About_Team_SEO from '@about/About_Team_SEO'
 import About_Team_Details from '@about/About_Team_Details'
 
 import dynamic from 'next/dynamic'
-const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: false })
+// const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: false })
 const About_Team_MatchingPosts = dynamic(() => import('@about/About_Team_MatchingPosts'), {
   ssr: false,
 })
-
-const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: false })
+// const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: false })
 
 function PersonPage({ slug, source, frontMatter, matchingAuthorPosts, prevIndex, nextIndex }) {
   return (

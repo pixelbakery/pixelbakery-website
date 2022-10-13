@@ -9,15 +9,18 @@ import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Home_Services from '@home/Home_Services'
 import Home_SEO from '@home/Home_SEO'
-import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
+// import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_Recipes from '@home/Home_Recipes'
 import Home_Portfolio from '@home/Home_Portfolio'
-
-const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
-  suspense: true,
+import Home_Landing from '@home/Home_Landing'
+// const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
+//   suspense: true,
+//   ssr: false,
+// })
+const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
+  ssr: false,
+  suspense: false,
 })
-
-// const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), { ssr: false })
 // const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
 
 // import Home_Awwwards from '@home/Home_Awwwards'
@@ -37,7 +40,15 @@ const Home = ({ allPosts, allCaseStudies }) => {
       >
         <Home_Landing />
       </Suspense>
-      <Home_WhoTheHeck />
+      <Suspense
+        fallback={
+          <section className='relative md:max-h-screen bg-pink-light lander-responsive'>
+            <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+          </section>
+        }
+      >
+        <Home_WhoTheHeck />
+      </Suspense>
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio allCaseStudies={allCaseStudies} />

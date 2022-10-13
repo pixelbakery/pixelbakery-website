@@ -6,31 +6,36 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
-const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
-  ssr: true,
-})
-const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
-  ssr: true,
-})
-const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
-  ssr: false,
-})
-const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
-  ssr: true,
-})
+
+import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
+import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
+import CaseStudies_Intro from '@caseStudies/CaseStudies_Intro'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
+// const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
+//   ssr: false,
+// })
+// const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
+//   ssr: false,
+// })
+const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
+  ssr: false,
+})
+// const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
+//   ssr: false,
+// })
 
 const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_Storyboards'), {
-  ssr: true,
+  ssr: false,
 })
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
+
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
 import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
