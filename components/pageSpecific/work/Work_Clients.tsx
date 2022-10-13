@@ -23,7 +23,7 @@ function Work_Clients() {
             client’s vision to life. Check out some of our past and present clients below.
           </p>
         </div>
-        <div className='mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6'>
+        <div className='mt-3 grid grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-x-12 lg:gap-x-0'>
           {activeClients.map((client, index) => (
             <div key={index} className='col-span-1'>
               <Link hrefLang={'en-US'} href={client.url} passHref>
