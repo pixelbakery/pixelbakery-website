@@ -13,7 +13,7 @@ function Contct_Clients() {
             <H2 color='pink-light'>Become a client</H2>
           </div>
           <div className='col-span-1'>
-            <Lead color='peach' className='leading-tight'>
+            <Lead color='blue-dark' className='leading-tight'>
               Schedule a meeting with our leadership team to discuss your next big project and to
               see if we’re a good fit for one another! <br />
               <br />
@@ -28,7 +28,7 @@ function Contct_Clients() {
             <Button_Filled
               link='/onboarding'
               text='start a project'
-              textColor='peach'
+              textColor='blue-dark'
               bgColor='pink-light'
               center={false}
               chevronDirection={'right'}

@@ -28,7 +28,6 @@ function EducationPage({ allMadeToOrders }) {
 export default EducationPage
 
 export const getStaticProps = async () => {
-  // Made to Order (new system)
   const allMadeToOrders = madeToOrderFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
@@ -41,7 +40,5 @@ export const getStaticProps = async () => {
     })
     .sort((mto1, mto2) => (mto1.data.date > mto2.data.date ? -1 : 1))
 
-  return {
-    props: { allMadeToOrders },
-  }
+  return { props: { allMadeToOrders } }
 }

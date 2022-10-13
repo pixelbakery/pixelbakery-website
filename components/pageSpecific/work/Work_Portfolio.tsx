@@ -17,7 +17,7 @@ const getFeaturedWork = (allCaseStudies) => {
 const getOtherWork = (allCaseStudies) => {
   return allCaseStudies.slice(featuredProjNo).map((project, index) => {
     return (
-      <div key={index} className={cn({ ['hidden md:block']: index > 6 })}>
+      <div key={index} className={cn({ ['hidden md:block']: index > 12 })}>
         <Work_Portfolio_Card project={project} />
       </div>
     )
@@ -29,9 +29,11 @@ const Work_Portfolio = ({ allCaseStudies }) => {
     <>
       <PageSection id='portfolio-intro' className='lg:mb-0 pb-8 lg:pb-12'>
         <InnerWrapper>
-          <H2 className='mb-0 lg:mb-0 text-center mx-auto'>
-            Work we&apos;re really really really <br className='md:hidden' /> proud of
-          </H2>
+          <div className='w-full flex justify-center'>
+            <H2 className='mb-0 lg:mb-0 text-center mx-auto'>
+              Work we&apos;re really really really <br className='md:hidden' /> proud of
+            </H2>
+          </div>
         </InnerWrapper>
       </PageSection>
 

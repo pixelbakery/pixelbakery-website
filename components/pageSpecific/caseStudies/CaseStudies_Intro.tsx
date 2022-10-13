@@ -6,6 +6,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import H2AndLead from '@typography/H2AndLead'
 import Lead from '@typography/Lead'
+import H2 from '@typography/H2'
 export default function CaseStudiesIntro({ children, ...props }) {
   return (
     <PageSection className={cn('lg:py-12')} id={'intro'}>
@@ -30,7 +31,7 @@ export default function CaseStudiesIntro({ children, ...props }) {
             </Link>
           </div> */}
           <div className='col-span-1 lg:col-span-2 mt-3'>
-            <Lead color={'blue'}>{props.title}</Lead>
+            <H2 color={'blue'}>{props.title}</H2>
           </div>
 
           <div className='col-span-1 lg:col-span-3  text-left text-lg mt-0 pt-0'>{children}</div>

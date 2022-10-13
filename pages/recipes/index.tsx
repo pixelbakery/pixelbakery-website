@@ -69,19 +69,6 @@ const getSecondaryPosts = ({ allPosts }) => {
   })
 }
 const Page_Recipes = ({ allPosts }) => {
-  // const [totalPages, setTotalPages] = useState<number>(0)
-  // const [currentPage, setCurrentPage] = useState<number>(secondaryPostNo + featuredPostNo + 5)
-  // const { pathname, query } = useRouter()
-  // const router = useRouter()
-
-  // useEffect(() => {
-  //   const numberOfPages = allPosts.length
-  //   setTotalPages(numberOfPages)
-  // }, [])
-  // useEffect(() => {
-  //   if (currentPage <= totalPages) setCurrentPage(currentPage + 5)
-  // }, [router.query.counter])
-
   const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)
 
   return (

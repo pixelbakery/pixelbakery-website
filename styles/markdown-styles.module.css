@@ -12,11 +12,11 @@
   @apply text-blue-dark text-6xl mt-4;
 }
 .markdown h2 {
-  @apply text-wine text-2xl md:text-4xl pt-6 leading-tight;
+  @apply text-wine text-2xl 2xl:text-3xl pt-6 mb-3 leading-tight normal-case font-semibold;
 }
 
 .markdown h3 {
-  @apply text-xl md:text-2xl mt-8 mb-4 leading-snug;
+  @apply text-xl 2xl:text-2xl mt-8 mb-4 leading-snug normal-case;
 }
 .markdown p {
   @apply text-lg text-wine my-4 pb-3 max-w-3xl;
