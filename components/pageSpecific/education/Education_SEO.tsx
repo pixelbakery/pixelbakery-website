@@ -2,7 +2,6 @@ import { NextSeo } from 'next-seo'
 function Education_SEO() {
   return (
     <NextSeo
-      noindex={false}
       title='Education'
       description={`Our success is a direct result of the people that we meet, whether that be our employees, our clients, or community members. As such, we believe in giving back to our community through education.`}
       canonical={`https://pixelbakery.com/education`}
