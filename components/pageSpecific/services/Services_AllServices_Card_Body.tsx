@@ -6,6 +6,7 @@ interface ServicesCard {
   isHovered: boolean
   primaryColor: string
   isFilled: boolean
+  detailsHoverColor?: string
 }
 
 function Services_AllServices_Card_Body({
@@ -14,6 +15,7 @@ function Services_AllServices_Card_Body({
   isHovered,
   primaryColor,
   isFilled,
+  detailsHoverColor,
 }: ServicesCard) {
   let color
   if (isHovered && isFilled) color = primaryColor
@@ -29,8 +31,10 @@ function Services_AllServices_Card_Body({
           className={cn(
             'pb-0 mb-0 text-lg lg:text-base',
             {
-              ['group-hover:text-blue']: isFilled,
+              ['group-hover:text-blue']: isFilled && !detailsHoverColor,
+              [`group-hover:text-${detailsHoverColor}`]: isFilled && detailsHoverColor,
             },
+
             {
               ['text-cream']: !isFilled,
             },

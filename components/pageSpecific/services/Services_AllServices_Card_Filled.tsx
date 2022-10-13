@@ -6,8 +6,14 @@ interface ServicesCard {
   service: any
   primaryColor: string
   textColor: string
+  detailsHoverColor?: string
 }
-const Services_AllServices_Card = ({ service, primaryColor, textColor }: ServicesCard) => {
+const Services_AllServices_Card = ({
+  service,
+  primaryColor,
+  textColor,
+  detailsHoverColor,
+}: ServicesCard) => {
   const [hovered, setHovered] = useState(false)
   return (
     <Link hrefLang={'en-US'} href={service.url} passHref>
@@ -23,6 +29,7 @@ const Services_AllServices_Card = ({ service, primaryColor, textColor }: Service
           isFilled={true}
           service={service}
           textColor={textColor}
+          detailsHoverColor={detailsHoverColor}
           primaryColor={primaryColor}
           isHovered={hovered}
         />
