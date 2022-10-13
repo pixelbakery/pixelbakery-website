@@ -206,7 +206,7 @@ Here's a list of all the external API calls we make:
 ## AWS S3 CDN
 
 Run the following command to push your local files to s3:
-`aws s3 sync public s3://cdn.pixelbakery.com --exclude "*.DS_Store"`
+`aws s3 sync public s3://cdn.pixelbakery.com --exclude "*.DS_Store" --cache-control max-age=31536000`
 
 Run the following command to pull the files from s3 to your local folder:
 `aws s3 sync s3://cdn.pixelbakery.com public --exclude "*.DS_Store"`
