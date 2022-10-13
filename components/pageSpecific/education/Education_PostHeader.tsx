@@ -2,32 +2,23 @@ import DateFormatter from '@lib/date-formatter'
 
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-import PersonType from 'types/person'
 import cn from 'classnames'
-import ReactPlayer from 'react-player'
 import Link from 'next/link'
-type Props = {
+interface Props {
   title: string
-  subtitle: string
-  coverImage: string
   author: string
   date?: string
-  person: PersonType
   category: string
   forwardedRef: any
   readTime: any
-  video: string
   authorUrl: string
 }
 
 const Education_PostHeader = ({
   title,
   category,
-  coverImage,
   date,
   author,
-  video,
-  person,
   authorUrl,
   forwardedRef,
   readTime,
@@ -38,7 +29,6 @@ const Education_PostHeader = ({
   // } else {
   //   profilePic = '/img/placeholder01.png'
   // }
-  const profilePic = '/img/placeholder01.png'
   return (
     <header className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
@@ -87,18 +77,6 @@ const Education_PostHeader = ({
           </div>
         </div>
       </section>
-
-      <div className='max-w-6xl mx-auto'>
-        <div className=' w-full aspect-w-16 aspect-h-9  mx-auto bg-peach'>
-          <ReactPlayer
-            width={'100%'}
-            height={'100%'}
-            url={video}
-            poster={coverImage}
-            controls={true}
-          />
-        </div>
-      </div>
     </header>
   )
 }
