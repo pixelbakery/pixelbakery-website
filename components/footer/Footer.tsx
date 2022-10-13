@@ -79,9 +79,15 @@ export const Footer: NextPage = () => {
                         </a>
                       </li>
                       <li className='mt-3 text-xl text-cream'>
-                        <Obfuscate tel={'402-302-0323'} className={'text-cream  '}>
-                          402 302 0323
-                        </Obfuscate>
+                        <address>
+                          <Obfuscate
+                            tel={'tel:402-302-0323'}
+                            linkText={'tel:000-000-0000'}
+                            className={'text-cream  '}
+                          >
+                            402 302 0323
+                          </Obfuscate>
+                        </address>
                       </li>
                     </ul>
                   </div>
@@ -141,6 +147,7 @@ export const Footer: NextPage = () => {
               </div>
               <div className='hidden lg:block text-center lg:mt-3'>
                 <Obfuscate
+                  linkText={'mailto:no@no.com'}
                   email={'hello@pixelbakery.com'}
                   className={'text-cream  text-2xl font-extrabold mb-0 pb-0 leading-none'}
                 />

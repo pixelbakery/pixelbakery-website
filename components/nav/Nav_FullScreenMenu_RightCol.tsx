@@ -25,7 +25,11 @@ function Nav_FullScreenMenu_RightCol({ update }) {
             </a>
           </li>
           <li className='mt-3 text-xl text-blue-dark relative duration-100 hover:scale-98 origin-left'>
-            <Obfuscate tel={'402-302-0323'} className={'text-blue-dark  '}>
+            <Obfuscate
+              linkText={'tel:000-000-0000'}
+              tel={'402-302-0323'}
+              className={'text-blue-dark  '}
+            >
               402 302 0323
             </Obfuscate>
           </li>

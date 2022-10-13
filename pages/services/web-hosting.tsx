@@ -24,7 +24,7 @@ export default function Services() {
           We offer this service to any Nebraskan. You&apos;re welcome to choose how much you can
           afford. We&apos;ll help you install Wordpress (if that&apos;s your jam) and provide you
           with security updates as well as weekly backups. Email Jordan for more information:{' '}
-          <Obfuscate email={'jordan@pixelbakery.com'} />
+          <Obfuscate linkText={'mailto:no@nope.com'} email={'jordan@pixelbakery.com'} />
         </p>
       </Services_Header>
       <CaseStudies_CTA />

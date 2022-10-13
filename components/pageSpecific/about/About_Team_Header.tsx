@@ -49,6 +49,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
             <div className='pb-8'>
               {frontMatter.email ? (
                 <Obfuscate
+                  linkText={'mailto:no@no.com'}
                   email={frontMatter.email}
                   className={'block italic text-peach cursor-pointer text-left'}
                 />

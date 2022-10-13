@@ -125,7 +125,11 @@ function Page_Careers_JobShadow() {
               </Lead>
               <p className='text-white text-2xl '>
                 Shoot us an email{' '}
-                <Obfuscate email={'careers@pixelbakery.com'} className={'underline text-white'} />{' '}
+                <Obfuscate
+                  linkText={'mailto:no@nope.com'}
+                  email={'careers@pixelbakery.com'}
+                  className={'underline text-white'}
+                />{' '}
                 with any questions. Fill out the form and we can get something scheduled. In the
                 meantime, go ahead and follow us on social media (
                 <a

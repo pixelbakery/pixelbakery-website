@@ -21,7 +21,12 @@ function SubmissionConfirmation() {
             We received your order and we'll get right to work on it. You should be receiving an
             email confirmation here shortly. If you have any questions, feel free to give Maddie a
             shout at{' '}
-            <Obfuscate email={'maddie@pixelbakery.com'} className={'underline text-peach'} />.
+            <Obfuscate
+              linkText={'mailto:no@nope.com'}
+              email={'maddie@pixelbakery.com'}
+              className={'underline text-peach'}
+            />
+            .
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
