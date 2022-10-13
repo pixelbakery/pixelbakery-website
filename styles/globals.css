@@ -456,3 +456,13 @@ input.form-submit {
 .unset-img > div {
   position: unset !important;
 }
+
+.card {
+  @apply w-full overflow-hidden rounded-xl flex flex-row sm:aspect-16/9 md:aspect-4/3 lg:aspect-1 xl:aspect-3/4 3xl:aspect-4/3;
+}
+.hover-98 {
+  @apply relative ease-out duration-300 cursor-pointer shadow-md hover:opacity-90 hover:scale-98 hover:shadow-sm;
+}
+.hover-99 {
+  @apply relative ease-out duration-300 cursor-pointer shadow-md hover:opacity-90 hover:scale-99 hover:shadow-sm;
+}

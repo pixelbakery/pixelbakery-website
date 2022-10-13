@@ -1,4 +1,4 @@
-import Services_AllServicess_Card from './Services_AllServices_Card'
+import Services_AllServices_Card from './Services_AllServices_Card_Outlined'
 import services from '@data/services'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
@@ -19,7 +19,12 @@ function Services_AllServices() {
 
           <div className=' mx-auto  col-span-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-4 gap-y-6'>
             {services.map((services) => (
-              <Services_AllServicess_Card service={services} key={services.service} />
+              <Services_AllServices_Card
+                service={services}
+                key={services.service}
+                primaryColor={'pink'}
+                textColor={'pink'}
+              />
             ))}
           </div>
         </div>

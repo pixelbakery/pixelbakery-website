@@ -25,7 +25,7 @@ function Home_WhoTheHeck() {
       <div className='hidden md:block absolute w-full h-full z-10 bg-cream top-0 left-0'>
         <div className='relative w-full h-full'>
           <ReactPlayer
-            url='/img/pixel_bakery_reel_bg.mp4'
+            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel_bakery_reel_bg.mp4`}
             width='100%'
             height='100%'
             playing={true}
