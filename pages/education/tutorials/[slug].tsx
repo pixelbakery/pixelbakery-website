@@ -9,7 +9,9 @@ import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 const readingTime = require('reading-time')
-import Video from '@parts/Video'
+const Video = dynamic(() => import('@parts/Video'), {
+  ssr: false,
+})
 import PageSection from '@parts/PageSection'
 import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -21,7 +23,6 @@ const Education_MadeToOrder_GetPrevNextPost = dynamic(
   },
 )
 const Education_SupportUs = dynamic(() => import('@education/Education_SupportUs'), { ssr: false })
-
 import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
 import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
@@ -118,7 +119,7 @@ export const getStaticProps = async ({ params }) => {
 
   if (data.active != false) {
     allTutorials.map((p, index) => {
-      if (p.data.date === data.date) {
+      if (p.data.title === data.title) {
         thisIndex = index
       }
     })
