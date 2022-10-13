@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import path from 'path'
+import remarkGfm from 'remark-gfm'
 import { isBefore, parseISO, sub } from 'date-fns'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { shuffleArray } from '@lib/helpers'
@@ -15,7 +16,7 @@ import { useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Video from '@parts/Video'
 import { useEffect } from 'react'
-import remarkGfm from 'remark-gfm'
+
 import VimeoPlayer from '@parts/VimeoPlayer'
 
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
@@ -108,7 +109,6 @@ export default function PostPage({
 }
 
 export const getStaticProps = async ({ params }) => {
-  //MDX Stuff
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
 
@@ -163,8 +163,6 @@ export const getStaticProps = async ({ params }) => {
   //end get previous next posts
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
-
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
@@ -181,9 +179,6 @@ export const getStaticProps = async ({ params }) => {
       prev: prevIndex,
       matchingBio: matchingBio,
       freshPosts: freshPosts,
-      // thisIndex,
-      // nextIndex,
-      // prevIndex,
       next: nextIndex,
       source: mdxSource,
       frontMatter: data,
@@ -194,7 +189,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  // Map the path into the static paths object required by Next.js
   const paths = postFilePaths
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }))

@@ -2,9 +2,7 @@ import Link from 'next/link'
 import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
-import PropTypes from 'prop-types'
-
-type Props = {
+interface Props {
   text: string
   link: string
   center: boolean
@@ -30,34 +28,26 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
   }
   return (
     <Link hrefLang={'en-US'} href={link} passHref>
-      <div
-        className={cn(
-          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
-          `bg-${bgColor}`,
-          { ['mx-auto']: center },
-        )}
+      <a
+        className={cn('block my-3 py-3 rounded-lg px-6 max-w-sm  hover-99', `bg-${bgColor}`, {
+          ['mx-auto']: center,
+        })}
       >
-        <div className={cn(' font-extrabold text-xl lowercase flex')}>
-          <div
+        <div className={cn(' font-bold text-xl lowercase flex flex-row')}>
+          <span
             className={cn(
-              'text-center flex-grow flex flex-col justify-center leading-none',
+              '-mt-[0.1em] py-0 text-center flex-grow self-center  tracking-wide',
               `text-${textColor}`,
             )}
           >
             {text}
-          </div>
+          </span>
 
-          <i
-            className={cn(
-              'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
-              chevronRotation,
-              `text-${textColor}`,
-            )}
-          >
+          <i className={cn('p-2 self-center ', chevronRotation, `text-${textColor}`)}>
             {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
           </i>
         </div>
-      </div>
+      </a>
     </Link>
   )
 }

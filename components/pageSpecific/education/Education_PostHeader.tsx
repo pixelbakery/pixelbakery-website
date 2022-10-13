@@ -1,4 +1,4 @@
-import DateFormatter from '../../../lib/date-formatter'
+import DateFormatter from '@lib/date-formatter'
 
 import Image from 'next/image'
 import Pill from '@parts/Pill'

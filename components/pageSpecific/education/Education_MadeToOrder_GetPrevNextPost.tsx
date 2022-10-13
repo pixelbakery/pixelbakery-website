@@ -1,44 +1,60 @@
 import { ChevronRightIcon } from '@images/UI_Icons'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
+import Lead from '@typography/Lead'
 import Link from 'next/link'
 
 function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
   return (
-    <PageSection color={'pink-light'} id={'next-post'} disableSpacing={true}>
-      <InnerWrapper className='py-12 my-2' disableSpacing={false}>
-        <div className='flex justify-between'>
-          <Link
-            as={`/education/tutorials/${prev.filePath.replace(/\.mdx?$/, '')}`}
-            href={`/education/tutorials/[slug]`}
-          >
-            <a hrefLang={'en-US'} className='flex'>
-              <div className='w-20 self-center text-peach rotate-180'>
-                <ChevronRightIcon />
-              </div>
-              <div className='flex flex-col justify-center'>
-                <p className='text-peach font-semibold text-xl leading-none my-0 py-0 max-w-md'>
-                  {prev.data.title}
-                </p>
-              </div>
-            </a>
-          </Link>
-          <Link
-            as={`/education/tutorials/${next.filePath.replace(/\.mdx?$/, '')}`}
-            href={`/education/tutorials/[slug]`}
-          >
-            <a hrefLang={'en-US'} className='flex'>
-              <div className='flex flex-col justify-center'>
-                <p className='text-peach font-semibold text-right text-xl leading-none my-0 py-0 max-w-md'>
-                  {next.data.title}
-                </p>
-              </div>
+    <PageSection color={'pink-light'} id={'next-post'}>
+      <InnerWrapper className='py-2 my-2'>
+        <div className='grid grid-cols-2 gap-x-12'>
+          <div className='h-full self-start'>
+            <Link
+              as={`/education/tutorials/${prev.filePath.replace(/\.mdx?$/, '')}`}
+              href={`/education/tutorials/[slug]`}
+            >
+              <a hrefLang={'en-US'} className='flex justify-start h-full'>
+                <div className='text-peach self-center h-full flex flex-col justify-center rotate-180'>
+                  {' '}
+                  <i className='text-3xl p-2'>
+                    <ChevronRightIcon />
+                  </i>
+                </div>
+                <div className='self-center w-fit'>
+                  <Lead
+                    className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full text-left'
+                    noMargins={true}
+                  >
+                    {prev.data.title}
+                  </Lead>
+                </div>
+              </a>
+            </Link>
+          </div>
+          <div className='h-full self-start'>
+            <Link
+              as={`/education/tutorials/${next.filePath.replace(/\.mdx?$/, '')}`}
+              href={`/education/tutorials/[slug]`}
+            >
+              <a hrefLang={'en-US'} className='flex justify-end h-full'>
+                <div className='self-center w-fit'>
+                  <Lead
+                    className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full text-right'
+                    noMargins={true}
+                  >
+                    {next.data.title}
+                  </Lead>
+                </div>
 
-              <div className='w-20 self-center text-peach'>
-                <ChevronRightIcon />
-              </div>
-            </a>
-          </Link>
+                <div className='text-peach self-center h-full flex flex-col justify-center'>
+                  <i className='text-3xl p-2'>
+                    <ChevronRightIcon />
+                  </i>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
       </InnerWrapper>
     </PageSection>

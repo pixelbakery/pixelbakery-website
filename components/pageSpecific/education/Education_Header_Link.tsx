@@ -12,16 +12,18 @@ type Props = {
 function ComponentName({ header, subheader, inpageLink }: Props) {
   return (
     <Link hrefLang={'en-US'} href={inpageLink} scroll={false} passHref>
-      <div className='px-6 lg:px-12 py-12 sm:py-14 h-20 my-3 md:my-4 cursor-pointer  border-2 border-pink rounded-xl flex flex-col justify-center transition duration-400 ease-in-out transform hover:scale-101'>
+      <div className='px-6 lg:px-12 py-12 sm:py-14 h-20 my-3 md:my-4 cursor-pointer  border-2 lg:border-4 border-pink rounded-xl flex flex-col justify-center transition duration-400 ease-in-out transform hover:scale-101'>
         <Lead color={'pink'} className='mb-0 pb-0 lg:mb-0'>
           {header}
         </Lead>
         <div className='flex flex-row w-full justify-between max-w-9/11'>
-          <p className='self-center text-wine-200 font-medium text-md lg:text-lg md:text-xl pt-0 my-0  pb-0 leading-none'>
+          <p className='flex-grow self-center text-wine-200 font-medium text-md lg:text-lg md:text-xl pt-0 my-0  pb-0 leading-none'>
             {subheader}
           </p>
 
-          <ChevronRightIcon className='-mr-4 md:mr-0 -mb-1 lg:-mb-2 mt-0 py-0 w-8 h-8 md:w-12 md:h-12 text-pink mx-1 self-center justify-self-end' />
+          <i className='text-xl p-2 text-pink self-center'>
+            <ChevronRightIcon />
+          </i>
         </div>
       </div>
     </Link>
