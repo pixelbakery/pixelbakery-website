@@ -2,34 +2,41 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import Main from '@parts/Main'
-
+import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import Home_WhatWeMake from '@home/Home_WhatWeMake'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-const Home_Services = dynamic(() => import('@home/Home_Services'), { ssr: false })
-const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
-  loading: () => (
-    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-  ssr: false,
-})
-const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), { ssr: false })
+import Home_Services from '@home/Home_Services'
+import Home_SEO from '@home/Home_SEO'
+import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
+import Home_Recipes from '@home/Home_Recipes'
+import Home_Portfolio from '@home/Home_Portfolio'
 
-const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
+const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
+  suspense: true,
+})
+
+// const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), { ssr: false })
+// const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
 
 // import Home_Awwwards from '@home/Home_Awwwards'
-const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), { ssr: false })
-import Home_SEO from '@home/Home_SEO'
+// const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), { ssr: false })
 
 const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
       <Home_SEO />
       {/* <Home_Awwwards /> */}
-      <Home_Landing />
+      <Suspense
+        fallback={
+          <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
+            <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+          </section>
+        }
+      >
+        <Home_Landing />
+      </Suspense>
       <Home_WhoTheHeck />
       <Home_WhatWeMake />
       <Home_Services />

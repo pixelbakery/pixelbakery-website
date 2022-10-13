@@ -6,30 +6,30 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import Video from '@parts/Video'
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import remarkGfm from 'remark-gfm'
 import VimeoPlayer from '@parts/VimeoPlayer'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
-  ssr: false,
+  ssr: true,
 })
 const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
-  ssr: false,
+  ssr: true,
 })
 const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
   ssr: false,
 })
 const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
-  ssr: false,
+  ssr: true,
 })
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
 
 const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_Storyboards'), {
-  ssr: false,
+  ssr: true,
 })
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
