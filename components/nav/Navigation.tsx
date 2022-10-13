@@ -250,7 +250,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
+        className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 pb-2 pt-4 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
         <Link hrefLang={'en-US'} href={'/'}>

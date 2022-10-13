@@ -56,49 +56,50 @@ export const Footer: NextPage = () => {
                 </ul>
               </nav>
             </div>
-
-            <div className='hidden sm:flex flex-col justify-start h-full md:pr-6'>
-              <div className='self-center w-full hidden lg:block'>
-                <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
-                  <H3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
-                    studio
-                  </H3>
+            <div className='flex flex-col justify-between'>
+              <div className='hidden sm:flex flex-col justify-start h-full md:pr-6'>
+                <div className='self-center w-full hidden lg:block'>
+                  <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
+                    <H3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
+                      studio
+                    </H3>
+                  </div>
+                  <div>
+                    <ul className='mt-3 text-center md:text-left'>
+                      <li>
+                        <a
+                          className='text-cream text-xl'
+                          target='_blank'
+                          href='https://g.page/pixelbakery?share'
+                          rel='noreferrer'
+                        >
+                          2124 y st ste 122
+                          <br />
+                          lincoln, ne 68503
+                        </a>
+                      </li>
+                      <li className='mt-3 text-xl text-cream'>
+                        <Obfuscate tel={'402-302-0323'} className={'text-cream  '}>
+                          402 302 0323
+                        </Obfuscate>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <ul className='mt-3 text-center md:text-left'>
-                    <li>
-                      <a
-                        className='text-cream text-xl'
-                        target='_blank'
-                        href='https://g.page/pixelbakery?share'
-                        rel='noreferrer'
-                      >
-                        2124 y st ste 122
-                        <br />
-                        lincoln, ne 68503
-                      </a>
-                    </li>
-                    <li className='mt-3 text-xl text-cream'>
-                      <Obfuscate tel={'402-302-0323'} className={'text-cream  '}>
-                        402 302 0323
-                      </Obfuscate>
-                    </li>
-                  </ul>
+                <div className='xl:pt-4 md:pr-4 hidden lg:block'>
+                  <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
+                    <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                      more stuff
+                    </H3>
+                  </div>
+                  <nav className=''>
+                    <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
+                      {nav_footer_sub.map((navitem) => (
+                        <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
+                      ))}
+                    </ul>
+                  </nav>
                 </div>
-              </div>
-              <div className='xl:pt-4 md:pr-4 hidden lg:block'>
-                <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
-                  <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
-                    more stuff
-                  </H3>
-                </div>
-                <nav className=''>
-                  <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
-                    {nav_footer_sub.map((navitem) => (
-                      <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
-                    ))}
-                  </ul>
-                </nav>
               </div>
             </div>
             {/* Mobile Nav */}
@@ -146,7 +147,7 @@ export const Footer: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col md:flex-row justify-center md:justify-between'>
+          <div className='flex flex-col md:flex-row justify-center md:justify-between pt-3'>
             <button
               onClick={updateModal}
               className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md py-2 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
