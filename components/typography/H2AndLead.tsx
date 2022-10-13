@@ -1,5 +1,7 @@
 import React, { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
+import H2 from './H2'
+import Lead from './Lead'
 
 type Props = {
   children?: ReactNode
@@ -20,18 +22,20 @@ const H2AndLead = ({
 }: PropsWithChildren<Props>) => {
   return (
     <div className={cn([`${className}`])}>
-      <h2
-        className={cn(
-          'font-bold max-w-md mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-3xl leading-none mb-4',
-          { [`text-${headerColor}`]: headerColor, [`text-peach`]: !headerColor },
-        )}
-      >{`${headerText}`}</h2>
-      <p
-        className={cn('text-2xl lg:text-3xl mt-0 font-bold leading-tight max-w-lg mb-0 pb-0', {
+      <H2
+        noMargins={true}
+        className={cn(' mb-4', {
+          [`text-${headerColor}`]: headerColor,
+          [`text-peach`]: !headerColor,
+        })}
+      >{`${headerText}`}</H2>
+      <Lead
+        noMargins={true}
+        className={cn('', {
           [`text-${leadColor}`]: leadColor,
           [`text-wine`]: !leadColor,
         })}
-      >{`${leadText}`}</p>
+      >{`${leadText}`}</Lead>
     </div>
   )
 }
