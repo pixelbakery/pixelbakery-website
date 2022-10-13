@@ -1,7 +1,8 @@
-import Video from '@parts/Video'
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import H1 from '@typography/H1'
 import Pill from '@parts/Pill'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 // import Player from 'components/player/Player'
 function CaseStudies_Header({ ...props }) {
   const Logo = () => {

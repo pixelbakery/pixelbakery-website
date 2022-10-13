@@ -3,8 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
-import Video from '@parts/Video'
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import Loading from '@utility/Loading'
+import dynamic from 'next/dynamic'
 
 type Props = {
   date?: string

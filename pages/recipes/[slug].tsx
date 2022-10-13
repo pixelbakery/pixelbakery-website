@@ -14,7 +14,8 @@ import Main from '@parts/Main'
 import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import { useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
-import Video from '@parts/Video'
+
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import { useEffect } from 'react'
 
 import VimeoPlayer from '@parts/VimeoPlayer'
@@ -52,12 +53,7 @@ export default function PostPage({
   source,
   frontMatter,
   matchingBio,
-  // relatedPosts,
-  // thisIndex,
-  // nextIndex,
-  // prevIndex,
   prev,
-
   next,
 }) {
   const datePostedISO = new Date(JSON.parse(JSON.stringify(frontMatter.date))).toISOString()
