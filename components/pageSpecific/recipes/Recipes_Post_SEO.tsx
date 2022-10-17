@@ -41,8 +41,8 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
       />
       <ArticleJsonLd
         url={`https://pixelbakery.com/recipes/${slug}`}
-        title={frontMatter.title}
-        images={frontMatter.coverImage}
+        title={` ${frontMatter.title}`}
+        images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={[
           {

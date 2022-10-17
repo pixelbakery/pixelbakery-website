@@ -47,7 +47,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
           },
           images: [
             {
-              url: `${frontMatter.coverImage}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
             },
           ],
@@ -56,7 +56,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
       <ArticleJsonLd
         url={`https://pixelbakery.com/education/tutorials/${slug}`}
         title={`${frontMatter.title}`}
-        images={[`${frontMatter.coverImage}`]}
+        images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={[
           {
