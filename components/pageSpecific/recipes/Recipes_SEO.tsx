@@ -12,7 +12,7 @@ const Recipes_SEO = () => {
         url: `https://pixelbakery.com/recipes`,
         title: "Pixel Bakery – Mom's Recipes",
         description:
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+          'Sometimes we say smart things, and sometimes we have things we want to say. You can find all those things here.',
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

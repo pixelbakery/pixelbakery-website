@@ -44,7 +44,12 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
         title={frontMatter.title}
         images={frontMatter.coverImage}
         datePublished={`${datePostedISO}`}
-        authorName={[`${frontMatter.author.name}`]}
+        authorName={[
+          {
+            name: `${frontMatter.author.name}`,
+            url: `https://pixelbakery.com/about/${frontMatter.author.slug}`,
+          },
+        ]}
         description={`${frontMatter.excerpt}`}
       />
     </>
