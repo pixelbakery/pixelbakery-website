@@ -20,10 +20,10 @@ function CaseStudies_SEO({ frontMatter, slug }) {
         ]}
       />
       <VideoJsonLd
-        name={`${frontMatter.title}`}
+        name={`${frontMatter.client}: ${frontMatter.title}`}
         description={frontMatter.excerpt}
         // contentUrl='http://player.vimeo.com/video123.mp4'
-        embedUrl={`http://player.vimeo.com/${frontMatter.heroVideo}`}
+        embedUrl={`http://player.vimeo.com/${frontMatter.vimeoID}`}
         uploadDate={`${datePostedISO}`}
         thumbnailUrls={[
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,

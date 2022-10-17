@@ -19,7 +19,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
         // contentUrl='http://player.vimeo.com/video123.mp4'
         embedUrl={`http://www.youtube.com/${removeFirst}`}
         uploadDate={`${datePostedISO}`}
-        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverVideo}.jpg`]}
+        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}.jpg`]}
       />
       <BreadcrumbJsonLd
         itemListElements={[
@@ -30,11 +30,6 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
           },
           {
             position: 2,
-            name: 'Tutorials',
-            item: 'https://pixelbakery.com/education#madeToOrder',
-          },
-          {
-            position: 3,
             name: `${frontMatter.title}`,
             item: `https://pixelbakery.com/education/tutorials/${slug}`,
           },
