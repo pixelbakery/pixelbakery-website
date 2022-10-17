@@ -16,7 +16,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
         // contentUrl='http://player.vimeo.com/video123.mp4'
         embedUrl={`http://www.youtube.com/embed/${removeFirst}`}
         uploadDate={`${datePostedISO}`}
-        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}.jpg`]}
+        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
       />
       <BreadcrumbJsonLd
         itemListElements={[
