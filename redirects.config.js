@@ -265,6 +265,11 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/work/case-studies/Onyx-Coffee-Journey',
+    destination: '/work/case-studies/onyx-coffee-process-animation',
+    permanent: true,
+  },
+  {
     source: '/recipes/tutorial-crash-course-on-motion2',
     destination: '/recipes/tutorial-motion2',
     permanent: true,

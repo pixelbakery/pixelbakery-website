@@ -14,7 +14,7 @@ const H2 = ({ color, children, className, noMargins, noMaxWidth }: PropsWithChil
   return (
     <h2
       className={cn(
-        'inline-block font-bold mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-none ',
+        'font-bold mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-none ',
         { [`max-w-md 2xl:max-w-3xl `]: !noMaxWidth },
         { [`mb-12 2xl:mb-20 `]: !noMargins },
         { [`text-${color}`]: color, [`text-peach`]: !color },

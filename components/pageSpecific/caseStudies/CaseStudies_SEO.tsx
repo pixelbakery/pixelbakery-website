@@ -1,6 +1,8 @@
-import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo, VideoJsonLd } from 'next-seo'
 
 function CaseStudies_SEO({ frontMatter, slug }) {
+  const datePostedISO = new Date(frontMatter.date).toISOString()
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -15,6 +17,16 @@ function CaseStudies_SEO({ frontMatter, slug }) {
             name: `${frontMatter.title}`,
             item: `https://pixelbakery.com/work/case-studies/${slug}`,
           },
+        ]}
+      />
+      <VideoJsonLd
+        name={`${frontMatter.title}`}
+        description={frontMatter.excerpt}
+        // contentUrl='http://player.vimeo.com/video123.mp4'
+        embedUrl={`http://player.vimeo.com/${frontMatter.heroVideo}`}
+        uploadDate={`${datePostedISO}`}
+        thumbnailUrls={[
+          `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,
         ]}
       />
       <NextSeo
@@ -36,18 +48,6 @@ function CaseStudies_SEO({ frontMatter, slug }) {
               width: 1200,
               height: 900,
               alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
-              width: 1200,
-              height: 900,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/${frontMatter.vimeoPreview}.jpg`,

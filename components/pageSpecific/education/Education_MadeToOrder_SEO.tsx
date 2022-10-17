@@ -1,4 +1,4 @@
-import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd, VideoJsonLd } from 'next-seo'
 
 interface SEO {
   frontMatter: any
@@ -6,8 +6,21 @@ interface SEO {
   slug: string
 }
 function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
+  const str = frontMatter.video
+  const removeFirst = str
+    .replace('https://youtu.be/', '')
+    .replace('https://youtube.com/watch?v=', '')
+
   return (
     <>
+      <VideoJsonLd
+        name={`${frontMatter.title}`}
+        description={frontMatter.excerpt}
+        // contentUrl='http://player.vimeo.com/video123.mp4'
+        embedUrl={`http://www.youtube.com/${removeFirst}`}
+        uploadDate={`${datePostedISO}`}
+        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverVideo}.jpg`]}
+      />
       <BreadcrumbJsonLd
         itemListElements={[
           {
