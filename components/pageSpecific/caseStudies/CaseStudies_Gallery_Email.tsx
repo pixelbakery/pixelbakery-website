@@ -29,18 +29,27 @@ const CaseStudies_Gallery_Email = () => {
                 <Image_VarH
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_ChesapeakeEmail_v02.jpg`}
                   openInNewWindow={true}
+                  alt={
+                    'Graphic design and copywriting content kit we made for SNACKLINS email campaign'
+                  }
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Email_BFCM_Launch_v03.jpg`}
                   openInNewWindow={true}
+                  alt={
+                    'Graphic design and copywriting content kit we made for a SNACKLINS email campaign about a new product launch'
+                  }
                 />
               </div>
               <div className='col-span-1'>
                 <Image_VarH
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_NachoEmail_v04.jpg`}
                   openInNewWindow={true}
+                  alt={
+                    'Graphic design and copywriting content kit we made for a SNACKLINS email campaign about a unique ways to interact with their product'
+                  }
                 />
               </div>
             </div>
