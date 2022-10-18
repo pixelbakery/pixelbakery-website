@@ -1,11 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent header={'Privacy Policy'} subheader={'yada yada yada'} />
+  ),
+  ssr: false,
+})
 
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 
 function PrivacyPolicy() {
   return (

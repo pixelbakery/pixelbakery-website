@@ -2,7 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import Main from '@parts/Main'
-import { Suspense } from 'react'
+
 import dynamic from 'next/dynamic'
 import Home_WhatWeMake from '@home/Home_WhatWeMake'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
@@ -12,15 +12,28 @@ import Home_SEO from '@home/Home_SEO'
 // import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_Recipes from '@home/Home_Recipes'
 import Home_Portfolio from '@home/Home_Portfolio'
-import Home_Landing from '@home/Home_Landing'
-// const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
-//   suspense: true,
-//   ssr: false,
-// })
+import H1 from '@typography/H1'
+import H2 from '@typography/H2'
+
+const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
+  loading: () => (
+    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H1>Pixel Bakery Design Studio</H1>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
+  ssr: false,
+})
 const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
   ssr: false,
-  suspense: false,
+  loading: () => (
+    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H2>Who The Heck</H2>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
 })
+
 // const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
 
 // import Home_Awwwards from '@home/Home_Awwwards'
@@ -31,24 +44,11 @@ const Home = ({ allPosts, allCaseStudies }) => {
     <Main>
       <Home_SEO />
       {/* <Home_Awwwards /> */}
-      <Suspense
-        fallback={
-          <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
-            <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-          </section>
-        }
-      >
-        <Home_Landing />
-      </Suspense>
-      <Suspense
-        fallback={
-          <section className='relative md:max-h-screen bg-pink-light lander-responsive'>
-            <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-          </section>
-        }
-      >
-        <Home_WhoTheHeck />
-      </Suspense>
+
+      <Home_Landing />
+
+      <Home_WhoTheHeck />
+
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio allCaseStudies={allCaseStudies} />
