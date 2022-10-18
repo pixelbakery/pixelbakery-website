@@ -1,12 +1,19 @@
 import Main from '@parts/Main'
 import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent header={'Company Store'} subheader={'Freshly baked every morning'} />
+  ),
+  ssr: false,
+})
 import LogoAnimation_Intro from '@logoAnimation/LogoAnimation_Intro'
 import LogoAnimation_Descriptions from '@logoAnimation/LogoAnimation_Descriptions'
 import LogoAnimation_PastClients from '@logoAnimation/LogoAnimation_PastClients'
 import LogoAnimation_Tiers from '@logoAnimation/LogoAnimation_Tiers'
 import LogoAnimation_GetStarted from '@logoAnimation/LogoAnimation_GetStarted'
 import LogoAnimation_SEO from '@logoAnimation/LogoAnimation_SEO'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 
 function LogoAnimation() {
   return (
