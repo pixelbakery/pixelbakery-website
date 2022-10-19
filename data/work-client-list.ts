@@ -270,6 +270,6 @@ export default [
     client: 'Backcountry',
     logo: '/img/clients/pixelbakery_client_backcountry.png',
     url: 'https://www.backcountry.com/',
-    active: false,
+    active: true,
   },
 ]
