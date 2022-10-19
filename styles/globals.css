@@ -206,7 +206,7 @@
   min-height: 66vh;
   max-height: calc(100vh - 2rem) !important;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .lander-services {
     min-height: 66vh;
     max-height: calc(100vh - 2rem) !important;
@@ -465,4 +465,7 @@ input.form-submit {
 }
 .hover-99 {
   @apply relative ease-out duration-300 cursor-pointer shadow-md hover:opacity-90 hover:scale-99 hover:shadow-sm;
+}
+.bg-dangerPink {
+  @apply bg-[rgb(255,172,211)];
 }

@@ -20,7 +20,7 @@ export default function Services() {
         serviceName={'Video Production'}
         isLottie={false}
         subheader={'Making your story come to life'}
-        bgColor={'pink'}
+        bgColor={'dangerPink'}
         videoSourceWEBM={'/img/PB_ServiceAniamtion_VideoProduction.webm'}
         videoSourceMP4={'/img/PB_ServiceAniamtion_VideoProduction.mp4'}
       >

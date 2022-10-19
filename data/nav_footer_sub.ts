@@ -18,8 +18,8 @@ export default [
     text: 'Motion Mixer',
     url: '/logo-animation',
   },
-  {
-    text: 'Pay-What-Ya-Want Web Hosting',
-    url: '/services/web-hosting',
-  },
+  // {
+  //   text: 'Pay-What-Ya-Want Web Hosting',
+  //   url: '/services/web-hosting',
+  // },
 ]
