@@ -1,9 +1,113 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.taxonomy.seoDescriptionField": "excerpt",
-  "frontMatter.taxonomy.seoSlugLength":75,
-  "frontMatter.taxonomy.seoDescriptionLength":155,
+  "frontMatter.taxonomy.seoSlugLength": 75,
+  "frontMatter.taxonomy.seoDescriptionLength": 155,
   "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "_caseStudies",
+      "pageBundle": false,
+      "previewPath": "work/case-studies",
+      "fields": [
+        {
+          "title": "Client",
+          "name": "client",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Active",
+          "name": "active",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+                {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Date Published",
+          "name": "date",
+          "type": "string",
+          "single": true,
+          "default": "{{now}}",
+          "required": true
+        },
+        {
+          "title": "Services",
+          "name": "tags",
+          "type": "taxonomy",
+          "taxonomyId": "tags_services",
+          "required": true
+        },
+        {
+          "title": "Vimeo ID",
+          "description": "The string of numbers at the end of the URL of the vimeo link",
+          "name": "vimeoID",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Video Preview Images",
+          "description": "The file name of the preview images. Do not include the extension (.jpg) or the file path.",
+          "name": "vimeoPreview",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Client Website",
+          "name": "website",
+          "default": "https://",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Logo",
+          "description": "Either a PNG or SVG",
+          "name": "logo",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Credits",
+          "name": "credits",
+          "type": "block",
+          "fieldGroup": [
+            "credits"
+          ]
+        },
+        {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug",
+          "default": "{{slug}}",
+          "editable": true
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "default": "_caseStudies",
+          "type": "string",
+          "single": true,
+          "required": true,
+          "hidden": true
+        }
+      ]
+    },
     {
       "name": "default",
       "pageBundle": false,
@@ -111,7 +215,7 @@
           "type": "fields",
           "name": "author",
           "fields": [
-                        {
+            {
               "title": "Author Name",
               "name": "name",
               "type": "string",
@@ -123,7 +227,8 @@
               "type": "string",
               "single": true
             }
-          ]},
+          ]
+        },
         {
           "title": "excerpt",
           "name": "excerpt",
@@ -212,7 +317,7 @@
           "name": "coverImage",
           "type": "image"
         },
-         {
+        {
           "title": "Video Header Link",
           "name": "video",
           "type": "string",
@@ -444,7 +549,6 @@
     "Sophia Stueven",
     "SoulPancake",
     "Sound Design",
-    "Sound design",
     "Spotlight",
     "Stefania Lewicki",
     "Studio Manager",
@@ -660,6 +764,41 @@
         "Procreate",
         "Illustrator"
       ]
+    },
+    {
+      "id": "tags_services",
+      "options": [
+        "2d Animation",
+        "3d Animation",
+        "3d Modeling",
+        "Animated Explainer",
+        "Artificial Reality",
+        "Casting & Talent Management",
+        "Color grading",
+        "Creative Concepting",
+        "Drone / Aerial Videography",
+        "Ecommerce",
+        "Emerging Media",
+        "Film Production",
+        "Illustration",
+        "Kinetic Typography",
+        "Logo Animation",
+        "Motion Design",
+        "Motion Graphics",
+        "Post-Production",
+        "Prototyping",
+        "Roll-out Marketing Plan",
+        "Scripting & Storyboarding",
+        "Set Design",
+        "Social Media Toolkits",
+        "Sound Design",
+        "YouTube Ads",
+        "UI / UX design",
+        "Video Editing",
+        "Video Production",
+        "Web Hosting",
+        "Web Design"
+      ]
     }
   ],
   "frontMatter.global.activeMode": "",
@@ -803,6 +942,32 @@
     }
   ],
   "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "credits",
+      "labelField": "name",
+      "fields": [
+        {
+          "title": "Name",
+          "name": "name",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Website",
+          "description": "Internal or otherwise.",
+          "name": "website",
+          "type": "string",
+          "default": "/about/",
+          "single": true
+        }
+      ]
+    },
     {
       "id": "socials",
       "labelField": "poop",

@@ -8,9 +8,6 @@ import Link from 'next/link'
 
 function Work_Clients() {
   const activeClients = clientList.filter((client) => client.active)
-  activeClients.forEach((c) => {
-    console.log(c.logo)
-  })
   return (
     <PageSection id={'clients'} color={'white'}>
       <InnerWrapper>

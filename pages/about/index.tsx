@@ -43,6 +43,7 @@ export function getStaticProps() {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(PEOPLE_PATH, filePath))
       const { data } = matter(source)
+
       return {
         data,
         filePath,
