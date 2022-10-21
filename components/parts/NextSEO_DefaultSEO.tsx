@@ -13,7 +13,7 @@ function NextSEO_DefaultSEO() {
           'Pixel Bakery is a Nebraska-based multi-disciplinary production studio focused on animation, motion design, and video production.',
         locale: 'en_IE',
         url: 'pixelbakery.com',
-        site_name: 'Pixel Bakery Design Studio',
+        siteName: 'Pixel Bakery Design Studio',
       }}
       facebook={{
         appId: '4076929202366682',

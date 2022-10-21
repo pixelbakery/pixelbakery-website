@@ -55,7 +55,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
               type: 'image/jpeg',
             },
           ],
-          site_name: 'Pixel Bakery Design Studio',
+          siteName: 'Pixel Bakery Design Studio',
         }}
         twitter={{
           handle: '@pixelbakerylnk',

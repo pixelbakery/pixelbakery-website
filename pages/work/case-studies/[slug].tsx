@@ -156,6 +156,7 @@ export const getStaticProps = async ({ params }) => {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { content, data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
         filePath,
@@ -170,7 +171,7 @@ export const getStaticProps = async ({ params }) => {
   let otherCaseStudies = allCaseStudies.filter((cs) => cs.data.title != data.title)
   shuffleArray(otherCaseStudies)
   otherCaseStudies = otherCaseStudies.slice(0, 3)
-
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
       slug: params.slug,

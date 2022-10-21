@@ -94,7 +94,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
           ],
           title: `${product.name}`,
           description: `${product.description}`,
-          site_name: 'Pixel Bakery',
+          siteName: 'Pixel Bakery',
         }}
         twitter={{
           handle: '@pixelbakerylnk',
