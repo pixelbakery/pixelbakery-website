@@ -16,7 +16,16 @@ interface video {
 function Video({ url, ...props }: video) {
   return (
     <div>
-      {props.title != undefined ? <Lead color='blue-dark'>{props.title}</Lead> : ''}
+      {props.title != undefined ? (
+        <div className='mt-12'>
+          {' '}
+          <Lead color='blue-dark mb-2 pb-2' noMargins={true}>
+            {props.title}
+          </Lead>
+        </div>
+      ) : (
+        ''
+      )}
       <div
         className={cn(
           { ['markdown-video aspect-16/9']: props.className === undefined },

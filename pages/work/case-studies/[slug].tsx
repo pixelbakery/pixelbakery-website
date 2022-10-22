@@ -45,7 +45,7 @@ import CaseStudies_Header_NoVideo from '@caseStudies/CaseStudies_Header_NoVideo'
 import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 import InnerWrapper from '@parts/InnerWrapper'
-
+import Image_VarH from '@parts/Image_VarH'
 //stuff built for Marq
 import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
@@ -87,6 +87,7 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
         {children}
       </CaseStudies_Description>
     ),
+    Image_VarH: Image_VarH,
     CaseStudiesIntro: ({ title, children }) => (
       <CaseStudies_Intro
         title={title}

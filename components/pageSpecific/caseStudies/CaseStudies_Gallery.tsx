@@ -1,7 +1,7 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
+import { Navigation, Pagination, A11y, Keyboard } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -64,7 +64,7 @@ function CaseStudies_Gallery() {
   }
   return (
     <>
-      <PageSection>
+      <PageSection id={'product-photography'}>
         <InnerWrapper>
           <div className='relative'></div>
 
