@@ -15,7 +15,7 @@ interface video {
 }
 function Video({ url, ...props }: video) {
   return (
-    <div>
+    <div className='h-full w-full'>
       {props.title != undefined ? (
         <div className='mt-12'>
           {' '}
@@ -28,7 +28,7 @@ function Video({ url, ...props }: video) {
       )}
       <div
         className={cn(
-          { ['markdown-video aspect-16/9']: props.className === undefined },
+          { ['w-full markdown-video aspect-16/9']: props.className === undefined },
           { [`${props.className}`]: props.className },
         )}
       >
@@ -43,7 +43,7 @@ function Video({ url, ...props }: video) {
           muted={props.muted ? props.muted : false}
           playsinline={props.playsInline ? props.playsInline : false}
           controls={props.controls ? props.controls : true}
-          className={'videoWrapper'}
+          className={'w-full videoWrapper'}
           config={{
             vimeo: {
               playerOptions: {
