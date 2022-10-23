@@ -4,22 +4,12 @@ const Careers_SEO = () => {
   return (
     <NextSeo
       title='Careers'
-      description={` We’re a motion-focused creative shop, meaning while our most frequently requested
-              services are in the areas of animation, videography, and web design, we basically do
-              it all – from production on animated series in LA, to rebrands for local startups, to
-              print design to regional nonprofits. We are producers and we are creatives, and at the
-              end of the day we find our happiness and fulfillment from making great creative that
-              touches lives.`}
+      description={`Come join an awesome team of videographers, producers, and creatives.`}
       canonical={`https://pixelbakery.com/careers`}
       openGraph={{
         url: `https://pixelbakery.com/careers`,
         title: 'Careers',
-        description: ` We’re a motion-focused creative shop, meaning while our most frequently requested
-              services are in the areas of animation, videography, and web design, we basically do
-              it all – from production on animated series in LA, to rebrands for local startups, to
-              print design to regional nonprofits. We are producers and we are creatives, and at the
-              end of the day we find our happiness and fulfillment from making great creative that
-              touches lives.`,
+        description: `Come join an awesome team of videographers, producers, and creatives.`,
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
