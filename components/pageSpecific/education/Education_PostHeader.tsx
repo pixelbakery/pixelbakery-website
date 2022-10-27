@@ -9,20 +9,11 @@ interface Props {
   author: string
   date?: string
   category: string
-  forwardedRef: any
   readTime: any
   authorUrl: string
 }
 
-const Education_PostHeader = ({
-  title,
-  category,
-  date,
-  author,
-  authorUrl,
-  forwardedRef,
-  readTime,
-}: Props) => {
+const Education_PostHeader = ({ title, category, date, author, authorUrl, readTime }: Props) => {
   // let profilePic
   // if (person.slug && person.photos.headshotSmiling != typeof undefined) {
   //   profilePic = person.photos.headshotSmiling
@@ -56,7 +47,7 @@ const Education_PostHeader = ({
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} />
                 <span className='mx-2'>|</span>
-                <span ref={forwardedRef}>{readTime}</span>
+                <span>{readTime.minutes.toString()} min read</span>
               </div>
 
               <div className='text-sm text-wine'>

@@ -15,7 +15,6 @@ const Video = dynamic(() => import('@parts/Video'), {
   ssr: false,
 })
 import PageSection from '@parts/PageSection'
-import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 import Education_PostHeader from '@education/Education_PostHeader'
