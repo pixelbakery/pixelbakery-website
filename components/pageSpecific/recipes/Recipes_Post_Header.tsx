@@ -9,13 +9,12 @@ import dynamic from 'next/dynamic'
 
 type Props = {
   date?: string
-  forwardedRef: any
   frontMatter: any
   readTime: any
   matchingBio: any
 }
 
-const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, readTime }: Props) => {
+const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props) => {
   // let profilePic
   // if (matchingBio.slug && matchingBio.data.headshotSmiling != typeof undefined) {
   //   profilePic = matchingBio.headshotSmiling
@@ -96,7 +95,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, forwardedRef, rea
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} />
                 <span className='mx-2'>|</span>
-                <span ref={forwardedRef}>{readTime}</span>
+                <span>{readTime.minutes.toString()} min read</span>
               </div>
 
               {matchingBio ? (

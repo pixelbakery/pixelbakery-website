@@ -23,11 +23,11 @@ import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-import addMonths from 'date-fns/addMonths'
 
 //css imports
 import markdownStyles from '@styles/markdown-styles.module.css'
 import Careers_SEO from '@careers/Careers_Post_SEO'
+import dayjs from 'dayjs'
 
 const components = {
   Head,
@@ -43,8 +43,8 @@ export default function JobsPage({ slug, source, frontMatter }) {
       return `/img/pixel-bakery-samee-dan-1200x900.png`
     }
   }
-  const datePostedISO = new Date(frontMatter.date).toISOString()
-  const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
+  const datePostedISO = dayjs(frontMatter.date).toISOString()
+  const dateExpiredISO = dayjs(datePostedISO).add(2, 'month').toISOString()
   return (
     <Main>
       <Careers_SEO

@@ -1,15 +1,16 @@
 import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
+import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 
 function CaseStudies_CTA() {
   return (
-    <PageSection color='blue-light' className='' id={'cta'}>
+    <PageSection color='yellow' className='' id={'cta'}>
       <InnerWrapper>
-        <Lead color='blue-dark' className='text-center mx-auto'>
+        <H2 color='blue-dark' className='text-center mx-auto' noMaxWidth={true}>
           Ready to expand your brand?
-        </Lead>
+        </H2>
         <Button_Filled
           text={"Let's Chat"}
           link={'/onboarding'}

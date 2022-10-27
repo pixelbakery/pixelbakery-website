@@ -6,7 +6,7 @@ import Button_Filled from '@parts/Button_Filled'
 
 function CaseStudies_OtherProjects({ otherCaseStudies }) {
   return (
-    <PageSection color='yellow' id={'other-projects'}>
+    <PageSection color='cream' id={'other-projects'}>
       <InnerWrapper>
         <H2 color='blue-dark'>More Projects</H2>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-3 lg:gap-8'>
