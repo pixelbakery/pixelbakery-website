@@ -1,5 +1,3 @@
-import * as clipboard from 'clipboard-polyfill'
-import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
 
 const EmailGenerator_Result = (props) => {

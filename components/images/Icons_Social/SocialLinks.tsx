@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import Link from 'next/link'
 import socialLinks from '@data/SocialUrls'
 import * as Icons from 'components/images/Icons_Social/Icons'

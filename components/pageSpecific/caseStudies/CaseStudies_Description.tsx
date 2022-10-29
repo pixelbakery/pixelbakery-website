@@ -1,19 +1,10 @@
-import PropTypes from 'prop-types'
 import React, { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-// CaseStudies_Description.propTypes = {
-//   header: PropTypes.string.isRequired,
-//   headerColor: PropTypes.string,
-//   bgColor: PropTypes.string,
-//   textColor: PropTypes.string,
-//   bodyCopy: PropTypes.string.isRequired,
-//   children: propTypes.ReactNode,
-//   props: PropTypes.any,
-// }
-type Props = {
+
+interface Props {
   children?: ReactNode
   bgColor?: string
   textColor?: string

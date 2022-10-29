@@ -54,7 +54,6 @@ const CaseStudies_Gallery_Email = () => {
               </div>
             </div>
           </div>
-          {/* <Carousel /> */}
         </InnerWrapper>
       </PageSection>
     </>

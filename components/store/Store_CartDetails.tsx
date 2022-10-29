@@ -1,23 +1,18 @@
-/* eslint-disable @typescript-eslint/no-inferrable-types */
-/* eslint-disable react/prop-types */
-/* eslint-disable */
-/* eslint-disable react/react-in-jsx-scope */
 import { Cart } from '@chec/commerce.js/types/cart'
+import { Price } from '@chec/commerce.js/types/price'
 import { useCheckoutState } from '@hooks/useCheckoutState'
 import useShippingSummary from '@hooks/useShippingSummary'
 import useTotals from '@hooks/useTotals'
 
 type Props = {
   cost: number
-
   shipping?: {
-    price: any
+    price: Price
   }
-  // onCostChange: any
   cart?: Cart
-
   [key: string]: any
 }
+
 function Store_CartDetails({}: Props) {
   const { cart, live } = useCheckoutState()
   const { subtotal, total, totalWithTax, totalDue, tax } = useTotals()

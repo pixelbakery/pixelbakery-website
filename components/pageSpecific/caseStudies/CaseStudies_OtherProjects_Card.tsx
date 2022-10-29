@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'

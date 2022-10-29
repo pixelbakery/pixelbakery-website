@@ -1,10 +1,11 @@
 import H3 from '@typography/H3'
-import PropTypes from 'prop-types'
-LogoAnimation_Descriptions_Card.propTypes = {
-  header: PropTypes.string,
-  desc: PropTypes.string,
+
+interface LogoAnimation_Descriptions_Card {
+  header: string
+  desc: string
 }
-function LogoAnimation_Descriptions_Card({ header, desc }) {
+
+function LogoAnimation_Descriptions_Card({ header, desc }: LogoAnimation_Descriptions_Card) {
   return (
     <div className=''>
       <H3 color='blue'>{header}</H3>

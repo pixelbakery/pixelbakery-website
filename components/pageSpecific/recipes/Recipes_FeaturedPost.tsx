@@ -1,11 +1,7 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
-import Author from 'types/author'
-import H3 from '@typography/H3'
 
 type Props = {
   title: string
@@ -13,7 +9,7 @@ type Props = {
   date: string
   categories: Array<string>
   excerpt: string
-  author: Author
+  author: any
   as: string
   href: string
   slug: string
@@ -30,7 +26,7 @@ const Recipes_FeaturedPost = ({
   as,
   href,
   ...props
-}) => {
+}: Props) => {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
 

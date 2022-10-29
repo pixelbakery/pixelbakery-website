@@ -1,20 +1,21 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-import PropTypes from 'prop-types'
+
 import cn from 'classnames'
 import H3 from '@typography/H3'
-Home_Portfolio_Card.propTypes = {
-  bgColor: PropTypes.string,
-  bgPosition: PropTypes.string,
-  client: PropTypes.string,
-  title: PropTypes.string,
-  tags: PropTypes.array,
-  description: PropTypes.string,
-  previewImg: PropTypes.string,
-  link: PropTypes.string,
-  video: PropTypes.string,
+interface Home_Portfolio_Card {
+  bgColor: string
+  bgPosition: string
+  client: string
+  title: string
+  tags: Array<any>
+  description: string
+  previewImg: string
+  link: string
+  video: string
+  project: any
 }
-function Home_Portfolio_Card({ bgColor, bgPosition, project }) {
+function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Card) {
   return (
     <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
       <div

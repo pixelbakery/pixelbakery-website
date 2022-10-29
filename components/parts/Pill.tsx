@@ -1,15 +1,14 @@
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 // must pass a size: xl, lg, md, sm
 //must pass a color without tailwind vernacular
-Pill.propTypes = {
-  text: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
-  textColor: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
-  className: PropTypes.string,
+interface Pill {
+  text: string
+  bgColor: string
+  textColor: string
+  size: string
+  className?: string
 }
-export default function Pill({ text, bgColor, textColor, size, className }) {
+export default function Pill({ text, bgColor, textColor, size, className }: Pill) {
   let px = '',
     py = '',
     fontWeight = '',

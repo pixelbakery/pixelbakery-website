@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useState, createRef } from 'react'
 
 const EmailGenerator_Input = (props) => {

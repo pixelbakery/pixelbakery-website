@@ -1,11 +1,6 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from './Pill'
-
-//PROPS:
-// link={'/'} head={''} subhead={''} aspectW={''} aspectY={''} img={''} imgAlt={''} tags={["something", "something else"]} tagBgColor={"bg-cream"} tagTextColor={'text-wine'}
 
 function Card_Rounded(props) {
   const aspectW = ' aspect-w-' + props.aspectW

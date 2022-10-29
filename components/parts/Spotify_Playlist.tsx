@@ -4,10 +4,12 @@ import useSWR from 'swr'
 import { Playlist } from '@lib/types'
 import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
-// import Lead from '@typography/Lead'
 import H3 from '@typography/H3'
 
-export default function Spotify_Playlist({ playlistID }) {
+type spotify = {
+  spotify: any
+}
+export default function Spotify_Playlist(spotify) {
   const { data } = useSWR<Playlist>('/api/playlists', fetcher)
 
   if (!data) {

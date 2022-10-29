@@ -1,11 +1,4 @@
-/* eslint-disable react/prop-types */
 import Link from 'next/link'
-
-import PropTypes from 'prop-types'
-
-CaseStudies_Credits.propTypes = {
-  // credits: PropTypes.array.isRequired,
-}
 
 function CaseStudies_Credits({ credits }) {
   const firstcolumn = Math.floor(credits.length / 2)
