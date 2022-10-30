@@ -1,12 +1,26 @@
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { Navigation, Pagination } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/keyboard'
 import InnerWrapper from '@parts/InnerWrapper'
 import dynamic from 'next/dynamic'
+
+import cn from 'classnames'
+import { PrevButton, NextButton, SlideProgression } from '@parts/carousel/Carousel_Buttons'
+
+import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect, useState } from 'react'
+import Carousel_Slide from '@parts/carousel/Carousel_Slide'
+
+type CarouselProps = {
+  slides: Array<any>
+  aspectH?: string
+  aspectW?: string
+  objectFit?: any
+  slideColor?: string
+  textColor?: string
+  diminsions?: Array<number>
+  className?: string
+}
+
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
@@ -60,10 +74,66 @@ const slides = [
     title: 'People Can Do Hard Things',
   },
 ]
+
+const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: CarouselProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [scrollSnaps, setScrollSnaps] = useState([])
+  const [emblaRef, embla] = useEmblaCarousel({ loop: false })
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
+
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla])
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla])
+
+  const onSelect = useCallback(() => {
+    if (!embla) return
+    {
+      setSelectedIndex(embla.selectedScrollSnap())
+      setPrevBtnEnabled(embla.canScrollPrev())
+      setNextBtnEnabled(embla.canScrollNext())
+      console.log(selectedIndex, ' out of ', scrollSnaps)
+    }
+  }, [embla, setSelectedIndex])
+
+  useEffect(() => {
+    if (!embla) return
+    onSelect()
+    setScrollSnaps(embla.scrollSnapList())
+    embla.on('select', onSelect)
+  }, [embla, setScrollSnaps, onSelect])
+
+  return (
+    <>
+      <div
+        className={cn(
+          {
+            'w-full overflow-hidden': !className || className === '',
+          },
+          className,
+        )}
+        ref={emblaRef}
+      >
+        <div className='flex w-full '>
+          {slides.map((slide, i) => {
+            return <SetSlide slide={slide} />
+          })}
+        </div>
+      </div>
+      <div className='flex justify-between mb-8 mt-6'>
+        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} navColor={'cream'} />
+
+        <SlideProgression current={selectedIndex} total={scrollSnaps.length} navColor={'cream'} />
+
+        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} navColor={'cream'} />
+      </div>
+    </>
+  )
+}
+
 // SLIDE COMPONENT
 const SetSlide = ({ slide }) => {
   return (
-    <div className=' aspect-h-16 aspect-w-9 w-full  overflow-hidden'>
+    <div className='cursor-grab -mt-2 ml-1 mr-2 relative  grow-0 shrink-0  w-[86%] sm:w-[45%] lg:w-[30%] '>
       <ReactPlayer
         url={[`${ImgPrefix}${slide.videoPath}.webm`, `${ImgPrefix}${slide.videoPath}.mp4`]}
         poster={`${ImgPrefix}${slide.videoPath}.jpg`}
@@ -81,60 +151,6 @@ const SetSlide = ({ slide }) => {
   )
 }
 
-// CAROUSEL WRAPPER
-const Carousel = () => {
-  return (
-    <Swiper
-      spaceBetween={20}
-      slidesPerView={'auto'}
-      navigation={{
-        nextEl: '.carousel-button-next',
-        prevEl: '.carousel-button-prev',
-      }}
-      allowTouchMove={false}
-      pagination={{
-        clickable: true,
-        el: '.carousel-pagination',
-        type: 'fraction',
-      }}
-      breakpoints={{
-        0: {
-          slidesPerView: 1.15,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 2.15,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 3.15,
-          spaceBetween: 15,
-        },
-        1024: {
-          slidesPerView: 3.25,
-          spaceBetween: 25,
-        },
-      }}
-      keyboard={{
-        enabled: true,
-      }}
-      modules={[Navigation, Pagination]}
-      className=' w-full aspect-w-9 aspect-h-16'
-      watchSlidesProgress={true}
-      // onActiveIndexChange={(s) => test(s)}
-      loop
-      // onSwiper={(swiper) => console.log(swiper)}
-    >
-      {slides.map((slide, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <SetSlide slide={slide} />
-          </SwiperSlide>
-        )
-      })}
-    </Swiper>
-  )
-}
 const CaseStudies_TikTok = () => {
   return (
     <PageSection color='wine border-t-32 border-b-32 border-pink' id={'tiktok'}>
@@ -152,12 +168,7 @@ const CaseStudies_TikTok = () => {
           monthly basis, Maria and our creative director choose a TikTok trend that SNACKLINS can
           fit snugly into and execute on it with our Pixel Bakery flair.
         </p>
-        <Carousel />
-        <div className='flex flex-row justify-around text-cream mt-4 text-lg mx-auto max-w-3xl'>
-          <button className='carousel-button-prev'>prev</button>
-          <div className='text-center carousel-pagination font-italic'></div>
-          <button className='carousel-button-next'>next</button>
-        </div>
+        <NewCarousel slides={slides} />
       </InnerWrapper>
     </PageSection>
   )

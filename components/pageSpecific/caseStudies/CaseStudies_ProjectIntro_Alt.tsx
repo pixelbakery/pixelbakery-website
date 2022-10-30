@@ -1,12 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/keyboard'
-import { A11y, Keyboard } from 'swiper'
 import H3 from '@typography/H3'
 import Image from 'next/image'
 
@@ -24,53 +18,7 @@ const slides = [
     body: `An ongoing retainer allows our team to continue building and growing on the brand as we go. We’ve been able to create a beautifully homogenous identity for the SNACKLINS brand.`,
   },
 ]
-const SetSlide = ({ slide }) => {
-  return (
-    <div className='h-full'>
-      <H3 color='blue-dark mb-4 pb-5'>{slide.header}</H3>
-      <p>{slide.body}</p>
-    </div>
-  )
-}
-const Carousel = () => {
-  return (
-    <Swiper
-      spaceBetween={25}
-      slidesPerView={'auto'}
-      breakpoints={{
-        0: {
-          slidesPerView: 1.25,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 1.25,
-          spaceBetween: 25,
-        },
 
-        1024: {
-          slidesPerView: 3.25,
-          spaceBetween: 35,
-        },
-      }}
-      keyboard={{
-        enabled: true,
-      }}
-      modules={[A11y, Keyboard]}
-      className='lg:hidden'
-    >
-      {slides.map((slide, index) => {
-        return (
-          <SwiperSlide
-            key={index}
-            className='h-full self-stretch flex border-blue rounded-2xl border-2 hover:cursor-grab p-6 max-w-md'
-          >
-            <SetSlide slide={slide} />
-          </SwiperSlide>
-        )
-      })}
-    </Swiper>
-  )
-}
 const CaseStudies_ProjectIntro_Alt = () => {
   return (
     <section className='my-5 lg:-my-5 py-0 lg:py-0  lg:overflow-visible z-10  flex relative'>
@@ -88,9 +36,9 @@ const CaseStudies_ProjectIntro_Alt = () => {
                 </Lead>
               </div>
             </div>
-            <Carousel />
-            <div className='hidden lg:block '>
-              <div className='grid 2xl:grid-cols-3 gap-x-24'>
+
+            <div className=' '>
+              <div className='grid grid-cols-1 2xl:grid-cols-3 gap-x-24'>
                 {slides.map((slide, index) => {
                   return (
                     <div key={index} className='col-span-1'>

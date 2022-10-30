@@ -1,9 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/keyboard'
 
 import Image_VarH from '@parts/Image_VarH'
 

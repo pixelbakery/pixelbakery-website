@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 

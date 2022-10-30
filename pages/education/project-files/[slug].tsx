@@ -5,7 +5,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
 
@@ -22,7 +21,6 @@ import Education_SupportUs from '@education/Education_SupportUs'
 import dynamic from 'next/dynamic'
 
 const components = {
-  Carousel: Carousel,
   VimeoPlayer: VimeoPlayer,
   Video: Video,
 }

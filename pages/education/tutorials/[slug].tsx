@@ -5,7 +5,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Carousel from '@parts/Carousel'
 import Main from '@parts/Main'
 
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
@@ -36,7 +35,6 @@ import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
 import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
 const components = {
-  Carousel: Carousel,
   Video: Video,
 }
 

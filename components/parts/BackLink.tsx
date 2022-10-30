@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
+import { ChevronRightIcon } from '@images/UI_Icons/index'
 
 function BackLink({ text, href }) {
   return (
