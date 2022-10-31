@@ -8,6 +8,7 @@ import {
 } from '../components/parts/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import '@styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 import '@styles/typography.css'
 // import * as fbq from '../lib/fpixel'
 import { useEffect } from 'react'
@@ -135,6 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }}
       /> */}
       <QueryClientProvider client={client}>{getLayout(path)}</QueryClientProvider>
+      <Analytics />
     </>
   )
 }
