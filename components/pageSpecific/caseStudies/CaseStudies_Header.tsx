@@ -66,7 +66,7 @@ function CaseStudies_Header({ ...props }) {
           </Lead>
         </div>
       </div> */}
-      <div className='2xl:px-24 max-w-8xl mx-auto mt-20 '>
+      <div className='2xl:px-24 max-w-8xl mx-auto mt-20 w-full bg-egg'>
         <Video
           url={`https://vimeo.com/${props.heroVideo}`}
           autoPlay={false}

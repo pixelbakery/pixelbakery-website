@@ -6,8 +6,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import remarkGfm from 'remark-gfm'
-import VimeoPlayer from '@parts/VimeoPlayer'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
@@ -50,6 +48,7 @@ import Image_VarH from '@parts/Image_VarH'
 import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
 import dynamic from 'next/dynamic'
+import remarkGfm from 'remark-gfm'
 
 export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter }) {
   const components = {
@@ -57,7 +56,6 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
     CaseStudies_Storyboards: CaseStudies_Storyboards,
-    VimeoPlayer: VimeoPlayer,
     Video: Video,
     //Stuff built for Marq
     Marq_MarchingSolders: Marq_MarchingSolders,

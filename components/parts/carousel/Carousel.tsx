@@ -7,7 +7,7 @@ import {
 } from '@parts/carousel/Carousel_Buttons'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import { useCallback, useEffect, useState } from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 import Carousel_Slide from '@parts/carousel/Carousel_Slide'
 
 type CarouselProps = {
@@ -38,7 +38,6 @@ const Carousel = ({ slides, objectFit, slideColor, textColor, className }: Carou
       setSelectedIndex(embla.selectedScrollSnap())
       setPrevBtnEnabled(embla.canScrollPrev())
       setNextBtnEnabled(embla.canScrollNext())
-      console.log(selectedIndex, ' out of ', scrollSnaps)
     }
   }, [embla, setSelectedIndex])
 
@@ -62,7 +61,11 @@ const Carousel = ({ slides, objectFit, slideColor, textColor, className }: Carou
       >
         <div className='flex w-full '>
           {slides.map((slide, i) => {
-            return <Carousel_Slide index={i} slide={slide} />
+            return (
+              <Fragment key={i}>
+                <Carousel_Slide index={i} slide={slide} />
+              </Fragment>
+            )
           })}
         </div>
       </div>

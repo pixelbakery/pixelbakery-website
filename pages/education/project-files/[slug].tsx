@@ -9,7 +9,6 @@ import Main from '@parts/Main'
 import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
 
 const Video = dynamic(() => import('@parts/Video'), { ssr: false })
-import VimeoPlayer from '@parts/VimeoPlayer'
 import Button_Filled from '@parts/Button_Filled'
 
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
@@ -21,7 +20,6 @@ import Education_SupportUs from '@education/Education_SupportUs'
 import dynamic from 'next/dynamic'
 
 const components = {
-  VimeoPlayer: VimeoPlayer,
   Video: Video,
 }
 

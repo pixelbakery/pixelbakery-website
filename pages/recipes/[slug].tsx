@@ -14,8 +14,6 @@ import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 
 const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 
-import VimeoPlayer from '@parts/VimeoPlayer'
-
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
 import Recipes_Post_Header from '@recipes/Recipes_Post_Header'
@@ -39,7 +37,6 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Carousel: Carousel,
-  VimeoPlayer: VimeoPlayer,
   Video: Video,
 }
 
