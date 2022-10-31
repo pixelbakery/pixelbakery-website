@@ -1,11 +1,9 @@
-import Work_Services_Card from '../work/Work_Services_Card'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 import services from '@data/services'
 import Services_AllServices_Card_Filled from '@services/Services_AllServices_Card_Filled'
-import Button_Outlined from '@parts/Button_Outlined'
 import H3 from '@typography/H3'
 import Services_AllServices_Card_Outlined from '@services/Services_AllServices_Card_Outlined'
 const Home_Services = () => {
@@ -20,8 +18,7 @@ const Home_Services = () => {
         <div className=' w-full flex flex-col '>
           <div className=' mb-16'>
             <H2 color='blue-dark' className='text-blue-dark '>
-              We are builders and this is is our craft. <br /> <br />
-              Our hobbies are our profession.
+              We are builders and this is our craft.
             </H2>
             <Lead color='cream  '>
               Our team creates intentional, high-quality products that are results of purposeful

@@ -44,7 +44,7 @@
     "embla-carousel-react": "^7.0.3",
     "formik": "2.2.9",
     "gray-matter": "latest",
-    "gsap": "^3.10.4",
+    "gsap": "^3.11.3",
     "lottie-web": "5.9.6",
     "next": "^12.3.0",
     "next-mdx-remote": "4.1.0",
