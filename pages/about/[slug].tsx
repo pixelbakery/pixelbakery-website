@@ -2,7 +2,14 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import {
+  peopleFilePaths,
+  PEOPLE_PATH,
+  postFilePaths,
+  POSTS_PATH,
+  caseStudyFilePaths,
+  CASESTUDIES_PATH,
+} from '@lib/mdxUtils'
 import { serialize } from 'next-mdx-remote/serialize'
 
 //Utilities & Components imports
@@ -15,19 +22,34 @@ import About_Team_SEO from '@about/About_Team_SEO'
 import About_Team_Details from '@about/About_Team_Details'
 
 import dynamic from 'next/dynamic'
+import About_Team_MatchingCaseStudies from '@about/About_Team_MatchingCaseStudies'
 // const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: false })
 const About_Team_MatchingPosts = dynamic(() => import('@about/About_Team_MatchingPosts'), {
   ssr: false,
 })
 // const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: false })
 
-function PersonPage({ slug, source, frontMatter, matchingAuthorPosts, prevIndex, nextIndex }) {
+function PersonPage({
+  matchingCaseStudies,
+  slug,
+  source,
+  frontMatter,
+  matchingAuthorPosts,
+  prevIndex,
+  nextIndex,
+}) {
+  // console.log(new_data[0].length)
+
   return (
     <Main>
       <About_Team_SEO frontMatter={frontMatter} slug={slug} />
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
       <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} />
+      <About_Team_MatchingCaseStudies
+        matchingCaseStudies={matchingCaseStudies}
+        name={frontMatter.name}
+      />
       <About_Team_PrevNext active={frontMatter.active} prev={prevIndex} next={nextIndex} />
     </Main>
   )
@@ -91,8 +113,39 @@ export async function getStaticProps({ params }) {
 
   //End of prev/next search
 
+  // Find matching case studies this person has credits in
+
+  const matchingCaseStudies = caseStudyFilePaths
+    .map((filePath) => {
+      const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
+      const { data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
+
+      return { data, filePath }
+    })
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
+    .filter((cs) => cs.data.active === true)
+    .filter((c) => {
+      let bool = false
+      c.data.credits.forEach((cs) => {
+        if (cs.name.toLowerCase() === data.name.toLowerCase()) {
+          bool = true
+        }
+      })
+      return bool
+    })
+  // .filter((p) => p.data.credits.includes('Jordan Lambrecht'))
+
+  // matchingCaseStudies.forEach((cs) => {
+  //   let test = cs.data.credits
+  //   if (matches(test) === true) {
+  //     console.log(cs.data.title)
+  //   }
+  // })
+
   return {
     props: {
+      matchingCaseStudies: matchingCaseStudies,
       matchingAuthorPosts: matchingAuthorPosts,
       nextIndex: nextIndex,
       prevIndex: prevIndex,

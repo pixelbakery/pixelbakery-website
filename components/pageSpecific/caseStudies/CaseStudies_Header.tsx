@@ -1,8 +1,9 @@
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
+const Video = dynamic(() => import('@parts/Video'), { ssr: false, loading: () => <Loading /> })
 import H1 from '@typography/H1'
 import Pill from '@parts/Pill'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Loading from '@utility/Loading'
 // import Player from 'components/player/Player'
 function CaseStudies_Header({ ...props }) {
   const Logo = () => {
@@ -66,13 +67,15 @@ function CaseStudies_Header({ ...props }) {
           </Lead>
         </div>
       </div> */}
-      <div className='2xl:px-24 max-w-8xl mx-auto mt-20 w-full bg-egg'>
-        <Video
-          url={`https://vimeo.com/${props.heroVideo}`}
-          autoPlay={false}
+      <div className='2xl:px-24 max-w-8xl mx-auto mt-20 w-full'>
+        <div className='w-full aspect-w-16 aspect-h-9'>
+          <Video
+            url={`https://vimeo.com/${props.heroVideo}`}
+            autoPlay={false}
 
-          // poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${props.poster}.jpg`}
-        />
+            // poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${props.poster}.jpg`}
+          />
+        </div>
         {/* <Player
           url={props.heroVideo}
           light={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${props.poster}.jpg`}

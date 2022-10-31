@@ -1,6 +1,7 @@
 import Lead from '@typography/Lead'
 import ReactPlayer from 'react-player/lazy'
 import cn from 'classnames'
+import Loading from '@utility/Loading'
 interface video {
   url: string
   title?: string
@@ -28,10 +29,15 @@ function Video({ url, ...props }: video) {
       )}
       <div
         className={cn(
-          { ['w-full markdown-video aspect-16/9']: props.className === undefined },
+          { ['w-full  aspect-w-16 aspect-h-9']: props.className === undefined },
           { [`${props.className}`]: props.className },
         )}
       >
+        <div className='w-full aspect-w-16 aspect-h-9'>
+          <div className='z-0 absolute left-0 top-0  w-full h-[99%] bg-blue text-cream flex flex-col justify-center text-center text-lg'>
+            🙃 Loading...
+          </div>
+        </div>
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}

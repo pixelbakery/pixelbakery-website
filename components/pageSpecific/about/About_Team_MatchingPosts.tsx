@@ -2,7 +2,6 @@ import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
-import { Fragment } from 'react'
 
 const About_Team_MatchingPosts = ({ matchingAuthorPosts }) => {
   return (
@@ -26,6 +25,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts }) => {
                     aspectY={'3'}
                     coverImage={post.data.coverImage}
                     excerpt={post.data.excerpt}
+                    slug={post.data.slug}
                   />
                 )
               })}

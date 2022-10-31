@@ -79,11 +79,13 @@ function Work_Portfolio_Card({ project }) {
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             layout='fill'
+            // width={854}
+            // height={480}
             objectFit='cover'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}
-            quality={50}
+            quality={66}
           />
         </div>
 
@@ -98,8 +100,8 @@ function Work_Portfolio_Card({ project }) {
             playing={isHovered}
             className='bg-blue'
             url={[
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
               `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
+              // `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
             ]}
             config={{
               file: {
