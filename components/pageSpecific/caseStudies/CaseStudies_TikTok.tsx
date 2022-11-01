@@ -91,7 +91,6 @@ const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: Ca
       setSelectedIndex(embla.selectedScrollSnap())
       setPrevBtnEnabled(embla.canScrollPrev())
       setNextBtnEnabled(embla.canScrollNext())
-      console.log(selectedIndex, ' out of ', scrollSnaps)
     }
   }, [embla, setSelectedIndex])
 

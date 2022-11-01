@@ -8,11 +8,7 @@ import Services_SEO from '@services/Services_SEO'
 import Services_VideoProduction_Why from '@services/Services_VideoProduction_Why'
 
 export default function Services() {
-  const desc = `Commercial video production can include video advertisements, TV commercials, YouTube
-          pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
-          give your brand more recognition and to boost your marketplace identity. With our
-          experience in both video production and animation, there are no limits to what we can
-          produce for your brand.`
+  const desc = `Video production can include TV commercials, YouTube ads, social media, and more. These all give your brand more recognition.`
   return (
     <Main>
       <Services_SEO serviceName='Video Production' description={desc} path='video-production' />

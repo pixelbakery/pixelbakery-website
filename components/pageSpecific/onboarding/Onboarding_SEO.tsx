@@ -4,7 +4,7 @@ function Onboarding_SEO() {
   return (
     <NextSeo
       title='Become a Client'
-      description={`We know that trust is something that is earned over time. Our initial projects with our clients usually start small. This is a relationship after all, and it's important to us that both parties are happy and healthy.`}
+      description={`Tell us all about your project idea, and we'll show you what it's like to be a Pixel Bakery client. Schedule a discovery meeting with us.`}
       canonical={`https://pixelbakery.com/onboarding`}
       openGraph={{
         url: `https://pixelbakery.com/onboarding`,

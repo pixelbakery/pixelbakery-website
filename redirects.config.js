@@ -12,6 +12,21 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/careers/breadwinners-program',
+    destination: '/careers/brand-ambassador',
+    permanent: true,
+  },
+  {
+    source: '/about/daniel-hinz',
+    destination: '/about/dan-hinz',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/LCIV-awareness-campaign',
+    destination: '/work/case-studies/lciv-awareness-campaign',
+    permanent: true,
+  },
+  {
     source: '/video-production',
     destination: '/services/video-production',
     permanent: true,

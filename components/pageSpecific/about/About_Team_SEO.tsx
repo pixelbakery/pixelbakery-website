@@ -21,7 +21,7 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
     details[Object.keys(value).toString()] = Object.values(value).toString()
   })
 
-  let desc = `The one and only, fantastically amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
+  let desc = `The amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
   if (details.personalAesthetic != undefined) {
     desc = `${desc} ${details.personalAesthetic}`
   }
