@@ -12,8 +12,7 @@ import Home_SEO from '@home/Home_SEO'
 // import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_Recipes from '@home/Home_Recipes'
 import Home_Portfolio from '@home/Home_Portfolio'
-import H1 from '@typography/H1'
-import H2 from '@typography/H2'
+import { H1, H2 } from '@typography/index'
 
 const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
   loading: () => (
