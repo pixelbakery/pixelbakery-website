@@ -19,7 +19,6 @@ import Education_TutorialRequests from '@education/Education_TutorialRequests'
 import Education_ProjectFiles from '@education/Education_ProjectFiles'
 
 function EducationPage({ allMadeToOrders, allProjectFiles }) {
-  console.log(allProjectFiles.length)
   return (
     <Main className='max-w-screen overflow-x-hidden' id='educationPage'>
       <Education_SEO />

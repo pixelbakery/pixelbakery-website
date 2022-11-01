@@ -25,7 +25,6 @@ const components = {
 }
 
 const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
-  console.log(`${slug}`)
   return (
     <Main id='' className=''>
       <NextSeo
