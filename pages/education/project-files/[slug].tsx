@@ -30,9 +30,9 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
       <NextSeo
         title={`${frontMatter.title} | Project Files`}
         description={`${frontMatter.excerpt}`}
-        canonical={`https://pixelbakery.com/project-files/${slug}`}
+        canonical={`https://pixelbakery.com/education/project-files/${slug}`}
         openGraph={{
-          url: `https://pixelbakery.com/project-files/${slug}`,
+          url: `https://pixelbakery.com/education/project-files/${slug}`,
           title: `${frontMatter.title} | Project Files`,
           description: `${frontMatter.excerpt}`,
           images: [
