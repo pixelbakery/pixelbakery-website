@@ -4,30 +4,30 @@ import H2 from '@typography/H2'
 
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import cn from 'classnames'
-import { useState } from 'react'
-import StrokeText from '@parts/StrokeText'
+// import cn from 'classnames'
+// import { useState } from 'react'
+// import StrokeText from '@parts/StrokeText'
 
 function Education_ProjectFiles({ allProjectFiles }) {
-  const [activeFilter, setFilter] = useState('all')
+  // const [activeFilter, setFilter] = useState('all')
 
-  const [filteredProjectFiles, setFilteredItems] = useState(allProjectFiles)
+  // const [filteredProjectFiles, setFilteredItems] = useState(allProjectFiles)
 
-  const allCategories = []
-  allProjectFiles.forEach(function (file, i) {
-    allCategories.push(file.category)
-  })
+  // const allCategories = []
+  // allProjectFiles.forEach(function (file, i) {
+  //   allCategories.push(file.category)
+  // })
 
-  const filters = Array.from(new Set(allCategories))
-  const handleFilteredItems = (filter) => {
-    setFilter(filter)
+  // const filters = Array.from(new Set(allCategories))
+  // const handleFilteredItems = (filter) => {
+  //   setFilter(filter)
 
-    if (filter === 'all') {
-      setFilteredItems(allProjectFiles)
-    } else {
-      setFilteredItems(allProjectFiles.filter((file) => file.category === filter))
-    }
-  }
+  //   if (filter === 'all') {
+  //     setFilteredItems(allProjectFiles)
+  //   } else {
+  //     setFilteredItems(allProjectFiles.filter((file) => file.category === filter))
+  //   }
+  // }
   return (
     <PageSection className='bg-pink-light' id={'projectFiles'}>
       <InnerWrapper>
@@ -42,7 +42,7 @@ function Education_ProjectFiles({ allProjectFiles }) {
           financial, or technical barriers that prevent creativity and believe that everyone should
           have access to high-quality educational experiences and resources.
         </p>
-        <div className='mb-6 pb-6 pt-6'>
+        {/* <div className='mb-6 pb-6 pt-6'>
           <ul className='flex flex-wrap gap-8'>
             <li
               className={cn('-mt-12 cursor-pointer', {
@@ -86,58 +86,54 @@ function Education_ProjectFiles({ allProjectFiles }) {
               )
             })}
           </ul>
-        </div>
+        </div> */}
         <div className='grid grid-cols-2 gap-6 md:grid-cols-5 3xl:grid-cols-6'>
-          {filteredProjectFiles.map((projectFile) => {
-            if (projectFile.active === true) {
-              return (
-                <Link
-                  key={projectFile.title}
-                  as={`/education/project-files/${projectFile.filePath.replace(/\.mdx?$/, '')}`}
-                  href={`/education/project-files/[slug]`}
-                >
-                  <a
-                    id={`${projectFile.title}`}
-                    className='visible cursor-pointer
+          {allProjectFiles.map((pf) => {
+            return (
+              <Link
+                key={pf.data.title}
+                as={`/education/project-files/${pf.filePath.replace(/\.mdx?$/, '')}`}
+                href={`/education/project-files/[slug]`}
+              >
+                <a
+                  id={`${pf.data.title}`}
+                  className='visible cursor-pointer
 transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
-                  >
-                    <div>
-                      <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
-                        {projectFile.videoCoverImage ? (
-                          <video
-                            autoPlay={true}
-                            playsInline
-                            muted
-                            controls={false}
-                            loop
-                            className='object-cover w-full h-full hideControls'
-                          >
-                            <source
-                              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
-                              type={'video/mp4'}
-                            />
-                          </video>
-                        ) : (
-                          <Image
-                            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
-                            alt={`${projectFile.title}} project file free for ${projectFile.category}`}
-                            layout='fill'
-                            objectFit='cover'
-                            placeholder='blur'
-                            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${projectFile.coverImage}`}
-                            className='bg-peach'
+                >
+                  <div>
+                    <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
+                      {pf.data.videoCoverImage ? (
+                        <video
+                          autoPlay={true}
+                          playsInline
+                          muted
+                          controls={false}
+                          loop
+                          className='object-cover w-full h-full hideControls'
+                        >
+                          <source
+                            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                            type={'video/mp4'}
                           />
-                        )}
-                      </div>
-                      <div className='mt-2 text-xs text-wine-200'>{`${projectFile.category}`}</div>
-                      <h3 className='text-lg text-wine leading-none'>{projectFile.title}</h3>
+                        </video>
+                      ) : (
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                          alt={`${pf.title}} project file free for ${pf.data.category}`}
+                          layout='fill'
+                          objectFit='cover'
+                          placeholder='blur'
+                          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                          className='bg-peach'
+                        />
+                      )}
                     </div>
-                  </a>
-                </Link>
-              )
-            } else {
-              return
-            }
+                    <div className='mt-2 text-xs text-wine-200'>{`${pf.data.category}`}</div>
+                    <h3 className='text-lg text-wine leading-none'>{pf.data.title}</h3>
+                  </div>
+                </a>
+              </Link>
+            )
           })}
         </div>
       </InnerWrapper>

@@ -18,25 +18,27 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Education_SupportUs from '@education/Education_SupportUs'
 import dynamic from 'next/dynamic'
+import DateFormatter from '@lib/date-formatter'
 
 const components = {
   Video: Video,
 }
 
 const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
+  console.log(`${slug}`)
   return (
     <Main id='' className=''>
       <NextSeo
         title={`${frontMatter.title} | Project Files`}
         description={`${frontMatter.excerpt}`}
-        canonical={`https://pixelbakery.com/project-files/${frontMatter.slug}`}
+        canonical={`https://pixelbakery.com/project-files/${slug}`}
         openGraph={{
-          url: `https://pixelbakery.com/project-files/${frontMatter.slug}`,
+          url: `https://pixelbakery.com/project-files/${slug}`,
           title: `${frontMatter.title} | Project Files`,
           description: `${frontMatter.excerpt}`,
           images: [
             {
-              url: `https://pixelbakery.com/${frontMatter.coverImage}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
               alt: `${frontMatter.excerpt}`,
             },
           ],
@@ -49,13 +51,9 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
             name: 'Education',
             item: 'https://pixelbakery.com/education',
           },
+
           {
             position: 2,
-            name: 'Tutorials',
-            item: 'https://pixelbakery.com/education#projectFiles',
-          },
-          {
-            position: 3,
             name: `${frontMatter.title}`,
             item: `https://pixelbakery.com/education/project-files/${slug}`,
           },
@@ -73,10 +71,7 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 loop
                 className='object-cover w-full h-full hideControls'
               >
-                <source
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                  type={'video/mp4'}
-                />
+                <source src={`v${frontMatter.coverImage}`} type={'video/mp4'} />
               </video>
             </div>
             <div className='hidden lg:block relative col-span-1 h-full w-full '>
@@ -138,7 +133,9 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 <li>File Name: {frontMatter.fileName}</li>
                 <li>File Size: {frontMatter.fileSize}</li>
                 <li>File Type: {frontMatter.fileType}</li>
-                <li>Upload Date: {frontMatter.uploadDate}</li>
+                <li>
+                  Upload Date: <DateFormatter dateString={frontMatter.uploadDate} />
+                </li>
               </ul>
               <div className={markdownStyles['markdown']}>
                 <MDXRemote {...source} components={components} />
@@ -188,11 +185,12 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
-
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: params.slug,
     },
   }
 }

@@ -29,7 +29,7 @@
           "single": true,
           "required": true
         },
-                {
+        {
           "title": "excerpt",
           "name": "excerpt",
           "type": "string",
@@ -351,6 +351,85 @@
           "title": "excerpt",
           "name": "excerpt",
           "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "_projectFiles",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "active",
+          "name": "active",
+          "type": "draft"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "downloadLink",
+          "name": "downloadLink",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "fileName",
+          "name": "fileName",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "fileSize",
+          "name": "fileSize",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "fileType",
+          "name": "fileType",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "coverImage",
+          "name": "coverImage",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "videoCoverImage",
+          "name": "videoCoverImage",
+          "type": "boolean"
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "_projectFile",
+          "hidden": true
         }
       ]
     }
