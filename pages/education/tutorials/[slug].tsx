@@ -5,7 +5,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Main from '@parts/Main'
 
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 import readingTime from '@lib/readingTime'
@@ -13,27 +12,16 @@ import readingTime from '@lib/readingTime'
 const Video = dynamic(() => import('@parts/Video'), {
   ssr: false,
 })
-import PageSection from '@parts/PageSection'
+
 import dynamic from 'next/dynamic'
-
-import Education_PostHeader from '@education/Education_PostHeader'
-
-// const Education_PostHeader = dynamic(() => import('@education/Education_PostHeader'), {
-//   suspense: true,
-//   ssr: false,
-// })
-import Education_MadeToOrder_GetPrevNextPost from '@education/Education_MadeToOrder_GetPrevNextPost'
-// const Education_MadeToOrder_GetPrevNextPost = dynamic(
-//   () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
-//   {
-//     ssr: false,
-//   },
-// )
-import Education_SupportUs from '@education/Education_SupportUs'
-// const Education_SupportUs = dynamic(() => import('@education/Education_SupportUs'), { ssr: false })
-import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
-import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
-
+import { PageSection, Main } from '@parts/index'
+import {
+  Education_PostHeader,
+  Education_MadeToOrder_GetPrevNextPost,
+  Education_SupportUs,
+  Education_MadeToOrder_SEO,
+  Education_MadeToOrder_Tags,
+} from '@education/index'
 const components = {
   Video: Video,
 }

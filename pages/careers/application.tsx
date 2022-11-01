@@ -1,11 +1,8 @@
 import dynamic from 'next/dynamic'
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
 
-import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import H2AndLead from '@typography/H2AndLead'
-import Lead from '@typography/Lead'
+import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { H2AndLead, Lead } from '@typography/index'
 import Careers_Application_Form from '@careers/Careers_Application_Form'
 
 // get job posts for position titles

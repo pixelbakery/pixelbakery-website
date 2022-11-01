@@ -6,16 +6,16 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ssr: false,
 })
 
-import Contact_Clients from '@contact/Contact_Clients'
-import Contact_ContactForm from '@contact/Contact_ContactForm'
-import Contact_Jobs from '@contact/Contact_Jobs'
-import Contact_HangOut from '@contact/Contact_HangOut'
-// const Contact_HangOut = dynamic(() => import('@contact/Contact_HangOut'), { ssr: false })
+import {
+  Contact_Clients,
+  Contact_ContactForm,
+  Contact_Jobs,
+  Contact_HangOut,
+  Contact_SEO,
+} from '@contact/index'
 
 import Main from '@parts/Main'
-
 import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
-import Contact_SEO from '@contact/Contact_SEO'
 
 function Contact() {
   return (

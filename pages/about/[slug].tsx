@@ -16,10 +16,12 @@ import { serialize } from 'next-mdx-remote/serialize'
 import Main from '@parts/Main'
 import remarkGfm from 'remark-gfm'
 
-import About_Team_Header from '@about/About_Team_Header'
-import About_Team_PrevNext from '@about/About_Team_PrevNext'
-import About_Team_SEO from '@about/About_Team_SEO'
-import About_Team_Details from '@about/About_Team_Details'
+import {
+  About_Team_Header,
+  About_Team_PrevNext,
+  About_Team_SEO,
+  About_Team_Details,
+} from '@about/index'
 
 import dynamic from 'next/dynamic'
 import About_Team_MatchingCaseStudies from '@about/About_Team_MatchingCaseStudies'

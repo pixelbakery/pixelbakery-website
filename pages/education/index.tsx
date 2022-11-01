@@ -8,15 +8,16 @@ import {
 } from '@lib/mdxUtils'
 import matter from 'gray-matter'
 import path from 'path'
-// const Education_Header = dynamic(() => import('@education/Education_Header'))
-import Education_Header from '@education/Education_Header'
-import Education_SEO from '@education/Education_SEO'
-import Education_Why from '@education/Education_Why'
-import Education_MadeToOrder from '@education/Education_MadeToOrder'
-// const Education_MadeToOrder = dynamic(() => import('@education/Education_MadeToOrder'))
-import Education_FromScratch from '@education/Education_FromScratch'
-import Education_TutorialRequests from '@education/Education_TutorialRequests'
-import Education_ProjectFiles from '@education/Education_ProjectFiles'
+
+import {
+  Education_Header,
+  Education_SEO,
+  Education_Why,
+  Education_MadeToOrder,
+  Education_FromScratch,
+  Education_TutorialRequests,
+  Education_ProjectFiles,
+} from '@education/index'
 
 function EducationPage({ allMadeToOrders, allProjectFiles }) {
   return (

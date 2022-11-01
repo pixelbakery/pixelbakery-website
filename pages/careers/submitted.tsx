@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { H1 } from '@typography/index'
 
-import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import H1 from '@typography/H1'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import Obfuscate from 'react-obfuscate'

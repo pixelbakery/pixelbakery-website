@@ -8,12 +8,10 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   ),
   ssr: false,
 })
-import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import H2AndLead from '@typography/H2AndLead'
-import Lead from '@typography/Lead'
-import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'
+
+import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { H2AndLead, Lead } from '@typography/index'
+import { Careers_JobShadow_Form } from '@careers/index'
 import { NextSeo } from 'next-seo'
 import Obfuscate from 'react-obfuscate'
 import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
