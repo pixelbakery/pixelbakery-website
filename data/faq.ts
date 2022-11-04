@@ -62,6 +62,6 @@ export default [
   {
     questionName: 'Do you shoot weddings?',
     acceptedAnswerText:
-      'Eventually the cold grip of entropy will consume the universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a hrefLang="en-US" class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefostercreative.com</a> for anything wedding related. Mazel tov!!',
+      'Eventually the unyielding and brutal grip of entropy will consume the already-indifferent universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a hrefLang="en-US" class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefostercreative.com</a> for anything wedding related. Mazel tov!!',
   },
 ]
