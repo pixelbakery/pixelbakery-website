@@ -45,7 +45,7 @@ function EmailGenerator() {
         nofollow={true}
         title='Email Generator '
         description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+          'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         openGraph={{
           url: `https://pixelbakery.com`,
@@ -53,11 +53,11 @@ function EmailGenerator() {
           images: [
             {
               url: `https://cdn.pixelbakery.com/img/pixelbakery-thumbnail.jpg`,
-              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multidisciplinary production studio focused on animation, motion design, and commercial film production`,
             },
           ],
           description:
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
         }}
       />
       <PageHeader_VarH header='Email Generator' subheader={'ooh, shiney.'} />

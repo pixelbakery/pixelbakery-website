@@ -19,26 +19,26 @@ function Careers_Application({ allJobs }) {
         noindex={true}
         title='Application | Careers'
         description={
-          'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.'
+          'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.'
         }
         canonical={`https://pixelbakery.com/careers/application`}
         openGraph={{
           url: `https://pixelbakery.com/careers/application`,
           title: 'Application | Careers',
           description:
-            'Pixel Bakery is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+            'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
               width: 1200,
               height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+              alt: 'Pixel Bakery Design Studio is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
               width: 1080,
               height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+              alt: 'Pixel Bakery Design Studio is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
