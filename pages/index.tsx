@@ -14,6 +14,7 @@ import Home_Recipes from '@home/Home_Recipes'
 import Home_Portfolio from '@home/Home_Portfolio'
 import { H1, H2 } from '@typography/index'
 
+
 const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
   loading: () => (
     <section className='w-screen h-screen bg-cream flex flex-col justify-center'>

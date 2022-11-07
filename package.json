@@ -43,6 +43,7 @@
     "dayjs": "^1.11.6",
     "embla-carousel-react": "^7.0.3",
     "formik": "2.2.9",
+    "framer-motion": "^7.6.4",
     "gray-matter": "latest",
     "gsap": "^3.11.3",
     "lottie-web": "5.9.6",

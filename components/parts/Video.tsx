@@ -33,11 +33,11 @@ function Video({ url, ...props }: video) {
           { [`${props.className}`]: props.className },
         )}
       >
-        <div className='w-full aspect-w-16 aspect-h-9'>
+        {/* <div className='w-full aspect-w-16 aspect-h-9'>
           <div className='z-0 absolute left-0 top-0  w-full h-[99%] bg-blue text-cream flex flex-col justify-center text-center text-lg'>
             🙃 Loading...
           </div>
-        </div>
+        </div> */}
         <ReactPlayer
           url={url}
           autoPlay={props.autoPlay ? props.autoPlay : false}
