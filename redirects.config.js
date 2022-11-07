@@ -22,11 +22,6 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/work/case-studies/LCIV-awareness-campaign',
-    destination: '/work/case-studies/lciv-awareness-campaign',
-    permanent: true,
-  },
-  {
     source: '/video-production',
     destination: '/services/video-production',
     permanent: true,
