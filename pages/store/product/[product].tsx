@@ -82,6 +82,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
         description={`${product.description}`}
         canonical={`https://pixelbakery.com/store/product/${product.permalink}`}
         openGraph={{
+          type: 'product',
           url: `https://pixelbakery.com/store/product/${product.permalink}`,
           images: [
             {
