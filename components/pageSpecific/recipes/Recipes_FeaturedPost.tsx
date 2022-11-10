@@ -12,7 +12,6 @@ type Props = {
   author: any
   as: string
   href: string
-  slug: string
   aspectW: string
   aspectY: string
 }
