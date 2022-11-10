@@ -74,6 +74,7 @@ module.exports = () => {
         'scontent-akl1-1.cdninstagram.com',
       ],
     },
+    trailingSlash: false,
     // productionBrowserSourceMaps: true,
     reactStrictMode: false,
     eslint: {
