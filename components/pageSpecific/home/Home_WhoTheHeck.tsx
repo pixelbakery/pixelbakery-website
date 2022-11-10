@@ -15,13 +15,13 @@ function Home_WhoTheHeck() {
   return (
     <PageSection
       id='who-the-heck'
-      className='relative md:max-h-screen bg-pink-light lander-responsive'
+      className='relative md:max-h-screen bg-pink-lighter lander-responsive'
     >
       <div ref={ref} className={' w-full h-full top-0 bg-blue'}>
         <div className='sticky   z-20 px-8 md:px-0'>
           <motion.div
             style={{ y }}
-            className='relative z-20 mx-auto bg-pink-light md:inline-block md:py-4  md:pr-8 lg:pr-16 md:pl-16'
+            className='relative z-20 mx-auto bg-pink-lighter md:inline-block md:py-4  md:pr-8 lg:pr-16 md:pl-16'
           >
             <h2 className=' my-8 2xl:text-8xl text-peach'>who the heck</h2>
             <div className='text-4xl  text-pink my-8 leading-none lowercase font-bold'>

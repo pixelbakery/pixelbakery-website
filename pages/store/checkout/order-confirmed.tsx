@@ -12,7 +12,7 @@ function SubmissionConfirmation() {
 
       <section
         id=''
-        className='px-12 my-4 min-h-screen pt-20 bg-pink-light flex flex-col justify-center'
+        className='px-12 my-4 min-h-screen pt-20 bg-pink-lighter flex flex-col justify-center'
       >
         <div className='mx-auto max-w-2xl flex flex-col justify-center h-full'>
           <h1 className='peach text-4xl md:text-6xl text-blue mb-1 pb-0'>Order Confirmed.</h1>

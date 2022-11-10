@@ -21,7 +21,7 @@ function Services_AllServices() {
             <Services_AllServices_Card_Filled
               service={services}
               key={services.service}
-              primaryColor={'pink-light'}
+              primaryColor={'pink-lighter'}
               textColor={'pink'}
               detailsHoverColor={'blue-dark'}
             />

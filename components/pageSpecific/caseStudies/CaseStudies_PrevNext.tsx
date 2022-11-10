@@ -15,7 +15,7 @@ function CaseStudies_PrevNext({ prev, next }) {
   // console.log('index: ', index)
 
   return (
-    <PageSection className='bg-pink-light py-2' id={'prev-next'}>
+    <PageSection className='bg-pink-lighter py-2' id={'prev-next'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
           <Link

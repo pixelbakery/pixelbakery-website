@@ -6,7 +6,7 @@ const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), { ssr: false }
 import modulation_animation from '@data/lottie_misc/modulation_animation.json'
 const Services_Modulation = () => {
   return (
-    <PageSection color='pink-light' id={'modulation'}>
+    <PageSection color='pink-lighter' id={'modulation'}>
       <InnerWrapper>
         <div className=' grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-lg lg:max-w-full mx-auto'>
           <div className='col-span-1 lg:col-span-3'>

@@ -37,7 +37,7 @@ const Services_AllServices_Card = ({
     </Link>
 
     // <a hrefLang={'en-US'} href="#" className="">
-    //     <article className="w-1/2 flex flex-col bg-pink-light rounded-lg text-pink" id="serviceAnimation">
+    //     <article className="w-1/2 flex flex-col bg-pink-lighter rounded-lg text-pink" id="serviceAnimation">
     //         <h3 className="flex-grow">{service.service}</h3>
     //     </article>
     // </a>

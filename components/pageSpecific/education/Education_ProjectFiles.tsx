@@ -29,7 +29,7 @@ function Education_ProjectFiles({ allProjectFiles }) {
   //   }
   // }
   return (
-    <PageSection className='bg-pink-light' id={'projectFiles'}>
+    <PageSection className='bg-pink-lighter' id={'projectFiles'}>
       <InnerWrapper>
         <H2 color='blue' id={'project-files'}>
           Project Files

@@ -87,7 +87,7 @@ const CheckoutPage: NextPage = () => {
                 return (
                   <div
                     key={item.id}
-                    className='py-4 border-b border-pink-light col-span-1 grid grid-cols-5 md:grid-cols-6 lg:grid-cols-5 font-medium  text-lg md:text-xl text-opacity-90 text-wine'
+                    className='py-4 border-b border-pink-lighter col-span-1 grid grid-cols-5 md:grid-cols-6 lg:grid-cols-5 font-medium  text-lg md:text-xl text-opacity-90 text-wine'
                   >
                     <div className='xs:col-span-1 sm:col-span-1'>
                       <div className='relative w-20 h-20 lg:w-32 lg:h-32 lg:mr-16 bg-blue'>
@@ -174,14 +174,14 @@ hover:opacity-90 hover:scale-98 active:scale-97'
             {cart?.line_items?.length! > 0 ? (
               <Link hrefLang={'en-US'} href='/store/checkout' passHref>
                 <button
-                  className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+                  className='flex align-middle justify-center bg-peach py-4 px-12 my-8 text-pink-lighter rounded-lg text-xl md:text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
   hover:opacity-90 hover:scale-99 active:scale-97'
                 >
                   <span className='self-center inline-block font-medium text-center px-12'>
                     pony up
                   </span>
 
-                  <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-light text-xl md:text-2xl  w-12 ' />
+                  <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-lighter text-xl md:text-2xl  w-12 ' />
                 </button>
               </Link>
             ) : (

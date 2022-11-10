@@ -24,7 +24,7 @@ function CaseStudies_Description({ children, ...props }: Props) {
     textColor = 'pink'
   } else textColor = props.textColor
   if (props.headerColor == undefined) {
-    headerColor = 'pink-light'
+    headerColor = 'pink-lighter'
   } else headerColor = props.headerColor
 
   return (

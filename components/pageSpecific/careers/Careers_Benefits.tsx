@@ -4,7 +4,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 
 const Careers_Benefits = () => {
   return (
-    <PageSection color='pink-light' id='careers-benefits'>
+    <PageSection color='pink-lighter' id='careers-benefits'>
       <InnerWrapper className='container grid grid-cols-1 md:grid-cols-5 gap-20 mx-auto py-4 max-w-7xl'>
         <div className='col-span-2'>
           <h2 className='text-pink text-right mb-1 pb-1'>benefits</h2>

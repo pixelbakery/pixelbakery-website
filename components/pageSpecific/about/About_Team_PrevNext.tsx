@@ -12,7 +12,7 @@ interface PrevNext {
 function About_Team_PrevNext({ active, prev, next }: PrevNext) {
   if (active) {
     return (
-      <PageSection className='bg-pink-light py-2' id={'bio-nextPerson'}>
+      <PageSection className='bg-pink-lighter py-2' id={'bio-nextPerson'}>
         <InnerWrapper className='py-2 my-2'>
           <div className='grid grid-cols-2 gap-x-6'>
             <Link

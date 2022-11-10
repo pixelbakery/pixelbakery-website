@@ -2,7 +2,7 @@ import Recipes_FeaturedPost from './Recipes_FeaturedPost'
 
 const Recipes_Posts_Related = ({ relatedPosts }) => {
   return (
-    <section className='px-6 bg-pink-light py-12 my-4' id='blog-related'>
+    <section className='px-6 bg-pink-lighter py-12 my-4' id='blog-related'>
       <div className='md:max-w-6xl mx-auto'>
         <h3 className='text-pink text-4xl'>Other Recipes</h3>
 

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
   return (
-    <PageSection color={'pink-light'} id={'next-post'}>
+    <PageSection color={'pink-lighter'} id={'next-post'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='grid grid-cols-2 gap-x-12'>
           <div className='h-full self-start'>

@@ -385,7 +385,7 @@ let Checkout: NextPage = () => {
                 <button
                   type='submit'
                   onClick={() => handleSubmit()}
-                  className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+                  className='block text-right bg-peach py-4 px-12 my-8 text-pink-lighter rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
     hover:opacity-90 hover:scale-99 active:scale-97'
                 >
                   submit

@@ -5,7 +5,7 @@ function Store_Nav_Cart() {
     <Link hrefLang={'en-US'} href='/store/cart' passHref>
       <div className='absolute right-0 top-0 mr-8 mt-8 '>
         <div
-          className='relative text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+          className='relative text-center bg-pink-lighter px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-95'
         >
           {cart?.total_items}

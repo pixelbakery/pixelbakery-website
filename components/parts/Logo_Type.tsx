@@ -1,12 +1,14 @@
-function Logo_Type() {
+import Link from 'next/link'
+const Logo_Type = () => {
   return (
     <div>
-      <div className='text-center text-cream text-4xl font-extrabold leading-9 '>
-        <a hrefLang={'en-US'} href='/'>
-          <span className='tracking-wider'>pixel bakery</span>
-          <br />
-          <span className='tracking-normal'>design studio</span>
-        </a>
+      <div>
+        <Link passHref href='/' hrefLang={'en-US'}>
+          <a className='block text-center text-cream text-4xl font-extrabold leading-9 '>
+            <span className='tracking-wider'>pixel bakery</span> <br />{' '}
+            <span className='tracking-normal'>design studio</span>{' '}
+          </a>
+        </Link>
       </div>
     </div>
   )

@@ -96,7 +96,7 @@ function Page_Careers_JobShadow() {
                   </p>
                 </li>
                 <li className='flex gap-8 my-0 py-0'>
-                  <div className='self-start flex-grow bg-pink-light text-pink flex flex-col  w-20 h-16 rounded-full  justify-center text-center text-4xl font-black'>
+                  <div className='self-start flex-grow bg-pink-lighter text-pink flex flex-col  w-20 h-16 rounded-full  justify-center text-center text-4xl font-black'>
                     3
                   </div>
                   <p className='self-start my-0 y-0 flex-shrink w-full'>

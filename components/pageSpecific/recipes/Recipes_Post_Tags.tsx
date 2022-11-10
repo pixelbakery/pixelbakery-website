@@ -11,7 +11,13 @@ function Recipes_Post_Tags({ tags }: Props) {
       <div className='flex justify-start flex-wrap gap-2'>
         {tags.map((tag) => {
           return (
-            <Pill key={tag} text={tag.toString()} bgColor='pink-light' textColor='pink' size='sm' />
+            <Pill
+              key={tag}
+              text={tag.toString()}
+              bgColor='pink-lighter'
+              textColor='pink'
+              size='sm'
+            />
           )
         })}
       </div>

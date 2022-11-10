@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 function Recipes_Post_GetPrevNextPost({ prev, next }) {
   return (
-    <PageSection color={'pink-light'} id={'next-post'}>
+    <PageSection color={'pink-lighter'} id={'next-post'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between gap-x-12'>
           <div className='w-1/2'>

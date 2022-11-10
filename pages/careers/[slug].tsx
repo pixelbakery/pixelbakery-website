@@ -107,7 +107,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
                 <Button_Filled
                   text='apply for position'
                   bgColor={'pink'}
-                  textColor={'pink-light'}
+                  textColor={'pink-lighter'}
                   chevronDirection='right'
                   link={'/careers/application'}
                   center={false}

@@ -5,7 +5,7 @@ import H2AndLead from '@typography/H2AndLead'
 
 function ServicesOverview_MotionMixer() {
   return (
-    <PageSection id='logo-animation' color='pink-light'>
+    <PageSection id='logo-animation' color='pink-lighter'>
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24'>
           <H2AndLead

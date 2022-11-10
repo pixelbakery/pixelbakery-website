@@ -63,10 +63,10 @@ const Pink = ({ header, subheader }: PageHeader_VarH) => {
     <PageHeader_VarH_Content
       animationData={Patterns_Pink}
       primaryColor={'pink'}
-      subheaderColor={'pink-light '}
+      subheaderColor={'pink-lighter '}
       subheader={subheader}
       header={header}
-      accentColor={'pink-light'}
+      accentColor={'pink-lighter'}
     />
   )
 }
@@ -75,7 +75,7 @@ const Pink_Light = ({ header, subheader }: PageHeader_VarH) => {
   return (
     <PageHeader_VarH_Content
       animationData={Patterns_Pink_Light}
-      primaryColor={'pink-light'}
+      primaryColor={'pink-lighter'}
       subheaderColor={'blue-dark'}
       subheader={subheader}
       header={header}

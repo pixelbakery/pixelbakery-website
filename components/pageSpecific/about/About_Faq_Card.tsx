@@ -17,7 +17,7 @@ const About_Faq_Card = ({ faq, index }: Props) => {
       })}
       id={cn(`faq${index}`)}
     >
-      <button className='relative w-full border-2 rounded-md bg-pink-light border-blue py-3 px-8 lg:px-12 question flex justify-between z-20'>
+      <button className='relative w-full border-2 rounded-md bg-pink-lighter border-blue py-3 px-8 lg:px-12 question flex justify-between z-20'>
         <div className='self-center pr-9'>
           <p className='text-left text-pink font-medium lg:font-bold text-md lg:text-lg leading-tight my-0 py-0'>
             {faq.questionName}

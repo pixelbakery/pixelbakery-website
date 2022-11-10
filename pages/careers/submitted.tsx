@@ -9,7 +9,7 @@ function SubmissionConfirmation() {
   return (
     <Main>
       <NextSeo noindex={true} nofollow={true} title='Application Submitted | Careers' />
-      <PageSection color='pink-light' id='application-submitted'>
+      <PageSection color='pink-lighter' id='application-submitted'>
         <InnerWrapper className='pt-24'>
           <H1 className='peach text-4xl md:text-6xl text-blue mb-8'>
             Thank you for your application.

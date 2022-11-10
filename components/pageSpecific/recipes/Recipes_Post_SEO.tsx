@@ -18,7 +18,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
         ]}
       />
       <NextSeo
-        title={`${frontMatter.title} | Recipes`}
+        title={`${frontMatter.title}`}
         description={`${frontMatter.excerpt}`}
         canonical={`https://pixelbakery.com/recipes/${slug}`}
         openGraph={{

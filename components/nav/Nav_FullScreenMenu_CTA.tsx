@@ -10,7 +10,7 @@ const Nav_FullScreenMenu_CTA = ({ update }) => {
           text={'Start something wonderful'}
           link={'/onboarding'}
           bgColor={'peach'}
-          textColor={'pink-light'}
+          textColor={'pink-lighter'}
           chevronDirection='right'
         />
       </div>

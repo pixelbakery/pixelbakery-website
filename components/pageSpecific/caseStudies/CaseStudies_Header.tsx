@@ -29,10 +29,11 @@ function CaseStudies_Header({ ...props }) {
       <div className='mx-auto max-w-6xl'>
         <div className='mb-6'>
           {/* <Logo /> */}
-          <a hrefLang={'en-US'} href={`${props.website}`}>
-            <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
-          </a>
+
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
+            <a hrefLang={'en-US'} href={`${props.website}`}>
+              <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
+            </a>
             {/* {props.projectName} */}
             {props.projectName}
           </H1>

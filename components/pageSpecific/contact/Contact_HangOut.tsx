@@ -90,7 +90,7 @@ function Contact_HangOut() {
             </g>
           </svg>
         </div>
-        <InnerWrapper color='pink-light -mt-8 py-8'>
+        <InnerWrapper color='pink-lighter -mt-8 py-8'>
           <div className='grid grid-cols-1 lg:grid-cols-2 py-12'>
             <div className='col-span-1 h-full mx-auto xl:mx-0'>
               <div className='h-full flex flex-col justify-center w-max mx-auto text-2xl lg:text-4xl text-pink font-bold lowercase leading-tight'>
