@@ -42,20 +42,18 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               <Link
                 as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/about/[slug]`}
-                passHref
                 hrefLang={'en-US'}
                 className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
-                legacyBehavior
               >
                 <Image
                   placeholder='blur'
-                  blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
-                  layout='fill'
-                  objectFit='cover'
+                  blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
+                  width={124}
+                  height={124}
                   alt={frontMatter.author.name}
-                  quality={20}
-                  className='object-top scale-175 sc'
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
+                  quality={75}
+                  className='w-full h-full object-cover'
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
                 />
               </Link>
             ) : (
@@ -64,11 +62,10 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                 <Image
                   placeholder='blur'
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
-                  layout='fill'
-                  objectFit='cover'
+                  fill={true}
                   alt={frontMatter.author.name}
                   quality={25}
-                  className='object-top scale-175 sc'
+                  className='object-cover object-top scale-175'
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
                 />
               </div>
@@ -83,7 +80,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
 
               {matchingBio ? (
                 <div className='text-sm text-wine'>
-                  Written by the one and only
+                  Written by the one and only{' '}
                   <Link
                     as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                     href={`/about/[slug]`}
