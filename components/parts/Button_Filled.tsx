@@ -27,26 +27,26 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
     chevronRotation = ''
   }
   return (
-    <Link
-      hrefLang={'en-US'}
-      href={link}
-      className={cn('block my-3 py-3 rounded-lg px-6 max-w-sm  hover-99', `bg-${bgColor}`, {
-        ['mx-auto']: center,
-      })}
-    >
-      <div className={cn(' font-bold text-xl lowercase flex flex-row')}>
-        <span
-          className={cn(
-            '-mt-[0.1em] py-0 text-center flex-grow self-center  tracking-wide',
-            `text-${textColor}`,
-          )}
-        >
-          {text}
-        </span>
+    <Link hrefLang={'en-US'} href={link}>
+      <div
+        className={cn('block my-3 py-3 rounded-lg px-6 max-w-sm  hover-99', `bg-${bgColor}`, {
+          ['mx-auto']: center,
+        })}
+      >
+        <div className={cn(' font-bold text-xl lowercase flex flex-row')}>
+          <span
+            className={cn(
+              '-mt-[0.1em] py-0 text-center flex-grow self-center  tracking-wide',
+              `text-${textColor}`,
+            )}
+          >
+            {text}
+          </span>
 
-        <i className={cn('p-2 self-center ', chevronRotation, `text-${textColor}`)}>
-          {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
-        </i>
+          <i className={cn('p-2 self-center ', chevronRotation, `text-${textColor}`)}>
+            {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
+          </i>
+        </div>
       </div>
     </Link>
   )
