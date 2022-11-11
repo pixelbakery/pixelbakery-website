@@ -43,6 +43,9 @@ module.exports = {
       body: 'Poppins, sans-serif',
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 30s linear infinite',
+      },
       screens: {
         '3xl': '1792px',
       },

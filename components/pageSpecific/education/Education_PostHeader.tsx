@@ -30,20 +30,19 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
             </div>
             <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{title}</h1>
           </div>
-          <div className='flex mt-3 mb-16'>
-            <div className='w-12 h-12 rounded-full relative overflow-hidden'>
+          <div className='flex gap-x-3 mt-3 mb-16 relative'>
+            <div className='spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
               <Image
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
-                layout='fill'
-                objectFit='cover'
+                fill={true}
                 alt={author}
                 quality={25}
-                className='object-top scale-175 sc'
+                className='animate-spin-slow relative object-top '
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
               />
             </div>
-            <div className={cn('ml-8 flex flex-col justify-center self-center')}>
+            <div className={cn(' flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} />
                 <span className='mx-2'>|</span>
@@ -54,16 +53,15 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                 Written by{' '}
                 <span>
                   {authorUrl ? (
-                    (<Link
-                    hrefLang={'en-US'}
-                    href={authorUrl}
-                    passHref
-                    className='text-blue underline'
-                    legacyBehavior>
-
+                    <Link
+                      hrefLang={'en-US'}
+                      href={authorUrl}
+                      passHref
+                      className='text-blue underline'
+                      legacyBehavior
+                    >
                       {author}
-
-                    </Link>)
+                    </Link>
                   ) : (
                     author
                   )}
@@ -74,7 +72,7 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
         </div>
       </section>
     </header>
-  );
+  )
 }
 
 export default Education_PostHeader
