@@ -25,7 +25,7 @@ function Work_Clients() {
         <div className='mt-3 grid grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-x-12 lg:gap-x-0'>
           {activeClients.map((client, index) => (
             <div key={index} className='col-span-1'>
-              <Link hrefLang={'en-US'} href={client.url} passHref>
+              <Link hrefLang={'en-US'} href={client.url} passHref legacyBehavior>
                 <div className='cursor-pointer duration-300 hover:scale-99 ease-in-out relative w-full h-32'>
                   <Image
                     layout='fill'
@@ -44,6 +44,6 @@ function Work_Clients() {
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 export default Work_Clients

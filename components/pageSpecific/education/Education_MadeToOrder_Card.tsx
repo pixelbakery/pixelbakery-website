@@ -23,8 +23,8 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
       as={`/education/tutorials/${tutorial.filePath.replace(/\.mdx?$/, '')}`}
       href={`/education/tutorials/[slug]`}
       passHref
-    >
-      <a>
+      legacyBehavior>
+
         <div
           className={cn(
             'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ',
@@ -59,8 +59,8 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
             </h3>
           </div>
         </div>
-      </a>
-    </Link>
-  )
+
+      </Link>
+  );
 }
 export default Education_MadeToOrder_Card

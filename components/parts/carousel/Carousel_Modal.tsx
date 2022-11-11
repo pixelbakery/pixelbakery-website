@@ -44,9 +44,8 @@ const Carousel_Modal = ({ src, w, h, alt }) => {
         </div>
         <div className='relative flex gap-2'>
           <a
-           href=''
-           download
-            }
+            href=''
+            download
             className='relative cursor-pointer hover-98 hover-shadow-none    text-cream '
           >
             <DownloadIcon className={'h-8 w-8'} />

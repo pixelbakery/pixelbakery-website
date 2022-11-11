@@ -179,9 +179,12 @@ export default function Navbar() {
           hrefLang={'en-US'}
           href={'/'}
           className='text-4xl font-extrabold text-peach leading-none'
+          legacyBehavior
         >
-          <div>pb</div>
-          <div>ds</div>
+          <>
+            <div>pb</div>
+            <div>ds</div>
+          </>
         </Link>
       </div>
     </>

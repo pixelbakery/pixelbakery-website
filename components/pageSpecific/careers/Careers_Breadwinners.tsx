@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 function Careers_Breadwinners() {
   return (
-    <Link hrefLang={'en-US'} href={'/'} passHref>
+    <Link hrefLang={'en-US'} href={'/'} passHref legacyBehavior>
       <PageSection id='breadwinners' color='blue-dark' className=' py-0 lg:py-4 xl:py-12 xl:mt-24'>
         <InnerWrapper>
           <H2 className='text-cream text-2xl'>Brand Ambassadors Program</H2>
@@ -26,7 +26,7 @@ function Careers_Breadwinners() {
         </InnerWrapper>
       </PageSection>
     </Link>
-  )
+  );
 }
 
 export default Careers_Breadwinners

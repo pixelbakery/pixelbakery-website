@@ -21,20 +21,23 @@ function CaseStudies_Credits({ credits }) {
             return (
               <li className='my-3' key={credit.name}>
                 {credit.website != undefined ? (
-                  <Link hrefLang={'en-US'} href={`${credit.website}`} passHref>
-                    <a hrefLang={'en-US'} className='underline decoration-dotted'>
-                      {innerHtml(credit.name, credit.title)}
-                    </a>
+                  <Link
+                    hrefLang={'en-US'}
+                    href={`${credit.website}`}
+                    passHref
+                    className='underline decoration-dotted'
+                    legacyBehavior>
+                    {innerHtml(credit.name, credit.title)}
                   </Link>
                 ) : (
                   innerHtml(credit.name, credit.title)
                 )}
               </li>
-            )
+            );
           })}
         </ul>
       </div>
-    )
+    );
   }
 
   return (

@@ -8,8 +8,9 @@ function Careers_Card({ job }) {
       as={`/careers/${job.filePath.replace(/\.mdx?$/, '')}`}
       href={`/careers/[slug]`}
       passHref
-    >
-      <a hrefLang={'en-US'} className='col-span-1'>
+      className='col-span-1'
+      legacyBehavior>
+
         <article className='h-full w-full px-3 py-4 border-4 border-pink rounded-lg flex flex-col justify-between cursor-pointer duration-300 hover:scale-98'>
           <div className='text-blue-dark bg-yellow font-bold py-1 px-2 mr-auto rounded-md '>
             {job.data.commitment}
@@ -25,8 +26,8 @@ function Careers_Card({ job }) {
             <DateFormatter dateString={job.data.date} />
           </small>
         </article>
-      </a>
-    </Link>
-  )
+
+      </Link>
+  );
 }
 export default Careers_Card

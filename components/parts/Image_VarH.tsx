@@ -21,25 +21,23 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
       />
     )
   }
-  return (
-    <>
-      {openInNewWindow ? (
-        <Link hrefLang={'en-US'} href={src} passHref>
-          <a hrefLang={'en-US'} target={'_blank'}>
-            <div
-              className={'cursor-pointer relative hover:scale-99 duration-300 ease-in-out'}
-              style={{ paddingTop }}
-            >
-              <ImageComponent />
-            </div>
-          </a>
-        </Link>
-      ) : (
-        <div className='relative'>
+  return <>
+    {openInNewWindow ? (
+      (<Link hrefLang={'en-US'} href={src} passHref target={'_blank'} legacyBehavior>
+
+        <div
+          className={'cursor-pointer relative hover:scale-99 duration-300 ease-in-out'}
+          style={{ paddingTop }}
+        >
           <ImageComponent />
         </div>
-      )}
-    </>
-  )
+
+      </Link>)
+    ) : (
+      <div className='relative'>
+        <ImageComponent />
+      </div>
+    )}
+  </>;
 }
 export default Image_VarH

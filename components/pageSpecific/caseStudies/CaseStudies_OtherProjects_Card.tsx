@@ -9,7 +9,7 @@ function CaseStudies_OtherProjects_Card({ project }) {
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
-        passHref
+        legacyBehavior
       >
         <article
           className={cn(
@@ -46,7 +46,6 @@ function CaseStudies_OtherProjects_Card({ project }) {
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
-        passHref
       >
         <div className='mt-4 cursor-pointer hover:scale-99 duration-300 ease-in-out'>
           <div className='text-sm text-blue-dark'>{project.data.client}</div>

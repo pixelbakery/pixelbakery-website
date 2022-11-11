@@ -24,12 +24,12 @@ const Recipes_Posts_Related = ({ relatedPosts }) => {
                   excerpt={post.data.excerpt}
                 />
               </div>
-            )
+            );
           })}
         </div>
         <div className='grid grid-cols-3 gap-8 my-8 '></div>
       </div>
     </section>
-  )
+  );
 }
 export default Recipes_Posts_Related

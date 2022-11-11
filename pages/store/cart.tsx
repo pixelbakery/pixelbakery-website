@@ -95,15 +95,13 @@ const CheckoutPage: NextPage = () => {
                           href='/store/product/[product]'
                           as={`/store/product/${item.permalink}`}
                         >
-                          <a hrefLang={'en-US'} className=''>
-                            <Image
-                              layout='fill'
-                              objectFit='cover'
-                              unoptimized={true}
-                              src={`${item?.media?.source ?? item?.image?.url}`}
-                              alt={'pixel bakery shop: ' + item.name}
-                            />
-                          </a>
+                          <Image
+                            layout='fill'
+                            objectFit='cover'
+                            unoptimized={true}
+                            src={`${item?.media?.source ?? item?.image?.url}`}
+                            alt={'pixel bakery shop: ' + item.name}
+                          />
                         </Link>
                       </div>
                     </div>
@@ -155,10 +153,8 @@ hover:opacity-90 hover:scale-98 active:scale-97'
               <div>
                 <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                   well, that&apos;s a sad looking cart.{' '}
-                  <Link hrefLang={'en-US'} href='/store' passHref>
-                    <a hrefLang={'en-US'} className='underline text-blue'>
-                      make it less sad
-                    </a>
+                  <Link hrefLang={'en-US'} href='/store' className='underline text-blue'>
+                    make it less sad
                   </Link>
                   .
                 </h3>
@@ -166,10 +162,12 @@ hover:opacity-90 hover:scale-98 active:scale-97'
             )}
           </div>
           <div className=' flex flex-col md:flex-row justify-between'>
-            <Link hrefLang={'en-US'} href='/store' passHref>
-              <a hrefLang={'en-US'} className='block text-blue text-md cursor-pointer py-3'>
-                ← Back to store{' '}
-              </a>
+            <Link
+              hrefLang={'en-US'}
+              href='/store'
+              className='block text-blue text-md cursor-pointer py-3'
+            >
+              ← Back to store
             </Link>
             {cart?.line_items?.length! > 0 ? (
               <Link hrefLang={'en-US'} href='/store/checkout' passHref>

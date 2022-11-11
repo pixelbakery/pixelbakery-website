@@ -30,21 +30,21 @@ function Contact_HangOut() {
           {SocialUrls_Contact.map((URL, index) => {
             return (
               <li key={URL.name} className={cn('-mt-12')}>
-                <Link hrefLang={'en-US'} href={URL.url} passHref>
-                  <a>
-                    <StrokeText
-                      text={URL.name}
-                      index={index}
-                      fontSize={'text-3xl lg:text-4xl'}
-                      strokeWidth={'stroke-1'}
-                      color={'blue-dark'}
-                      fontWeight={'font-black'}
-                      active={false}
-                    />
-                  </a>
+                <Link hrefLang={'en-US'} href={URL.url} passHref legacyBehavior>
+
+                  <StrokeText
+                    text={URL.name}
+                    index={index}
+                    fontSize={'text-3xl lg:text-4xl'}
+                    strokeWidth={'stroke-1'}
+                    color={'blue-dark'}
+                    fontWeight={'font-black'}
+                    active={false}
+                  />
+
                 </Link>
               </li>
-            )
+            );
           })}
         </ul>
       </InnerWrapper>
@@ -107,19 +107,23 @@ function Contact_HangOut() {
                 <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
                   <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
                     <Link hrefLang={'en-US'} href={'/about#twitch'} passHref>
-                      <a>are we home?</a>
+                      are we home?
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'https://g.page/pixelbakery?share'} passHref>
-                      <a hrefLang={'en-US'} target='_blank'>
+                    <Link
+                      hrefLang={'en-US'}
+                      href={'https://g.page/pixelbakery?share'}
+                      passHref
+                      target='_blank'>
+                      
                         map it
-                      </a>
+                      
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
                     <Link hrefLang={'en-US'} href={'/onboarding#calendly'} passHref>
-                      <a>schedule it</a>
+                      schedule it
                     </Link>
                   </li>
                 </ul>
@@ -129,6 +133,6 @@ function Contact_HangOut() {
         </InnerWrapper>
       </div>
     </PageSection>
-  )
+  );
 }
 export default Contact_HangOut

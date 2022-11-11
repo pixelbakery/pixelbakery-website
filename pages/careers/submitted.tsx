@@ -44,30 +44,25 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link hrefLang={'en-US'} href={'/careers'} passHref>
-                <a hrefLang={'en-US'} className='text-blue underline text-md'>
-                  {' '}
-                  Back to all job postings →
-                </a>
+              <Link hrefLang={'en-US'} href={'/careers'} className='text-blue underline text-md'>
+                Back to all job postings →
               </Link>
             </li>
             <li className='my-2'>
-              {' '}
-              <Link hrefLang={'en-US'} href={'/about#twitch'}>
-                <a hrefLang={'en-US'} className='text-blue underline text-md'>
-                  Daydream about us →
-                </a>
+              <Link
+                hrefLang={'en-US'}
+                href={'/about#twitch'}
+                className='text-blue underline text-md'
+              >
+                Daydream about us →
               </Link>
             </li>
             <li className='my-2'>
-              {' '}
               <Link
                 href={'https://youtube.com/playlist?list=PLR7uWMos1NkvOhSzaTR8-0vwc8MDBuylm'}
-                passHref
+                className='text-blue underline text-md hover:text-opacity-80'
               >
-                <a hrefLang={'en-US'} className='text-blue underline text-md hover:text-opacity-80'>
-                  Watch a playlist of trippy music videos we've curated →
-                </a>
+                Watch a playlist of trippy music videos we've curated →
               </Link>
             </li>
           </ul>

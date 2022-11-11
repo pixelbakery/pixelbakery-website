@@ -16,31 +16,25 @@ const Services_AllServices_Card = ({
 }: ServicesCard) => {
   const [hovered, setHovered] = useState(false)
   return (
-    <Link hrefLang={'en-US'} href={service.url} passHref>
-      <a
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className={cn(`group hover-98 card `, {
-          [`bg-${textColor}`]: hovered,
-          [`bg-${primaryColor}`]: !hovered,
-        })}
-      >
-        <Services_AllServices_Card_Body
-          isFilled={true}
-          service={service}
-          textColor={textColor}
-          detailsHoverColor={detailsHoverColor}
-          primaryColor={primaryColor}
-          isHovered={hovered}
-        />
-      </a>
+    <Link
+      hrefLang={'en-US'}
+      href={service.url}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={cn(`group hover-98 card `, {
+        [`bg-${textColor}`]: hovered,
+        [`bg-${primaryColor}`]: !hovered,
+      })}
+    >
+      <Services_AllServices_Card_Body
+        isFilled={true}
+        service={service}
+        textColor={textColor}
+        detailsHoverColor={detailsHoverColor}
+        primaryColor={primaryColor}
+        isHovered={hovered}
+      />
     </Link>
-
-    // <a hrefLang={'en-US'} href="#" className="">
-    //     <article className="w-1/2 flex flex-col bg-pink-lighter rounded-lg text-pink" id="serviceAnimation">
-    //         <h3 className="flex-grow">{service.service}</h3>
-    //     </article>
-    // </a>
   )
 }
 export default Services_AllServices_Card

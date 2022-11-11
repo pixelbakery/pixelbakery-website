@@ -11,8 +11,8 @@ function FourOhFour() {
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
             layout='responsive'
-            width='480px'
-            height='269px'
+            width={480}
+            height={269}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
             className='w-full'

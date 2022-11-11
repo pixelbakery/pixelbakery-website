@@ -31,14 +31,14 @@ function SubmissionConfirmation() {
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
             Also, be sure to follow us on{' '}
-            <a
+            <Link
               href='https://www.instagram.com/pixelbakery/'
               rel='noreferrer'
               target='_blank'
               className='underline text-peach'
             >
               Instagram
-            </a>{' '}
+            </Link>{' '}
             🫶
           </p>
 

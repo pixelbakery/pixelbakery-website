@@ -94,12 +94,11 @@ function Education_ProjectFiles({ allProjectFiles }) {
                 key={pf.data.title}
                 as={`/education/project-files/${pf.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/education/project-files/[slug]`}
-              >
-                <a
-                  id={`${pf.data.title}`}
-                  className='visible cursor-pointer
+                id={`${pf.data.title}`}
+                className='visible cursor-pointer
 transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
-                >
+                legacyBehavior>
+
                   <div>
                     <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
                       {pf.data.videoCoverImage ? (
@@ -131,14 +130,14 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                     <div className='mt-2 text-xs text-wine-200'>{`${pf.data.category}`}</div>
                     <h3 className='text-lg text-wine leading-none'>{pf.data.title}</h3>
                   </div>
-                </a>
-              </Link>
-            )
+
+                </Link>
+            );
           })}
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 
 export default Education_ProjectFiles

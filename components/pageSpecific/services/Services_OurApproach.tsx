@@ -21,10 +21,10 @@ function Services_OurApproach() {
                 hrefLang={'en-US'}
                 href={'/recipes/why-authenticity-in-advertising-matters'}
                 passHref
-              >
-                <a hrefLang={'en-US'} className='text-blue-dark duration-200'>
+                className='text-blue-dark duration-200'>
+                
                   authentic and relatable
-                </a>
+                
               </Link>{' '}
               way possible.
             </p>
@@ -36,6 +36,6 @@ function Services_OurApproach() {
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 export default Services_OurApproach
