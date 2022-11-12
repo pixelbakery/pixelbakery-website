@@ -2,7 +2,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import LogoAnimation_PastClients_Card from './LogoAnimation_PastClients_Card'
+import LogoAnimation_PastClients_Card from '@logoAnimation/LogoAnimation_PastClients_Card'
 
 function LogoAnimation_PastClients() {
   return (
@@ -13,15 +13,42 @@ function LogoAnimation_PastClients() {
           <Lead>Check out some of the other logo animations we&apos;ve done</Lead>
         </div>
         <div className='grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 lg:gap-16'>
-          <LogoAnimation_PastClients_Card video='679264267' client='Sampson Construction' />
-          <LogoAnimation_PastClients_Card video='679263727' client='Doane University' />
-          <LogoAnimation_PastClients_Card video='679264144' client='The Northern Creative' />
-          <LogoAnimation_PastClients_Card video='679263746' client='The Foundry' />
-          <LogoAnimation_PastClients_Card video='679263714' client='Caitlyn Bea' />
-          <LogoAnimation_PastClients_Card video='679263815' client='Hudl' />
-          <LogoAnimation_PastClients_Card video='679263655' client='Blackboard Design' />
-          <LogoAnimation_PastClients_Card video='679263840' client='Nelnet' />
-          <LogoAnimation_PastClients_Card video='679263689' client='Blue Blood' />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_sampson.mp4'
+            client='Sampson Construction'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_doane.mp4'
+            client='Doane University'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_northern.mp4'
+            client='The Northern Creative'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_foundry.mp4'
+            client='The Foundry'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_caitlyn.mp4'
+            client='Caitlyn Bea'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_hudl.mp4'
+            client='Hudl'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_blackboard.mp4'
+            client='Blackboard Design'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_nelnet.mp4'
+            client='Nelnet'
+          />
+          <LogoAnimation_PastClients_Card
+            video='/img/motion-mixer/PixelBakery_MotionMixer_blueBlood.mp4'
+            client='Blue Blood Brewing'
+          />
         </div>
       </InnerWrapper>
     </PageSection>

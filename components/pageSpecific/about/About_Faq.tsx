@@ -10,7 +10,7 @@ const About_Faq = () => {
   return (
     <>
       <FAQPageJsonLd mainEntity={faq} />
-      <PageSection className='bg-pink-light' id='faq'>
+      <PageSection className='bg-pink-lighter' id='faq'>
         <InnerWrapper>
           <div className='mb-12'>
             <H2 color={'blue'} className='mb-4'>

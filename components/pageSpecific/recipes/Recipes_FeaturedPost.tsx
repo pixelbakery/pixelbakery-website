@@ -1,11 +1,7 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
-import Author from 'types/author'
-import H3 from '@typography/H3'
 
 type Props = {
   title: string
@@ -13,10 +9,9 @@ type Props = {
   date: string
   categories: Array<string>
   excerpt: string
-  author: Author
+  author: any
   as: string
   href: string
-  slug: string
   aspectW: string
   aspectY: string
 }
@@ -30,12 +25,12 @@ const Recipes_FeaturedPost = ({
   as,
   href,
   ...props
-}) => {
+}: Props) => {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
 
   return (
-    <Link as={`${as}`} href={`${href}`} passHref>
+    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref legacyBehavior>
       <a>
         <article
           className={
@@ -46,12 +41,11 @@ const Recipes_FeaturedPost = ({
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-            layout='fill'
-            objectFit='cover'
+            fill={true}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             quality={25}
-            className='bg-blue'
+            className='object-cover w-full h-full bg-blue'
             alt={`cover photo for ${title}`}
           />
 

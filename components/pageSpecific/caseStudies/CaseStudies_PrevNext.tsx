@@ -15,15 +15,16 @@ function CaseStudies_PrevNext({ prev, next }) {
   // console.log('index: ', index)
 
   return (
-    <PageSection className='bg-pink-light py-2' id={'prev-next'}>
+    <PageSection className='bg-pink-lighter py-2' id={'prev-next'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
           <Link
             as={`/work/case-studies/${prev.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
-            passHref
+            hrefLang={'en-US'}
+            aria-lable={`${prev.data.client} –  ${prev.data.title}`}
           >
-            <a className='flex'>
+            <div className='flex'>
               <div className='w-20 self-center text-peach rotate-180'>
                 <ChevronRightIcon />
               </div>
@@ -36,14 +37,15 @@ function CaseStudies_PrevNext({ prev, next }) {
                   {prev.data.title}
                 </p>
               </div>
-            </a>
+            </div>
           </Link>
           <Link
             as={`/work/case-studies/${next.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
-            passHref
+            hrefLang={'en-US'}
+            aria-lable={`${next.data.client} –  ${next.data.title}`}
           >
-            <a className='flex justify-end'>
+            <div className='flex justify-end'>
               <div className='self-center'>
                 <p className='text-wine-400 font-medium text-md leading-none mb-1 mt-0 pt-0'>
                   {next.data.client}
@@ -56,7 +58,7 @@ function CaseStudies_PrevNext({ prev, next }) {
               <div className='w-20 text-peach self-center'>
                 <ChevronRightIcon />
               </div>
-            </a>
+            </div>
           </Link>
         </div>
       </InnerWrapper>

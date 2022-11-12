@@ -18,7 +18,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
         ]}
       />
       <NextSeo
-        title={`${frontMatter.title} | Recipes`}
+        title={`${frontMatter.title}`}
         description={`${frontMatter.excerpt}`}
         canonical={`https://pixelbakery.com/recipes/${slug}`}
         openGraph={{
@@ -28,31 +28,10 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
           description: `${frontMatter.excerpt}`,
           article: {
             publishedTime: `${datePostedISO}`,
-            tags: [`${frontMatter.categories[0]}`],
+            tags: frontMatter.tags,
+            authors: [`https://pixelbakery.com/about/${frontMatter.author.slug}`],
           },
           images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
-              alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
-              width: 1080,
-              height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
-              width: 1080,
-              height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
-            },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
@@ -62,10 +41,15 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
       />
       <ArticleJsonLd
         url={`https://pixelbakery.com/recipes/${slug}`}
-        title={frontMatter.title}
-        images={frontMatter.coverImage}
+        title={` ${frontMatter.title}`}
+        images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
-        authorName={[`${frontMatter.author.name}`]}
+        authorName={[
+          {
+            name: `${frontMatter.author.name}`,
+            url: `https://pixelbakery.com/about/${frontMatter.author.slug}`,
+          },
+        ]}
         description={`${frontMatter.excerpt}`}
       />
     </>

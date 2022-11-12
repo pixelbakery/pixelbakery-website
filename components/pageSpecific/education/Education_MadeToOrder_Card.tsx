@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
@@ -24,9 +22,8 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
     <Link
       as={`/education/tutorials/${tutorial.filePath.replace(/\.mdx?$/, '')}`}
       href={`/education/tutorials/[slug]`}
-      passHref
     >
-      <a>
+      <>
         <div
           className={cn(
             'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ',
@@ -36,12 +33,11 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
-            layout='fill'
-            objectFit='cover'
+            fill={true}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             quality={50}
-            className='bg-blue'
+            className='bg-blue object-cover w-full h-full'
             alt={`cover photo for ${tutorial.data.title}`}
           />
 
@@ -61,7 +57,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
             </h3>
           </div>
         </div>
-      </a>
+      </>
     </Link>
   )
 }

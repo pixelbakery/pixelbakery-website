@@ -10,10 +10,10 @@ function Contct_Clients() {
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 w-full gap-x-24'>
           <div className='col-span-1'>
-            <H2 color='pink-light'>Become a client</H2>
+            <H2 color='pink-lighter'>Become a client</H2>
           </div>
           <div className='col-span-1'>
-            <Lead color='peach' className='leading-tight'>
+            <Lead color='blue-dark' className='leading-tight'>
               Schedule a meeting with our leadership team to discuss your next big project and to
               see if we’re a good fit for one another! <br />
               <br />
@@ -28,8 +28,8 @@ function Contct_Clients() {
             <Button_Filled
               link='/onboarding'
               text='start a project'
-              textColor='peach'
-              bgColor='pink-light'
+              textColor='blue-dark'
+              bgColor='pink-lighter'
               center={false}
               chevronDirection={'right'}
             />

@@ -28,7 +28,7 @@ export default [
   {
     questionName: 'Do you do job shadows?',
     acceptedAnswerText:
-      "Yes, but we're quite particular. Check out more info on our <a class='text-peach underline' href='careers/job-shadow'>job shadows</a> page.",
+      "Yes, but we're quite particular. Check out more info on our <a hrefLang={'en-US'} class='text-peach underline' href='careers/job-shadow'>job shadows</a> page.",
   },
   {
     questionName: 'How long does it take to make an animation?',
@@ -62,6 +62,6 @@ export default [
   {
     questionName: 'Do you shoot weddings?',
     acceptedAnswerText:
-      'Eventually the cold grip of entropy will consume the universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefostercreative.com</a> for anything wedding related. Mazel tov!!',
+      'Eventually the unyielding and brutal grip of entropy will consume the already-indifferent universe, and leave it a cold and lonely husk void of any life. Every star will fade and darkness will become the only constant. Please see <a hrefLang="en-US" class="text-peach underline" href="https://wearefostercreative.com/" target="_blank">wearefostercreative.com</a> for anything wedding related. Mazel tov!!',
   },
 ]

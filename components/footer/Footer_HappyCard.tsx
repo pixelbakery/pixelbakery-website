@@ -11,7 +11,7 @@ export default function HappyCard() {
     <div suppressHydrationWarning>
       <p
         suppressHydrationWarning
-        className='text-xl md:text-4xl leading-none xl:text-6xl italic font-black text-cream py-0 my-0'
+        className='text-xl md:text-4xl leading-none xl:text-6xl italic font-bold md:font-extrabold text-cream md:py-0 my-0'
       >
         {happyCard}
       </p>

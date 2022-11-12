@@ -1,15 +1,29 @@
-import Vimeo from '@u-wave/react-vimeo'
-import PropTypes from 'prop-types'
+import ReactPlayer from 'react-player/lazy'
+import Loading from '@utility/Loading'
 
-LogoAnimation_PastClients_Card.propTypes = {
-  video: PropTypes.string,
-  client: PropTypes.string,
+interface Card {
+  video: string
+  client: string
 }
-function LogoAnimation_PastClients_Card({ video, client }) {
+function LogoAnimation_PastClients_Card({ video, client }: Card) {
   return (
     <article>
-      <div className='relative bg-peach w-full aspect-w-1 aspect-h-1 overflow-hidden'>
-        <Vimeo
+      <div className='relative  w-full aspect-h-1 aspect-w-1 overflow-hidden'>
+        <ReactPlayer
+          url={`${video}`}
+          autoPlay={true}
+          loop={true}
+          volume={0}
+          playing={true}
+          muted={true}
+          playsInline={true}
+          width='100%'
+          height='100%'
+          controls={false}
+          className='absolute block top-0 left-0 right-0 bottom-0 scale-101'
+        />
+        <Loading />
+        {/* <Vimeo
           video={video}
           autoplay={true}
           loop
@@ -20,9 +34,9 @@ function LogoAnimation_PastClients_Card({ video, client }) {
           controls={false}
           responsive={true}
           className=' object-cover w-full h-full'
-        />
+        /> */}
       </div>
-      <h3 className='text-wine-500 text-lg mt-3 font-medium'>Client: {client}</h3>
+      <h3 className='text-wine text-lg mt-3 font-normal italic'>{client}</h3>
     </article>
   )
 }

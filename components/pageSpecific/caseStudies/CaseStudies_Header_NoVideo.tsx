@@ -13,13 +13,12 @@ function CaseStudies_Header_Alt({ ...props }) {
         <div className='mb-6'>
           <div className='relative  h-16 w-16 self-center mb-2'>
             <Image
-              layout='fill'
-              objectFit='contain'
+              fill={true}
               placeholder='blur'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/pixelbakery_client_SNACKLINS_color.svg`}
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/pixelbakery_client_SNACKLINS_color.svg`}
               alt='Pixel Bakery Design Studio'
-              className='object-enter relative'
+              className='object-center object-contain relative'
             />
           </div>
 

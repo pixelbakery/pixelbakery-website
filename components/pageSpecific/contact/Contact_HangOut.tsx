@@ -7,7 +7,6 @@ import H2 from '@typography/H2'
 import cn from 'classnames'
 import gsap from 'gsap'
 import SocialUrls_Contact from '@data/SocialUrls_Contact'
-
 function Contact_HangOut() {
   useEffect(() => {
     gsap.set('.animate-horizontal', { x: 0 })
@@ -31,18 +30,16 @@ function Contact_HangOut() {
           {SocialUrls_Contact.map((URL, index) => {
             return (
               <li key={URL.name} className={cn('-mt-12')}>
-                <Link href={URL.url} passHref>
-                  <a>
-                    <StrokeText
-                      text={URL.name}
-                      index={index}
-                      fontSize={'text-3xl lg:text-4xl'}
-                      strokeWidth={'stroke-1'}
-                      color={'blue-dark'}
-                      fontWeight={'font-black'}
-                      active={false}
-                    />
-                  </a>
+                <Link hrefLang={'en-US'} href={URL.url}>
+                  <StrokeText
+                    text={URL.name}
+                    index={index}
+                    fontSize={'text-3xl lg:text-4xl'}
+                    strokeWidth={'stroke-1'}
+                    color={'blue-dark'}
+                    fontWeight={'font-black'}
+                    active={false}
+                  />
                 </Link>
               </li>
             )
@@ -91,7 +88,7 @@ function Contact_HangOut() {
             </g>
           </svg>
         </div>
-        <InnerWrapper color='pink-light -mt-8 py-8'>
+        <InnerWrapper color='pink-lighter -mt-8 py-8'>
           <div className='grid grid-cols-1 lg:grid-cols-2 py-12'>
             <div className='col-span-1 h-full mx-auto xl:mx-0'>
               <div className='h-full flex flex-col justify-center w-max mx-auto text-2xl lg:text-4xl text-pink font-bold lowercase leading-tight'>
@@ -107,18 +104,22 @@ function Contact_HangOut() {
               <div className=' mx-auto xl:mx-auto w-max'>
                 <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
                   <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'/about#twitch'} passHref>
-                      <a>are we home?</a>
+                    <Link hrefLang={'en-US'} href={'/about#twitch'}>
+                      are we home?
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'https://g.page/pixelbakery?share'} passHref>
-                      <a target='_blank'>map it</a>
+                    <Link
+                      hrefLang={'en-US'}
+                      href={'https://g.page/pixelbakery?share'}
+                      target='_blank'
+                    >
+                      map it
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link href={'/onboarding#calendly'} passHref>
-                      <a>schedule it</a>
+                    <Link hrefLang={'en-US'} href={'/book'}>
+                      schedule it
                     </Link>
                   </li>
                 </ul>

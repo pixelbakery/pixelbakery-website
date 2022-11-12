@@ -42,9 +42,11 @@ function ServicesOverview_Intro() {
   return (
     <PageSection color='cream' id={'overview'}>
       <InnerWrapper>
-        <H2 className='text-center mx-auto max-w-4xl md:max-w-4xl 2xl:max-w-4xl 3xl:max-w-4xl'>
-          We don't try to do everything– we focus on what we're great at
-        </H2>
+        <div className='flex justify-center'>
+          <H2 className='text-center mx-auto max-w-4xl md:max-w-4xl 2xl:max-w-4xl 3xl:max-w-4xl'>
+            We don't try to do everything– we focus on what we're great at
+          </H2>
+        </div>
         <Lead className='text-center mx-auto' color='blue-dark'>
           Check out our work and let us know if you think we&apos;d vibe
         </Lead>
@@ -72,16 +74,19 @@ function ServicesOverview_Intro() {
           <div className='flex justify-center gap-x-4 gap-y-6 flex-wrap max-w-2xl mx-auto pt-4'>
             {talents.map((talent) => {
               return (
-                <Link href={talent.link} passHref key={talent.link}>
-                  <a className='duration-300 hover:scale-98'>
-                    <Pill
-                      text={talent.service}
-                      bgColor='pink'
-                      textColor='cream'
-                      size='sm'
-                      className=''
-                    />
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href={talent.link}
+                  key={talent.link}
+                  className='duration-300 hover:scale-98'
+                >
+                  <Pill
+                    text={talent.service}
+                    bgColor='pink'
+                    textColor='cream'
+                    size='sm'
+                    className=''
+                  />
                 </Link>
               )
             })}

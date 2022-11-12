@@ -108,7 +108,7 @@
     font-style: italic;
     font-weight: 600;
     font-display: swap;
-    src: url(/fonts/poppins/Poppins-SemiBoldItalic.woff2) format('woff2');
+    src: url(/fonts/poppins/Poppins-SemiBoldItalic.ttf) format('ttf');
   }
 
   @font-face {

@@ -23,7 +23,7 @@ const MoreStories = ({ posts }) => {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 export default MoreStories

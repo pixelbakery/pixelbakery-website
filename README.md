@@ -206,7 +206,7 @@ Here's a list of all the external API calls we make:
 ## AWS S3 CDN
 
 Run the following command to push your local files to s3:
-`aws s3 sync public s3://cdn.pixelbakery.com --exclude "*.DS_Store"`
+`aws s3 sync public s3://cdn.pixelbakery.com --exclude "*.DS_Store" --cache-control max-age=31536000`
 
 Run the following command to pull the files from s3 to your local folder:
 `aws s3 sync s3://cdn.pixelbakery.com public --exclude "*.DS_Store"`
@@ -216,3 +216,14 @@ Adding the flag `--delete` will remove any objects on the s3 bucket that are not
 All images that are .jpg, .gif, and .png will automatically have their links redirected to the CDN. However, video files and other non-image format files will not automatically be redirected. This means we need to add `https://cdn.pixelbakery.com/` to the file name. This applies to anything that is put into the public/img/ folder.
 
 Documentation for syncing can be found [here](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/sync.html)
+
+To generate an index page for each component folder, use the following:
+
+```
+echo -n > index.tsx
+for f in *.tsx; do
+if  [ $f != "index.tsx" ]; then
+  echo "export  { default as ${f%.*} } from  \\047./${f%.*}\\047" >> index.tsx;
+  fi;
+done
+```

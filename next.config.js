@@ -31,10 +31,6 @@ module.exports = () => {
               value: 'strict-origin-when-cross-origin',
             },
             {
-              key: 'Permissions-Policy',
-              value: 'camera=(); battery=(); geolocation=(); microphone=()',
-            },
-            {
               key: 'X-XSS-Protection',
               value: '1; mode=block',
             },
@@ -52,6 +48,7 @@ module.exports = () => {
     },
     swcMinify: true,
     images: {
+      minimumCacheTTL: 31536000,
       formats: ['image/avif', 'image/webp'],
       dangerouslyAllowSVG: true,
       domains: [
@@ -77,6 +74,7 @@ module.exports = () => {
         'scontent-akl1-1.cdninstagram.com',
       ],
     },
+    trailingSlash: false,
     // productionBrowserSourceMaps: true,
     reactStrictMode: false,
     eslint: {

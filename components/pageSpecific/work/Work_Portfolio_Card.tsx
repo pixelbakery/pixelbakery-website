@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
-const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
 // type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card({ project }) {
@@ -60,46 +60,53 @@ function Work_Portfolio_Card({ project }) {
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
       href={`/work/case-studies/[slug]`}
-      passHref
+      className=' cursor-pointer '
     >
-      <article
-        className='relative  aspect-16/9 bg-blue cursor-pointer origin-center transform duration-300 hover:scale-99 overflow-hidden'
-        onMouseOver={() => handleHover()}
-        onMouseOut={() => handleHover()}
+      <div
+        className='cursor-pointer relative block origin-center aspect-16/9 bg-blue overflow-hidden  '
+        onMouseEnter={() => handleHover()}
+        onMouseLeave={() => handleHover()}
       >
         <div
           className={cn(
-            'aspect-16/9 relative w-full h-full transform-opacity transition duration-500 z-10 pointer-events-none',
-            {
-              ['opacity-0 ']: isHovered,
-              ['opacity-100 ']: !isHovered,
-            },
+            'opacity-100 aspect-16/9 relative w-full h-full transform-opacity transition duration-500 z-0 pointer-events-none',
           )}
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-            layout='fill'
-            objectFit='cover'
+            fill={true}
+            // width={854}
+            // height={480}
+            className='object-cover w-full h-full'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}
-            quality={50}
+            quality={66}
           />
         </div>
 
-        <div className='absolute z-0 top-0 left-0 -right-1 -bottom-1'>
+        <div
+          className={cn(
+            'absolute block transform-opacity duration-300 ease-in-out opacity-100 z-10 top-0 left-0 -right-1 -bottom-1',
+            {
+              ['opacity-0 ']: !isHovered,
+              ['opacity-100 ']: isHovered,
+            },
+          )}
+        >
           <ReactPlayer
             muted={true}
             playsinline={true}
             loop={true}
             controls={false}
+            preload={true}
             width='100%'
             height='100%'
             playing={isHovered}
-            className='bg-blue'
+            className=''
             url={[
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
               `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
+              // `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
             ]}
             config={{
               file: {
@@ -159,7 +166,7 @@ function Work_Portfolio_Card({ project }) {
           <div className='text-xs text-wine leading-none '>{project.data.client}</div>
           <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
         </div>
-      </article>
+      </div>
     </Link>
   )
 }

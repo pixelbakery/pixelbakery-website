@@ -12,7 +12,7 @@ async function handleDoubleDown(e) {
     await sleep(400)
     window.open('https://youtu.be/OmIGBB2m-_I?t=70', '_blank')
     await sleep(1200)
-    console.log('ran')
+    // console.log('ran')
     window.focus()
   }
   sleep(1200)

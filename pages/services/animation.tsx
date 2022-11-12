@@ -18,7 +18,7 @@ export default function Services_Animation() {
         serviceName={'Animation'}
         isLottie={true}
         subheader={
-          'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+          'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling.'
         }
         bgColor={'blue-dark'}
         lottieComponent={Lottie_Animation}

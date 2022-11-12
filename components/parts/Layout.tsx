@@ -6,6 +6,7 @@ const Nav_HamWrapper = dynamic(() => import('@nav/Nav_HamWrapper'))
 
 // import Navbar from '@nav/Navigation'
 import Meta from '@parts/Meta'
+import BackToTop from '@utility/BackToTop'
 
 type Props = {
   preview?: boolean
@@ -19,6 +20,7 @@ export const Layout__HasNav = ({ children }: Props) => {
       <Navbar />
       {children}
       <Footer />
+      <BackToTop />
     </>
   )
 }
@@ -27,8 +29,10 @@ export const Layout__HasNav = ({ children }: Props) => {
 export const Layout__NoNav = ({ children }: Props) => {
   return (
     <div className='content'>
+      <Meta />
       {children}
       <Footer />
+      <BackToTop />
     </div>
   )
 }
@@ -37,9 +41,11 @@ export const Layout__NoNav = ({ children }: Props) => {
 export const Layout__NavMobile = ({ children }: Props) => {
   return (
     <div className='content'>
+      <Meta />
       <Nav_HamWrapper />
       {children}
       <Footer />
+      <BackToTop />
     </div>
   )
 }
@@ -48,8 +54,10 @@ export const Layout__NavMobile = ({ children }: Props) => {
 export const Layout__ShoppingCart = ({ children }) => {
   return (
     <div className='content'>
+      <Meta />
       {children}
       <Footer />
+      <BackToTop />
     </div>
   )
 }

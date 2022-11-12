@@ -20,8 +20,8 @@ const getSecondaryPosts = ({ allPosts }) => {
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
       />
-    )
-  })
+    );
+  });
 }
 
 function Home_Recipes({ allPosts }) {

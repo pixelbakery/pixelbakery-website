@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -190,9 +189,14 @@
 .lander {
   height: calc(100vh - 2rem);
 }
-
+@media (min-width: 786px) {
+  .lander-responsive {
+    height: calc(100vh - 2rem) !important;
+  }
+}
 @media (min-width: 1024px) {
-  .lander-education {
+  .lander-education,
+  .lander-responsive {
     height: calc(100vh - 2rem) !important;
   }
 }
@@ -201,7 +205,7 @@
   min-height: 66vh;
   max-height: calc(100vh - 2rem) !important;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .lander-services {
     min-height: 66vh;
     max-height: calc(100vh - 2rem) !important;
@@ -450,4 +454,62 @@ input.form-submit {
 }
 .unset-img > div {
   position: unset !important;
+}
+
+.card {
+  @apply w-full overflow-hidden rounded-xl flex flex-row sm:aspect-16/9 md:aspect-4/3 lg:aspect-1 xl:aspect-3/4 3xl:aspect-4/3;
+}
+.hover-98 {
+  @apply relative ease-out duration-300 cursor-pointer shadow-md hover:opacity-90 hover:scale-98 hover:shadow-sm;
+}
+.hover-99 {
+  @apply relative ease-out duration-300 cursor-pointer shadow-md hover:opacity-90 hover:scale-99 hover:shadow-sm;
+}
+.hover-shadow-none {
+  @apply shadow-none hover:shadow-none !important;
+}
+.bg-dangerPink {
+  @apply bg-[rgb(255,172,211)];
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

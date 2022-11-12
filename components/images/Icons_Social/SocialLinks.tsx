@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import Link from 'next/link'
 import socialLinks from '@data/SocialUrls'
 import * as Icons from 'components/images/Icons_Social/Icons'
@@ -19,25 +17,28 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
   const link = getLinks[`${iconName}`]
   return (
     <div>
-      <Link href={props.href ? props.href : link != undefined ? link : ''} passHref>
-        <a rel='nofollow' className='mx-1 '>
-          <i
-            className={cn(
-              'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
-              `text-${props.color}`,
-              `text-${props.size}`,
-            )}
-            role='img'
-            aria-label={iconName}
-          >
-            <Icon
-              className={cn(props.height, props.width)}
-              icon={Icons[`${CapitalizeWord(iconName)}`]}
-              title={`${iconName}`}
-              titleId={`${iconName}`}
-            />
-          </i>
-        </a>
+      <Link
+        hrefLang={'en-US'}
+        href={props.href ? props.href : link != undefined ? link : ''}
+        rel='nofollow'
+        className='mx-1 block'
+      >
+        <i
+          className={cn(
+            'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
+            `text-${props.color}`,
+            `text-${props.size}`,
+          )}
+          role='img'
+          aria-label={iconName}
+        >
+          <Icon
+            className={cn(props.height, props.width)}
+            icon={Icons[`${CapitalizeWord(iconName)}`]}
+            title={`${iconName}`}
+            titleId={`${iconName}`}
+          />
+        </i>
       </Link>
     </div>
   )

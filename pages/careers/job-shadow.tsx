@@ -1,13 +1,20 @@
 import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
-import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import H2AndLead from '@typography/H2AndLead'
-import Lead from '@typography/Lead'
-import Careers_JobShadow_Form from '@careers/Careers_JobShadow_Form'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent
+      header={'Job Shadows'}
+      subheader={`Come learn what it's like to work at Pixel Bakery`}
+    />
+  ),
+  ssr: false,
+})
+
+import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { H2AndLead, Lead } from '@typography/index'
+import { Careers_JobShadow_Form } from '@careers/index'
 import { NextSeo } from 'next-seo'
 import Obfuscate from 'react-obfuscate'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 function Page_Careers_JobShadow() {
   return (
     <Main>
@@ -32,13 +39,13 @@ function Page_Careers_JobShadow() {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
               width: 1200,
               height: 900,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+              alt: 'Pixel Bakery Design Studio is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-office.jpg`,
               width: 1080,
               height: 810,
-              alt: 'Pixel Bakery Design Studio is a multi-disciplinary production studio focused on animation, motion design, and commercial film production.',
+              alt: 'Pixel Bakery Design Studio is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
@@ -89,7 +96,7 @@ function Page_Careers_JobShadow() {
                   </p>
                 </li>
                 <li className='flex gap-8 my-0 py-0'>
-                  <div className='self-start flex-grow bg-pink-light text-pink flex flex-col  w-20 h-16 rounded-full  justify-center text-center text-4xl font-black'>
+                  <div className='self-start flex-grow bg-pink-lighter text-pink flex flex-col  w-20 h-16 rounded-full  justify-center text-center text-4xl font-black'>
                     3
                   </div>
                   <p className='self-start my-0 y-0 flex-shrink w-full'>
@@ -125,7 +132,11 @@ function Page_Careers_JobShadow() {
               </Lead>
               <p className='text-white text-2xl '>
                 Shoot us an email{' '}
-                <Obfuscate email={'careers@pixelbakery.com'} className={'underline text-white'} />{' '}
+                <Obfuscate
+                  linkText={'mailto:no@nope.com'}
+                  email={'careers@pixelbakery.com'}
+                  className={'underline text-white'}
+                />{' '}
                 with any questions. Fill out the form and we can get something scheduled. In the
                 meantime, go ahead and follow us on social media (
                 <a

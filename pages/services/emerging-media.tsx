@@ -7,9 +7,7 @@ import Lottie_Animation from '@data/lottie_services/lottie_services_emergingMedi
 import Services_SEO from '@services/Services_SEO'
 
 export default function Services_EmergingMedia() {
-  const desc = `With the development and expansion of social media, mobile marketing, email marketing,
-          instant messaging, and various other digital platforms, it only makes sense that current
-          trends in marketing are ever-evolving. Why not evolve with them?`
+  const desc = `Artificial reality, projection mapping, virtual reality, holograms, Why not? The world is evolving and so should your marketing strategy.`
   return (
     <Main>
       <Services_SEO serviceName='Emerging Media' description={desc} path='emerging-media' />

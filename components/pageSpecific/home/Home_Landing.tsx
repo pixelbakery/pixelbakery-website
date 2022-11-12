@@ -31,8 +31,8 @@ function Home_Landing() {
                     key={navItem.text}
                     className='block my-0 py-0 leading-none cursor-pointer duration-150 ease-in-out hover:scale-98'
                   >
-                    <Link href={navItem.url}>
-                      <a className=' '>{navItem.text}</a>
+                    <Link hrefLang={'en-US'} href={navItem.url}>
+                      {navItem.text}
                     </Link>
                   </li>
                 )
@@ -47,7 +47,7 @@ function Home_Landing() {
               text={'Start something wonderful'}
               link={'/onboarding'}
               bgColor={'peach'}
-              textColor={'pink-light'}
+              textColor={'pink-lighter'}
               chevronDirection='right'
             />
           </div>
@@ -56,7 +56,7 @@ function Home_Landing() {
           </div>
         </div>
       </nav>
-      <div className='relative flex-grow bg-blue h-full overflow-hidden'>
+      <div className='relative flex-grow bg-blue h-full overflow-hidden player-wrapper'>
         <div
           className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie'
           id='lottie'

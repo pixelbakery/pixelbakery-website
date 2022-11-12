@@ -1,17 +1,12 @@
-/* eslint-disable react/prop-types */
-
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from './Pill'
-
-//PROPS:
-// link={'/'} head={''} subhead={''} aspectW={''} aspectY={''} img={''} imgAlt={''} tags={["something", "something else"]} tagBgColor={"bg-cream"} tagTextColor={'text-wine'}
 
 function Card_Rounded(props) {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
   return (
-    <Link href={props.link} passHref>
+    <Link hrefLang={'en-US'} href={props.link}>
       <article
         className={
           'bg-blue cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
@@ -22,8 +17,8 @@ function Card_Rounded(props) {
         <Image
           alt={props.imgAlt}
           src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
-          layout='fill'
-          objectFit='cover'
+          fill={true}
+          className={'object-cover w-full h-full'}
           placeholder='blur'
           blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
           quality={75}
