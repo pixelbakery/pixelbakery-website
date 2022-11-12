@@ -14,16 +14,11 @@ const Navigation_Store = ({}) => {
         className=' z-50 absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
-        <Link
-          hrefLang={'en-US'}
-          href={'/'}
-          className='text-4xl font-extrabold text-peach leading-none'
-          legacyBehavior
-        >
-          <>
+        <Link hrefLang={'en-US'} href={'/'}>
+          <div className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
-          </>
+          </div>
         </Link>
       </div>
       <div className='pointer-events-none fixed w-full right-0 top-0 mt-8 z-40 px-4 flex justify-end xl:justify-between'>

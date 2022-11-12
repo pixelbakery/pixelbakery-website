@@ -143,50 +143,46 @@ export default function Navbar() {
             className='bg-cream rounded-md origin-top-left hidden xl:block  '
             onMouseEnter={handleMouseEnterLogo}
           >
-            <Link
-              hrefLang={'en-US'}
-              href={'/'}
-              passHref
-              className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'
-              legacyBehavior
-            >
-              <div
-                ref={logoWrapper}
-                className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
-              >
+            <Link hrefLang={'en-US'} href={'/'}>
+              <div className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'>
                 <div
-                  ref={line1}
-                  className=' pointer-events-none relative block overflow-visible tracking-normal text-left whitespace-nowrap'
+                  ref={logoWrapper}
+                  className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
                 >
-                  <span ref={p} className='inline-block'>
-                    p
-                  </span>
-                  <span ref={ixel} className='inline-block'>
-                    ixel{' '}
-                  </span>
-                  <span ref={b} className='inline-block ml-3'>
-                    b
-                  </span>
-                  <span ref={akery} className='inline-block'>
-                    akery
-                  </span>
-                </div>
-                <div
-                  ref={line2}
-                  className='pointer-events-none select-none cursor-none relative block tracking-wide  text-left whitespace-nowrap'
-                >
-                  <span ref={d} className='inline-block'>
-                    d
-                  </span>
-                  <span ref={esign} className='inline-block'>
-                    esign{' '}
-                  </span>
-                  <span ref={s} className='inline-block ml-3'>
-                    s
-                  </span>
-                  <span ref={udio} className='inline-block'>
-                    tudio
-                  </span>
+                  <div
+                    ref={line1}
+                    className=' pointer-events-none relative block overflow-visible tracking-normal text-left whitespace-nowrap'
+                  >
+                    <span ref={p} className='inline-block'>
+                      p
+                    </span>
+                    <span ref={ixel} className='inline-block'>
+                      ixel{' '}
+                    </span>
+                    <span ref={b} className='inline-block ml-3'>
+                      b
+                    </span>
+                    <span ref={akery} className='inline-block'>
+                      akery
+                    </span>
+                  </div>
+                  <div
+                    ref={line2}
+                    className='pointer-events-none select-none cursor-none relative block tracking-wide  text-left whitespace-nowrap'
+                  >
+                    <span ref={d} className='inline-block'>
+                      d
+                    </span>
+                    <span ref={esign} className='inline-block'>
+                      esign{' '}
+                    </span>
+                    <span ref={s} className='inline-block ml-3'>
+                      s
+                    </span>
+                    <span ref={udio} className='inline-block'>
+                      tudio
+                    </span>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -257,16 +253,11 @@ export default function Navbar() {
         className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 pb-2 pt-4 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
-        <Link
-          hrefLang={'en-US'}
-          href={'/'}
-          className='text-4xl font-extrabold text-peach leading-none'
-          legacyBehavior
-        >
-          <>
+        <Link hrefLang={'en-US'} href={'/'}>
+          <div className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
-          </>
+          </div>
         </Link>
       </div>
       <Nav_FullscreenMenu isActive={isHamActive} onModalUpdate={setHamToggle} />
