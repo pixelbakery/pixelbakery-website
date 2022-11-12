@@ -8,7 +8,7 @@ function Onboarding_ExpectationNumbers({ number }) {
         <div className='text-blue absolute l-50 z-50 expect-numb opacity-80'>{number}</div>
         <div className='text-yellow absolute z-40 expect-numb opacity-80'>{number}</div>
         <div className='text-peach absolute z-30 expect-numb opacity-80'>{number}</div>
-        <div className='text-pink-light absolute z-20 expect-numb opacity-80'>{number}</div>
+        <div className='text-pink-lighter absolute z-20 expect-numb opacity-80'>{number}</div>
         <div className='text-pink absolute z-10 expect-numb opacity-80'>{number}</div>
       </div>
     </div>

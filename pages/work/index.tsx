@@ -1,5 +1,5 @@
 // const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+
 import Work_Services from '@work/Work_Services'
 
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
@@ -11,9 +11,18 @@ import matter from 'gray-matter'
 import Work_SEO from '@work/Work_SEO'
 import Work_Callout from '@work/Work_Callout'
 import dynamic from 'next/dynamic'
-const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
-const Work_Portfolio = dynamic(() => import('@work/Work_Portfolio'), { ssr: false })
-const Work_Clients = dynamic(() => import('@work/Work_Clients'), { ssr: false })
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent header='What We Make' subheader='knead the dough, baby' />
+  ),
+  ssr: false,
+})
+import Work_Portfolio from '@work/Work_Portfolio'
+import Work_Clients from '@work/Work_Clients'
+// const Work_Portfolio = dynamic(() => import('@work/Work_Portfolio'), { ssr: false })
+// const Work_Clients = dynamic(() => import('@work/Work_Clients'), { ssr: false })
 
 const Work = ({ allCaseStudies }) => {
   return (
@@ -24,7 +33,6 @@ const Work = ({ allCaseStudies }) => {
       <Work_Callout />
       <Work_Portfolio allCaseStudies={allCaseStudies} />
       <Work_Clients />
-      <BackToTop />
     </Main>
   )
 }
@@ -35,7 +43,7 @@ export function getStaticProps() {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { data } = matter(source)
-
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
         filePath,

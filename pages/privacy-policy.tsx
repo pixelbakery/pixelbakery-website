@@ -1,9 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent header={'Privacy Policy'} subheader={'yada yada yada'} />
+  ),
+  ssr: false,
+})
 
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
+import PageSection from '@parts/PageSection'
+import InnerWrapper from '@parts/InnerWrapper'
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 
 function PrivacyPolicy() {
   return (
@@ -12,15 +20,23 @@ function PrivacyPolicy() {
         title='Privacy Policy'
         canonical={`https://pixelbakery.com/privacy-policy`}
         description={`Here you can find the details of Pixel Bakery's Privacy Policy.`}
+        openGraph={{
+          url: `https://pixelbakery.com/privacy-policy`,
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
+              width: 1200,
+              height: 900,
+              alt: 'Pixel Bakery Design Studio is a multidisciplinary production studio focused on animation, motion design, and commercial film production.',
+            },
+          ],
+          description: `Here you can find the details of Pixel Bakery's Privacy Policy.`,
+          title: 'Privacy Policy',
+        }}
       />
       <PageHeader_VarH header='Privacy Policy' subheader={'yada yada yada'} />
-      <section className='mt-20 py-20'>
-        <div className='mx-auto max-w-3xl'>
-          <h1 className='text-wine text-6xl text-center mb-12'>
-            Privacy Policy for
-            <br /> Pixel Bakery LLC
-          </h1>
-
+      <PageSection className='mt-20 py-20' id='privacy-policy'>
+        <InnerWrapper>
           <p className='my-4 pb-4 text-wine text-md'>
             At Pixel Bakery Design Studio, accessible from pixelbakery.com, one of our main
             priorities is the privacy of our visitors. This Privacy Policy document contains types
@@ -209,8 +225,8 @@ function PrivacyPolicy() {
             immediately and we will do our best efforts to promptly remove such information from our
             records.
           </p>
-        </div>
-      </section>
+        </InnerWrapper>
+      </PageSection>
     </Main>
   )
 }

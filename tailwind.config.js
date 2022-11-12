@@ -19,7 +19,8 @@ module.exports = {
       yellow: 'rgb(250, 216, 105)',
       pink: {
         extralight: '#FFEFFF',
-        light: 'rgb(241, 231, 243)',
+        lighter: 'rgb(241, 224, 237)',
+        light: 'rgb(255, 224, 255)',
         DEFAULT: 'rgb(255, 163, 204)', //#F2A8CA
       },
       wine: {
@@ -42,6 +43,12 @@ module.exports = {
       body: 'Poppins, sans-serif',
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 30s linear infinite',
+      },
+      screens: {
+        '3xl': '1792px',
+      },
       maxWidth: {
         '8xl': '88rem',
         '9xl': '96rem',
@@ -116,8 +123,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/forms'),
   ],
 }

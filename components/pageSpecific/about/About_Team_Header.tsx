@@ -29,8 +29,9 @@ const About_Team_Header = ({ source, frontMatter }) => {
                 placeholder='blur'
                 blurDataURL={`${ImgPrefix}${frontMatter.headshotFun}`}
                 src={`${ImgPrefix}${frontMatter.headshotFun}`}
-                layout='fill'
-                objectFit='cover'
+                width={1280}
+                className={'w-full h-full object-cover'}
+                height={1920}
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}
                 // className={'bg-blue'}
               />
@@ -49,6 +50,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
             <div className='pb-8'>
               {frontMatter.email ? (
                 <Obfuscate
+                  linkText={'mailto:no@no.com'}
                   email={frontMatter.email}
                   className={'block italic text-peach cursor-pointer text-left'}
                 />

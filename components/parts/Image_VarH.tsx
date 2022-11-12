@@ -9,9 +9,9 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
     return (
       <Image
         src={`${src}`}
-        layout='fill'
+        fill={true}
         alt={props.alt}
-        objectFit='contain'
+        className={'w-full h-full object-contain'}
         placeholder='blur'
         blurDataURL={`${src}`}
         onLoad={({ target }) => {
@@ -24,15 +24,13 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
   return (
     <>
       {openInNewWindow ? (
-        <Link href={src} passHref>
-          <a target={'_blank'}>
-            <div
-              className={'cursor-pointer relative hover:scale-99 duration-300 ease-in-out'}
-              style={{ paddingTop }}
-            >
-              <ImageComponent />
-            </div>
-          </a>
+        <Link hrefLang={'en-US'} href={src} target={'_blank'}>
+          <div
+            className={'cursor-pointer relative hover:scale-99 duration-300 ease-in-out'}
+            style={{ paddingTop }}
+          >
+            <ImageComponent />
+          </div>
         </Link>
       ) : (
         <div className='relative'>

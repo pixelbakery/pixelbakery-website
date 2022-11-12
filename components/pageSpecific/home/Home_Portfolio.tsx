@@ -2,6 +2,8 @@ import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
+import H2AndLead from '@typography/H2AndLead'
+import Lead from '@typography/Lead'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
 
 function Home_Portfolio({ allCaseStudies }) {
@@ -13,8 +15,18 @@ function Home_Portfolio({ allCaseStudies }) {
   return (
     <PageSection id='home-portfolio' className='bg-white py-8 my-4 px-6'>
       <div className='max-w-md md:max-w-3xl lg:max-w-6xl 2xl:max-w-full 2xl:px-12 mx-auto'>
-        <InnerWrapper>
-          <H2 color='blue-dark'>our best hits</H2>
+        <InnerWrapper className='mt-12'>
+          <div className='lg:flex lg:justify-center'>
+            <H2AndLead
+              headerColor='blue-dark'
+              leadColor='wine'
+              headerText='Our Best Hits'
+              leadText={
+                "Here's a sample platter of some of our most recent projects, spanning from explainer videos to commercial video production."
+              }
+              className='mb-16 lg:text-center'
+            />
+          </div>
         </InnerWrapper>
         <div className='flex flex-wrap justify-between '>
           <div className='w-full flex px-5 2xl:w-5/12 2xl:px-12 2xl:pr-0 justify-start mt-6  mb-0 '>

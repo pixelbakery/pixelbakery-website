@@ -12,19 +12,18 @@ export default function Services() {
   return (
     <Main>
       <Services_SEO serviceName='Web Hosting' description={desc} path='web-hosting' />
-
       <Services_Header
         serviceName={'Web Hosting'}
         isLottie={true}
         subheader={'Because you deserve it'}
         bgColor={'blue'}
-        LottieComponent={Lottie_Animation}
+        lottieComponent={Lottie_Animation}
       >
         <p>
           We offer this service to any Nebraskan. You&apos;re welcome to choose how much you can
           afford. We&apos;ll help you install Wordpress (if that&apos;s your jam) and provide you
           with security updates as well as weekly backups. Email Jordan for more information:{' '}
-          <Obfuscate email={'jordan@pixelbakery.com'} />
+          <Obfuscate linkText={'mailto:no@nope.com'} email={'jordan@pixelbakery.com'} />
         </p>
       </Services_Header>
       <CaseStudies_CTA />

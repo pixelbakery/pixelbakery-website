@@ -23,11 +23,11 @@ import H2AndLead from '@typography/H2AndLead'
 import H1 from '@typography/H1'
 import remarkGfm from 'remark-gfm'
 import DateFormatter from '@lib/date-formatter'
-import addMonths from 'date-fns/addMonths'
 
 //css imports
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Careers_SEO from '@careers/Careers_SEO'
+import Careers_SEO from '@careers/Careers_Post_SEO'
+import dayjs from 'dayjs'
 
 const components = {
   Head,
@@ -43,8 +43,8 @@ export default function JobsPage({ slug, source, frontMatter }) {
       return `/img/pixel-bakery-samee-dan-1200x900.png`
     }
   }
-  const datePostedISO = new Date(frontMatter.date).toISOString()
-  const dateExpiredISO = addMonths(new Date(frontMatter.date), 2).toISOString()
+  const datePostedISO = dayjs(frontMatter.date).toISOString()
+  const dateExpiredISO = dayjs(datePostedISO).add(2, 'month').toISOString()
   return (
     <Main>
       <Careers_SEO
@@ -61,8 +61,12 @@ export default function JobsPage({ slug, source, frontMatter }) {
           <InnerWrapper>
             <header className='max-w-2xl mx-auto'>
               <div className='pb-12'>
-                <Link href='/careers' passHref>
-                  <a className='border-b-2 pb-1 border-b-blue text-blue'> ← back to all careers</a>
+                <Link
+                  hrefLang={'en-US'}
+                  href='/careers'
+                  className='border-b-2 pb-1 border-b-blue text-blue'
+                >
+                  ← back to all careers
                 </Link>
               </div>
               <p className='my-0 py-0 leading-none text-4xl text-peach font-extrabold'>
@@ -74,9 +78,8 @@ export default function JobsPage({ slug, source, frontMatter }) {
               <div className=' md:max-w-6xl mx-auto'>
                 <div className='w-full  aspect-w-4 aspect-h-3 bg-peach mb-24 mx-auto'>
                   <Image
-                    layout='fill'
-                    objectFit='cover'
-                    className='object-center'
+                    fill={true}
+                    className='object-center object-cover'
                     src={`${ImgPrefix}${coverImage}`}
                     alt={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`}
                   />
@@ -104,15 +107,19 @@ export default function JobsPage({ slug, source, frontMatter }) {
                 <Button_Filled
                   text='apply for position'
                   bgColor={'pink'}
-                  textColor={'pink-light'}
+                  textColor={'pink-lighter'}
                   chevronDirection='right'
                   link={'/careers/application'}
                   center={false}
                 />
               </div>
               <div className='pt-12'>
-                <Link href='/careers' passHref>
-                  <a className='border-b-2 pb-1 text-blue border-b-blue'> ← back to all careers</a>
+                <Link
+                  hrefLang={'en-US'}
+                  href='/careers'
+                  className='border-b-2 pb-1 text-blue border-b-blue'
+                >
+                  ← back to all careers
                 </Link>
               </div>
             </div>

@@ -8,9 +8,10 @@ type Props = {
   center?: boolean
   color: string
   chevronDirection?: string
+  className?: string
 }
 
-function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
+function Button_Filled({ center, text, link, color, chevronDirection, className }: Props) {
   let chevronRotation = ''
   if (chevronDirection === 'right') {
     chevronRotation = ''
@@ -26,22 +27,22 @@ function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
     chevronRotation = ''
   }
   return (
-    <Link href={link} passHref>
+    <Link hrefLang={'en-US'} href={link}>
       <div
         className={cn(
-          ' my-3 py-3 rounded-sm px-6 w-full max-w-sm  text-center cursor-pointer transition-all ease-in-out duration-400 hover:scale-99 drop-shadow-sm hover:drop-shadow-xs',
-          `border-${color} border-2`,
+          'block my-3 py-3 rounded-lg px-6 w-full max-w-sm  text-center hover-99 shadow-none',
+          `border-${color} border-4`,
           { ['mx-auto']: center },
         )}
       >
-        <div className={cn('font-extrabold text-xl lowercase flex')}>
+        <div className={cn('font-semibold text-xl lowercase flex')}>
           <div
             className={cn(
-              'text-center flex-grow flex flex-col justify-center leading-none',
+              'text-center flex-grow flex flex-col justify-center tracking-wide',
               `text-${color}`,
             )}
           >
-            {text}
+            <span> {text}</span>
           </div>
 
           <i

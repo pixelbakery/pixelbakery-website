@@ -1,4 +1,4 @@
-import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd, VideoJsonLd } from 'next-seo'
 
 interface SEO {
   frontMatter: any
@@ -6,8 +6,18 @@ interface SEO {
   slug: string
 }
 function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
+  const str = frontMatter.video
+  const removeFirst = str.replace('https://youtu.be/', '')
   return (
     <>
+      <VideoJsonLd
+        name={`${frontMatter.title}`}
+        description={frontMatter.excerpt}
+        // contentUrl='http://player.vimeo.com/video123.mp4'
+        embedUrl={`https://www.youtube.com/embed/${removeFirst}`}
+        uploadDate={`${datePostedISO}`}
+        thumbnailUrls={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
+      />
       <BreadcrumbJsonLd
         itemListElements={[
           {
@@ -17,11 +27,6 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
           },
           {
             position: 2,
-            name: 'Tutorials',
-            item: 'https://pixelbakery.com/education#madeToOrder',
-          },
-          {
-            position: 3,
             name: `${frontMatter.title}`,
             item: `https://pixelbakery.com/education/tutorials/${slug}`,
           },
@@ -42,7 +47,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
           },
           images: [
             {
-              url: `${frontMatter.coverImage}`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
             },
           ],
@@ -51,7 +56,7 @@ function Education_MadeToOrder_SEO({ frontMatter, datePostedISO, slug }: SEO) {
       <ArticleJsonLd
         url={`https://pixelbakery.com/education/tutorials/${slug}`}
         title={`${frontMatter.title}`}
-        images={[`${frontMatter.coverImage}`]}
+        images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={[
           {

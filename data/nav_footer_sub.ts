@@ -18,13 +18,8 @@ export default [
     text: 'Motion Mixer',
     url: '/logo-animation',
   },
-  {
-    text: 'PB Cookbook',
-    url: 'https://cookbook.pixelbakery.com',
-  },
-
-  {
-    text: 'Pay-What-Ya-Want Web Hosting',
-    url: '/services/web-hosting',
-  },
+  // {
+  //   text: 'Pay-What-Ya-Want Web Hosting',
+  //   url: '/services/web-hosting',
+  // },
 ]

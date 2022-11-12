@@ -2,7 +2,11 @@ function Awwwards() {
   return (
     <div className='absolute lg:fixed z-50 left-10 lg:left-auto lg:right-10 top-4'>
       <div id='awwwards'>
-        <a href='https://www.awwwards.com/sites/pixel-bakery-design-studio' target='_blank'>
+        <a
+          hrefLang={'en-US'}
+          href='https://www.awwwards.com/sites/pixel-bakery-design-studio'
+          target='_blank'
+        >
           <svg width='53.08' height='171.358'>
             <path className='js-color-bg' fill='white' d='M0 0h53.08v171.358H0z'></path>
             <g className='js-color-text' fill='black'>

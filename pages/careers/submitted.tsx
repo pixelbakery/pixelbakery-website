@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { H1 } from '@typography/index'
 
-import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
-import PageSection from '@parts/PageSection'
-import H1 from '@typography/H1'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import Obfuscate from 'react-obfuscate'
@@ -11,7 +9,7 @@ function SubmissionConfirmation() {
   return (
     <Main>
       <NextSeo noindex={true} nofollow={true} title='Application Submitted | Careers' />
-      <PageSection color='pink-light' id='application-submitted'>
+      <PageSection color='pink-lighter' id='application-submitted'>
         <InnerWrapper className='pt-24'>
           <H1 className='peach text-4xl md:text-6xl text-blue mb-8'>
             Thank you for your application.
@@ -20,7 +18,12 @@ function SubmissionConfirmation() {
             We received your application for a position with us. We'll be in touch shortly if we
             think you'll be a good fit here. If you have any questions, feel free to give Maddie a
             shout at{' '}
-            <Obfuscate email={'careers@pixelbakery.com'} className={'underline text-peach'} />.
+            <Obfuscate
+              linkText={'mailto:no@nope.com'}
+              email={'careers@pixelbakery.com'}
+              className={'underline text-peach'}
+            />
+            .
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
@@ -41,25 +44,25 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link href={'/careers'} passHref>
-                <a className='text-blue underline text-md'> Back to all job postings →</a>
+              <Link hrefLang={'en-US'} href={'/careers'} className='text-blue underline text-md'>
+                Back to all job postings →
               </Link>
             </li>
             <li className='my-2'>
-              {' '}
-              <Link href={'/about#twitch'}>
-                <a className='text-blue underline text-md'>Daydream about us →</a>
+              <Link
+                hrefLang={'en-US'}
+                href={'/about#twitch'}
+                className='text-blue underline text-md'
+              >
+                Daydream about us →
               </Link>
             </li>
             <li className='my-2'>
-              {' '}
               <Link
                 href={'https://youtube.com/playlist?list=PLR7uWMos1NkvOhSzaTR8-0vwc8MDBuylm'}
-                passHref
+                className='text-blue underline text-md hover:text-opacity-80'
               >
-                <a className='text-blue underline text-md hover:text-opacity-80'>
-                  Watch a playlist of trippy music videos we've curated →
-                </a>
+                Watch a playlist of trippy music videos we've curated →
               </Link>
             </li>
           </ul>

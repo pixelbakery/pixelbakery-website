@@ -12,9 +12,9 @@ author:
   slug: jordan-lambrecht
 ---
 
-Hello hello. Here's a brief demo on how to integrate a php workflow with Bootstrap 4. Bootstrap 4 is a great framework to build off of because 1) a lot of the heavy lifting is already done for us, 2) it uses a great, responsive grid system, and 3) it's pretty dang fast. We're going to use PHP to make it even faster. Just keep in mind, we need to use this in a server environment. You'll either need to push files live via ftp or use a local development server like [MAMP](https://www.mamp.info/de/) or [WAMP](http://www.wampserver.com/en/).
+Hello hello. Here's a brief demo on how to integrate a php workflow with Bootstrap 4. Bootstrap 4 is a great framework to build off of because 1) a lot of the heavy lifting is already done for us, 2) it uses a great, responsive grid system, and 3) it's pretty dang fast. We're going to use PHP to make it even faster. Just keep in mind, we need to use this in a server environment. You'll either need to push files live via ftp or use a local development server like [MAMP](https://www.mamp.info/de/) or [WAMP](https://www.wampserver.com/en/).
 
-![](https://cdn.pixelbakery.com/img/blog/Screen-Shot-2018-03-06-at-5.04.16-PM.jpg)
+![Connecting to a server](https://cdn.pixelbakery.com/img/blog/Screen-Shot-2018-03-06-at-5.04.16-PM.jpg)
 
 ## Why use PHP?
 
@@ -51,11 +51,11 @@ Now, inside our nav.php file, we can create our menu system like we would any ot
   <ul class="navbar-nav ml-auto">
     <li class="nav-item >
       <?php echo ($page == "home" ? "active" : "")?> 
-      <a class="nav-link" href="/">Home</a>
+      <a hrefLang={'en-US'} class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item <?php echo ($page == "about" ? "active" : "")?>
     ">
-      <a class="nav-link" href="/about.php">About</a>
+      <a hrefLang={'en-US'} class="nav-link" href="/about.php">About</a>
     </li>
   </ul>
 </div>
@@ -78,7 +78,7 @@ The guide is pretty straight forward, but I'll go ahead and take the classes the
 
 I want to create two big columns. I want a blurb and some social links on the left, and a contact form on the right. Here's how we're going to lay it out:
 
-![](https://cdn.pixelbakery.com/img/blog/contactsection_contactsection.jpg)
+![Wireframes for a bootstraps 3 columns layout for a contact page](https://cdn.pixelbakery.com/img/blog/contactsection_contactsection.jpg)
 
 We're going to next the actual contact form in it's own php file to save space. We'll call that php file from contactSection.php, and then we'll call ContactSection.php from index.php.
 
@@ -98,7 +98,6 @@ Another neat thing we can do since we're using php is make sure our copyright is
 
 PHP is dope. Use it. Bootstrap 4.0 is dope. Use that too. Make cool things faster.
 
-[Live Demo](http://pixelbakery.com)
 
 _Update: March 12th, 2019_
 
@@ -108,9 +107,9 @@ I prefer getting rid of the .php extensions on all of my websites that I design.
 
 We need to create / modify something called a .htaccess file. This is a configuration file that helps tell your web server how to operate.
 
-1\. If you don't already have a .htaccess file, create one. Note: the period at the beginning of the file name indicates that it is, by default, a hidden system file. You may have to check a box in your FTP client's preferences to see it. Another note: these can be written on subdomains.
+1. If you don't already have a .htaccess file, create one. Note: the period at the beginning of the file name indicates that it is, by default, a hidden system file. You may have to check a box in your FTP client's preferences to see it. Another note: these can be written on subdomains.
 
-2\. Drop the following code into the file:
+2. Drop the following code into the file:
 
 ```
 RewriteEngine On
@@ -123,6 +122,6 @@ RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.\*)$ /$1/ [R=301,L]
 ```
 
-3\. Test it. This code should redirect website.com/link.php to website.com/link/
+3. Test it. This code should redirect website.com/link.php to website.com/link/
 
-4\. That's literally it.
+4. That's literally it.

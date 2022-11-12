@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
-import Lead from '@typography/Lead'
-const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: false })
+const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), {
+  ssr: false,
+})
 
 import Patterns_Blue from '@data/lottie_patterns/Patterns_Blue.json' assert { type: 'json' }
 import Patterns_Blue_Dark from '@data/lottie_patterns/Patterns_Blue_Dark.json' assert { type: 'json' }
@@ -13,13 +14,12 @@ import Patterns_Cream from '@data/lottie_patterns/Patterns_Cream.json' assert { 
 
 import { RandomArrayItem } from '@lib/helpers'
 
-PageHeader_VarH.propTypes = {
-  header: PropTypes.string,
-  subheader: PropTypes.string,
-  playFrames: PropTypes.array,
+interface PageHeader_VarH {
+  header: string
+  subheader: string
 }
 
-const Blue = ({ header, subheader }) => {
+const Blue = ({ header, subheader }: PageHeader_VarH) => {
   return (
     <PageHeader_VarH_Content
       header={header}
@@ -31,7 +31,7 @@ const Blue = ({ header, subheader }) => {
     />
   )
 }
-const Blue_Dark = ({ header, subheader }) => {
+const Blue_Dark = ({ header, subheader }: PageHeader_VarH) => {
   // const PageHeader_VarH_Content = require('./PageHeader_VarH_Content')
   return (
     <PageHeader_VarH_Content
@@ -44,7 +44,7 @@ const Blue_Dark = ({ header, subheader }) => {
     />
   )
 }
-const Cream = ({ header, subheader }) => {
+const Cream = ({ header, subheader }: PageHeader_VarH) => {
   // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
@@ -57,25 +57,25 @@ const Cream = ({ header, subheader }) => {
     />
   )
 }
-const Pink = ({ header, subheader }) => {
+const Pink = ({ header, subheader }: PageHeader_VarH) => {
   // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
       animationData={Patterns_Pink}
       primaryColor={'pink'}
-      subheaderColor={'pink-light '}
+      subheaderColor={'pink-lighter '}
       subheader={subheader}
       header={header}
-      accentColor={'pink-light'}
+      accentColor={'pink-lighter'}
     />
   )
 }
-const Pink_Light = ({ header, subheader }) => {
+const Pink_Light = ({ header, subheader }: PageHeader_VarH) => {
   // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
   return (
     <PageHeader_VarH_Content
       animationData={Patterns_Pink_Light}
-      primaryColor={'pink-light'}
+      primaryColor={'pink-lighter'}
       subheaderColor={'blue-dark'}
       subheader={subheader}
       header={header}
@@ -83,7 +83,7 @@ const Pink_Light = ({ header, subheader }) => {
     />
   )
 }
-const Peach = ({ header, subheader }) => {
+const Peach = ({ header, subheader }: PageHeader_VarH) => {
   return (
     <PageHeader_VarH_Content
       animationData={Patterns_Peach}
@@ -96,7 +96,7 @@ const Peach = ({ header, subheader }) => {
   )
 }
 
-function PageHeader_VarH({ header, subheader }) {
+function PageHeader_VarH({ header, subheader }: PageHeader_VarH) {
   const [arr] = useState([
     <Blue header={header} subheader={subheader} />,
     <Blue_Dark header={header} subheader={subheader} />,
@@ -108,11 +108,13 @@ function PageHeader_VarH({ header, subheader }) {
 
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
-      <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
-        <Lead color='cream' className='self-center text-center'>
-          Loading...
-        </Lead>
-      </div>
+      {/* <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
+        <p>
+          <Lead color='cream' className='self-center text-center'>
+            Loading...
+          </Lead>
+        </p>
+      </div> */}
       {arr[RandomArrayItem(arr.length)]}
     </header>
   )

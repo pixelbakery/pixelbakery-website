@@ -10,7 +10,16 @@ import ServicesOverview_SocialMedia from '@services/ServicesOverview_SocialMedia
 import ServicesOverview_More from '@services/ServicesOverview_More'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'))
+import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+  loading: () => (
+    <PageHeader_LoadingContent
+      header='Our Services'
+      subheader='We do a few things, and we do them well'
+    />
+  ),
+  ssr: false,
+})
 
 function Services_Page() {
   return (
@@ -25,7 +34,7 @@ function Services_Page() {
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
-              alt: `Pixel Bakery Design Studio (PBDS) is a multi-disciplinary production studio focused on animation, motion design, and commercial film production`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multidisciplinary production studio focused on animation, motion design, and commercial film production`,
             },
           ],
           description:

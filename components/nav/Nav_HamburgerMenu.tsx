@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react'
-import Nav_FullscreenMenu from './Nav_FullscreenMenu'
+import React, { useRef } from 'react'
 import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3

@@ -1,70 +1,60 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/keyboard'
-import 'swiper/css/navigation'
+
 import Image from 'next/image'
 import Image_VarH from '@parts/Image_VarH'
+import Shimmer from '@lib/Shimmer'
+import useEmblaCarousel from 'embla-carousel-react'
+import { Fragment } from 'react'
+
+const Carousel = ({ slides }) => {
+  const [viewportRef, embla] = useEmblaCarousel({
+    align: 'start',
+    loop: true,
+    skipSnaps: true,
+  })
+  return (
+    <div className='w-full overflow-hidden' ref={viewportRef}>
+      <div className='embla__container flex w-full'>
+        {slides.map((slide, i) => (
+          <Fragment key={i}>
+            <ImageSlide slide={slide} />
+          </Fragment>
+        ))}
+      </div>
+    </div>
+  )
+}
+const ImageSlide = ({ slide }) => {
+  return (
+    <div className='overflow-hidden cursor-grab ml-1 mr-2 relative  grow-0 shrink-0  w-[86%]  sm:w-[45%] lg:w-[30%] aspect-1 h-full'>
+      <Image
+        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
+        width={slide.width}
+        height={slide.height}
+        className={'w-full h-full object-cover'}
+        placeholder='blur'
+        blurDataURL={`${Shimmer(slide.width, slide.height)}`}
+        alt='Snacklins Instagram posts that Pixel Bakery designed and managed'
+      />
+    </div>
+  )
+}
+
 const slides = [
-  '/img/case-studies/snacklins/SNACK_Carousel_01.jpg',
-  '/img/case-studies/snacklins/SNACK_Carousel_02.jpg',
-  '/img/case-studies/snacklins/SNACK_Carousel_03.jpg',
-  '/img/case-studies/snacklins/SNACK_Carousel_04.jpg',
-  '/img/case-studies/snacklins/SNACK_Carousel_05.jpg',
-  '/img/case-studies/snacklins/SNACK_Carousel_06.jpg',
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_01.jpg', width: 514, height: 540 },
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_02.jpg', width: 540, height: 540 },
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_03.jpg', width: 540, height: 540 },
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_04.jpg', width: 833, height: 540 },
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_05.jpg', width: 360, height: 540 },
+  { src: '/img/case-studies/snacklins/SNACK_Carousel_06.jpg', width: 350, height: 540 },
 ]
 
 function CaseStudies_Gallery() {
-  const SetSlide = ({ slide }) => {
-    return (
-      <div className='h-full aspect-w-1 aspect-h-1 flex flex-col justify-center relative'>
-        <Image
-          layout='fill'
-          objectFit='cover'
-          alt={'Snacklins food and packaging photography that Pixel Bakery produced'}
-          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
-          placeholder={'blur'}
-          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
-          className='block w-full  self-center object-contain '
-        />
-      </div>
-    )
-  }
-
-  const Carousel = () => {
-    return (
-      <>
-        <Swiper
-          spaceBetween={15}
-          slidesPerView={1.15}
-          // centeredSlides={true}
-          keyboard={{
-            enabled: true,
-          }}
-          modules={[A11y, Keyboard, Pagination, Navigation]}
-          className='lg:hidden'
-          loop
-        >
-          {slides.map((slide: string) => {
-            return (
-              <SwiperSlide key={slide}>
-                <div className='hover:cursor-grab bg-blue'>
-                  <SetSlide slide={slide} />
-                </div>
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
-      </>
-    )
-  }
   return (
     <>
-      <PageSection>
+      <PageSection id={'product-photography'}>
         <InnerWrapper>
           <div className='relative'></div>
 
@@ -77,8 +67,8 @@ function CaseStudies_Gallery() {
             captured in each image. All photo edits, composites, and color work are dialed-in to
             perfection by our in-house team.
           </p>
-          <div className='2xl:hidden'>
-            <Carousel />
+          <div className='lg:hidden'>
+            <Carousel slides={slides} />
           </div>
           <div className='hidden lg:grid grid-cols-2 gap-x-6'>
             {/* Left Images */}

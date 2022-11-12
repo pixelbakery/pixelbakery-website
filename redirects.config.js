@@ -12,6 +12,16 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/careers/breadwinners-program',
+    destination: '/careers/brand-ambassador',
+    permanent: true,
+  },
+  {
+    source: '/about/daniel-hinz',
+    destination: '/about/dan-hinz',
+    permanent: true,
+  },
+  {
     source: '/video-production',
     destination: '/services/video-production',
     permanent: true,
@@ -168,18 +178,8 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/recipes/our-2018-addy-award-winning-work',
-    destination: '/recipes/our-2018-addy-award-winning-work',
-    permanent: true,
-  },
-  {
     source: '/recipes/php-and-bootstrap-4-how-to-get-set-up',
     destination: '/recipes/php-and-bootstrap-4',
-    permanent: true,
-  },
-  {
-    source: '/recipes/a-sprinkle-of-inspiration',
-    destination: '/recipes/a-sprinkle-of-inspiration',
     permanent: true,
   },
   {
@@ -272,6 +272,11 @@ const redirectsArray = [
   {
     source: '/recipes/tutorial-getting-started-with-bootstraps',
     destination: '/recipes/tutorial-bootstraps',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/Onyx-Coffee-Journey',
+    destination: '/work/case-studies/onyx-coffee-process-animation',
     permanent: true,
   },
   {

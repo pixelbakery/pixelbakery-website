@@ -14,11 +14,11 @@ const Navigation_Store = ({}) => {
         className=' z-50 absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
-        <Link href={'/'}>
-          <a className='text-4xl font-extrabold text-peach leading-none'>
+        <Link hrefLang={'en-US'} href={'/'}>
+          <div className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
-          </a>
+          </div>
         </Link>
       </div>
       <div className='pointer-events-none fixed w-full right-0 top-0 mt-8 z-40 px-4 flex justify-end xl:justify-between'>
@@ -28,10 +28,10 @@ const Navigation_Store = ({}) => {
             <Nav_FullscreenMenu isActive={isHamActive} onModalUpdate={setHamToggle} />
           </div>
 
-          <Link href='/store/cart' passHref>
+          <Link hrefLang={'en-US'} href='/store/cart' aria-label={'cart item'}>
             <div className=' pointer-events-auto relative ml-4  z-50'>
               <div
-                className='relative  text-center bg-pink-light px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+                className='relative  text-center bg-pink-lighter px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
 hover:opacity-90 hover:scale-97 active:scale-90'
               >
                 {cart?.total_items}

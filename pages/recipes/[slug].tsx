@@ -2,34 +2,31 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import Head from 'next/head'
 import path from 'path'
-import { isBefore, parseISO, sub } from 'date-fns'
+import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import { shuffleArray } from '@lib/helpers'
-const readingTime = require('reading-time')
-import Carousel from '@parts/Carousel'
+import readingTime from '@lib/readingTime'
+import Carousel from '@parts/carousel/Carousel'
 import Main from '@parts/Main'
 import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import { useRef, useState } from 'react'
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
-import Video from '@parts/Video'
-import { useEffect } from 'react'
-import remarkGfm from 'remark-gfm'
-import VimeoPlayer from '@parts/VimeoPlayer'
+
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 
 import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
 import dynamic from 'next/dynamic'
-import BackToTop from '@utility/BackToTop'
-const Recipes_Post_Header = dynamic(() => import('@recipes/Recipes_Post_Header'), { ssr: true })
+import Recipes_Post_Header from '@recipes/Recipes_Post_Header'
+import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
+import dayjs from 'dayjs'
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), { ssr: false })
 
-const Recipes_Post_GetPrevNextPost = dynamic(
-  () => import('@recipes/Recipes_Post_GetPrevNextPost'),
-  {
-    ssr: true,
-  },
-)
+// const Recipes_Post_GetPrevNextPost = dynamic(
+//   () => import('@recipes/Recipes_Post_GetPrevNextPost'),
+//   {
+//     ssr: false,
+//   },
+// )
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -40,42 +37,20 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   Carousel: Carousel,
-  VimeoPlayer: VimeoPlayer,
   Video: Video,
-  Head,
 }
 
 export default function PostPage({
   slug,
   freshPosts,
   source,
+  readTime,
   frontMatter,
   matchingBio,
-  // relatedPosts,
-  // thisIndex,
-  // nextIndex,
-  // prevIndex,
   prev,
-
   next,
 }) {
   const datePostedISO = new Date(JSON.parse(JSON.stringify(frontMatter.date))).toISOString()
-  const myContainer = useRef(null)
-  const [readTime, setReadTime] = useState('')
-  const childRef = useRef(null)
-
-  useEffect(() => {
-    //Sets Reading Time
-    function extractContent(s) {
-      var span = document.createElement('span')
-      span.innerHTML = s
-      return span.textContent || span.innerText
-    }
-    const text = extractContent(myContainer.current.innerHTML).toString()
-    const stats = readingTime(text)
-    setReadTime(stats.text)
-    return () => {}
-  }, [])
 
   return (
     <Main>
@@ -84,13 +59,12 @@ export default function PostPage({
         <Recipes_Post_Header
           frontMatter={frontMatter}
           date={datePostedISO}
-          forwardedRef={childRef}
           readTime={readTime}
           matchingBio={matchingBio}
         />
 
         <section className='px-6 mt-8 md:max-w-3xl mx-auto'>
-          <article ref={myContainer} id='blog-body-guts'>
+          <article id='blog-body-guts'>
             <div className={markdownStyles['markdown']}>
               <MDXRemote {...source} components={components} />
             </div>
@@ -102,17 +76,16 @@ export default function PostPage({
 
       <Recipes_Post_GetPrevNextPost prev={prev} next={next} />
       <Recipes_Post_Related relatedPosts={freshPosts} />
-      <BackToTop />
     </Main>
   )
 }
 
 export const getStaticProps = async ({ params }) => {
-  //MDX Stuff
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
-
   const { content, data } = matter(source)
+  const time = readingTime(content)
+
   //Author Stuff
 
   const allPeople = peopleFilePaths.map((filePath) => {
@@ -135,9 +108,10 @@ export const getStaticProps = async ({ params }) => {
     }
   })
 
-  const TwoYearsAgo = sub(new Date(), { years: 2 })
+  const TwoYearsAgo = dayjs().subtract(2, 'year')
   // const test = isBefore(parseISO(data.date), TwoYearsAgo)
-  let freshPosts = allPosts.filter((p) => isBefore(parseISO(p.data.date), TwoYearsAgo) === false)
+  let freshPosts = allPosts.filter((p) => dayjs(p.data.date).isBefore(TwoYearsAgo) === false)
+  // let freshPosts = allPosts.filter((p) => isBefore(parseISO(p.data.date), TwoYearsAgo) === false)
   freshPosts = shuffleArray(freshPosts).slice(0, 3)
   // const freshPosts = getFreshPosts.slice(0, 4)
   // Find the previous and next post on the list, sorted by date.
@@ -163,8 +137,6 @@ export const getStaticProps = async ({ params }) => {
   //end get previous next posts
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
-
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
@@ -181,11 +153,9 @@ export const getStaticProps = async ({ params }) => {
       prev: prevIndex,
       matchingBio: matchingBio,
       freshPosts: freshPosts,
-      // thisIndex,
-      // nextIndex,
-      // prevIndex,
       next: nextIndex,
       source: mdxSource,
+      readTime: time,
       frontMatter: data,
       allPosts: allPosts,
       allPeople: allPeople,
@@ -194,7 +164,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  // Map the path into the static paths object required by Next.js
   const paths = postFilePaths
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }))

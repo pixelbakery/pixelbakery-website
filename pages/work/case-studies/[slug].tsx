@@ -6,20 +6,33 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import Video from '@parts/Video'
-import remarkGfm from 'remark-gfm'
-import VimeoPlayer from '@parts/VimeoPlayer'
 import H2 from '@typography/H2'
-import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
-import CaseStudiesIntro from '@caseStudies/CaseStudies_Intro'
 import PageSection from '@parts/PageSection'
 import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
+
+import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
+import CaseStudies_Intro from '@caseStudies/CaseStudies_Intro'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
-import CaseStudies_OtherProjects from '@caseStudies/CaseStudies_OtherProjects'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
-import CaseStudies_Storyboards from '@caseStudies/CaseStudies_Storyboards'
+// const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
+//   ssr: false,
+// })
+// const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
+//   ssr: false,
+// })
+const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
+  ssr: false,
+})
+// const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
+//   ssr: false,
+// })
+
+const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_Storyboards'), {
+  ssr: false,
+})
+const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
@@ -30,10 +43,12 @@ import CaseStudies_Header_NoVideo from '@caseStudies/CaseStudies_Header_NoVideo'
 import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 import InnerWrapper from '@parts/InnerWrapper'
-
+import Image_VarH from '@parts/Image_VarH'
 //stuff built for Marq
 import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
+import dynamic from 'next/dynamic'
+import remarkGfm from 'remark-gfm'
 
 export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter }) {
   const components = {
@@ -41,7 +56,6 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     // useful for conditionally loading components for certain routes.
     // See the notes in README.md for more details.
     CaseStudies_Storyboards: CaseStudies_Storyboards,
-    VimeoPlayer: VimeoPlayer,
     Video: Video,
     //Stuff built for Marq
     Marq_MarchingSolders: Marq_MarchingSolders,
@@ -71,15 +85,16 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
         {children}
       </CaseStudies_Description>
     ),
+    Image_VarH: Image_VarH,
     CaseStudiesIntro: ({ title, children }) => (
-      <CaseStudiesIntro
+      <CaseStudies_Intro
         title={title}
         url={frontMatter.website}
         client={frontMatter.client}
         logo={frontMatter.logo}
       >
         {children}
-      </CaseStudiesIntro>
+      </CaseStudies_Intro>
     ),
     H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     InnerWrapper: InnerWrapper,
@@ -88,15 +103,16 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
   }
   return (
     <Main>
+      <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
       {!frontMatter.isCustomLayout ? (
         <>
-          <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
           <CaseStudies_Header
             client={frontMatter.client}
             clientURL={frontMatter.website}
             clientLogo={frontMatter.logo}
             projectName={frontMatter.title}
             projectExcerpt={frontMatter.excerpt}
+            poster={frontMatter.vimeoPreview}
             heroVideo={frontMatter.vimeoID}
             tags={frontMatter.tags}
             logo={frontMatter.logo}
@@ -139,6 +155,7 @@ export const getStaticProps = async ({ params }) => {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
       const { content, data } = matter(source)
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
         filePath,
@@ -153,7 +170,7 @@ export const getStaticProps = async ({ params }) => {
   let otherCaseStudies = allCaseStudies.filter((cs) => cs.data.title != data.title)
   shuffleArray(otherCaseStudies)
   otherCaseStudies = otherCaseStudies.slice(0, 3)
-
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
       slug: params.slug,

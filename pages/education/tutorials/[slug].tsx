@@ -5,27 +5,24 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Carousel from '@parts/Carousel'
-import Main from '@parts/Main'
-import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
-const readingTime = require('reading-time')
-import Video from '@parts/Video'
-import PageSection from '@parts/PageSection'
-import { useEffect, useRef, useState } from 'react'
-import dynamic from 'next/dynamic'
-const PostHeader = dynamic(() => import('@education/Education_PostHeader'), { ssr: true })
-const Education_MadeToOrder_GetPrevNextPost = dynamic(
-  () => import('@education/Education_MadeToOrder_GetPrevNextPost'),
-  {
-    ssr: true,
-  },
-)
-import Education_SupportUs from '@education/Education_SupportUs'
-import Education_MadeToOrder_SEO from '@education/Education_MadeToOrder_SEO'
-import Education_MadeToOrder_Tags from '@education/Education_MadeToOrder_Tags'
 
+import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
+import readingTime from '@lib/readingTime'
+
+const Video = dynamic(() => import('@parts/Video'), {
+  ssr: false,
+})
+
+import dynamic from 'next/dynamic'
+import { PageSection, Main } from '@parts/index'
+import {
+  Education_PostHeader,
+  Education_MadeToOrder_GetPrevNextPost,
+  Education_SupportUs,
+  Education_MadeToOrder_SEO,
+  Education_MadeToOrder_Tags,
+} from '@education/index'
 const components = {
-  Carousel: Carousel,
   Video: Video,
 }
 
@@ -33,27 +30,12 @@ export default function Page_Education_Tutorials({
   slug,
   source,
   frontMatter,
+  readTime,
   nextIndex,
   prevIndex,
 }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
-  const myContainer = useRef(null)
-  const [readTime, setReadTime] = useState('')
-  const childRef = useRef(null)
-
-  useEffect(() => {
-    //Sets Reading Time
-    function extractContent(s) {
-      var span = document.createElement('span')
-      span.innerHTML = s
-      return span.textContent || span.innerText
-    }
-    const text = extractContent(myContainer.current.innerHTML).toString()
-    const stats = readingTime(text)
-    setReadTime(stats.text)
-    return () => {}
-  }, [])
   return (
     <Main>
       <Education_MadeToOrder_SEO
@@ -61,21 +43,27 @@ export default function Page_Education_Tutorials({
         slug={slug}
         datePostedISO={datePostedISO}
       />
-      <PostHeader
+
+      <Education_PostHeader
         title={frontMatter.title}
-        video={frontMatter.video}
-        subtitle={frontMatter.subtitle}
         category={`${frontMatter.category} Tutorial`}
-        coverImage={frontMatter.coverImage}
         date={frontMatter.date}
         author={frontMatter.author.name}
-        person={frontMatter.author.name}
         authorUrl={frontMatter.author.url}
-        forwardedRef={childRef}
         readTime={readTime}
       />
+
+      <div className='max-w-6xl mx-auto'>
+        <div className=' w-full aspect-w-16 aspect-h-9  mx-auto bg-peach'>
+          <Video
+            url={frontMatter.video}
+            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+            controls={true}
+          />
+        </div>
+      </div>
       <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto mb-8 lg:mb-8' id='tutorial-body'>
-        <article ref={myContainer} id='blog-body-guts'>
+        <article id='blog-body-guts'>
           <div className={markdownStyles['markdown']}>
             <MDXRemote {...source} components={components} />
           </div>
@@ -100,6 +88,7 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
+  const time = readingTime(content)
   const allTutorials = madeToOrderFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
@@ -117,7 +106,7 @@ export const getStaticProps = async ({ params }) => {
 
   if (data.active != false) {
     allTutorials.map((p, index) => {
-      if (p.data.date === data.date) {
+      if (p.data.title === data.title) {
         thisIndex = index
       }
     })
@@ -138,7 +127,9 @@ export const getStaticProps = async ({ params }) => {
     props: {
       nextIndex: nextIndex,
       prevIndex: prevIndex,
+      slug: params.slug,
       source: mdxSource,
+      readTime: time,
       frontMatter: data,
     },
   }

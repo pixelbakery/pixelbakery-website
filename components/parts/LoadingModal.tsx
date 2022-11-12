@@ -10,7 +10,7 @@ export default function LoadingModal({ visible }: { visible?: boolean }) {
         </span>
         <span className='text-yellow px-1 md:px-2 modal-loading-span relative inline-block'>O</span>
         <span className='text-blue px-1 md:px-2 modal-loading-span  relative inline-block'>A</span>
-        <span className='text-pink-light px-1 md:px-2 modal-loading-span  relative inline-block'>
+        <span className='text-pink-lighter px-1 md:px-2 modal-loading-span  relative inline-block'>
           D
         </span>
         <span className='text-blue-dark px-1 md:px-2 modal-loading-span  relative inline-block'>
@@ -22,7 +22,7 @@ export default function LoadingModal({ visible }: { visible?: boolean }) {
           .
         </span>
         <span className='text-blue px-1 md:px-2 modal-loading-span  relative inline-block'>.</span>
-        <span className='text-pink-light px-1 md:px-2 modal-loading-span  relative inline-block'>
+        <span className='text-pink-lighter px-1 md:px-2 modal-loading-span  relative inline-block'>
           .
         </span>
       </div>

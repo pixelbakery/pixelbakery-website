@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
@@ -31,12 +30,11 @@ function Carousel() {
         <div className='relative'>
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_01.jpg'
-            layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            className='object-contain'
+            width={2016}
+            height={1224}
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -46,11 +44,10 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_02.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -60,11 +57,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_03.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
+            className='object-contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -74,11 +71,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_04.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
             quality={100}
+            className='object-contain'
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -88,11 +85,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_05.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -102,11 +99,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_06.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -116,11 +113,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_07.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -130,11 +127,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_08.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -144,11 +141,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_09.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>
@@ -158,11 +155,11 @@ function Carousel() {
           <Image
             src='/img/case-studies/sola-tiny-chef/Pixel-Bakery_Sola_TinyChef_Storyboards_10.jpg'
             layout='responsive'
-            width={'2016px'}
-            height={'1224px'}
+            width={2016}
+            height={1224}
+            className='object-contain'
             quality={100}
             blurDataURL='true'
-            //   objectFit='contain'
             alt='SOLA animation storyboards'
           />
         </div>

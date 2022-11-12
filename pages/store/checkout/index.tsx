@@ -281,12 +281,12 @@ let Checkout: NextPage = () => {
               <InnerWrapper className='xl:max-w-3xl'>
                 <header className='mb-6 pb-8 mt-12'>
                   <div id='breadcrumbs' className='w-full text-blue  text-sm '>
-                    <Link href='/store' passHref>
-                      <a className='underline py-2'>store</a>
+                    <Link hrefLang={'en-US'} href='/store' className='underline py-2'>
+                      store
                     </Link>
                     <span className='mx-3 py-2'>/</span>
-                    <Link href='/store/cart' passHref>
-                      <a className='underline py-2'>cart</a>
+                    <Link hrefLang={'en-US'} href='/store/cart' className='underline py-2'>
+                      cart
                     </Link>
                     <span className='mx-3 py-3'>/</span>
                     <span className='py-3'>payment &amp; shipping</span>
@@ -381,7 +381,7 @@ let Checkout: NextPage = () => {
                 <button
                   type='submit'
                   onClick={() => handleSubmit()}
-                  className='block text-right bg-peach py-4 px-12 my-8 text-pink-light rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
+                  className='block text-right bg-peach py-4 px-12 my-8 text-pink-lighter rounded-lg text-2xl transform transition-all duration-600 ease-in-out scale-100 opacity-100
     hover:opacity-90 hover:scale-99 active:scale-97'
                 >
                   submit
@@ -393,8 +393,8 @@ let Checkout: NextPage = () => {
               <InnerWrapper className='max-w-6xl mx-auto'>
                 <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                   well, that&apos;s a sad looking cart.{' '}
-                  <Link href='/store' passHref>
-                    <a className='underline text-blue'>make it less sad</a>
+                  <Link hrefLang={'en-US'} href='/store' className='underline text-blue'>
+                    make it less sad
                   </Link>
                   .
                 </h3>

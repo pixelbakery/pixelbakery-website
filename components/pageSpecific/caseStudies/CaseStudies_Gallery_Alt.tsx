@@ -1,178 +1,99 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { A11y, Keyboard } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/keyboard'
 import Image from 'next/image'
+import Shimmer from '@lib/Shimmer'
+import SNACK_Social_0 from '/public/img/case-studies/snacklins/SNACK_Social_0.jpg'
+import SNACK_Social_2 from '/public/img/case-studies/snacklins/SNACK_Social_2.jpg'
+import SNACK_Social_3 from '/public/img/case-studies/snacklins/SNACK_Social_3.jpg'
+import SNACK_Social_4 from '/public/img/case-studies/snacklins/SNACK_Social_4.jpg'
+import SNACK_Social_5 from '/public/img/case-studies/snacklins/SNACK_Social_5.jpg'
+import SNACK_Social_6 from '/public/img/case-studies/snacklins/SNACK_Social_6.jpg'
 
-const slides = [
-  '/img/case-studies/snacklins/SNACK_Social_0.jpg',
-  '/img/case-studies/snacklins/SNACK_Social_2.jpg',
-  '/img/case-studies/snacklins/SNACK_Social_3.jpg',
-  '/img/case-studies/snacklins/SNACK_Social_4.jpg',
-  '/img/case-studies/snacklins/SNACK_Social_5.jpg',
-  '/img/case-studies/snacklins/SNACK_Social_6.jpg',
-]
-const SetSlide = ({ slide }) => {
+import useEmblaCarousel from 'embla-carousel-react'
+import { Fragment } from 'react'
+
+const Carousel = ({ slides }) => {
+  const [viewportRef, embla] = useEmblaCarousel({
+    align: 'start',
+    loop: true,
+    skipSnaps: true,
+  })
   return (
-    <div className=''>
+    <div className='w-full overflow-hidden' ref={viewportRef}>
+      <div className='embla__container flex w-full'>
+        {slides.map((index, i) => (
+          <Fragment key={i}>{index}</Fragment>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const ImageSlide = ({ slide }) => {
+  return (
+    <div className='cursor-grab ml-1 mr-2 relative  grow-0 shrink-0  w-[86%]  sm:w-[45%] lg:w-[30%] aspect-1'>
       <Image
-        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
-        width='100%'
-        height='100%'
-        layout='responsive'
+        src={slide}
         placeholder='blur'
-        objectFit='cover'
-        blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide}`}
+        blurDataURL={`${Shimmer(1200, 1200)}`}
         alt='Snacklins Instagram posts that Pixel Bakery designed and managed'
       />
     </div>
   )
 }
-
-const Carousel = () => {
+const VideoSlide = ({ poster, mp4, webm }) => {
   return (
-    <Swiper
-      spaceBetween={10}
-      loop
-      slidesPerView={'auto'}
-      breakpoints={{
-        0: {
-          slidesPerView: 1.15,
-          spaceBetween: 10,
-        },
-        640: {
-          slidesPerView: 2.15,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 3.15,
-          spaceBetween: 15,
-        },
-        1024: {
-          slidesPerView: 3.25,
-          spaceBetween: 25,
-        },
-      }}
-      keyboard={{
-        enabled: true,
-      }}
-      modules={[A11y, Keyboard]}
-      // className='lg:hidden'
-    >
-      <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-        <div className='w-full h-full aspect-w-1 aspect-h-1 '>
-          <video
-            className='w-full h-full'
-            playsInline={true}
-            muted={true}
-            loop
-            autoPlay={true}
-            controls={false}
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_11.jpg`}
-          >
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_11.webm`}
-            />
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_11.mp4`}
-            />
-          </video>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-        <div className='w-full h-full aspect-w-1 aspect-h-1 '>
-          <video
-            className='w-full h-full'
-            playsInline={true}
-            muted={false}
-            controls
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_12.jpg`}
-          >
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_12.webm`}
-            />
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_12.mp4`}
-            />
-          </video>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-        <div className='w-full h-full aspect-w-1 aspect-h-1 '>
-          <video
-            className='w-full h-full'
-            playsInline={true}
-            loop
-            autoPlay={true}
-            muted={true}
-            controls={false}
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_10.jpg`}
-          >
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_10.webm`}
-            />
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_10.mp4`}
-            />
-          </video>
-        </div>
-      </SwiperSlide>
-
-      {slides.map((slide: string) => {
-        return (
-          <SwiperSlide key={slide} className='bg-blue hover:cursor-grab'>
-            <SetSlide slide={slide} />
-          </SwiperSlide>
-        )
-      })}
-      <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-        <div className='w-full h-full aspect-w-1 aspect-h-1 '>
-          <video
-            className='w-full h-full'
-            playsInline={true}
-            muted={true}
-            autoPlay={true}
-            loop
-            controls={false}
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_9.jpg`}
-          >
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_9.webm`}
-            />
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_9.mp4`}
-            />
-          </video>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className='bg-blue hover:cursor-grab h-full '>
-        <div className='w-full h-full aspect-w-1 aspect-h-1 '>
-          <video
-            className='w-full h-full'
-            playsInline={true}
-            loop
-            muted={true}
-            autoPlay={true}
-            controls={false}
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_8.jpg`}
-          >
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_8.webm`}
-            />
-            <source
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Social_8.mp4`}
-            />
-          </video>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+    <div className='cursor-grab -mt-2 ml-1 mr-2 relative  grow-0 shrink-0  w-[86%] sm:w-[45%] lg:w-[30%]  aspect-1'>
+      <video
+        className='w-full h-full'
+        playsInline={true}
+        muted={true}
+        loop
+        autoPlay={true}
+        controls={false}
+        poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${poster}`}
+      >
+        <source src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${webm}`} />
+        <source src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${mp4}`} />
+      </video>
+    </div>
   )
 }
 
+const slides = [
+  <ImageSlide slide={SNACK_Social_0} />,
+  <VideoSlide
+    poster={'/img/case-studies/snacklins/SNACK_Social_8.jpg'}
+    mp4={'/img/case-studies/snacklins/SNACK_Social_8.mp4'}
+    webm={'/img/case-studies/snacklins/SNACK_Social_8.webm'}
+  />,
+  <ImageSlide slide={SNACK_Social_2} />,
+  <VideoSlide
+    poster={'/img/case-studies/snacklins/SNACK_Social_10.jpg'}
+    mp4={'/img/case-studies/snacklins/SNACK_Social_10.mp4'}
+    webm={'/img/case-studies/snacklins/SNACK_Social_10.webm'}
+  />,
+  <ImageSlide slide={SNACK_Social_3} />,
+  <VideoSlide
+    poster={'/img/case-studies/snacklins/SNACK_Social_11.jpg'}
+    mp4={'/img/case-studies/snacklins/SNACK_Social_11.mp4'}
+    webm={'/img/case-studies/snacklins/SNACK_Social_11.webm'}
+  />,
+  <ImageSlide slide={SNACK_Social_4} />,
+  <VideoSlide
+    poster={'/img/case-studies/snacklins/SNACK_Social_9.jpg'}
+    mp4={'/img/case-studies/snacklins/SNACK_Social_9.mp4'}
+    webm={'/img/case-studies/snacklins/SNACK_Social_9.webm'}
+  />,
+  <ImageSlide slide={SNACK_Social_5} />,
+  <ImageSlide slide={SNACK_Social_6} />,
+  <VideoSlide
+    poster={'/img/case-studies/snacklins/SNACK_Social_12.jpg'}
+    mp4={'/img/case-studies/snacklins/SNACK_Social_12.mp4'}
+    webm={'/img/case-studies/snacklins/SNACK_Social_12.webm'}
+  />,
+]
 const CaseStudies_Gallery = () => {
   return (
     <>
@@ -190,7 +111,7 @@ const CaseStudies_Gallery = () => {
             SNACKLINS feed. The signature punchy SNACKLINS voice is accompanied by memes, quizzes,
             custom photo shoots, and more. You name it, we’ve done it.
           </p>
-          <Carousel />
+          <Carousel slides={slides} />
         </InnerWrapper>
       </PageSection>
     </>

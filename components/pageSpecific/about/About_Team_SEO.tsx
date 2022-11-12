@@ -1,4 +1,4 @@
-import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd, SocialProfileJsonLd } from 'next-seo'
 
 interface About_Team_SEO {
   video: string
@@ -7,6 +7,13 @@ interface About_Team_SEO {
 
 const About_Team_SEO = ({ frontMatter, slug }) => {
   const [firstName, lastName] = frontMatter.name.split(' ')
+  let list = []
+  if (frontMatter.socials != undefined) {
+    frontMatter.socials.forEach((s) => {
+      // return console.log(Object.values(s).toString())
+      list.push(Object.values(s).toString())
+    })
+  }
 
   const objectArray = Object.entries(frontMatter.details)
   let details = [] as any
@@ -14,7 +21,7 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
     details[Object.keys(value).toString()] = Object.values(value).toString()
   })
 
-  let desc = `The one and only, fantastically amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
+  let desc = `The amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
   if (details.personalAesthetic != undefined) {
     desc = `${desc} ${details.personalAesthetic}`
   }
@@ -38,6 +45,12 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
             item: `https://pixelbakery.com/about/${slug}`,
           },
         ]}
+      />
+      <SocialProfileJsonLd
+        type='Person'
+        name={`${frontMatter.name}`}
+        url={`https://pixelbakery.com/about/${slug}`}
+        sameAs={list}
       />
       <NextSeo
         title={`${frontMatter.name} – ${frontMatter.title} | Team`}

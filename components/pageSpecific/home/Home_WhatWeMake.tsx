@@ -2,16 +2,12 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import dynamic from 'next/dynamic'
-const Video = dynamic(() => import('@parts/Video'), {
-  ssr: false,
-})
 
 function Home_WhatWeMake() {
   return (
-    <PageSection id={'services-cta'}>
-      <InnerWrapper>
-        <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 mb-12 lg:mb-24'>
+    <PageSection id={'services-cta'} className={'relative'}>
+      <InnerWrapper className='relative z-20'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 '>
           <div>
             <div className='text-pink text-2xl  2xl:text-4xl  leading-noone font-bold'>
               to put it simply,
@@ -21,15 +17,17 @@ function Home_WhatWeMake() {
               We build beautifully immersive worlds{' '}
             </H2>
           </div>
-          <div className='mx-auto lg:mx-0 w-full flex flex-col -mt-6 md:-mt-0 justify-center lg:py-8 lg:mb-4'>
-            <Lead color='peach' className='mb-0 pb-0 pt-0 lg:mb-4'>
-              Our team creates intentional, high-quality products that are results of purposeful
-              visions and not taking any shortcuts.
-            </Lead>
+          <div className='mx-auto lg:mx-0 w-full flex flex-col -mt-6 md:-mt-0 justify-start lg:mb-4'>
+            <p className='text-blue-dark text-xl'>
+              We create immersive, motion-centric content across various mediums and campaigns, from
+              your website to your social channels.
+            </p>
+            <p className='text-blue-dark text-xl'>
+              Motion content enhances your brand's story with another dimension of life. It shifts
+              the interaction with your audience from them simply reading your brand, to your brand
+              speaking directly to them.
+            </p>
           </div>
-        </div>
-        <div className=' w-full'>
-          <Video url='https://vimeo.com/523920082' />
         </div>
       </InnerWrapper>
     </PageSection>
