@@ -30,12 +30,11 @@ const Recipes_SmallPost = ({
       <div className='flex flex-row gap-4 md:gap-10'>
         <div className='hidden sm:block sm:w-2/5 2xl:w-2/5 '>
           <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} aria-label={title}>
-            <div className='w-full h-full md:aspect-4/3  relative'>
+            <div className='w-full h-full md:aspect-4/3  relative rounded-md overflow-hidden'>
               <Image
-                layout='fill'
+                fill={true}
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-                objectFit='cover'
-                className='rounded-md  bg-blue'
+                className='object-cover w-full h-full '
                 placeholder='blur'
                 quality={50}
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}

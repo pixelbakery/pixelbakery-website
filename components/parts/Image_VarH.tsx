@@ -9,9 +9,9 @@ function Image_VarH({ src, openInNewWindow, ...props }) {
     return (
       <Image
         src={`${src}`}
-        layout='fill'
+        fill={true}
         alt={props.alt}
-        objectFit='contain'
+        className={'w-full h-full object-contain'}
         placeholder='blur'
         blurDataURL={`${src}`}
         onLoad={({ target }) => {

@@ -74,10 +74,10 @@ function Work_Portfolio_Card({ project }) {
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-            layout='fill'
+            fill={true}
             // width={854}
             // height={480}
-            objectFit='cover'
+            className='object-cover w-full h-full'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             alt={`animation or video production work created for ${project.data.client}`}

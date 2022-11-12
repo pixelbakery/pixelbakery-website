@@ -5,7 +5,7 @@ import { Playlist } from '@lib/types'
 import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
 import H3 from '@typography/H3'
-
+import Shimmer from '@lib/Shimmer'
 type spotify = {
   spotify: any
 }
@@ -27,14 +27,13 @@ export default function Spotify_Playlist(spotify) {
           <div className='absolute xl:relative w-32 h-32'>
             <Image
               src={data.albumCoverImage}
-              layout='fill'
+              width={640}
+              height={640}
               alt='Pixel Bakery Spotify Playlist'
-              objectFit='cover'
               placeholder='blur'
-              blurDataURL={data.albumCoverImage}
-              quality={25}
-              unoptimized={true}
-              className='w-full h-full absolute'
+              blurDataURL={`${Shimmer(32, 32)}`}
+              quality={75}
+              className='w-full h-full absolute object-cover'
             />
           </div>
         </a>
@@ -78,12 +77,12 @@ export default function Spotify_Playlist(spotify) {
                     <div className='relative h-12 w-12'>
                       <Image
                         src={track.albumArt}
-                        layout='responsive'
-                        width={12}
-                        height={12}
-                        unoptimized={true}
+                        width={640}
+                        height={640}
+                        placeholder={'blur'}
+                        blurDataURL={`${Shimmer(12, 12)}`}
                         quality={25}
-                        className='h-12 w-12'
+                        className='object-cover w-full h-full'
                         alt={`${track.artist} – ${track.album}`}
                       />
                     </div>

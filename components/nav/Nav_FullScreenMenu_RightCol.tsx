@@ -45,13 +45,19 @@ function Nav_FullScreenMenu_RightCol({ update }) {
           <nav className=''>
             <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3 text-blue-dark'>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
-                <Link href={'/careers'}>Careers</Link>
+                <Link href={'/careers'} onClick={update}>
+                  Careers
+                </Link>
               </li>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
-                <Link href={'/careers'}>Motion Mixer</Link>
+                <Link href={'/careers'} onClick={update}>
+                  Motion Mixer
+                </Link>
               </li>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
-                <Link href={'/careers'}>Nebraska Creative</Link>
+                <Link href={'/careers'} onClick={update}>
+                  Nebraska Creative
+                </Link>
               </li>
             </ul>
           </nav>

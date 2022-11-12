@@ -10,7 +10,6 @@ function FourOhFour() {
           <h1 className='mb-12 text-center text-4xl text-blue'>500 - Server-side error occurred</h1>
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
-            layout='responsive'
             width={480}
             height={269}
             placeholder='blur'

@@ -33,12 +33,11 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
-            layout='fill'
-            objectFit='cover'
+            fill={true}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             quality={50}
-            className='bg-blue'
+            className='bg-blue object-cover w-full h-full'
             alt={`cover photo for ${tutorial.data.title}`}
           />
 

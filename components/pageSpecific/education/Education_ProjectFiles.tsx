@@ -118,11 +118,10 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                       <Image
                         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
                         alt={`${pf.title}} project file free for ${pf.data.category}`}
-                        layout='fill'
-                        objectFit='cover'
+                        fill={true}
                         placeholder='blur'
                         blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                        className='bg-peach'
+                        className='bg-peach object-cover w-full h-full'
                       />
                     )}
                   </div>

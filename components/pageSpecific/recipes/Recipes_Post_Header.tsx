@@ -105,9 +105,8 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
         ) : (
           <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
             <Image
-              layout='fill'
-              objectFit='cover'
-              className='object-center'
+              fill={true}
+              className='object-cover w-full h-full object-center'
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'

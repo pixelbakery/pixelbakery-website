@@ -155,12 +155,11 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               </video>
             ) : (
               <Image
-                layout='fill'
                 src={product.media.source}
                 placeholder='blur'
                 blurDataURL={product.media.source}
-                objectFit='cover'
-                className='inset-0'
+                fill={true}
+                className='w-full h-full object-cover inset-0'
                 alt={'pixel bakery ' + product.name}
               />
             )}
