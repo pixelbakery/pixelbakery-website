@@ -201,7 +201,6 @@ export default function Navbar() {
             <Link
               hrefLang={'en-US'}
               href={'/about'}
-              passHref
               className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -218,7 +217,6 @@ export default function Navbar() {
             <Link
               hrefLang={'en-US'}
               href={'/work'}
-              passHref
               className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
               onMouseEnter={handleMouseEnter}
               onMouseOut={handleMouseLeave}
@@ -235,7 +233,6 @@ export default function Navbar() {
             <Link
               hrefLang={'en-US'}
               href={'/onboarding'}
-              passHref
               className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
               onMouseEnter={handleMouseEnter}
               onMouseOut={handleMouseLeave}

@@ -31,14 +31,14 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
             <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{title}</h1>
           </div>
           <div className='flex gap-x-3 mt-3 mb-16 relative'>
-            <div className='spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
+            <div className='animate-spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
               <Image
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
                 fill={true}
                 alt={author}
                 quality={25}
-                className='animate-spin-slow relative object-top '
+                className=' relative object-top object-cover '
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
               />
             </div>
@@ -53,13 +53,7 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                 Written by{' '}
                 <span>
                   {authorUrl ? (
-                    <Link
-                      hrefLang={'en-US'}
-                      href={authorUrl}
-                      passHref
-                      className='text-blue underline'
-                      legacyBehavior
-                    >
+                    <Link hrefLang={'en-US'} href={authorUrl} className='text-blue underline'>
                       {author}
                     </Link>
                   ) : (

@@ -2,7 +2,6 @@ import { ChevronRightIcon } from '@images/UI_Icons'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
-import next from 'next'
 import Link from 'next/link'
 
 function Recipes_Post_GetPrevNextPost({ prev, next }) {
@@ -15,11 +14,8 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
               hrefLang={'en-US'}
               as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`}
               href={`/recipes/[slug]`}
-              className='flex'
-              legacyBehavior
-              passHref
             >
-              <a>
+              <div className='flex'>
                 <div className='w-12 self-center text-peach rotate-180 h-full flex flex-col justify-center'>
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
@@ -36,7 +32,7 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                     {prev.data.author.name}
                   </p>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
           <div className='w-1/2'>
@@ -44,11 +40,8 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
               hrefLang={'en-US'}
               as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`}
               href={`/recipes/[slug]`}
-              className='flex'
-              legacyBehavior
-              passHref
             >
-              <a>
+              <div className='flex'>
                 <div className='self-center w-fit'>
                   <Lead
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
@@ -66,7 +59,7 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                     <ChevronRightIcon />
                   </i>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
         </div>

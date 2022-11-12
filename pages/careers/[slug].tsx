@@ -61,11 +61,12 @@ export default function JobsPage({ slug, source, frontMatter }) {
           <InnerWrapper>
             <header className='max-w-2xl mx-auto'>
               <div className='pb-12'>
-                <Link hrefLang={'en-US'} href='/careers' passHref>
-                  <a hrefLang={'en-US'} className='border-b-2 pb-1 border-b-blue text-blue'>
-                    {' '}
-                    ← back to all careers
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href='/careers'
+                  className='border-b-2 pb-1 border-b-blue text-blue'
+                >
+                  ← back to all careers
                 </Link>
               </div>
               <p className='my-0 py-0 leading-none text-4xl text-peach font-extrabold'>
@@ -114,11 +115,12 @@ export default function JobsPage({ slug, source, frontMatter }) {
                 />
               </div>
               <div className='pt-12'>
-                <Link hrefLang={'en-US'} href='/careers' passHref>
-                  <a hrefLang={'en-US'} className='border-b-2 pb-1 text-blue border-b-blue'>
-                    {' '}
-                    ← back to all careers
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href='/careers'
+                  className='border-b-2 pb-1 text-blue border-b-blue'
+                >
+                  ← back to all careers
                 </Link>
               </div>
             </div>
