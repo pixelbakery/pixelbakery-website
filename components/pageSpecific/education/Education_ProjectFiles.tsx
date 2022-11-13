@@ -97,50 +97,42 @@ function Education_ProjectFiles({ allProjectFiles }) {
                 id={`${pf.data.title}`}
                 className='visible cursor-pointer
 transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
-                legacyBehavior>
-
-                  <div>
-                    <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
-                      {pf.data.videoCoverImage ? (
-                        <video
-                          autoPlay={true}
-                          playsInline
-                          muted
-                          controls={false}
-                          loop
-                          className='object-cover w-full h-full hideControls'
-                        >
-                          <source
-                            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                            type={'video/mp4'}
-                          />
-                        </video>
-                      ) : (
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                          type={'video/mp4'}
-                        />
-                      </video>
-                    ) : (
-                      <Image
+                legacyBehavior
+              >
+                <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
+                  {pf.data.videoCoverImage ? (
+                    <video
+                      autoPlay={true}
+                      playsInline
+                      muted
+                      controls={false}
+                      loop
+                      className='object-cover w-full h-full hideControls'
+                    >
+                      <source
                         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                        alt={`${pf.title}} project file free for ${pf.data.category}`}
-                        layout='fill'
-                        objectFit='cover'
-                        placeholder='blur'
-                        blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                        className='bg-peach'
+                        type={'video/mp4'}
                       />
-                    )}
-                  </div>
-
-                </Link>
-            );
+                    </video>
+                  ) : (
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                      alt={`${pf.title}} project file free for ${pf.data.category}`}
+                      layout='fill'
+                      objectFit='cover'
+                      placeholder='blur'
+                      blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                      className='bg-peach'
+                    />
+                  )}
+                </div>
+              </Link>
+            )
           })}
         </div>
       </InnerWrapper>
     </PageSection>
-  );
+  )
 }
 
 export default Education_ProjectFiles
