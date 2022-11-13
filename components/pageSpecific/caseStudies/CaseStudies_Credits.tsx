@@ -26,19 +26,20 @@ function CaseStudies_Credits({ credits }) {
                   <Link
                     hrefLang={'en-US'}
                     href={`${credit.website}`}
+                    passHref
                     className='underline decoration-dotted'
-                  >
+                    legacyBehavior>
                     {innerHtml(credit.name, credit.title)}
                   </Link>
                 ) : (
                   innerHtml(credit.name, credit.title)
                 )}
               </li>
-            )
+            );
           })}
         </ul>
       </div>
-    )
+    );
   }
 
   return (

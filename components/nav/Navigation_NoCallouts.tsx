@@ -175,11 +175,16 @@ export default function Navbar() {
         className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 py-2 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
       >
-        <Link hrefLang={'en-US'} href={'/'}>
-          <div className='text-4xl font-extrabold text-peach leading-none'>
+        <Link
+          hrefLang={'en-US'}
+          href={'/'}
+          className='text-4xl font-extrabold text-peach leading-none'
+          legacyBehavior
+        >
+          <>
             <div>pb</div>
             <div>ds</div>
-          </div>
+          </>
         </Link>
       </div>
     </>

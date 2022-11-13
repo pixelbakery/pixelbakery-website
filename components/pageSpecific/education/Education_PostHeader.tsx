@@ -53,9 +53,16 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                 Written by{' '}
                 <span>
                   {authorUrl ? (
-                    <Link hrefLang={'en-US'} href={authorUrl} className='text-blue underline'>
+                    (<Link
+                    hrefLang={'en-US'}
+                    href={authorUrl}
+                    passHref
+                    className='text-blue underline'
+                    legacyBehavior>
+
                       {author}
-                    </Link>
+
+                    </Link>)
                   ) : (
                     author
                   )}
@@ -66,7 +73,7 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
         </div>
       </section>
     </header>
-  )
+  );
 }
 
 export default Education_PostHeader

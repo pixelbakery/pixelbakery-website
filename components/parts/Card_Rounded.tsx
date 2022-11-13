@@ -6,7 +6,7 @@ function Card_Rounded(props) {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
   return (
-    <Link hrefLang={'en-US'} href={props.link}>
+    <Link hrefLang={'en-US'} href={props.link} passHref legacyBehavior>
       <article
         className={
           'bg-blue cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
@@ -53,6 +53,6 @@ function Card_Rounded(props) {
         </div>
       </article>
     </Link>
-  )
+  );
 }
 export default Card_Rounded

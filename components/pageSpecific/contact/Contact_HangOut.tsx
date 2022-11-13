@@ -30,7 +30,8 @@ function Contact_HangOut() {
           {SocialUrls_Contact.map((URL, index) => {
             return (
               <li key={URL.name} className={cn('-mt-12')}>
-                <Link hrefLang={'en-US'} href={URL.url}>
+                <Link hrefLang={'en-US'} href={URL.url} passHref legacyBehavior>
+
                   <StrokeText
                     text={URL.name}
                     index={index}
@@ -40,9 +41,10 @@ function Contact_HangOut() {
                     fontWeight={'font-black'}
                     active={false}
                   />
+
                 </Link>
               </li>
-            )
+            );
           })}
         </ul>
       </InnerWrapper>
@@ -104,7 +106,7 @@ function Contact_HangOut() {
               <div className=' mx-auto xl:mx-auto w-max'>
                 <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
                   <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'/about#twitch'}>
+                    <Link hrefLang={'en-US'} href={'/about#twitch'} passHref>
                       are we home?
                     </Link>
                   </li>
@@ -112,13 +114,15 @@ function Contact_HangOut() {
                     <Link
                       hrefLang={'en-US'}
                       href={'https://g.page/pixelbakery?share'}
-                      target='_blank'
-                    >
-                      map it
+                      passHref
+                      target='_blank'>
+                      
+                        map it
+                      
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'/book'}>
+                    <Link hrefLang={'en-US'} href={'/onboarding#calendly'} passHref>
                       schedule it
                     </Link>
                   </li>
@@ -129,6 +133,6 @@ function Contact_HangOut() {
         </InnerWrapper>
       </div>
     </PageSection>
-  )
+  );
 }
 export default Contact_HangOut

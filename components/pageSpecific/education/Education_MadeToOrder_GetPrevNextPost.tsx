@@ -14,8 +14,9 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
               as={`/education/tutorials/${prev.filePath.replace(/\.mdx?$/, '')}`}
               href={`/education/tutorials/[slug]`}
               hrefLang={'en-US'}
-            >
-              <div className='flex justify-start h-full'>
+              className='flex justify-start h-full'
+              legacyBehavior>
+              <>
                 <div className='text-peach self-center h-full flex flex-col justify-center rotate-180'>
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
@@ -29,7 +30,7 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
                     {prev.data.title}
                   </Lead>
                 </div>
-              </div>
+              </>
             </Link>
           </div>
           <div className='h-full self-start'>
@@ -37,8 +38,9 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
               as={`/education/tutorials/${next.filePath.replace(/\.mdx?$/, '')}`}
               href={`/education/tutorials/[slug]`}
               hrefLang={'en-US'}
-            >
-              <div className='flex justify-end h-full'>
+              className='flex justify-end h-full'
+              legacyBehavior>
+              <>
                 <div className='self-center w-fit'>
                   <Lead
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full text-right'
@@ -47,18 +49,17 @@ function Education_MadeToOrder_GetPrevNextPost({ prev, next }) {
                     {next.data.title}
                   </Lead>
                 </div>
-
                 <div className='text-peach self-center h-full flex flex-col justify-center'>
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
                   </i>
                 </div>
-              </div>
+              </>
             </Link>
           </div>
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 export default Education_MadeToOrder_GetPrevNextPost

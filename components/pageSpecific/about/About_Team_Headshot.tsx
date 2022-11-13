@@ -13,13 +13,11 @@ const About_Team_Headshot = ({ person }) => {
       hrefLang={'en-US'}
       as={`/about/${person.filePath.replace(/\.mdx?$/, '')}`}
       href={`/about/[slug]`}
-      passHref
+      className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
+      onMouseOver={handleHover}
+      onMouseLeave={handleHover}
     >
-      <a
-        className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
-        onMouseOver={handleHover}
-        onMouseLeave={handleHover}
-      >
+      <>
         <Image
           src={`${ImgPrefix}${person.data.headshotSerious}`}
           layout={'fill'}
@@ -40,7 +38,7 @@ const About_Team_Headshot = ({ person }) => {
           placeholder={'blur'}
           blurDataURL={`${ImgPrefix}${person.data.headshotSmiling}`}
         />
-      </a>
+      </>
     </Link>
   )
 }

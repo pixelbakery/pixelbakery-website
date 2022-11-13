@@ -6,13 +6,6 @@ import H3 from '@typography/H3'
 interface Home_Portfolio_Card {
   bgColor: string
   bgPosition: string
-  client: string
-  title: string
-  tags: Array<any>
-  description: string
-  previewImg: string
-  link: string
-  video: string
   project: any
 }
 function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Card) {
@@ -29,36 +22,34 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Ca
           <Link
             as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
-            passHref
+            hrefLang={'en-US'}
+            className='cursor-pointer'
           >
-            <a hrefLang={'en-US'} className='cursor-pointer'>
-              <video
-                muted
-                playsInline
-                preload='true'
-                loop
-                autoPlay={true}
-                poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-                className='block relative object-cover w-full h-full scale-101 shadow-xl overflow-hidden'
-              >
-                <source
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`}
-                  type='video/webm'
-                />
+            <video
+              muted
+              playsInline
+              preload='true'
+              loop
+              autoPlay={true}
+              poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+              className='block relative object-cover w-full h-full scale-101 shadow-xl overflow-hidden'
+            >
+              <source
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`}
+                type='video/webm'
+              />
 
-                <source
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
-                  type='video/mp4'
-                />
-              </video>
-            </a>
+              <source
+                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
+                type='video/mp4'
+              />
+            </video>
           </Link>
         </div>
       </div>
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
-        passHref
       >
         <div className='mt-6 pt-4 lg:mt-12 cursor-pointer'>
           <span className='text-pink text-2xl font-bold mb-0 pb-0 leading-none'>

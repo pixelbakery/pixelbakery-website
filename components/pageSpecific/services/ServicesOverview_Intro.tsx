@@ -77,23 +77,26 @@ function ServicesOverview_Intro() {
                 <Link
                   hrefLang={'en-US'}
                   href={talent.link}
+                  passHref
                   key={talent.link}
                   className='duration-300 hover:scale-98'
-                >
-                  <Pill
-                    text={talent.service}
-                    bgColor='pink'
-                    textColor='cream'
-                    size='sm'
-                    className=''
-                  />
-                </Link>
-              )
+                  legacyBehavior>
+
+                    <Pill
+                      text={talent.service}
+                      bgColor='pink'
+                      textColor='cream'
+                      size='sm'
+                      className=''
+                    />
+
+                  </Link>
+              );
             })}
           </div>
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 export default ServicesOverview_Intro

@@ -45,8 +45,8 @@ const getFeaturedPosts = ({ allPosts }) => {
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
       />
-    )
-  })
+    );
+  });
 }
 
 const getSecondaryPosts = ({ allPosts }) => {
@@ -65,8 +65,8 @@ const getSecondaryPosts = ({ allPosts }) => {
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
       />
-    )
-  })
+    );
+  });
 }
 const Page_Recipes = ({ allPosts }) => {
   const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)

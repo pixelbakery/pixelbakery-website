@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
 import { SendToMailchimp } from '@lib/helpers'
 import router from 'next/router'
+import Link from 'next/link'
 
 export default function Careers_Application_Form({ allJobs }) {
   const [file, setFile] = useState(null)
@@ -374,9 +375,9 @@ export default function Careers_Application_Form({ allJobs }) {
             <p className='text-sm text-wine-400 mb-0 pb-0'>
               Must be a PDF. Please upload a .pdf under 10MB. If you need help reducing your file
               size, check out:{' '}
-              <a hrefLang={'en-US'} href='https://ilovepdf.com' rel='noopener' target={'_blank'}>
+              <Link hrefLang={'en-US'} href='https://ilovepdf.com' rel='noopener' target={'_blank'}>
                 ilovepdf.com
-              </a>
+              </Link>
             </p>
           </div>
           <div className='col-span-2'>

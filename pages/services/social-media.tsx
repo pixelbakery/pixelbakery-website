@@ -28,8 +28,8 @@ export default function Services() {
           platforms. We bring your feeds to life using dynamic content and motion design.
         </p>
         <p>
-          <Link hrefLang={'en-US'} href={'/work/case-studies/snacklins-content-kit'} passHref>
-            <a>Check out</a>
+          <Link hrefLang={'en-US'} href={'/work/case-studies/snacklins-content-kit'}>
+            Check out
           </Link>{' '}
           the social content we've built for SNACKLINS.
         </p>

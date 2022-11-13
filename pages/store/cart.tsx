@@ -92,9 +92,9 @@ const CheckoutPage: NextPage = () => {
                           className={'relative'}
                         >
                           <Image
-                            width={1920}
-                            height={1440}
-                            className={'object-cover w-full h-full'}
+                            layout='fill'
+                            objectFit='cover'
+                            unoptimized={true}
                             src={`${item?.media?.source ?? item?.image?.url}`}
                             alt={'pixel bakery shop: ' + item.name}
                           />
@@ -158,10 +158,8 @@ const CheckoutPage: NextPage = () => {
               <div>
                 <h3 className='text-wine text-xl italic font-semibold text-opacity-40'>
                   well, that&apos;s a sad looking cart.{' '}
-                  <Link hrefLang={'en-US'} href='/store' passHref>
-                    <a hrefLang={'en-US'} className='underline text-blue'>
-                      make it less sad
-                    </a>
+                  <Link hrefLang={'en-US'} href='/store' className='underline text-blue'>
+                    make it less sad
                   </Link>
                   .
                 </h3>
@@ -169,10 +167,12 @@ const CheckoutPage: NextPage = () => {
             )}
           </div>
           <div className=' flex flex-col md:flex-row justify-between'>
-            <Link hrefLang={'en-US'} href='/store' passHref>
-              <a hrefLang={'en-US'} className='block text-blue text-md cursor-pointer py-3'>
-                ← Back to store{' '}
-              </a>
+            <Link
+              hrefLang={'en-US'}
+              href='/store'
+              className='block text-blue text-md cursor-pointer py-3'
+            >
+              ← Back to store
             </Link>
             {cart?.line_items?.length! > 0 ? (
               <Link hrefLang={'en-US'} href='/store/checkout'>

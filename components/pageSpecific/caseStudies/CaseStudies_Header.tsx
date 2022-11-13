@@ -4,6 +4,7 @@ import Pill from '@parts/Pill'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Loading from '@utility/Loading'
+import Link from 'next/link'
 // import Player from 'components/player/Player'
 function CaseStudies_Header({ ...props }) {
   const Logo = () => {
@@ -11,15 +12,16 @@ function CaseStudies_Header({ ...props }) {
     else
       return (
         <div className='relative w-32 h-32'>
-          <Link hrefLang={'en-US'} href={`${props.website}`}>
+          <Link hrefLang={'en-US'} href={`${props.website}`} legacyBehavior>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
               layout={'fill'}
               objectFit={'contain'}
+              alt={`logo for ${props.client}`}
             />
-          </a>
+          </Link>
         </div>
-      )
+      );
   }
   return (
     <section
@@ -31,9 +33,9 @@ function CaseStudies_Header({ ...props }) {
           {/* <Logo /> */}
 
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
-            <Link hrefLang={'en-US'} href={`${props.website}`}>
+            <Link hrefLang={'en-US'} href={`${props.website}`} legacyBehavior>
               <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
-            </a>
+            </Link>
             {/* {props.projectName} */}
             {props.projectName}
           </H1>
@@ -83,6 +85,6 @@ function CaseStudies_Header({ ...props }) {
         /> */}
       </div>
     </section>
-  )
+  );
 }
 export default CaseStudies_Header
