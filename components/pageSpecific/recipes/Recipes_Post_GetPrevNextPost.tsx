@@ -14,11 +14,8 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
               hrefLang={'en-US'}
               as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`}
               href={`/recipes/[slug]`}
-              className='flex'
-              legacyBehavior
-              passHref
             >
-              <a>
+              <div className='flex'>
                 <div className='w-12 self-center text-peach rotate-180 h-full flex flex-col justify-center'>
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
@@ -43,11 +40,8 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
               hrefLang={'en-US'}
               as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`}
               href={`/recipes/[slug]`}
-              className='flex'
-              legacyBehavior
-              passHref
             >
-              <a>
+              <div className='flex'>
                 <div className='self-center w-fit'>
                   <Lead
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '

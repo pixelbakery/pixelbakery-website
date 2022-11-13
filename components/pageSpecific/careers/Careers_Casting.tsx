@@ -12,14 +12,14 @@ function Careers_Casting() {
         </div>
         <div className='w-1/2 py-12'>
           <div className='grid grid-cols-2 gap-8'>
-            <Link hrefLang={'en-US'} href={'/'} className='col-span-1' legacyBehavior>
+            <Link hrefLang={'en-US'} href={'/'} className='col-span-1'>
               <article className='w-full h-44  px-8 py-12 flex flex-col justify-center border-4 border-pink rounded-lg'>
                 <small className='text-blue text-xs place-self-start'>animal</small>
                 <h3 className='text-2xl text-pink font-bold'>happy bunnies</h3>
               </article>
             </Link>
 
-            <Link hrefLang={'en-US'} href={'/'} passHref className='col-span-1' legacyBehavior>
+            <Link hrefLang={'en-US'} href={'/'} className='col-span-1'>
               <article className='w-full h-44 px-8 py-10 flex flex-col justify-center border-4 border-pink rounded-lg'>
                 <small className='text-blue text-xs place-self-start'>human</small>
                 <h3 className='text-2xl text-pink font-bold'>parka girl 1</h3>

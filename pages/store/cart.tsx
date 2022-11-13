@@ -92,9 +92,9 @@ const CheckoutPage: NextPage = () => {
                           className={'relative'}
                         >
                           <Image
-                            layout='fill'
-                            objectFit='cover'
-                            unoptimized={true}
+                            width={1920}
+                            height={1440}
+                            className={'object-cover w-full h-full'}
                             src={`${item?.media?.source ?? item?.image?.url}`}
                             alt={'pixel bakery shop: ' + item.name}
                           />

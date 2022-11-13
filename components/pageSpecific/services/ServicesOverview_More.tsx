@@ -7,7 +7,7 @@ function ServicesOverview_More() {
   return (
     <PageSection_FullWidth id='more-services'>
       <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>
-        <Link hrefLang={'en-US'} href={'/services/web-hosting'} passHref legacyBehavior>
+        <Link hrefLang={'en-US'} href={'/services/web-hosting'}>
           <div className='bg-cream flex flex-col justify-center'>
             <div
               className='px-12 py-12 cursor-pointer mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-x-24'
@@ -36,6 +36,6 @@ function ServicesOverview_More() {
         </Link>
       </div>
     </PageSection_FullWidth>
-  );
+  )
 }
 export default ServicesOverview_More
