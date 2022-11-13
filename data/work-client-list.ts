@@ -11,7 +11,7 @@ export default [
   {
     client: 'First Honey',
     logo: '/img/clients/pixelbakery_client_first_honey.png',
-    url: '/',
+    url: 'google.com',
     active: true,
   },
   {
@@ -186,13 +186,13 @@ export default [
     client: 'Legal Aid of Nebraska',
     logo: '/img/clients/pixelbakery_client_legalaid.png',
     url: 'https://www.legalaidofnebraska.org/',
-    active: false,
+    active: true,
   },
   {
     client: 'Lincoln Calling',
-    logo: '/img/clients/pixelbakery_client_lincolncalling.png',
+    logo: '/img/clients/pixelbakery_client_lincoln_calling.png',
     url: 'https://lincolncalling.com/',
-    active: false,
+    active: true,
   },
   {
     client: 'NRIN',

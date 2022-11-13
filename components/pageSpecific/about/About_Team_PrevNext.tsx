@@ -18,15 +18,14 @@ function About_Team_PrevNext({ active, prev, next }: PrevNext) {
             <Link
               as={`/about/${prev.filePath.replace(/\.mdx?$/, '')}`}
               href={`/about/[slug]`}
-              passHref
+              hrefLang={'en-US'}
             >
-              <a hrefLang={'en-US'} className='flex justify-start'>
+              <div className='flex justify-start'>
                 <div className='w-12 self-center text-peach rotate-180 h-full flex flex-col justify-center'>
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
                   </i>
                 </div>
-
                 <div className='self-center'>
                   <Lead
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
@@ -38,14 +37,14 @@ function About_Team_PrevNext({ active, prev, next }: PrevNext) {
                     {prev.data.title}
                   </p>
                 </div>
-              </a>
+              </div>
             </Link>
             <Link
               as={`/about/${next.filePath.replace(/\.mdx?$/, '')}`}
               href={`/about/[slug]`}
-              passHref
+              hrefLang={'en-US'}
             >
-              <a hrefLang={'en-US'} className='flex justify-end h-full'>
+              <div className='flex justify-end h-full'>
                 <div className='self-center w-fit'>
                   <Lead
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
@@ -57,14 +56,13 @@ function About_Team_PrevNext({ active, prev, next }: PrevNext) {
                     {next.data.title}
                   </p>
                 </div>
-
                 <div className=' text-peach self-center h-full flex flex-col justify-center'>
                   {' '}
                   <i className='text-3xl p-2'>
                     <ChevronRightIcon />
                   </i>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
         </InnerWrapper>

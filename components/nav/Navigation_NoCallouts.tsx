@@ -117,51 +117,50 @@ export default function Navbar() {
             className='bg-cream rounded-md origin-top-left hidden xl:block  '
             onMouseEnter={handleMouseEnterLogo}
           >
-            <Link hrefLang={'en-US'} href={'/'} passHref>
-              <a
-                hrefLang={'en-US'}
-                className='pointer-events-auto block relative  h-full w-full z-50 px-4 pt-3 my-0'
+            <Link
+              hrefLang={'en-US'}
+              href={'/'}
+              className='pointer-events-auto block relative  h-full w-full z-50 px-4 pt-3 my-0'
+            >
+              <div
+                ref={logoWrapper}
+                className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
               >
                 <div
-                  ref={logoWrapper}
-                  className=' relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
+                  ref={line1}
+                  className='relative block overflow-visible tracking-normal text-left whitespace-nowrap'
                 >
-                  <div
-                    ref={line1}
-                    className='relative block overflow-visible tracking-normal text-left whitespace-nowrap'
-                  >
-                    <span ref={p} className='inline-block'>
-                      p
-                    </span>
-                    <span ref={ixel} className='inline-block'>
-                      ixel{' '}
-                    </span>
-                    <span ref={b} className='inline-block ml-3'>
-                      b
-                    </span>
-                    <span ref={akery} className='inline-block'>
-                      akery
-                    </span>
-                  </div>
-                  <div
-                    ref={line2}
-                    className='relative block tracking-wide  text-left whitespace-nowrap'
-                  >
-                    <span ref={d} className='inline-block'>
-                      d
-                    </span>
-                    <span ref={esign} className='inline-block'>
-                      esign{' '}
-                    </span>
-                    <span ref={s} className='inline-block ml-3'>
-                      s
-                    </span>
-                    <span ref={udio} className='inline-block'>
-                      tudio
-                    </span>
-                  </div>
+                  <span ref={p} className='inline-block'>
+                    p
+                  </span>
+                  <span ref={ixel} className='inline-block'>
+                    ixel{' '}
+                  </span>
+                  <span ref={b} className='inline-block ml-3'>
+                    b
+                  </span>
+                  <span ref={akery} className='inline-block'>
+                    akery
+                  </span>
                 </div>
-              </a>
+                <div
+                  ref={line2}
+                  className='relative block tracking-wide  text-left whitespace-nowrap'
+                >
+                  <span ref={d} className='inline-block'>
+                    d
+                  </span>
+                  <span ref={esign} className='inline-block'>
+                    esign{' '}
+                  </span>
+                  <span ref={s} className='inline-block ml-3'>
+                    s
+                  </span>
+                  <span ref={udio} className='inline-block'>
+                    tudio
+                  </span>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
@@ -177,10 +176,10 @@ export default function Navbar() {
         id='mobile-logo'
       >
         <Link hrefLang={'en-US'} href={'/'}>
-          <a hrefLang={'en-US'} className='text-4xl font-extrabold text-peach leading-none'>
+          <div className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
-          </a>
+          </div>
         </Link>
       </div>
     </>

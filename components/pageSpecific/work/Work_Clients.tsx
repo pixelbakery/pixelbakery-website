@@ -25,15 +25,15 @@ function Work_Clients() {
         <div className='mt-3 grid grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-x-12 lg:gap-x-0'>
           {activeClients.map((client, index) => (
             <div key={index} className='col-span-1'>
-              <Link hrefLang={'en-US'} href={client.url} passHref>
+              <Link hrefLang={'en-US'} href={client.url}>
                 <div className='cursor-pointer duration-300 hover:scale-99 ease-in-out relative w-full h-32'>
                   <Image
-                    layout='fill'
-                    objectFit='contain'
+                    width={256}
+                    height={256}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
                     alt={client.client}
-                    className='w-full'
-                    quality={25}
+                    className='h-full object-contain w-full'
+                    quality={75}
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
                   />

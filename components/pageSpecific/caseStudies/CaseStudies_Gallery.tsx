@@ -33,8 +33,7 @@ const ImageSlide = ({ slide }) => {
         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${slide.src}`}
         width={slide.width}
         height={slide.height}
-        layout='fill'
-        objectFit='cover'
+        className={'w-full h-full object-cover'}
         placeholder='blur'
         blurDataURL={`${Shimmer(slide.width, slide.height)}`}
         alt='Snacklins Instagram posts that Pixel Bakery designed and managed'

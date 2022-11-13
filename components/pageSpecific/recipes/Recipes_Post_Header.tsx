@@ -15,21 +15,6 @@ type Props = {
 }
 
 const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props) => {
-  // let profilePic
-  // if (matchingBio.slug && matchingBio.data.headshotSmiling != typeof undefined) {
-  //   profilePic = matchingBio.headshotSmiling
-  //   console.log('found it')
-  // } else {
-  //   profilePic = '/img/placeholder01.png'
-  // }
-
-  //figure out author bio link for JSON schema
-  // let authorURL
-  // if (ourPerson.slug && ourPerson.photos.headshotSmiling != typeof undefined) {
-  //   authorURL = `https://pixelbakery.com/about/${ourPerson.slug}`
-  // } else {
-  //   authorURL = 'https://pixelbakery.com/recipes'
-  // }
   return (
     <header className='mt-44'>
       <section className='px-6 md:max-w-3xl mx-auto '>
@@ -57,23 +42,19 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               <Link
                 as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/about/[slug]`}
-                passHref
+                hrefLang={'en-US'}
+                className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
               >
-                <a
-                  hrefLang={'en-US'}
-                  className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
-                >
-                  <Image
-                    placeholder='blur'
-                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
-                    layout='fill'
-                    objectFit='cover'
-                    alt={frontMatter.author.name}
-                    quality={20}
-                    className='object-top scale-175 sc'
-                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
-                  />
-                </a>
+                <Image
+                  placeholder='blur'
+                  blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
+                  width={124}
+                  height={124}
+                  alt={frontMatter.author.name}
+                  quality={75}
+                  className='w-full h-full object-cover'
+                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
+                />
               </Link>
             ) : (
               // If there isn't a match, use a placeholder image and don't link anywhere
@@ -81,11 +62,10 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                 <Image
                   placeholder='blur'
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
-                  layout='fill'
-                  objectFit='cover'
+                  fill={true}
                   alt={frontMatter.author.name}
                   quality={25}
-                  className='object-top scale-175 sc'
+                  className='object-cover object-top scale-175'
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
                 />
               </div>
@@ -100,16 +80,14 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
 
               {matchingBio ? (
                 <div className='text-sm text-wine'>
-                  Written by the one and only
+                  Written by the one and only{' '}
                   <Link
                     as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                     href={`/about/[slug]`}
-                    passHref
+                    hrefLang={'en-US'}
+                    className='text-peach'
                   >
-                    <a hrefLang={'en-US'} className='text-peach'>
-                      {' '}
-                      {frontMatter.author.name}
-                    </a>
+                    {frontMatter.author.name}
                   </Link>
                 </div>
               ) : (
@@ -127,9 +105,8 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
         ) : (
           <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
             <Image
-              layout='fill'
-              objectFit='cover'
-              className='object-center'
+              fill={true}
+              className='object-cover w-full h-full object-center'
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'

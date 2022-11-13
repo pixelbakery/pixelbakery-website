@@ -27,8 +27,8 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
     chevronRotation = ''
   }
   return (
-    <Link hrefLang={'en-US'} href={link} passHref>
-      <a
+    <Link hrefLang={'en-US'} href={link}>
+      <div
         className={cn('block my-3 py-3 rounded-lg px-6 max-w-sm  hover-99', `bg-${bgColor}`, {
           ['mx-auto']: center,
         })}
@@ -47,7 +47,7 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
             {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
           </i>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }

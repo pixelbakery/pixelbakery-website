@@ -7,7 +7,7 @@ import useTotals from '@hooks/useTotals'
 type Props = {
   cost: number
   shipping?: {
-    price: Price
+    price?: Price
   }
   cart?: Cart
   [key: string]: any
@@ -43,37 +43,6 @@ function Store_CartDetails({}: Props) {
           amount: {cart?.subtotal.formatted_with_symbol}
         </p>
       </div>
-      {/* <div>
-        <p className='text-blue text-2xl font-semibold py-3'>Pay what you want</p>
-        <p className='text-left text-wine text-md'>
-          Adjust the slider below to change the price. All proceeds go to the{' '}
-          <Link hrefLang={'en-US'} href='https://smallvoices.org' passHref>
-            <a hrefLang={'en-US'} target='_blank' className='text-peach underline'>
-              Child Advocacy Center
-            </a>
-          </Link>
-          .
-        </p>
-        <p className='font-semibold text-md mt-4'>
-          NOTE: Currently, you have to move the slider a little bit to successfully check out. If
-          you'd like to pay the minimum price, simply slide it back all the way to the left.
-        </p>
-      </div> */}
-      {/* <div className='my-4 flex flex-col md:flex-row gap-6 items-center mt-8'>
-        <input
-          type='range'
-          min={pwywMin}
-          max={pwywMax}
-          value={Number(pwyw ?? 0).toFixed(2)}
-          onChange={onPwywChange}
-          className='bg-blue slider w-full md:w-auto md:flex-grow'
-        />
-        <span>
-          <span className='font-medium text-xl text-wine mr-1'>
-            ${Number(pwyw ?? 0).toFixed(2)}
-          </span>
-        </span>
-      </div> */}
       <p className='text-wine text-right'>shipping {shipping?.price.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2'>tax {tax?.amount.formatted_with_symbol}</p>
       <p className='text-wine text-right italic py-2 text-opacity-60'>

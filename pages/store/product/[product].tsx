@@ -130,10 +130,12 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
           <div className='block md:hidden col-span-1 mt-0 gap-6  '>
             <div className='w-full  flex flex-row justify-start text-left mt-0 pb-3 '>
               <div>
-                <Link hrefLang={'en-US'} href={'/store'} passHref>
-                  <a hrefLang={'en-US'} className='font-semibold text-blue text-xl'>
-                    ← more good good
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href={'/store'}
+                  className='font-semibold text-blue text-xl'
+                >
+                  ← more good good
                 </Link>
               </div>
             </div>
@@ -153,21 +155,18 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               </video>
             ) : (
               <Image
-                layout='fill'
                 src={product.media.source}
                 placeholder='blur'
                 blurDataURL={product.media.source}
-                objectFit='cover'
-                className='inset-0'
+                fill={true}
+                className='w-full h-full object-cover inset-0'
                 alt={'pixel bakery ' + product.name}
               />
             )}
 
             <div className='hidden w-full  md:flex flex-row justify-start text-left py-4 '>
-              <Link hrefLang={'en-US'} href={'/store'} passHref>
-                <a hrefLang={'en-US'} className='font-semibold text-blue text-xl'>
-                  ← more good good
-                </a>
+              <Link hrefLang={'en-US'} href={'/store'} className='font-semibold text-blue text-xl'>
+                ← more good good
               </Link>
             </div>
           </div>
@@ -214,14 +213,14 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               </button>
             )}
             {cart?.total_items > 0 ? (
-              <Link hrefLang={'en-US'} href='/store/cart' passHref>
-                <a
-                  className={
-                    'border text-center border-blue text-blue rounded-lg cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-blue text-xl font-bold mb-8 mt-2 md:mt-4 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out '
-                  }
-                >
-                  check out →
-                </a>
+              <Link
+                hrefLang={'en-US'}
+                href='/store/cart'
+                className={
+                  'border text-center border-blue text-blue rounded-lg cursor-pointer hover:opacity-90 hover:scale-97 active:scale-90 active:bg-blue text-xl font-bold mb-8 mt-2 md:mt-4 py-4 block w-full lowercase scale-100 opacity-100 transform transition-all duration-600 ease-in-out '
+                }
+              >
+                check out →
               </Link>
             ) : null}
 
@@ -239,10 +238,12 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
 
             <div className=' md:hidden w-full  flex flex-row justify-start text-left  '>
               <div>
-                <Link hrefLang={'en-US'} href={'/store'} passHref>
-                  <a hrefLang={'en-US'} className='font-semibold text-blue text-xl'>
-                    ← more good good
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href={'/store'}
+                  className='font-semibold text-blue text-xl'
+                >
+                  ← more good good
                 </Link>
               </div>
             </div>

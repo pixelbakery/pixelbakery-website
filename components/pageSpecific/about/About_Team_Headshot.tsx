@@ -13,17 +13,15 @@ const About_Team_Headshot = ({ person }) => {
       hrefLang={'en-US'}
       as={`/about/${person.filePath.replace(/\.mdx?$/, '')}`}
       href={`/about/[slug]`}
-      passHref
+      className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
+      onMouseOver={handleHover}
+      onMouseLeave={handleHover}
     >
-      <a
-        className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
-        onMouseOver={handleHover}
-        onMouseLeave={handleHover}
-      >
+      <>
         <Image
           src={`${ImgPrefix}${person.data.headshotSerious}`}
-          layout={'fill'}
-          objectFit='cover'
+          width={720}
+          height={980}
           className={cn('absolute top-0 left-0 w-full h-full object-cover z-20', {
             ['opacity-0']: hover,
           })}
@@ -33,14 +31,14 @@ const About_Team_Headshot = ({ person }) => {
         />
         <Image
           src={`${ImgPrefix}${person.data.headshotSmiling}`}
-          layout={'fill'}
-          objectFit='cover'
+          width={720}
+          height={980}
           className='absolute top-0 left-0  w-full h-full object-cover z-10'
           alt={'pixel bakery ' + person.data.name + ', ' + person.data.title + ' company headshot'}
           placeholder={'blur'}
           blurDataURL={`${ImgPrefix}${person.data.headshotSmiling}`}
         />
-      </a>
+      </>
     </Link>
   )
 }

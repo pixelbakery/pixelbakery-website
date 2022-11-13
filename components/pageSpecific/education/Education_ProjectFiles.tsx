@@ -94,44 +94,40 @@ function Education_ProjectFiles({ allProjectFiles }) {
                 key={pf.data.title}
                 as={`/education/project-files/${pf.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/education/project-files/[slug]`}
-              >
-                <a
-                  id={`${pf.data.title}`}
-                  className='visible cursor-pointer
+                id={`${pf.data.title}`}
+                className='visible cursor-pointer
 transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
-                >
-                  <div>
-                    <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
-                      {pf.data.videoCoverImage ? (
-                        <video
-                          autoPlay={true}
-                          playsInline
-                          muted
-                          controls={false}
-                          loop
-                          className='object-cover w-full h-full hideControls'
-                        >
-                          <source
-                            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                            type={'video/mp4'}
-                          />
-                        </video>
-                      ) : (
-                        <Image
+              >
+                <div>
+                  <div className='aspect-[3/4] relative overflow-hidden rounded-xl cursor-pointer'>
+                    {pf.data.videoCoverImage ? (
+                      <video
+                        autoPlay={true}
+                        playsInline
+                        muted
+                        controls={false}
+                        loop
+                        className='object-cover w-full h-full hideControls'
+                      >
+                        <source
                           src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                          alt={`${pf.title}} project file free for ${pf.data.category}`}
-                          layout='fill'
-                          objectFit='cover'
-                          placeholder='blur'
-                          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                          className='bg-peach'
+                          type={'video/mp4'}
                         />
-                      )}
-                    </div>
-                    <div className='mt-2 text-xs text-wine-200'>{`${pf.data.category}`}</div>
-                    <h3 className='text-lg text-wine leading-none'>{pf.data.title}</h3>
+                      </video>
+                    ) : (
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                        alt={`${pf.title}} project file free for ${pf.data.category}`}
+                        fill={true}
+                        placeholder='blur'
+                        blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                        className='bg-peach object-cover w-full h-full'
+                      />
+                    )}
                   </div>
-                </a>
+                  <div className='mt-2 text-xs text-wine-200'>{`${pf.data.category}`}</div>
+                  <h3 className='text-lg text-wine leading-none'>{pf.data.title}</h3>
+                </div>
               </Link>
             )
           })}
