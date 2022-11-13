@@ -30,37 +30,34 @@ function Button_Filled({ center, text, link, color, chevronDirection, className 
     <Link
       hrefLang={'en-US'}
       href={link}
-      passHref
       className={cn(
         'block my-3 py-3 rounded-lg px-6 w-full max-w-sm  text-center hover-99 shadow-none',
         `border-${color} border-4`,
         { ['mx-auto']: center },
       )}
-      legacyBehavior>
-
-        <div className={cn('font-semibold text-xl lowercase flex')}>
-          <div
-            className={cn(
-              'text-center flex-grow flex flex-col justify-center tracking-wide',
-              `text-${color}`,
-            )}
-          >
-            <span> {text}</span>
-          </div>
-
-          <i
-            className={cn(
-              'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
-              chevronRotation,
-              `text-${color}`,
-            )}
-          >
-            {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
-          </i>
+    >
+      <div className={cn('font-semibold text-xl lowercase flex')}>
+        <div
+          className={cn(
+            'text-center flex-grow flex flex-col justify-center tracking-wide',
+            `text-${color}`,
+          )}
+        >
+          <span> {text}</span>
         </div>
 
-      </Link>
-  );
+        <i
+          className={cn(
+            'mx-0 px-0 self-center h-8 w-8 flex flex-col justify-center',
+            chevronRotation,
+            `text-${color}`,
+          )}
+        >
+          {chevronDirection === 'download' ? <DownloadIcon /> : <ChevronRightIcon />}
+        </i>
+      </div>
+    </Link>
+  )
 }
 
 export default Button_Filled

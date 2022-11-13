@@ -146,9 +146,7 @@ export default function Navbar() {
             <Link
               hrefLang={'en-US'}
               href={'/'}
-              passHref
-              className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'
-              legacyBehavior
+              className=' pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'
             >
               <div
                 ref={logoWrapper}
@@ -258,7 +256,6 @@ export default function Navbar() {
           hrefLang={'en-US'}
           href={'/'}
           className='text-4xl font-extrabold text-peach leading-none'
-          legacyBehavior
         >
           <>
             <div>pb</div>

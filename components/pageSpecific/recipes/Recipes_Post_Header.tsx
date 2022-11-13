@@ -42,10 +42,8 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               <Link
                 as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/about/[slug]`}
-                passHref
                 hrefLang={'en-US'}
                 className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
-                legacyBehavior
               >
                 <Image
                   placeholder='blur'

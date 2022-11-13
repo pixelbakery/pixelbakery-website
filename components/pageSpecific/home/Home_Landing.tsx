@@ -44,8 +44,9 @@ function Home_Landing() {
           <div className='flex justify-center w-full xl:my-2'>
             <Button_Filled
               center={true}
-              text={'Start something wonderful'}
+              text={'Start A Project'}
               link={'/onboarding'}
+              className={'w-full'}
               bgColor={'peach'}
               textColor={'pink-lighter'}
               chevronDirection='right'

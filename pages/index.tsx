@@ -16,8 +16,8 @@ import { H1, H2 } from '@typography/index'
 
 const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
   loading: () => (
-    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H1>Pixel Bakery Design Studio</H1>
+    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H1 color='blue-dark self-center text-center'>Pixel Bakery Design Studio</H1>
       <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
     </section>
   ),

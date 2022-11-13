@@ -9,9 +9,18 @@ interface Props {
   bgColor: string
   textColor: string
   chevronDirection: string
+  className?: string
 }
 
-function Button_Filled({ center, text, link, textColor, bgColor, chevronDirection }: Props) {
+function Button_Filled({
+  center,
+  text,
+  link,
+  textColor,
+  bgColor,
+  chevronDirection,
+  className,
+}: Props) {
   let chevronRotation = ''
   if (chevronDirection === 'right') {
     chevronRotation = ''
@@ -32,6 +41,7 @@ function Button_Filled({ center, text, link, textColor, bgColor, chevronDirectio
       href={link}
       className={cn('block my-3 py-3 rounded-lg px-6 max-w-sm  hover-99', `bg-${bgColor}`, {
         ['mx-auto']: center,
+        [`${className}`]: className,
       })}
     >
       <div className={cn(' font-bold text-xl lowercase flex flex-row')}>

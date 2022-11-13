@@ -160,9 +160,11 @@ export const Footer: NextPage = () => {
           <div className='flex flex-col md:flex-row justify-center md:justify-between pt-3'>
             <button
               onClick={updateModal}
-              className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md py-2 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
+              className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md pb-2 pt-4 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
             >
-              <i className='block duration-300 ease-in-out group-hover:rotate-360'> 🥐</i>
+              <i className='block duration-300 ease-in-out group-hover:rotate-360 leading-none'>
+                🥐
+              </i>
             </button>
             <span className='self-center text-center mt-4 md:mt-0 italic text-sm  text-cream'>
               © {year} Pixel Bakery Design Studio
