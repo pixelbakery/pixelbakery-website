@@ -1,3 +1,5 @@
+import InnerWrapper from '@parts/InnerWrapper'
+import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Link from 'next/link'
 
@@ -21,10 +23,12 @@ function CaseStudies_Credits({ credits }) {
             return (
               <li className='my-3' key={credit.name}>
                 {credit.website != undefined ? (
-                  <Link hrefLang={'en-US'} href={`${credit.website}`} passHref>
-                    <a hrefLang={'en-US'} className='underline decoration-dotted'>
-                      {innerHtml(credit.name, credit.title)}
-                    </a>
+                  <Link
+                    hrefLang={'en-US'}
+                    href={`${credit.website}`}
+                    className='underline decoration-dotted'
+                  >
+                    {innerHtml(credit.name, credit.title)}
                   </Link>
                 ) : (
                   innerHtml(credit.name, credit.title)
@@ -38,15 +42,15 @@ function CaseStudies_Credits({ credits }) {
   }
 
   return (
-    <section className='px-6 my-4 py-12' id='credits'>
-      <div className='mx-auto max-w-md   lg:max-w-6xl'>
+    <PageSection className='px-6 my-4 py-12' id='credits'>
+      <InnerWrapper>
         <H2 className='text-left mt-0 pt-0 text-4xl max-w-md '> Credits</H2>
         <div className=' mx-auto flex justify-center'>
           {setCreditColumn(0, firstcolumn)}
           {setCreditColumn(firstcolumn, credits.length)}
         </div>
-      </div>
-    </section>
+      </InnerWrapper>
+    </PageSection>
   )
 }
 
