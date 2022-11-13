@@ -143,11 +143,8 @@ export default function Navbar() {
             className='bg-cream rounded-md origin-top-left hidden xl:block  '
             onMouseEnter={handleMouseEnterLogo}
           >
-            <Link hrefLang={'en-US'} href={'/'} passHref>
-              <a
-                hrefLang={'en-US'}
-                className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'
-              >
+            <Link hrefLang={'en-US'} href={'/'}>
+              <div className='pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'>
                 <div
                   ref={logoWrapper}
                   className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
@@ -187,7 +184,7 @@ export default function Navbar() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
         </div>
@@ -254,10 +251,10 @@ export default function Navbar() {
         id='mobile-logo'
       >
         <Link hrefLang={'en-US'} href={'/'}>
-          <a hrefLang={'en-US'} className='text-4xl font-extrabold text-peach leading-none'>
+          <div className='text-4xl font-extrabold text-peach leading-none'>
             <div>pb</div>
             <div>ds</div>
-          </a>
+          </div>
         </Link>
       </div>
       <Nav_FullscreenMenu isActive={isHamActive} onModalUpdate={setHamToggle} />
