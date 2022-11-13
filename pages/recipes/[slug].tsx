@@ -52,20 +52,6 @@ export default function PostPage({
 }) {
   const datePostedISO = new Date(JSON.parse(JSON.stringify(frontMatter.date))).toISOString()
 
-  // useEffect(() => {
-  //   //Sets Reading Time
-  //   function extractContent(s) {
-  //     var span = document.createElement('span')
-  //     span.innerHTML = s
-  //     return span.textContent || span.innerText
-  //   }
-  //   const text = extractContent(myContainer.current.innerHTML).toString()
-  //   const stats = readingTime(text)
-  //   console.log(stats.text)
-  //   // setReadTime(`${stats.minutes.toString()} min read`)
-  //   return () => {}
-  // }, [])
-
   return (
     <Main>
       <Recipes_Post_SEO datePostedISO={datePostedISO} frontMatter={frontMatter} slug={slug} />

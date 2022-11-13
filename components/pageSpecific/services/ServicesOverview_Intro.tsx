@@ -74,16 +74,19 @@ function ServicesOverview_Intro() {
           <div className='flex justify-center gap-x-4 gap-y-6 flex-wrap max-w-2xl mx-auto pt-4'>
             {talents.map((talent) => {
               return (
-                <Link hrefLang={'en-US'} href={talent.link} passHref key={talent.link}>
-                  <a hrefLang={'en-US'} className='duration-300 hover:scale-98'>
-                    <Pill
-                      text={talent.service}
-                      bgColor='pink'
-                      textColor='cream'
-                      size='sm'
-                      className=''
-                    />
-                  </a>
+                <Link
+                  hrefLang={'en-US'}
+                  href={talent.link}
+                  key={talent.link}
+                  className='duration-300 hover:scale-98'
+                >
+                  <Pill
+                    text={talent.service}
+                    bgColor='pink'
+                    textColor='cream'
+                    size='sm'
+                    className=''
+                  />
                 </Link>
               )
             })}

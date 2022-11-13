@@ -31,14 +31,14 @@ function SubmissionConfirmation() {
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
             Also, be sure to follow us on{' '}
-            <a
+            <Link
               href='https://www.instagram.com/pixelbakery/'
               rel='noreferrer'
               target='_blank'
               className='underline text-peach'
             >
               Instagram
-            </a>{' '}
+            </Link>{' '}
             🫶
           </p>
 
@@ -48,39 +48,28 @@ function SubmissionConfirmation() {
           <ul className='list-none mt-4 '>
             <li className='my-2'>
               {' '}
-              <Link hrefLang={'en-US'} href={'/store'} passHref>
-                <a hrefLang={'en-US'} className='text-blue underline text-md'>
-                  ← Back to the company store
-                </a>
+              <Link hrefLang={'en-US'} href={'/store'} className='text-blue underline text-md'>
+                ← Back to the company store
               </Link>
             </li>
             <li className='my-2'>
               {' '}
-              <Link hrefLang={'en-US'} href={'https://twitch.tv/pixelbakery'} passHref>
-                <a
-                  hrefLang={'en-US'}
-                  className='text-blue underline text-md'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  {' '}
-                  Daydream about us →
-                </a>
+              <Link
+                hrefLang={'en-US'}
+                href={'https://twitch.tv/pixelbakery'}
+                className='text-blue underline text-md'
+              >
+                Daydream about us →
               </Link>
             </li>
             <li className='my-2'>
               {' '}
               <Link
                 href={'https://youtube.com/playlist?list=PLR7uWMos1NkvOhSzaTR8-0vwc8MDBuylm'}
-                passHref
+                className='text-blue underline text-md hover:text-opacity-80'
+                target='_blank'
               >
-                <a
-                  className='text-blue underline text-md hover:text-opacity-80'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  Watch a playlist of trippy music videos we've curated →
-                </a>
+                Watch a playlist of trippy music videos we've curated →
               </Link>
             </li>
           </ul>

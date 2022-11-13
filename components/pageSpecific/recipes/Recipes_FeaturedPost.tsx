@@ -12,7 +12,6 @@ type Props = {
   author: any
   as: string
   href: string
-  slug: string
   aspectW: string
   aspectY: string
 }
@@ -31,7 +30,7 @@ const Recipes_FeaturedPost = ({
   const aspectH = ' aspect-h-' + props.aspectY
 
   return (
-    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref>
+    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref legacyBehavior>
       <a>
         <article
           className={
@@ -42,12 +41,11 @@ const Recipes_FeaturedPost = ({
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-            layout='fill'
-            objectFit='cover'
+            fill={true}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             quality={25}
-            className='bg-blue'
+            className='object-cover w-full h-full bg-blue'
             alt={`cover photo for ${title}`}
           />
 

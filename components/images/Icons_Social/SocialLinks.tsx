@@ -20,26 +20,25 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
       <Link
         hrefLang={'en-US'}
         href={props.href ? props.href : link != undefined ? link : ''}
-        passHref
+        rel='nofollow'
+        className='mx-1 block'
       >
-        <a hrefLang={'en-US'} rel='nofollow' className='mx-1 block'>
-          <i
-            className={cn(
-              'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
-              `text-${props.color}`,
-              `text-${props.size}`,
-            )}
-            role='img'
-            aria-label={iconName}
-          >
-            <Icon
-              className={cn(props.height, props.width)}
-              icon={Icons[`${CapitalizeWord(iconName)}`]}
-              title={`${iconName}`}
-              titleId={`${iconName}`}
-            />
-          </i>
-        </a>
+        <i
+          className={cn(
+            'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 ',
+            `text-${props.color}`,
+            `text-${props.size}`,
+          )}
+          role='img'
+          aria-label={iconName}
+        >
+          <Icon
+            className={cn(props.height, props.width)}
+            icon={Icons[`${CapitalizeWord(iconName)}`]}
+            title={`${iconName}`}
+            titleId={`${iconName}`}
+          />
+        </i>
       </Link>
     </div>
   )

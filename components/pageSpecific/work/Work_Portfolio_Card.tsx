@@ -60,115 +60,113 @@ function Work_Portfolio_Card({ project }) {
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
       href={`/work/case-studies/[slug]`}
-      passHref
+      className=' cursor-pointer '
     >
-      <a className=' cursor-pointer '>
+      <div
+        className='cursor-pointer relative block origin-center aspect-16/9 bg-blue overflow-hidden  '
+        onMouseEnter={() => handleHover()}
+        onMouseLeave={() => handleHover()}
+      >
         <div
-          className='relative block origin-center aspect-16/9 bg-blue overflow-hidden  '
-          onMouseEnter={() => handleHover()}
-          onMouseLeave={() => handleHover()}
+          className={cn(
+            'opacity-100 aspect-16/9 relative w-full h-full transform-opacity transition duration-500 z-0 pointer-events-none',
+          )}
+        >
+          <Image
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+            fill={true}
+            // width={854}
+            // height={480}
+            className='object-cover w-full h-full'
+            placeholder='blur'
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+            alt={`animation or video production work created for ${project.data.client}`}
+            quality={66}
+          />
+        </div>
+
+        <div
+          className={cn(
+            'absolute block transform-opacity duration-300 ease-in-out opacity-100 z-10 top-0 left-0 -right-1 -bottom-1',
+            {
+              ['opacity-0 ']: !isHovered,
+              ['opacity-100 ']: isHovered,
+            },
+          )}
+        >
+          <ReactPlayer
+            muted={true}
+            playsinline={true}
+            loop={true}
+            controls={false}
+            preload={true}
+            width='100%'
+            height='100%'
+            playing={isHovered}
+            className=''
+            url={[
+              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
+              // `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
+            ]}
+            config={{
+              file: {
+                attributes: {
+                  autoPlay: false,
+                  loop: true,
+                  playsInline: true,
+                  muted: true,
+                  style: { width: '100%', height: '100%', objectFit: 'cover' },
+                },
+              },
+            }}
+          />
+        </div>
+        {/* This is the Scrim that sits on top of videos */}
+        <div
+          className={cn(
+            'absolute z-20 top-0 left-0 w-full h-full bg-gradient-to-t from-blue-dark via-transparent to-blue-dark  pointer-events-none transform duration-300',
+            { ['opacity-25 ']: isHovered, ['opacity-0 ']: !isHovered },
+          )}
+        ></div>
+        <div
+          className={cn(
+            'absolute z-40 top-0 left-0 w-full h-full flex flex-col justify-between py-6 px-4 pointer-events-none',
+          )}
         >
           <div
-            className={cn(
-              'opacity-100 aspect-16/9 relative w-full h-full transform-opacity transition duration-500 z-0 pointer-events-none',
-            )}
+            id={projID_tags}
+            className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
           >
-            <Image
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-              layout='fill'
-              // width={854}
-              // height={480}
-              objectFit='cover'
-              placeholder='blur'
-              blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-              alt={`animation or video production work created for ${project.data.client}`}
-              quality={66}
-            />
+            {project.data.tags.slice(0, 3).map((tag) => (
+              <Pill
+                text={tag}
+                bgColor={'blue'}
+                textColor={'cream'}
+                size='xs'
+                key={tag}
+                className={'hidden md:inline'}
+              />
+            ))}
           </div>
-
           <div
-            className={cn(
-              'absolute block transform-opacity duration-300 ease-in-out opacity-100 z-10 top-0 left-0 -right-1 -bottom-1',
-              {
-                ['opacity-0 ']: !isHovered,
-                ['opacity-100 ']: isHovered,
-              },
-            )}
+            id={projID_title}
+            className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
           >
-            <ReactPlayer
-              muted={true}
-              playsinline={true}
-              loop={true}
-              controls={false}
-              preload={true}
-              width='100%'
-              height='100%'
-              playing={isHovered}
-              className=''
-              url={[
-                `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
-                // `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
-              ]}
-              config={{
-                file: {
-                  attributes: {
-                    autoPlay: false,
-                    loop: true,
-                    playsInline: true,
-                    muted: true,
-                    style: { width: '100%', height: '100%', objectFit: 'cover' },
-                  },
-                },
-              }}
-            />
-          </div>
-          {/* This is the Scrim that sits on top of videos */}
-          <div
-            className={cn(
-              'absolute z-20 top-0 left-0 w-full h-full bg-gradient-to-t from-blue-dark via-transparent to-blue-dark  pointer-events-none transform duration-300',
-              { ['opacity-25 ']: isHovered, ['opacity-0 ']: !isHovered },
-            )}
-          ></div>
-          <div
-            className={cn(
-              'absolute z-40 top-0 left-0 w-full h-full flex flex-col justify-between py-6 px-4 pointer-events-none',
-            )}
-          >
-            <div
-              id={projID_tags}
-              className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
-            >
-              {project.data.tags.slice(0, 3).map((tag) => (
-                <Pill
-                  text={tag}
-                  bgColor={'blue'}
-                  textColor={'cream'}
-                  size='xs'
-                  key={tag}
-                  className={'hidden md:inline'}
-                />
-              ))}
+            <div className='detail  text-sm text-white text-shadow-sm hidden lg:block'>
+              {project.data.client}
             </div>
-            <div
-              id={projID_title}
-              className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
-            >
-              <div className='detail  text-sm text-white text-shadow-sm hidden lg:block'>
-                {project.data.client}
-              </div>
-              <h3 className='detail text-2xl text-white text-shadow-sm hidden lg:block'>
-                {project.data.title}
-              </h3>
-            </div>
-          </div>
-          <div
-            className={cn('absolute bottom-0 left-0  mb-1 ml-1 z-40  lg:hidden py-2 px-4 bg-cream')}
-          >
-            <div className='text-xs text-wine leading-none '>{project.data.client}</div>
-            <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
+            <h3 className='detail text-2xl text-white text-shadow-sm hidden lg:block'>
+              {project.data.title}
+            </h3>
           </div>
         </div>
-      </a>
+        <div
+          className={cn('absolute bottom-0 left-0  mb-1 ml-1 z-40  lg:hidden py-2 px-4 bg-cream')}
+        >
+          <div className='text-xs text-wine leading-none '>{project.data.client}</div>
+          <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
+        </div>
+      </div>
     </Link>
   )
 }

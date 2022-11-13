@@ -20,11 +20,9 @@ function Services_OurApproach() {
               <Link
                 hrefLang={'en-US'}
                 href={'/recipes/why-authenticity-in-advertising-matters'}
-                passHref
+                className='text-blue-dark duration-200'
               >
-                <a hrefLang={'en-US'} className='text-blue-dark duration-200'>
-                  authentic and relatable
-                </a>
+                authentic and relatable
               </Link>{' '}
               way possible.
             </p>

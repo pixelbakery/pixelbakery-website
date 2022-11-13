@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
+import Link from 'next/link'
 
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
@@ -67,16 +68,18 @@ export const Footer: NextPage = () => {
                   <div>
                     <ul className='mt-3 text-center md:text-left'>
                       <li>
-                        <a
+                        <Link
                           className='text-cream text-xl'
                           target='_blank'
                           href='https://g.page/pixelbakery?share'
                           rel='noreferrer'
                         >
-                          2124 y st ste 122
-                          <br />
-                          lincoln, ne 68503
-                        </a>
+                          <>
+                            2124 y st ste 122
+                            <br />
+                            lincoln, ne 68503
+                          </>
+                        </Link>
                       </li>
                       <li className='mt-3 text-xl text-cream'>
                         <address>

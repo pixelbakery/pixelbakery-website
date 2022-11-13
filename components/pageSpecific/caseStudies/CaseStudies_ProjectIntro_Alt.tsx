@@ -57,8 +57,7 @@ const CaseStudies_ProjectIntro_Alt = () => {
           <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100'>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
-              layout='fill'
-              objectFit='contain'
+              fill={true}
               placeholder='blur'
               alt='Product Photography created for SNACKLINS'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}

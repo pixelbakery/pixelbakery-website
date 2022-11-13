@@ -30,18 +30,16 @@ function Contact_HangOut() {
           {SocialUrls_Contact.map((URL, index) => {
             return (
               <li key={URL.name} className={cn('-mt-12')}>
-                <Link hrefLang={'en-US'} href={URL.url} passHref>
-                  <a>
-                    <StrokeText
-                      text={URL.name}
-                      index={index}
-                      fontSize={'text-3xl lg:text-4xl'}
-                      strokeWidth={'stroke-1'}
-                      color={'blue-dark'}
-                      fontWeight={'font-black'}
-                      active={false}
-                    />
-                  </a>
+                <Link hrefLang={'en-US'} href={URL.url}>
+                  <StrokeText
+                    text={URL.name}
+                    index={index}
+                    fontSize={'text-3xl lg:text-4xl'}
+                    strokeWidth={'stroke-1'}
+                    color={'blue-dark'}
+                    fontWeight={'font-black'}
+                    active={false}
+                  />
                 </Link>
               </li>
             )
@@ -106,20 +104,22 @@ function Contact_HangOut() {
               <div className=' mx-auto xl:mx-auto w-max'>
                 <ul className='text-blue font-bold text-3xl flex flex-col justify-start gap-4'>
                   <li className=' pb-2 my-0 pt-0 w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'/about#twitch'} passHref>
-                      <a>are we home?</a>
+                    <Link hrefLang={'en-US'} href={'/about#twitch'}>
+                      are we home?
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'https://g.page/pixelbakery?share'} passHref>
-                      <a hrefLang={'en-US'} target='_blank'>
-                        map it
-                      </a>
+                    <Link
+                      hrefLang={'en-US'}
+                      href={'https://g.page/pixelbakery?share'}
+                      target='_blank'
+                    >
+                      map it
                     </Link>
                   </li>
                   <li className=' pb-2  w-fit border-b-4 border-blue transform duration-500 hover:text-peach hover:border-peach cursor-pointer'>
-                    <Link hrefLang={'en-US'} href={'/onboarding#calendly'} passHref>
-                      <a>schedule it</a>
+                    <Link hrefLang={'en-US'} href={'/book'}>
+                      schedule it
                     </Link>
                   </li>
                 </ul>

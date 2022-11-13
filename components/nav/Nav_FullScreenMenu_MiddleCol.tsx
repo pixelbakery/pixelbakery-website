@@ -14,10 +14,8 @@ function Nav_FullScreenMenu_MiddleCol({ update }) {
               className='relative duration-300 ease-in-out hover:scale-98 hover:opacity-95 origin-left'
               key={nav_item.text}
             >
-              <Link hrefLang={'en-US'} href={nav_item.url} passHref>
-                <a hrefLang={'en-US'} className='' onClick={update}>
-                  {nav_item.text}
-                </a>
+              <Link hrefLang={'en-US'} href={nav_item.url} onClick={update}>
+                {nav_item.text}
               </Link>
             </li>
           )
