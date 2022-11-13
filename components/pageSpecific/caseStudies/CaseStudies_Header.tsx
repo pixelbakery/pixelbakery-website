@@ -11,7 +11,7 @@ function CaseStudies_Header({ ...props }) {
     else
       return (
         <div className='relative w-32 h-32'>
-          <a hrefLang={'en-US'} href={`${props.website}`}>
+          <Link hrefLang={'en-US'} href={`${props.website}`}>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
               layout={'fill'}
@@ -31,7 +31,7 @@ function CaseStudies_Header({ ...props }) {
           {/* <Logo /> */}
 
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
-            <a hrefLang={'en-US'} href={`${props.website}`}>
+            <Link hrefLang={'en-US'} href={`${props.website}`}>
               <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
             </a>
             {/* {props.projectName} */}

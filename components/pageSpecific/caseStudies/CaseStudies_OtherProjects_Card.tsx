@@ -9,7 +9,7 @@ function CaseStudies_OtherProjects_Card({ project }) {
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
-        passHref
+        aria-label={`${project.data.client} - ${project.data.title}`}
       >
         <article
           className={cn(

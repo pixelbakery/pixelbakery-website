@@ -198,14 +198,14 @@ export default function Navbar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link hrefLang={'en-US'} href={'/about'} passHref>
-              <a
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                who we are
-              </a>
+            <Link
+              hrefLang={'en-US'}
+              href={'/about'}
+              className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              who we are
             </Link>
           </div>
           <div
@@ -214,14 +214,14 @@ export default function Navbar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link hrefLang={'en-US'} href={'/work'} passHref>
-              <a
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
-                onMouseEnter={handleMouseEnter}
-                onMouseOut={handleMouseLeave}
-              >
-                what we make
-              </a>
+            <Link
+              hrefLang={'en-US'}
+              href={'/work'}
+              className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
+              onMouseEnter={handleMouseEnter}
+              onMouseOut={handleMouseLeave}
+            >
+              what we make
             </Link>
           </div>
           <div
@@ -230,14 +230,14 @@ export default function Navbar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link hrefLang={'en-US'} href={'/onboarding'} passHref>
-              <a
-                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
-                onMouseEnter={handleMouseEnter}
-                onMouseOut={handleMouseLeave}
-              >
-                start a project
-              </a>
+            <Link
+              hrefLang={'en-US'}
+              href={'/onboarding'}
+              className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
+              onMouseEnter={handleMouseEnter}
+              onMouseOut={handleMouseLeave}
+            >
+              start a project
             </Link>
           </div>
           <div ref={hamRef} className=''>
