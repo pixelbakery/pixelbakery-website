@@ -17,7 +17,7 @@ function Home_WhoTheHeck() {
       id='who-the-heck'
       className='relative md:max-h-screen bg-pink-lighter lander-responsive'
     >
-      <div ref={ref} className={' w-full h-full top-0 bg-blue'}>
+      <div ref={ref} className={' w-full h-full top-0 md:bg-blue'}>
         <div className='sticky   z-20 px-8 md:px-0'>
           <motion.div
             style={{ y }}
