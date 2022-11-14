@@ -1,7 +1,7 @@
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import ReactPlayer from 'react-player/lazy'
-import { motion, useScroll, useSpring, useTransform, MotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue, Variants } from 'framer-motion'
 import { useRef } from 'react'
 
 function useParallax(value: MotionValue<number>, distance: number) {
