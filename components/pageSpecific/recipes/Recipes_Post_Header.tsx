@@ -81,7 +81,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
 
               {matchingBio ? (
                 <div className='text-sm text-wine'>
-                  Written by the one and only
+                  Written by the one and only{' '}
                   <Link
                     as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                     href={`/about/[slug]`}
