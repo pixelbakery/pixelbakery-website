@@ -55,14 +55,50 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                   className='w-full h-full object-cover'
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
                 />
+                {matchingBio.data.avatar ? (
+                  <Image
+                    placeholder='blur'
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
+                    width={124}
+                    height={123}
+                    alt={frontMatter.author.name}
+                    quality={75}
+                    className='object-center object-cover'
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
+                  />
+                ) : matchingBio.data.headshotSmiling ? (
+                  <Image
+                    placeholder='blur'
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
+                    fill={true}
+                    alt={frontMatter.author.name}
+                    quality={25}
+                    className='object-top scale-175 object-cover'
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
+                  />
+                ) : (
+                  <Image
+                    placeholder='blur'
+                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
+                    layout='fill'
+                    width={300}
+                    height={213}
+                    objectFit='cover'
+                    alt={frontMatter.author.name}
+                    quality={25}
+                    className='object-top scale-175 sc'
+                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
+                  />
+                )}
               </Link>
             ) : (
               // If there isn't a match, use a placeholder image and don't link anywhere
-              <div className='w-12 h-12 rounded-full relative overflow-hidden'>
+              <div className='animate-spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
                 <Image
                   placeholder='blur'
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
-                  fill={true}
+                  width={300}
+                  height={213}
                   alt={frontMatter.author.name}
                   quality={25}
                   className='object-cover object-top scale-175'
@@ -71,7 +107,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               </div>
             )}
 
-            <div className={cn('ml-8 flex flex-col justify-center self-center')}>
+            <div className={cn('ml-4 flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
                 <DateFormatter dateString={date} />
                 <span className='mx-2'>|</span>
