@@ -13,7 +13,7 @@ import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
 import Link from 'next/link'
-
+import services from '@data/services'
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
 
@@ -50,7 +50,7 @@ export const Footer: NextPage = () => {
               </div>
 
               <nav className='hidden lg:block pt-5 mt-3'>
-                <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
+                <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-3xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0 pb-0'>
                   {nav_footer_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
@@ -106,6 +106,32 @@ export const Footer: NextPage = () => {
                       {nav_footer_sub.map((navitem) => (
                         <Footer_Nav_SubNav navitem={navitem} key={navitem.text} />
                       ))}
+                    </ul>
+                  </nav>
+                </div>
+                <div className='mb-0 pb-0 mt-4 xl:pt-4 md:pr-4 hidden lg:block'>
+                  <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
+                    <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                      Services
+                    </H3>
+                  </div>
+                  <nav className=''>
+                    <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
+                      {services
+                        // .filter((s) => s.service != 'Animated Explainer Videos')
+                        .filter((s) => s.service != 'Educational Content')
+                        .filter((s) => s.service != 'Creative Concepting & Strategy')
+                        .map((navitem) => (
+                          <li className='text-left leading-none text-cream text-md cursor-pointer my-0 py-0'>
+                            <Link
+                              hrefLang={'en-US'}
+                              href={navitem.url}
+                              className='my-0 py-0 leading-none hover-98 hover-shadow-none'
+                            >
+                              {navitem.service}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
                   </nav>
                 </div>
