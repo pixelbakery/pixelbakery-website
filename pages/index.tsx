@@ -4,7 +4,6 @@ import path from 'path'
 import Main from '@parts/Main'
 
 import dynamic from 'next/dynamic'
-import Home_WhatWeMake from '@home/Home_WhatWeMake'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import Home_Services from '@home/Home_Services'
@@ -31,6 +30,16 @@ const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
       <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
     </section>
   ),
+})
+
+const Home_WhatWeMake = dynamic(() => import('@home/Home_Landing'), {
+  loading: () => (
+    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H1 color='blue-dark self-center text-center'>What We Make</H1>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
+  ssr: false,
 })
 
 // const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
