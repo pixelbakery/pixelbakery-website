@@ -7,7 +7,7 @@ import SocialLinks from '@images/Icons_Social/SocialLinks'
 import Image from 'next/image'
 import Head from 'next/head'
 import Obfuscate from 'react-obfuscate'
-
+import Shimmer from '@lib/Shimmer'
 //CSS imports
 import markdownStyles from '@styles/markdown-styles.module.css'
 import Loading from '@utility/Loading'
@@ -27,10 +27,11 @@ const About_Team_Header = ({ source, frontMatter }) => {
             <div className='relative max-w-lg aspect-w-3 aspect-h-4'>
               <Image
                 placeholder='blur'
-                blurDataURL={`${ImgPrefix}${frontMatter.headshotFun}`}
+                width={1280}
+                height={1920}
+                blurDataURL={`${Shimmer(1280, 1920)}`}
                 src={`${ImgPrefix}${frontMatter.headshotFun}`}
-                layout='fill'
-                objectFit='cover'
+                className={'object-cover w-full h-full'}
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}
                 // className={'bg-blue'}
               />
