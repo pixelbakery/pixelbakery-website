@@ -121,8 +121,11 @@ export const Footer: NextPage = () => {
                         // .filter((s) => s.service != 'Animated Explainer Videos')
                         .filter((s) => s.service != 'Educational Content')
                         .filter((s) => s.service != 'Creative Concepting & Strategy')
-                        .map((navitem) => (
-                          <li className='text-left leading-none text-cream text-md cursor-pointer my-0 py-0'>
+                        .map((navitem, i) => (
+                          <li
+                            className='text-left leading-none text-cream text-md cursor-pointer my-0 py-0'
+                            key={i}
+                          >
                             <Link
                               hrefLang={'en-US'}
                               href={navitem.url}

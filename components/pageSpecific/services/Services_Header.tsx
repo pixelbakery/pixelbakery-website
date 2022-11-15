@@ -56,7 +56,7 @@ function Services_Header({
         width='100%'
         height='100%'
         className={`bg-${bgColor} w-full h-full relative  xl:object-cover`}
-        url={[`${videoSourceWEBM}`, `${videoSourceMP4}`]}
+        url={[`${videoSourceMP4}`]}
         config={{
           file: {
             attributes: {

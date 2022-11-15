@@ -32,7 +32,7 @@ const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
   ),
 })
 
-const Home_WhatWeMake = dynamic(() => import('@home/Home_Landing'), {
+const Home_WhatWeMake = dynamic(() => import('@home/Home_WhatWeMake'), {
   loading: () => (
     <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
       <H1 color='blue-dark self-center text-center'>What We Make</H1>
