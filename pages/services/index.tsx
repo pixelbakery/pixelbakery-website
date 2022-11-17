@@ -7,6 +7,7 @@ import ServicesOverview_CreativeStrategy from '@services/ServicesOverview_Creati
 import ServicesOverview_MotionMixer from '@services/ServicesOverview_MotionMixer'
 import ServicesOverview_EmergingMedia from '@services/ServicesOverview_EmergingMedia'
 import ServicesOverview_SocialMedia from '@services/ServicesOverview_SocialMedia'
+import ServicesOverview_AnimatedExplainers from '@services/ServicesOverview_AnimatedExplainers'
 import ServicesOverview_More from '@services/ServicesOverview_More'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
@@ -45,6 +46,7 @@ function Services_Page() {
       <ServicesOverview_Intro />
       <ServicesOverview_Animation />
       <ServicesOverview_VideoProduction />
+      <ServicesOverview_AnimatedExplainers />
       <ServicesOverview_CreativeStrategy />
       <ServicesOverview_MotionMixer />
       <ServicesOverview_EmergingMedia />

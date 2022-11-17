@@ -37,7 +37,7 @@ function ServicesOverview_CreativeStrategy() {
             />
           </div>
         </div>
-        <div className='col-span-1 flex flex-col justify-center px-12  py-12'>
+        <div className='col-span-1 flex flex-col justify-center px-12  py-12 order-first'>
           <H2 color='blue' className='mb-6 2xl:mb-10 '>
             Creative Concepting &amp; Strategy
           </H2>

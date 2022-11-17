@@ -13,7 +13,7 @@ export default [
   // },
   {
     service: 'Animated Explainer Videos',
-    url: '/services/animation',
+    url: '/services/animated-explainer-videos',
     description: 'Show the world a complicated concept in an easy to understand way.',
   },
   {
