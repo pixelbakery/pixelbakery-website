@@ -1,17 +1,25 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-
+import { motion, useScroll, useTransform, MotionValue, Variants } from 'framer-motion'
+import { useRef } from 'react'
 import cn from 'classnames'
 import H3 from '@typography/H3'
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance])
+}
 interface Home_Portfolio_Card {
   bgColor: string
   bgPosition: string
   project: any
 }
 function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Card) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref })
+  const y = useParallax(scrollYProgress, 10)
   return (
-    <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
-      <div
+    <motion.article ref={ref} className='w-full  lg:w-3/5 2xl:w-full px-1'>
+      <motion.div
+        style={{ y }}
         className={cn(
           'relative home-portfolio rounded-md  aspect-w-16 aspect-h-9 z-10',
           bgColor,
@@ -35,18 +43,13 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Ca
               className='block relative object-cover w-full h-full scale-101 shadow-xl overflow-hidden'
             >
               <source
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`}
-                type='video/webm'
-              />
-
-              <source
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
                 type='video/mp4'
               />
             </video>
           </Link>
         </div>
-      </div>
+      </motion.div>
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
@@ -76,7 +79,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Ca
           </div>
         </div>
       </Link>
-    </article>
+    </motion.article>
   )
 }
 export default Home_Portfolio_Card

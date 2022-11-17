@@ -45,6 +45,13 @@ module.exports = {
     extend: {
       animation: {
         'spin-slow': 'spin 30s linear infinite',
+        bob: 'bob 5s ease-in infinite',
+      },
+      keyframes: {
+        bob: {
+          '0%, 100%': { transform: 'rotate(-.3deg) translateY(4px)' },
+          '50%': { transform: 'rotate(.3deg) translateY(-4px)' },
+        },
       },
       screens: {
         '3xl': '1792px',

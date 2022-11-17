@@ -1,8 +1,11 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import { motion, Variants, useScroll, useTransform, MotionValue } from 'framer-motion'
+
 import { useRef } from 'react'
+
+import { m, Variants, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { LazyMotion, domAnimation } from 'framer-motion'
 
 const cardVariants: Variants = {
   offscreen: {
@@ -63,45 +66,47 @@ function Home_WhatWeMake() {
   const { scrollYProgress } = useScroll({ target: ref })
   const y = useParallax(scrollYProgress, -50)
   return (
-    <PageSection id={'services-cta'} className={'relative'}>
-      <InnerWrapper className='relative z-20'>
-        <motion.div
-          ref={ref}
-          variants={section}
-          className='relative grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 '
-          initial='offscreen'
-          whileInView='onscreen'
-          viewport={{ once: true, amount: 0.8 }}
-        >
-          <motion.div variants={cardVariants}>
-            <motion.div
-              variants={cardVariantsReverse}
-              className='text-pink text-2xl  2xl:text-4xl  leading-noone font-bold'
-            >
-              to put it simply,
-            </motion.div>
-
-            <H2 color='blue' className='text-pb-blue-dark 2xl:text-8xl mt-0 pt-0 max-w-4xl'>
-              We build beautifully immersive worlds{' '}
-            </H2>
-          </motion.div>
-          <motion.div
-            variants={cardVariants}
-            className='mx-auto lg:mx-0 w-full flex flex-col -mt-6 md:-mt-0 justify-start lg:mb-4'
+    <LazyMotion features={domAnimation}>
+      <PageSection id={'services-cta'} className={'relative'}>
+        <InnerWrapper className='relative z-20'>
+          <m.div
+            ref={ref}
+            variants={section}
+            className='relative grid grid-cols-1 xl:grid-cols-2 xl:gap-x-16 '
+            initial='offscreen'
+            whileInView='onscreen'
+            viewport={{ once: true, amount: 0.8 }}
           >
-            <p className='text-blue-dark text-xl'>
-              We create immersive, motion-centric content across various mediums and campaigns, from
-              your website to your social channels.
-            </p>
-            <p className='text-blue-dark text-xl'>
-              Motion content enhances your brand's story with another dimension of life. It shifts
-              the interaction with your audience from them simply reading your brand, to your brand
-              speaking directly to them.
-            </p>
-          </motion.div>
-        </motion.div>
-      </InnerWrapper>
-    </PageSection>
+            <m.div variants={cardVariants}>
+              <m.div
+                variants={cardVariantsReverse}
+                className='text-pink text-2xl  2xl:text-4xl  leading-noone font-bold'
+              >
+                to put it simply,
+              </m.div>
+
+              <H2 color='blue' className='text-pb-blue-dark 2xl:text-8xl mt-0 pt-0 max-w-4xl'>
+                We build beautifully immersive worlds{' '}
+              </H2>
+            </m.div>
+            <m.div
+              variants={cardVariants}
+              className='mx-auto lg:mx-0 w-full flex flex-col -mt-6 md:-mt-0 justify-start lg:mb-4'
+            >
+              <p className='text-blue-dark text-xl'>
+                We create immersive, motion-centric content across various mediums and campaigns,
+                from your website to your social channels.
+              </p>
+              <p className='text-blue-dark text-xl'>
+                Motion content enhances your brand's story with another dimension of life. It shifts
+                the interaction with your audience from them simply reading your brand, to your
+                brand speaking directly to them.
+              </p>
+            </m.div>
+          </m.div>
+        </InnerWrapper>
+      </PageSection>
+    </LazyMotion>
   )
 }
 export default Home_WhatWeMake

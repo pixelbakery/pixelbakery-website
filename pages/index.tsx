@@ -10,7 +10,6 @@ import Home_Services from '@home/Home_Services'
 import Home_SEO from '@home/Home_SEO'
 // import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
 import Home_Recipes from '@home/Home_Recipes'
-import Home_Portfolio from '@home/Home_Portfolio'
 import { H1, H2 } from '@typography/index'
 
 const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
@@ -35,7 +34,16 @@ const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
 const Home_WhatWeMake = dynamic(() => import('@home/Home_WhatWeMake'), {
   loading: () => (
     <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H1 color='blue-dark self-center text-center'>What We Make</H1>
+      <H2 color='blue-dark self-center text-center'>What We Make</H2>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
+  ssr: false,
+})
+const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), {
+  loading: () => (
+    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H2 color='blue-dark self-center text-center'>Portfolio</H2>
       <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
     </section>
   ),
