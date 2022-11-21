@@ -12,15 +12,6 @@ import Home_SEO from '@home/Home_SEO'
 import Home_Recipes from '@home/Home_Recipes'
 import { H1, H2 } from '@typography/index'
 
-const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
-  loading: () => (
-    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H1 color='blue-dark self-center text-center'>Pixel Bakery Design Studio</H1>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-  ssr: false,
-})
 const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
   ssr: false,
   loading: () => (
@@ -49,7 +40,15 @@ const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), {
   ),
   ssr: false,
 })
-
+const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
+  loading: () => (
+    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
+      <H1 color='blue-dark self-center text-center'>Pixel Bakery Design Studio</H1>
+      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
+    </section>
+  ),
+  ssr: false,
+})
 // const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
 
 // import Home_Awwwards from '@home/Home_Awwwards'
