@@ -41,7 +41,6 @@ function Services_Header({
   lottieComponent,
   serviceName,
   videoSourceMP4,
-  videoSourceWEBM,
   subheader,
   children,
 }: PropsWithChildren<Props>) {
