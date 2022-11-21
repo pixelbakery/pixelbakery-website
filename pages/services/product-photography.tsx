@@ -18,7 +18,7 @@ const Page_ProductPhotography = () => {
         serviceName={'Product Photography'}
         isLottie={false}
         subheader={'The key to a killer first impression (and loyal customers for life)'}
-        bgColor={'Pink'}
+        bgColor={'pink'}
         videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAnimation_ProductPhotography.mp4`}
       >
         <p className='mt-6 leading-loose'>

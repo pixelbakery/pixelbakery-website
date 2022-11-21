@@ -8,7 +8,7 @@ function ServicesOverview_CreativeStrategy() {
   return (
     <PageSection_FullWidth id='creative-strategy'>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 '>
-        <div className='col-span-1 bg-blue h-full max-h-screen '>
+        <div className='col-span-1 bg-blue h-full max-h-screen order-first'>
           <div className='relative h-full w-full'>
             <ReactPlayer
               muted={true}
@@ -20,7 +20,6 @@ function ServicesOverview_CreativeStrategy() {
               height='100%'
               className='bg-blue'
               url={[
-                `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.webm`,
                 `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.mp4`,
               ]}
               config={{
@@ -37,7 +36,7 @@ function ServicesOverview_CreativeStrategy() {
             />
           </div>
         </div>
-        <div className='col-span-1 flex flex-col justify-center px-12  py-12 order-first'>
+        <div className='col-span-1 flex flex-col justify-center px-12  py-12 order-last'>
           <H2 color='blue' className='mb-6 2xl:mb-10 '>
             Creative Concepting &amp; Strategy
           </H2>
