@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
 
-type Props = {
+interface Props {
   title: string
   coverImage: string
   date: string

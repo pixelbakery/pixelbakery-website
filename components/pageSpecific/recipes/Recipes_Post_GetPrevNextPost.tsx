@@ -4,7 +4,25 @@ import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
 import Link from 'next/link'
 
-function Recipes_Post_GetPrevNextPost({ prev, next }) {
+interface Props {
+  prevTitle: string
+  prevFilePath: any
+  prevAuthor: string
+  nextTitle
+  nextFilePath: any
+  nextAuthor: string
+  as: string
+}
+
+function Recipes_Post_GetPrevNextPost({
+  prevTitle,
+  prevFilePath,
+  prevAuthor,
+  nextTitle,
+  nextFilePath,
+  nextAuthor,
+  as,
+}: Props) {
   return (
     <PageSection color={'pink-lighter'} id={'next-post'}>
       <InnerWrapper className='py-2 my-2'>
@@ -12,8 +30,8 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
           <div className='w-1/2'>
             <Link
               hrefLang={'en-US'}
-              as={`/recipes/${prev.filePath.replace(/\.mdx?$/, '')}`}
-              href={`/recipes/[slug]`}
+              as={`/${as}/${prevFilePath.replace(/\.mdx?$/, '')}`}
+              href={`/${as}/[slug]`}
             >
               <div className='flex'>
                 <div className='w-12 self-center text-peach rotate-180 h-full flex flex-col justify-center'>
@@ -26,20 +44,21 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
                     noMargins={true}
                   >
-                    {prev.data.title}
+                    {prevTitle}
                   </Lead>
                   <p className='text-wine-400 font-medium text-xs md:text-sm italic leading-none mb-0 py-0 mt-1'>
-                    {prev.data.author.name}
+                    {prevAuthor}
                   </p>
                 </div>
               </div>
             </Link>
           </div>
-          <div className='w-1/2'>
+          <div className='w-1/2 '>
             <Link
               hrefLang={'en-US'}
-              as={`/recipes/${next.filePath.replace(/\.mdx?$/, '')}`}
-              href={`/recipes/[slug]`}
+              as={`/${as}/${nextFilePath.replace(/\.mdx?$/, '')}`}
+              href={`/${as}/[slug]`}
+              className={'w-full flex flex-row justify-end'}
             >
               <div className='flex'>
                 <div className='self-center w-fit'>
@@ -47,10 +66,10 @@ function Recipes_Post_GetPrevNextPost({ prev, next }) {
                     className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
                     noMargins={true}
                   >
-                    {next.data.title}
+                    {nextTitle}
                   </Lead>
                   <p className='text-wine-400 font-medium text-xs md:text-sm italic leading-none mb-0 py-0 mt-1'>
-                    {next.data.author.name}
+                    {nextAuthor}
                   </p>
                 </div>
                 <div className=' text-peach self-center h-full flex flex-col justify-center'>

@@ -22,6 +22,7 @@ import {
   Education_MadeToOrder_SEO,
   Education_MadeToOrder_Tags,
 } from '@education/index'
+import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
 const components = {
   Video: Video,
 }
@@ -31,8 +32,12 @@ export default function Page_Education_Tutorials({
   source,
   frontMatter,
   readTime,
-  nextIndex,
-  prevIndex,
+  nextAuthor,
+  nextFilePath,
+  nextTitle,
+  prevAuthor,
+  prevFilePath,
+  prevTitle,
 }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
@@ -70,7 +75,15 @@ export default function Page_Education_Tutorials({
         </article>
       </PageSection>
       <Education_MadeToOrder_Tags tags={frontMatter.tags} />
-      <Education_MadeToOrder_GetPrevNextPost prev={prevIndex} next={nextIndex} />
+      <Recipes_Post_GetPrevNextPost
+        prevTitle={prevTitle}
+        prevFilePath={prevFilePath}
+        prevAuthor={prevAuthor}
+        nextTitle={nextTitle}
+        nextFilePath={nextFilePath}
+        nextAuthor={nextAuthor}
+        as={'education/tutorials'}
+      />
       <Education_SupportUs />
     </Main>
   )
@@ -120,13 +133,25 @@ export const getStaticProps = async ({ params }) => {
     else nextIndex = allTutorials[thisIndex + 1]
   } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
 
+  const nextAuthor = nextIndex.data.author.name
+  const nextFilePath = nextIndex.filePath
+  const nextTitle = nextIndex.data.title
+
+  const prevAuthor = prevIndex.data.author.name
+  const prevFilePath = prevIndex.filePath
+  const prevTitle = prevIndex.data.title
+
   //End of prev/next search
 
   data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
-      nextIndex: nextIndex,
-      prevIndex: prevIndex,
+      nextAuthor: nextAuthor,
+      nextFilePath: nextFilePath,
+      nextTitle: nextTitle,
+      prevAuthor: prevAuthor,
+      prevFilePath: prevFilePath,
+      prevTitle: prevTitle,
       slug: params.slug,
       source: mdxSource,
       readTime: time,
