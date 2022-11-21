@@ -9,8 +9,9 @@ import Lottie_Animation from '@data/lottie_services/lottie_services_animation.js
 import Services_SEO from '@services/Services_SEO'
 import Services_Animation_Why from '@services/Services_Animation_Why'
 
-export default function Services_Animation() {
-  const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+
+const Page_Services_Animation = () => {
   return (
     <Main>
       <Services_SEO serviceName='animation' description={desc} path={'animation'} />
@@ -40,3 +41,5 @@ export default function Services_Animation() {
     </Main>
   )
 }
+
+export default Page_Services_Animation
