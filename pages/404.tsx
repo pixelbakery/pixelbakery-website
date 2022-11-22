@@ -10,12 +10,11 @@ function FourOhFour() {
           <h1 className='mb-12 text-center text-4xl text-blue'>404: Page Not Found</h1>
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
-            layout='responsive'
             width={480}
             height={269}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
-            className='w-full'
+            className='w-full object-contain'
             alt={"I'm in danger"}
           />
         </div>
