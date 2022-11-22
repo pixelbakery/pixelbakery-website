@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Footer_Nav from '@footer/Footer_Nav_Link'
 import Footer_Nav_SubNav from 'components/footer/Footer_Nav_SubNav'
 import Footer_HappyCard from 'components/footer/Footer_HappyCard'
-import Logo_Type from '@parts/Logo_Type'
+// import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Croissant from 'components/footer/Footer_Croissant'
@@ -12,21 +12,38 @@ import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
+import Image from 'next/image'
 import Link from 'next/link'
 import services from '@data/services'
+
+import { m, Variants } from 'framer-motion'
+import { LazyMotion } from 'framer-motion'
+import { domMax } from 'framer-motion'
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
 
   const updateModal = () => {
     setTestModal(!testModalOpen)
   }
-
+  function template({ rotate, x }) {
+    return `rotate(${rotate}) translateX(${x})`
+  }
   // GSAP FOR MODAL
   useEffect(() => {
     if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
     else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
     return () => {}
   })
+  const card1: Variants = {
+    animate: {
+      rotate: 12,
+      transition: {
+        repeat: Infinity,
+        duration: 0.44,
+        ease: 'easeInOut',
+      },
+    },
+  }
 
   const year = new Date().getFullYear()
   return (
@@ -45,9 +62,46 @@ export const Footer: NextPage = () => {
         <div className='mx-auto max-w-6xl'>
           <div className='grid grid-cols-1 lg:grid-cols-3 lg:mb-12 gap-8 h-full'>
             <div className='h-full flex flex-col justify-between'>
-              <div className='flex justify-center lg:justify-start'>
-                <Logo_Type />
-              </div>
+              {/* <Logo_Type /> */}
+
+              <Link href={'/'} className='relative flex justify-center lg:justify-start'>
+                <LazyMotion features={domMax}>
+                  <m.div
+                    className='self-center w-1/3 lg:w-3/5'
+                    animate={{
+                      translateY: [24, -12, 24],
+                    }}
+                    transition={{
+                      duration: 8,
+                      ease: 'easeInOut',
+                      times: [1, 1, 1, 1],
+                      repeat: Infinity,
+                      repeatDelay: 0,
+                    }}
+                  >
+                    <m.div
+                      animate={{
+                        rotate: [6, -12, 6],
+                      }}
+                      transition={{
+                        duration: 32,
+                        ease: 'easeInOut',
+                        times: [4, 4, 4, 4],
+                        repeat: Infinity,
+                        repeatDelay: 0,
+                      }}
+                    >
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/icons/doodles/PB_ColorIcon_PopTart.svg`}
+                        width={133.6536}
+                        height={169.8851}
+                        className={'rotate-6 origin-center w-full block relative'}
+                        alt={'Pixel Bakery Design Studio'}
+                      />
+                    </m.div>
+                  </m.div>
+                </LazyMotion>
+              </Link>
 
               <nav className='hidden lg:block pt-5 mt-3'>
                 <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-3xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0 pb-0'>
