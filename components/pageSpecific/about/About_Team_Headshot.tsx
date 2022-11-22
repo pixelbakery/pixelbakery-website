@@ -20,8 +20,8 @@ const About_Team_Headshot = ({ person }) => {
       <>
         <Image
           src={`${ImgPrefix}${person.data.headshotSerious}`}
-          layout={'fill'}
-          objectFit='cover'
+          width={720}
+          height={980}
           className={cn('absolute top-0 left-0 w-full h-full object-cover z-20', {
             ['opacity-0']: hover,
           })}
@@ -31,8 +31,8 @@ const About_Team_Headshot = ({ person }) => {
         />
         <Image
           src={`${ImgPrefix}${person.data.headshotSmiling}`}
-          layout={'fill'}
-          objectFit='cover'
+          width={720}
+          height={980}
           className='absolute top-0 left-0  w-full h-full object-cover z-10'
           alt={'pixel bakery ' + person.data.name + ', ' + person.data.title + ' company headshot'}
           placeholder={'blur'}
