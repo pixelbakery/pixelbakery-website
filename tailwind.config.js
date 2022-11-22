@@ -40,6 +40,7 @@ module.exports = {
 
     fontFamily: {
       pbheading: 'Gilroy, Poppins, sans-serif',
+      rachelDempsey: 'RachelDempsey, Gilroy, Poppins, sans-serif',
       body: 'Poppins, sans-serif',
     },
     extend: {
