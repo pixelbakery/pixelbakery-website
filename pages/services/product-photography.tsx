@@ -13,7 +13,11 @@ const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion
 const Page_ProductPhotography = () => {
   return (
     <Main>
-      <Services_SEO serviceName='animation' description={desc} path={'animation'} />
+      <Services_SEO
+        serviceName='Product Photography'
+        description={desc}
+        path={'product-photography'}
+      />
       <Services_Header
         serviceName={'Product Photography'}
         isLottie={false}
