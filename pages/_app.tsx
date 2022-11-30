@@ -12,6 +12,8 @@ import '@styles/typography.css'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import { GoogleAnalytics } from 'nextjs-google-analytics'
 
+import localFont from '@next/font/local'
+
 function App({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
     return (
@@ -26,7 +28,6 @@ function App({ Component, pageProps }: AppProps) {
     const client = new QueryClient()
     return (
       <QueryClientProvider client={client}>
-        {' '}
         <Layout__NoNav>
           <Component {...pageProps} />
         </Layout__NoNav>
