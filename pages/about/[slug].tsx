@@ -52,7 +52,12 @@ function PersonPage({
         matchingCaseStudies={matchingCaseStudies}
         name={frontMatter.name}
       />
-      <About_Team_PrevNext active={frontMatter.active} prev={prevIndex} next={nextIndex} />
+      <About_Team_PrevNext
+        active={frontMatter.active}
+        prev={prevIndex}
+        next={nextIndex}
+        name={frontMatter.name}
+      />
     </Main>
   )
 }
