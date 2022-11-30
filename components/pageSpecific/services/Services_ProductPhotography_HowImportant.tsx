@@ -120,7 +120,7 @@ const Services_AnimatedExplainers_Topics = () => {
                     width={505.65}
                     height={332.91}
                     src={'/img/services/RecipeCard_Pink.svg'}
-                    alt={''}
+                    alt={'Pixel Bakery offers premium product photography services for CPG brands'}
                   />
                 </m.div>
               </m.div>
