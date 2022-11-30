@@ -4,6 +4,8 @@ import H2 from '@typography/H2'
 
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
+import H3 from '@typography/H3'
+import Pill from '@parts/Pill'
 // import cn from 'classnames'
 // import { useState } from 'react'
 // import StrokeText from '@parts/StrokeText'
@@ -98,31 +100,43 @@ function Education_ProjectFiles({ allProjectFiles }) {
                 className='visible cursor-pointer
 transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
               >
-                <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
-                  {pf.data.videoCoverImage ? (
-                    <video
-                      autoPlay={true}
-                      playsInline
-                      muted
-                      controls={false}
-                      loop
-                      className='object-cover w-full h-full hideControls'
-                    >
-                      <source
+                <>
+                  <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
+                    {pf.data.videoCoverImage ? (
+                      <video
+                        autoPlay={true}
+                        playsInline
+                        muted
+                        controls={false}
+                        loop
+                        className='object-cover w-full h-full hideControls'
+                        poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                      >
+                        <source
+                          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.video}`}
+                          type={'video/mp4'}
+                        />
+                      </video>
+                    ) : (
+                      <Image
                         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                        type={'video/mp4'}
+                        alt={`${pf.title}} project file free for ${pf.data.category}`}
+                        placeholder='blur'
+                        blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
+                        className='bg-peach'
                       />
-                    </video>
-                  ) : (
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                      alt={`${pf.title}} project file free for ${pf.data.category}`}
-                      placeholder='blur'
-                      blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                      className='bg-peach'
-                    />
-                  )}
-                </div>
+                    )}
+                  </div>
+                  <div>
+                    <div className='cursor-pointer mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+                      <div className=''>
+                        <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+                          {pf.data.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </>
               </Link>
             )
           })}
