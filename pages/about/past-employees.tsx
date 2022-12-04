@@ -13,7 +13,7 @@ import Shimmer from '@lib/Shimmer'
 import Loading from '@utility/Loading'
 import Link from 'next/link'
 import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { NextSeo } from 'next-seo'
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   loading: () => (
     <PageHeader_LoadingContent header={'Hall of Legends'} subheader={'Gone But Not Forgotten'} />
@@ -23,6 +23,10 @@ const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
 const Page_PastEmployees = ({ allPeople }) => {
   return (
     <Main>
+      <NextSeo
+        title='Past Employees'
+        description='Nothing lasts forever, and that holds true for our employees.'
+      />
       <PageHeader_VarH header={'Past Employees'} subheader={'Gone But Not Forgotten'} />
       <PageSection id='pastEmployees'>
         <InnerWrapper>
