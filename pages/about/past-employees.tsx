@@ -26,6 +26,7 @@ const Page_PastEmployees = ({ allPeople }) => {
       <NextSeo
         title='Past Employees'
         description='Nothing lasts forever, and that holds true for our employees.'
+        canonical='https://pixelbakery.com/about/past-employees'
       />
       <PageHeader_VarH header={'Past Employees'} subheader={'Gone But Not Forgotten'} />
       <PageSection id='pastEmployees'>
