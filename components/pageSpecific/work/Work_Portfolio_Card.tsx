@@ -6,7 +6,7 @@ import Pill from '@parts/Pill'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
-
+import Shimmer from '@lib/Shimmer'
 // type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card({ project }) {
   const [isHovered, setHover] = useState(false)
@@ -74,14 +74,13 @@ function Work_Portfolio_Card({ project }) {
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-            layout='fill'
-            // width={854}
-            // height={480}
-            objectFit='cover'
+            width={854}
+            height={480}
+            className={'object-cover w-full h-full'}
             placeholder='blur'
-            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+            blurDataURL={`${Shimmer(854, 480)}`}
             alt={`animation or video production work created for ${project.data.client}`}
-            quality={66}
+            quality={75}
           />
         </div>
 
@@ -94,7 +93,7 @@ function Work_Portfolio_Card({ project }) {
             },
           )}
         >
-          <ReactPlayer
+          {/* <ReactPlayer
             muted={true}
             playsinline={true}
             loop={true}
@@ -119,7 +118,7 @@ function Work_Portfolio_Card({ project }) {
                 },
               },
             }}
-          />
+          /> */}
         </div>
         {/* This is the Scrim that sits on top of videos */}
         <div
