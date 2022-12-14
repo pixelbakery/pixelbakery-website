@@ -12,11 +12,6 @@ import '@styles/typography.css'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import { GoogleAnalytics } from 'nextjs-google-analytics'
 
-import LinkedInTag from 'react-linkedin-insight'
-const LINKEDIN_TRACKING_ID = process.env.NEXT_PUBLIC_LINKEDIN_ID || ''
-LinkedInTag.init(LINKEDIN_TRACKING_ID, '', false)
-// LinkedInTag.track(conversionId)
-
 function App({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
     return (
