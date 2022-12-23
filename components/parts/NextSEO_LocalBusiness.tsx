@@ -1,6 +1,18 @@
-import { LocalBusinessJsonLd, LogoJsonLd, OrganizationJsonLd } from 'next-seo'
+import { LocalBusinessJsonLd, LogoJsonLd, OrganizationJsonLd, SocialProfileJsonLd } from 'next-seo'
+import services from '@data/services'
 
 function NextSEO_LocalBusiness() {
+  let itemsOffered = []
+  services.forEach((x) => {
+    let temp = {
+      itemOffered: {
+        name: x.service,
+        description: x.description,
+      },
+    }
+
+    itemsOffered.push(temp)
+  })
   return (
     <>
       <LocalBusinessJsonLd
@@ -11,12 +23,14 @@ function NextSEO_LocalBusiness() {
         description='A creative studio based out of Nebraska focused on animation, explainer videos, motion design, product photography, and commercial video production.'
         url='https://pixelbakery.com'
         telephone='402-302-0323'
+        makesOffer={itemsOffered}
         address={{
           streetAddress: '2124 Y Street, Suite 122',
           addressLocality: 'Lincoln',
           addressRegion: 'NE',
           postalCode: '68503',
           addressCountry: 'US',
+          type: 'PostalAddress',
         }}
         geo={{
           latitude: '40.8247413',
@@ -29,6 +43,15 @@ function NextSEO_LocalBusiness() {
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-mug-iloveyou.png`,
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
+        ]}
+        areaServed={[
+          {
+            geoMidpoint: {
+              latitude: '40.8247413',
+              longitude: '-96.6904574',
+            },
+            geoRadius: '1000',
+          },
         ]}
         sameAs={[
           'https://www.linkedin.com/company/7593086',
@@ -78,6 +101,19 @@ function NextSEO_LocalBusiness() {
       <LogoJsonLd
         logo={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/logos/initials/png/600x600px_transparent/pb_logo_initials_peach_onTransparent.png`}
         url='https://pixelbakery.com'
+      />
+      <SocialProfileJsonLd
+        type='Organization'
+        name='Pixel Bakery'
+        url='https://pixelbakery.com'
+        sameAs={[
+          'https://www.linkedin.com/company/7593086',
+          'https://www.youtube.com/c/pixelbakery',
+          'https://instagram.com/pixelbakery',
+          'http://facebook.com/pixelbakerylnk',
+          'https://www.pinterest.com/pixelbakerylnk/',
+          'https://twitter.com/pixelbakerylnk',
+        ]}
       />
     </>
   )
