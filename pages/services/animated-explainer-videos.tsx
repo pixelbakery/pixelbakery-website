@@ -9,7 +9,8 @@ import Lottie_Animation from '@data/lottie_services/lottie_services_animatedExpl
 import Services_AnimatedExplainers_Topics from '@services/Services_AnimatedExplainers_Topics'
 import Services_AnimatedExplainers_GreatFor from '@services/Services_AnimatedExplainers_GreatFor'
 
-const desc = 'You want clients to know who you are and what you do— so let’s show them'
+const desc =
+  'We build custom, high-quality animated explainer videos to help brands showcase who they are.'
 
 const Services_Animated_Explainer_Videos = () => {
   return (
@@ -24,8 +25,6 @@ const Services_Animated_Explainer_Videos = () => {
         isLottie={true}
         subheader={'You want clients to know who you are and what you do—so let’s show them.'}
         bgColor={'yellow'}
-        //    videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAnimation_ExplainerVideos.mp4`}
-        //    videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAnimation_ExplainerVideos.webm`}
         lottieComponent={Lottie_Animation}
       >
         <p className='mt-6 leading-loose'>
@@ -40,13 +39,6 @@ const Services_Animated_Explainer_Videos = () => {
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />
-
-      {/* <Services_Animation_Why />
-
-      <Services_Subservices />
-      <CaseStudies_CTA />
-      <Services_AllServices />
-      <Services_OurApproach /> */}
     </Main>
   )
 }

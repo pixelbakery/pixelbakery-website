@@ -39,8 +39,8 @@ module.exports = {
     fill: (theme) => theme('colors'),
 
     fontFamily: {
-      pbheading: 'Gilroy, Poppins, sans-serif',
-      rachelDempsey: 'RachelDempsey, Gilroy, Poppins, sans-serif',
+      pbheading: 'Gilroy, sans-serif',
+      rachelDempsey: 'RachelDempsey, sans-serif',
       body: 'Poppins, sans-serif',
     },
     extend: {

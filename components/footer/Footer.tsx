@@ -224,7 +224,7 @@ export const Footer: NextPage = () => {
               <div className='hidden lg:flex justify-center w-full my-3'>
                 <Button_Filled
                   center={true}
-                  text={'Start something wonderful'}
+                  text={'Start A Project'}
                   link={'/onboarding'}
                   bgColor={'blue-dark'}
                   textColor={'cream'}

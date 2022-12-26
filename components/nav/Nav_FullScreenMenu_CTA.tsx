@@ -7,7 +7,7 @@ const Nav_FullScreenMenu_CTA = ({ update }) => {
       <div className='flex justify-center w-full mt-4  lg:mt-8 2xl:mt-3' onClick={update}>
         <Button_Filled
           center={true}
-          text={'Start something wonderful'}
+          text={'Start a New Project'}
           link={'/onboarding'}
           bgColor={'peach'}
           textColor={'pink-lighter'}

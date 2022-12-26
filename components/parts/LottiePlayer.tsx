@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import lottie from 'lottie-web'
-
+//lottie-web/build/player/lottie_light
 interface LottieProps {
   anim: any
   preserveAspectRatio?: boolean
