@@ -43,7 +43,7 @@ function BackToTop() {
     <div className='opacity-0 fixed bottom-6 right-6 z-30' ref={elem}>
       <button
         onClick={scrollToTop}
-        className='rounded-sm group bg-blue w-12 h-12 lg:w-16 lg:h-16 back-to-top hover:scale-98 text-lg  duration-300 ease-in-out drop-shadow-lg hover:drop-shadow-sm'
+        className='rounded-lg  group bg-blue w-12 h-12 lg:w-16 lg:h-16 back-to-top hover:scale-98 text-lg  duration-300 ease-in-out drop-shadow-lg hover:drop-shadow-sm'
       >
         <span
           className='relative block text-2xl lg:text-4xl duration-300 ease-in-out group-hover:scale-110'
