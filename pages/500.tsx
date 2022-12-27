@@ -14,7 +14,7 @@ function FourOhFour() {
             height={269}
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
-            className='w-full'
+            className='w-full object-contain'
             alt={"I'm in danger"}
           />
         </div>

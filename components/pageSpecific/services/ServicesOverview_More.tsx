@@ -1,9 +1,12 @@
-import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
+
 import H2AndLead from '@typography/H2AndLead'
 import Link from 'next/link'
-
-function ServicesOverview_More() {
+import dynamic from 'next/dynamic'
+const Button_Outlined = dynamic(() => import('@parts/Button_Outlined'), {
+  ssr: false,
+})
+const ServicesOverview_More = () => {
   return (
     <PageSection_FullWidth id='more-services'>
       <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>

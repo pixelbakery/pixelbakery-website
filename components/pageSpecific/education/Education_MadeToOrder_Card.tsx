@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import Author from 'types/author'
 import cn from 'classnames'
 type Props = {
   title: string
@@ -9,7 +8,7 @@ type Props = {
   date: string
   categories: Array<string>
   excerpt: string
-  author: Author
+  author: any
   as: string
   href: string
   slug: string
@@ -33,8 +32,9 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
         >
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
-            fill={true}
             placeholder='blur'
+            width={300}
+            height={400}
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             quality={50}
             className='bg-blue object-cover w-full h-full'

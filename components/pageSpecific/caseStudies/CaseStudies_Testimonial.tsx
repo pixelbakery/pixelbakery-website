@@ -36,10 +36,11 @@ function CaseStudies_Testimonial({
                   <Image
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${headshot}`}
                     alt={`${name} is the ${title} of Pixel Bakery's client, ${client}.`}
-                    fill={true}
+                    layout={'fill'}
+                    objectFit={'cover'}
                     placeholder={'blur'}
                     blurDataURL={`${Shimmer(16, 16)}`}
-                    className={'object-cover'}
+                    className={''}
                   />
                 </div>
               </div>
@@ -56,8 +57,8 @@ function CaseStudies_Testimonial({
               <div className='w-full aspect-h-1 aspect-w-1'>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${image}`}
-                  fill={true}
-                  className='object-cover w-full h-full'
+                  layout='fill'
+                  objectFit='cover'
                   placeholder='blur'
                   blurDataURL={`${Shimmer(600, 600)}`}
                   alt={`${imageAlt}`}

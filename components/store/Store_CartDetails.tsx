@@ -1,3 +1,7 @@
+// 👇️ ts-nocheck ignores all ts errors in the file
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { Cart } from '@chec/commerce.js/types/cart'
 import { Cart } from '@chec/commerce.js/types/cart'
 import { Price } from '@chec/commerce.js/types/price'
 import { useCheckoutState } from '@hooks/useCheckoutState'

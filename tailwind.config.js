@@ -39,12 +39,20 @@ module.exports = {
     fill: (theme) => theme('colors'),
 
     fontFamily: {
-      pbheading: 'Gilroy, Poppins, sans-serif',
+      pbheading: 'Gilroy, sans-serif',
+      rachelDempsey: 'RachelDempsey, sans-serif',
       body: 'Poppins, sans-serif',
     },
     extend: {
       animation: {
         'spin-slow': 'spin 30s linear infinite',
+        bob: 'bob 5s ease-in infinite',
+      },
+      keyframes: {
+        bob: {
+          '0%, 100%': { transform: 'rotate(-.3deg) translateY(4px)' },
+          '50%': { transform: 'rotate(.3deg) translateY(-4px)' },
+        },
       },
       screens: {
         '3xl': '1792px',
@@ -123,8 +131,8 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/forms'),
   ],
 }

@@ -21,11 +21,12 @@ function CaseStudies_OtherProjects_Card({ project }) {
           <Image
             alt={project.data.client + ' ' + project.data.title + ' ' + project.data.tags[0]}
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-            fill={true}
-            className='object-cover w-full h-full'
+            layout='fill'
+            objectFit='cover'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
             quality={35}
+            className=''
           />
           <div className={'absolute w-100 h-100 bg-gradient-to-r from-blue-dark  opacity-25'}></div>
           <div

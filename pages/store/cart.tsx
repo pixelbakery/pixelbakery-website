@@ -5,13 +5,12 @@ import Link from 'next/link'
 import commerce from '@lib/commerce'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
 import Image from 'next/image'
-import Head from 'next/head'
 import H1 from 'components/typography/H1'
-
 import Main from '@parts/Main'
 import Lead from '@typography/Lead'
 import Navigation_Store from '@nav/Navigation_Store'
 import InnerWrapper from '@parts/InnerWrapper'
+import { NextSeo } from 'next-seo'
 
 const CheckoutPage: NextPage = () => {
   const { data: cart, refetch } = useCart()
@@ -38,21 +37,17 @@ const CheckoutPage: NextPage = () => {
 
   return (
     <Main id='page-checkout' className='relative'>
-      <Head>
-        <title>Cart | Store</title>
-        <meta name='description' content='Pixel Bakery store cart' />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://pixelbakery.com/store' />
-        <meta property='og:title' content='Pixel Bakery – Cart' />
-        <meta property='og:description' content='Pixel Bakery store cart' />
-        <meta
-          property='og:image'
-          content={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-header.png`}
-        />
-        <meta name='twitter:site' content='@pixelbakerylnk'></meta>
-        <meta name='twitter:card' content='summary_large_image'></meta>
-        <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
-      </Head>
+      <NextSeo
+        canonical='https://pixelbakery.com/store/cart'
+        title='Cart – Store'
+        description='Pixel Bakery store cart'
+        noindex={true}
+        openGraph={{
+          title: 'Cart – Store',
+          description: 'Pixel Bakery store cart',
+        }}
+        nofollow={true}
+      />
       <Navigation_Store />
 
       <PageSection className={'pt-24 px-24'} color={'pink-white'} id='cart'>

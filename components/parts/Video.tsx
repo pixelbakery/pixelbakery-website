@@ -30,7 +30,7 @@ function Video({ url, ...props }: video) {
       <div
         className={cn(
           { ['w-full  aspect-w-16 aspect-h-9']: props.className === undefined },
-          { [`${props.className}`]: props.className },
+          { [`${props.className}`]: props.className != undefined },
         )}
       >
         {/* <div className='w-full aspect-w-16 aspect-h-9'>
@@ -40,15 +40,17 @@ function Video({ url, ...props }: video) {
         </div> */}
         <ReactPlayer
           url={url}
-          autoPlay={props.autoPlay ? props.autoPlay : false}
-          playing={props.autoPlay ? props.autoPlay : false}
-          poster={props.poster ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}` : ''}
+          autoPlay={props.autoPlay != undefined ? props.autoPlay : false}
+          playing={props.autoPlay != undefined ? props.autoPlay : false}
+          poster={
+            props.poster != undefined ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}` : ''
+          }
           width={'100%'}
           height={'100%'}
-          loop={props.loop ? props.loop : false}
-          muted={props.muted ? props.muted : false}
-          playsinline={props.playsInline ? props.playsInline : false}
-          controls={props.controls ? props.controls : true}
+          loop={props.loop != undefined ? props.loop : false}
+          muted={props.muted != undefined ? props.muted : true}
+          playsinline={props.playsInline != undefined ? props.playsInline : true}
+          controls={props.controls != undefined ? props.controls : true}
           className={'w-full videoWrapper'}
           config={{
             vimeo: {

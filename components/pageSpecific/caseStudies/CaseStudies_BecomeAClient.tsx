@@ -19,6 +19,7 @@ function CaseStudies_BecomeAClient() {
             link={'/onboarding'}
             textColor={'pink-lighter'}
             bgColor={'pink'}
+            center={false}
           />
         </div>
       </div>

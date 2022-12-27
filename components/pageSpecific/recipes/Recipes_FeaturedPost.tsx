@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
 
-type Props = {
+interface Props {
   title: string
   coverImage: string
   date: string
@@ -46,7 +46,7 @@ const Recipes_FeaturedPost = ({
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             quality={25}
             className='object-cover w-full h-full bg-blue'
-            alt={`cover photo for ${title}`}
+            alt={`cover photo for ${title}, written by ${author}`}
           />
 
           <div className='mt-2 ml-2'>

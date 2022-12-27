@@ -38,8 +38,8 @@ const Carousel_Modal = ({ src, w, h, alt }) => {
             width={320}
             height={213}
             alt={alt}
-            fill={true}
-            className={'w-full h-full object-contain'}
+            layout='fill'
+            objectFit='contain'
           />
         </div>
         <div className='relative flex gap-2'>

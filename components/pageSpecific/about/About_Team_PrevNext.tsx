@@ -4,12 +4,18 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import Lead from '@typography/Lead'
+import H3 from '@typography/H3'
+import Button_Filled from '@parts/Button_Filled'
+import H2 from '@typography/H2'
 interface PrevNext {
   active: boolean
   prev: any
   next: any
+  name: string
 }
-function About_Team_PrevNext({ active, prev, next }: PrevNext) {
+
+function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
+  const [firstName, lastName] = name.split(' ')
   if (active) {
     return (
       <PageSection className='bg-pink-lighter py-2' id={'bio-nextPerson'}>
@@ -68,6 +74,26 @@ function About_Team_PrevNext({ active, prev, next }: PrevNext) {
         </InnerWrapper>
       </PageSection>
     )
-  } else return
+  } else {
+    return (
+      <PageSection className='bg-pink-lighter py-2' id={'bio-dismissed'}>
+        <InnerWrapper className='py-2 my-2 flex flex-col justify-center'>
+          <H2
+            color={'blue-dark'}
+            className='self-center mb-6 font-pbheading text-center'
+          >{`${firstName} has since moved on from PB.`}</H2>
+          <Lead className='text-center self-center'>And we miss them very much.</Lead>
+          <Button_Filled
+            text={'See All Past Employees'}
+            link={'/about/past-employees'}
+            center={true}
+            bgColor={'blue'}
+            textColor={'cream'}
+            chevronDirection={'right'}
+          />
+        </InnerWrapper>
+      </PageSection>
+    )
+  }
 }
 export default About_Team_PrevNext

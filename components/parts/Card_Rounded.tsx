@@ -17,8 +17,8 @@ function Card_Rounded(props) {
         <Image
           alt={props.imgAlt}
           src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
-          fill={true}
-          className={'object-cover w-full h-full'}
+          layout='fill'
+          objectFit='cover'
           placeholder='blur'
           blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.img}`}
           quality={75}
