@@ -6,11 +6,11 @@ const React = require('react')
 // const { withPlugins, extend } = require('next-compose-plugins')
 
 const { redirects } = require('./redirects.config.js')
-
 module.exports = () => {
   const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
   })
+
   const config = {
     async headers() {
       return [
@@ -46,6 +46,7 @@ module.exports = () => {
         },
       ]
     },
+
     swcMinify: true,
     images: {
       minimumCacheTTL: 31536000,
@@ -87,7 +88,6 @@ module.exports = () => {
     },
     redirects,
   }
-
   const plugins = [withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), config)
 }

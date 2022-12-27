@@ -80,7 +80,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
                   <Image
                     layout='fill'
                     objectFit='cover'
-                    className='object-center'
+                    className='object-center '
                     src={`${ImgPrefix}${coverImage}`}
                     alt={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`}
                   />
@@ -141,6 +141,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
+      development: false,
     },
     scope: data,
   })

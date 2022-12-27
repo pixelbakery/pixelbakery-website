@@ -176,6 +176,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
+      development: false,
     },
     scope: data,
   })
