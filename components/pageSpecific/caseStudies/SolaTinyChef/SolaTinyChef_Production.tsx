@@ -23,10 +23,11 @@ function SolaTinyChef_Production() {
             <Image
               src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_01.png'
               layout='responsive'
-              width='2176px'
-              height='1632px'
+              width='2176'
+              height='1632'
               blurDataURL='true'
               className='object-center rounded-md '
+              alt={''}
             />
           </div>
         </div>
@@ -35,10 +36,11 @@ function SolaTinyChef_Production() {
             <Image
               src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_02.png'
               layout='responsive'
-              width='2176px'
-              height='1632px'
+              width='2176'
+              height='1632'
               className='object-center rounded-md drop-hadow-sm '
               blurDataURL='true'
+              alt={''}
             />
           </div>
         </div>
@@ -47,10 +49,11 @@ function SolaTinyChef_Production() {
             <Image
               src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_03.png'
               layout='responsive'
-              width='2176px'
-              height='1632px'
+              width='2176'
+              height='1632'
               blurDataURL={'true'}
               className='object-center rounded-md shadow-lg'
+              alt={''}
             />
           </div>
         </div>
@@ -59,9 +62,10 @@ function SolaTinyChef_Production() {
             <Image
               src='/img/case-studies/sola-tiny-chef/pixel-bakery_SOLA_TinyChef_BTS_04.png'
               layout='responsive'
-              width='2176px'
-              height='1632px'
+              width='2176'
+              height='1632'
               className='object-center rounded-md shadow-md'
+              alt={''}
             />
           </div>
         </div>

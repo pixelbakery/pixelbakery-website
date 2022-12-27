@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-import DateFormatter from '../../../lib/date-formatter'
-
-import Author from 'types/author'
+import DateFormatter from '@lib/date-formatter'
 
 type Props = {
   title: string
@@ -11,7 +9,7 @@ type Props = {
   date: string
   excerpt: string
   categories: Array<string>
-  author: Author
+  author: any
   href: string
   as: string
 }

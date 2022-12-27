@@ -17,7 +17,7 @@ import dynamic from 'next/dynamic'
 import { PageSection, Main } from '@parts/index'
 import {
   Education_PostHeader,
-  Education_MadeToOrder_GetPrevNextPost,
+  // Education_MadeToOrder_GetPrevNextPost,
   Education_SupportUs,
   Education_MadeToOrder_SEO,
   Education_MadeToOrder_Tags,

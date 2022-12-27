@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import Author from 'types/author'
 import cn from 'classnames'
 type Props = {
   title: string
@@ -9,7 +8,7 @@ type Props = {
   date: string
   categories: Array<string>
   excerpt: string
-  author: Author
+  author: any
   as: string
   href: string
   slug: string
