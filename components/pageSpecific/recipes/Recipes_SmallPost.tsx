@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
-import DateFormatter from '../../../lib/date-formatter'
-
-import Author from 'types/author'
+import DateFormatter from '@lib/date-formatter'
 
 type Props = {
   title: string
@@ -11,7 +9,7 @@ type Props = {
   date: string
   excerpt: string
   categories: Array<string>
-  author: Author
+  author: any
   href: string
   as: string
 }
@@ -30,11 +28,12 @@ const Recipes_SmallPost = ({
       <div className='flex flex-row gap-4 md:gap-10'>
         <div className='hidden sm:block sm:w-2/5 2xl:w-2/5 '>
           <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} aria-label={title}>
-            <div className='w-full h-full md:aspect-4/3  relative rounded-md overflow-hidden'>
+            <div className='w-full h-full md:aspect-4/3  relative'>
               <Image
-                fill={true}
+                layout='fill'
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-                className='object-cover w-full h-full '
+                objectFit='cover'
+                className='rounded-md  bg-blue'
                 placeholder='blur'
                 quality={50}
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}

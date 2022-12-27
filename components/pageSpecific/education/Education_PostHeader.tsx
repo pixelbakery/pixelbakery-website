@@ -35,7 +35,8 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
               <Image
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
-                fill={true}
+                width={1280}
+                height={1920}
                 alt={author}
                 quality={25}
                 className=' relative object-top object-cover '
@@ -53,7 +54,12 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                 Written by{' '}
                 <span>
                   {authorUrl ? (
-                    <Link hrefLang={'en-US'} href={authorUrl} className='text-blue underline'>
+                    <Link
+                      hrefLang={'en-US'}
+                      href={authorUrl}
+                      passHref
+                      className='text-blue underline'
+                    >
                       {author}
                     </Link>
                   ) : (

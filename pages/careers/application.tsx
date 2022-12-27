@@ -17,6 +17,7 @@ function Careers_Application({ allJobs }) {
     <Main>
       <NextSeo
         noindex={true}
+        nofollow={true}
         title='Application | Careers'
         description={
           'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.'

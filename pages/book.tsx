@@ -5,12 +5,14 @@ function book() {
   return (
     <>
       <NextSeo
-        title='Schedule Meeting'
+        title='Schedule A Meeting'
         description={`Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`}
         canonical={`https://pixelbakery.com/book`}
+        nofollow={true}
+        noindex={true}
         openGraph={{
-          url: `https://pixelbakery.com`,
-          title: 'Pixel Bakery',
+          url: `https://pixelbakery.com/book`,
+          title: 'Schedule A Meeting',
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

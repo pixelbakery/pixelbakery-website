@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Footer_Nav from '@footer/Footer_Nav_Link'
 import Footer_Nav_SubNav from 'components/footer/Footer_Nav_SubNav'
 import Footer_HappyCard from 'components/footer/Footer_HappyCard'
-import Logo_Type from '@parts/Logo_Type'
+// import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Croissant from 'components/footer/Footer_Croissant'
@@ -12,21 +12,38 @@ import { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
+import Image from 'next/image'
 import Link from 'next/link'
+import services from '@data/services'
 
+import { m, Variants } from 'framer-motion'
+import { LazyMotion } from 'framer-motion'
+import { domMax } from 'framer-motion'
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
 
   const updateModal = () => {
     setTestModal(!testModalOpen)
   }
-
+  function template({ rotate, x }) {
+    return `rotate(${rotate}) translateX(${x})`
+  }
   // GSAP FOR MODAL
   useEffect(() => {
     if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
     else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
     return () => {}
   })
+  const card1: Variants = {
+    animate: {
+      rotate: 12,
+      transition: {
+        repeat: Infinity,
+        duration: 0.44,
+        ease: 'easeInOut',
+      },
+    },
+  }
 
   const year = new Date().getFullYear()
   return (
@@ -45,12 +62,49 @@ export const Footer: NextPage = () => {
         <div className='mx-auto max-w-6xl'>
           <div className='grid grid-cols-1 lg:grid-cols-3 lg:mb-12 gap-8 h-full'>
             <div className='h-full flex flex-col justify-between'>
-              <div className='flex justify-center lg:justify-start'>
-                <Logo_Type />
-              </div>
+              {/* <Logo_Type /> */}
+
+              <Link href={'/'} className='relative flex justify-center lg:justify-start'>
+                <LazyMotion features={domMax}>
+                  <m.div
+                    className='self-center w-1/3 lg:w-3/5'
+                    animate={{
+                      translateY: [24, -12, 24],
+                    }}
+                    transition={{
+                      duration: 8,
+                      ease: 'easeInOut',
+                      times: [1, 1, 1, 1],
+                      repeat: Infinity,
+                      repeatDelay: 0,
+                    }}
+                  >
+                    <m.div
+                      animate={{
+                        rotate: [6, -12, 6],
+                      }}
+                      transition={{
+                        duration: 32,
+                        ease: 'easeInOut',
+                        times: [4, 4, 4, 4],
+                        repeat: Infinity,
+                        repeatDelay: 0,
+                      }}
+                    >
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/icons/doodles/PB_ColorIcon_PopTart.svg`}
+                        width={133.6536}
+                        height={169.8851}
+                        className={'rotate-6 origin-center w-full block relative'}
+                        alt={'Pixel Bakery Design Studio'}
+                      />
+                    </m.div>
+                  </m.div>
+                </LazyMotion>
+              </Link>
 
               <nav className='hidden lg:block pt-5 mt-3'>
-                <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-2xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0'>
+                <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-3xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0 pb-0'>
                   {nav_footer_main.map((navitem) => (
                     <Footer_Nav navitem={navitem} key={navitem.text} />
                   ))}
@@ -109,6 +163,35 @@ export const Footer: NextPage = () => {
                     </ul>
                   </nav>
                 </div>
+                <div className='mb-0 pb-0 mt-4 xl:pt-4 md:pr-4 hidden lg:block'>
+                  <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
+                    <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                      Services
+                    </H3>
+                  </div>
+                  <nav className=''>
+                    <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3'>
+                      {services
+                        // .filter((s) => s.service != 'Animated Explainer Videos')
+                        .filter((s) => s.service != 'Educational Content')
+                        .filter((s) => s.service != 'Creative Concepting & Strategy')
+                        .map((navitem, i) => (
+                          <li
+                            className='text-left leading-none text-cream text-md cursor-pointer my-0 py-0'
+                            key={i}
+                          >
+                            <Link
+                              hrefLang={'en-US'}
+                              href={navitem.url}
+                              className='my-0 py-0 leading-none hover-98 hover-shadow-none'
+                            >
+                              {navitem.service}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
             {/* Mobile Nav */}
@@ -141,7 +224,7 @@ export const Footer: NextPage = () => {
               <div className='hidden lg:flex justify-center w-full my-3'>
                 <Button_Filled
                   center={true}
-                  text={'Start something wonderful'}
+                  text={'Start A Project'}
                   link={'/onboarding'}
                   bgColor={'blue-dark'}
                   textColor={'cream'}
@@ -160,9 +243,11 @@ export const Footer: NextPage = () => {
           <div className='flex flex-col md:flex-row justify-center md:justify-between pt-3'>
             <button
               onClick={updateModal}
-              className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md py-2 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
+              className='self-center max-w-xs group text-2xl ease-in-out bg-cream px-3 rounded-md pb-2 pt-4 duration-300 hover:scale-98 drop-shadow-md hover:drop-shadow-sm '
             >
-              <i className='block duration-300 ease-in-out group-hover:rotate-360'> 🥐</i>
+              <i className='block duration-300 ease-in-out group-hover:rotate-360 leading-none'>
+                🥐
+              </i>
             </button>
             <span className='self-center text-center mt-4 md:mt-0 italic text-sm  text-cream'>
               © {year} Pixel Bakery Design Studio

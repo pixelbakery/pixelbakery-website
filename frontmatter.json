@@ -421,6 +421,12 @@
           "type": "boolean"
         },
         {
+          "title": "video",
+          "name": "video",
+          "type": "string",
+          "single": true
+        },
+        {
           "title": "excerpt",
           "name": "excerpt",
           "type": "string"

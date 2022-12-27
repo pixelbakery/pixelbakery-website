@@ -11,7 +11,7 @@ export default [
   {
     client: 'First Honey',
     logo: '/img/clients/pixelbakery_client_first_honey.png',
-    url: 'google.com',
+    url: 'https://firsthoney.com',
     active: true,
   },
   {

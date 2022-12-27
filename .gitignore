@@ -45,3 +45,6 @@ yarn-error.log*
 
 public/img/blog/
 .vscode/settings.json
+
+# Sentry
+.sentryclirc

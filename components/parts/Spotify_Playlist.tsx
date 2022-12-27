@@ -1,11 +1,13 @@
-// import H2 from '@typography/H2'
+// 👇️ ts-nocheck ignores all ts errors in the file
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import Image from 'next/image'
 import useSWR from 'swr'
 import { Playlist } from '@lib/types'
 import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
 import H3 from '@typography/H3'
-import Shimmer from '@lib/Shimmer'
+
 type spotify = {
   spotify: any
 }
@@ -27,13 +29,14 @@ export default function Spotify_Playlist(spotify) {
           <div className='absolute xl:relative w-32 h-32'>
             <Image
               src={data.albumCoverImage}
-              width={640}
-              height={640}
+              layout='fill'
               alt='Pixel Bakery Spotify Playlist'
+              objectFit='cover'
               placeholder='blur'
-              blurDataURL={`${Shimmer(32, 32)}`}
-              quality={75}
-              className='w-full h-full absolute object-cover'
+              blurDataURL={data.albumCoverImage}
+              quality={25}
+              unoptimized={true}
+              className='w-full h-full absolute'
             />
           </div>
         </a>
@@ -77,12 +80,12 @@ export default function Spotify_Playlist(spotify) {
                     <div className='relative h-12 w-12'>
                       <Image
                         src={track.albumArt}
-                        width={640}
-                        height={640}
-                        placeholder={'blur'}
-                        blurDataURL={`${Shimmer(12, 12)}`}
+                        layout='responsive'
+                        width={12}
+                        height={12}
+                        unoptimized={true}
                         quality={25}
-                        className='object-cover w-full h-full'
+                        className='h-12 w-12'
                         alt={`${track.artist} – ${track.album}`}
                       />
                     </div>

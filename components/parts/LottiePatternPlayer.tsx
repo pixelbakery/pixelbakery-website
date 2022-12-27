@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Lead from '@typography/Lead'
 import lottie from 'lottie-web'
+// lottie-web/build/player/lottie_light
 interface LottieProps {
   animationData: any
   width: number

@@ -16,6 +16,7 @@ import CaseStudies_Intro from '@caseStudies/CaseStudies_Intro'
 import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
+import Image from 'next/image'
 // const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
 //   ssr: false,
 // })
@@ -68,6 +69,7 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     CaseStudies_Header_NoVideo: CaseStudies_Header_NoVideo,
     CaseStudies_ProjectIntro_Alt: CaseStudies_ProjectIntro_Alt,
     CaseStudies_Gallery_Email: CaseStudies_Gallery_Email,
+    Image: Image,
     // PageSection: ({children}) => <PageSection children={children} />,
     PageSection: ({ children, color, id }) => (
       <PageSection color={color} id={id}>
@@ -148,6 +150,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
+      development: false,
     },
     scope: data,
   })

@@ -69,6 +69,13 @@
     src: url(/fonts/Gilroy/gilroy-blackitalic.woff2) format('woff2');
     font-display: swap;
   }
+  @font-face {
+    font-family: RachelDempsey;
+    font-weight: 400;
+    font-style: regular;
+    src: url(/fonts/RachelDempsey/Dempsey_allcaps-Regular.woff2) format('woff2');
+    font-display: swap;
+  }
   /*
   @font-face {
     font-family: Gilroy;
@@ -206,16 +213,16 @@
     @apply list-outside;
   }
   h1,
-  h2,
   h3,
   h4 {
     @apply font-pbheading font-extrabold lowercase;
   }
+
   h1 {
     @apply text-8xl;
   }
   h2 {
-    @apply text-6xl font-extrabold  text-peach my-8;
+    @apply font-rachelDempsey text-6xl font-extrabold  text-peach my-8;
   }
   p.lead {
     @apply mt-2 text-2xl pb-6 leading-relaxed;

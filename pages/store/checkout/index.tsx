@@ -1,7 +1,6 @@
 /* eslint-disable react/no-string-refs */
 import React, { useEffect, useMemo, useState } from 'react'
 import { NextPage } from 'next'
-import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js'
@@ -26,6 +25,7 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Navigation_Store from '@nav/Navigation_Store'
 import NoIndex from '@parts/NoIndex'
+import { NextSeo } from 'next-seo'
 
 export type CheckoutSchema = {
   firstName: string
@@ -259,19 +259,17 @@ let Checkout: NextPage = () => {
       {({ values, handleChange, handleSubmit }) => (
         <Main className='min-w-screen min-h-screen my-4 p-1 md:p-4 bg-egg'>
           <FormikEffect onChange={handleFormChange} />
-          <Head>
-            <title>Checkout | Store</title>
-            <meta name='description' content='Pixel Bakery store checkout' />
-            <meta property='og:type' content='website' />
-            <meta property='og:url' content='https://pixelbakery.com/store' />
-            <meta property='og:title' content='Pixel Bakery – Checkout' />
-            <meta property='og:description' content='Pixel Bakery store checkout' />
-            <meta property='og:image' content='/img/pixel-bakery-header.png' />
-            <meta name='twitter:site' content='@pixelbakerylnk'></meta>
-            <meta name='twitter:card' content='summary_large_image'></meta>
-            <meta name='twitter:image:alt' content='Pixel Bakery Design Studio'></meta>
-          </Head>
-          <NoIndex />
+          <NextSeo
+            canonical='https://pixelbakery.com/store/checkout'
+            title='Checkout – Store'
+            description='Pixel Bakery store checkout'
+            noindex={true}
+            nofollow={true}
+            openGraph={{
+              title: 'Checkout – Store',
+              description: 'Pixel Bakery store checkout',
+            }}
+          />
           <Navigation_Store />
 
           {cart?.total_items > 0 ? (

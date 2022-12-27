@@ -26,7 +26,6 @@ function App({ Component, pageProps }: AppProps) {
     const client = new QueryClient()
     return (
       <QueryClientProvider client={client}>
-        {' '}
         <Layout__NoNav>
           <Component {...pageProps} />
         </Layout__NoNav>

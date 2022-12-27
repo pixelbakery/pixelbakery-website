@@ -44,6 +44,6 @@ function Work_Clients() {
         </div>
       </InnerWrapper>
     </PageSection>
-  )
+  );
 }
 export default Work_Clients

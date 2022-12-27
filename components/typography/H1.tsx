@@ -13,7 +13,7 @@ const H1 = ({ color, children, className }: PropsWithChildren<Props>) => {
       className={cn(
         'font-bold max-w-md mt-0 text-6xl md:text-7xl lg:text-8xl 3xl:text-9xl 2xl:max-w-4xl leading-none mb-12 2xl:mb-8 ',
         [`text-${color}`],
-        [`${className}`],
+        { [`${className}`]: className },
       )}
     >
       {children}
