@@ -1,4 +1,6 @@
-// import H2 from '@typography/H2'
+// 👇️ ts-nocheck ignores all ts errors in the file
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import Image from 'next/image'
 import useSWR from 'swr'
 import { Playlist } from '@lib/types'
