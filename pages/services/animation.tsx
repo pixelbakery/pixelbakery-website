@@ -8,7 +8,7 @@ import Services_Header from '@services/Services_Header'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json'
 import Services_SEO from '@services/Services_SEO'
 import Services_Animation_Why from '@services/Services_Animation_Why'
-
+import Services_Animation_Benefits from '@services/Services_Animation_Benefits'
 const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
 
 const Page_Services_Animation = () => {
@@ -19,21 +19,22 @@ const Page_Services_Animation = () => {
         serviceName={'Animation'}
         isLottie={true}
         subheader={
-          'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling.'
+          'We specialize in 2D animation, social media ads, motion graphics, stop motion, and animated explainer videos.'
         }
         bgColor={'blue-dark'}
         lottieComponent={Lottie_Animation}
       >
         <p className='mt-6 leading-loose'>
-          Every animation project is full-service and includes project management, creative
-          concepting, sound design, storyboarding, and voiceover as needed. Whether you’re looking
-          for a lower thirds animation template or a sizzle reel of your company’s coolest products,
-          we’ve got you covered. Check out what else we have to offer below.
+          Animation is a powerful marketing tool that can be used to engage, educate, and entertain
+          audiences of all ages. Whether you’re looking for a lower thirds animation template or a
+          sizzle reel of your company’s coolest products, we’ve got you covered. Check out what else
+          we have to offer below.
         </p>
       </Services_Header>
       <Services_Animation_Why />
 
       <Services_Subservices />
+      <Services_Animation_Benefits />
       <Services_Modulation />
       <CaseStudies_CTA />
       <Services_AllServices />
