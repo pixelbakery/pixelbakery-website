@@ -26,17 +26,16 @@ export default function Spotify_Playlist(spotify) {
           target='_blank'
           rel='noreferrer'
         >
-          <div className='absolute xl:relative w-32 h-32'>
+          <div className='absolute xl:relative w-32 h-32 overflow-hidden'>
             <Image
               src={data.albumCoverImage}
-              layout='fill'
               alt='Pixel Bakery Spotify Playlist'
-              objectFit='cover'
+              fill={true}
+              className='absolute object-cover object-center w-full h-full'
               placeholder='blur'
               blurDataURL={data.albumCoverImage}
               quality={25}
               unoptimized={true}
-              className='w-full h-full absolute'
             />
           </div>
         </a>
@@ -77,15 +76,14 @@ export default function Spotify_Playlist(spotify) {
               <li className='my-0' key={index}>
                 <a hrefLang={'en-US'} href={track.songUrl} target={'_blank'} rel='noopener'>
                   <div className='flex gap-1 xl:gap-x-4'>
-                    <div className='relative h-12 w-12'>
+                    <div className='relative h-12 w-12 overflow-hidden'>
                       <Image
                         src={track.albumArt}
-                        layout='responsive'
                         width={12}
                         height={12}
                         unoptimized={true}
                         quality={25}
-                        className='h-12 w-12'
+                        className='h-12 w-12 object-cover'
                         alt={`${track.artist} – ${track.album}`}
                       />
                     </div>

@@ -80,13 +80,12 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                   <Image
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
-                    layout='fill'
+                    fill={true}
                     width={300}
                     height={213}
-                    objectFit='cover'
                     alt={frontMatter.author.name}
                     quality={25}
-                    className='object-top scale-175 sc'
+                    className='object-cover object-top scale-175 sc'
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
                   />
                 )}
@@ -141,9 +140,8 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
         ) : (
           <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
             <Image
-              layout='fill'
-              objectFit='cover'
-              className='object-center'
+              fill={true}
+              className='object-cover object-center w-full h-full'
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'

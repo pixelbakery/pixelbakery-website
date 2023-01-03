@@ -52,21 +52,32 @@ const CaseStudies_ProjectIntro_Alt = () => {
           </div>
         </InnerWrapper>
       </div>
-      <div className='hidden lg:block lg:w-1/4 relative mx-auto'>
+
+      <div className='absolute hidden lg:block h-full w-1/4 2xl:w-1/5 bottom-0 right-10 object-bottom origin-bottom scale-150'>
+        <Image
+          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
+          placeholder='blur'
+          alt='Product Photography created for SNACKLINS'
+          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
+          fill={true}
+          className={' object-bottom origin-bottom bottom-0 h-full object-contain'}
+        />
+      </div>
+
+      {/* <div className='hidden lg:block lg:w-1/4 relative mx-auto h-full'>
         <div className='absolute  -bottom-5  -top-40 xl:top-0 -mb-20 -mt-20 origin-bottom right-0 left-0'>
-          <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100'>
+          <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100 overflow-hidden'>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
-              layout='fill'
-              objectFit='contain'
               placeholder='blur'
               alt='Product Photography created for SNACKLINS'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
+              fill={true}
               className={'relative origin-bottom bottom-0 h-full object-contain'}
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
