@@ -11,7 +11,6 @@ const Carousel_Slide = ({ index, slide }) => {
         height={slide.diminsions.height}
         placeholder='blur'
         blurDataURL={`${Shimmer(slide.diminsions.width, slide.diminsions.height)}`}
-        layout='responsive'
       />
     </div>
   )

@@ -15,8 +15,8 @@ function CaseStudies_Header({ ...props }) {
           <Link hrefLang={'en-US'} href={`${props.website}`}>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
-              layout={'fill'}
-              objectFit={'contain'}
+              fill={true}
+              className='object-cover object-center w-full h-full'
               alt={`logo for ${props.client}`}
             />
           </Link>

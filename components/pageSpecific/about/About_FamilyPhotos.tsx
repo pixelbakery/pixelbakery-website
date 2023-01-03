@@ -14,9 +14,8 @@ const About_FamilyPhotos = () => {
               {/* Circle photo */}
               <Image
                 src={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto07.jpg`}
-                layout='fill'
+                className='object-contain object-center w-full h-full'
                 alt=''
-                objectFit='contain'
                 placeholder='blur'
                 blurDataURL={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto07.jpg`}
               />
@@ -54,9 +53,9 @@ const About_FamilyPhotos = () => {
               {/* Looking down */}
               <Image
                 src={`${ImgPrefix}/img/family-photos/pixelbakery-familyphoto08.jpg`}
-                layout='fill'
                 alt='Lizzie Moore, Jordan Lambrecht, Samee Callahan, and Mitchell Guynan'
-                objectFit='contain'
+                fill={true}
+                className='object-contain object-center w-full h-full'
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto08.jpg`}
               />
@@ -93,9 +92,9 @@ const About_FamilyPhotos = () => {
               {/* Crew photo */}
               <Image
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto04.jpg`}
-                layout='fill'
+                fill={true}
+                className='object-cover object-center w-full h-full'
                 alt='The Pixel Bakery production team after shooting a pilot for a TV show'
-                objectFit='cover'
               />
               <Loading />
             </div>
@@ -106,9 +105,9 @@ const About_FamilyPhotos = () => {
               {/* Wedding Photo */}
               <Image
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/family-photos/pixelbakery-familyphoto02.jpg`}
-                layout='fill'
                 alt=''
-                objectFit='cover'
+                fill={true}
+                className='object-cover object-center w-full h-full'
               />
               <Loading />
             </div>

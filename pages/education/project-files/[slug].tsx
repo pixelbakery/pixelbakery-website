@@ -85,8 +85,7 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
                 quality={90}
-                layout='fill'
-                objectFit='cover'
+                fill={true}
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
                 className='absolute object-cover object-center w-full h-full'
                 alt='polaroid 3d model made in cinema 4d'
@@ -97,8 +96,7 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
                 quality={90}
-                layout='fill'
-                objectFit='cover'
+                fill={true}
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
                 className='absolute object-cover object-center w-full h-full'
                 alt={`${frontMatter.title} project file made in ${frontMatter.category}`}

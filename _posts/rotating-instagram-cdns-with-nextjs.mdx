@@ -28,7 +28,7 @@ Out of the box, this isn't enough. It might work for a day, but it'll expire.
 
 When we call the image, we can replace the subdomain URL:
 
-`<Image layout='fill' objectFit='cover' className='instagram-image' key={index} src={item.media_url.replace(/^[^.]/, 'https://scontent-akl1-1')} alt={item.caption} quality={33}/>`
+`<Image fill={true} className='object-cover w-full h-full instagram-image' key={index} src={item.media_url.replace(/^[^.]/, 'https://scontent-akl1-1')} alt={item.caption} quality={33}/>`
 And it works!
 
 ## Conclusion

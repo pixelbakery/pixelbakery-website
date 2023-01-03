@@ -32,14 +32,13 @@ const Carousel_Modal = ({ src, w, h, alt }) => {
         </button>
       </div>
       <div className='h-full w-full relative py-24 px-24'>
-        <div className='relative flex flex-col h-full w-full '>
+        <div className='relative flex flex-col h-full w-full overflow-hidden'>
           <Image
             src={'https://cdn.pixelbakery.com/img/placeholder01.png'}
             width={320}
             height={213}
             alt={alt}
-            layout='fill'
-            objectFit='contain'
+            className='object-contain object-center w-full h-full'
           />
         </div>
         <div className='relative flex gap-2'>
