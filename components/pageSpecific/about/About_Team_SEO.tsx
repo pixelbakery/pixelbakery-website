@@ -26,9 +26,9 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
     desc = `${desc} ${details.personalAesthetic}`
   }
   desc = `${desc} ${frontMatter.title}`
-
   if (details.leastFavoriteThing != undefined)
-    desc += `, and they really hate ${details.leastFavoriteThing}`
+    desc += `, and they really hate ${details.leastFavoriteThing.toLowerCase()}`
+  else desc += `, and they're one of our favorite people ever`
   desc += '.'
   return (
     <>

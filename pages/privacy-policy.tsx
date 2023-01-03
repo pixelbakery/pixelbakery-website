@@ -19,7 +19,7 @@ function PrivacyPolicy() {
       <NextSeo
         title='Privacy Policy'
         canonical={`https://pixelbakery.com/privacy-policy`}
-        description={`Here you can find the details of Pixel Bakery's Privacy Policy.`}
+        description={`Here you can find the details of Pixel Bakery's Privacy Policy. It's incredibly boring and extremely dry to read. Sorry in advance.`}
         openGraph={{
           url: `https://pixelbakery.com/privacy-policy`,
           images: [

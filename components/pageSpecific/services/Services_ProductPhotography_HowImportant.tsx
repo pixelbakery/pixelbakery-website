@@ -95,7 +95,7 @@ const Services_AnimatedExplainers_Topics = () => {
                     width={505.65}
                     height={332.91}
                     src={'/img/services/RecipeCard_DarkBlue.svg'}
-                    alt={''}
+                    alt={'Product photography recipe card 1'}
                   />
                 </m.div>
                 <m.div
@@ -106,7 +106,7 @@ const Services_AnimatedExplainers_Topics = () => {
                     width={505.65}
                     height={332.91}
                     src={'/img/services/RecipeCard_Blue.svg'}
-                    alt={''}
+                    alt={'product photography recipe card 2'}
                   />
                 </m.div>
 

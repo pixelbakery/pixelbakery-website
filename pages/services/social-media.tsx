@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Services_SEO from '@services/Services_SEO'
 
 export default function Services() {
-  const desc = `Engage with your audience on their favorite platforms.`
+  const desc = `Engage with your audience on their favorite platforms. We add animation and motion graphics to your social media feeds.`
   return (
     <Main>
       <Services_SEO serviceName='Social Media Kits' path='social-media' description={desc} />
