@@ -23,9 +23,9 @@ function Services_Animation_Why() {
                 Animation Captures Attention
               </Lead>
               <p>
-                With its bright colors, interesting characters, and dynamic movement, animation is
-                able to grab the attention of viewers, even in a crowded media landscape. This makes
-                it an effective way to stand out and get your message across.
+                With its bright colors, interesting characters, and dynamic movement, animation
+                grabs the attention of viewers, even in a crowded media landscape. This makes it an
+                effective way to stand out and get your message across.
               </p>
               <Lead color='blue' noMargins={true} className={'mb-0 pb-0'}>
                 Animation Is Versitile
@@ -50,6 +50,15 @@ function Services_Animation_Why() {
                 Whether you're creating a character-driven story or an informative explainer video,
                 animation will engage your viewers and keep them interested. This makes it a great
                 choice to build brand loyalty and drive conversions.
+              </p>
+              <Lead color='blue' noMargins={true} className={'mb-0 pb-0'}>
+                Animation Gives You Creative Freedom
+              </Lead>
+              <p>
+                Motion Graphics give you the freedom to be creative and push the boundaries of
+                what's possible. With animation, you can create fantastical worlds and characters
+                that would be impossible to achieve with live action. This makes it a good choice
+                for marketing campaigns that want to stand out and be memorable.
               </p>
             </div>
           </div>
