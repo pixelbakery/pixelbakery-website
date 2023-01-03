@@ -4,7 +4,7 @@ function Contact_SEO() {
   return (
     <NextSeo
       title='Contact'
-      description={`Come visit, email, call, stalk, harass, admire, or hang out with us. We love other humans.`}
+      description={`Come visit, email, call, stalk, harass, admire, or hang out with us. We love other humans. Fill out the contact form below to get in touch with us directly.`}
       canonical={`https://pixelbakery.com/contact`}
       openGraph={{
         url: `https://pixelbakery.com/contact`,

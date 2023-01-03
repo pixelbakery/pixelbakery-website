@@ -27,6 +27,12 @@ const Page_PastEmployees = ({ allPeople }) => {
         title='Past Employees'
         description='Nothing lasts forever, and that holds true for our employees.'
         canonical='https://pixelbakery.com/about/past-employees'
+        openGraph={{
+          title: `Past Employees`,
+          type: 'website',
+          description: `Nothing lasts forever, and that holds true for our employees.`,
+          url: `https://pixelbakery.com/about/past-employees`,
+        }}
       />
       <PageHeader_VarH header={'Past Employees'} subheader={'Gone But Not Forgotten'} />
       <PageSection id='pastEmployees'>

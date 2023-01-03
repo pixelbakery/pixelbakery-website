@@ -19,7 +19,7 @@ const Page_Services_Animation = () => {
         serviceName={'Animation'}
         isLottie={true}
         subheader={
-          'We specialize in 2D animation, social media ads, motion graphics, stop motion, and animated explainer videos.'
+          'We create motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
         }
         bgColor={'blue-dark'}
         lottieComponent={Lottie_Animation}
@@ -27,8 +27,8 @@ const Page_Services_Animation = () => {
         <p className='mt-6 leading-loose'>
           Animation is a powerful marketing tool that can be used to engage, educate, and entertain
           audiences of all ages. Whether you’re looking for a lower thirds animation template or a
-          sizzle reel of your company’s coolest products, we’ve got you covered. Check out what else
-          we have to offer below.
+          product highlight of your company’s coolest products, we’ve got you covered. Check out
+          what else we have to offer below.
         </p>
       </Services_Header>
       <Services_Animation_Why />

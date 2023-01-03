@@ -5,7 +5,7 @@ const LogoAnimation_SEO = () => {
     <NextSeo
       title='Logo Animation | Services'
       canonical={`https://pixelbakery.com/logo-animation`}
-      description={`Bring your logo to life with an eye-catching and memorable animation`}
+      description={`Bring your logo to life with an eye-catching and memorable animation. Animating your logo builds brand integrity.`}
       openGraph={{
         url: `https://pixelbakery.com/logo-animation`,
         images: [

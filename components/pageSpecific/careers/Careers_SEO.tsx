@@ -4,7 +4,7 @@ const Careers_SEO = () => {
   return (
     <NextSeo
       title='Careers'
-      description={`Come join an awesome team of videographers, producers, and creatives.`}
+      description={`Come join an awesome team of videographers, producers, and creatives. See all available job opportunities today.`}
       canonical={`https://pixelbakery.com/careers`}
       openGraph={{
         url: `https://pixelbakery.com/careers`,

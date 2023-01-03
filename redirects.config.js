@@ -17,6 +17,11 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/work/case-studies/title-sequence',
+    destination: '/work/case-studies/technologue-americana-title-sequence',
+    permanent: true,
+  },
+  {
     source: '/about/daniel-hinz',
     destination: '/about/dan-hinz',
     permanent: true,
