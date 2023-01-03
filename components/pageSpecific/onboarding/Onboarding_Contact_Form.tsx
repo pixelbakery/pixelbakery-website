@@ -51,11 +51,11 @@ const yupValidation = Yup.object().shape({
     .matches(/^\s*[\S]+(\s[\S]+)+\s*$/gms, 'Please enter your full name.'),
   subject: Yup.string()
     .required('Please enter a subject line.')
-    .min(10, `That's a pretty short subject line.`),
+    .min(8, `That's a pretty short subject line.`),
   company: Yup.string().required('Please enter the company / entity you represent.'),
   message: Yup.string()
     .required('Please enter a message, you goose.')
-    .min(100, `Please write something a bit more... in-depth.`),
+    .min(50, `Please write something a bit more... in-depth.`),
   phone: Yup.string()
     .required('Please enter your phone number.')
     .test('len', 'Please enter a valid phone number', (val) => {
