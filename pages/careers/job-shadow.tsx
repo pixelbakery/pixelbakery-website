@@ -83,7 +83,7 @@ function Page_Careers_JobShadow() {
                   </div>
                   <p className='self-start mt-0 pt-0 flex-shrink w-full'>
                     If you’re under 18, we’ll send you a permission form for your parents to fill
-                    out.
+                    out
                   </p>
                 </li>
 
@@ -92,7 +92,7 @@ function Page_Careers_JobShadow() {
                     2
                   </div>
                   <p className='self-start my-0 py-0 flex-shrink w-full'>
-                    Shadowing groups <em>must</em> be at least three people per session.
+                    Shadowing groups <em>must</em> be at least three people per session
                   </p>
                 </li>
                 <li className='flex gap-8 my-0 py-0'>
