@@ -12,11 +12,14 @@
   @apply text-blue-dark text-6xl mt-4;
 }
 .markdown h2 {
-  @apply text-wine text-2xl 2xl:text-4xl pt-6 mb-3 leading-tight normal-case font-semibold;
+  @apply text-wine text-3xl 2xl:text-4xl pt-6 mb-3 leading-tight normal-case font-semibold;
 }
 
 .markdown h3 {
-  @apply text-xl xl:text-2xl mt-14 mb-6 normal-case text-opacity-60 font-semibold tracking-normal !important;
+  @apply text-xl xl:text-2xl mt-14 mb-6 normal-case text-opacity-60 font-semibold tracking-normal text-wine !important;
+}
+.markdown h4 {
+  @apply text-lg xl:text-xl text-blue font-semibold;
 }
 .markdown p {
   @apply text-lg text-wine my-4 pb-3 max-w-3xl;
@@ -44,4 +47,19 @@
 }
 .markdown code {
   @apply bg-wine-100 rounded-md px-3 py-1 text-sm text-blue-dark mx-1;
+}
+.markdown table tbody {
+  @apply text-sm;
+}
+.markdown table td {
+  @apply px-2 py-4;
+}
+.markdown table th {
+  @apply font-semibold text-center px-4  pb-2 align-bottom mb-0 text-sm;
+}
+.markdown tr:nth-child(even) {
+  @apply bg-cream;
+}
+.markdown table tbody tr {
+  @apply text-sm;
 }
