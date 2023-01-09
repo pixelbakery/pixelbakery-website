@@ -50,7 +50,7 @@
     "gsap": "^3.11.3",
     "lottie-web": "5.10.0",
     "next": "^13.0.2",
-    "next-mdx-remote": "^4.2.0",
+    "next-mdx-remote": "4.2.0",
     "next-seo": "^5.8.0",
     "nextjs-google-analytics": "^2.1.0",
     "react": "18.2.0",
