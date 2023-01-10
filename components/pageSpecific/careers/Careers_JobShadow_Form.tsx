@@ -53,13 +53,10 @@ function Careers_JobShadow_Form() {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm<FormInputs>(setFormOptions as any)
 
   // Handle the submit
   function onSubmit(data) {
-    data.preventDefault()
-    // recaptchaRef.current.execute()
     SendEmail_JobShadow(data)
     SendToMonday_JobShadow(data)
     SendToMailchimp(data, 'Job Shadow')
@@ -161,7 +158,7 @@ function Careers_JobShadow_Form() {
             className={
               'self-center cursor-pointer ml-3 text-white font-semibold font-xl leading-none my-0 py-0'
             }
-            htmlFor='check'
+            htmlFor='newsletter'
           >
             Also sign up for the newsletter that we always forget to send out
           </label>
