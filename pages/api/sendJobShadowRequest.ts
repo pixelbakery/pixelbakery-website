@@ -7,7 +7,6 @@ export default async function sendOnboarding(req, res) {
   let agree1 = "I'm filling this out for myself: "
   let agree2 = 'I have at least 3 people in my group: '
   let agree3 = 'Signed up for the newsletter: '
-  console.log(body.noParents)
   if (body.noParents === true) {
     agree1 += '✅'
   } else agree1 += '⛔️'
