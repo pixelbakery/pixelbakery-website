@@ -7,6 +7,16 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/education/tutorials/how-to-shorten-an-audio-file-to-fit-a-video',
+    destination: '/education/tutorials/how-to-shorten-an-audio-file',
+    permanent: true,
+  },
+  {
+    source: '/recipes/video-image-formats-in-2022',
+    destination: '/recipes/video-image-formats',
+    permanent: true,
+  },
+  {
     source: '/portfolio',
     destination: '/work',
     permanent: true,
