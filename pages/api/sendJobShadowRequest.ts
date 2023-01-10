@@ -7,15 +7,16 @@ export default async function sendOnboarding(req, res) {
   let agree1 = "I'm filling this out for myself: "
   let agree2 = 'I have at least 3 people in my group: '
   let agree3 = 'Signed up for the newsletter: '
-  if (body.checkNoParents) {
+  console.log(body.noParents)
+  if (body.noParents === true) {
     agree1 += '✅'
   } else agree1 += '⛔️'
 
-  if (body.check3People) {
+  if (body.threePeople === true) {
     agree2 += '✅'
   } else agree2 += '⛔️'
 
-  if (body.check) {
+  if (body.newsletter === true) {
     agree3 += '✅'
   } else agree3 += '⛔️'
 

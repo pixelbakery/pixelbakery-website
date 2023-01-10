@@ -51,9 +51,9 @@ export async function SendToMonday_JobShadow(data) {
       text: data.school,
       email: { email: data.email, text: data.email },
       long_text: { text: data.message },
-      checkbox: { checked: data.check.toString() },
-      checkbox9: { checked: data.checkNoParents.toString() },
-      checkbox2: { checked: data.check3People.toString() },
+      checkbox: { checked: data.newsletter.toString() },
+      checkbox9: { checked: data.noParents.toString() },
+      checkbox2: { checked: data.threePeople.toString() },
     }),
   }
   fetch('https://api.monday.com/v2', {
