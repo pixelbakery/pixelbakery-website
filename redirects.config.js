@@ -12,6 +12,11 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/recipes/an-introduction-to-our-technology-stack',
+    destination: '/recipes/intro-tech-stack',
+    permanent: true,
+  },
+  {
     source: '/recipes/video-image-formats-in-2022',
     destination: '/recipes/video-image-formats',
     permanent: true,
