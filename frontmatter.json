@@ -961,13 +961,6 @@
   },
   "frontMatter.data.files": [
     {
-      "title": "All sponsors",
-      "id": "all-sponsors",
-      "file": "[[workspace]]/.frontmatter/content/sponsors.json",
-      "labelField": "name",
-      "type": "sponsors"
-    },
-    {
       "id": "teamMembers",
       "title": "Team Members",
       "file": "[[workspace]]/.frontmatter/content/people.json",
