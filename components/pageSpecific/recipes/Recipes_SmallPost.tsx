@@ -49,9 +49,9 @@ const Recipes_SmallPost = ({
             </span>
           </div>
           <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} aria-label={title}>
-            <h2 className='mt-1 mb-0 pt-1 text-xl md:text-2xl font-semibold leading-none xl:leading-tight text-blue-dark'>
+            <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
               {title}
-            </h2>
+            </h3>
           </Link>
           <div className='flex-grow 2xl:flex-initial'>
             <div className='block'>
