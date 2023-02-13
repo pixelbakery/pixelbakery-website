@@ -21,7 +21,8 @@ function CaseStudies_OtherProjects_Card({ project }) {
           <Image
             alt={project.data.client + ' ' + project.data.title + ' ' + project.data.tags[0]}
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-            fill={true}
+            width={854}
+            height={480}
             className='object-cover object-center w-full h-full'
             placeholder='blur'
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}

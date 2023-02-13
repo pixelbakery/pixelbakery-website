@@ -93,7 +93,7 @@ function Work_Portfolio_Card({ project }) {
             },
           )}
         >
-          {/* <ReactPlayer
+          <ReactPlayer
             muted={true}
             playsinline={true}
             loop={true}
@@ -118,7 +118,7 @@ function Work_Portfolio_Card({ project }) {
                 },
               },
             }}
-          /> */}
+          />
         </div>
         {/* This is the Scrim that sits on top of videos */}
         <div

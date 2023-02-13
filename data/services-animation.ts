@@ -18,7 +18,7 @@ export default [
   },
   {
     service: 'Educational',
-    desc: 'Nothing promotes understanding and learning like animation. Making memoral and engaging educational pieces drives memory retention and helps break down complex ideas into something easy to understand.',
+    desc: 'Nothing promotes understanding and learning like animation. Making memorable and engaging educational pieces drives memory retention and helps break down complex ideas into something easy to understand.',
     icon: '🍄',
   },
   {
