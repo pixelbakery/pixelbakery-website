@@ -59,13 +59,13 @@
     "react-hook-form": "^7.35.0",
     "react-number-format": "^4.9.3",
     "react-obfuscate": "^3.6.8",
-    "react-player": "2.11.0",
+    "react-player": "^2.11.0",
     "react-query": "^3.34.0",
     "react-toastify": "^9.0.8",
     "remark-gfm": "3.0.1",
     "sharp": "^0.31.3",
     "swr": "^2.0.0",
-    "yup": "0.32.11",
+    "yup": "1.0.0",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
