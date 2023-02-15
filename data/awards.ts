@@ -1,5 +1,29 @@
 export default [
   {
+    award: "AAF Judge's Citation",
+    project: 'Onyx Coffee Process',
+    category: 'animation',
+    client: 'Onyx Coffee Lab',
+  },
+  {
+    award: 'Gold ADDY',
+    project: 'Onyx Coffee Process',
+    category: 'animation',
+    client: 'Onyx Coffee Lab',
+  },
+  {
+    award: 'Awwwards Honorable Mention',
+    project: 'Pixel Bakery Website',
+    category: 'web design',
+    client: 'Pixel Bakery',
+  },
+  {
+    award: 'Gold ADDY',
+    project: 'Pixel Bakery Website',
+    category: 'web design',
+    client: 'Pixel Bakery',
+  },
+  {
     award: 'Gold ADDY',
     project: 'Donut Shop Website',
     category: 'animation',
