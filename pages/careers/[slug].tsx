@@ -85,6 +85,11 @@ export default function JobsPage({ slug, source, frontMatter }) {
                   />
                 </div>
               </div>
+              {!frontMatter.active ? (
+                <p className=' font-bold italic text-2xl'>Sorry, this position has been filled.</p>
+              ) : (
+                ''
+              )}
               <p className='text-sm italic mt-0 pt-0'>
                 posted on <DateFormatter dateString={frontMatter.date} />:
               </p>
@@ -96,23 +101,26 @@ export default function JobsPage({ slug, source, frontMatter }) {
               <div className={markdownStyles['markdown']}>
                 <MDXRemote {...source} components={components} />
               </div>
-
-              <div className='flex flex-col justify-center mt-32'>
-                <H2AndLead
-                  headerColor='blue-dark'
-                  leadColor='peach'
-                  headerText={'Does that sound like you?'}
-                  leadText={'great, get at it.'}
-                />
-                <Button_Filled
-                  text='apply for position'
-                  bgColor={'pink'}
-                  textColor={'pink-lighter'}
-                  chevronDirection='right'
-                  link={'/careers/application'}
-                  center={false}
-                />
-              </div>
+              {!frontMatter.active ? (
+                ''
+              ) : (
+                <div className='flex flex-col justify-center mt-32'>
+                  <H2AndLead
+                    headerColor='blue-dark'
+                    leadColor='peach'
+                    headerText={'Does that sound like you?'}
+                    leadText={'great, get at it.'}
+                  />
+                  <Button_Filled
+                    text='apply for position'
+                    bgColor={'pink'}
+                    textColor={'pink-lighter'}
+                    chevronDirection='right'
+                    link={'/careers/application'}
+                    center={false}
+                  />
+                </div>
+              )}
               <div className='pt-12'>
                 <Link
                   hrefLang={'en-US'}
@@ -144,7 +152,7 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
-
+  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
       slug: params.slug,

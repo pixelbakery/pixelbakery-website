@@ -3,17 +3,12 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
-import Link from 'next/link'
 
 function Careers_Breadwinners() {
   return (
-    <PageSection
-      id='brand-ambassador'
-      color='blue-dark'
-      className=' py-0 lg:py-4 xl:py-12 xl:mt-24'
-    >
+    <PageSection id='brand-ambassador' color='blue-dark'>
       <InnerWrapper>
-        <H2 className='text-cream text-2xl'>Brand Ambassadors Program</H2>
+        <H2 color='cream'>Brand Ambassadors Program</H2>
         <Lead className='text-pink text-xl'>
           If you’re looking for some extra cash in your pocket and a really fun and fulfilling side
           hustle with little commitment, this opportunity is for you.
