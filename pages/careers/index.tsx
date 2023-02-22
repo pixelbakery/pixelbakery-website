@@ -24,9 +24,7 @@ import {
 } from '@careers/index'
 
 const Careers = ({ allJobs }) => {
-  const openPositions = allJobs.filter(
-    (job) => job.data.openPositions && job.data.active && !job.data.internship,
-  )
+  const openPositions = allJobs.filter((job) => job.data.active && !job.data.internship)
   const internships = allJobs.filter((job) => job.data.internship && job.data.active)
 
   return (
@@ -60,7 +58,7 @@ export function getStaticProps() {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(JOBS_PATH, filePath))
       const { data } = matter(source)
-
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
         filePath,

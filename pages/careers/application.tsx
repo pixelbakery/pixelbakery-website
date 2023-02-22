@@ -73,7 +73,7 @@ export function getStaticProps() {
     .map((filePath) => {
       const source = fs.readFileSync(path.join(JOBS_PATH, filePath))
       const { content, data } = matter(source)
-
+      data.date = JSON.parse(JSON.stringify(data.date))
       return {
         content,
         data,

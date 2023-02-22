@@ -5,6 +5,72 @@
   "frontMatter.taxonomy.seoDescriptionLength": 155,
   "frontMatter.taxonomy.contentTypes": [
     {
+      "name": "_jobs",
+      "pageBundle": false,
+      "previewPath": "careers",
+       "fields": [
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string",
+          "default": "_jobs",
+          "hidden": true
+        },
+        {
+          "title": "Job Title",
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Active Position",
+          "name": "active",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "Location",
+          "name": "location",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "Cover Image (Optional)",
+          "name": "coverImage",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Commitment",
+          "name": "commitment",
+          "type": "choice",
+          "choices": [
+            "",
+            "Full-Time",
+            "Part-Time",
+            "Full/Part-Time",
+            "Contractor",
+            "Other"
+          ]
+        },
+        {
+          "title": "Internship?",
+          "name": "internship",
+          "type": "boolean"
+        },
+        {
+          "title": "Publishing Date",
+          "name": "date",
+          "type": "string",
+          "default": "{{now}}",
+          "single": true,
+          "isPublishDate": true
+        }
+       ]
+    },
+    {
       "name": "_caseStudies",
       "pageBundle": false,
       "previewPath": "work/case-studies",
