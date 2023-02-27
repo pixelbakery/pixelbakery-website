@@ -20,7 +20,7 @@ function NextSEO_LocalBusiness() {
         id='https://pixelbakery.com'
         name='Pixel Bakery Design Studio'
         logo={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/logos/initials/png/600x600px_transparent/pb_logo_initials_peach_onTransparent.png`}
-        description='A creative studio based out of Nebraska focused on animation, explainer videos, motion design, product photography, and commercial video production.'
+        description='A creative studio based out of Nebraska focused on animation, animated explainer videos, explainer videos, motion design, product photography, and commercial video production.'
         url='https://pixelbakery.com'
         telephone='402-302-0323'
         makesOffer={itemsOffered}

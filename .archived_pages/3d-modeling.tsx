@@ -7,7 +7,7 @@ import Services_SEO from '@services/Services_SEO'
 
 export default function Services_3dModeling() {
   const desc =
-    'Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.'
+    'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.'
   return (
     <Main>
       <Services_SEO serviceName='3D Modeling' description={desc} path='animation' />
