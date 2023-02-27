@@ -12,7 +12,7 @@ export default function Services_CreativeStrategy() {
           Bakery is all about strategizing the best way to deliver your message. Before any
           pre-production on a project begins, PB develops a communication strategy and creative
           brief based on a client's goals, pain points, and ideas.`
-  ;('Pixel Bakery is a multidisciplinary production studio focused on animation, motion design, and commercial film production.')
+  ;('Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.')
   return (
     <Main>
       <Services_SEO serviceName='Creative Strategy' description={desc} path='creative-strategy' />
