@@ -20,9 +20,7 @@ const ServicesOverview_AnimatedExplainers = () => {
             width='100%'
             height='100%'
             className='bg-pink'
-            url={[
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAnimation_ProductPhotography.mp4`,
-            ]}
+            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAnimation_ProductPhotography.mp4`}
             config={{
               file: {
                 attributes: {

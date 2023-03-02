@@ -19,9 +19,7 @@ function ServicesOverview_CreativeStrategy() {
               width='100%'
               height='100%'
               className='bg-blue'
-              url={[
-                `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.mp4`,
-              ]}
+              url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_CreativeStrategy.mp4`}
               config={{
                 file: {
                   attributes: {
