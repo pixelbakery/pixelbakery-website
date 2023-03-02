@@ -7,6 +7,16 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/services/animated-video-explainers',
+    destination: 'https://pixelbakery.com/services/animated-explainer-videos',
+    permanent: true,
+  },
+  {
+    source: '/animated-explainer-videos',
+    destination: 'https://pixelbakery.com/services/animated-explainer-videos',
+    permanent: true,
+  },
+  {
     source: '/education/tutorials/how-to-shorten-an-audio-file-to-fit-a-video',
     destination: '/education/tutorials/how-to-shorten-an-audio-file',
     permanent: true,

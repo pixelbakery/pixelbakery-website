@@ -18,10 +18,7 @@ function ServicesOverview_SocialMedia() {
             width='100%'
             height='100%'
             className='bg-yellow'
-            url={[
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.webm`,
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`,
-            ]}
+            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`}
             config={{
               file: {
                 attributes: {
