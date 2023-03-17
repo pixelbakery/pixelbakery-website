@@ -3,7 +3,7 @@ import { Cart } from '@chec/commerce.js/types/cart'
 import { CheckoutToken } from '@chec/commerce.js/types/checkout-token'
 import { Live } from '@chec/commerce.js/types/live'
 import { ShippingMethod } from '@chec/commerce.js/types/shipping-method'
-import create from 'zustand'
+import { create } from 'zustand'
 import commerce from '@lib/commerce'
 
 type CheckoutState = {
