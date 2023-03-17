@@ -2,13 +2,11 @@ import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import InnerWrapper from '@parts/InnerWrapper'
 import dynamic from 'next/dynamic'
-
 import cn from 'classnames'
 import { PrevButton, NextButton, SlideProgression } from '@parts/carousel/Carousel_Buttons'
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
-import Carousel_Slide from '@parts/carousel/Carousel_Slide'
 
 type CarouselProps = {
   slides: Array<any>
@@ -112,7 +110,7 @@ const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: Ca
         )}
         ref={emblaRef}
       >
-        <div className='flex w-full '>
+        <div className='flex w-full aspect-h-9/16 relative'>
           {slides.map((slide, i) => {
             return <SetSlide slide={slide} />
           })}
@@ -132,9 +130,10 @@ const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: Ca
 // SLIDE COMPONENT
 const SetSlide = ({ slide }) => {
   return (
-    <div className='cursor-grab -mt-2 ml-1 mr-2 relative  grow-0 shrink-0  w-[86%] sm:w-[45%] lg:w-[30%] '>
-      <ReactPlayer
+    <div className=' cursor-grab -mt-2 ml-1 mr-2   grow-0 shrink-0  w-[86%] sm:w-[45%] lg:w-[30%] aspect-9/16'>
+      {/* <ReactPlayer
         url={[`${ImgPrefix}${slide.videoPath}.webm`, `${ImgPrefix}${slide.videoPath}.mp4`]}
+        src={`${ImgPrefix}${slide.videoPath}.mp4`}
         poster={`${ImgPrefix}${slide.videoPath}.jpg`}
         playsinline={true}
         className={' rounded-lg  cursor-pointer'}
@@ -142,10 +141,18 @@ const SetSlide = ({ slide }) => {
         width={'100%'}
         height={'100%'}
         attributes={[{ poster: `${ImgPrefix}${slide.videoPath}.jpg` }]}
+      /> */}
+      <ReactPlayer
+        url={`${ImgPrefix}${slide.videoPath}.mp4`}
+        width='100%'
+        poster={`${ImgPrefix}${slide.videoPath}.jpg`}
+        // light={`${ImgPrefix}${slide.videoPath}.jpg`}
+        height={'100%'}
+        controls={true}
+        muted={false}
+        playsinline={false}
+        attributes={[{ poster: `${ImgPrefix}${slide.videoPath}.jpg` }]}
       />
-      <span className='w-full flex flex-col justify-center text-center text-cream text-md -z-10'>
-        Loading...
-      </span>
     </div>
   )
 }
