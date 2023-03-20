@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export default async function fetcher<JSON = any>(
   input: RequestInfo,
   init?: RequestInit,

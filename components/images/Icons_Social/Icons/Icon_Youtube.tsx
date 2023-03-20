@@ -1,10 +1,9 @@
 import { SVGProps } from 'react'
 interface SVGRProps {
   title?: string
-  titleId?: string
 }
 
-const SvgYoutube = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgYoutube = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
@@ -12,7 +11,6 @@ const SvgYoutube = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGR
     fill='currentColor'
     className='youtube_svg__bi youtube_svg__bi-youtube'
     viewBox='0 0 16 16'
-    // aria-labelledby={titleId}
     {...props}
   >
     {title ? <title>{title}</title> : null}

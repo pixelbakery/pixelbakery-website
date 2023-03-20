@@ -24,7 +24,7 @@ export default function Navbar() {
   const udio = useRef(null)
 
   const el = useRef()
-  const q = gsap.utils.selector(el)
+  // const q = gsap.utils.selector(el)
   //logo hover
 
   function handleMouseEnterLogo(e) {

@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 import { Fragment } from 'react'

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-string-refs */
 import React, { useEffect, useMemo, useState } from 'react'
 import { NextPage } from 'next'
@@ -24,7 +25,6 @@ import Main from '@parts/Main'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Navigation_Store from '@nav/Navigation_Store'
-import NoIndex from '@parts/NoIndex'
 import { NextSeo } from 'next-seo'
 
 export type CheckoutSchema = {

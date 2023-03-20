@@ -1,18 +1,18 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-import { motion, useScroll, useTransform, MotionValue, Variants } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { useRef } from 'react'
 import cn from 'classnames'
 import H3 from '@typography/H3'
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance])
 }
-interface Home_Portfolio_Card {
+interface Props {
   bgColor: string
   bgPosition: string
   project: any
 }
-function Home_Portfolio_Card({ bgColor, bgPosition, project }: Home_Portfolio_Card) {
+function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref })
   const y = useParallax(scrollYProgress, 10)

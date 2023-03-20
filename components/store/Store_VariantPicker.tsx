@@ -1,4 +1,4 @@
-const Store_VariantPicker = ({ variantGroups, value, onChange, ...passthrough }) => (
+const Store_VariantPicker = ({ variantGroups, onChange, ...passthrough }) => (
   <div {...passthrough}>
     {variantGroups.map((group) => (
       <div key={group.id}>

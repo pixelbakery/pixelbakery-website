@@ -1,4 +1,5 @@
-import React, { ReactNode, PropsWithChildren } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { ReactNode } from 'react'
 import cn from 'classnames'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'

@@ -14,12 +14,11 @@ export default function LogoAnimation_GetStarted_Form() {
     register,
     handleSubmit,
     resetField,
-    setError,
-    formState: { errors },
+    // setError,
   } = useForm()
   // Handle the submit
   const onSubmit = (data) => {
-    // SendToSendgrid(data)
+    SendToSendgrid(data)
     SendToMonday_LogoAnimation(data)
     SendToMailchimp(data)
     // SendToMailchimp(data)

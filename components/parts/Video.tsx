@@ -1,7 +1,6 @@
 import Lead from '@typography/Lead'
 import ReactPlayer from 'react-player/lazy'
 import cn from 'classnames'
-import Loading from '@utility/Loading'
 interface video {
   url: string
   title?: string

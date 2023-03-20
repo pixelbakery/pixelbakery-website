@@ -32,6 +32,7 @@ function CanIAddToCart(variantId) {
   currentVariant = variantId
 }
 const Store_Product: NextPage = ({ product }: { product: any }) => {
+  // eslint-disable-next-line no-unused-vars
   const [soldOut, setSoldOut] = useState(product.conditionals.is_sold_out)
 
   const [variant, setVariant] = useState({})

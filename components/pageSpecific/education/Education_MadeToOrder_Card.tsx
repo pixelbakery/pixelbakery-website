@@ -2,20 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
-type Props = {
-  title: string
-  coverImage: string
-  date: string
-  categories: Array<string>
-  excerpt: string
-  author: any
-  as: string
-  href: string
-  slug: string
-  aspectW: string
-  aspectY: string
-}
-
 const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
   return (
     <Link

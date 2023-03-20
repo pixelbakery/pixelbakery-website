@@ -2,7 +2,6 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Careers_Card from './Careers_Card'
 import cn from 'classnames'
-import H2 from '@typography/H2'
 import Link from 'next/link'
 import H2AndLead from '@typography/H2AndLead'
 function Careers_OpenPositions({ jobs, header, subheader }) {

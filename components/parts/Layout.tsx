@@ -10,6 +10,7 @@ import BackToTop from '@utility/BackToTop'
 
 type Props = {
   preview?: boolean
+  // eslint-disable-next-line no-undef
   children: React.ReactNode
 }
 // Layout includes the standard navbar at the top

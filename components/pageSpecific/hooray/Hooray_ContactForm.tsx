@@ -36,13 +36,7 @@ function Surprise_ContactForm() {
   // REACT-HOOK-FORM
   //////////////////
 
-  const {
-    register,
-    handleSubmit,
-    resetField,
-    setError,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit, resetField, setError } = useForm()
 
   // Handle the submit
   const onSubmit = (data) => {

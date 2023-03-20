@@ -1,11 +1,11 @@
 import H3 from '@typography/H3'
 
-interface LogoAnimation_Descriptions_Card {
+interface Props {
   header: string
   desc: string
 }
 
-function LogoAnimation_Descriptions_Card({ header, desc }: LogoAnimation_Descriptions_Card) {
+function LogoAnimation_Descriptions_Card({ header, desc }: Props) {
   return (
     <div className=''>
       <H3 color='blue'>{header}</H3>

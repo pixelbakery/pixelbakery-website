@@ -1,28 +1,28 @@
 const Video = dynamic(() => import('@parts/Video'), { ssr: false, loading: () => <Loading /> })
 import H1 from '@typography/H1'
 import Pill from '@parts/Pill'
-import Image from 'next/image'
+// import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Loading from '@utility/Loading'
 import Link from 'next/link'
 // import Player from 'components/player/Player'
 function CaseStudies_Header({ ...props }) {
-  const Logo = () => {
-    if (props.logo === undefined) return
-    else
-      return (
-        <div className='relative w-32 h-32'>
-          <Link hrefLang={'en-US'} href={`${props.website}`}>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
-              fill={true}
-              className='object-cover object-center w-full h-full'
-              alt={`logo for ${props.client}`}
-            />
-          </Link>
-        </div>
-      )
-  }
+  // const Logo = () => {
+  //   if (props.logo === undefined) return
+  //   else
+  //     return (
+  //       <div className='relative w-32 h-32'>
+  //         <Link hrefLang={'en-US'} href={`${props.website}`}>
+  //           <Image
+  //             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/clients/${props.logo}`}
+  //             fill={true}
+  //             className='object-cover object-center w-full h-full'
+  //             alt={`logo for ${props.client}`}
+  //           />
+  //         </Link>
+  //       </div>
+  //     )
+  // }
   return (
     <section
       className='pb-12 lg:pb-24  px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4  bg-cream'

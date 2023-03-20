@@ -1,16 +1,11 @@
-import H2 from '@typography/H2'
-import PageSection from '@parts/PageSection'
-import Lead from '@typography/Lead'
-import InnerWrapper from '@parts/InnerWrapper'
 // import { TwitchPlayer } from 'react-twitch-embed'
-import { useRef } from 'react'
-import Loading from '@utility/Loading'
+// import { useRef } from 'react'
 
 const About_Twitch = () => {
-  const embed = useRef()
-  const handleReady = (e) => {
-    embed.current = e
-  }
+  // const embed = useRef()
+  // const handleReady = (e) => {
+  //   embed.current = e
+  // }
   return (
     <>
       {/* <PageSection className='py-0 my-0 pb-0 mb-0 lg:pb-0 lg:mb-0' id={'twitch-intro'}>

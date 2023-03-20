@@ -144,7 +144,6 @@ function Contact_ContactForm_Form() {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
     control,
   } = useForm<FormInputs>(setFormOptions as any)
 

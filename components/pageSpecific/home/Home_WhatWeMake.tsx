@@ -4,7 +4,7 @@ import H2 from '@typography/H2'
 
 import { useRef } from 'react'
 
-import { m, Variants, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { m, Variants } from 'framer-motion'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
 const cardVariants: Variants = {
@@ -56,15 +56,15 @@ const section: Variants = {
   },
 }
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance])
-}
+// function useParallax(value: MotionValue<number>, distance: number) {
+//   return useTransform(value, [0, 1], [-distance, distance])
+// }
 
 function Home_WhatWeMake() {
   const ref = useRef(null)
 
-  const { scrollYProgress } = useScroll({ target: ref })
-  const y = useParallax(scrollYProgress, -50)
+  // const { scrollYProgress } = useScroll({ target: ref })
+  // const y = useParallax(scrollYProgress, -50)
   return (
     <LazyMotion features={domAnimation}>
       <PageSection id={'services-cta'} className={'relative'}>

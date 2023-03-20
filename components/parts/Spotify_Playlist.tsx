@@ -8,10 +8,7 @@ import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
 import H3 from '@typography/H3'
 
-type spotify = {
-  spotify: any
-}
-export default function Spotify_Playlist(spotify) {
+export default function Spotify_Playlist() {
   const { data } = useSWR<Playlist>('/api/playlists', fetcher)
 
   if (!data) {
@@ -58,7 +55,7 @@ export default function Spotify_Playlist(spotify) {
               className='bg-peach  text-cream px-8 py-1 my-1 rounded-xl font-semibold drop-shadow-sm inline-block duration-300 transition-all ease-in-out hover:drop-shadow-xs hover:scale-98'
               href={data.external_urls.spotify}
               target='_blank'
-              rel='noopener'
+              rel='noopener noreferrer'
             >
               Play <span className=' my-auto ml-3'>▶</span>
             </a>
@@ -74,7 +71,12 @@ export default function Spotify_Playlist(spotify) {
           <ul className='grid gap-1 xl:gap-2'>
             {data.tracksSelected.map((track, index) => (
               <li className='my-0' key={index}>
-                <a hrefLang={'en-US'} href={track.songUrl} target={'_blank'} rel='noopener'>
+                <a
+                  hrefLang={'en-US'}
+                  href={track.songUrl}
+                  target={'_blank'}
+                  rel='noopener noreferrer'
+                >
                   <div className='flex gap-1 xl:gap-x-4'>
                     <div className='relative h-12 w-12 overflow-hidden'>
                       <Image

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Lead from '@typography/Lead'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
@@ -173,9 +174,9 @@ function Careers_JobShadow_Form() {
       {/* <div className='invalid-feedback'>{errors.noParents?.message}</div> */}
       {errors ? (
         <ul>
-          {Object.entries(errors).map(([type, message]) => {
+          {Object.entries(errors).map(([type, message], index) => {
             return (
-              <li className='text-error font-semibold text-lg italic'>
+              <li className='text-error font-semibold text-lg italic' key={index}>
                 🚨 {Object.values(message)[0].toString()}
               </li>
             )

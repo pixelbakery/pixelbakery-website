@@ -11,7 +11,6 @@ import ServicesOverview_SocialMedia from '@services/ServicesOverview_SocialMedia
 import ServicesOverview_More from '@services/ServicesOverview_More'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 import H1 from '@typography/H1'
 
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {

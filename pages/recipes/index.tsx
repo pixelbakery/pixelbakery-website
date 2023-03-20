@@ -25,6 +25,7 @@ import Main from '@parts/Main'
 
 import InnerWrapper from '@parts/InnerWrapper'
 import Recipes_SEO from '@recipes/Recipes_SEO'
+import { Fragment } from 'react'
 // let counter = 0
 const featuredPostNo = 4 //sets how many posts should be shown at the top as cards
 const secondaryPostNo = 8
@@ -32,21 +33,23 @@ const secondaryPostNo = 8
 const getFeaturedPosts = ({ allPosts }) => {
   return allPosts.slice(0, featuredPostNo).map((post, index) => {
     return (
-      <Recipes_FeaturedPost
-        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-        href={`/recipes/[slug]`}
-        key={post.filePath}
-        title={post.data.title}
-        author={post.data.author.name}
-        categories={post.data.categories}
-        date={post.data.date}
-        aspectW={'4'}
-        aspectY={'3'}
-        coverImage={post.data.coverImage}
-        excerpt={post.data.excerpt}
-      />
-    );
-  });
+      <Fragment key={index}>
+        <Recipes_FeaturedPost
+          as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+          href={`/recipes/[slug]`}
+          key={post.filePath}
+          title={post.data.title}
+          author={post.data.author.name}
+          categories={post.data.categories}
+          date={post.data.date}
+          aspectW={'4'}
+          aspectY={'3'}
+          coverImage={post.data.coverImage}
+          excerpt={post.data.excerpt}
+        />
+      </Fragment>
+    )
+  })
 }
 
 const getSecondaryPosts = ({ allPosts }) => {
@@ -65,8 +68,8 @@ const getSecondaryPosts = ({ allPosts }) => {
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
       />
-    );
-  });
+    )
+  })
 }
 const Page_Recipes = ({ allPosts }) => {
   const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)

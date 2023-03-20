@@ -1,10 +1,5 @@
 import { NextSeo, BreadcrumbJsonLd, SocialProfileJsonLd } from 'next-seo'
 
-interface About_Team_SEO {
-  video: string
-  client: string
-}
-
 const About_Team_SEO = ({ frontMatter, slug }) => {
   const [firstName, lastName] = frontMatter.name.split(' ')
   let list = []
@@ -17,6 +12,7 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
 
   const objectArray = Object.entries(frontMatter.details)
   let details = [] as any
+  // eslint-disable-next-line no-unused-vars
   objectArray.forEach(([key, value]) => {
     details[Object.keys(value).toString()] = Object.values(value).toString()
   })

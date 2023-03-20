@@ -1,4 +1,4 @@
-//TODO: Add actual URLS
+/* eslint-disable import/no-anonymous-default-export */
 
 export default {
   Behance: 'https://www.behance.net/pixelbakerylnk',

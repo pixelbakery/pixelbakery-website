@@ -3,8 +3,7 @@ import { msToTime } from '@lib/helpers'
 
 export default async function handler(req, res) {
   const response = await getPlaylist()
-  const { tracks, name, description, images, href, external_urls, followers } =
-    await response.json()
+  const { tracks, name, description, images, external_urls, followers } = await response.json()
 
   const albumCoverImage = Object.keys(images).map(function (key) {
     return images[key].url

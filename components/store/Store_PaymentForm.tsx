@@ -1,7 +1,7 @@
-import { PaymentElement, useElements } from '@stripe/react-stripe-js'
+import { PaymentElement } from '@stripe/react-stripe-js'
 
 export default function Store_PaymentForm() {
-  const elements = useElements()
+  // const elements = useElements()
 
   return <PaymentElement />
 }

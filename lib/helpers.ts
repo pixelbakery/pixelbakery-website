@@ -13,14 +13,11 @@ export function RandomArrayItem(length) {
   return Math.floor(Math.random() * length)
 }
 export function SpacesToDashes(str: string) {
-  var str = 'Sonic Free Games'
   str = str.replace(/\s+/g, '-').toLowerCase()
   return str
 }
 export function msToTime(duration) {
-  let milliseconds = Math.floor((duration % 1000) / 100),
-    seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
+  let minutes = Math.floor((duration / (1000 * 60)) % 60),
     hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
 
   let showTime = ''

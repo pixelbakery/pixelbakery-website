@@ -6,7 +6,7 @@ import cn from 'classnames'
 import { PrevButton, NextButton, SlideProgression } from '@parts/carousel/Carousel_Buttons'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import { useCallback, useEffect, useState } from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 
 type CarouselProps = {
   slides: Array<any>
@@ -73,7 +73,7 @@ const slides = [
   },
 ]
 
-const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: CarouselProps) => {
+const NewCarousel = ({ slides, className }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState([])
   const [emblaRef, embla] = useEmblaCarousel({ loop: false })
@@ -112,7 +112,11 @@ const NewCarousel = ({ slides, objectFit, slideColor, textColor, className }: Ca
       >
         <div className='flex w-full aspect-h-9/16 relative'>
           {slides.map((slide, i) => {
-            return <SetSlide slide={slide} />
+            return (
+              <Fragment key={i}>
+                <SetSlide slide={slide} />
+              </Fragment>
+            )
           })}
         </div>
       </div>

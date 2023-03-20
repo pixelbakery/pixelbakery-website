@@ -155,7 +155,7 @@ function Onboarding_Contact_Form() {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
+    // reset,
     control,
   } = useForm<FormInputs>(setFormOptions as any)
 
