@@ -1,9 +1,9 @@
-import { ChevronRightIcon, DownloadIcon, CopyIcon } from '@images/UI_Icons'
+import { DownloadIcon, CopyIcon } from '@images/UI_Icons'
 import Close from '@images/Close'
 import { useEffect } from 'react'
 import Image from 'next/image'
 
-const Carousel_Modal = ({ src, w, h, alt }) => {
+const Carousel_Modal = ({ alt }) => {
   useEffect(() => {
     // if (!isActive) {
     //   document.body.classList.remove('overflow-y-hidden')
@@ -50,7 +50,7 @@ const Carousel_Modal = ({ src, w, h, alt }) => {
             <DownloadIcon className={'h-8 w-8'} />
           </a>
           <button
-            onClick={(e) =>
+            onClick={() =>
               navigator.clipboard.writeText('https://cdn.pixelbakery.com/img/placeholder01.png')
             }
             className='relative cursor-pointer hover-98 hover-shadow-none    text-cream '

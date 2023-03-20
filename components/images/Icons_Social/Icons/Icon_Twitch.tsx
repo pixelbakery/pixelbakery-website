@@ -1,10 +1,9 @@
 import { SVGProps } from 'react'
 interface SVGRProps {
   title?: string
-  titleId?: string
 }
 
-const SvgTwitch = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgTwitch = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'

@@ -9,7 +9,6 @@ type Props = {
   fullWidth?: boolean
   ref?: any
 }
-import { RefObject, useRef } from 'react'
 export default function PageSection({
   className,
   children,
@@ -18,7 +17,8 @@ export default function PageSection({
   disableSpacing,
   fullWidth,
   ref,
-}: React.PropsWithChildren<Props>) {
+}: // eslint-disable-next-line no-undef
+React.PropsWithChildren<Props>) {
   return (
     <section
       ref={ref}

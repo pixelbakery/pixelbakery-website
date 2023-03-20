@@ -4,7 +4,6 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons'
 import Lead from '@typography/Lead'
-import H3 from '@typography/H3'
 import Button_Filled from '@parts/Button_Filled'
 import H2 from '@typography/H2'
 interface PrevNext {
@@ -15,6 +14,7 @@ interface PrevNext {
 }
 
 function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
+  // eslint-disable-next-line no-unused-vars
   const [firstName, lastName] = name.split(' ')
   if (active) {
     return (

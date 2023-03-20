@@ -6,11 +6,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import { useForm } from 'react-hook-form'
 
 function Education_TutorialRequests() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit } = useForm()
   const onSubmit = (data) => SendToMonday_Tutorials(data)
 
   return (

@@ -6,24 +6,6 @@ import Home_Portfolio_Card from './Home_Portfolio_Card'
 
 import { m, Variants } from 'framer-motion'
 import { LazyMotion, domAnimation } from 'framer-motion'
-const item: Variants = {
-  offscreen: {
-    display: 'hidden',
-    opacity: 0,
-    transition: {
-      duration: 0.33,
-      ease: 'easeInOut',
-    },
-  },
-  onscreen: {
-    opacity: 100,
-    display: 'block',
-    transition: {
-      duration: 0.33,
-      ease: 'easeInOut',
-    },
-  },
-}
 
 const section: Variants = {
   offscreen: {

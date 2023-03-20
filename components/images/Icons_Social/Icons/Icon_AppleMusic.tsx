@@ -1,10 +1,9 @@
 import { SVGProps } from 'react'
 interface SVGRProps {
   title?: string
-  titleId?: string
 }
 
-const SvgFacebook = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgFacebook = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
@@ -12,10 +11,9 @@ const SvgFacebook = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVG
     fill='currentColor'
     className='facebook_svg__bi facebook_svg__bi-facebook'
     viewBox='0 0 16 16'
-    aria-labelledby={titleId}
     {...props}
   >
-    {title ? <title id={titleId}>{title}</title> : null}
+    {title ? <title>{title}</title> : null}
     <g>
       <path
         d='M16,4.4c0-0.2,0-0.3,0-0.5c0-0.4,0-0.7-0.1-1.1c-0.1-0.4-0.2-0.7-0.3-1C15.4,1.6,15.2,1.3,15,1c-0.2-0.2-0.5-0.5-0.9-0.6

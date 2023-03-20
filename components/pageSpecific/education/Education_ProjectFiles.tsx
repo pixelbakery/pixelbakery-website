@@ -4,8 +4,6 @@ import H2 from '@typography/H2'
 
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H3 from '@typography/H3'
-import Pill from '@parts/Pill'
 // import cn from 'classnames'
 // import { useState } from 'react'
 // import StrokeText from '@parts/StrokeText'

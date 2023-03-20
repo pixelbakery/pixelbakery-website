@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { getTodaysDate } from '@lib/helpers'
 import mail from '@sendgrid/mail'
 const busboy = require('busboy')

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Html, Head, Main, NextScript } from 'next/document'
 
 import { FB_PIXEL_ID } from '../lib/fpixel'

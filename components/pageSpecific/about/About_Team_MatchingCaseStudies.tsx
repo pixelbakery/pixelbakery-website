@@ -1,12 +1,11 @@
-import Button_Filled from '@parts/Button_Filled'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
-import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import H2 from '@typography/H2'
 import { Fragment } from 'react'
 import CaseStudies_OtherProjects_Card from '@caseStudies/CaseStudies_OtherProjects_Card'
 
 const About_Team_MatchingCaseStudies = ({ matchingCaseStudies, name }) => {
+  // eslint-disable-next-line no-unused-vars
   const [firstName, lastName] = name.split(' ')
 
   return (

@@ -14,6 +14,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment } from 'react'
 
 const Carousel = ({ slides }) => {
+  // eslint-disable-next-line no-unused-vars
   const [viewportRef, embla] = useEmblaCarousel({
     align: 'start',
     loop: true,
@@ -62,36 +63,41 @@ const VideoSlide = ({ poster, mp4, webm }) => {
 }
 
 const slides = [
-  <ImageSlide slide={SNACK_Social_0} />,
+  <ImageSlide slide={SNACK_Social_0} key={1} />,
   <VideoSlide
     poster={'/img/case-studies/snacklins/SNACK_Social_8.jpg'}
     mp4={'/img/case-studies/snacklins/SNACK_Social_8.mp4'}
     webm={'/img/case-studies/snacklins/SNACK_Social_8.webm'}
+    key={2}
   />,
-  <ImageSlide slide={SNACK_Social_2} />,
+  <ImageSlide slide={SNACK_Social_2} key={3} />,
   <VideoSlide
+    key={4}
     poster={'/img/case-studies/snacklins/SNACK_Social_10.jpg'}
     mp4={'/img/case-studies/snacklins/SNACK_Social_10.mp4'}
     webm={'/img/case-studies/snacklins/SNACK_Social_10.webm'}
   />,
-  <ImageSlide slide={SNACK_Social_3} />,
+  <ImageSlide slide={SNACK_Social_3} key={5} />,
   <VideoSlide
     poster={'/img/case-studies/snacklins/SNACK_Social_11.jpg'}
     mp4={'/img/case-studies/snacklins/SNACK_Social_11.mp4'}
     webm={'/img/case-studies/snacklins/SNACK_Social_11.webm'}
+    key={6}
   />,
-  <ImageSlide slide={SNACK_Social_4} />,
+  <ImageSlide slide={SNACK_Social_4} key={7} />,
   <VideoSlide
     poster={'/img/case-studies/snacklins/SNACK_Social_9.jpg'}
     mp4={'/img/case-studies/snacklins/SNACK_Social_9.mp4'}
     webm={'/img/case-studies/snacklins/SNACK_Social_9.webm'}
+    key={8}
   />,
-  <ImageSlide slide={SNACK_Social_5} />,
-  <ImageSlide slide={SNACK_Social_6} />,
+  <ImageSlide slide={SNACK_Social_5} key={9} />,
+  <ImageSlide slide={SNACK_Social_6} key={10} />,
   <VideoSlide
     poster={'/img/case-studies/snacklins/SNACK_Social_12.jpg'}
     mp4={'/img/case-studies/snacklins/SNACK_Social_12.mp4'}
     webm={'/img/case-studies/snacklins/SNACK_Social_12.webm'}
+    key={11}
   />,
 ]
 const CaseStudies_Gallery = () => {

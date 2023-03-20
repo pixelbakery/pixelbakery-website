@@ -1,6 +1,4 @@
-import { SVGProps } from 'react'
-
-const ChevronRightIcon = (props) => {
+const ChevronRightIcon = () => {
   return (
     <svg
       viewBox='0 0 9.6 16'

@@ -31,12 +31,12 @@ export default async function sendJobApplication(req, res) {
 }
 
 function parseReq(req: any): Promise<any> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const fields = {}
     const files = {}
     const bb = busboy({ headers: req.headers })
     bb.on('file', (name, file, info) => {
-      const { filename, encoding, mimeType, ...rest } = info
+      const { filename, encoding, mimeType } = info
       let fileData = null
       file
         .on('data', (data) => {
@@ -57,7 +57,7 @@ function parseReq(req: any): Promise<any> {
           }
         })
     })
-    bb.on('field', (name, val, info) => {
+    bb.on('field', (name, val) => {
       fields[name] = val
     })
     bb.on('close', () => {

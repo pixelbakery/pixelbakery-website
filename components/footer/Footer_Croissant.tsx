@@ -23,12 +23,7 @@ function Footer_Croissant({ onModalUpdate }) {
   // REACT-HOOK-FORM
   //////////////////
 
-  const {
-    register,
-    handleSubmit,
-    resetField,
-    formState: { errors },
-  } = useForm()
+  const { register, handleSubmit, resetField } = useForm()
 
   // Handle the submit
   const onSubmit = (data) => {

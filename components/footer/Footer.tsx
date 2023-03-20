@@ -16,7 +16,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import services from '@data/services'
 
-import { m, Variants } from 'framer-motion'
+import { m } from 'framer-motion'
 import { LazyMotion } from 'framer-motion'
 import { domMax } from 'framer-motion'
 export const Footer: NextPage = () => {
@@ -25,25 +25,12 @@ export const Footer: NextPage = () => {
   const updateModal = () => {
     setTestModal(!testModalOpen)
   }
-  function template({ rotate, x }) {
-    return `rotate(${rotate}) translateX(${x})`
-  }
   // GSAP FOR MODAL
   useEffect(() => {
     if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
     else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
     return () => {}
   })
-  const card1: Variants = {
-    animate: {
-      rotate: 12,
-      transition: {
-        repeat: Infinity,
-        duration: 0.44,
-        ease: 'easeInOut',
-      },
-    },
-  }
 
   const year = new Date().getFullYear()
   return (

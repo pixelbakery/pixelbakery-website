@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Shimmer from '@lib/Shimmer'
 
-const Carousel_Slide = ({ index, slide }) => {
+const Carousel_Slide = ({ slide }) => {
   return (
     <div className=' bg-wine-200 grow-0 shrink-0 w-full mr-2 ml-1'>
       <Image

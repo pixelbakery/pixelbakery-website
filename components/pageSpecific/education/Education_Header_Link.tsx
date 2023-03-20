@@ -1,7 +1,5 @@
-import next from 'next'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
-import H3 from '@typography/H3'
 import Lead from '@typography/Lead'
 
 type Props = {

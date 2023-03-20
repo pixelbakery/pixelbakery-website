@@ -3,7 +3,7 @@ import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '@parts/PageSection'
 import commerce from '@lib/commerce'
 import Link from 'next/link'
-import useCart from '@hooks/useCart'
+
 const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
   loading: () => (
     <PageHeader_LoadingContent header={'Company Store'} subheader={'Freshly baked every morning'} />
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 }
 
 const StorePage: NextPage = ({ products }: any) => {
-  const { data: cart, refetch } = useCart()
+  // const { data: cart, refetch } = useCart()
 
   return (
     <Main id='page-store' className='min-w-screen'>

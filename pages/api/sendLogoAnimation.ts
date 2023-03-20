@@ -1,7 +1,7 @@
 import mail from '@sendgrid/mail'
 
 mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
-
+// eslint-disable-next-line no-unused-vars
 export default async function sendOnboarding(req, res) {
   const body = JSON.parse(req.body)
   const message = `

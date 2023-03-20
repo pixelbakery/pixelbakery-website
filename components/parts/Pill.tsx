@@ -1,14 +1,15 @@
+/* eslint-disable no-unused-vars */
 import cn from 'classnames'
 // must pass a size: xl, lg, md, sm
 //must pass a color without tailwind vernacular
-interface Pill {
+interface PillProps {
   text: string
   bgColor: string
   textColor: string
   size: string
   className?: string
 }
-export default function Pill({ text, bgColor, textColor, size, className }: Pill) {
+export default function Pill({ text, bgColor, textColor, size, className }: PillProps) {
   let px = '',
     py = '',
     fontWeight = '',

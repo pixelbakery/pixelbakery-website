@@ -1,5 +1,4 @@
 import { useEffect, SVGProps } from 'react'
-import { ReactDOM } from 'react'
 import cn from 'classnames'
 type Props = {
   index: number
@@ -12,13 +11,12 @@ type Props = {
 }
 interface SVGRProps {
   title?: string
-  titleId?: string
 }
 function debounce(fn, ms) {
   let timer
-  return (_) => {
+  return () => {
     clearTimeout(timer)
-    timer = setTimeout((_) => {
+    timer = setTimeout(() => {
       timer = null
       fn.apply(this)
     }, ms)

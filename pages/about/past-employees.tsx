@@ -44,9 +44,9 @@ const Page_PastEmployees = ({ allPeople }) => {
             during their tenure here. We couldn't be more proud of them and their achievements.
           </p>
           <div className='w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-8 mt-12'>
-            {allPeople.map((p) => {
+            {allPeople.map((p, index) => {
               return (
-                <div className='col-span-1'>
+                <div className='col-span-1' key={index}>
                   <Link
                     hrefLang={'en-US'}
                     as={`/about/${p.filePath.replace(/\.mdx?$/, '')}`}

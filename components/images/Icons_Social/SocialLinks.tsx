@@ -6,9 +6,9 @@ import { CapitalizeWord } from '@lib/helpers'
 
 const getLinks = socialLinks
 
-const Icon = ({ icon, title, titleId, className }) => {
+const Icon = ({ icon, title, className }) => {
   const TheIcon = icon
-  return <TheIcon className={className} title={title} titleId={titleId} />
+  return <TheIcon className={className} title={title} />
 }
 // Object Prop: iconName (mandatory)
 // className Props: color, textSize, width, height. Must be tailwind-defined classes.
@@ -36,7 +36,6 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
             className={cn(props.height, props.width)}
             icon={Icons[`${CapitalizeWord(iconName)}`]}
             title={`${iconName}`}
-            titleId={`${iconName}`}
           />
         </i>
       </Link>

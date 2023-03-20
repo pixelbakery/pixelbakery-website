@@ -1,10 +1,9 @@
 import { SVGProps } from 'react'
 interface SVGRProps {
   title?: string
-  titleId?: string
 }
 
-const SvgVimeo = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgVimeo = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
@@ -12,7 +11,6 @@ const SvgVimeo = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRPr
     fill='currentColor'
     className='vimeo_svg__bi vimeo_svg__bi-vimeo'
     viewBox='0 0 16 16'
-    // aria-labelledby={titleId}
     {...props}
   >
     {title ? <title>{title}</title> : null}

@@ -1,4 +1,4 @@
-import Button_Filled from '@parts/Button_Filled'
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import Lead from '@typography/Lead'
 import cn from 'classnames'
 import { useState } from 'react'
@@ -7,7 +7,7 @@ import NumberFormat from 'react-number-format'
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
-async function handleDoubleDown(e) {
+async function handleDoubleDown() {
   for (let i = 1; i < 4; i++) {
     await sleep(400)
     window.open('https://youtu.be/OmIGBB2m-_I?t=70', '_blank')
@@ -36,7 +36,7 @@ export const ContactForm_NotInterested = () => {
 }
 
 export const ContactForm_ThankYou = () => {
-  return <Lead>Thanks for your message 😉  We&apos;ll get back to you asap. </Lead>
+  return <Lead>Thanks for your message 😉. We&apos;ll get back to you asap. </Lead>
 }
 
 export const ContactForm_Newsletter = ({ register }) => {

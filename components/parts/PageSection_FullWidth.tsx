@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import cn from 'classnames'
 type Props = {
   className?: string

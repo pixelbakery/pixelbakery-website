@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 import cn from 'classnames'
 import Nav_FullscreenMenu from './Nav_FullscreenMenu'
-const Navigation_Store = ({}) => {
+const Navigation_Store = () => {
   const [isHamActive, setHamToggle] = useState(false)
   const { data: cart } = useCart()
 

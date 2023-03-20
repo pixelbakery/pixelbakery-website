@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import mailchimp from '@mailchimp/mailchimp_marketing'
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
@@ -54,5 +55,7 @@ export default async (req, res) => {
     )
 
     return res.status(201).json({ error: '' })
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }

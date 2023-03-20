@@ -9,6 +9,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment } from 'react'
 
 const Carousel = ({ slides }) => {
+  // eslint-disable-next-line no-unused-vars
   const [viewportRef, embla] = useEmblaCarousel({
     align: 'start',
     loop: true,

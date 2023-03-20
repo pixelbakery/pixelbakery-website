@@ -1,10 +1,9 @@
-import { SVGProps } from 'react'
-interface SVGRProps {
-  title?: string
-  titleId?: string
-}
+// import { SVGProps } from 'react'
+// interface SVGRProps {
+//   title?: string
+// }
 
-const CloseIcon = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const CloseIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className='h-5 w-5'

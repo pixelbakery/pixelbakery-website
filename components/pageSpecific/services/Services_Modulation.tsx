@@ -29,6 +29,7 @@ const Services_Modulation = () => {
               <a
                 href='https://docs.google.com/spreadsheets/d/12rkypJexTbrg5uxc-vjvKLloR_2BdPVboHR_0cDaOmM/edit?usp=sharing'
                 target={'_blank'}
+                rel={'noreferrer'}
               >
                 Here's
               </a>{' '}

@@ -2,7 +2,7 @@ import H1 from '@typography/H1'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
 
-function CaseStudies_Header_Alt({ ...props }) {
+function CaseStudies_Header_Alt() {
   const tags = ['copywriting', 'email campaigns', 'motion design', 'other things', 'more things']
   return (
     <section
@@ -27,7 +27,6 @@ function CaseStudies_Header_Alt({ ...props }) {
             {/* {props.client} */}
           </div>
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
-            {/* {props.projectName} */}
             Monthly Retainer
           </H1>
           <div className='mt-12'>

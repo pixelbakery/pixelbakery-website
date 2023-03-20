@@ -22,7 +22,7 @@ function CaseStudies_PrevNext({ prev, next }) {
             as={`/work/case-studies/${prev.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
             hrefLang={'en-US'}
-            aria-lable={`${prev.data.client} –  ${prev.data.title}`}
+            aria-label={`${prev.data.client} –  ${prev.data.title}`}
           >
             <div className='flex'>
               <div className='w-20 self-center text-peach rotate-180'>
@@ -43,7 +43,7 @@ function CaseStudies_PrevNext({ prev, next }) {
             as={`/work/case-studies/${next.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
             hrefLang={'en-US'}
-            aria-lable={`${next.data.client} –  ${next.data.title}`}
+            aria-label={`${next.data.client} –  ${next.data.title}`}
           >
             <div className='flex justify-end'>
               <div className='self-center'>

@@ -21,7 +21,7 @@ type CarouselProps = {
   className?: string
 }
 
-const Carousel = ({ slides, objectFit, slideColor, textColor, className }: CarouselProps) => {
+const Carousel = ({ slides, className }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState([])
   const [emblaRef, embla] = useEmblaCarousel({ loop: false })

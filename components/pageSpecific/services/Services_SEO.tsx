@@ -1,5 +1,5 @@
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
-import { CapitalizeWord, SpacesToDashes } from '@lib/helpers'
+import { CapitalizeWord } from '@lib/helpers'
 type Props = {
   serviceName: string
   description: string

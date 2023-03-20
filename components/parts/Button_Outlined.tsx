@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRightIcon, DownloadIcon, CloseIcon } from '@images/UI_Icons/index'
+import { ChevronRightIcon, DownloadIcon } from '@images/UI_Icons/index'
 import cn from 'classnames'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-function Button_Filled({ center, text, link, color, chevronDirection, className }: Props) {
+function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
   let chevronRotation = ''
   if (chevronDirection === 'right') {
     chevronRotation = ''
