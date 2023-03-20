@@ -50,12 +50,12 @@ function Nav_FullScreenMenu_RightCol({ update }) {
                 </Link>
               </li>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
-                <Link href={'/careers'} onClick={update}>
+                <Link href={'/logo-animation'} onClick={update}>
                   Motion Mixer
                 </Link>
               </li>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
-                <Link href={'/careers'} onClick={update}>
+                <Link href={'https://nebraskacreative.com'} onClick={update}>
                   Nebraska Creative
                 </Link>
               </li>
