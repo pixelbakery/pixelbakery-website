@@ -108,12 +108,12 @@ const redirectsArray = [
   },
   {
     source: '/zoom',
-    destination: 'https://unl.zoom.us/j/91258744342?pwd=aTlldnpybXk3ZFNLVkNuSStFaEFKZz09',
+    destination: 'https://zoom.us/j/99113515217?pwd=QWxPakttVlAyd3hwOWEwM2kwVGdBQT09',
     permanent: true,
   },
   {
     source: '/meet',
-    destination: 'https://unl.zoom.us/j/91258744342?pwd=aTlldnpybXk3ZFNLVkNuSStFaEFKZz09',
+    destination: 'https://zoom.us/j/99113515217?pwd=QWxPakttVlAyd3hwOWEwM2kwVGdBQT09',
     permanent: true,
   },
   {
