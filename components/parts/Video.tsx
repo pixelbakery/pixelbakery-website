@@ -11,6 +11,7 @@ interface video {
   playsInline?: boolean
   controls?: boolean
   caption?: string
+  light?: any
   className?: string
 }
 function Video({ url, ...props }: video) {
@@ -44,6 +45,7 @@ function Video({ url, ...props }: video) {
           poster={
             props.poster != undefined ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}` : ''
           }
+          light={props.light}
           width={'100%'}
           height={'100%'}
           loop={props.loop != undefined ? props.loop : false}
