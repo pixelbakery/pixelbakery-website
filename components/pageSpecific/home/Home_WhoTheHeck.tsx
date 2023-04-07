@@ -30,8 +30,8 @@ function Home_WhoTheHeck() {
               <h2 className=' my-8 2xl:text-8xl text-peach'>who the heck</h2>
               <div className='text-4xl  text-pink my-8 leading-none lowercase font-bold'>
                 <Lead color='pink'>
-                  We&apos;re an award-winning multidisciplinary production studio centered around
-                  animation, film, and design.
+                  We&apos;re an award-winning multidisciplinary production studio that tells brand
+                  stories using motion design, animated explainers, and video production.
                   <br />
                   <br />
                   <span className='text-blue'>We don't do catering.</span>

@@ -97,6 +97,36 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/book. Talk',
+    destination: '/book',
+    permanent: true,
+  },
+  {
+    source: '/book.',
+    destination: '/book',
+    permanent: true,
+  },
+  {
+    source: '/works',
+    destination: '/work',
+    permanent: true,
+  },
+  {
+    source: '/about/molly-hobson',
+    destination: '/about/molly-hobson-vaida',
+    permanent: true,
+  },
+  {
+    source: '/hay-any-way',
+    destination: '/work',
+    permanent: true,
+  },
+  {
+    source: '/careers/YWNjb3VudC',
+    destination: '/careers',
+    permanent: true,
+  },
+  {
     source: '/harvest',
     destination: 'https://pixelbakery.harvestapp.com',
     permanent: true,
