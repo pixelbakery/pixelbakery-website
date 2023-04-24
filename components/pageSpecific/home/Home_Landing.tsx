@@ -5,6 +5,7 @@ import nav_main from '@data/nav_main'
 import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
 import PixelBakery_EasyBakeOven from '@data/lottie_misc/PixelBakery_EasyBakeOven.json' assert { type: 'json' }
+import Patterns_Blue_Dark from '@data/lottie_patterns/Patterns_Blue_Dark.json' assert { type: 'json' }
 import { m, Variants } from 'framer-motion'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
@@ -115,11 +116,7 @@ function Home_Landing() {
             id='lottie'
             variants={item}
           >
-            <LottiePatternPlayer
-              animationData={require('@data/lottie_patterns/Patterns_Blue_Dark')}
-              width={100}
-              height={100}
-            />
+            <LottiePatternPlayer animationData={Patterns_Blue_Dark} width={100} height={100} />
           </m.div>
           <m.div variants={item} className=' flex justify-center h-full w-full'>
             <div className='block  self-center w-2/3 lg:w-1/2 max-w-3xl '>

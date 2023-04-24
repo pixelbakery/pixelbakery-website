@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
-import lottie from 'lottie-web'
-//lottie-web/build/player/lottie_light
+// import lottie from 'lottie-web'
+import lottie from 'lottie-web/build/player/lottie_light'
+
 interface LottieProps {
   anim: any
   preserveAspectRatio?: boolean
@@ -19,6 +20,7 @@ const LottiePlayer = ({ anim, preserveAspectRatio }: LottieProps) => {
       container: element.current,
       rendererSettings: {
         preserveAspectRatio: aspect,
+        progressiveLoad: true,
       },
     })
 
