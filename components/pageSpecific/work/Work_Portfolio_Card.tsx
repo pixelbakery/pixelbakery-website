@@ -87,10 +87,10 @@ function Work_Portfolio_Card({ project }) {
 
         <div
           className={cn(
-            'absolute block transform-opacity duration-300 ease-in-out opacity-100 z-10 top-0 left-0 -right-1 -bottom-1',
+            'absolute block transform-opacity duration-300 ease-in-out z-10 top-0 left-0 -right-1 -bottom-1',
             {
-              ['opacity-0 ']: !isHovered,
-              ['opacity-100 ']: isHovered,
+              ['opacity-0']: !isHovered,
+              ['opacity-100']: isHovered,
             },
           )}
         >
@@ -99,15 +99,12 @@ function Work_Portfolio_Card({ project }) {
             playsinline={true}
             loop={true}
             controls={false}
-            preload={true}
+            preload={'true'}
             width='100%'
             height='100%'
             playing={isHovered}
             className=''
-            url={[
-              `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`,
-              // `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.webm`,
-            ]}
+            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
             config={{
               file: {
                 attributes: {
