@@ -1,7 +1,8 @@
 // import Lottie from 'react-lottie-player'
 import classNames from 'classnames'
 import { PropsWithChildren, ReactNode, useEffect, useRef } from 'react'
-import lottie from 'lottie-web'
+// import lottie from 'lottie-web'
+import lottie from 'lottie-web/build/player/lottie_light'
 import InnerWrapper from './InnerWrapper'
 
 interface LottieProps {

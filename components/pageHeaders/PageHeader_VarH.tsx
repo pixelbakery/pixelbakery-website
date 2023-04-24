@@ -50,7 +50,7 @@ const Cream = ({ header, subheader }: Props) => {
       animationData={Patterns_Cream}
       accentColor={'peach'}
       primaryColor={'cream'}
-      subheaderColor={'blue-dark  '}
+      subheaderColor={'blue-dark'}
       subheader={subheader}
       header={header}
     />
