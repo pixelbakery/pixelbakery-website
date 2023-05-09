@@ -36,7 +36,7 @@ export const Footer: NextPage = () => {
   return (
     <div>
       <footer
-        className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 xl:max-h-screen mb-4'
+        className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 mb-4'
         id='footer'
       >
         <section
