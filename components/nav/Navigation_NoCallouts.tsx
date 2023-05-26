@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import Link from 'next/link'
-import { gsap } from 'gsap/dist/gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Navbar() {
@@ -37,7 +38,7 @@ export default function Navbar() {
   }
 
   //scrolly stuff
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.set(logo.current, { y: -140, scale: 0.8 })
     gsap.set(logoWrapper.current, { height: 80, width: 300, ease: 'back.inOut' })
     gsap.set(line2.current, { scale: 0.75, x: -26, y: -12, duration: 0.25 })

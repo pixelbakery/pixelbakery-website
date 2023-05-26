@@ -8,7 +8,7 @@ import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Croissant from 'components/footer/Footer_Croissant'
 import nav_footer_main from '@data/nav_footer_main'
 import nav_footer_sub from '@data/nav_footer_sub'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
@@ -19,6 +19,7 @@ import services from '@data/services'
 import { m } from 'framer-motion'
 import { LazyMotion } from 'framer-motion'
 import { domMax } from 'framer-motion'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
 
@@ -26,7 +27,8 @@ export const Footer: NextPage = () => {
     setTestModal(!testModalOpen)
   }
   // GSAP FOR MODAL
-  useEffect(() => {
+
+  useIsomorphicLayoutEffect(() => {
     if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
     else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
     return () => {}
@@ -35,10 +37,7 @@ export const Footer: NextPage = () => {
   const year = new Date().getFullYear()
   return (
     <div>
-      <footer
-        className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 mb-4'
-        id='footer'
-      >
+      <footer className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 mb-4' id='footer'>
         <section
           id='croissantModal'
           className='transform-gpu will-change-transform absolute w-full h-full top-0 left-0 bg-peach z-30'

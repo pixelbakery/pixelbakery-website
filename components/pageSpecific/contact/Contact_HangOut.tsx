@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import StrokeText from '@parts/StrokeText'
 import Link from 'next/link'
 import PageSection from '@parts/PageSection'
@@ -7,8 +6,9 @@ import H2 from '@typography/H2'
 import cn from 'classnames'
 import gsap from 'gsap'
 import SocialUrls_Contact from '@data/SocialUrls_Contact'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 function Contact_HangOut() {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.set('.animate-horizontal', { x: 0 })
     const headerTL = gsap
       .timeline({ repeat: -1 })

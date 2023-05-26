@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import Link from 'next/link'
@@ -8,6 +8,7 @@ import cn from 'classnames'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 import Shimmer from '@lib/Shimmer'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 // type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card({ project }) {
   const [isHovered, setHover] = useState(false)
@@ -22,7 +23,7 @@ function Work_Portfolio_Card({ project }) {
     setHover(!isHovered)
   }
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     tl.from(`#${projID_title} .detail`, {
       stagger: 0.25,
       y: 30,
@@ -46,7 +47,7 @@ function Work_Portfolio_Card({ project }) {
     }
   }, [])
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (isHovered) {
       tl.play()
     } else if (!isHovered) {
