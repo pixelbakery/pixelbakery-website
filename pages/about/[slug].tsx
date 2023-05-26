@@ -23,14 +23,8 @@ import {
   About_Team_Details,
 } from '@about/index'
 
-import dynamic from 'next/dynamic'
 import About_Team_MatchingCaseStudies from '@about/About_Team_MatchingCaseStudies'
-// const About_Team_Header = dynamic(() => import('@about/About_Team_Header'), { ssr: false })
-const About_Team_MatchingPosts = dynamic(() => import('@about/About_Team_MatchingPosts'), {
-  ssr: false,
-})
-// const About_Team_PrevNext = dynamic(() => import('@about/About_Team_PrevNext'), { ssr: false })
-
+import About_Team_MatchingPosts from '@about/About_Team_MatchingPosts'
 function PersonPage({
   matchingCaseStudies,
   slug,
@@ -71,7 +65,7 @@ export async function getStaticProps({ params }) {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
-      development: false,
+      development: process.env.NODE_ENV === 'development',
     },
     scope: data,
   })
