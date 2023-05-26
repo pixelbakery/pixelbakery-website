@@ -1,9 +1,9 @@
 import gsap from 'gsap'
-import { useEffect } from 'react'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 
 export default function useLoadingModal() {
   // BEGIN GSAP
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.set('.modal-loading .modal-loading-span', { y: 20 })
     let tl_loadingModal = gsap.timeline({
       defaults: {

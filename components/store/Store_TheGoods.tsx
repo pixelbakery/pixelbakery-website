@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 import gsap from 'gsap'
 
 const Store_TheGoods = () => {
   // BEGIN GSAP
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.set('.anim-header .anim-span', { y: 20 })
     const tl_loadingModal = gsap.timeline({
       defaults: {

@@ -1,26 +1,8 @@
 import { DownloadIcon, CopyIcon } from '@images/UI_Icons'
 import Close from '@images/Close'
-import { useEffect } from 'react'
 import Image from 'next/image'
 
 const Carousel_Modal = ({ alt }) => {
-  useEffect(() => {
-    // if (!isActive) {
-    //   document.body.classList.remove('overflow-y-hidden')
-    //   gsap.to(fsNavRef.current, {
-    //     autoAlpha: 0,
-    //   })
-    // } else {
-    //   gsap.to(fsNavRef.current, {
-    //     autoAlpha: 1,
-    //   })
-    document.body.classList.add('overflow-y-hidden')
-    // }
-    // return () => {
-    //   gsap.killTweensOf(fsNavRef.current)
-    //   gsap.killTweensOf(el.current)
-    // }
-  }, [])
   return (
     <div className=' fixed left-0 top-0 bottom-0 right-0 h-screen w-screen z-50 bg-wine-400 bg-opacity-75 backdrop-blur-md '>
       <div className='z-50 absolute right-4 top-4 '>

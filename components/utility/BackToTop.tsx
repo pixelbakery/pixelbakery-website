@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import gsap from 'gsap'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 
 function BackToTop() {
   const [showTopButton, setShowTopBtn] = useState(false)
   const elem = useRef(null)
   const pointer = useRef(null)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // Button is displayed after scrolling for 500 pixels
     const toggleVisibility = () => {
       if (window.pageYOffset > 500) {
@@ -19,7 +20,7 @@ function BackToTop() {
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!showTopButton) {
       gsap.to(elem.current, 0.75, { autoAlpha: 0 })
     } else if (showTopButton) {

@@ -1,8 +1,9 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { gsap } from 'gsap'
 import Nav_FullScreenMenu_RightCol from '@nav/Nav_FullScreenMenu_RightCol'
 import Nav_FullScreenMenu_MiddleCol from '@nav/Nav_FullScreenMenu_MiddleCol'
 import Nav_FullScreenMenu_LeftCol from '@nav/Nav_FullScreenMenu_LeftCol'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 
 //Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
@@ -14,7 +15,7 @@ function Nav_FullscreenMenu({ isActive, onModalUpdate }) {
     onModalUpdate(false)
   }
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!isActive) {
       document.body.classList.remove('overflow-y-hidden')
       gsap.to(fsNavRef.current, {

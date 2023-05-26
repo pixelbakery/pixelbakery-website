@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
-import gsap from 'gsap/dist/gsap'
+import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 import cn from 'classnames'
 import Nav_FullscreenMenu from './Nav_FullscreenMenu'
+import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Navbar() {
@@ -50,7 +51,7 @@ export default function Navbar() {
   }
 
   //scrolly stuff
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let boxes = [box1.current, box2.current, box3.current, hamRef.current]
     gsap.to(el.current, {
       autoAlpha: 1,
