@@ -1,16 +1,11 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import {
-  Layout__HasNav,
-  Layout__NavMobile,
-  Layout__NoNav,
-  Layout__Blank,
-} from '../components/parts/Layout'
+import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/parts/Layout'
 import '@styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import '@styles/typography.css'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
-import { GoogleAnalytics } from 'nextjs-google-analytics'
+import ReactGA from 'react-ga4'
 
 function App({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
@@ -40,26 +35,14 @@ function App({ Component, pageProps }: AppProps) {
       </Layout__NavMobile>
     )
   }
-  const LayoutBlank = () => {
-    return (
-      <Layout__Blank>
-        <Component {...pageProps} />
-      </Layout__Blank>
-    )
-  }
 
   // Define which pages get which specific layout
   const getLayout = (path) => {
     switch (true) {
       case path === '/':
         return LayoutHambOnly()
-
-      case path === '/email-generator-results*':
-        return LayoutBlank()
-
       case path.startsWith('/store'):
         return LayoutWithoutNav()
-
       default:
         return LayoutWithNav()
     }
@@ -68,10 +51,10 @@ function App({ Component, pageProps }: AppProps) {
   // Figure out which layout to use and build the page
   const router = useRouter()
   const path = router.pathname
+  ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID)
 
   return (
     <>
-      <GoogleAnalytics trackPageViews />
       <NextSEO_DefaultSEO />
       {getLayout(path)}
       <Analytics />
