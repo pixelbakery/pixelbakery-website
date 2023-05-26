@@ -106,7 +106,6 @@ export const ContactForm_TextInput = ({
         name={fieldName}
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         id={fieldName}
-        autoFocus
         {...register(fieldName)}
       />
     </>
@@ -126,7 +125,6 @@ export const ContactForm_EmailInput = ({
         className={cn(' form-input', className, { ['error']: errors[fieldName] })}
         type='email'
         placeholder={placeHolder}
-        autoFocus
         name={fieldName}
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         id={fieldName}
@@ -150,7 +148,6 @@ export const ContactForm_UrlInput = ({
         className={cn(' form-input', className, { ['error']: errors[fieldName] })}
         type='url'
         placeholder={placeHolder}
-        autoFocus
         name={fieldName}
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         id={fieldName}
@@ -175,7 +172,6 @@ export const ContactForm_TextAreaInput = ({
         type='text'
         placeholder={placeHolder}
         name={fieldName}
-        autoFocus
         id={fieldName}
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         rows={rows}
@@ -206,7 +202,6 @@ export const ContactForm_PhoneInput = ({
           value={value}
           aria-invalid={errors[fieldName] ? 'true' : 'false'}
           placeholder={placeHolder}
-          autoFocus
           onBlur={onBlur}
           onValueChange={(v) => {
             if (typeof value === 'number') {
@@ -253,7 +248,6 @@ export const ContactForm_Submit = ({ valueText, className, disabled }: Submit) =
         className={cn('form-submit', className)}
         type='submit'
         value={val}
-        autoFocus
         disabled={disabled === null ? false : disabled}
       />
     </div>
@@ -278,7 +272,6 @@ export const ContactForm_Solicitation = ({ register, errors }) => {
             type='radio'
             name='soliciting'
             value={true}
-            autoFocus
             id='soliciting-yes'
             className='hidden peer'
             aria-invalid={errors['soliciting'] ? 'true' : 'false'}
@@ -294,7 +287,6 @@ export const ContactForm_Solicitation = ({ register, errors }) => {
             type='radio'
             name='soliciting'
             value={false}
-            autoFocus
             id='soliciting-no'
             className='hidden peer'
             aria-invalid={errors['soliciting'] ? 'true' : 'false'}
