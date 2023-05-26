@@ -18,23 +18,15 @@ import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
 import Image from 'next/image'
-// const CaseStudies_Header = dynamic(() => import('@caseStudies/CaseStudies_Header'), {
-//   ssr: false,
-// })
-// const CaseStudies_Description = dynamic(() => import('@caseStudies/CaseStudies_Description'), {
-//   ssr: false,
-// })
+
 const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
   ssr: false,
 })
-// const CaseStudies_Intro = dynamic(() => import('@caseStudies/CaseStudies_Intro'), {
-//   ssr: false,
-// })
 
 const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_Storyboards'), {
   ssr: false,
 })
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
+import Video from '@parts/Video'
 
 //stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
@@ -151,7 +143,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
-      development: false,
+      development: process.env.NODE_ENV === 'development',
     },
     scope: data,
   })

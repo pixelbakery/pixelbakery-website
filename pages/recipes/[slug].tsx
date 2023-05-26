@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
@@ -11,7 +10,7 @@ import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/md
 import dayjs from 'dayjs'
 
 import markdownStyles from '@styles/markdown-styles.module.css'
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
+import Video from '@parts/Video'
 import readingTime from '@lib/readingTime'
 import Carousel from '@parts/carousel/Carousel'
 
@@ -29,6 +28,7 @@ const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related
 })
 import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
 import Loading from '@utility/Loading'
+import dynamic from 'next/dynamic'
 
 // Custom components/renderers to pass to MDX.
 const components = {
@@ -153,7 +153,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
-      development: false,
+      development: process.env.NODE_ENV === 'development',
     },
     scope: data,
   })

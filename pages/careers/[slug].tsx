@@ -148,7 +148,7 @@ export const getStaticProps = async ({ params }) => {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
-      development: false,
+      development: process.env.NODE_ENV === 'development',
     },
     scope: data,
   })
