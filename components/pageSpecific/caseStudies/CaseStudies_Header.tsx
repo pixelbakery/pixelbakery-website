@@ -34,7 +34,7 @@ function CaseStudies_Header({ ...props }) {
 
           <H1 color='blue-dark' className='mb-4 2xl:mb-4 '>
             <Link hrefLang={'en-US'} href={`${props.website}`}>
-              <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client}</div>
+              <div className='font-extrabold text-pink text-2xl mb-0 pb-0'>{props.client} </div>
             </Link>
             {/* {props.projectName} */}
             {props.projectName}

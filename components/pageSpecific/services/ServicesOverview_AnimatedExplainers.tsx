@@ -1,7 +1,5 @@
 import Lottie_Animation from '@data/lottie_services/lottie_services_animatedExplainers.json' assert { type: 'json' }
-const Button_Outlined = dynamic(() => import('@parts/Button_Outlined'), {
-  ssr: false,
-})
+import Button_Outlined from '@parts/Button_Outlined'
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import H2 from '@typography/H2'
 import dynamic from 'next/dynamic'

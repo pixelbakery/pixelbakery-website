@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { SendToMonday_InstagramMerchCampaign } from '@lib/api_sendToMonday'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
-import ReactPlayer from 'react-player/lazy'
+import dynamic from 'next/dynamic'
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 function Surprise_ContactForm() {
   const [checked, setChecked] = useState(true)
 
