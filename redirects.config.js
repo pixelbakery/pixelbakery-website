@@ -32,6 +32,16 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/futurebakers',
+    destination: '/careers',
+    permanent: true,
+  },
+  {
+    source: '/recipes/recipes/video-image-formats-in-2021',
+    destination: '/recipes/video-image-formats',
+    permanent: true,
+  },
+  {
     source: '/portfolio',
     destination: '/work',
     permanent: true,
@@ -392,7 +402,7 @@ const redirectsArray = [
   },
   {
     source: '/recipes/list-of-video-image-formats-in-2021-supporting-alpha-channels',
-    destination: 'recipes/video-image-formats-in-2021',
+    destination: 'recipes/video-image-formats',
     permanent: true,
   },
   {
