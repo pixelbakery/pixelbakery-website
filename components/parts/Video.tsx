@@ -1,5 +1,6 @@
 import Lead from '@typography/Lead'
-import ReactPlayer from 'react-player/lazy'
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 import cn from 'classnames'
 interface video {
   url: string

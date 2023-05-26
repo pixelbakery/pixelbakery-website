@@ -6,7 +6,6 @@ export { default as About_SEO } from '@about/About_SEO'
 export { default as About_Spotify } from '@about/About_Spotify'
 export { default as About_Team_Details } from '@about/About_Team_Details'
 export { default as About_Team_Header } from '@about/About_Team_Header'
-
 export { default as About_Team_Headshot } from '@about/About_Team_Headshot'
 export { default as About_Team_MatchingCaseStudies } from '@about/About_Team_MatchingCaseStudies'
 export { default as About_Team_MatchingPosts } from '@about/About_Team_MatchingPosts'

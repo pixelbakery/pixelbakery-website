@@ -1,7 +1,6 @@
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 import { Fragment } from 'react'
-// const About_Team_Headshot = dynamic(() => import('@about/About_Team_Headshot'), { ssr: false })
 import About_Team_Headshot from '@about/About_Team_Headshot'
 
 const leadIndex1 = 5

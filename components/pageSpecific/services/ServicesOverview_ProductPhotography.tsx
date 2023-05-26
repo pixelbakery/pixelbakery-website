@@ -4,7 +4,8 @@ const Button_Outlined = dynamic(() => import('@parts/Button_Outlined'), {
 import PageSection_FullWidth from '@parts/PageSection_FullWidth'
 import { H2 } from '@typography/index'
 import dynamic from 'next/dynamic'
-import ReactPlayer from 'react-player/lazy'
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 const ServicesOverview_AnimatedExplainers = () => {
   return (

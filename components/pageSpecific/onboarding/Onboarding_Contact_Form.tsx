@@ -147,7 +147,6 @@ function Onboarding_Contact_Form() {
     criteriaMode: 'all',
     reValidateMode: 'onChange',
     resolver: yupResolver(yupValidation),
-    shouldFocusError: true,
     shouldUnregister: false,
   }
 

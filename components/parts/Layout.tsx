@@ -1,8 +1,6 @@
-import dynamic from 'next/dynamic'
-
-const Navbar = dynamic(() => import('@nav/Navigation'))
-const Footer = dynamic(() => import('@footer/Footer'))
-const Nav_HamWrapper = dynamic(() => import('@nav/Nav_HamWrapper'))
+import Navbar from '@nav/Navigation'
+import Footer from '@footer/Footer'
+import Nav_HamWrapper from '@nav/Nav_HamWrapper'
 
 // import Navbar from '@nav/Navigation'
 import Meta from '@parts/Meta'
