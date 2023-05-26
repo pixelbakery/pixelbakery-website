@@ -1,11 +1,9 @@
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 import InnerWrapper from '@parts/InnerWrapper'
 import Main from '@parts/Main'
 import fs from 'fs'
 import PageSection from '@parts/PageSection'
 import matter from 'gray-matter'
-import dynamic from 'next/dynamic'
 import path from 'path'
 import Image from 'next/image'
 const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
@@ -14,26 +12,11 @@ import Loading from '@utility/Loading'
 import Link from 'next/link'
 import H2 from '@typography/H2'
 import { NextSeo } from 'next-seo'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent header={'Hall of Legends'} subheader={'Gone But Not Forgotten'} />
-  ),
-  ssr: false,
-})
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+
 const Page_PastEmployees = ({ allPeople }) => {
   return (
     <Main>
-      <NextSeo
-        title='Past Employees'
-        description='Nothing lasts forever, and that holds true for our employees.'
-        canonical='https://pixelbakery.com/about/past-employees'
-        openGraph={{
-          title: `Past Employees`,
-          type: 'website',
-          description: `Nothing lasts forever, and that holds true for our employees.`,
-          url: `https://pixelbakery.com/about/past-employees`,
-        }}
-      />
       <PageHeader_VarH header={'Past Employees'} subheader={'Gone But Not Forgotten'} />
       <PageSection id='pastEmployees'>
         <InnerWrapper>
@@ -85,6 +68,17 @@ const Page_PastEmployees = ({ allPeople }) => {
           </div>
         </InnerWrapper>
       </PageSection>
+      <NextSeo
+        title='Past Employees'
+        description='Nothing lasts forever, and that holds true for our employees.'
+        canonical='https://pixelbakery.com/about/past-employees'
+        openGraph={{
+          title: `Past Employees`,
+          type: 'website',
+          description: `Nothing lasts forever, and that holds true for our employees.`,
+          url: `https://pixelbakery.com/about/past-employees`,
+        }}
+      />
     </Main>
   )
 }

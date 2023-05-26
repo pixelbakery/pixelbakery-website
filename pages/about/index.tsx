@@ -1,14 +1,9 @@
-import dynamic from 'next/dynamic'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
 import Main from '@parts/Main'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => <PageHeader_LoadingContent header={'About'} subheader={'Just add flour.'} />,
-  ssr: false,
-})
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
 import {
   About_Team,
@@ -21,10 +16,9 @@ import {
 
 // import About_FamilyPhotos from '@about/About_FamilyPhotos'
 
-function About({ allPeople }) {
+const About = ({ allPeople }) => {
   return (
     <Main>
-      <About_SEO />
       <PageHeader_VarH header='About' subheader='Just add flour.' />
       <About_Team allPeople={allPeople} />
       <About_Values />
@@ -33,6 +27,7 @@ function About({ allPeople }) {
       {/* <About_Twitch /> */}
       <About_Awards />
       <About_Faq />
+      <About_SEO />
     </Main>
   )
 }

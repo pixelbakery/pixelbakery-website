@@ -1,17 +1,18 @@
-import { useEffect, useRef } from 'react'
-import Lead from '@typography/Lead'
+import { useEffect, useRef, useState } from 'react'
+// import Patterns_Master from '@data/lottie_patterns/Patterns_Master.json' assert { type: 'json' }
+
 // import lottie from 'lottie-web'
 import lottie from 'lottie-web/build/player/lottie_light'
-interface LottieProps {
-  animationData: any
-  width: number
-  height: number
-}
 
-const LottiePatternPlayer = ({ animationData }: LottieProps) => {
+const LottiePatternPlayer = () => {
   const element = useRef<HTMLDivElement>()
   const lottieInstance = useRef<any>()
-
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    import('@data/lottie_patterns/Patterns_Master.json').then((data) => {
+      setData(data)
+    })
+  }, [])
   useEffect(() => {
     if (element.current) {
       lottieInstance.current?.destroy()
@@ -23,9 +24,9 @@ const LottiePatternPlayer = ({ animationData }: LottieProps) => {
 
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice',
-          progressiveLoad: true,
+          // progressiveLoad: true,
         },
-        animationData: animationData,
+        animationData: data,
       })
     }
 
@@ -41,17 +42,8 @@ const LottiePatternPlayer = ({ animationData }: LottieProps) => {
       lottieInstance.current?.destroy()
       lottieInstance.current = null
     }
-  }, [animationData])
+  })
 
-  if (!animationData) {
-    return (
-      <div className='w-full h-full flex flex-col justify-center'>
-        <Lead color='cream' className='self-center text-center'>
-          Loading
-        </Lead>
-      </div>
-    )
-  }
   return <div style={{ height: '100%', width: '100%' }} ref={element} />
 }
 

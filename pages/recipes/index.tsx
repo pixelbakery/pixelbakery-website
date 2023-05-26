@@ -1,24 +1,11 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import dynamic from 'next/dynamic'
 import path from 'path'
 
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent
-      header={"Mon's Recipes"}
-      subheader={'No word yet on her spaghetti, though'}
-    />
-  ),
-  ssr: false,
-})
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import Recipes_MoreStories from '@recipes/Recipes_MoreStories'
-// const Recipes_FeaturedPost = dynamic(() => import('@recipes/Recipes_FeaturedPost'), { ssr: false })
-// const Recipes_MoreStories = dynamic(() => import('@recipes/Recipes_MoreStories'), { ssr: false })
-
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Main from '@parts/Main'
@@ -76,7 +63,6 @@ const Page_Recipes = ({ allPosts }) => {
 
   return (
     <Main>
-      <Recipes_SEO />
       <PageHeader_VarH header="Mom's Recipes" subheader='No word yet on her spaghetti, though' />
       <PageSection id='recent-posts'>
         <InnerWrapper>
@@ -93,6 +79,7 @@ const Page_Recipes = ({ allPosts }) => {
           {morePosts.length > 0 && <Recipes_MoreStories posts={morePosts} />}
         </InnerWrapper>
       </PageSection>
+      <Recipes_SEO />
     </Main>
   )
 }

@@ -1,15 +1,9 @@
-import dynamic from 'next/dynamic'
 import { NextPage, GetServerSideProps } from 'next'
 import PageSection from '@parts/PageSection'
 import commerce from '@lib/commerce'
 import Link from 'next/link'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent header={'Company Store'} subheader={'Freshly baked every morning'} />
-  ),
-  ssr: false,
-})
 import cn from 'classnames'
 import Image from 'next/image'
 import Navigation_Store from '@nav/Navigation_Store'
@@ -17,7 +11,7 @@ import Main from '@parts/Main'
 import Store_SEO from '@store/Store_SEO'
 import H3 from '@typography/H3'
 import Store_TheGoods from '@store/Store_TheGoods'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
+
 export const getServerSideProps: GetServerSideProps = async () => {
   const products = await commerce.products.list()
   return {

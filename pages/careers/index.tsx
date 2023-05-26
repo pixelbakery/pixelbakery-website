@@ -2,18 +2,9 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
-import dynamic from 'next/dynamic'
-
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent header={'Future Bakers'} subheader={'Come Rise With Us'} />
-  ),
-  ssr: false,
-})
-
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Careers_JobShadow from '@careers/Careers_JobShadow'
 import Main from '@parts/Main'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 
 import {
   Careers_Intro,

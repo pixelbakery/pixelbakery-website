@@ -1,32 +1,18 @@
 // import Lottie from 'react-lottie-player'
-import classNames from 'classnames'
-import LottiePatternPlayer from '@parts/LottiePatternPlayer'
-import dynamic from 'next/dynamic'
-const PageHeader_TextBox = dynamic(() => import('./PageHeader_TextBox'))
 
-const PageHeader_VariableHeight = ({
-  animationData,
-  header,
-  primaryColor,
-  accentColor,
-  subheaderColor,
-  subheader,
-}) => {
+import dynamic from 'next/dynamic'
+const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'))
+import cn from 'classnames'
+
+const PageHeader_VariableHeight = ({ primaryColor }) => {
   return (
     <div
-      className={classNames('relative overflow-hidden w-full h-full', [`bg-${accentColor}`])}
-      id='topOfPage'
+      className={cn(
+        `z-0 absolute top-0 left-0 w-full h-full overflow-hidden lottie lottie-${primaryColor}`,
+      )}
+      id='lottie'
     >
-      <div className=' z-0 absolute  top-0 left-0 w-full h-full overflow-hidden lottie' id='lottie'>
-        <LottiePatternPlayer animationData={animationData} width={100} height={100} />
-      </div>
-      <PageHeader_TextBox
-        header={header}
-        primaryColor={primaryColor}
-        accentColor={accentColor}
-        subheader={subheader}
-        subheaderColor={subheaderColor}
-      />
+      <LottiePatternPlayer />
     </div>
   )
 }

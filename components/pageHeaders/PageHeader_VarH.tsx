@@ -1,120 +1,83 @@
-import { useState } from 'react'
-import dynamic from 'next/dynamic'
-const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), {
-  ssr: false,
-})
-
-import Patterns_Blue from '@data/lottie_patterns/Patterns_Blue.json' assert { type: 'json' }
-import Patterns_Blue_Dark from '@data/lottie_patterns/Patterns_Blue_Dark.json' assert { type: 'json' }
-import Patterns_Pink from '@data/lottie_patterns/Patterns_Pink.json' assert { type: 'json' }
-import Patterns_Pink_Light from '@data/lottie_patterns/Patterns_Pink_Light.json' assert { type: 'json' }
-import Patterns_Peach from '@data/lottie_patterns/Patterns_Peach.json' assert { type: 'json' }
-import Patterns_Cream from '@data/lottie_patterns/Patterns_Cream.json' assert { type: 'json' }
-
+import { useEffect, useState } from 'react'
+import PageHeader_VarH_Content from '@pageHeaders/PageHeader_VarH_Content'
 import { RandomArrayItem } from '@lib/helpers'
+import cn from 'classnames'
+import PageHeader_TextBox from '@pageHeaders/PageHeader_TextBox'
 
 interface Props {
   header: string
   subheader: string
 }
 
-const Blue = ({ header, subheader }: Props) => {
-  return (
-    <PageHeader_VarH_Content
-      header={header}
-      primaryColor={'blue'}
-      accentColor={'blue-dark'}
-      subheader={subheader}
-      subheaderColor={'cream'}
-      animationData={Patterns_Blue}
-    />
-  )
+const loadingTheme = {
+  primaryColor: 'wine',
+  accentColor: 'cream',
+  subheaderColor: 'wine',
 }
-const Blue_Dark = ({ header, subheader }: Props) => {
-  // const PageHeader_VarH_Content = require('./PageHeader_VarH_Content')
-  return (
-    <PageHeader_VarH_Content
-      animationData={Patterns_Blue_Dark}
-      primaryColor={'blue-dark'}
-      subheaderColor={'cream'}
-      subheader={subheader}
-      header={header}
-      accentColor={'blue'}
-    />
-  )
-}
-const Cream = ({ header, subheader }: Props) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
-  return (
-    <PageHeader_VarH_Content
-      animationData={Patterns_Cream}
-      accentColor={'peach'}
-      primaryColor={'cream'}
-      subheaderColor={'blue-dark'}
-      subheader={subheader}
-      header={header}
-    />
-  )
-}
-const Pink = ({ header, subheader }: Props) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
-  return (
-    <PageHeader_VarH_Content
-      animationData={Patterns_Pink}
-      primaryColor={'pink'}
-      subheaderColor={'pink-lighter '}
-      subheader={subheader}
-      header={header}
-      accentColor={'pink-lighter'}
-    />
-  )
-}
-const Pink_Light = ({ header, subheader }: Props) => {
-  // const PageHeader_VarH_Content = dynamic(() => import('./PageHeader_VarH_Content'), { ssr: true })
-  return (
-    <PageHeader_VarH_Content
-      animationData={Patterns_Pink_Light}
-      primaryColor={'pink-lighter'}
-      subheaderColor={'blue-dark'}
-      subheader={subheader}
-      header={header}
-      accentColor={'pink'}
-    />
-  )
-}
-const Peach = ({ header, subheader }: Props) => {
-  return (
-    <PageHeader_VarH_Content
-      animationData={Patterns_Peach}
-      primaryColor={'peach'}
-      subheaderColor={'egg'}
-      subheader={subheader}
-      header={header}
-      accentColor={'egg'}
-    />
-  )
-}
+const themes = [
+  {
+    primaryColor: 'blue',
+    accentColor: 'blue-dark',
+    subheaderColor: 'cream',
+  },
+  {
+    primaryColor: 'blue-dark',
+    accentColor: 'blue',
+    subheaderColor: 'cream',
+  },
+  {
+    primaryColor: 'cream',
+    accentColor: 'peach',
+    subheaderColor: 'blue-dark',
+  },
+  {
+    primaryColor: 'pink',
+    accentColor: 'pink-lighter',
+    subheaderColor: 'pink-lighter',
+  },
+  {
+    primaryColor: 'pink-lighter',
+    accentColor: 'pink',
+    subheaderColor: 'blue-dark',
+  },
+  {
+    primaryColor: 'peach',
+    accentColor: 'egg',
+    subheaderColor: 'egg',
+  },
+]
 
-function PageHeader_VarH({ header, subheader }: Props) {
-  const [arr] = useState([
-    <Blue header={header} subheader={subheader} key={1} />,
-    <Blue_Dark header={header} subheader={subheader} key={2} />,
-    <Pink header={header} subheader={subheader} key={3} />,
-    <Pink_Light header={header} subheader={subheader} key={4} />,
-    <Cream header={header} subheader={subheader} key={5} />,
-    <Peach header={header} subheader={subheader} key={6} />,
-  ])
+const PageHeader_VarH = ({ header, subheader }: Props) => {
+  // const [selectedTheme] = useState(wizards[RandomArrayItem(wizards.length)])
 
+  const [selectedTheme, setShuffled] = useState(loadingTheme)
+  const [loading, setLoading] = useState(true) // anyting you want !!!
+
+  useEffect(() => {
+    if (loading) {
+      const x = themes[RandomArrayItem(themes.length)]
+      setShuffled(x)
+      setLoading(false)
+    }
+  }, [loading])
+  // console.log(shuffled.primaryColor)
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
-      {/* <div className='absolute w-full h-full flex flex-col justify-center bg-blue'>
-        <p>
-          <Lead color='cream' className='self-center text-center'>
-            Loading...
-          </Lead>
-        </p>
-      </div> */}
-      {arr[RandomArrayItem(arr.length)]}
+      <div
+        className={cn('absolute overflow-hidden w-full h-full', [
+          `bg-${selectedTheme.accentColor}`,
+        ])}
+        id='topOfPage'
+      >
+        {loading ? '' : <PageHeader_VarH_Content primaryColor={selectedTheme.primaryColor} />}
+      </div>
+      <PageHeader_TextBox
+        header={header}
+        primaryColor={selectedTheme.primaryColor}
+        accentColor={selectedTheme.accentColor}
+        subheader={subheader}
+        subheaderColor={selectedTheme.subheaderColor}
+      />
     </header>
   )
 }

@@ -3,62 +3,22 @@ import matter from 'gray-matter'
 import path from 'path'
 import Main from '@parts/Main'
 
-import dynamic from 'next/dynamic'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-import Home_Services from '@home/Home_Services'
-import Home_SEO from '@home/Home_SEO'
-// import Home_WhoTheHeck from '@home/Home_WhoTheHeck'
-import Home_Recipes from '@home/Home_Recipes'
-import { H1, H2 } from '@typography/index'
-
-const Home_WhoTheHeck = dynamic(() => import('@home/Home_WhoTheHeck'), {
-  ssr: false,
-  loading: () => (
-    <section className='w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H2>Who The Heck</H2>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-})
-
-const Home_WhatWeMake = dynamic(() => import('@home/Home_WhatWeMake'), {
-  loading: () => (
-    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H2 color='blue-dark self-center text-center'>What We Make</H2>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-  ssr: false,
-})
-const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), {
-  loading: () => (
-    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H2 color='blue-dark self-center text-center'>Portfolio</H2>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-  ssr: false,
-})
-const Home_Landing = dynamic(() => import('@home/Home_Landing'), {
-  loading: () => (
-    <section className='absolute z-50 top-0 left-0 w-screen h-screen bg-cream flex flex-col justify-center'>
-      <H1 color='blue-dark self-center text-center'>Pixel Bakery Design Studio</H1>
-      <p className='self-center text-center text-2xl font-bold text-blue'>Loading...</p>
-    </section>
-  ),
-  ssr: false,
-})
-// const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), { ssr: false })
-
-// import Home_Awwwards from '@home/Home_Awwwards'
-// const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), { ssr: false })
+import {
+  Home_Services,
+  Home_SEO,
+  Home_WhoTheHeck,
+  Home_Landing,
+  Home_Recipes,
+  Home_Portfolio,
+  Home_WhatWeMake,
+} from '@home/index'
 
 const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
       <Home_SEO />
-      {/* <Home_Awwwards /> */}
       <Home_Landing />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />
