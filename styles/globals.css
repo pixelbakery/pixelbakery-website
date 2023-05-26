@@ -513,3 +513,30 @@ input.form-submit {
   visibility: visible;
   opacity: 1;
 }
+.lottie-blue path {
+  @apply fill-blue stroke-blue;
+}
+.lottie-cream path {
+  @apply fill-cream stroke-cream;
+}
+.lottie-blue-dark path {
+  @apply fill-blue-dark stroke-blue-dark;
+}
+.lottie-egg path {
+  @apply fill-egg stroke-egg;
+}
+.lottie-peach path {
+  @apply fill-peach stroke-peach;
+}
+.lottie-pink-light path {
+  @apply fill-pink-light stroke-pink-light;
+}
+.lottie-pink path {
+  @apply fill-pink stroke-pink;
+}
+.lottie-wine path {
+  @apply fill-wine stroke-wine;
+}
+.lottie-pink-lighter path {
+  @apply fill-pink-lighter stroke-pink-lighter;
+}

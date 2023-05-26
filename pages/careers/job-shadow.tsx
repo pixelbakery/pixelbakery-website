@@ -1,20 +1,9 @@
-import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent
-      header={'Job Shadows'}
-      subheader={`Come learn what it's like to work at Pixel Bakery`}
-    />
-  ),
-  ssr: false,
-})
-
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import { InnerWrapper, Main, PageSection } from '@parts/index'
 import { H2AndLead, Lead } from '@typography/index'
 import { Careers_JobShadow_Form } from '@careers/index'
 import { NextSeo } from 'next-seo'
 import Obfuscate from 'react-obfuscate'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 function Page_Careers_JobShadow() {
   return (
     <Main>

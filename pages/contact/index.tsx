@@ -1,11 +1,4 @@
-import dynamic from 'next/dynamic'
-const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
-  loading: () => (
-    <PageHeader_LoadingContent header='Contact Us' subheader="Please don't ask us about catering" />
-  ),
-  ssr: false,
-})
-
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import {
   Contact_Clients,
   Contact_ContactForm,
@@ -15,7 +8,6 @@ import {
 } from '@contact/index'
 
 import Main from '@parts/Main'
-import PageHeader_LoadingContent from '@pageHeaders/PageHeader_LoadingContent'
 
 function Contact() {
   return (
