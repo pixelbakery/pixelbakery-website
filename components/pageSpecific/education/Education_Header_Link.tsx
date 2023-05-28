@@ -11,7 +11,7 @@ function ComponentName({ header, subheader, inpageLink }: Props) {
   return (
     <Link hrefLang={'en-US'} href={inpageLink} scroll={false}>
       <div className='px-6 lg:px-12 py-12 sm:py-14 h-20 my-3 md:my-4 cursor-pointer  border-2 lg:border-4 border-pink rounded-xl flex flex-col justify-center transition duration-400 ease-in-out transform hover:scale-101'>
-        <Lead color={'pink'} className='mb-0 pb-0 lg:mb-0'>
+        <Lead color={'pink'} className='mb-0 pb-0 lg:mb-0' noMargins={true}>
           {header}
         </Lead>
         <div className='flex flex-row w-full justify-between max-w-9/11'>
