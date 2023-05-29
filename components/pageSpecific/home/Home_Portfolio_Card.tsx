@@ -9,7 +9,7 @@ interface Props {
   bgPosition: string
   project: any
 }
-function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
+const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
   const ref = useRef(null)
 
   return (
@@ -27,6 +27,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
             href={`/work/case-studies/[slug]`}
             hrefLang={'en-US'}
             className='cursor-pointer'
+            aria-label={project.data.title}
           >
             <video
               muted
