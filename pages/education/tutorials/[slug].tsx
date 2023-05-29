@@ -9,11 +9,8 @@ import markdownStyles from '@styles/markdown-styles.module.css'
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 import readingTime from '@lib/readingTime'
 
-const Video = dynamic(() => import('@parts/Video'), {
-  ssr: false,
-})
+import Video from '@parts/Video'
 
-import dynamic from 'next/dynamic'
 import { PageSection, Main } from '@parts/index'
 import {
   Education_PostHeader,
@@ -43,12 +40,6 @@ export default function Page_Education_Tutorials({
 
   return (
     <Main>
-      <Education_MadeToOrder_SEO
-        frontMatter={frontMatter}
-        slug={slug}
-        datePostedISO={datePostedISO}
-      />
-
       <Education_PostHeader
         title={frontMatter.title}
         category={`${frontMatter.category} Tutorial`}
@@ -85,6 +76,11 @@ export default function Page_Education_Tutorials({
         as={'education/tutorials'}
       />
       <Education_SupportUs />
+      <Education_MadeToOrder_SEO
+        frontMatter={frontMatter}
+        slug={slug}
+        datePostedISO={datePostedISO}
+      />
     </Main>
   )
 }

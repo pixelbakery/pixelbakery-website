@@ -1,12 +1,9 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { useRef } from 'react'
 import cn from 'classnames'
 import H3 from '@typography/H3'
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance])
-}
+
 interface Props {
   bgColor: string
   bgPosition: string
@@ -14,12 +11,10 @@ interface Props {
 }
 function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
   const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref })
-  const y = useParallax(scrollYProgress, 10)
+
   return (
-    <motion.article ref={ref} className='w-full  lg:w-3/5 2xl:w-full px-1'>
-      <motion.div
-        style={{ y }}
+    <article ref={ref} className='w-full  lg:w-3/5 2xl:w-full px-1'>
+      <div
         className={cn(
           'relative home-portfolio rounded-md  aspect-w-16 aspect-h-9 z-10',
           bgColor,
@@ -49,7 +44,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
             </video>
           </Link>
         </div>
-      </motion.div>
+      </div>
       <Link
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
@@ -79,7 +74,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: Props) {
           </div>
         </div>
       </Link>
-    </motion.article>
+    </article>
   )
 }
 export default Home_Portfolio_Card

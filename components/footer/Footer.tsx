@@ -2,48 +2,45 @@ import { NextPage } from 'next'
 import Footer_Nav from '@footer/Footer_Nav_Link'
 import Footer_Nav_SubNav from 'components/footer/Footer_Nav_SubNav'
 import Footer_HappyCard from 'components/footer/Footer_HappyCard'
-// import Logo_Type from '@parts/Logo_Type'
 import Button_Filled from '@parts/Button_Filled'
 import Footer_SocialLinks from '@nav/Nav_SocialLinks'
 import Footer_Croissant from 'components/footer/Footer_Croissant'
 import nav_footer_main from '@data/nav_footer_main'
 import nav_footer_sub from '@data/nav_footer_sub'
 import { useState } from 'react'
-import gsap from 'gsap'
 import H3 from '@typography/H3'
 import Obfuscate from 'react-obfuscate'
 import Image from 'next/image'
 import Link from 'next/link'
 import services from '@data/services'
+import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
 
-import { m } from 'framer-motion'
-import { LazyMotion } from 'framer-motion'
-import { domMax } from 'framer-motion'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
+  const year = new Date().getFullYear()
 
   const updateModal = () => {
     setTestModal(!testModalOpen)
   }
-  // GSAP FOR MODAL
 
-  useIsomorphicLayoutEffect(() => {
-    if (!testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 0 })
-    else if (testModalOpen) gsap.to('#croissantModal', 0.3, { autoAlpha: 1 })
-    return () => {}
-  })
-
-  const year = new Date().getFullYear()
   return (
     <div>
       <footer className='relative bg-peach px-6 lg:px-12 py-12 xl:py-24 mb-4' id='footer'>
-        <section
-          id='croissantModal'
-          className='transform-gpu will-change-transform absolute w-full h-full top-0 left-0 bg-peach z-30'
-        >
-          <Footer_Croissant onModalUpdate={updateModal} />
-        </section>
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence initial={false} mode={'wait'}>
+            {testModalOpen && (
+              <m.div
+                id='croissantModal'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className='transform-gpu will-change-transform absolute w-full h-full top-0 left-0 bg-peach z-30'
+              >
+                <Footer_Croissant onModalUpdate={updateModal} />
+              </m.div>
+            )}
+          </AnimatePresence>
+        </LazyMotion>
 
         <div className='mx-auto max-w-6xl'>
           <div className='grid grid-cols-1 lg:grid-cols-3 lg:mb-12 gap-8 h-full'>
@@ -51,7 +48,7 @@ export const Footer: NextPage = () => {
               {/* <Logo_Type /> */}
 
               <Link href={'/'} className='relative flex justify-center lg:justify-start'>
-                <LazyMotion features={domMax}>
+                <LazyMotion features={domAnimation}>
                   <m.div
                     className='self-center w-1/3 lg:w-3/5'
                     animate={{
