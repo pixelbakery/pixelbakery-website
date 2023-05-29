@@ -1,5 +1,4 @@
-import { m, Variants } from 'framer-motion'
-import { LazyMotion, domAnimation } from 'framer-motion'
+import { m, Variants, LazyMotion, domAnimation } from 'framer-motion'
 import Image from 'next/image'
 import H2 from '@typography/H2'
 import InnerWrapper from '@parts/InnerWrapper'
