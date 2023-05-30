@@ -1,4 +1,5 @@
 import PageSection from '@parts/PageSection'
+import H1 from '@typography/H1'
 import Lead from '@typography/Lead'
 import dynamic from 'next/dynamic'
 
@@ -13,7 +14,9 @@ function Home_WhoTheHeck() {
       <div className={' w-full h-full top-0 md:bg-blue'}>
         <div className='sticky   z-20 px-8 md:px-0'>
           <div className='relative z-20 mx-auto bg-pink-lighter md:inline-block md:py-4  md:pr-8 lg:pr-16 md:pl-16'>
-            <h2 className=' my-8 2xl:text-8xl text-peach'>who the heck</h2>
+            <H1 className=' my-8 2xl:text-8xl text-peach mr-0 pr-0 w-full'>
+              We Are <br /> Pixel Bakery
+            </H1>
             <div className='text-4xl  text-pink my-8 leading-none lowercase font-bold'>
               <Lead color='pink'>
                 We&apos;re an award-winning multidisciplinary production studio that tells brand
