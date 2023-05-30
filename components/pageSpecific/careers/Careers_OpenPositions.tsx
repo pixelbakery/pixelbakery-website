@@ -6,7 +6,7 @@ import Link from 'next/link'
 import H2AndLead from '@typography/H2AndLead'
 function Careers_OpenPositions({ jobs, header, subheader }) {
   return (
-    <PageSection className='lg:py-12' id={'open-positions'}>
+    <PageSection className='lg:py-12' id={'open-positions'} disableSpacing={true}>
       <InnerWrapper>
         <div className='mb-12'>
           <div className=''>

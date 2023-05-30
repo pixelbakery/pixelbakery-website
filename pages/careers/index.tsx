@@ -12,12 +12,13 @@ import {
   Careers_SEO,
   Careers_OpenPositions,
   Careers_Breadwinners,
+  Careers_PastCareers,
 } from '@careers/index'
 
 const Careers = ({ allJobs }) => {
   const openPositions = allJobs.filter((job) => job.data.active && !job.data.internship)
   const internships = allJobs.filter((job) => job.data.internship && job.data.active)
-
+  const closedPositions = allJobs.filter((job) => !job.data.active)
   return (
     <Main id='careers-page'>
       <Careers_SEO />
@@ -35,6 +36,7 @@ const Careers = ({ allJobs }) => {
           'For those that are still in school or eager to learn, we offer internships to show you the ropes.'
         }
       />
+      <Careers_PastCareers jobs={closedPositions} />
       <Careers_Breadwinners />
       <Careers_Benefits />
       <Careers_JobShadow />
