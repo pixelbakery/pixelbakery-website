@@ -10,7 +10,7 @@ function Home_SEO() {
       canonical={`https://pixelbakery.com`}
       openGraph={{
         url: `https://pixelbakery.com`,
-        title: 'Pixel Bakery',
+        title: 'Pixel Bakery, an Animation and Video Production Studio',
 
         images: [
           {
