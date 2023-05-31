@@ -18,13 +18,13 @@ import {
 const Home = ({ allPosts, allCaseStudies }) => {
   return (
     <Main>
-      <Home_SEO />
       <Home_Landing />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio allCaseStudies={allCaseStudies} />
       <Home_Recipes allPosts={allPosts} />
+      <Home_SEO />
     </Main>
   )
 }
