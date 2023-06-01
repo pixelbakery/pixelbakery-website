@@ -46,7 +46,6 @@ const CheckoutPage: NextPage = () => {
           title: 'Cart – Store',
           description: 'Pixel Bakery store cart',
         }}
-        nofollow={true}
       />
       <Navigation_Store />
 

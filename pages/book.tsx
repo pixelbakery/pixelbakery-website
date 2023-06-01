@@ -8,7 +8,6 @@ function book() {
         title='Schedule A Meeting'
         description={`Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`}
         canonical={`https://pixelbakery.com/book`}
-        nofollow={true}
         noindex={true}
         openGraph={{
           url: `https://pixelbakery.com/book`,

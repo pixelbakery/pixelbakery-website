@@ -264,7 +264,6 @@ let Checkout: NextPage = () => {
             title='Checkout – Store'
             description='Pixel Bakery store checkout'
             noindex={true}
-            nofollow={true}
             openGraph={{
               title: 'Checkout – Store',
               description: 'Pixel Bakery store checkout',

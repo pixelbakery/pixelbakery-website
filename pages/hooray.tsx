@@ -11,7 +11,6 @@ const Page_Hooray = () => {
       <NextSeo
         title='Hooray, A Surprise! | Pixel Bakery'
         noindex={true}
-        nofollow={true}
         description={` It's hard to practice vulnerability– especially on the internet. Normalizing
             vulnerability is how we move to a more inclusive and accepting society, so thank you for
             being a part of that.`}
