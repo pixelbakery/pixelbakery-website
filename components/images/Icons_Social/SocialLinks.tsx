@@ -20,7 +20,6 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
       <Link
         hrefLang={'en-US'}
         href={props.href ? props.href : link != undefined ? link : ''}
-        rel='nofollow'
         className='mx-1 block'
       >
         <i

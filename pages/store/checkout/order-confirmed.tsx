@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo'
 function SubmissionConfirmation() {
   return (
     <main className='max-w-screen'>
-      <NextSeo noindex={true} nofollow={true} title='Order Confirmed | Shop' />
+      <NextSeo noindex={true}  title='Order Confirmed | Shop' />
 
       <Navigation />
 
