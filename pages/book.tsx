@@ -1,9 +1,10 @@
 import Onboarding_Calendly from '@onboarding/Onboarding_Calendly'
 import { NextSeo } from 'next-seo'
 
-function book() {
+const Book = () => {
   return (
     <>
+      <Onboarding_Calendly className='pt-48 lg:pt-56' h1={true} />
       <NextSeo
         title='Schedule A Meeting'
         description={`Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`}
@@ -35,9 +36,8 @@ function book() {
           description: `Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`,
         }}
       />
-      <Onboarding_Calendly className='pt-48 lg:pt-56' />
     </>
   )
 }
 
-export default book
+export default Book

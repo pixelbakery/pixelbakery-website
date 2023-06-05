@@ -8,7 +8,6 @@ import { CardElement, Elements, useElements, useStripe } from '@stripe/react-str
 import { loadStripe } from '@stripe/stripe-js'
 import { Formik } from 'formik'
 import FormikEffect from '@parts/FormikEffect'
-import LoadingModal from '@parts/LoadingModal'
 import Store_BillingAddressForm from '@store/Store_BillingAddressForm'
 import Store_CartDetails from '@store/Store_CartDetails'
 import Store_ShippingAddressForm from '@store/Store_ShippingAddressForm'
@@ -273,8 +272,6 @@ let Checkout: NextPage = () => {
 
           {cart?.total_items > 0 ? (
             <PageSection className=' pt-24' id='checkout-info'>
-              <LoadingModal visible={loading} />
-
               <InnerWrapper className='xl:max-w-3xl'>
                 <header className='mb-6 pb-8 mt-12'>
                   <div id='breadcrumbs' className='w-full text-blue  text-sm '>

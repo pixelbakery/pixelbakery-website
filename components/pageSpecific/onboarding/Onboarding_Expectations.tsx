@@ -2,113 +2,8 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Onboarding_ExpectationsRow from './Onboarding_Expectations_Row'
-import { gsap } from 'gsap'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 
 function Onboarding_Expectations() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.set('#expectation-1 .expect-numb', { y: -200, rotation: gsap.utils.random(0, 15) })
-    gsap.set('#expectation-2 .expect-numb', { x: -100, rotation: 5 })
-    gsap.set('#expectation-3 .expect-numb', {
-      y: -100,
-      rotation: gsap.utils.random(0, 15),
-      delay: 0.5,
-    })
-    gsap.set('#expectation-4 .expect-numb', { x: -150 })
-    let tl_ExpectationOne = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'sine.inOut',
-      },
-      repeat: -1,
-      repeatDelay: 0.44,
-      yoyo: true,
-    })
-
-    let tl_ExpectationTwo = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'sine.inOut',
-      },
-      repeat: -1,
-    })
-
-    let tl_ExpectationThree = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'sine.inOut',
-      },
-      repeat: -1,
-      repeatDelay: 0.66,
-      yoyo: true,
-    })
-    let tl_ExpectationFour = gsap.timeline({
-      defaults: {
-        stagger: 0.1,
-        ease: 'sine.inOut',
-      },
-      repeat: -1,
-      repeatDelay: 0.25,
-    })
-
-    tl_ExpectationOne.to('#expectation-1   .expect-numb', {
-      y: -100,
-      rotation: gsap.utils.random(-15, 15),
-      duration: 1,
-    })
-
-    tl_ExpectationTwo
-      .to(
-        '#expectation-2   .expect-numb',
-        {
-          x: 100,
-          rotation: -5,
-          duration: 1.22,
-        },
-        '<+=1',
-      )
-      .to(
-        '#expectation-2   .expect-numb',
-        {
-          x: -100,
-          rotation: 5,
-          duration: 1.22,
-        },
-        '<+=3',
-      )
-
-    tl_ExpectationThree.to('#expectation-3   .expect-numb', {
-      y: 50,
-      rotation: gsap.utils.random(-15, 15),
-      duration: 1,
-    })
-    tl_ExpectationFour
-      .to(
-        '#expectation-4   .expect-numb',
-        {
-          x: 150,
-          rotation: 360,
-          duration: 1,
-        },
-        '<+=3',
-      )
-      .to(
-        '#expectation-4   .expect-numb',
-        {
-          x: -150,
-          rotation: -360,
-          duration: 1,
-        },
-        '<+=3',
-      )
-
-    return () => {
-      tl_ExpectationOne.kill()
-      tl_ExpectationTwo.kill()
-      tl_ExpectationThree.kill()
-      tl_ExpectationFour.kill()
-    }
-  }, [])
   return (
     <PageSection id='onboarding-expectations'>
       <InnerWrapper>
@@ -130,7 +25,7 @@ function Onboarding_Expectations() {
             number={'2'}
             header={"We're not here to tell you what to do."}
             bodyCopy={
-              " Sure, we're probably better at animating than you are, but we'll never know your brand more intimately than you will. We can advise, strategize, suggest, and execute– but we won't barge in thinking we know what's best."
+              "Sure, we're probably better at animating than you are, but we'll never know your brand more intimately than you will. We can advise, strategize, suggest, and execute– but we won't barge in thinking we know what's best."
             }
           />
           <Onboarding_ExpectationsRow

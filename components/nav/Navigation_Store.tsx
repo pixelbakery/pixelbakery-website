@@ -1,280 +1,206 @@
 import useCart from '@hooks/useCart'
 
-gsap.registerPlugin(ScrollTrigger)
-import { useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { domAnimation, LazyMotion, m, Variants } from 'framer-motion'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 import cn from 'classnames'
 import Nav_FullscreenMenu from './Nav_FullscreenMenu'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
-const Navigation_Store = () => {
-  const [isHamActive, setHamToggle] = useState(false)
+import Nav_Logo from './Nav_Logo'
+
+export default function Navbar() {
   const { data: cart } = useCart()
+  const [isHamActive, setHamToggle] = useState(false)
+  const [windowHeight, setwindowHeight] = useState(0)
+  const [showNavBar, setShowNavBar] = useState(true)
+  const [scrollPosition, setScrollPosition] = useState(0)
 
-  function handleMouseEnter(e) {
-    gsap.to(e.target, { scale: 0.975, ease: 'sine.inOut', duration: 0.15 })
+  function handleShowNavBar() {
+    if (scrollPosition + 1 >= windowHeight / 3) setShowNavBar(false)
+    else setShowNavBar(true)
   }
-  function handleMouseLeave(e) {
-    gsap.to(e.target, { scale: 1, ease: 'sine.inOut', duration: 0.15 })
-  }
-  const logoWrapper = useRef(null)
-  const hamRef = useRef(null)
-  const logo = useRef(null)
-
-  const box1 = useRef(null)
-  const box2 = useRef(null)
-  const box3 = useRef(null)
-
-  const line1 = useRef(null)
-  const line2 = useRef(null)
-
-  const p = useRef(null)
-  const b = useRef(null)
-  const d = useRef(null)
-  const s = useRef(null)
-
-  const ixel = useRef(null)
-  const akery = useRef(null)
-  const esign = useRef(null)
-  const udio = useRef(null)
-
-  const el = useRef(null)
-  //logo hover
-
-  function handleMouseEnterLogo(e) {
-    if (e.target) {
-      gsap.to(line1.current, { scale: 1.05, ease: 'power2.out', duration: 0.17 })
-      gsap.to(line2.current, { scale: 0.8, ease: 'power2.out', duration: 0.17 })
-      gsap.to(line1.current, { scale: 1, ease: 'power2.in', duration: 0.17, delay: 0.06 })
-      gsap.to(line2.current, { scale: 0.75, ease: 'power2.in', duration: 0.17, delay: 0.06 })
-    } else return
-  }
-
-  //scrolly stuff
-  useIsomorphicLayoutEffect(() => {
-    let boxes = [box1.current, box2.current, box3.current, hamRef.current]
-    gsap.to(el.current, {
-      autoAlpha: 1,
-    })
-    gsap.set(logo.current, { y: -140, scale: 0.8 })
-    gsap.set(logoWrapper.current, { height: 80, width: 300, ease: 'back.inOut' })
-    gsap.set(line2.current, { scale: 0.75, x: -26, y: -12, duration: 0.25 })
-    gsap.set(ixel.current, { autoAlpha: 1 })
-    gsap.set(boxes, {
-      y: -120,
-    })
-    gsap.to(logo.current, {
-      delay: 0.25,
-      duration: 1.25,
-      autoAlpha: 1,
-      y: 0,
-      ease: 'back.inOut(2.5)',
-    })
-
-    let tl = gsap.timeline({ defaults: { ease: 'back.inOut(1.7)' } })
-    tl.to(box1.current, { duration: 1, autoAlpha: 1, y: 0 }, '<0.15')
-    tl.to(box2.current, { duration: 1, autoAlpha: 1, y: 0 }, '<0.15')
-    tl.to(box3.current, { duration: 1, autoAlpha: 1, y: 0 }, '<0.15')
-    gsap.to(hamRef.current, {
-      delay: 0.25,
-      duration: 1.25,
-      autoAlpha: 1,
-      y: 0,
-      ease: 'back.inOut(2.5)',
-    })
-    let tl_logo = gsap.timeline({
-      paused: true,
-      defaults: { duration: 0.33, ease: 'back.inOut(1)' },
-    })
-    tl_logo.to(ixel.current, { opacity: 0, autoAlpha: 0 }, '<25%')
-    tl_logo.to(akery.current, { opacity: 0, autoAlpha: 0 }, '<25%')
-    tl_logo.to(esign.current, { opacity: 0, autoAlpha: 0 }, '<25%')
-    tl_logo.to(udio.current, { opacity: 0, autoAlpha: 0 }, '<25%')
-    tl_logo.to(b.current, { x: -90, duration: 0.25 }, '<5%')
-    tl_logo.to(d.current, { scale: 1.35, y: 4, x: -8, duration: 0.33 }, '<25%')
-    tl_logo.to(s.current, { scale: 1.35, y: 4, x: -136, duration: 0.33 }, '<33%')
-    tl_logo.to(line2.current, { y: -12, duration: 0.25 }, '<')
-    tl_logo.to(logo.current, { scale: 1.02 }, '<')
-    tl_logo.to(logo.current, { height: 124, width: 90, ease: 'sine.out' }, '<25%')
-    tl_logo.to(logoWrapper.current, { x: -8, y: 4 }, '<')
-
-    ScrollTrigger.create({
-      start: `${window.innerHeight / 2} top`,
-      end: 'max',
-      // markers: true,
-      onToggle(self) {
-        // prevent toggling when at the bottom of page
-        if (self.progress === 1) return
-        if (self.isActive) {
-          tl.reverse()
-          tl_logo.play()
-        } else {
-          tl.play()
-          tl_logo.reverse()
-        }
-      },
-    })
+  // Create a window resize event listener
+  useEffect(() => {
+    setwindowHeight(window.innerHeight)
+    const handleWindowResize = () => {
+      setwindowHeight(window.innerHeight)
+      handleShowNavBar()
+    }
+    window.addEventListener('resize', handleWindowResize)
     return () => {
-      tl.kill()
-      tl_logo.kill()
-      ScrollTrigger.killAll()
-      gsap.killTweensOf(logoWrapper.current)
-      gsap.killTweensOf(hamRef.current)
-      gsap.killTweensOf(logo.current)
-      gsap.killTweensOf(line1.current)
-      gsap.killTweensOf(line2.current)
-      gsap.killTweensOf(p.current)
-      gsap.killTweensOf(b.current)
-      gsap.killTweensOf(d.current)
-      gsap.killTweensOf(s.current)
-      gsap.killTweensOf(ixel.current)
-      gsap.killTweensOf(akery.current)
-      gsap.killTweensOf(esign.current)
-      gsap.killTweensOf(udio.current)
-      gsap.killTweensOf(el.current)
+      window.removeEventListener('resize', handleWindowResize)
+      handleShowNavBar()
     }
   }, [])
 
+  // Create a scroll event listener, and call handleShowNavBar
+  useEffect(() => {
+    setScrollPosition(window.scrollY + 1)
+    handleShowNavBar()
+    const handleScroll = () => {
+      const position = window.scrollY + 1
+      setScrollPosition(position)
+      handleShowNavBar()
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [scrollPosition])
+
+  const navItem: Variants = {
+    offscreen: (delay) => ({
+      y: -300,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+        duration: 1,
+        delay: delay,
+      },
+    }),
+    onscreen: (delay) => ({
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 60,
+        duration: 1,
+        delay: delay,
+      },
+    }),
+  }
+
   return (
     <>
-      <div ref={el} className={'z-40 opacity-0'}>
-        <div className='navItem origin-top-left ml-8 mt-8 fixed top-0 left-0 z-40 '>
-          <div
-            ref={logo}
-            className='bg-cream rounded-md origin-top-left hidden xl:block  '
-            onMouseEnter={handleMouseEnterLogo}
+      <LazyMotion features={domAnimation}>
+        <nav className={'z-40 '}>
+          <m.div
+            initial={'offscreen'}
+            animate={'onscreen'}
+            variants={navItem}
+            custom={0.3}
+            layout
+            className='origin-top ml-8 mt-8 fixed top-0 left-0 z-40'
           >
+            <m.div
+              initial={{ width: '100%' }}
+              animate={
+                showNavBar
+                  ? {
+                      scale: 1,
+                      width: '100%',
+                      paddingTop: '1rem',
+                      paddingBottom: '.60rem',
+                    }
+                  : {
+                      scale: 1,
+                      width: '35%',
+                      paddingTop: '2rem',
+                      paddingBottom: '2rem',
+                      transition: { width: { delay: 0.33 } },
+                    }
+              }
+              exit={{ width: '100%' }}
+              className=' bg-cream  rounded-md origin-top-left object-left-top hidden xl:flex flex-col justify-center item-start  px-4   overflow-hidden'
+              layout
+            >
+              <Nav_Logo showNavBar={showNavBar} />
+            </m.div>
+
+            {/* <div className='bg-cream   '>
             <Link
               hrefLang={'en-US'}
               href={'/'}
-              className=' pointer-events-auto block relative  h-full w-full z-40 px-4 pt-3 my-0 font-pbheading'
+              className=' pointer-events-auto block relative  z-40 my-0 font-pbheading '
             >
-              <div
-                ref={logoWrapper}
-                className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-5xl leading-none inline-block'
+              <div className='pointer-events-none select-none cursor-none relative z-20 top-0 bg-none text-peach font-extrabold rounded-md px-2 text-4xl leading-none inline-block'></div>
+            </Link>
+          </div> */}
+          </m.div>
+          <div className='pointer-events-none select-none cursor-none overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
+            <m.div
+              initial={'offscreen'}
+              animate={showNavBar ? 'onscreen' : 'offscreen'}
+              variants={navItem}
+              exit={'offscreen'}
+              custom={0.1}
+              transition={{ ease: 'easeOut', duration: 2 }}
+              className={cn('pointer-events-none select-none cursor-nonerelative self-center', {
+                ['opacity-0 hidden']: isHamActive,
+              })}
+            >
+              <Link
+                hrefLang={'en-US'}
+                href={'/about'}
+                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
               >
-                <div
-                  ref={line1}
-                  className=' pointer-events-none relative block overflow-visible tracking-normal text-left whitespace-nowrap'
-                >
-                  <span ref={p} className='inline-block'>
-                    p
-                  </span>
-                  <span ref={ixel} className='inline-block'>
-                    ixel{' '}
-                  </span>
-                  <span ref={b} className='inline-block ml-3'>
-                    b
-                  </span>
-                  <span ref={akery} className='inline-block'>
-                    akery
-                  </span>
-                </div>
-                <div
-                  ref={line2}
-                  className='pointer-events-none select-none cursor-none relative block tracking-wide  text-left whitespace-nowrap'
-                >
-                  <span ref={d} className='inline-block'>
-                    d
-                  </span>
-                  <span ref={esign} className='inline-block'>
-                    esign{' '}
-                  </span>
-                  <span ref={s} className='inline-block ml-3'>
-                    s
-                  </span>
-                  <span ref={udio} className='inline-block'>
-                    tudio
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <div className='pointer-events-none select-none cursor-none overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
-          <div
-            className={cn(
-              'pointer-events-none select-none cursor-nonerelative opacity-0 self-center',
-              { ['opacity-0 hidden']: isHamActive },
-            )}
-            ref={box1}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              hrefLang={'en-US'}
-              href={'/about'}
-              className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+                who we are
+              </Link>
+            </m.div>
+            <m.div
+              initial={'offscreen'}
+              animate={showNavBar ? 'onscreen' : 'offscreen'}
+              variants={navItem}
+              exit='offscreen'
+              custom={0.2}
+              className={cn('relative self-center', { ['opacity-0 hidden']: isHamActive })}
             >
-              who we are
-            </Link>
-          </div>
-          <div
-            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
-            ref={box2}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              hrefLang={'en-US'}
-              href={'/work'}
-              className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
-              onMouseEnter={handleMouseEnter}
-              onMouseOut={handleMouseLeave}
-            >
-              what we make
-            </Link>
-          </div>
-          <div
-            className={cn('relative opacity-0 self-center', { ['opacity-0 hidden']: isHamActive })}
-            ref={box3}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              hrefLang={'en-US'}
-              href={'/onboarding'}
-              className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
-              onMouseEnter={handleMouseEnter}
-              onMouseOut={handleMouseLeave}
-            >
-              start a project
-            </Link>
-          </div>
-          <div ref={hamRef} className='-mr-4'>
-            <Nav_HamburgerNav isActive={isHamActive} onModalUpdate={setHamToggle} />
-          </div>
-          <Link hrefLang={'en-US'} href='/store/cart' aria-label={'cart item'}>
-            <div className=' pointer-events-auto relative ml-4  z-50'>
-              <div
-                className='relative  text-center bg-pink-lighter px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:opacity-90 hover:scale-97 active:scale-90'
+              <Link
+                hrefLang={'en-US'}
+                href={'/work'}
+                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
               >
-                {cart?.total_items}
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-7 w-7'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2.5'
-                    d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </div>
-
+                what we make
+              </Link>
+            </m.div>
+            <m.div
+              initial={'offscreen'}
+              animate={showNavBar ? 'onscreen' : 'offscreen'}
+              variants={navItem}
+              exit='offscreen'
+              custom={0.3}
+              className={cn('relative self-center', { ['opacity-0 hidden']: isHamActive })}
+            >
+              <Link
+                hrefLang={'en-US'}
+                href={'/onboarding'}
+                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
+              >
+                start a project
+              </Link>
+            </m.div>
+            <m.div className='' initial={'offscreen'} animate={'onscreen'} variants={navItem}>
+              <Nav_HamburgerNav isActive={isHamActive} onModalUpdate={setHamToggle} />
+            </m.div>
+            <m.div initial={'offscreen'} animate={'onscreen'} variants={navItem}>
+              <Link hrefLang={'en-US'} href='/store/cart' aria-label={'cart item'}>
+                <div className=' pointer-events-auto relative ml-4  z-50'>
+                  <div
+                    className='relative  text-center bg-pink-lighter px-4 py-4 rounded-md font-bold text-peach text-xl leading-none cursor-pointer  transform transition-all duration-600 ease-in-out scale-100 opacity-100
+  hover:opacity-90 hover:scale-97 active:scale-90'
+                  >
+                    {cart?.total_items}
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-7 w-7'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2.5'
+                        d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </m.div>
+          </div>
+        </nav>
+      </LazyMotion>
       <div
         className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 pb-2 pt-4 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
         id='mobile-logo'
@@ -294,4 +220,3 @@ hover:opacity-90 hover:scale-97 active:scale-90'
     </>
   )
 }
-export default Navigation_Store
