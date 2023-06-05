@@ -4,23 +4,10 @@ import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 import cn from 'classnames'
-import gsap from 'gsap'
+
 import SocialUrls_Contact from '@data/SocialUrls_Contact'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
+
 function Contact_HangOut() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.set('.animate-horizontal', { x: 0 })
-    const headerTL = gsap
-      .timeline({ repeat: -1 })
-      .to('.animate-horizontal', { x: 20, duration: 2, delay: 0.5, ease: ' sine.inOut' })
-      .to('.animate-horizontal', { x: 0, duration: 2, delay: 0.5, ease: ' sine.inOut' })
-      .to('.animate-horizontal', { x: 20, duration: 2, delay: 0.5, ease: ' sine.inOut' })
-      .to('.animate-horizontal', { x: 0, duration: 2, delay: 0.5, ease: ' sine.inOut' })
-    headerTL.play
-    return () => {
-      headerTL.kill()
-    }
-  }, [])
   return (
     <PageSection className='overflow-visible ' id={'socials'}>
       <InnerWrapper>
@@ -52,7 +39,7 @@ function Contact_HangOut() {
             xmlns='http://www.w3.org/2000/svg'
             className={cn(' top-0 left-0 social-link text-blue-dark fill-yellow ')}
             stroke='currentColor'
-            width={800}
+            width={825}
           >
             <g className='text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl'>
               <text

@@ -66,12 +66,13 @@ const StrokeText = ({
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className={cn(
-        'lowercase cursor-pointer top-0 left-0 social-link transform transition-all duration-300 ease-in-out text-blue-dark hover:fill-current hover:text-blue-dark motion-safe:hover:-skew-x-12',
+        'lowercase cursor-pointer top-0 left-0 social-link transform transition-all duration-300 ease-in-out text-blue-dark hover:fill-current hover:text-blue-dark motion-safe:hover:-skew-x-12 overflow-visible',
         { ['fill-current']: active },
       )}
       fill='none'
       stroke='currentColor'
       id={`svg-${index}`}
+      // width={'100%'}
     >
       <text
         x='0px'

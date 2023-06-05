@@ -41,7 +41,6 @@
     "formik": "2.3.2",
     "framer-motion": "^10.5.0",
     "gray-matter": "latest",
-    "gsap": "^3.11.3",
     "lottie-web": "^5.10.0",
     "next": "^13.0.2",
     "next-mdx-remote": "^4.4.1",

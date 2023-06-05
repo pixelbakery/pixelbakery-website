@@ -1,63 +1,58 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import Image from 'next/image'
-import gsap from 'gsap'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 import Shimmer from '@lib/Shimmer'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
+import { domAnimation, LazyMotion, m, Variants } from 'framer-motion'
+
 // type MediaType = HTMLVideoElement | HTMLAudioElement
 function Work_Portfolio_Card({ project }) {
   const [isHovered, setHover] = useState(false)
-  const projID = `${project.data.client.replace(/[^A-Za-z]+/g, '')}-${project.data.title.replace(
-    /[^A-Za-z]+/g,
-    '',
-  )}`
-  const [tl, setTimeline] = useState(gsap.timeline({ paused: false }))
-  const projID_title = `${projID}-title`
-  const projID_tags = `${projID}-tags`
   const handleHover = () => {
     setHover(!isHovered)
   }
 
-  useIsomorphicLayoutEffect(() => {
-    tl.from(`#${projID_title} .detail`, {
-      stagger: 0.25,
-      y: 30,
-      duration: '0.33',
-      autoAlpha: 0,
-      ease: 'sine.easeIn',
-    }),
-      tl.from(
-        `#${projID_tags} .tag`,
-        {
-          stagger: 0.25,
-          y: -30,
-          duration: '0.33',
-          autoAlpha: 0,
-          ease: 'sine.easeIn',
-        },
-        '<=0.25',
-      )
-    return () => {
-      tl.kill()
-    }
-  }, [])
+  const cardOverlay: Variants = {
+    show: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+      },
+    },
+    hide: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  }
 
-  useIsomorphicLayoutEffect(() => {
-    if (isHovered) {
-      tl.play()
-    } else if (!isHovered) {
-      tl.reverse()
-    }
-    return () => {
-      tl.kill()
-    }
-  }, [isHovered])
+  const cardOverlayItem_Tag: Variants = {
+    show: {
+      y: 5,
+      opacity: 1,
+    },
+    hide: {
+      y: -15,
+      opacity: 0,
+    },
+  }
 
+  const cardOverlayItem_Title: Variants = {
+    show: {
+      y: -5,
+      opacity: 1,
+    },
+    hide: {
+      y: 15,
+      opacity: 0,
+    },
+  }
   return (
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
@@ -131,32 +126,46 @@ function Work_Portfolio_Card({ project }) {
             'absolute z-40 top-0 left-0 w-full h-full flex flex-col justify-between py-6 px-4 pointer-events-none',
           )}
         >
-          <div
-            id={projID_tags}
-            className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
-          >
-            {project.data.tags.slice(0, 3).map((tag) => (
-              <Pill
-                text={tag}
-                bgColor={'blue'}
-                textColor={'cream'}
-                size='xs'
-                key={tag}
-                className={'hidden md:inline'}
-              />
-            ))}
-          </div>
-          <div
-            id={projID_title}
-            className={(cn('projectTitle hidden lg:block'), `${projID}-title`)}
-          >
-            <div className='detail  text-sm text-white text-shadow-sm hidden lg:block'>
-              {project.data.client}
-            </div>
-            <h3 className='detail text-2xl text-white text-shadow-sm hidden lg:block'>
-              {project.data.title}
-            </h3>
-          </div>
+          <LazyMotion features={domAnimation}>
+            <m.div
+              variants={cardOverlay}
+              animate={isHovered ? 'show' : 'hide'}
+              // id={projID_tags}
+              className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
+            >
+              {project.data.tags.slice(0, 3).map((tag) => (
+                <m.span key={tag} variants={cardOverlayItem_Tag}>
+                  <Pill
+                    text={tag}
+                    bgColor={'blue'}
+                    textColor={'cream'}
+                    size='xs'
+                    className={'hidden md:inline'}
+                  />
+                </m.span>
+              ))}
+            </m.div>
+          </LazyMotion>
+          <LazyMotion features={domAnimation}>
+            <m.div
+              className={cn('projectTitle hidden lg:block')}
+              variants={cardOverlay}
+              animate={isHovered ? 'show' : 'hide'}
+            >
+              <m.div
+                className='detail  text-sm text-white text-shadow-sm hidden lg:block'
+                variants={cardOverlayItem_Title}
+              >
+                {project.data.client}
+              </m.div>
+              <m.h3
+                className='detail text-2xl text-white text-shadow-sm hidden lg:block'
+                variants={cardOverlayItem_Title}
+              >
+                {project.data.title}
+              </m.h3>
+            </m.div>
+          </LazyMotion>
         </div>
         <div
           className={cn('absolute bottom-0 left-0  mb-1 ml-1 z-40  lg:hidden py-2 px-4 bg-cream')}
