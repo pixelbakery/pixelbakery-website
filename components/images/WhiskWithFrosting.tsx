@@ -5,6 +5,8 @@ const WhiskWithFrosting = (props: SVGProps<SVGSVGElement>) => {
     <svg
       id='WhiskWithFrosting'
       xmlns='http://www.w3.org/2000/svg'
+      height={'100%'}
+      width={'100%'}
       viewBox='0 0 109.01 218.53'
       fill='currentColor'
       {...props}
