@@ -48,7 +48,7 @@ function Services_Header({
     return (
       <ReactPlayer
         muted={true}
-        playsinline={true}
+        playsInline={true}
         autoPlay={true}
         loop={true}
         controls={false}
@@ -61,7 +61,7 @@ function Services_Header({
             attributes: {
               autoPlay: true,
               loop: true,
-              playsinline: true,
+              playsInline: true,
               muted: true,
               class: 'object-contain xl:object-cover ',
               style: { width: '100%', height: '100%' },

@@ -14,7 +14,7 @@ const ServicesOverview_AnimatedExplainers = () => {
         <div className='bg-pink h-full max-h-screen order-last'>
           <ReactPlayer
             muted={true}
-            playsinline={true}
+            playsInline={true}
             autoPlay={true}
             loop={true}
             controls={false}
@@ -27,7 +27,7 @@ const ServicesOverview_AnimatedExplainers = () => {
                 attributes: {
                   autoPlay: true,
                   loop: true,
-                  playsinline: true,
+                  playsInline: true,
                   muted: true,
                   style: { width: '100%', height: '100%', objectFit: 'cover' },
                 },

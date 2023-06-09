@@ -37,7 +37,7 @@ function Home_WhoTheHeck() {
               playing={true}
               loop={true}
               muted={true}
-              playsinline={true}
+              playsInline={true}
               style={{ position: 'absolute', top: 0, left: 0 }}
               config={{
                 file: {

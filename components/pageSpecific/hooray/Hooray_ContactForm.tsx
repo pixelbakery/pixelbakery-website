@@ -166,7 +166,7 @@ function Surprise_ContactForm() {
         <p className='text-white'>Here&apos;s a video of some cute capivaras vibing in Japan. </p>
         <div className='w-full aspect-w-16 aspect-h-9'>
           <ReactPlayer
-            playsinline
+            playsInline
             width='100%'
             height='100%'
             url='https://www.youtube.com/watch?v=wCa08BwOOS4'

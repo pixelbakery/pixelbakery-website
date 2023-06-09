@@ -11,7 +11,7 @@ function ServicesOverview_SocialMedia() {
         <div className='bg-yellow h-full max-h-screen'>
           <ReactPlayer
             muted={true}
-            playsinline={true}
+            playsInline={true}
             autoPlay={true}
             loop={true}
             controls={false}
@@ -24,7 +24,7 @@ function ServicesOverview_SocialMedia() {
                 attributes: {
                   autoPlay: true,
                   loop: true,
-                  playsinline: true,
+                  playsInline: true,
                   muted: true,
                   style: { width: '100%', height: '100%', objectFit: 'cover' },
                   // poster: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,

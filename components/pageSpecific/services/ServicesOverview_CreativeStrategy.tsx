@@ -12,7 +12,7 @@ function ServicesOverview_CreativeStrategy() {
           <div className='relative h-full w-full'>
             <ReactPlayer
               muted={true}
-              playsinline={true}
+              playsInline={true}
               autoPlay={true}
               loop={true}
               controls={false}
@@ -25,7 +25,7 @@ function ServicesOverview_CreativeStrategy() {
                   attributes: {
                     autoPlay: true,
                     loop: true,
-                    playsinline: true,
+                    playsInline: true,
                     muted: true,
                     style: { width: '100%', height: '100%', objectFit: 'cover' },
                   },

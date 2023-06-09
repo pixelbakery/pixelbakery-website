@@ -51,13 +51,13 @@ function Video({ url, ...props }: video) {
           height={'100%'}
           loop={props.loop != undefined ? props.loop : false}
           muted={props.muted != undefined ? props.muted : true}
-          playsinline={props.playsInline != undefined ? props.playsInline : true}
+          playsInline={props.playsInline != undefined ? props.playsInline : true}
           controls={props.controls != undefined ? props.controls : true}
           className={'w-full videoWrapper'}
           config={{
             vimeo: {
               playerOptions: {
-                playsinline: true,
+                playsInline: true,
               },
             },
           }}

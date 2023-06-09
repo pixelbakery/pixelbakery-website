@@ -92,7 +92,7 @@ function Work_Portfolio_Card({ project }) {
         >
           <ReactPlayer
             muted={true}
-            playsinline={true}
+            playsInline={true}
             loop={true}
             controls={false}
             preload={'true'}
