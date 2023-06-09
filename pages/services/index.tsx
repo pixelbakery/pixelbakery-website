@@ -11,7 +11,6 @@ import {
   ServicesOverview_SocialMedia,
   ServicesOverview_AnimatedExplainers,
   ServicesOverview_ProductPhotography,
-  ServicesOverview_More,
 } from '@services/index'
 
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
@@ -31,7 +30,7 @@ function Services_Page() {
       <ServicesOverview_CreativeStrategy />
       <ServicesOverview_EmergingMedia />
       <ServicesOverview_SocialMedia />
-      <ServicesOverview_More />
+      {/* <ServicesOverview_More /> */}
       <CaseStudies_CTA />
       <NextSeo
         title='Services'
