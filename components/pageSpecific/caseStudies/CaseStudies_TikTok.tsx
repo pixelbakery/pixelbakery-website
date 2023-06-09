@@ -139,7 +139,7 @@ const SetSlide = ({ slide }) => {
         url={[`${ImgPrefix}${slide.videoPath}.webm`, `${ImgPrefix}${slide.videoPath}.mp4`]}
         src={`${ImgPrefix}${slide.videoPath}.mp4`}
         poster={`${ImgPrefix}${slide.videoPath}.jpg`}
-        playsinline={true}
+        playsInline={true}
         className={' rounded-lg  cursor-pointer'}
         controls
         width={'100%'}
@@ -154,7 +154,7 @@ const SetSlide = ({ slide }) => {
         height={'100%'}
         controls={true}
         muted={false}
-        playsinline={false}
+        playsInline={false}
         attributes={[{ poster: `${ImgPrefix}${slide.videoPath}.jpg` }]}
       />
     </div>
