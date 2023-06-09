@@ -31,7 +31,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         id='Logo_Wordmark'
         viewBox={'0 0 494 138'}
         width={235}
-        height={'auto'}
+        height={'100%'}
         animate={showNavBar ? { scale: 1, y: 0 } : { scale: 1.3, y: -11 }}
         layout
         className={
