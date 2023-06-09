@@ -134,7 +134,7 @@ export default function Navbar() {
                 href={'/about'}
                 className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
               >
-                who we are
+                Who We Are
               </Link>
             </m.div>
             <m.div
@@ -150,7 +150,7 @@ export default function Navbar() {
                 href={'/work'}
                 className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
               >
-                what we make
+                What We Make
               </Link>
             </m.div>
             <m.div
