@@ -2,6 +2,7 @@ import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 import { Fragment } from 'react'
 import About_Team_Headshot from '@about/About_Team_Headshot'
+import Link from 'next/link'
 
 const leadIndex1 = 5
 
@@ -19,9 +20,22 @@ const Leader2 = () => {
     <div className='flex relative w-full h-full bg-blue-dark col-span-2 sm:col-span-1 aspect-3/4 flex-col justify-center px-8'>
       <Lead color='blue' className='mb-0 pb-0'>
         we create intentional and beautiful moments for exciting people that share our beliefs and
-        passions
+        passions.
       </Lead>
     </div>
+  )
+}
+const PastEmployees = () => {
+  return (
+    <Link
+      href={'/about/past-employees'}
+      className='flex relative w-full h-full bg-cream col-span-1 aspect-3/4 flex-col justify-center px-8 hover-99 hover-shadow-none'
+    >
+      <Lead color='wine-300' className='mb-0 pb-0'>
+        View all of the bakers that came before →
+      </Lead>
+      <p></p>
+    </Link>
   )
 }
 const Header = () => {
@@ -43,6 +57,7 @@ const PeopleCard = ({ allPeople, leadIndex2 }) => (
         <About_Team_Headshot person={person} />
       </Fragment>
     ))}
+    <PastEmployees />
   </>
 )
 
