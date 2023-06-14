@@ -7,13 +7,18 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/industries',
+    destination: '/work#industries',
+    permanent: true,
+  },
+  {
     source: '/services/animated-video-explainers',
-    destination: 'https://pixelbakery.com/services/animated-explainer-videos',
+    destination: '/services/animated-explainer-videos',
     permanent: true,
   },
   {
     source: '/animated-explainer-videos',
-    destination: 'https://pixelbakery.com/services/animated-explainer-videos',
+    destination: '/services/animated-explainer-videos',
     permanent: true,
   },
   {

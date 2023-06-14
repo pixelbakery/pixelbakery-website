@@ -26,6 +26,7 @@
       "@contact/*": ["components/pageSpecific/contact/*"],
       "@education/*": ["components/pageSpecific/education/*"],
       "@emailGenerator/*": ["components/pageSpecific/emailGenerator/*"],
+      "@industries/*": ["components/pageSpecific/industries/*"],
       "@home/*": ["components/pageSpecific/home/*"],
       "@onboarding/*": ["components/pageSpecific/onboarding/*"],
       "@recipes/*": ["components/pageSpecific/recipes/*"],
