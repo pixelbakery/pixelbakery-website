@@ -76,9 +76,13 @@ export default function Navbar() {
             variants={navItem}
             custom={0.3}
             layout
-            className='flex w-full origin-top ml-8 mt-8 fixed top-0 left-0 z-40'
+            className='flex w-full origin-top ml-8 mt-8 fixed top-0 left-0 z-40 pointer-events-none'
           >
-            <Link href={'/'} hrefLang='en' className=' max-w-fit flex '>
+            <Link
+              href={'/'}
+              hrefLang='en'
+              className=' max-w-fit flex pointer-events-auto hover:scale-99 duration-200 '
+            >
               <m.div
                 initial={{ width: '100%' }}
                 animate={
@@ -120,7 +124,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/about'}
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase '
+                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase hover:scale-98 duration-200'
               >
                 Who We Are
               </Link>
@@ -136,7 +140,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/work'}
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase'
+                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase hover:scale-98 duration-200'
               >
                 What We Make
               </Link>
@@ -152,7 +156,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/onboarding'}
-                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase '
+                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase hover:scale-98 duration-200'
               >
                 start a project
               </Link>

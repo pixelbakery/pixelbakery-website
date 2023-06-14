@@ -11,7 +11,7 @@ const H3 = ({ color, children, className }: PropsWithChildren<Props>) => {
   return (
     <h3
       className={cn(
-        'font-bold max-w-md text-3xl sm:text-3xl md:text-4xl 2xl:text-5xl 2xl:max-w-4xl mb-0 pb-0 leading-none ',
+        'font-bold max-w-md text-3xl sm:text-3xl md:text-4xl 2xl:text-4xl 2xl:max-w-4xl mb-0 pb-0 leading-none ',
         [`text-${color}`],
         [`${className}`],
       )}

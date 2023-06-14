@@ -5,12 +5,10 @@ import path from 'path'
 
 import Main from '@parts/Main'
 import matter from 'gray-matter'
-import Work_SEO from '@work/Work_SEO'
-import Work_Callout from '@work/Work_Callout'
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import Work_Portfolio from '@work/Work_Portfolio'
-import Work_Clients from '@work/Work_Clients'
 
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+
+import { Work_SEO, Work_Callout, Work_Portfolio, Work_Clients, Work_Industries } from '@work/index'
 const Work = ({ allCaseStudies }) => {
   return (
     <Main>
@@ -18,6 +16,7 @@ const Work = ({ allCaseStudies }) => {
       <Work_Services />
       <Work_Callout />
       <Work_Portfolio allCaseStudies={allCaseStudies} />
+      <Work_Industries />
       <Work_Clients />
       <Work_SEO />
     </Main>

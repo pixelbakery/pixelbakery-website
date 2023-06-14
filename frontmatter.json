@@ -972,7 +972,7 @@
   "frontMatter.content.snippets": {
     "Video": {
       "description": "video content",
-      "body": "<Video url={'[[url]]'} poster={'[[poster]]'} autoplay={[[autoplay]]} title={'[[title]]'} muted={[[muted]]} loop={[[loop]]} controls={[[controls]]} playsInline={[[playsinline]]} />",
+      "body": "<Video url={'[[url]]'} poster={'[[poster]]'} autoplay={[[autoplay]]} title={'[[title]]'} muted={[[muted]]} loop={[[loop]]} controls={[[controls]]} playsInline={[[playsInline]]} />",
       "fields": [
         {
           "name": "url",

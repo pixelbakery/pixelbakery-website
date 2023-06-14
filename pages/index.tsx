@@ -2,6 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import Main from '@parts/Main'
+import Work_Industries from '@work/Work_Industries'
 
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
@@ -23,6 +24,7 @@ const Home = ({ allPosts, allCaseStudies }) => {
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio allCaseStudies={allCaseStudies} />
+      <Work_Industries />
       <Home_Recipes allPosts={allPosts} />
       <Home_SEO />
     </Main>
