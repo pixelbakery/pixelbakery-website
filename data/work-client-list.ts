@@ -41,7 +41,7 @@ export default [
   {
     client: 'SOLA',
     logo: '/img/clients/pixelbakery_client_sola.png',
-    url: 'https://sola.com',
+    url: 'https://thesolacompany.com',
     active: true,
   },
   {
