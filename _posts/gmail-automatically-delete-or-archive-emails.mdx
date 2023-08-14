@@ -16,7 +16,7 @@ We use Gmail and Gsuite as our primary email providers at Pixel Bakery. As is th
 
 I like getting shipping confirmations and updates, but all I need is a glance at the subject line and forget about it. The solution: tell Gmail to archive or delete certain emails after a specified number of days. Surprisingly enough, Gmail does not have this as a native feature. Users can set filters to automatically delete emails from certain senders or with keyword pattern matches, sure, but that's an instant filter and those emails never see the light of day.
 
-I scoured the internet for a solution, but apparently, no one has revisited the subject since circa 2012. The result was a lot of abandoned Reddit threads and deleted files. I finally stumbled upon a very very old post with a screenshot of some code inserted into [Google Scripts](https://script.google.com/). Not really ideal and not easily implantable, so I took it upon myself to rebuild the script and add some modernization to it.
+I scoured the internet for a solution, but apparently, no one has revisited the subject since circa 2012. The result was a lot of abandoned Reddit threads and deleted files. I finally stumbled upon a very very old post with a screenshot of some code inserted into [Google Scripts](https://www.google.com/script/start/). Not really ideal and not easily implantable, so I took it upon myself to rebuild the script and add some modernization to it.
 
 This solution creates a Google Script that looks at your Gmail inbox for emails that have a certain label applied to them and then runs an appropriate function based on that label name once a day. We combine this with the use of Gmail's automatic filtering system to create an easy-to-manage solution to a bloated inbox. Here's a link to a [GitHub Gist](https://gist.github.com/jordanlambrecht/ec6ad36b5a48271fcbb4bb811512e477) the actual [Google Apps Script](https://script.google.com/d/1BW2AqvwUSbd9fID36fszLLUKkEmu8gj0FfKjyKanEwV7OGgzQuxHZS9e).
 
@@ -38,7 +38,7 @@ Once you have your filter criteria figured out, hit Create Filter. Select either
 
 ## Step 03: Create the Script
 
-Now for the good part. Let's get our script operational and running. In a new browser tab, navigate to [scripts.google.com](https://scripts.google.com/). Create a new script, name it, and paste our code into it. I have the default set to two days for both the 'autoDelete' and 'autoArchive' functions. You can change them by editing the variable delayDays on lines 3 and 35 respectively. Save your code.
+Now for the good part. Let's get our script operational and running. In a new browser tab, navigate to [scripts.google.com](https://www.google.com/script/start/). Create a new script, name it, and paste our code into it. I have the default set to two days for both the 'autoDelete' and 'autoArchive' functions. You can change them by editing the variable delayDays on lines 3 and 35 respectively. Save your code.
 
 Before we move on, we need to tell Scripts to use the Gmail service and grant it access to that scope. While still in the code editor, navigate to the nav item on the left labeled 'Services'. Locate Gmail API and hit Add.
 
