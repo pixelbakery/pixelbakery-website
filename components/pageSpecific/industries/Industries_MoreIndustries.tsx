@@ -24,7 +24,7 @@ const Industries_MoreIndustries = () => {
             Consumer Packaged Goods →
           </Link>
           <Link
-            href={'/industries/nonprofit-video-production'}
+            href={'/industries/nonprofit-video'}
             hrefLang='en-us'
             className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
           >

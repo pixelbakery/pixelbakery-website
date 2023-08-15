@@ -5,9 +5,9 @@ const Industries_SEO_Nonprofits = () => {
       <NextSeo
         title='Video Production for Nonprofits'
         description={`Animation and video production offer nonprofits an opportunity to tell their stories in a compelling and visually captivating way.`}
-        canonical={`https://pixelbakery.com/industries/nonprofit-video-production`}
+        canonical={`https://pixelbakery.com/industries/nonprofit-video`}
         openGraph={{
-          url: `https://pixelbakery.com/industries/nonprofit-video-production`,
+          url: `https://pixelbakery.com/industries/nonprofit-video`,
           title: 'Video Production for Nonprofits',
           description: `Animation and video production offer nonprofits an opportunity to tell their stories in a compelling and visually captivating way.`,
           images: [
@@ -36,7 +36,7 @@ const Industries_SEO_Nonprofits = () => {
           {
             position: 2,
             name: `Nonprofit Video Production`,
-            item: `https://pixelbakery.com/industries/nonprofit-video-production`,
+            item: `https://pixelbakery.com/industries/nonprofit-video`,
           },
         ]}
       />
