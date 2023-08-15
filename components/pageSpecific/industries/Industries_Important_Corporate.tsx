@@ -1,6 +1,7 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
+import Link from 'next/link'
 
 const Industries_Important_Corporate = () => {
   return (
@@ -23,13 +24,20 @@ const Industries_Important_Corporate = () => {
             </p>
             <p>
               In fact, 95% of viewers retain information from videos, as opposed to only 10% from
-              text alone. According to Forbes, 64% of consumers are more likely to purchase a
-              product after watching a video about it.
+              text alone. According to{' '}
+              <Link
+                href={
+                  'https://www.forbes.com/sites/forbesagencycouncil/2017/02/03/video-marketing-the-future-of-content-marketing'
+                }
+              >
+                Forbes
+              </Link>
+              , 64% of consumers are more likely to purchase a product after watching a video about
+              it.
             </p>
             <p>
               By incorporating video production into their strategies, businesses can leverage these
               statistics to enhance communication, showcase professionalism, and drive success.
-              watching a video about it.
             </p>
           </div>
         </div>
