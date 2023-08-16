@@ -235,7 +235,7 @@ export const Footer: NextPage = () => {
             <span className='self-center text-center mt-4 md:mt-0 italic text-sm  text-cream'>
               © {year} Pixel Bakery Design Studio
               <br />
-              Made with love and flour in Lincoln, Nebraska &amp; NW Arkansas
+              Made with love and flour in Lincoln, Nebraska
             </span>
             <div className='hidden md:block' />
           </div>
