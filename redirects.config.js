@@ -2,10 +2,25 @@
 
 const redirectsArray = [
   // {
-  //   source: '/work/case-studies/snacklins-retainer',
-  //   destination: '/work/case-studies/snacklins-ongoing-retainer',
+  //   source: '',
+  //   destination: '',
   //   permanent: true,
   // },
+  {
+    source: '/careers/freelance-video-editor',
+    destination: '/careers/freelance-editor',
+    permanent: true,
+  },
+  {
+    source: '/industries/nonprofit-video-production',
+    destination: '/industries/nonprofit-video',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/soulpancake-price-of-free',
+    destination: '/work/case-studies/soulpancake-price-free',
+    permanent: true,
+  },
   {
     source: '/industries',
     destination: '/work#industries',
