@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/parts/Layout'
 import '@styles/globals.css'
-import { Analytics } from '@vercel/analytics/react'
+// import { Analytics } from '@vercel/analytics/react'
 import '@styles/typography.css'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import ReactGA from 'react-ga4'
@@ -57,7 +57,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <NextSEO_DefaultSEO />
       {getLayout(path)}
-      <Analytics />
+      {/* <Analytics /> */}
     </>
   )
 }
