@@ -99,7 +99,7 @@
           "title": "excerpt",
           "name": "excerpt",
           "type": "string",
-          "single": true,
+          "single": false,
           "required": true
         },
         {
@@ -145,8 +145,7 @@
           "description": "Either a PNG or SVG",
           "name": "logo",
           "type": "string",
-          "single": true,
-          "required": true
+          "single": true
         },
         {
           "title": "Credits",
