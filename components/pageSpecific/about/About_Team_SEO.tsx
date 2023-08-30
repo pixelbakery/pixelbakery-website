@@ -16,16 +16,16 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
   objectArray.forEach(([key, value]) => {
     details[Object.keys(value).toString()] = Object.values(value).toString()
   })
-
-  let desc = `The amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
-  if (details.personalAesthetic != undefined) {
-    desc = `${desc} ${details.personalAesthetic}`
-  }
-  desc = `${desc} ${frontMatter.title}`
-  if (details.leastFavoriteThing != undefined)
-    desc += `, and they really hate ${details.leastFavoriteThing.toLowerCase()}`
-  else desc += `, and they're one of our favorite people ever`
-  desc += '.'
+  let desc = `${frontMatter.excerpt}`
+  // let desc = `The amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
+  // if (details.personalAesthetic != undefined) {
+  //   desc = `${desc} ${details.personalAesthetic}`
+  // }
+  // desc = `${desc} ${frontMatter.title}`
+  // if (details.leastFavoriteThing != undefined)
+  //   desc += `, and they really hate ${details.leastFavoriteThing.toLowerCase()}`
+  // else desc += `, and they're one of our favorite people ever`
+  // desc += '.'
   return (
     <>
       <BreadcrumbJsonLd
