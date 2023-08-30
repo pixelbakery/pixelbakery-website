@@ -2,7 +2,7 @@ export { default as ServicesOverview_Animation } from '@services/ServicesOvervie
 export { default as ServicesOverview_CreativeStrategy } from '@services/ServicesOverview_CreativeStrategy'
 export { default as ServicesOverview_EmergingMedia } from '@services/ServicesOverview_EmergingMedia'
 export { default as ServicesOverview_Intro } from '@services/ServicesOverview_Intro'
-export { default as ServicesOverview_More } from '@services/ServicesOverview_More'
+// export { default as ServicesOverview_More } from '@services/ServicesOverview_More'
 export { default as ServicesOverview_MotionMixer } from '@services/ServicesOverview_MotionMixer'
 export { default as ServicesOverview_SocialMedia } from '@services/ServicesOverview_SocialMedia'
 export { default as ServicesOverview_VideoProduction } from '@services/ServicesOverview_VideoProduction'
