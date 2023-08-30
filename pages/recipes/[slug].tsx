@@ -53,7 +53,6 @@ export default function PostPage({
 }) {
   return (
     <Main>
-      <Recipes_Post_SEO datePostedISO={datePostedISO} frontMatter={frontMatter} slug={slug} />
       <div className='mb-32'>
         <Recipes_Post_Header
           frontMatter={frontMatter}
@@ -83,6 +82,7 @@ export default function PostPage({
         as={'recipes'}
       />
       <Recipes_Post_Related relatedPosts={freshPosts} />
+      <Recipes_Post_SEO datePostedISO={datePostedISO} frontMatter={frontMatter} slug={slug} />
     </Main>
   )
 }
