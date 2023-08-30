@@ -61,7 +61,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   }
 
   // check to see if it's a name your own price product
-
+  console.log(product.seo.description)
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
       <BreadcrumbJsonLd
@@ -80,7 +80,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
       />
       <NextSeo
         title={`${product.name} | Store`}
-        description={`${product.description}`}
+        description={`${product.seo.description}`}
         canonical={`https://pixelbakery.com/store/product/${product.permalink}`}
         openGraph={{
           type: 'product',
@@ -88,14 +88,14 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
           images: [
             {
               url: `${product.image.url}`,
-              alt: `${product.description}`,
+              alt: `${product.seo.description}`,
               type: 'image/jpeg',
               width: 720,
               height: 540,
             },
           ],
           title: `${product.name}`,
-          description: `${product.description}`,
+          description: `${product.seo.description}`,
           siteName: 'Pixel Bakery',
         }}
         twitter={{
@@ -107,7 +107,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
       <ProductJsonLd
         productName={`${product.name}`}
         images={[`${product.image.url}`]}
-        description={`${product.description}`}
+        description={`${product.seo.description}`}
         brand='Pixel Bakery'
         offers={[
           {
