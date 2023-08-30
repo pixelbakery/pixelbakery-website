@@ -10,7 +10,7 @@ import Services_AnimatedExplainers_Topics from '@services/Services_AnimatedExpla
 import Services_AnimatedExplainers_GreatFor from '@services/Services_AnimatedExplainers_GreatFor'
 
 const desc =
-  'We build custom, high-quality animated explainer videos to help brands showcase who they are.'
+  'We build custom, high-quality bespoke animated explainer videos to help brands showcase who they are. Quality visuals that resonate.'
 
 const Services_Animated_Explainer_Videos = () => {
   return (
