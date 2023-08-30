@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "aws-push": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control max-age=31536000",
+    "aws-push-delete": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control max-age=31536000 --delete",
+
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
