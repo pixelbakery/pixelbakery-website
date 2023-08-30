@@ -30,10 +30,6 @@ const talents = [
     link: '#emerging-media',
   },
   {
-    service: 'Web Hosting',
-    link: '/services/web-hosting',
-  },
-  {
     service: 'Social Media Kits',
     link: '#social-media',
   },
