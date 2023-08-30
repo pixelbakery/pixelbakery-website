@@ -18,12 +18,12 @@ function Careers_SEO({ ...props }) {
       />
       <NextSeo
         title={`${props.title} | Careers`}
-        description={`Pixel Bakery is hiring a ${props.commitment} ${props.title}. Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.`}
+        description={`Pixel Bakery is hiring a ${props.commitment} ${props.title}. Come join our awesome team on a journey to create outstanding animations, motion graphics, and video productions.`}
         canonical={`https://pixelbakery.com/careers/${props.slug}`}
         openGraph={{
           url: `https://pixelbakery.com/careers/${props.slug}`,
           title: `${props.title} | Careers`,
-          description: `Pixel Bakery is hiring a ${props.commitment} ${props.title}. Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.`,
+          description: `Pixel Bakery is hiring a ${props.commitment} ${props.title}.Come join our awesome team on a journey to create outstanding animations, motion graphics, and video productions.`,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.coverImage}`,

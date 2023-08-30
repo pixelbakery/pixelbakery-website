@@ -9,7 +9,8 @@ import Lottie_Animation from '@data/lottie_services/lottie_services_animation.js
 import Services_SEO from '@services/Services_SEO'
 import Services_Animation_Why from '@services/Services_Animation_Why'
 import Services_Animation_Benefits from '@services/Services_Animation_Benefits'
-const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+const desc =
+  'We create motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
 
 const Page_Services_Animation = () => {
   return (

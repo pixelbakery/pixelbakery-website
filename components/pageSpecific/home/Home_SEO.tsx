@@ -3,9 +3,9 @@ import { NextSeo } from 'next-seo'
 function Home_SEO() {
   return (
     <NextSeo
-      title='Home'
+      title='Pixel Bakery Design Studio'
       description={
-        'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.'
+        'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, and video production.'
       }
       canonical={`https://pixelbakery.com`}
       openGraph={{
@@ -33,7 +33,7 @@ function Home_SEO() {
           },
         ],
         description:
-          'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.',
+          'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, and video production.',
       }}
     />
   )

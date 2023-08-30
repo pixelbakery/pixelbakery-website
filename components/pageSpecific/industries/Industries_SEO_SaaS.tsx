@@ -4,12 +4,12 @@ const Industries_SEO_SaaS = () => {
     <>
       <NextSeo
         title='Video Production for SaaS Companies'
-        description={`By harnessing the power of animation and video production, SaaS companies can unlock a world of effective communication, enhanced brand recognition, improved user experience, and accelerated growth.`}
+        description={`Elevate SaaS companies with animation and video, enhancing communication, brand recognition, user experience, and growth.`}
         canonical={`https://pixelbakery.com/industries/saas-video-production`}
         openGraph={{
           url: `https://pixelbakery.com/industries/saas-video-production`,
           title: 'Video Production for SaaS Companies',
-          description: `By harnessing the power of animation and video production, SaaS companies can unlock a world of effective communication, enhanced brand recognition, improved user experience, and accelerated growth.`,
+          description: `Elevate SaaS companies with animation and video, enhancing communication, brand recognition, user experience, and growth.`,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

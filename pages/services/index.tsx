@@ -34,7 +34,7 @@ function Services_Page() {
       <CaseStudies_CTA />
       <NextSeo
         title='Services'
-        description={`We create beautiful digital moments using animation, motion graphics, and video production.`}
+        description={`Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.`}
         canonical={`https://pixelbakery.com/services`}
         openGraph={{
           url: `https://pixelbakery.com/services`,
@@ -46,7 +46,7 @@ function Services_Page() {
             },
           ],
           description:
-            'We create beautiful digital moments using animation, motion graphics, and video production.',
+            'Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.',
         }}
       />
     </Main>

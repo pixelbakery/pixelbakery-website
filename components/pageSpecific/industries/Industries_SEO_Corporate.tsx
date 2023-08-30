@@ -1,15 +1,17 @@
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 const Industries_SEO_Corporate = () => {
+  const desc =
+    'Expert video production for corporations and businesses. Bring your brand to life with expert video production and animation for businesses and corporations.'
   return (
     <>
       <NextSeo
         title='Corporate Video Production'
-        description={`Our specialty is telling brand stories. Wether that’s through animation or video production, there’s no better way to illuminate your brand than by bringing it to life with video.`}
+        description={`${desc}`}
         canonical={`https://pixelbakery.com/industries/corporate-video-production`}
         openGraph={{
           url: `https://pixelbakery.com/industries/corporate-video-production`,
           title: 'Corporate Video Production',
-          description: `Our specialty is telling brand stories. Wether that’s through animation or video production, there’s no better way to illuminate your brand than by bringing it to life with video.`,
+          description: `${desc}`,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

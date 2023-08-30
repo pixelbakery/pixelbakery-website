@@ -9,20 +9,12 @@ function Page_Careers_JobShadow() {
     <Main>
       <NextSeo
         title='Job Shadows | Careers'
-        description={`Whether you’re considering a career in design or you just want to come in and hang
-                out with us (we don’t blame you), there’s definitely an opportunity to come shadow
-                at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
-                and maybe give you a sneak-peek on what we plan to do! There are just a few
-                requirements.`}
+        description={`Discover design careers with Pixel Bakery! Shadow our team, see our projects, and learn about the creative process. Join us for an inspiring experience.`}
         canonical={`https://pixelbakery.com/careers/job-shadow`}
         openGraph={{
           url: `https://pixelbakery.com/careers/job-shadow`,
           title: 'Job Shadows | Careers',
-          description: `Whether you’re considering a career in design or you just want to come in and hang
-                out with us (we don’t blame you), there’s definitely an opportunity to come shadow
-                at Pixel Bakery. We’ll show you what we’re currently working on, what we’ve done,
-                and maybe give you a sneak-peek on what we plan to do! There are just a few
-                requirements.`,
+          description: `Discover design careers with Pixel Bakery! Shadow our team, see our projects, and learn about the creative process. Join us for an inspiring experience.`,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

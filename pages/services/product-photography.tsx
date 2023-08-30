@@ -9,7 +9,8 @@ import {
 import Services_ProductPhotography_HowImportant from '@services/Services_ProductPhotography_HowImportant'
 import Services_ProductPhotography_WhyPB from '@services/Services_ProductPhotography_WhyPB'
 
-const desc = 'We specialize in 2D and 3D animation, motion graphics, stop motion, and 3D modeling'
+const desc =
+  "Showcase your brand's essence with Nebraska's premier product photography. Capturing every detail to reflect your dedication."
 const Page_ProductPhotography = () => {
   return (
     <Main>
