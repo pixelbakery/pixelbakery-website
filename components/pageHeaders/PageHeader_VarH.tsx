@@ -60,7 +60,6 @@ const PageHeader_VarH = ({ header, subheader }: Props) => {
       setLoading(false)
     }
   }, [loading])
-  // console.log(shuffled.primaryColor)
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
       <div

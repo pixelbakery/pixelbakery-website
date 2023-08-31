@@ -17,7 +17,6 @@ export { default as Services_Animation_Why } from '@services/Services_Animation_
 export { default as Services_Header } from '@services/Services_Header'
 export { default as Services_Modulation } from '@services/Services_Modulation'
 export { default as Services_OurApproach } from '@services/Services_OurApproach'
-export { default as Services_SEO } from '@services/Services_SEO'
 export { default as Services_Subservices } from '@services/Services_Subservices'
 export { default as Services_Subservices_Box } from '@services/Services_Subservices_Box'
 export { default as Services_VideoProduction_Why } from '@services/Services_VideoProduction_Why'

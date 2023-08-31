@@ -5,7 +5,6 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
   let list = []
   if (frontMatter.socials != undefined) {
     frontMatter.socials.forEach((s) => {
-      // return console.log(Object.values(s).toString())
       list.push(Object.values(s).toString())
     })
   }

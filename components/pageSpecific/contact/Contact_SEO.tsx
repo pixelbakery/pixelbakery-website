@@ -3,12 +3,12 @@ import { NextSeo } from 'next-seo'
 function Contact_SEO() {
   return (
     <NextSeo
-      title='Contact'
+      title='Contact Us – Let’s Talk About Animation and Video Production'
       description={`Come visit, email, call, stalk, harass, admire, or hang out with us. We love other humans. Fill out the contact form below to get in touch with us directly.`}
       canonical={`https://pixelbakery.com/contact`}
       openGraph={{
         url: `https://pixelbakery.com/contact`,
-        title: 'Contact',
+        title: 'Contact Us – Come Vibe with Us',
         description:
           'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.',
         images: [

@@ -29,16 +29,16 @@ function Services_Page() {
       <ServicesOverview_CreativeStrategy />
       <ServicesOverview_EmergingMedia />
       <ServicesOverview_SocialMedia />
-      {/* <ServicesOverview_More /> */}
       <CaseStudies_CTA />
       <NextSeo
-        title='Our Services'
+        title='Services - Animation, Animated Explainers, Video Production'
         description={`Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.`}
         canonical={`https://pixelbakery.com/services`}
         openGraph={{
+          title: 'Services - Animation, Animated Explainers, Video Production',
           url: `https://pixelbakery.com/services`,
-
-          title: 'Our Services',
+          description:
+            'Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.',
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_all_800x800.jpg`,
@@ -59,8 +59,6 @@ function Services_Page() {
               alt: `Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.`,
             },
           ],
-          description:
-            'Offering expert animation, animated explainer videos, motion graphics, and video production to craft unforgettable digital experiences.',
         }}
       />
     </Main>

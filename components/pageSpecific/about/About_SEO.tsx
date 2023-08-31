@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 const About_SEO = () => {
   return (
     <NextSeo
-      title='About'
+      title='About – Who We Are and What We Believe In'
       canonical={`https://pixelbakery.com/about`}
       description={`We're is a ragtag team of scrappy designers, animators, and producers. we create intentional moments for exciting people that share our passions.`}
       openGraph={{

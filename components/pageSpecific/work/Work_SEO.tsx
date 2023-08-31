@@ -4,7 +4,7 @@ function Work_SEO() {
   return (
     <>
       <NextSeo
-        title='Our Work'
+        title='Our Work - Animation and Video Production Case Studies'
         description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}
         canonical={`https://pixelbakery.com/work`}
         openGraph={{

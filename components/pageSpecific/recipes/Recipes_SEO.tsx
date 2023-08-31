@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 const Recipes_SEO = () => {
   return (
     <NextSeo
-      title="Mom's Recipes"
+      title="Mom's Recipes - Get the Latest Scoop from the PB Team"
       description={
         'Sometimes we say smart things, and sometimes we have things we want to say. You can find all those things here.'
       }

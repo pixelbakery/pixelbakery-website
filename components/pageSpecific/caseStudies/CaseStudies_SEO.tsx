@@ -2,7 +2,18 @@ import { BreadcrumbJsonLd, NextSeo, VideoJsonLd } from 'next-seo'
 
 function CaseStudies_SEO({ frontMatter, slug }) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
+  const tag1 = frontMatter.tags[0]
+  const tag2 = frontMatter.tags[1]
 
+  let projTitle = `${frontMatter.client}: ${frontMatter.title}`
+  let metaTitle = `${frontMatter.client}: ${frontMatter.title}`
+
+  if (projTitle.length + 3 + tag1.length <= 60) {
+    metaTitle = `${projTitle} - ${tag1}`
+  }
+  if (projTitle.length + 3 + tag1.length + 3 + tag2.length <= 60) {
+    metaTitle = `${projTitle} - ${tag1} & ${tag2}`
+  }
   return (
     <>
       <BreadcrumbJsonLd
@@ -30,7 +41,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
         ]}
       />
       <NextSeo
-        title={`${frontMatter.client}: ${frontMatter.title}`}
+        title={`${metaTitle}`}
         description={frontMatter.excerpt}
         canonical={`https://pixelbakery.com/work/case-studies/${slug}`}
         openGraph={{
@@ -40,17 +51,6 @@ function CaseStudies_SEO({ frontMatter, slug }) {
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,
-              alt: frontMatter.excerpt,
-              type: 'image/jpeg',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
-              width: 1200,
-              height: 900,
-              alt: 'Pixel Bakery Design Studio is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.',
-            },
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/${frontMatter.vimeoPreview}.jpg`,
               alt: frontMatter.excerpt,
               type: 'image/jpeg',
             },

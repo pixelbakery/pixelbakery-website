@@ -1,6 +1,17 @@
 import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
 
 function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
+  const title = `${frontMatter.title}`
+  let metaTitle = `${frontMatter.title}`
+  const author = `${frontMatter.author.name}`
+
+  if (title.length + 5 + author.length <= 60) {
+    metaTitle = `${metaTitle}, by ${author}`
+  }
+  if (title.length + 5 + author.length + 3 + frontMatter.categories[0].length <= 60) {
+    metaTitle = `${metaTitle}, by ${author} - ${frontMatter.categories[0]}`
+  }
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -18,12 +29,12 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
         ]}
       />
       <NextSeo
-        title={`${frontMatter.title}`}
+        title={`${metaTitle}`}
         description={`${frontMatter.excerpt}`}
         canonical={`https://pixelbakery.com/recipes/${slug}`}
         openGraph={{
           url: `https://pixelbakery.com/recipes/${slug}`,
-          title: `${frontMatter.title}`,
+          title: `${metaTitle}`,
           type: 'article',
           description: `${frontMatter.excerpt}`,
           article: {
@@ -41,7 +52,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
       />
       <ArticleJsonLd
         url={`https://pixelbakery.com/recipes/${slug}`}
-        title={` ${frontMatter.title}`}
+        title={` ${metaTitle}`}
         images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
         datePublished={`${datePostedISO}`}
         authorName={[

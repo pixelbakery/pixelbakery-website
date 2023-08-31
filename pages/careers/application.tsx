@@ -15,16 +15,16 @@ function Careers_Application({ allJobs }) {
     <Main>
       <NextSeo
         noindex={true}
-        title='Application | Careers'
+        title='Submit an Application | Careers'
         description={
-          'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.'
+          'Here it is- your big chance. Show us your best self, fill out the job application, and seal it with a kiss. Good luck.'
         }
         canonical={`https://pixelbakery.com/careers/application`}
         openGraph={{
           url: `https://pixelbakery.com/careers/application`,
           title: 'Application | Careers',
           description:
-            'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.',
+            'Here it is- your big chance. Show us your best self, fill out the job application, and seal it with a kiss. Good luck.',
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,

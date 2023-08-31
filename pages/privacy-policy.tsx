@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-
 import Main from '@parts/Main'
 import { NextSeo } from 'next-seo'
 import PageSection from '@parts/PageSection'
@@ -8,9 +7,9 @@ import InnerWrapper from '@parts/InnerWrapper'
 
 function PrivacyPolicy() {
   return (
-    <Main id='' className='my-4'>
+    <Main id='priv' className='my-4'>
       <NextSeo
-        title='Privacy Policy'
+        title='Privacy Policy - Does Anyone Really Read These Things?'
         canonical={`https://pixelbakery.com/privacy-policy`}
         description={`Here you can find the details of Pixel Bakery's Privacy Policy. It's incredibly boring and extremely dry to read. Sorry in advance.`}
         openGraph={{

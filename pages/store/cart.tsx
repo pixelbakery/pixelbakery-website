@@ -39,7 +39,7 @@ const CheckoutPage: NextPage = () => {
     <Main id='page-checkout' className='relative'>
       <NextSeo
         canonical='https://pixelbakery.com/store/cart'
-        title='Cart – Store'
+        title='Your Shopping Cart – The Pixel Bakery Company Store'
         description='Your shopping cart is ready for you! Review and finalize your selections before proceeding to checkout. Your wildest desires are just a click away.'
         noindex={true}
         openGraph={{
