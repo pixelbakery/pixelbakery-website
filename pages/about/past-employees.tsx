@@ -77,6 +77,12 @@ const Page_PastEmployees = ({ allPeople }) => {
           type: 'website',
           description: `Change is constant, even among our dedicated team members. Embrace the journey.`,
           url: `https://pixelbakery.com/about/past-employees`,
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
+              alt: `Pixel Bakery Design Studio (PBDS) is a multidisciplinary production studio focused on animation, animated explainer videos, motion design, and commercial film production`,
+            },
+          ],
         }}
       />
     </Main>

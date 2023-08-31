@@ -61,7 +61,6 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
   }
 
   // check to see if it's a name your own price product
-  console.log(product.seo.description)
   return (
     <main id={'product-' + product.name} className=' bg-white relative'>
       <BreadcrumbJsonLd
