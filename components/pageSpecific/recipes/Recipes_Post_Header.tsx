@@ -139,13 +139,15 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
         ) : (
           <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
             <Image
+              priority={true}
               fill={true}
-              className='object-cover object-center w-full h-full'
+              className='object-cover object-center '
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-              quality={100}
+              quality={75}
+              sizes='(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 33vw'
             />
             <Loading />
           </div>
