@@ -1,24 +1,23 @@
-import Services_Header from '@services/Services_Header'
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
 import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Link from 'next/link'
-import Services_SEO from '@services/Services_SEO'
 
+import {
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Header,
+  Services_SEO_SocialMedia,
+} from '@services/index'
+import Work_Industries from '@work/Work_Industries'
 export default function Services() {
-  const desc = `Engage with your audience on their favorite platforms. We add animation and motion graphics to your social media feeds.`
   return (
     <Main>
-      <Services_SEO serviceName='Social Media Kits' path='social-media' description={desc} />
-
       <Services_Header
         serviceName={'Social Media Kits'}
         isLottie={false}
         subheader={'We create capitvating and engaging social ecosystems'}
         bgColor={'yellow'}
-        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`}
-        videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.webm`}
+        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAniamtion_SocialMedia.mp4`}
       >
         <p className='mt-6 leading-loose'>
           You typically have 5 seconds to grab the attention of your user base on social media. In a
@@ -30,12 +29,18 @@ export default function Services() {
           <Link hrefLang={'en-US'} href={'/work/case-studies/snacklins-content-kit'}>
             Check out
           </Link>{' '}
-          the social content we've built for SNACKLINS.
+          the social content we've built for{' '}
+          <Link hrefLang='en-US' href={'https://snacklins.com'}>
+            SNACKLINS
+          </Link>
+          .
         </p>
       </Services_Header>
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />
+      <Work_Industries header={'Industries We Love Making Social Media Video Content For'} />
+      <Services_SEO_SocialMedia />
     </Main>
   )
 }

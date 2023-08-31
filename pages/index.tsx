@@ -24,7 +24,7 @@ const Home = ({ allPosts, allCaseStudies }) => {
       <Home_WhatWeMake />
       <Home_Services />
       <Home_Portfolio allCaseStudies={allCaseStudies} />
-      <Work_Industries />
+      <Work_Industries header={'Industries We Love Working With'} />
       <Home_Recipes allPosts={allPosts} />
       <Home_SEO />
     </Main>

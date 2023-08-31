@@ -2,11 +2,14 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Link from 'next/link'
-const Work_Industries = () => {
+interface Props {
+  header?: string
+}
+const Work_Industries = ({ header }: Props) => {
   return (
     <PageSection id='industries'>
       <InnerWrapper>
-        <H2 color='blue-dark'>Industries We Love Working With</H2>
+        <H2 color='blue-dark'>{`${header}`}</H2>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 gap-x-4'>
           <Link
             href={'/industries/corporate-video-production'}

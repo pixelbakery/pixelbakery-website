@@ -1,26 +1,27 @@
-import Services_Subservices from '@services/Services_Subservices'
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
-import Services_Modulation from '@services/Services_Modulation'
+import {
+  Services_Subservices,
+  Services_SEO_Animation,
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Modulation,
+  Services_Header,
+  Services_Animation_Why,
+  Services_Animation_Benefits,
+} from '@services/index'
+
 import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Services_Header from '@services/Services_Header'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json'
-import Services_SEO from '@services/Services_SEO'
-import Services_Animation_Why from '@services/Services_Animation_Why'
-import Services_Animation_Benefits from '@services/Services_Animation_Benefits'
-const desc =
-  'We create motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
+import Work_Industries from '@work/Work_Industries'
 
 const Page_Services_Animation = () => {
   return (
     <Main>
-      <Services_SEO serviceName='animation' description={desc} path={'animation'} />
       <Services_Header
         serviceName={'Animation'}
         isLottie={true}
         subheader={
-          'We create motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
+          'We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
         }
         bgColor={'blue-dark'}
         lottieComponent={Lottie_Animation}
@@ -33,13 +34,14 @@ const Page_Services_Animation = () => {
         </p>
       </Services_Header>
       <Services_Animation_Why />
-
       <Services_Subservices />
       <Services_Animation_Benefits />
       <Services_Modulation />
+      <Work_Industries header={'Industries We Love Making Animated Content For'} />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />
+      <Services_SEO_Animation />
     </Main>
   )
 }

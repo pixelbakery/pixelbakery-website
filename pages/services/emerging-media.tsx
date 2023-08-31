@@ -1,17 +1,18 @@
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
 import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Services_Header from '@services/Services_Header'
 import Lottie_Animation from '@data/lottie_services/lottie_services_emergingMedia.json'
-import Services_SEO from '@services/Services_SEO'
+
+import {
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Header,
+  Services_SEO_EmergingMedia,
+} from '@services/index'
+import Work_Industries from '@work/Work_Industries'
 
 export default function Services_EmergingMedia() {
-  const desc = `Artificial reality, projection mapping, virtual reality, holograms, Why not? The world is evolving and so should your marketing strategy.`
   return (
     <Main>
-      <Services_SEO serviceName='Emerging Media' description={desc} path='emerging-media' />
-
       <Services_Header
         serviceName={'Emerging Media'}
         isLottie={true}
@@ -30,11 +31,11 @@ export default function Services_EmergingMedia() {
           brand to speak closer to your customers than ever before.
         </p>
       </Services_Header>
-
+      <Work_Industries header={'Industries We Love Creating Emerging Media For'} />
       <CaseStudies_CTA />
-
       <Services_AllServices />
       <Services_OurApproach />
+      <Services_SEO_EmergingMedia />
     </Main>
   )
 }

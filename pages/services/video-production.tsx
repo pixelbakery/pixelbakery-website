@@ -1,39 +1,42 @@
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
+import {
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Modulation,
+  Services_Header,
+  Services_VideoProduction_Why,
+  Services_SEO_VideoProduction,
+} from '@services/index'
+
 import Main from '@parts/Main'
-import Services_Modulation from '@services/Services_Modulation'
+
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Services_Header from '@services/Services_Header'
-import Services_SEO from '@services/Services_SEO'
-import Services_VideoProduction_Why from '@services/Services_VideoProduction_Why'
+import Work_Industries from '@work/Work_Industries'
 
 export default function Services() {
-  const desc = `Video production can include TV commercials, YouTube ads, social media, and more. These all give your brand more recognition.`
   return (
     <Main>
-      <Services_SEO serviceName='Video Production' description={desc} path='video-production' />
       <Services_Header
         serviceName={'Video Production'}
         isLottie={false}
         subheader={'Making your story come to life'}
         bgColor={'dangerPink'}
-        videoSourceWEBM={'/img/PB_ServiceAniamtion_VideoProduction.webm'}
-        videoSourceMP4={'/img/PB_ServiceAniamtion_VideoProduction.mp4'}
+        videoSourceMP4={'/img/services/PB_ServiceAniamtion_VideoProduction.mp4'}
       >
         <p>
-          Commercial video production can include video advertisements, TV commercials, YouTube
-          pre-roll ads, online advertisements, or digital campaigns. These are all great ways to
-          give your brand more recognition and to boost your marketplace identity. With our
-          experience in both video production and animation, there are no limits to what we can
-          produce for your brand.
+          Commercial video production can include video ads, TV commercials, YouTube pre-roll ads,
+          online advertisements, digital campaigns, and way more. These are all great ways to give
+          your brand more recognition and to boost your marketplace identity. With our experience in
+          both video production and animation, there are no limits to what we can produce for your
+          brand.
         </p>
       </Services_Header>
       <Services_VideoProduction_Why />
       <Services_Modulation />
       <Services_OurApproach />
+      <Work_Industries header={'Industries We Love Making Video Content For'} />
       <CaseStudies_CTA />
-
       <Services_AllServices />
+      <Services_SEO_VideoProduction />
     </Main>
   )
 }

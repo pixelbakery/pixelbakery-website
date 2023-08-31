@@ -1,19 +1,16 @@
-// import Services_Subservices from '@services/Services_Subservices'
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
 import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Services_Header from '@services/Services_Header'
 import Lottie_Animation from '@data/lottie_services/lottie_services_creativeStrategy.json'
-import Services_SEO from '@services/Services_SEO'
-
+import {
+  Services_SEO_CreativeStrategy,
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Header,
+} from '@services/index'
+import Work_Industries from '@work/Work_Industries'
 export default function Services_CreativeStrategy() {
-  const desc =
-    'From discovery to delivery, we craft strategies and briefs at Pixel Bakery to align your message and achieve project goals.'
   return (
     <Main>
-      <Services_SEO serviceName='Creative Strategy' description={desc} path='creative-strategy' />
-
       <Services_Header
         serviceName={'Creative Strategy'}
         isLottie={true}
@@ -34,9 +31,11 @@ export default function Services_CreativeStrategy() {
           theme that ties a project together is the key to a successful campaign.
         </p>
       </Services_Header>
+      <Work_Industries header={'Industries We Love Doing Creative Strategy For'} />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />
+      <Services_SEO_CreativeStrategy />
     </Main>
   )
 }

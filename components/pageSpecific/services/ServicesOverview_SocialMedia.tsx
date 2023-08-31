@@ -18,7 +18,7 @@ function ServicesOverview_SocialMedia() {
             width='100%'
             height='100%'
             className='bg-yellow'
-            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_SocialMedia.mp4`}
+            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAniamtion_SocialMedia.mp4`}
             config={{
               file: {
                 attributes: {
@@ -35,7 +35,7 @@ function ServicesOverview_SocialMedia() {
         </div>
         <div className='flex flex-col justify-center px-12  py-12'>
           <H2 color='blue-dark' className='mb-6 2xl:mb-10 '>
-            Social Media Kits
+            Social Media Video Content
           </H2>
           <p>
             You typically have 5 seconds to grab the attention of your user base on social media. In

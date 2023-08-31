@@ -4,21 +4,15 @@ import {
   Services_AllServices,
   Services_Header,
   Services_OurApproach,
-  Services_SEO,
+  Services_ProductPhotography_HowImportant,
+  Services_SEO_ProductPhotography,
+  Services_ProductPhotography_WhyPB,
 } from '@services/index'
-import Services_ProductPhotography_HowImportant from '@services/Services_ProductPhotography_HowImportant'
-import Services_ProductPhotography_WhyPB from '@services/Services_ProductPhotography_WhyPB'
+import Work_Industries from '@work/Work_Industries'
 
-const desc =
-  "Showcase your brand's essence with Nebraska's premier product photography. Capturing every detail to reflect your dedication."
 const Page_ProductPhotography = () => {
   return (
     <Main>
-      <Services_SEO
-        serviceName='Product Photography'
-        description={desc}
-        path={'product-photography'}
-      />
       <Services_Header
         serviceName={'Product Photography'}
         isLottie={false}
@@ -34,12 +28,14 @@ const Page_ProductPhotography = () => {
       </Services_Header>
       <Services_ProductPhotography_HowImportant />
       <Services_ProductPhotography_WhyPB />
+      <Work_Industries header={'Industries We Love Doing Product Photography For'} />
       <CaseStudies_CTA
         cta='📸 Ready to take some pics?
 '
       />
       <Services_AllServices />
       <Services_OurApproach />
+      <Services_SEO_ProductPhotography />
     </Main>
   )
 }

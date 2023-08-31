@@ -55,7 +55,7 @@ function Services_Header({
         width='100%'
         height='100%'
         className={`bg-${bgColor} w-full h-full relative  xl:object-cover`}
-        url={[`${videoSourceMP4}`]}
+        url={`${videoSourceMP4}`}
         config={{
           file: {
             attributes: {
@@ -63,7 +63,7 @@ function Services_Header({
               loop: true,
               playsInline: true,
               muted: true,
-              class: 'object-contain xl:object-cover ',
+
               style: { width: '100%', height: '100%' },
             },
           },

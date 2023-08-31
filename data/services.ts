@@ -32,7 +32,7 @@ export default [
     description: 'Nothing says "Razzle & Dazzle" like Augmented Reality and holograms.',
   },
   {
-    service: 'Social Media Kits',
+    service: 'Social Media Video Content',
     url: '/services/social-media',
     description:
       'A swirl of motion graphics, video, UGC, and product photography make for a deadly aesthetic.',

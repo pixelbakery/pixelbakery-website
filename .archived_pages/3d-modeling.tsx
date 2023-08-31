@@ -17,8 +17,8 @@ export default function Services_3dModeling() {
         isLottie={false}
         subheader={'Cooler than 2D'}
         bgColor={'blue-dark'}
-        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_3dModeling.mp4`}
-        videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/PB_ServiceAniamtion_3dModeling.webm`}
+        videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAniamtion_3dModeling.mp4`}
+        videoSourceWEBM={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAniamtion_3dModeling.webm`}
       >
         <p>
           With the development and expansion of social media, mobile marketing, email marketing,

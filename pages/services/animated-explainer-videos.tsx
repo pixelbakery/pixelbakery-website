@@ -1,25 +1,21 @@
-import Services_AllServices from '@services/Services_AllServices'
-import Services_OurApproach from '@services/Services_OurApproach'
-import Services_Modulation from '@services/Services_Modulation'
 import Main from '@parts/Main'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Services_Header from '@services/Services_Header'
-import Services_SEO from '@services/Services_SEO'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animatedExplainers.json'
-import Services_AnimatedExplainers_Topics from '@services/Services_AnimatedExplainers_Topics'
-import Services_AnimatedExplainers_GreatFor from '@services/Services_AnimatedExplainers_GreatFor'
 
-const desc =
-  'We build custom, high-quality bespoke animated explainer videos to help brands showcase who they are. Quality visuals that resonate.'
+import {
+  Services_AllServices,
+  Services_OurApproach,
+  Services_Modulation,
+  Services_Header,
+  Services_AnimatedExplainers_Topics,
+  Services_AnimatedExplainers_GreatFor,
+  Services_SEO_ExplainerVideos,
+} from '@services/index'
+import Work_Industries from '@work/Work_Industries'
 
 const Services_Animated_Explainer_Videos = () => {
   return (
     <Main>
-      <Services_SEO
-        serviceName='Animated Explainer Videos'
-        description={desc}
-        path={'animated-explainer-videos'}
-      />
       <Services_Header
         serviceName={'Animated Explainers'}
         isLottie={true}
@@ -36,9 +32,11 @@ const Services_Animated_Explainer_Videos = () => {
       <Services_AnimatedExplainers_Topics />
       <Services_AnimatedExplainers_GreatFor />
       <Services_Modulation />
+      <Work_Industries header={'Industries We Love Making Animated Explainer Videos For'} />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />
+      <Services_SEO_ExplainerVideos />
     </Main>
   )
 }
