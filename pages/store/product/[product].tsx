@@ -141,7 +141,7 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
               </div>
             </div>
           </div>
-          <div className='mt-0 col-span-1 relative flex flex-col self-start'>
+          <div className='mt-0 col-span-1 relative flex flex-col self-start w-full'>
             {product.assets[0].file_extension === 'mp4' ? (
               <video
                 loop
@@ -155,14 +155,16 @@ const Store_Product: NextPage = ({ product }: { product: any }) => {
                 <source src={product.assets[0].url} type='video/mp4' />
               </video>
             ) : (
-              <Image
-                src={product.media.source}
-                placeholder='blur'
-                blurDataURL={product.media.source}
-                fill={true}
-                className='object-cover object-center w-full h-full inset-0'
-                alt={'pixel bakery ' + product.name}
-              />
+              <div className='relative aspect-3/4 w-full max-h-[50vh] lg:max-h-[75vh]'>
+                <Image
+                  src={product.assets[0].url}
+                  placeholder='blur'
+                  blurDataURL={product.assets[0].url}
+                  fill={true}
+                  className='object-cover object-center w-full h-full inset-0'
+                  alt={'pixel bakery ' + product.name}
+                />
+              </div>
             )}
 
             <div className='hidden w-full  md:flex flex-row justify-start text-left py-4 '>
