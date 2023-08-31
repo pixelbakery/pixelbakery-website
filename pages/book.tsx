@@ -7,7 +7,7 @@ const Book = () => {
       <Onboarding_Calendly className='pt-48 lg:pt-56' h1={true} />
       <NextSeo
         title='Schedule A Meeting'
-        description={`Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`}
+        description={`Let's talk about you and your project. Schedule either an in-person or virtual meeting with our leadership team.`}
         canonical={`https://pixelbakery.com/book`}
         noindex={true}
         openGraph={{
@@ -33,7 +33,7 @@ const Book = () => {
               alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
           ],
-          description: `Schedule either an in-person or virtual meeting with Pixel Bakery's leadership team`,
+          description: `Let's talk about you and your project. Schedule either an in-person or virtual meeting with our leadership team.`,
         }}
       />
     </>

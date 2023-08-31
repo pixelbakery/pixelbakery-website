@@ -40,11 +40,12 @@ const CheckoutPage: NextPage = () => {
       <NextSeo
         canonical='https://pixelbakery.com/store/cart'
         title='Cart – Store'
-        description='Pixel Bakery store cart'
+        description='Your shopping cart is ready for you! Review and finalize your selections before proceeding to checkout. Your wildest desires are just a click away.'
         noindex={true}
         openGraph={{
           title: 'Cart – Store',
-          description: 'Pixel Bakery store cart',
+          description:
+            'Your shopping cart is ready for you! Review and finalize your selections before proceeding to checkout. Your wildest desires are just a click away.',
         }}
       />
       <Navigation_Store />
@@ -178,7 +179,7 @@ const CheckoutPage: NextPage = () => {
                     pony up
                   </span>
 
-                  <ChevronRightIcon className=' absolute right-4  top-1/2 transform -translate-y-1/2 text-pink-lighter text-xl md:text-2xl  w-12 ' />
+                  <ChevronRightIcon />
                 </button>
               </Link>
             ) : (
