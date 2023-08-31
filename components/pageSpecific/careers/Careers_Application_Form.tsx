@@ -377,7 +377,7 @@ export default function Careers_Application_Form({ allJobs }) {
             {errors.resume?.type === 'lessThan10MB' && (
               <p className='text-peach font-semibold italic'>Error: Must Be Under 10MB</p>
             )}
-            <h1>{fileName}</h1>
+            <span>{fileName}</span>
             {errors.resume?.type === 'acceptedFormats' && (
               <p className='text-peach font-semibold italic'>Error: Must Be A PDF</p>
             )}
