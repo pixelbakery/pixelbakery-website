@@ -56,7 +56,7 @@ As with everything else, you can enter frontmatter variables into the top of the
 - All available tags are commented out in the template gist listed above. Simply uncomment any tags you'd like to use or copy/paste them from here. Available tags are:
 
 - 2d animation
-- 3d animation
+- 3d Animation
 - Motion design
 - 3d modeling
 - Artificial reality
