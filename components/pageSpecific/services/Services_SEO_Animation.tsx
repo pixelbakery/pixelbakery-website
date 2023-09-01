@@ -1,4 +1,4 @@
-import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
 const Services_SEO_Animation = () => {
   return (
@@ -18,18 +18,21 @@ const Services_SEO_Animation = () => {
               width: 800,
               height: 800,
               alt: `We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.`,
+              type: 'image/jpeg',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_animation_800x600.jpg`,
               width: 800,
               height: 600,
               alt: `We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.`,
+              type: 'image/jpeg',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_animation_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.',
+              type: 'image/jpeg',
             },
           ],
         }}
@@ -48,7 +51,7 @@ const Services_SEO_Animation = () => {
           },
         ]}
       />
-      <ProductJsonLd
+      {/* <ProductJsonLd
         productName='Animation & Motion Graphics'
         images={[
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_animation_800x800.jpg`,
@@ -58,8 +61,8 @@ const Services_SEO_Animation = () => {
         description='We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.'
         offers={[
           {
-            price: 'Contact for Pricing',
-            // priceCurrency: 'USD',
+            price: 0,
+            priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
             url: 'https://pixelbakery.com/services/animation',
             seller: {
@@ -67,7 +70,7 @@ const Services_SEO_Animation = () => {
             },
           },
         ]}
-      />
+      /> */}
     </>
   )
 }

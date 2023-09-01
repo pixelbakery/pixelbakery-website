@@ -1,8 +1,32 @@
-import { NextSeo } from 'next-seo'
+import { NextSeo, CollectionPageJsonLd } from 'next-seo'
 
-function Work_SEO() {
+interface Props {
+  allCaseStudies: any
+}
+function Work_SEO({ allCaseStudies }: Props) {
+  let arr = []
+  allCaseStudies.forEach((x) => {
+    let keywords = ''
+    x.data.tags.map((tag) => {
+      keywords += `${tag}, `
+    })
+    keywords = keywords.substring(0, keywords.length - 2)
+    let temp = {
+      name: `${x.data.client}: ${x.data.title}`,
+      about: x.data.excerpt,
+      datePublished: x.data.date,
+      author: `Pixel Bakery Design Studio`,
+      keywords: keywords,
+      url: `https://pixelbakery.com/work/case-studies/${x.filePath.replace(/\.mdx?$/, '')}`,
+      image: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
+      thumbnailUrl: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
+    }
+    arr.push(temp)
+  })
+  console.log(arr)
   return (
     <>
+      <CollectionPageJsonLd name='Pixel Bakery Case Studies' hasPart={arr} />
       <NextSeo
         title='Our Work - Animation and Video Production Case Studies'
         description={`We do a few things and we do it well. we're like a scalpel; we operate with precision and intent. But, like, keyframes instead of open heart surgery.`}

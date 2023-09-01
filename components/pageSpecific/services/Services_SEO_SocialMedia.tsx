@@ -1,4 +1,4 @@
-import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
 const Services_SEO_SocialMedia = () => {
   return (
@@ -17,19 +17,22 @@ const Services_SEO_SocialMedia = () => {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_socialMedia_800x800.jpg`,
               width: 800,
               height: 800,
-              alt: `Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.`,
+              alt: `Pixel Bakery: Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.`,
+              type: 'image/jpeg',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_socialMedia_800x600.jpg`,
               width: 800,
               height: 600,
-              alt: `Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.`,
+              alt: `Pixel Bakery: Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.`,
+              type: 'image/jpeg',
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_socialMedia_1280x720.jpg`,
               width: 1280,
               height: 720,
-              alt: 'Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.',
+              alt: 'Pixel Bakery: Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.',
+              type: 'image/jpeg',
             },
           ],
         }}
@@ -48,7 +51,7 @@ const Services_SEO_SocialMedia = () => {
           },
         ]}
       />
-      <ProductJsonLd
+      {/* <ProductJsonLd
         productName='Social Media Video Content'
         images={[
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_socialMedia_800x800.jpg`,
@@ -67,7 +70,7 @@ const Services_SEO_SocialMedia = () => {
             },
           },
         ]}
-      />
+      /> */}
     </>
   )
 }

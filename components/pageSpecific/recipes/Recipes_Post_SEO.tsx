@@ -2,15 +2,21 @@ import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
 
 function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
   const title = `${frontMatter.title}`
-  let metaTitle = `${frontMatter.title}`
   const author = `${frontMatter.author.name}`
+  const cat = frontMatter.categories[0]
+  let metaTitle = title
 
   if (title.length + 5 + author.length <= 60) {
-    metaTitle = `${metaTitle}, by ${author}`
+    metaTitle = `${title}, by ${author} 2`
   }
-  if (title.length + 5 + author.length + 3 + frontMatter.categories[0].length <= 60) {
-    metaTitle = `${metaTitle}, by ${author} - ${frontMatter.categories[0]}`
+  if (title.length + 5 + author.length + 3 + cat.length <= 60) {
+    metaTitle = `${title}, by ${author} - ${cat}`
   }
+
+  console.log(metaTitle)
+  console.log(title, ' ', title.length)
+  console.log(author, ' ', author.length)
+  console.log(frontMatter.categories[0], ' ', frontMatter.categories[0].length)
 
   return (
     <>

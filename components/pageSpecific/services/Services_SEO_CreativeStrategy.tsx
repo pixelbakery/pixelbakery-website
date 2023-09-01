@@ -1,4 +1,4 @@
-import { NextSeo, BreadcrumbJsonLd, ProductJsonLd } from 'next-seo'
+import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 
 const Services_SEO_CreativeStrategy = () => {
   return (
@@ -48,7 +48,7 @@ const Services_SEO_CreativeStrategy = () => {
           },
         ]}
       />
-      <ProductJsonLd
+      {/* <ProductJsonLd
         productName='Creative Concepting & Strategy'
         images={[
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_creativeStrategy_800x800.jpg`,
@@ -67,7 +67,7 @@ const Services_SEO_CreativeStrategy = () => {
             },
           },
         ]}
-      />
+      /> */}
     </>
   )
 }

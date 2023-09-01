@@ -12,11 +12,13 @@ const About_SEO = () => {
           {
             url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
             alt: `Pixel Bakery Design Studio (PBDS) is a multidisciplinary production studio focused on animation, animated explainer videos, motion design, and commercial film production`,
+            type: 'image/jpeg',
           },
         ],
         title: 'About',
         description:
           'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, video production, and product photography.',
+        type: 'image/jpeg',
       }}
     />
   )

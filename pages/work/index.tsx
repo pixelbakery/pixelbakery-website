@@ -18,7 +18,7 @@ const Work = ({ allCaseStudies }) => {
       <Work_Portfolio allCaseStudies={allCaseStudies} />
       <Work_Industries header='Industries We Love Working With' />
       <Work_Clients />
-      <Work_SEO />
+      <Work_SEO allCaseStudies={allCaseStudies} />
     </Main>
   )
 }
