@@ -5,13 +5,13 @@ const Services_SEO_VideoProduction = () => {
     <>
       <NextSeo
         title={`Video Production | Services`}
-        description={`Video production can include TV commercials, YouTube pre-roll ads, company highlight videos, social media videos, and way more. These all give your brand more recognition.`}
+        description={`We use video production to create genuine storytelling. TV commercials, YouTube ads, company highlight videos, social media content - you name it.`}
         canonical={`https://pixelbakery.com/services/video-production`}
         openGraph={{
           url: `https://pixelbakery.com/services/video-production`,
           title: `Video Production | Services`,
           description:
-            'Video production can include TV commercials, YouTube pre-roll ads, company highlight videos, social media videos, and way more.',
+            'We use video production to create genuine storytelling. TV commercials, YouTube ads, company highlight videos, social media content - you name it.',
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_videoProduction_800x800.jpg`,

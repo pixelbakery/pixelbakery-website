@@ -70,7 +70,7 @@ const Page_PastEmployees = ({ allPeople }) => {
       </PageSection>
       <NextSeo
         title='Past Employees – Gone, But Certainly Not Forgotten'
-        description='Change is constant, even among our dedicated team members. Embrace the journey.'
+        description='Change is constant, even among our dedicated team members. Embrace the journey. These are all of the employees that have passed through our doors.'
         canonical='https://pixelbakery.com/about/past-employees'
         openGraph={{
           title: `Past Employees`,

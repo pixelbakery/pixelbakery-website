@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 const Careers_SEO = () => {
   return (
     <NextSeo
-      title='Careers'
+      title={`Careers – Let's Build Something Beautiful Together`}
       description={`Come join an awesome team of videographers, producers, and creatives. See all available job opportunities today.`}
       canonical={`https://pixelbakery.com/careers`}
       openGraph={{
