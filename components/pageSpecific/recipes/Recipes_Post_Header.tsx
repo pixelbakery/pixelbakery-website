@@ -59,7 +59,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
                     width={124}
-                    height={123}
+                    height={124}
                     alt={frontMatter.author.name}
                     quality={75}
                     className='object-center object-cover'
@@ -146,7 +146,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-              quality={75}
+              quality={100}
               sizes='(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 33vw'
             />
             <Loading />
