@@ -13,10 +13,10 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
     metaTitle = `${title}, by ${author} - ${cat}`
   }
 
-  console.log(metaTitle)
-  console.log(title, ' ', title.length)
-  console.log(author, ' ', author.length)
-  console.log(frontMatter.categories[0], ' ', frontMatter.categories[0].length)
+  // console.log(metaTitle)
+  // console.log(title, ' ', title.length)
+  // console.log(author, ' ', author.length)
+  // console.log(frontMatter.categories[0], ' ', frontMatter.categories[0].length)
 
   return (
     <>
