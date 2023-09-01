@@ -21,23 +21,88 @@ draft: false
 slug: after-effects-creating-countdown-timer
 ---
 
-In this tutorial, Shae Thompson covers how to create a countdown timer in After Effects by using expressions.
+Designing a timer in After Effects may seem complex, but with a little understanding of the software's functions, combined with the use of source text and a slider expression, it can be both fun and rewarding. Here's a more detailed breakdown to create both count-up and countdown timers:
 
-**Transcript**
+## **1. Setting the Stage:**
+*Before creating the timer, you need a foundation.*
 
-Hi friends. So today, we'll learn how to make a count-up timer using source text and a slider expression. So first, what we want to do is we want to double-click the text, and then we're going to go into effect and then expression controls and then slider control. So now we have a slider on our text. Then we want to highlight the source text next, but we only want to see the source text. So we're going to hit SS to single it out. And then what we're going to do next is we're going to hit option and then hit the little time button so we can have our expression come up.
+- **Launch** After Effects and open your project.
+- **Create a new text layer** by going to Layer > New > Text, or **double-click** an existing text layer if you’re retrofitting a previous design.
 
-And then this is how we're going to make our count-up timer. So we're going to delete all of this. And initially, we have to define what our slider is. So we're going to say slider equals, and we're going to take this little pick whip, and we're going to go to the slider, which should look like this. So the next thing we have to do is define our frames, our seconds, and our minutes. So we're going to define frames as sliders.
+## **2. Implementing the Slider Control:**
+*The Slider Control is a versatile tool in After Effects used to generate values which can be linked to other properties.*
 
-We're defining it as 30 because this project has 30 frames in a second. And then we're going to do another pair of brackets. Then we're going to go slider divided by 30. So as soon as it hits 30, it's going to put a one instead of completely restarting. Because what this does right here is when you put slider modulus 30, once it hits 30, it goes back down to zero. So any number above 30 would go back to zero and then continue to count up. So then we're going to define minutes as a slider divided by 1,800. And that's how many frames are in one minute or 60 seconds. So we click off. You'll notice that it completely reset the text. So when we move it, it'll give us a bunch of wonky numbers, and we don't want that. So let's set that back down to zero. And what we're going to do first is we're going to do math dot floor. And then, essentially, this makes it so that there are whole numbers no matter what.
+- With your text layer selected, navigate to the **Effects Panel**.
+- Go to **Effect** -> **Expression Controls** -> **Slider Control**. This action integrates a slider, a key component to control how the timer counts.
 
-So we're just going to do math dot floor again for every single one of these so that when we move it up, it goes up by one second. Sometimes they don't like to work when you go and test things out, and I can show you how to fix that. Because sometimes, when you type something like this, After Effects doesn't necessarily want to read your code. So once we get into the functions we're going to do later, I'll show you how to make it work. So what we're going to do next is we are going to make it so that there are two colons in between frames, seconds, and minutes.
+## **3. Setting Up the Source Text Expression:**
+*Expressions in After Effects allow you to use JavaScript-like codes to drive animations.*
 
-So we're going to type mins plus colon plus sec plus colon plus frames. So that when we click out, we have colons right here and right here. However, when we move this slider, it will stay as one number until it gets to 10, so we're going to create a function so it doesn't do that. So we're going to return some more, and we're going to go function > add zero. Then we're going to do a curly little bracket like that. Then we're going to return. And it automatically puts a curly bracket right here at the end.
-Oh. Another thing so to define the add zero, we have to set N as our variable for any number so that when we type out our function, we can go if parenthesis N is less than 10. Then we do return zero ++ N else return N, so this is our function right here.
+- In the timeline, **expand your text layer** to see its properties.
+- **Highlight** the `Source Text` property.
+- To solely view the source text, press **SS** on your keyboard. This shortcut brings the property front and center.
+- Next, hold the **Option** (for Mac) or **Alt** (for Windows) key and click the stopwatch icon beside the source text. This procedure enables the expression editor, where you'll input the code.
 
-What's going to happen is After Effects usually doesn't read this as a correct function. And so when you click out, if you try and do it the way it wants you to, it'll pop up with one of these guys, saying something like this. And what happens is the word else kind of gets in the way of the function. So what you can do to solve this is you go file, go all the way down to scripts, and then update legacy expressions. So you'll do it on all compositions, and you'll just hit update, and it'll just pop up. You want to hit yes, C if else. It moves it to the top, so it works. But now that we have the function, it's gone back to its original state, so what we want to do is now we want to put our add zero right here so that every time we want like a `0, 0, 0`, it'll work this time.
+## **4. Crafting the Timer Expression:**
+*Here, you're going to define the logic for the timer.*
 
-So add 00. So now we can put keyframes in the slider control and create keyframes. If you want to see it in here, you can keep hitting Ss. We have a little key marker at 00. 
+- Clear any existing text inside the expression editor.
+  
+- **Linking the Slider:**
+  - Type `slider = `.
+  - Use the **pick whip tool** (a spiral icon) to link `slider` to the `Slider` property. This connection allows the text to change as the slider value does.
 
-We put another keyframe right there. And for 20 seconds, it's 600 keyframes. And you can tell it worked because now this whole green line is gone so that it does frames when you move it. And that's how you build a count-up timer. If you wanted to do a countdown timer, what you would do is you would flip your keyframes so that at the beginning, it would say 20, and at the end, it would say zero. And that's how you build a count-up and countdown timer.
+- **Defining Time Units:**
+  - `frames = Math.floor(slider % 30);`
+    - Given the project's framerate of 30 frames per second, this equation calculates the frame count.
+  - `seconds = Math.floor(slider / 30) % 60;`
+    - This formula computes the seconds and resets after hitting 60 seconds.
+  - `minutes = Math.floor(slider / 1800);`
+    - Since 60 seconds make up a minute and we have 30 frames every second, this calculates the total minute count.
+
+## **5. Display Adjustments:**
+*Formatting ensures a clean and standardized visual representation of time.*
+
+- Utilize the `Math.floor` function. This function rounds down values, ensuring whole numbers are displayed.
+- Combine minutes, seconds, and frames using colons for clarity:
+  - `mins + ":" + sec + ":" + frames`
+
+## **6. Including Leading Zeros for a Polished Look:**
+*In time representation, leading zeros (e.g., "09" vs "9") are aesthetically pleasing and standard.*
+
+- Incorporate the function:
+
+  ```javascript
+  function addZero(n){
+      if (n < 10){
+          return "0" + n;
+      } else {
+          return n;
+      }
+  }
+  ```
+
+- Apply the `addZero` function to each time unit to ensure consistency: `addZero(mins) + ":" + addZero(sec) + ":" + addZero(frames)`
+
+## **7. Addressing Legacy Expression Issues:**
+*After Effects can occasionally stumble over custom expressions, especially in older projects.*
+
+- If you encounter an error, head to **File** in the menu.
+- Select **Scripts** -> **Update Legacy Expressions**.
+- Choose "All Compositions" and click **Update**.
+
+## **8. Breathing Life into the Timer:**
+*Now, make your timer operational with keyframes.*
+
+- Use keyframes on the slider control for animation dynamics. 
+- For a span of 20 seconds, input 600 frames, equaling 20 seconds at 30 frames per second.
+
+## **9. Toggle Between Countdown and Count-up:**
+*Depending on your project, you might need the timer to count upwards or downwards.*
+
+- For a count-up, the initial keyframe starts at 0.
+- For a countdown, invert the keyframes: start with your desired time (e.g., 20 seconds) and conclude at zero.
+
+## **Closing Thoughts:**
+
+With this comprehensive guide, you're now equipped to design dynamic timers in After Effects, adding an extra layer of sophistication to your motion graphics. The power of expressions can't be understated—take this newfound knowledge and let your creativity soar!
