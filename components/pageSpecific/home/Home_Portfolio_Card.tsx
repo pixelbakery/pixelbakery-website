@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import cn from 'classnames'
 import H3 from '@typography/H3'
+import { VideoJsonLd } from 'next-seo'
 
 interface Props {
   bgColor: string
@@ -11,6 +12,7 @@ interface Props {
 }
 const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
   const ref = useRef(null)
+  const datePostedISO = new Date(project.data.date).toISOString()
 
   return (
     <article ref={ref} className='w-full  lg:w-3/5 2xl:w-full px-1'>
@@ -75,6 +77,15 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
           </div>
         </div>
       </Link>
+      <VideoJsonLd
+        name={`${project.data.client}: ${project.data.title}`}
+        description={project.data.excerpt}
+        embedUrl={`http://player.vimeo.com/video/${project.data.vimeoID}`}
+        uploadDate={`${datePostedISO}`}
+        thumbnailUrls={[
+          `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,
+        ]}
+      />
     </article>
   )
 }
