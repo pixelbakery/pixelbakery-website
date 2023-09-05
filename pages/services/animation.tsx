@@ -7,6 +7,7 @@ import {
   Services_Header,
   Services_Animation_Why,
   Services_Animation_Benefits,
+  Services_FAQ_Animation,
 } from '@services/index'
 
 import Main from '@parts/Main'
@@ -38,6 +39,7 @@ const Page_Services_Animation = () => {
       <Services_Animation_Benefits />
       <Services_Modulation />
       <Work_Industries header={'Industries We Love Making Animated Content For'} />
+      <Services_FAQ_Animation />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />

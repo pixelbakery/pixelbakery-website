@@ -6,6 +6,7 @@ import {
   Services_AllServices,
   Services_OurApproach,
   Services_Header,
+  Services_FAQ_CreativeStrategy,
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 export default function Services_CreativeStrategy() {
@@ -32,6 +33,7 @@ export default function Services_CreativeStrategy() {
         </p>
       </Services_Header>
       <Work_Industries header={'Industries We Love Doing Creative Strategy For'} />
+      <Services_FAQ_CreativeStrategy />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />

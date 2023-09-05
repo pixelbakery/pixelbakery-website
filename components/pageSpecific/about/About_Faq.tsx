@@ -1,4 +1,4 @@
-import faq from '@data/faq'
+import faq from '@data/faq_general'
 import About_Faq_Card from '@about/About_Faq_Card'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'

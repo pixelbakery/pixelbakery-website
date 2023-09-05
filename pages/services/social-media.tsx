@@ -7,13 +7,14 @@ import {
   Services_OurApproach,
   Services_Header,
   Services_SEO_SocialMedia,
+  Services_FAQ_SocialMedia,
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 export default function Services() {
   return (
     <Main>
       <Services_Header
-        serviceName={'Social Media Kits'}
+        serviceName={'Social Videos'}
         isLottie={false}
         subheader={'We create capitvating and engaging social ecosystems'}
         bgColor={'yellow'}
@@ -36,6 +37,7 @@ export default function Services() {
           .
         </p>
       </Services_Header>
+      <Services_FAQ_SocialMedia />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />

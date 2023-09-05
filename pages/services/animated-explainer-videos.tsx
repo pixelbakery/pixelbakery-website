@@ -10,6 +10,7 @@ import {
   Services_AnimatedExplainers_Topics,
   Services_AnimatedExplainers_GreatFor,
   Services_SEO_ExplainerVideos,
+  Services_FAQ_AnimatedExplainerVideos,
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 
@@ -33,6 +34,7 @@ const Services_Animated_Explainer_Videos = () => {
       <Services_AnimatedExplainers_GreatFor />
       <Services_Modulation />
       <Work_Industries header={'Industries We Love Making Animated Explainer Videos For'} />
+      <Services_FAQ_AnimatedExplainerVideos />
       <CaseStudies_CTA />
       <Services_AllServices />
       <Services_OurApproach />

@@ -5,6 +5,7 @@ import {
   Services_Header,
   Services_VideoProduction_Why,
   Services_SEO_VideoProduction,
+  Services_FAQ_VideoProduction,
 } from '@services/index'
 
 import Main from '@parts/Main'
@@ -35,6 +36,7 @@ export default function Services() {
       <Services_OurApproach />
       <Work_Industries header={'Industries We Love Making Video Content For'} />
       <CaseStudies_CTA />
+      <Services_FAQ_VideoProduction />
       <Services_AllServices />
       <Services_SEO_VideoProduction />
     </Main>

@@ -30,3 +30,8 @@ export { default as Services_ProductPhotography_HowImportant } from '@services/S
 export { default as Services_ProductPhotography_WhyPB } from '@services/Services_ProductPhotography_WhyPB'
 export { default as Services_SEO_CreativeStrategy } from '@services/Services_SEO_CreativeStrategy'
 export { default as Services_SEO_EmergingMedia } from '@services/Services_SEO_EmergingMedia'
+export { default as Services_FAQ_VideoProduction } from '@services/Services_FAQ_VideoProduction'
+export { default as Services_FAQ_Animation } from '@services/Services_FAQ_Animation'
+export { default as Services_FAQ_AnimatedExplainerVideos } from '@services/Services_FAQ_AnimatedExplainerVideos'
+export { default as Services_FAQ_CreativeStrategy } from '@services/Services_FAQ_CreativeStrategy'
+export { default as Services_FAQ_SocialMedia } from '@services/Services_FAQ_SocialMedia'
