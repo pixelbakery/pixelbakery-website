@@ -28,7 +28,7 @@ const Services_SEO_ExplainerVideos = () => {
               type: 'image/jpeg',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_animatedExplainers_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_animatedExplainers_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'We build custom, high-quality bespoke animated explainer videos to help brands showcase who they are. Quality visuals that resonate with your audiance.',

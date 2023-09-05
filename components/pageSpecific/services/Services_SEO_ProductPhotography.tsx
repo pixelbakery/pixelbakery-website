@@ -30,7 +30,7 @@ const Services_SEO_ProductPhotography = () => {
               type: 'image/jpeg',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_productPhotography_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_productPhotography_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: "Pixel Bakery: Showcase your brand's essence with Nebraska's premier product photography. Capturing every detail to reflect your dedication.",

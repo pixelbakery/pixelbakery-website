@@ -28,7 +28,7 @@ const Services_SEO_VideoProduction = () => {
               type: 'image/jpeg',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_videoProduction_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_videoProduction_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'Pixel Bakery: Video production can include TV commercials, YouTube pre-roll ads, company highlight videos, social media videos, and way more.',

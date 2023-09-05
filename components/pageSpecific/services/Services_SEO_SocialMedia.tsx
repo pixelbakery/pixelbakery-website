@@ -28,7 +28,7 @@ const Services_SEO_SocialMedia = () => {
               type: 'image/jpeg',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_socialMedia_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_socialMedia_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'Pixel Bakery: Engage with your audience on their favorite platforms. We add animation, motion graphics, and videos to your social media channels.',

@@ -28,7 +28,7 @@ const Services_SEO_Animation = () => {
               type: 'image/jpeg',
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_animation_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_animation_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'We create captivating motion graphics for your brand. Animation is a great marketing tool that can be used to engage and entertain your audience.',

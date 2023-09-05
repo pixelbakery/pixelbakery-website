@@ -26,7 +26,7 @@ const Services_SEO_CreativeStrategy = () => {
               alt: `From discovery to delivery, we craft strategies and briefs at Pixel Bakery to align your message and achieve project goals.`,
             },
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services_creativeStrategy_1280x720.jpg`,
+              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/services_creativeStrategy_1280x720.jpg`,
               width: 1280,
               height: 720,
               alt: 'From discovery to delivery, we craft strategies and briefs at Pixel Bakery to align your message and achieve project goals.',
