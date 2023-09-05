@@ -18,7 +18,7 @@ function Careers_SEO({ ...props }) {
       />
       <NextSeo
         title={`${props.title} | Careers`}
-        description={`We're hiring a ${props.commitment} ${props.title}. Join our awesome team on a journey to create outstanding animations, motion graphics, and video content.`}
+        description={`We're hiring a ${props.commitment} ${props.title}. Join our team on a journey to create outstanding animations, motion graphics, and video content.`}
         canonical={`https://pixelbakery.com/careers/${props.slug}`}
         openGraph={{
           url: `https://pixelbakery.com/careers/${props.slug}`,
