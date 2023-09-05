@@ -8,7 +8,6 @@
     "dev": "next dev",
     "aws-push": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control max-age=31536000",
     "aws-push-delete": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control max-age=31536000 --delete",
-
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -31,7 +30,7 @@
     "@next/bundle-analyzer": "^13.0.2",
     "@sendgrid/mail": "7.7.0",
     "@stripe/react-stripe-js": "^2.0.0",
-    "@stripe/stripe-js": "^1.36.0",
+    "@stripe/stripe-js": "^2.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@types/chec__commerce.js": "^2.8.5",
