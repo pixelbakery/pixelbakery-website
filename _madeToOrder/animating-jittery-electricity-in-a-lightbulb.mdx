@@ -18,19 +18,38 @@ video: https://youtu.be/q1Z2IQqFu4E
 type: _madeToOrder
 draft: true
 ---
+In this tutorial, Simon Turner is here to explain how to create that captivating jittery or electric effect he used in his animation. If you've ever wondered how to make text or illustrations look hand-drawn and dynamically jittering, then this is for you. We’ll be diving into the world of displacement maps. Let’s get started!
 
-In this After Effects tutorial, Simon Turner goes over how to achieve the "jittery" or "electric" effect he used on the lightbulb's face in his animation. It's about displacement mapping a moving texture to a text/shape/etc.
+## **Steps to Achieve the Jittery Effect:**
 
-Transcript:
+### 1. **Setting up the Composition:**
+- Start with a blank After Effects composition with a white background.
+- Add a new text layer. For our purpose, let's use the word 'text'. 
+- Align this text both vertically and horizontally for clarity.
 
-In this tutorial, I'm just going to show you how to do that jittering effect that I had on my light bulb's face. People use this in text all the time to make it look hand-drawn and jittering. You can put it on any illustration. It's basically a simple thing using displacement maps. It's super easy.
+### 2. **Creating a Solid for Displacement:**
+- Create a new solid layer; name it 'map' (this will serve as our displacement map).
+- Ensure this solid matches the resolution of your composition.
 
-So for this, we just have a blank after-effects composition, a white background, nothing fancy. And for the sake of the tutorial, we'll just create a text layer, and we'll just type in text, keep it easy. And we might as well align it vertically and horizontally, just so it's easier. Once you have this, you're actually going to want to create another new layer but make sure it's a solid. And we can call it whatever. I'm going to call it map because that's where the displacement map's actually going to be. Just make sure it's the same resolution as your composition, things like that.
+### 3. **Applying Fractal Noise:**
+- Search for the 'Fractal Noise' effect.
+- Apply this effect to your solid. This will serve as the dynamic pattern for our jitter effect.
+  
+### 4. **Animating the Noise:**
+- Navigate to the 'Evolution Options' within the fractal noise settings.
+- Alt-click the keyframe next to 'Random Seed'. This will open a text box.
+- Input the expression `time * 10`. This expression ensures the fractal noise changes ten times every second, leading to the erratic look we desire.
 
-So once we have this, we're actually going to be coming up to effects and typing in fractal noise. And this is what's going to give it the map to make it jittery and sporadic. You can see, it just looks like this. You can either drag it on top of your composition right here or in the layers over here. I just put it right here. And basically we're going to come over to evolution options, and where it says random seed, we have to keyframe it, so every second it'll change 10 times in that second so it looks erratic just how it was in my animation. So just you're going to have to alt-click the keyframe right here, and that's going to bring up a text box. And easiest way to do this is just to type time asterisk 10.
+### 5. **Recomposing the Solid:**
+- Right-click on the solid with the fractal noise and recompose it into a new composition. 
 
-And that's basically saying every second, it's going to rotate and change 10 times. And then once you have that, just click off of it. So if I play this, you can see it move super fast. After you're done with that, you're going to want to right-click this solid. And you're going to want to recompose this to a new composition. So just click on this middle one right here. Check part, yeah, you see.
+### 6. **Applying the Displacement Map:**
+- Temporarily hide the solid layer you just created.
+- Search for the 'Displacement Map' effect and apply it to your text layer.
+- Within the Displacement Map effect settings, change the 'Displacement Map Layer' from the text to 'map comp' (our solid).
+- Once set, unhide the solid layer. Now, if you play the animation, your text should exhibit that jittery or electric effect, mimicking the animation of the fractal noise.
 
-So once you have that, you are actually going to want to come over here, hide this layer first, actually hide that layer, and you're going to want to find a displacement map, which is how the whole thing works. So you just click and drag this onto your text layer or onto the text itself. Just drag it. All right, now once we have this, you can see it looks a little weird, but that'll go away because the displacement map layers on the text. But it should be on the map comp too, which is the solid layer that we just created.
+## **Conclusion**:
+And there you have it! A simple yet effective way to achieve a jittery or electric effect, making your text or graphics come to life with dynamic energy. This technique can be applied to a range of scenarios, from emphasizing hand-drawn styles to creating unique text effects. It's all about playing around and experimenting with the settings until you find what's perfect for your project.
 
-And once we do that, if we play, you can see that it displaces that animation we made with the fractal noise, and it looks jittery and cool. And you can make it faster, slower. You can play with it a ton, but yeah, that's the gist of it. That's a pretty simple effect. I've seen a ton of people do it with more like hand-drawn type so it looks like it's being sketched like over and over. It's super easy, and yeah, that's it.
+Thanks for joining Simon Turner in this tutorial, and happy animating!

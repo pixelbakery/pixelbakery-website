@@ -25,49 +25,35 @@ type: _madeToOrder
 draft: false
 slug: characters-blink-after-effects
 ---
+ Today, I'm going to show you how to breathe life into your characters by creating a simple yet effective blink animation. We're bypassing joysticks and sliders for this one, and I'll guide you every step of the way.
 
-In this tutorial, Jordan demonstrates how to make a character blink without using [joysticks and sliders](https://aescripts.com/joysticks-n-sliders/) by building out an entire eye rig.
+## **Starting Point**:
+Most folks don't realize it, but we blink roughly once every three seconds. Such details matter in animation! Let's begin our journey at this three-second mark.
 
-## Transcript
+## **Laying Down the Basics**:
+Before we dive into animating, let's prep our canvas. You'll need to design six eye states: right and left eyes in their open, squinting, and closed positions. Now, to avoid any confusion down the line, I love color-coding my layers. Let’s paint ours a vibrant shade of orange.
 
-People usually blink once every three seconds or so, so we're going to go to the three-second second mark to start.
+Once you've got these layers ready, it's time for some animation basics. Hit `option T` on your keyboard for each layer. This little shortcut will introduce a transparency key frame. Trust me; it's going to be super useful in a bit.
 
-We need to make a six different tweened objects: 
-- Right eye, open
-- Left eye, open
-- Right eye, squinting (half open)
-- Left eye, squinting (half open)
-- Right eye, closed
-- Left eye, closed
+## **Keeping Our Focus**:
+Animation can sometimes feel like juggling. With so many layers and elements, things can quickly get overwhelming. To make our lives easier, let's 'shy' away all non-essential elements and bring the spotlight solely onto our eyes. We'll start with the open eyes at full visibility (that's 100% opacity, in animation terms) and dial everything else down to zero.
 
-I'm going to start by applying a layer color to each set so we don't get lost. Let's say orange. And right here, we're going to start and we're going to hit option T on the keyboard, which is going to put in a transparency key frame. We're going to put that on all of our layers.
+## **Animating the Blink**:
+Here's where the magic happens. Slide two key frames forward and fade out those open eyes. Now, bring forward our half-open, or squinting eyes. These transitions are the foundation of our blink.
 
-And then I'm going to shy everything else real fast so we don't have to worry about it. Bye Bye. And when we start, the eyes are going to be open so those are going to be a hundred percent transparency or opacity, and then everything else is going to be closed.
+Advance two frames again. This time, let those squinting eyes fade to black and introduce the world to our closed eyes. It's a short journey, but in these brief moments, you've created the essence of a blink.
 
-So we're going to drop those down to zero. And then we can go, we'll say two key frames. We'll animate on twos, and then we're going to drop the opacity of the eyes to zero percent. 
+## **The Blink's Return Journey**:
+We've closed the eyes, now let's open them back up. Animation is often about mirroring motions. To achieve this, clone your layers, select them, and opt for the 'time-reverse key frames' from the key frame assistant. It's like hitting rewind on your animation. Play it back, and voilà, you've got a blink!
 
-And then we're going to turn on the halves to a hundred and then these are going to still be zero, but we're going to key frame them to still be zero. So nothing changes, but we're still putting key frames in. Then we'll go two frames over and then the open eyes will still be zero, but let's add key frames. Then these we'll drop down to zero and, closed, we'll come up to a hundred.
+## **Make it Repeat**:
+Here's a fun fact: we want our character to blink again and again. This repetitive action can be achieved using the 'loop out' expression. But be warned: without tweaks, our character might end up looking like they've had too much caffeine! 
 
-And then we back out, which we can do. We can take all of these and we can go to the clone tool, clone them and then select them all. Right-click one of them. Key frame assistant. And we can hit time-reverse key frames, which will just back them out. And then we're back to open. So if we watch this, she blinks.
+To get the pacing right, set 'start key frames' for all opacities at the beginning of the timeline. This step ensures our blink waits patiently for three seconds before gracing the screen again.
 
-It's not perfect because there's some other layer stuff going on. I'm not sure what all that is.
+## **Finishing Touches**:
+Before we wrap up, let's sprinkle in some finesse. Smooth out transitions by slightly easing the frames. And for a touch of cinema verité, switch on the motion blur. It's these tiny details that make your animation leap off the screen.
 
-But she only blinks once. Again, humans blink every three seconds or so. So we want to keep it going. We can do that by using an expression called 'loop out,' and what that does is it just loops all of the key frames. It starts with the first key frame and then it goes to the last key frame and then it repeats. So right now, if I added that expression, it would just be really fast blinking. Watch this.
+---
 
-And we type in 'loop out,' like that. I got to that by hitting option stopwatch.
-
-If we just play it like this, she'll blink really, really fast. And we don't want that so what we're going to do is, since a person blinks every three seconds and we put all these key frames at three seconds, we're just going to go to the start of the timeline, select all of our opacities and put in 'start key frames.' and those start key frames are going to be the same as they are here. Nothing changes. We just want to tell the expression to wait three seconds before doing anything.
-
-And we can check that by extending our timeline to 16 seconds or so, and then making sure it goes.
-
-We put all of our key frames at the three second mark. So in order to tell that expression to loop every three seconds, instead of just looping repeatedly, because it loops the first key frame to the last key frame then instantly starts over, we just put a key frame at the beginning that has the same values for opacity as it does right here at the three second mark. So nothing changes in that opacity. It's just still key framed and holding that position. Does that make sense?
-
-And then we can go in and we could probably ease these a little. Won't do much. And we can use motion blur by hitting this guy right here and then selecting all these, turning on motion blur, which will give it a more natural effect like it's a natural camera. And there we go. And she should blink again, and again, 'til the end of time.
-
-Questions about blinks, or how to do that or joysticks and sliders in general?
-
-Are they primarily used on facial expressions?
-
-Yes. You can use it on so much stuff though. Another big one that people use it on is hands. We're not going to mess with individual digits on hands, but a lot of people will do the curl of a palm or stuff like that. You can literally use it on anything though. It doesn't even have to be character rigging. A lot of the examples on their website, if you check it out, is more like graphs. They do it a lot for animating data, stuff like that. There's a ton of cool examples on it on their website too if you're curious and you want to play around with it. Even the example we did earlier with the blocks, shifting left to right, we could turn that into a slider.
-
-Okay, cool. So that is joysticks and sliders, as well as blinks. I'm not going to do [DUIK today](/education/tutorials/animating-shape-path-duik-slider). I feel like I just threw a lot of data or info at you. So I'd more so like you guys to further carry on with your characters and keep going with it.
+And that's how we animate a lifelike blink without the crutches of joysticks and sliders. Remember, in the world of animation, it's the tiny details that make a world of difference. Happy animating!

@@ -18,24 +18,56 @@ author:
   url: https://csheffield.artstation.com
 ---
 
-In this video, Carter Sheffield covers cel shading in Blender and After Effects color correction and uses Eevee render in this example. 
+In this tutorial, Carter Sheffield covers cel shading in Blender, using the Eevee render, and touches upon color correction in After Effects.
 
-Today we're going to be learning how to install Russian malware on your Facebook. We are also going to be learning how to do the blender application. Now seriously, we're going to learn how to do cell shading, going to show you how I did the image sequence on there, and we're going to learn about color correction and after effects. I've been told after effects is not the place to do color correction. However, it worked fine for me, so I'll show you what my method was.
+## **Blender Cel Shading**
 
-Okay, let's make this rather quick. So let's go to our hyper shade. If you haven't used blender, highly recommend learning it. It's the best free alternative to any 3D application. I actually prefer it over Cinema 40 right now. I'm going to piss people off by saying that, but whatever. Okay. So cell shading, blender. It's pretty simple actually. What you're going to start with, is actually not this. You start with a principle BSDF. This is your basic shading in blender that it always starts out it with. Go ahead and drop that. Add in a diffused BSDF, a shader to RGB, and a color ramp. That'll get you just your solid colors.
+1. **Introduction to Blender**
+   - If you're new to Blender, it's a powerful and free 3D application alternative. Carter even prefers it over Cinema 4D.
 
-Then to pick your colors, I recommend choosing a color that you like. You can mix and match if you like. This color worked well for me, just this kind of orangeish color. So then I'll always start with the brightest, and you always want to make sure your lightness is all the way up. Then you move to your second one. This should be about 1/3 apart. You want to play with these, because it'll be different for everything, but then I just dropped this about 1/3 again. Rule of thirds, but with color. What the hell? There we go. Good God. Okay. This one's another 1/3 darker. Diffuse. No roughness. You don't really need any color on there. It doesn't really make a difference because we're shader, we're changing the shader to an RGB channel anyway, which pretty much gets rid of the color.
+2. **Setting Up Cel Shading in Blender**
+   - Begin with a principle BSDF. This is your basic shading in Blender.
+   - Replace that with a diffused BSDF, a shader to RGB, and a color ramp for solid colors.
+   - For choosing colors:
+     - Start with a bright color of your preference.
+     - Move to your second one, about 1/3 apart from the initial color.
+     - The next should be another 1/3 darker.
+     - No need for roughness, and color won't matter since we're converting the shader to an RGB channel.
 
-Let's look at another one. So now we're looking at this. This is the material for the image sequence. This will start as a principle BSDF again. You just drop, delete the principle BSDF, go add. That's just shift A that I just pressed. Then you go do emission. Drop that in there. You have your PNG sequence, which is going to be under, this is shift A to get this menu again. This is going to be under texture, image texture texture. Add that in. I'll show you that, what that looks like. It doesn't have anything in it right now.
+3. **Material for Image Sequence**
+   - Start again with a principle BSDF. Delete it.
+   - Add an emission (using `Shift + A` to bring up the menu).
+   - Include a PNG sequence by heading to `Texture -> Image Texture` (again using `Shift + A`).
+   - Open your image texture and choose the first one.
+   - Under a dropdown menu, switch from movie to image sequence.
+     - Make sure the number of frames matches your image sequence count. If the set number exceeds the actual frames, the texture will render as a pink null texture.
+   - Set your start frame according to your needs.
+   - If working with multiple image sequences, differentiate between them as Blender will do that automatically.
 
-Then you just open up your image texture. You just open up your first one. Then you change... There'll be another little drop down sequence. This is where you change it to image sequence. Movie does not work, at least I haven't gotten it to work. Then your number of frames, this is number is important. You should know how many frames or in your image sequence, or at least how many you would want to render. This is how many it will cycle through. If this number is larger then the number of frames you actually have, it will render as a pink texture or basically a null, meaning it's not pointing to... there's no 50, if I had this 56, there'd be no 56th image. Every 56th frame, there would be a pink texture on there.
+4. **UV Mapping**
+   - Make sure cyclic is enabled.
+   - To create a UV map for a polygon, unwrap it. It should come out as a perfect square, if not, adjust to fit all four corners.
+   - Link the UV map to your texture so that the texture follows the UV map.
+   - If using multiple UV maps, ensure you select the correct one.
 
-Okay. Start frame. This is just saying what frame we want to start on, and we want our first PNG start on. You don't need this 001. This is just because I have multiple 1000 dot PNGs in this scene, but not in the same folder. In this folder, this is the only 1,000. It's just in these other renders I have multiple of these. So it has to differentiate between those. It does that automatically.
+## **After Effects Color Correction**
 
-This is my first first frame, and so if I wanted it to start on the second frame, start frame one. Offset. The reason if it's offset, 999 right now, is because I have my animation starting at 1000. That is because it's just good practice to start a little bit further ahead so you have some room to go negative if you need to. Again, you can't really go below zero. It's just part of the animation software. It doesn't let you go below zero. You just can't render negative frames.
+1. **Initial Setup**
+   - Before correction, the video may look dull and dark. Using levels and other tools, we can enhance it.
 
-What else? It's back to our hyper shade. Make sure cyclic is enabled. Auto refresh is not necessarily something that I use. When I did it, it rendered as a single frame, so I guess play with that. It might work for you or might not. What you're also going to need is your UV map, and this referring to the screen. Let's see if I can click on this. There we go. Okay. So to make a UV map, you just, of this single polygon, you just basically unwrap it and it should, if it's a single polygon, it should unwrap just perfectly square. If not, you can just adjust it to fit all four corners. Then you need your UV map, because you're going to plug your UV map into your texture and your texture will flow up off that. This is referring to what UV map, because you can have multiple. I don't want to get too technical here, but these are your UV maps. So if I change this to screen, obviously it disappeared. You just change this to screen and it's back. So yes, that's pretty much that.
+2. **Adjusting Levels**
+   - Navigate to `Effect -> Color Correction -> Levels`.
+   - Adjust the levels to exaggerate the scene by condensing them to where the color spikes begin.
 
-Now let's go into color correction. I'll just describe these changes. Okay. For color correction, just I edited my video. This is after I made it into a loop. Zoom out here, sorry for that. And this, I also had this move grain on, but I didn't really use it. Okay. So I'll show you how it looks without the color correction. Obviously it's a little dull, pretty dark. To lighten it up a little bit, I brought in the levels. What that looks like is, let's see, there we go. Right here, originally this was here. This is about there. I just brought those in and condensed those to where the spikes and the color began. This just helps really exaggerate the scene. To do this, to add this effect, if you just go to effect, color correction, levels. The other one I'm going to add is brightness and contrast. The last one I'm going to add is hue and saturation. Okay, hue and saturation, what did I do? I increased it by 25. So let's see what that looks like.
+3. **Brightness and Contrast**
+   - Go to `Effect -> Color Correction -> Brightness and Contrast`.
+   - Carter increased brightness by 26 and contrast by 30, but these values can be tweaked according to your scene.
 
-So here's zero, and this is probably the biggest change that you'll see, 25. It's obviously a lot brighter and just more appealing in my opinion. Then we also have the brightness of contrast, which really makes it pop. Brightness I moved out 26 and 30. So obviously increases brightness, just like in Photoshop in contrast, of course. If I really wanted to crazy looking scene, maybe I'd do a... crazy like that, but I thought 30 worked pretty well. All right, hope this helps you guys and have a good one.
+4. **Hue and Saturation**
+   - Head to `Effect -> Color Correction -> Hue and Saturation`.
+   - Increase saturation by 25 for a brighter and more vibrant look.
+
+5. **Final Thoughts**
+   - Experiment with these settings to get the desired look for your scene. Remember that what works for one project might need adjustments for another.
+
+That's it for this tutorial on cel shading in Blender and color correction in After Effects. Hopefully, these steps and tips help you enhance your projects. Happy editing!

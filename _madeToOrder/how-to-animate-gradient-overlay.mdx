@@ -1,5 +1,5 @@
 ---
-title: "After Effects: Animate Gradient Overlay on Text"
+title: "Animating Gradient Overlay on Text in After Effects"
 active: true
 category: after effects
 downloadLink: null
@@ -18,30 +18,72 @@ type: _madeToOrder
 draft: false
 ---
 
-In this After Effects tutorial, Devin Page covers how to animate gradient overlay on text.
+Here's a comprehensive breakdown of the tutorial on animating a gradient overlay on text in After Effects, complete with some added tips for enhancing the effect:
 
-Transcript:
+---
+Devin Page here, and today we're diving deep into a captivating gradient animation for your text. By the end of this guide, you'll know how to bring those static gradients to life!
 
-First, you'll want to just create a new composition, make sure the time and stuff are right.
+## **1. Setting Up the Composition:**
+- **Start Fresh:** Begin by creating a new composition. Ensure the time and other settings are accurate for your project.
+  
+  **Pro Tip:** Set a comfortable frame rate to make the animation smoother. 24fps or 30fps works great for most projects.
 
-Then, you just want to create a new solid, it can be any color. Then you want to go to 'effects'. You can just go to your windows if you don't see it, and type fill. You should see 'fill' right underneath here. Just add that to that, and then you could really choose any color. It doesn't really matter. Just whatever colors you want for your little gradient.
+## **2. Create a Solid for the Gradient:**
+- **Solid Creation:** Generate a new solid. The color isn’t crucial at this stage as you’ll be adding an effect to it.
+- **Applying Fill Effect:** Head to the 'effects' panel. If it’s not visible, navigate through 'windows' to locate it. Search and apply the 'fill' effect to your solid.
 
-Next, you want to make sure you're selecting this, fill, and then you want to use the pin tool to create a little wave or really any shape. It should mask that.
+  **Pro Tip:** Use contrasting colors for your gradient, as they can enhance the visual appeal.
 
-Next, you want to press F on your keyboard. You should see the feather option, and you just want to drag that until it's what you prefer. I usually go around 300.
+## **3. Crafting Your Gradient:**
+- **Masking:** With the 'fill' effect selected, utilize the pen tool to create a desired shape. It auto-masks the region, allowing only that shape to be visible.
+- **Softening Edges:** Press 'F' to access the 'feather' option. Adjust the value (e.g., 300) to blur the mask's edges, giving a smooth transition.
 
-Next, you want to add [turbulent displace](/education/tutorials/turbulent-displace-use-case). You can just type in "turb", and should be right there. You just want to hold alt and click on 'evolution' right at the effects control. Now you should see all this nerd stuff pop up. You just want to type in "times", and I'm going to type in 400, but the higher you go the faster it will obviously be. If you just play that, you can see it moves a little bit, but my computer's slow. Yeah, it moves a little bit.
+## **4. Breathe Life into the Gradient:**
 
-You can also change the amount of everything, if you want, like the size. I'm going to turn that to 300. See that movement? It's pretty nice.
 
-Next, you just want to duplicate this layer. I recommend chasing the colors of your layers, just because it's easier to tell them apart. Then you just want to drag it down a little bit, and then you can change the color from right up here on your fill effect. Again, pick whatever colors you want. Usually, I try not to go with colors that might mix up and become super muddy, so usually, I go opposite from the color scale or something like that. Then just duplicate this as many times as you want.
+- **Turbulent Displace:** Search for the [turbulent displace](/education/tutorials/turbulent-displace-use-case) effect and apply it. Now, while holding 'alt', click on 'evolution'. A script field appears.
 
-Just keep dragging it down, changing the color. I'm just going to do three colors, but I'm going to select them all and then drag them up higher just to fill out more of the screen. Obviously, if you do more colors, you can fill up the whole that way, too. Then we're going to select all these and pre-compose those because it makes that a lot easier. You can usually name that.
+This effect simulates the appearance of turbulence in your footage by displacing the pixels in the image. Essentially, it's manipulating the position of pixels randomly within a defined area, governed by the size and amount of the effect.
+- **Amount:** Controls the magnitude of the displacement.
+- **Size:** Dictates how big or small the turbulent 'waves' or 'bubbles' are.
+- **Evolution:** Adjusts the phase of the turbulence, and animating this value is what causes the appearance of movement.
 
-Now, you can just turn off that layer real quick, and add whatever text you want. I'll just put my name. Usually, it'll be like this for your composition settings, but if you right-click the top of here, then go to columns, and go 'mode', you should be able to now see your alpha mats and stuff. You would want to select for your gradients, alpha mat, whatever your text was.
+- **Scripting Movement:** In the script area, type "times 400". Adjusting the number changes the animation's speed.
 
-When you turn this on, it should... Maybe if you do it with this text center, it should just play it through that now you can let it render and then play through.
+  **Pro Tip:** Experiment with different values to find an animation speed that complements your project.
 
-Here's a link to the final result:
+  ### **Accessing the Scripting Area:**
+When you want to apply an expression, or a little piece of code, to a parameter in After Effects, you need to access the scripting area for that parameter. Here's how:
+1. Select the layer you applied the effect to.
+2. In the Effect Controls panel, locate the specific parameter you want to add an expression to (in this tutorial, it's the 'evolution' parameter under Turbulent Displace).
+3. Hold down the 'Alt' key (or 'Option' key on Mac) and click the stopwatch icon next to the parameter. This action opens up the scripting area below it.
+4. Type in your desired expression, in this case, "times 400" which multiplies the current time by 400, making the evolution value change as time progresses.
+
+## **5. Enhance and Layer:**
+- **Duplication:** To stack gradients, duplicate the gradient layer. Adjust its position and modify the fill color to introduce variation.
+- **Layer Colors:** Change the colors of your layers in the timeline to distinguish them more easily.
+
+  **Pro Tip:** Limit color choices to those that blend harmoniously. Too many conflicting hues can create visual chaos.
+
+## **6. Pre-Composing:**
+- Once you’re satisfied, select all gradient layers, right-click, and choose 'pre-compose'. Naming this composition will help with organization.
+
+## **7. Add Your Text:**
+- **Input:** Add the text you want to overlay the gradient on.
+- **Accessing Modes:** If you can't view the blending modes and matte options, right-click the top bar of your timeline panel, navigate to 'columns', and select 'modes'.
+- **Alpha Matte:** In the modes column, for your text layer, choose 'alpha matte' pointing to your gradient composition.
+
+**Alpha Matte:**
+Alpha mattes in After Effects allow one layer's visibility to be controlled by another layer. When Layer A (your gradient) is set as an alpha matte for Layer B (your text), the visibility of Layer B will be defined by the alpha (transparency) values of Layer A.
+
+## **8. Playback:**
+Once done, render the animation and play it back to admire the animated gradient overlay on your text!
+
+---
+
+Remember, the key is in the details. Fine-tuning parameters, playing with colors, and adjusting the animation speed can all contribute to that perfect gradient animation. Happy animating!
+
+View the result here:
 
 <Video url={'https://youtu.be/CEk5mYk0YoU'} />
+
