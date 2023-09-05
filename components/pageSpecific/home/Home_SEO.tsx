@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 function Home_SEO() {
   return (
     <NextSeo
-      title='Pixel Bakery Design Studio'
+      title='Pixel Bakery - Animation, Video, and Animated Explainers'
       description={
         'Pixel Bakery is an award-winning multidisciplinary production studio centered around motion graphics, animated explainer videos, and video production.'
       }
