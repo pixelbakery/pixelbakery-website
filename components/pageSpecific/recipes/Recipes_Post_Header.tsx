@@ -70,6 +70,8 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                     fill={true}
+                    width={124}
+                    height={124}
                     alt={frontMatter.author.name}
                     quality={25}
                     className='object-top scale-175 object-cover'
@@ -143,11 +145,13 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               fill={true}
               className='object-cover object-center '
               src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+              width={1280}
+              height={960}
               alt={`${frontMatter.title}, by ${frontMatter.author.name}`}
               placeholder='blur'
               blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
               quality={100}
-              sizes='(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 33vw'
+              // sizes='(max-width: 768px) 100vw, (max-width: 1152px) 50vw, 33vw'
             />
             <Loading />
           </div>

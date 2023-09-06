@@ -31,6 +31,8 @@ const getFeaturedPosts = ({ allPosts }) => {
           date={post.data.date}
           aspectW={'4'}
           aspectY={'3'}
+          width={556}
+          height={417}
           coverImage={post.data.coverImage}
           excerpt={post.data.excerpt}
         />
@@ -52,6 +54,8 @@ const getSecondaryPosts = ({ allPosts }) => {
         date={post.data.date}
         aspectW={'3'}
         aspectY={'4'}
+        width={273}
+        height={364}
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
       />

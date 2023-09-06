@@ -32,6 +32,8 @@ const Recipes_SmallPost = ({
               <Image
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
                 fill={true}
+                width={445}
+                height={334}
                 className='object-cover object-center w-full h-full rounded-md  bg-blue'
                 placeholder='blur'
                 quality={50}
