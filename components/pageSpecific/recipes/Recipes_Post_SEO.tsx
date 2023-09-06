@@ -7,7 +7,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
   let metaTitle = title
 
   if (title.length + 5 + author.length <= 60) {
-    metaTitle = `${title}, by ${author} 2`
+    metaTitle = `${title}, by ${author}`
   }
   if (title.length + 5 + author.length + 3 + cat.length <= 60) {
     metaTitle = `${title}, by ${author} - ${cat}`

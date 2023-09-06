@@ -35,40 +35,41 @@ const Recipes_FeaturedPost = ({
 
   return (
     <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref legacyBehavior>
-      <article
-        className={
-          'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
-          aspectW +
-          aspectH
-        }
-      >
-        <Image
-          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-          fill={true}
-          placeholder='blur'
-          width={width}
-          height={height}
-          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-          quality={25}
-          className='object-cover w-full h-full bg-blue'
-          alt={`cover photo for ${title}, written by ${author}`}
-        />
+      <>
+        <article
+          className={
+            'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
+            aspectW +
+            aspectH
+          }
+        >
+          <Image
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
+            placeholder='blur'
+            width={width}
+            height={height}
+            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
+            quality={25}
+            className='object-cover w-full h-full bg-blue'
+            alt={`cover photo for ${title}, written by ${author}`}
+          />
 
-        <div className='mt-2 ml-2'>
-          <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
-        </div>
-      </article>
-      <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
-        <div className=''>
-          <div className='text-sm text-wine text-opacity-75'>
-            <span className='hidden md:inline'>{author} – </span>{' '}
-            <DateFormatter dateString={date} />
+          <div className='mt-2 ml-2'>
+            <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
-          <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
-            {title}
-          </h3>
+        </article>
+        <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+          <div className=''>
+            <div className='text-sm text-wine text-opacity-75'>
+              <span className='hidden md:inline'>{author} – </span>{' '}
+              <DateFormatter dateString={date} />
+            </div>
+            <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+              {title}
+            </h3>
+          </div>
         </div>
-      </div>
+      </>
     </Link>
   )
 }
