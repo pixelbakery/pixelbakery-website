@@ -20,16 +20,18 @@ const Recipes_Posts_Related = ({ relatedPosts }) => {
                   date={post.data.date}
                   aspectW={'4'}
                   aspectY={'3'}
+                  width={376}
+                  height={280}
                   coverImage={post.data.coverImage}
                   excerpt={post.data.excerpt}
                 />
               </div>
-            );
+            )
           })}
         </div>
         <div className='grid grid-cols-3 gap-8 my-8 '></div>
       </div>
     </section>
-  );
+  )
 }
 export default Recipes_Posts_Related

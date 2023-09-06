@@ -34,11 +34,11 @@ const Recipes_FeaturedPost = ({
   const aspectH = ' aspect-h-' + props.aspectY
 
   return (
-    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} passHref legacyBehavior>
-      <>
-        <article
+    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`}>
+      <article>
+        <div
           className={
-            'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
+            'bg-blue relative cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +
             aspectW +
             aspectH
           }
@@ -50,14 +50,14 @@ const Recipes_FeaturedPost = ({
             height={height}
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             quality={25}
-            className='object-cover w-full h-full bg-blue'
+            className='object-cover object-center w-full h-full'
             alt={`cover photo for ${title}, written by ${author}`}
           />
 
           <div className='mt-2 ml-2'>
             <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
-        </article>
+        </div>
         <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
           <div className=''>
             <div className='text-sm text-wine text-opacity-75'>
@@ -69,7 +69,7 @@ const Recipes_FeaturedPost = ({
             </h3>
           </div>
         </div>
-      </>
+      </article>
     </Link>
   )
 }
