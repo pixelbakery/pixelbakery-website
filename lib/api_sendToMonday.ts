@@ -9,7 +9,7 @@ const MondayBoard_Tutorials = process.env.NEXT_PUBLIC_MONDAY_BOARD_TUTORIALS
 const MondayBoard_Logos = process.env.NEXT_PUBLIC_MONDAY_BOARD_LOGOS
 const MondayBoard_Contact = process.env.NEXT_PUBLIC_MONDAY_BOARD_CONTACTFORM
 const MondayBoard_InstagramMerchCampaign = process.env.NEXT_PUBLIC_MONDAY_BOARD_INSTAMERCHCAMPAIGN
-
+const MondayBoard_Freelancers = process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM
 const MondayAuth = process.env.NEXT_PUBLIC_MONDAY_AUTH
 
 // Job Application
@@ -238,7 +238,7 @@ export async function SendToMonday_InstagramMerchCampaign(data) {
 
 // Freelancer Form
 export async function SendToMonday_FreelancerForm(data) {
-  const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM}, item_name:$applicant, column_values:$columnVals) { id } }`
+  const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Freelancers}, item_name:$applicant, column_values:$columnVals) { id } }`
   let skills = ''
   if (data.skills) {
     skills = data.skills.map((c) => c.value).join(', ')
