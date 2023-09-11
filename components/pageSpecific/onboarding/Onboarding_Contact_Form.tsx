@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SendToMonday_Onboarding } from '@lib/api_sendToMonday'
-import { SendToMailchimp, SendEmail_Onboarding } from '@lib/helpers'
+import {
+  SendToMailchimp,
+  SendEmail_Onboarding,
+  SendEmail_OnboardingConfirmation,
+} from '@lib/helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import {
@@ -34,6 +38,7 @@ const onSubmit = (data, setHideForm, setSubmitted) => {
   if (data.soliciting === 'true') setHideForm(true)
   else {
     SendEmail_Onboarding(data)
+    SendEmail_OnboardingConfirmation(data)
     SendToMonday_Onboarding(data)
     SendToMailchimp(data, 'onboarding')
     setSubmitted(true)
@@ -55,7 +60,7 @@ const yupValidation = Yup.object().shape({
   company: Yup.string().required('Please enter the company / entity you represent.'),
   message: Yup.string()
     .required('Please enter a message, you goose.')
-    .min(50, `Please write something a bit more... in-depth.`),
+    .min(30, `Please write something a bit more... in-depth.`),
   phone: Yup.string()
     .required('Please enter your phone number.')
     .test('len', 'Please enter a valid phone number', (val) => {
@@ -99,14 +104,14 @@ const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted,
         errors={errors}
         fieldName={'website'}
         placeHolder={'website'}
-        className='col-span-1'
+        className='col-span-2 md:col-span-1'
       />
       <ContactForm_PhoneInput
         control={control}
         errors={errors}
         fieldName={'phone'}
         placeHolder={'phone'}
-        className='col-span-1'
+        className='col-span-2 md:col-span-1'
       />
       <ContactForm_EmailInput
         register={register}
@@ -129,6 +134,13 @@ const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted,
         className='col-span-2'
         placeHolder='tell us about your project idea'
         rows={4}
+      />
+      <ContactForm_TextInput
+        register={register}
+        errors={errors}
+        fieldName={'referral'}
+        placeHolder={`How did you hear about us?`}
+        className={'col-span-2'}
       />
 
       <ContactForm_Newsletter register={register} />

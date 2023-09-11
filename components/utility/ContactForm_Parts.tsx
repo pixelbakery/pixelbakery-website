@@ -1,9 +1,44 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 import Lead from '@typography/Lead'
+
 import cn from 'classnames'
 import { useState } from 'react'
 import { Controller } from 'react-hook-form'
 import NumberFormat from 'react-number-format'
+import Select from 'react-select'
+interface Inputs {
+  register: any
+  errors: any
+  fieldName: string
+  placeHolder?: string
+  className?: string
+  rows?: number
+}
+interface PhoneInputs {
+  control: any
+  errors: any
+  fieldName: string
+  placeHolder?: string
+  className?: string
+}
+
+interface MultiSelectInputs {
+  control: any
+  errors: any
+  fieldName: string
+  className?: string
+  options: Array<{ value: string; label: string }>
+}
+interface Errors {
+  errors: any
+  className?: string
+}
+interface Submit {
+  valueText?: string
+  className?: string
+  disabled?: boolean
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
@@ -24,7 +59,7 @@ export const ContactForm_NotInterested = () => {
       <Lead color='blue'>Thank you for your interest.</Lead>
       <p>We are currently not seeking outside partnerships.</p>
       <a
-        onClick={(e) => handleDoubleDown(e)}
+        onClick={() => handleDoubleDown()}
         className={
           'bg-blue text-xl my-4 cursor-pointer relative inline-block text-cream px-8 py-4 font-semibold rounded-sm hover:scale-98 duration-300 ease-in-out'
         }
@@ -65,30 +100,7 @@ export const ContactForm_Newsletter = ({ register }) => {
     </div>
   )
 }
-interface Inputs {
-  register: any
-  errors: any
-  fieldName: string
-  placeHolder?: string
-  className?: string
-  rows?: number
-}
-interface PhoneInputs {
-  control: any
-  errors: any
-  fieldName: string
-  placeHolder?: string
-  className?: string
-}
-interface Errors {
-  errors: any
-  className?: string
-}
-interface Submit {
-  valueText?: string
-  className?: string
-  disabled?: boolean
-}
+
 export const ContactForm_TextInput = ({
   register,
   errors,
@@ -203,6 +215,7 @@ export const ContactForm_PhoneInput = ({
           aria-invalid={errors[fieldName] ? 'true' : 'false'}
           placeholder={placeHolder}
           onBlur={onBlur}
+          id={fieldName}
           onValueChange={(v) => {
             if (typeof value === 'number') {
               onChange(v.floatValue)
@@ -299,3 +312,40 @@ export const ContactForm_Solicitation = ({ register, errors }) => {
     </div>
   )
 }
+
+export const ContactForm_MultiSelect = ({
+  className,
+  errors,
+  control,
+  fieldName,
+  options,
+}: MultiSelectInputs) => {
+  return (
+    <>
+      <Controller
+        control={control}
+        name={fieldName}
+        render={({ field: { onChange, onBlur, value, name, ref } }) => (
+          <>
+            <Select
+              options={options}
+              className={cn('form-input', className, { ['error']: errors[fieldName] })}
+              aria-invalid={errors[fieldName] ? 'true' : 'false'}
+              // isLoading={isLoading}
+              onChange={onChange}
+              isMulti={true}
+              onBlur={onBlur}
+              id={fieldName}
+              classNamePrefix={'skills'}
+              instanceId={fieldName}
+              value={value}
+              name={name}
+              ref={ref}
+            />
+          </>
+        )}
+      />
+    </>
+  )
+}
+//  <Select options={options} isMulti />

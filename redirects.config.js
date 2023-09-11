@@ -7,6 +7,16 @@ const redirectsArray = [
   //   permanent: true,
   // },
   {
+    source: '/education/tutorials/liquify-effect',
+    destination: '/education/tutorials/after-effects-liquify-effect',
+    permanent: true,
+  },
+  {
+    source: '/recipes/recipe-for-success',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
     source: '/careers/freelance-video-editor',
     destination: '/careers/freelance-editor',
     permanent: true,

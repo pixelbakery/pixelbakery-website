@@ -13,6 +13,7 @@ import {
   Careers_OpenPositions,
   Careers_Breadwinners,
   Careers_PastCareers,
+  Careers_Freelancers,
 } from '@careers/index'
 
 const Careers = ({ allJobs }) => {
@@ -24,6 +25,7 @@ const Careers = ({ allJobs }) => {
       <Careers_SEO />
       <PageHeader_VarH header='Future Bakers' subheader='Come rise with us' />
       <Careers_Intro />
+      <Careers_Freelancers />
       <Careers_OpenPositions
         jobs={openPositions}
         header={'Open Positions'}

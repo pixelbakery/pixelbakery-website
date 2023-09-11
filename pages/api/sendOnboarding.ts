@@ -17,6 +17,7 @@ export default async function sendOnboarding(req, res) {
   <li><strong>email:</strong> ${body.email}</li>
   <li><strong>website:</strong> ${body.website}</li>
   <li><strong>subject: </strong> ${body.subject}</li>
+  <li><strong>referral: </strong>${body.referral}</li>
   </ul>
   <p><strong>message:</strong></p>
   <p>${body.message}</p>

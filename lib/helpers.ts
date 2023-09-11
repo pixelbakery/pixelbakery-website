@@ -124,6 +124,33 @@ export async function SendEmail_Onboarding(data) {
     // console.log(res.json())
   })
 }
+export async function SendEmail_OnboardingConfirmation(data) {
+  await fetch('/api/sendOnboarding-confirmation', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}
+export async function SendEmail_Freelancers(data) {
+  await fetch('/api/sendFreelancers', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}
+export async function SendEmail_FreelancersConfirmation(data) {
+  await fetch('/api/sendFreelancers-confirmation', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json()
+    // console.log(res.json())
+  })
+}
 
 export async function SendEmail_Croissants(data) {
   await fetch('/api/sendCroissant', {

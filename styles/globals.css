@@ -405,15 +405,39 @@ label.radio-button {
   @apply border-blue border-2 bg-transparent rounded-xl font-semibold py-2   text-lg text-wine-500 cursor-pointer focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark peer-checked:bg-blue peer-checked:text-cream hover:scale-98 duration-300 mt-2 w-20 text-center;
 }
 input.form-input,
+.form-input,
 textarea.form-input {
-  @apply border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8 text-xl text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark;
+  @apply border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8  md:text-lg text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark;
 }
 input.form-input.error,
+.form-input.error,
 textarea.form-input.error {
   @apply border-error focus:border-error focus:ring-error;
 }
 input.form-submit {
   @apply bg-blue text-lg font-bold text-cream rounded-md px-8 py-3  cursor-pointer hover:scale-98 duration-300 disabled:hover:scale-100 disabled:bg-opacity-30;
+}
+.skills__control {
+  @apply cursor-pointer bg-transparent border-2 border-blue rounded-xl pl-8 py-2 focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark !important;
+}
+.skills__menu,
+.skills__menuPortal,
+.skills__menuList {
+  @apply cursor-pointer overflow-y-scroll !important;
+}
+.skills__menu::-webkit-scrollbar-thumb,
+.skills__menuList::-webkit-scrollbar-thumb,
+.skills__menuPortal::-webkit-scrollbar-thumb {
+  @apply bg-peach rounded-md cursor-pointer !important;
+}
+.skills__control--is-focused {
+  @apply ring-1 border-blue-dark ring-blue-dark !important;
+}
+.skills__multi-value__remove {
+  @apply hover:bg-wine-100 hover:border-cream hover:text-wine-400 !important;
+}
+label.form-label {
+  @apply pt-0  mt-0 pb-0;
 }
 .animate__fadeIn {
   -webkit-animation: fadein 2s;
@@ -497,6 +521,10 @@ input.form-submit {
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+.remove-input-txt-border input[type='text']:focus {
+  box-shadow: none;
 }
 
 .tooltip .tooltiptext::after {

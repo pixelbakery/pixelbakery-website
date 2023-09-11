@@ -8,7 +8,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
-import { NextSeo } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 
 function Careers_Application({ allJobs }) {
   return (
@@ -46,6 +46,20 @@ function Careers_Application({ allJobs }) {
             },
           ],
         }}
+      />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'Careers',
+            item: 'https://pixelbakery.com/careers',
+          },
+          {
+            position: 2,
+            name: `Submit an Application | Careers`,
+            item: `https://pixelbakery.com/careers/freelancers`,
+          },
+        ]}
       />
       <PageHeader_VarH header='Application' subheader='get at it' />
       <PageSection id='job-application'>

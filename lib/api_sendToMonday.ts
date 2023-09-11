@@ -76,9 +76,11 @@ export async function SendToMonday_Onboarding(data) {
     name: data.name,
     columnVals: JSON.stringify({
       text: data.company,
+      text1: data.website,
       email: { email: data.email, text: data.email },
       text6: data.subject,
       long_text: { text: data.message },
+      text7: data.referral,
       // checkbox: { checked: data.check.toString() },
     }),
   }
@@ -233,3 +235,79 @@ export async function SendToMonday_InstagramMerchCampaign(data) {
     }),
   }).then((res) => res.json())
 }
+
+// Freelancer Form
+export async function SendToMonday_FreelancerForm(data) {
+  const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM}, item_name:$applicant, column_values:$columnVals) { id } }`
+  let skills = ''
+  if (data.skills) {
+    skills = data.skills.map((c) => c.value).join(', ')
+  }
+  const vars = {
+    applicant: data.name,
+    columnVals: JSON.stringify({
+      text: data.title,
+      dropdown: `${skills}`,
+      email: { email: data.email, text: data.email },
+      link: `${data.website} ${data.website}`,
+      link6: { url: data.social, text: data.social },
+    }),
+  }
+  fetch('https://api.monday.com/v2', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `${MondayAuth}`,
+      'API-Version': '2023-10',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: JSON.stringify(vars),
+    }),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      let id = res.data.create_item.id
+
+      let str = JSON.stringify(data, (k, v) => (v === '' || v === undefined ? '–' : v))
+      const d = JSON.parse(str)
+
+      let message = ''
+      message += `<b><em>${d.title}</em></b><br>––––––––<br><br>`
+      message += `<h3>Details:</h3><br>`
+      message += `<b>Pronouns:</b> ${d.pronoun}<br>`
+      message += `<b>Hourly Rate:</b> ${d.rate}<br>`
+      message += `<b>Address:</b> ${d.address}<br>`
+      message += `<b>Phone:</b> ${d.phone}<br>`
+      message += `<b>Years of Prof Experience:</b> ${d.experience}<br>`
+      message += `<b>Most Hated Bird:</b> ${d.bird}<br>`
+      message += `<b>Newsletter Signup:</b> ${d.newsletter.toString()}<br>`
+      message += `<b>How Did You Hear About Us:</b> ${d.referral}<br>`
+      message += `<br>`
+      message += `<h3>About:</h3><br>${d.about}<br><br><br>`
+
+      message += `<h3>Links:</h3><br>`
+      message += `<b>Social Link:</b> <a href='${d.social}'>${d.social}</a><br>`
+      message += `<b>Portfolio Link:</b> <a href='${d.website}'>${d.website}</a><br>`
+      message += `<b>Email:</b> <a href='mailto:${d.email}'>${d.email}</a><br><br><br>`
+      message += `<h3>Skills:</h3><br>`
+      message += `<em>${skills}</em>`
+      const cleanedText = message.replace(/"/g, '\\"')
+
+      let updateQuery = `mutation {create_update (item_id: ${id}, body: "${cleanedText}") { id }}`
+      // console.log(cleanedText)
+      fetch('https://api.monday.com/v2', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${MondayAuth}`,
+          'API-Version': '2023-10',
+        },
+        body: JSON.stringify({
+          query: updateQuery,
+        }),
+      }).then((res) => res.json())
+      // .then((res) => console.log(JSON.stringify(res, null, 2)))
+    })
+}
+// <br>Address: ${data.address}<br>Phone: ${data.phone}<br>Years of Professional Experience: ${data.experience}<br>Social Link: ${data.social}<br>Most Hated Bird: ${data.bird}<br>Newsletter: ${data.newsletter}<br>How Did You Hear About Us: ${data.referral}<br><br>Tell Us About Yourself:<br>${data.about}
