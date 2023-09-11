@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { SendToMonday_FreelancerForm } from '@lib/api_sendToMonday'
+import {
+  SendToMonday_FreelancerForm,
+  SendToMonday_FreelancerForm_GetSkills,
+} from '@lib/api_sendToMonday'
 import {
   SendToMailchimp,
   SendEmail_Freelancers,
@@ -283,32 +286,31 @@ const Careers_Freelancer_Application_Form = () => {
 
   useEffect(() => {
     async function fetchSkillOptions() {
-      const query = `query { boards (ids: ${process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM}) {columns(ids:"dropdown"){settings_str}}}`
-      try {
-        const res = await fetch('https://api.monday.com/v2', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: process.env.NEXT_PUBLIC_MONDAY_AUTH,
-            'API-Version': '2023-10',
-          },
-          body: JSON.stringify({
-            query: query,
-          }),
+      {
+        SendToMonday_FreelancerForm_GetSkills().then((res) => {
+          // console.log(res)
+          let obj = JSON.parse(res.data.boards[0].columns[0].settings_str)
+          // console.log(obj)
+          obj.labels.map(function (obj) {
+            obj['value'] = obj['name']
+            obj['label'] = obj['value']
+            delete obj['name']
+            delete obj['id']
+            return obj
+          })
+          setGetSkillOptions(obj.labels)
         })
-        const json = await res.json()
-        let obj = JSON.parse(json.data.boards[0].columns[0].settings_str)
-        obj.labels.map(function (obj) {
-          obj['value'] = obj['name']
-          obj['label'] = obj['value']
-          delete obj['name']
-          delete obj['id']
-          return obj
-        })
-        setGetSkillOptions(obj.labels)
-      } catch (error) {
-        console.log(error)
       }
+      // const json = await res.json()
+      // try {
+
+      //   const json = await res.json()
+      //   let obj = JSON.parse(json.data.boards[0].columns[0].settings_str)
+
+      //
+      // } catch (error) {
+      //   console.log(error)
+      // }
     }
     fetchSkillOptions()
   }, [])

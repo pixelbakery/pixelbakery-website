@@ -311,3 +311,27 @@ export async function SendToMonday_FreelancerForm(data) {
     })
 }
 // <br>Address: ${data.address}<br>Phone: ${data.phone}<br>Years of Professional Experience: ${data.experience}<br>Social Link: ${data.social}<br>Most Hated Bird: ${data.bird}<br>Newsletter: ${data.newsletter}<br>How Did You Hear About Us: ${data.referral}<br><br>Tell Us About Yourself:<br>${data.about}
+export function SendToMonday_FreelancerForm_GetSkills() {
+  const query = `query { boards (ids: ${process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM}) {columns(ids:"dropdown"){settings_str}}}`
+  try {
+    return fetch('https://api.monday.com/v2', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: process.env.NEXT_PUBLIC_MONDAY_AUTH,
+        'API-Version': '2023-10',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    })
+      .then((res) => res.json())
+      .then((responseData) => {
+        // console.log(responseData)
+        return responseData
+      })
+  } catch (error) {
+    console.log(error)
+  }
+  // .then((res) => console.log(JSON.stringify(res, null, 2)))
+}
