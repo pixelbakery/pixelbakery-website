@@ -15,7 +15,8 @@ const Page_Freelancers = () => {
             </H2>
             <Lead className='text-center self-center' noMargins={true}>
               We're constantly on the lookout to expand our network of talented animators,
-              videographers, and producers.
+              videographers, and producers. <span className='font-bold'>Note:</span> We are not
+              looking for voiceover artists at this time.
             </Lead>
             <p className='self-center text-center'>Okay, let’s get to know you a bit:</p>
           </div>

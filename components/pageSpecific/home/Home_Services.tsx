@@ -21,8 +21,8 @@ const Home_Services = () => {
               We are builders and this is our craft.
             </H2>
             <Lead color='cream  '>
-              Our team creates intentional, high-quality products that are results of purposeful
-              visions and not taking any shortcuts.
+              Our team creates intentional, custom-tailored video content by having a purposeful
+              vision and not taking any shortcuts.
             </Lead>
           </div>
         </div>

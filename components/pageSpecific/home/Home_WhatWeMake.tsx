@@ -24,7 +24,7 @@ const Home_WhatWeMake = () => {
             <p className='text-blue-dark text-xl'>
               Motion content enhances your brand's story with another dimension of life. It shifts
               the interaction with your audience from them simply reading your brand, to your brand
-              speaking directly to the
+              speaking directly to them.
             </p>
           </div>
         </div>

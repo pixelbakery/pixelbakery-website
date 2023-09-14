@@ -11,7 +11,7 @@ import Shimmer from '@lib/Shimmer'
 import Loading from '@utility/Loading'
 import Link from 'next/link'
 import H2 from '@typography/H2'
-import { NextSeo } from 'next-seo'
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
 const Page_PastEmployees = ({ allPeople }) => {
@@ -68,6 +68,21 @@ const Page_PastEmployees = ({ allPeople }) => {
           </div>
         </InnerWrapper>
       </PageSection>
+
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: 'About',
+            item: 'https://pixelbakery.com/about',
+          },
+          {
+            position: 2,
+            name: `Past Employees – Gone, But Certainly Not Forgotten`,
+            item: `https://pixelbakery.com/about/past-employees`,
+          },
+        ]}
+      />
       <NextSeo
         title='Past Employees – Gone, But Certainly Not Forgotten'
         description='Change is constant, even among our dedicated team members. Embrace the journey. These are all of the employees that have passed through our doors.'
