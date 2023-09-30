@@ -19,6 +19,8 @@ const getSecondaryPosts = ({ allPosts }) => {
         aspectY={'4'}
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
+        width={273}
+        height={364}
       />
     )
   })

@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 
-const React = require('react')
+// const React = require('react')
 // const { withPlugins, extend } = require('next-compose-plugins')
 
 const { redirects } = require('./redirects.config.js')
@@ -46,7 +46,7 @@ module.exports = () => {
         },
       ]
     },
-
+    compress: true,
     swcMinify: true,
     images: {
       minimumCacheTTL: 31536000,
@@ -77,7 +77,7 @@ module.exports = () => {
     },
     trailingSlash: false,
     // productionBrowserSourceMaps: true,
-    reactStrictMode: false,
+    reactStrictMode: true,
     eslint: {
       // Warning: This allows production builds to successfully complete even if
       // your project has ESLint errors.

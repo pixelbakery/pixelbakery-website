@@ -1,11 +1,96 @@
 // base.next.config.js
 
 const redirectsArray = [
-  // {
-  //   source: '',
-  //   destination: '',
-  //   permanent: true,
-  // },
+  {
+    source: '/work/the-price-of-free',
+    destination: '/work/case-studies/soulpancake-price-free',
+    permanent: true,
+  },
+  {
+    source: '/work/light',
+    destination: '/work/case-studies/kaneko-light',
+    permanent: true,
+  },
+  {
+    source: '/work/kelty-party-animals-animation',
+    destination: '/work/case-studies/kelty-party-animals',
+    permanent: true,
+  },
+  {
+    source: '/work/kaneko-reality',
+    destination: '/work/case-studies/kaneko-reality',
+    permanent: true,
+  },
+  {
+    source: '/work/first-honey-bee-better',
+    destination: '/work/case-studies/first-honey-bee-better',
+    permanent: true,
+  },
+  {
+    source: '/work/enriched-life',
+    destination: '/work/case-studies/oxbow-enriched-life',
+    permanent: true,
+  },
+  {
+    source: '/work/doane-university-college-on-a-hill',
+    destination: '/work/case-studies/doane-on-a-hill',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/soulpancake-field-tripped',
+    destination: '/work#case-studies',
+    permanent: true,
+  },
+  {
+    source: '/work/sola-less-carbs-less-worries',
+    destination: '/work/case-studies/sola-rideshare-oversharer',
+    permanent: true,
+  },
+  {
+    source: '/work/karma-nuts-ecommerce-animation',
+    destination: '/work/case-studies/karma-nuts-get-your-nuts',
+    permanent: true,
+  },
+  {
+    source: '/work/hopcat-3d-crowler-animation',
+    destination: '/work/case-studies/hopcat-3d-crowler-animation',
+    permanent: true,
+  },
+  {
+    source: '/work/the-firefighting-bear-explainer',
+    destination: '/work#case-studies',
+    permanent: true,
+  },
+  {
+    source: '/work/adm-2019',
+    destination: '/work/case-studies/nelnet-adm-2019',
+    permanent: true,
+  },
+  {
+    source: '/work/oxbow-hay-any-way',
+    destination: '/work/case-studies/oxbow-hay-any-way',
+    permanent: true,
+  },
+  {
+    source: '/work/credit-union-of-america-tv-spots',
+    destination: '/work#case-studies',
+    permanent: true,
+  },
+  {
+    source: '/work/case-studies/b255eC1jb2',
+    destination: '/work#case-studies',
+    permanent: true,
+  },
+  {
+    source: '/work/america-to-me',
+    destination: '/work#case-studies',
+    permanent: true,
+  },
+  {
+    source: '/work/hudl-focus-camera-animation',
+    destination: '/work/case-studies/hudl-focus-camera',
+    permanent: true,
+  },
   {
     source: '/education/tutorials/liquify-effect',
     destination: '/education/tutorials/after-effects-liquify-effect',
@@ -290,12 +375,6 @@ const redirectsArray = [
   {
     source: '/recipes/top-10-music-videos-we-pull-animation-inspiration-from',
     destination: '/recipes/top-10-music-videos',
-    permanent: true,
-  },
-  {
-    source:
-      '/recipes/a-pretty-long-rant-about-being-polite-at-conferences-because-people-need-to-hear-it',
-    destination: '/recipes/being-polite-at-conferences',
     permanent: true,
   },
   {
