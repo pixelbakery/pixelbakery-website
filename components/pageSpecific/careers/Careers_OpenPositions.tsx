@@ -1,7 +1,6 @@
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Careers_Card from './Careers_Card'
-import cn from 'classnames'
 import Link from 'next/link'
 import H2AndLead from '@typography/H2AndLead'
 function Careers_OpenPositions({ jobs, header, subheader }) {
@@ -11,15 +10,11 @@ function Careers_OpenPositions({ jobs, header, subheader }) {
         <div className='mb-12'>
           <div className=''>
             <H2AndLead
-              className={cn(
-                'font-bold max-w-md mt-0 text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 2xl:max-w-3xl leading-none mb-4 text-blue',
-              )}
               headerText={header}
+              headerColor={'peach'}
               leadText={subheader}
-            ></H2AndLead>
-            <p
-              className={cn('text-2xl lg:text-3xl mt-0 font-bold leading-none max-w-lg text-wine')}
-            ></p>
+              leadColor={'blue'}
+            />
           </div>
         </div>
         {jobs.length === 0 ? (
