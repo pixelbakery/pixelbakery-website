@@ -89,6 +89,7 @@ const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted,
         register={register}
         errors={errors}
         fieldName={'name'}
+        autoComplete='name'
         placeHolder={'name'}
         className='col-span-2 md:col-span-1 '
       />
@@ -96,6 +97,7 @@ const Form = ({ register, errors, control, hideForm, handleSubmit, setSubmitted,
         register={register}
         errors={errors}
         fieldName={'company'}
+        autoComplete='organization'
         placeHolder={`company / entity`}
         className={'col-span-2 md:col-span-1'}
       />

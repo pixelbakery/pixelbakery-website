@@ -2,7 +2,14 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2AndLead from '@typography/H2AndLead'
 import dynamic from 'next/dynamic'
-const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), { ssr: false })
+const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
+  ssr: false,
+  loading: () => (
+    <div className={'relative  w-full h-full bg-wine-100 py-96 flex flex-col justify-center'}>
+      <p className='text-center text-wine font-extrabold text-4xl self-center'>Loading...</p>
+    </div>
+  ),
+})
 import modulation_animation from '@data/lottie_misc/modulation_animation.json'
 const Services_Modulation = () => {
   return (

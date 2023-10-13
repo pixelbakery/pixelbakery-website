@@ -102,7 +102,10 @@ export default function Careers_Application_Form({ allJobs }) {
         <div className='mx-auto max-w-4xl grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-10'>
           <div className='col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-y-1 lg:gap-x-4'>
             <div className='col-span-1 lg:col-span-3'>
-              <label className='required'> Full Name</label>
+              <label className='required' htmlFor='given-name'>
+                {' '}
+                Full Name
+              </label>
               <span className='text-sm text-wine-400 mt-0 mb-3 py-0 leading-none block'>
                 What your momma calls you when she&apos;s mad.
               </span>
@@ -111,6 +114,7 @@ export default function Careers_Application_Form({ allJobs }) {
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='text'
               required
+              autoComplete='given-name'
               id='given-name'
               placeholder='First'
               {...register('first_name' as never, {})}
@@ -118,6 +122,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='text'
+              autoComplete='additional-name'
               id='additional-name'
               placeholder='Middle'
               {...register('middle_name' as never, {})}
@@ -126,6 +131,7 @@ export default function Careers_Application_Form({ allJobs }) {
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               required
               type='text'
+              autoComplete='family-name'
               id='family-name'
               placeholder='Last'
               {...register('last_name' as never, {})}
@@ -137,6 +143,7 @@ export default function Careers_Application_Form({ allJobs }) {
               Preferred Pronoun
             </label>
             <input
+              id='pronoun'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='text'
               placeholder='(totally optional)'
@@ -152,6 +159,7 @@ export default function Careers_Application_Form({ allJobs }) {
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='email'
               id='email'
+              autoComplete='email'
               placeholder='hello@pixelbakery.com'
               required
               {...register('email' as never, {})}
@@ -159,12 +167,13 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
 
           <div className='col-span-2 lg:col-span-1'>
-            <label className='required' htmlFor='phone_number'>
+            <label className='required' htmlFor='tel-national'>
               Phone Number
             </label>
             <input
               id='tel-national'
               type='tel'
+              autoComplete='tel'
               required
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='Phone'
@@ -173,10 +182,11 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
 
           <div className='col-span-2 xl:col-span-1'>
-            <label className='' htmlFor='zodiac'>
+            <label className='' htmlFor='social'>
               LinkedIn or Instagram
             </label>
             <input
+              id='social'
               type='url'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='https://'
@@ -190,6 +200,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <input
               type='text'
+              id='zodiac'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='scorpio scorpio scorpio'
               {...register('zodiac' as never, {})}
@@ -202,6 +213,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
 
             <select
+              id='position'
               {...register('position' as never, {})}
               className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
             >
@@ -224,6 +236,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <select
               required
+              id='commitment'
               className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               {...register('commitment' as never, {})}
             >
@@ -241,6 +254,7 @@ export default function Careers_Application_Form({ allJobs }) {
 
             <select
               required
+              id='education'
               className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               {...register('education' as never, {})}
             >
@@ -260,6 +274,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <div className='flex gap-2'>
               <input
+                id='hours'
                 className='w-1/2 border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
                 type='number'
                 placeholder='hrs'
@@ -275,7 +290,7 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
 
           <div className='col-span-2'>
-            <label className='required' htmlFor='address_line_1'>
+            <label className='required' htmlFor='street-address'>
               Address
             </label>
             <div className='flex flex-col gap-2'>
@@ -283,6 +298,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 required
                 type='text'
                 id='street-address'
+                autoComplete='street-address'
                 className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
                 placeholder='Address'
                 {...register('address_line_1' as never, {})}
@@ -290,6 +306,7 @@ export default function Careers_Application_Form({ allJobs }) {
               <input
                 required
                 type='text'
+                autoComplete='address-level2'
                 className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
                 placeholder='City, State, Zip'
                 {...register('address_line_2' as never, {})}
@@ -298,11 +315,12 @@ export default function Careers_Application_Form({ allJobs }) {
           </div>
 
           <div className='col-span-3'>
-            <label className='required ' htmlFor='about_personal'>
+            <label className='required' htmlFor='about_personal'>
               Tell Us About Yourself (nothing to do with your profession)
             </label>
             <textarea
               required
+              id='about_personal'
               rows={5}
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               {...register('about_personal' as never, {})}
@@ -315,6 +333,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <textarea
               required
+              id='about_professional'
               rows={5}
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               {...register('about_professional' as never, {})}
@@ -328,17 +347,19 @@ export default function Careers_Application_Form({ allJobs }) {
             <textarea
               required
               rows={5}
+              id='why'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               {...register('why' as never, {})}
             />
           </div>
 
           <div className='col-span-2 xl:col-span-1 '>
-            <label className=' ' htmlFor='why'>
+            <label className=' ' htmlFor='band'>
               What&apos;s your favorite band?
             </label>
             <input
               type='text'
+              id='band'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder="Please don't say Chris Brown"
               {...register('band' as never, {})}
@@ -350,6 +371,7 @@ export default function Careers_Application_Form({ allJobs }) {
               Website / Portfolio Link
             </label>
             <input
+              id='website'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='url'
               placeholder='https://'
@@ -364,6 +386,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               type='file'
+              id='resume'
               onChange={setFile}
               placeholder='Upload Your Resume'
               {...register('resume' as never, {
@@ -395,13 +418,14 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <input
               type='text'
+              id='hear'
               className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
               placeholder='bc you totally follow us on insta'
               {...register('hear' as never, {})}
             />
           </div>
           <div className='col-span-2'>
-            <label htmlFor=' ' className='required'>
+            <label htmlFor='authorized' className='required'>
               The Federal Government Says
             </label>
             <div className='flex gap-4'>
@@ -411,6 +435,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 }
                 type='checkbox'
                 required
+                id='authorized'
                 checked={authorized}
                 onClick={handleAuthorized}
                 {...register('authorized' as never)}
@@ -425,7 +450,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </div>
           </div>
           <div className='col-span-2 border-t border-wine pt-4 mt-4'>
-            <label>See? That wasn&apos;t too bad.</label>
+            <p className='font-bold'>See? That wasn&apos;t too bad.</p>
             <p className='my-0 py-0'>
               Look it over, upload your resume, and send it off. Ditch the cover letter, chances are
               we won&apos;t read it anyways. We&apos;ll be in touch.
@@ -448,6 +473,7 @@ export default function Careers_Application_Form({ allJobs }) {
                   'rounded-lg bg-white  border-1  p-3 my-2 text-blue-dark cursor-pointer  drop-shadow-2xl'
                 }
                 type='checkbox'
+                id='handleMailchimp'
                 checked={mailchimp}
                 onClick={handleMailchimp}
                 {...register('mailchimp' as never)}

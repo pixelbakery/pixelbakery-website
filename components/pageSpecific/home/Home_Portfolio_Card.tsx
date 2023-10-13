@@ -1,6 +1,6 @@
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-import { useRef } from 'react'
+
 import cn from 'classnames'
 import H3 from '@typography/H3'
 import { VideoJsonLd } from 'next-seo'
@@ -11,11 +11,10 @@ interface Props {
   project: any
 }
 const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
-  const ref = useRef(null)
   const datePostedISO = new Date(project.data.date).toISOString()
 
   return (
-    <article ref={ref} className='w-full  lg:w-3/5 2xl:w-full px-1'>
+    <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
       <div
         className={cn(
           'relative home-portfolio rounded-md  aspect-w-16 aspect-h-9 z-10',

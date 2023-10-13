@@ -6,7 +6,14 @@ import { SendToMonday_InstagramMerchCampaign } from '@lib/api_sendToMonday'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
 import dynamic from 'next/dynamic'
 
-const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+  loading: () => (
+    <div className={'relative  w-full aspect-16/9 bg-wine-100 py-96 flex flex-col justify-center'}>
+      <p className='text-center text-wine font-extrabold text-4xl self-center'>Loading...</p>
+    </div>
+  ),
+})
 function Surprise_ContactForm() {
   const [checked, setChecked] = useState(true)
 

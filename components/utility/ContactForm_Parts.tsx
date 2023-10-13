@@ -13,6 +13,7 @@ interface Inputs {
   placeHolder?: string
   className?: string
   rows?: number
+  autoComplete?: string
 }
 interface PhoneInputs {
   control: any
@@ -107,6 +108,7 @@ export const ContactForm_TextInput = ({
   fieldName,
   placeHolder,
   className,
+  autoComplete,
 }: Inputs) => {
   return (
     <>
@@ -119,6 +121,7 @@ export const ContactForm_TextInput = ({
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         id={fieldName}
         {...register(fieldName)}
+        autoComplete={autoComplete}
       />
     </>
   )
@@ -138,6 +141,7 @@ export const ContactForm_EmailInput = ({
         type='email'
         placeholder={placeHolder}
         name={fieldName}
+        autoComplete='email'
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         id={fieldName}
         {...register(fieldName)}
@@ -175,6 +179,7 @@ export const ContactForm_TextAreaInput = ({
   placeHolder,
   className,
   rows,
+  autoComplete,
 }: Inputs) => {
   return (
     <>
@@ -185,6 +190,7 @@ export const ContactForm_TextAreaInput = ({
         placeholder={placeHolder}
         name={fieldName}
         id={fieldName}
+        autoComplete={autoComplete}
         aria-invalid={errors[fieldName] ? 'true' : 'false'}
         rows={rows}
         {...register(fieldName)}
@@ -216,6 +222,7 @@ export const ContactForm_PhoneInput = ({
           placeholder={placeHolder}
           onBlur={onBlur}
           id={fieldName}
+          autoComplete='tel'
           onValueChange={(v) => {
             if (typeof value === 'number') {
               onChange(v.floatValue)
