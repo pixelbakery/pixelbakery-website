@@ -1,20 +1,38 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import Main from '@parts/Main'
-import Work_Industries from '@work/Work_Industries'
 
-import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import { postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import dynamic from 'next/dynamic'
+import Loading from '@utility/Loading'
+
+import { caseStudyFilePaths, CASESTUDIES_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+
+import Work_Industries from '@work/Work_Industries'
+import Main from '@parts/Main'
 import {
   Home_Services,
   Home_SEO,
   Home_WhoTheHeck,
   Home_Landing,
-  Home_Recipes,
-  Home_Portfolio,
   Home_WhatWeMake,
 } from '@home/index'
+
+const Home_Portfolio = dynamic(() => import('@home/Home_Portfolio'), {
+  ssr: false,
+  loading: () => (
+    <div className={'relative h-100 w-100'}>
+      <Loading />
+    </div>
+  ),
+})
+const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), {
+  ssr: false,
+  loading: () => (
+    <div className={'relative h-100 w-100'}>
+      <Loading />
+    </div>
+  ),
+})
 
 const Home = ({ allPosts, allCaseStudies }) => {
   return (

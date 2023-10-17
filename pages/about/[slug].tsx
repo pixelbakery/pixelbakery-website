@@ -22,9 +22,18 @@ import {
   About_Team_SEO,
   About_Team_Details,
 } from '@about/index'
+import dynamic from 'next/dynamic'
 
-import About_Team_MatchingCaseStudies from '@about/About_Team_MatchingCaseStudies'
-import About_Team_MatchingPosts from '@about/About_Team_MatchingPosts'
+const About_Team_MatchingPosts = dynamic(() => import('@about/About_Team_MatchingPosts'), {
+  ssr: false,
+})
+
+const About_Team_MatchingCaseStudies = dynamic(
+  () => import('@about/About_Team_MatchingCaseStudies'),
+  {
+    ssr: false,
+  },
+)
 function PersonPage({
   matchingCaseStudies,
   slug,
@@ -41,7 +50,7 @@ function PersonPage({
       <About_Team_SEO frontMatter={frontMatter} slug={slug} />
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
-      <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} />
+      <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} name={frontMatter.name} />
       <About_Team_MatchingCaseStudies
         matchingCaseStudies={matchingCaseStudies}
         name={frontMatter.name}

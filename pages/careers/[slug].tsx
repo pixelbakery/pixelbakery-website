@@ -8,20 +8,17 @@ import matter from 'gray-matter'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import remarkGfm from 'remark-gfm'
 
 //nextJS imports
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
-import Main from '@parts/Main'
 
-//utility & component imports
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
-import Button_Filled from '@parts/Button_Filled'
-import H2AndLead from '@typography/H2AndLead'
-import H1 from '@typography/H1'
-import remarkGfm from 'remark-gfm'
+import { Main, InnerWrapper, PageSection, Button_Filled } from '@parts/index'
+
+import { H1, H2AndLead } from '@typography/index'
+
 import DateFormatter from '@lib/date-formatter'
 
 //css imports
@@ -140,7 +137,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
 
 export const getStaticProps = async ({ params }) => {
   //MDX Stuff
-  const jobsFilePath = path.join(JOBS_PATH, `${params.slug}.mdx`)
+  const jobsFilePath = path.join(JOBS_PATH, `${params.slug}.mdx`.toString())
   const source = fs.readFileSync(jobsFilePath)
   const { content, data } = matter(source)
   const mdxSource = await serialize(content, {

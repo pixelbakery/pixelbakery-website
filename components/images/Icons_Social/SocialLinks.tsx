@@ -22,21 +22,24 @@ const About_Team_SocialLinks = ({ iconName, ...props }) => {
         href={props.href ? props.href : link != undefined ? link : ''}
         className='mx-1 block'
       >
-        <i
-          className={cn(
-            'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 hover:animate-pulse',
-            `text-${props.color}`,
-            `text-${props.size}`,
-          )}
-          role='img'
-          aria-label={iconName}
-        >
-          <Icon
-            className={cn(props.height, props.width)}
-            icon={Icons[`${CapitalizeWord(iconName)}`]}
-            title={`${iconName}`}
-          />
-        </i>
+        <>
+          <i
+            className={cn(
+              'block transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 hover:animate-pulse',
+              `text-${props.color}`,
+              `text-${props.size}`,
+            )}
+            role='img'
+            aria-label={iconName}
+          >
+            <Icon
+              className={cn(props.height, props.width)}
+              icon={Icons[`${CapitalizeWord(iconName)}`]}
+              title={`${iconName}`}
+            />
+          </i>
+          <span className='sr-only'>{`${CapitalizeWord(iconName)}`}</span>
+        </>
       </Link>
     </div>
   )

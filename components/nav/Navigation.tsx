@@ -106,6 +106,7 @@ export default function Navbar() {
                 layout
               >
                 <Nav_Logo showNavBar={showNavBar} />
+                <span className='sr-only'>Home</span>
               </m.div>
             </Link>
           </m.div>

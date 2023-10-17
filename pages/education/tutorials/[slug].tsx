@@ -87,8 +87,8 @@ export default function Page_Education_Tutorials({
 
 export const getStaticProps = async ({ params }) => {
   //MDX Stuff
-  const temp = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())
-  const source = fs.readFileSync(temp)
+  const tutorialFilePath = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())
+  const source = fs.readFileSync(tutorialFilePath)
   const { content, data } = matter(source)
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -145,13 +145,13 @@ export const getStaticProps = async ({ params }) => {
     props: {
       nextAuthor: nextAuthor,
       nextFilePath: nextFilePath,
+      readTime: time,
       nextTitle: nextTitle,
       prevAuthor: prevAuthor,
       prevFilePath: prevFilePath,
       prevTitle: prevTitle,
       slug: params.slug,
       source: mdxSource,
-      readTime: time,
       frontMatter: data,
     },
   }

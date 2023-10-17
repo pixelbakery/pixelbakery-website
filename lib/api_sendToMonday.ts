@@ -15,6 +15,7 @@ const MondayAuth = process.env.NEXT_PUBLIC_MONDAY_AUTH
 // Job Application
 export async function SendToMonday_JobApplication(data) {
   const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_JobApplication}, item_name:$applicant, column_values:$columnVals) { id } }`
+
   const vars = {
     applicant: `${data.first_name} ${data.middle_name} ${data.last_name}`,
     columnVals: JSON.stringify({
@@ -26,19 +27,27 @@ export async function SendToMonday_JobApplication(data) {
       phone: data.phone,
       text31: data.email,
       dropdown5: data.zodiac,
+      files: data.resume,
     }),
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  try {
+    fetch('https://api.monday.com/v2', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${MondayAuth}`,
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: JSON.stringify(vars),
+      }),
+    }).then((res) => {
+      res.json()
+      console.log(res)
+    })
+  } catch (error) {
+    console.log(error)
+  }
   // .then((res) => console.log(JSON.stringify(res, null, 2)))
 }
 

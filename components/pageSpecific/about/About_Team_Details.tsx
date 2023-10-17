@@ -2,7 +2,18 @@ import { CamelCaseToSentence } from '@lib/helpers'
 import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Lead from '@typography/Lead'
-import About_Team_SpotifyPlaylist from './About_Team_SpotifyPlaylist'
+import Loading from '@utility/Loading'
+
+import dynamic from 'next/dynamic'
+
+const About_Team_SpotifyPlaylist = dynamic(() => import('@about/About_Team_SpotifyPlaylist'), {
+  ssr: false,
+  loading: () => (
+    <div className={'relative h-100 w-100'}>
+      <Loading />
+    </div>
+  ),
+})
 
 const About_Team_Details = ({ frontMatter }) => {
   const details = frontMatter.details

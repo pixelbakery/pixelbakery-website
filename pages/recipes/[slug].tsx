@@ -5,19 +5,19 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import { shuffleArray } from '@lib/helpers'
-
+import Loading from '@utility/Loading'
+import dynamic from 'next/dynamic'
 import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import dayjs from 'dayjs'
 
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Video from '@parts/Video'
+
 import readingTime from '@lib/readingTime'
 import Carousel from '@parts/carousel/Carousel'
 
-import Main from '@parts/Main'
-import Recipes_Post_SEO from '@recipes/Recipes_Post_SEO'
-import Recipes_Post_Header from '@recipes/Recipes_Post_Header'
-import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
+import { Main, Video } from '@parts/index'
+
+import { Recipes_Post_SEO, Recipes_Post_Header, Recipes_Post_Tags } from '@recipes/index'
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), {
   ssr: false,
   loading: () => (
@@ -26,9 +26,17 @@ const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related
     </div>
   ),
 })
-import Recipes_Post_Tags from '@recipes/Recipes_Post_Tags'
-import Loading from '@utility/Loading'
-import dynamic from 'next/dynamic'
+const Recipes_Post_GetPrevNextPost = dynamic(
+  () => import('@recipes/Recipes_Post_GetPrevNextPost'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className={'relative h-100 w-100'}>
+        <Loading />
+      </div>
+    ),
+  },
+)
 
 // Custom components/renderers to pass to MDX.
 const components = {

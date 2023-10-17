@@ -13,7 +13,7 @@ const About_Team_MatchingCaseStudies = ({ matchingCaseStudies, name }) => {
       {matchingCaseStudies.length > 0 ? (
         <PageSection color='blue' id={'bio-postsByPerson'}>
           <InnerWrapper>
-            <H2 color='blue-dark'>Credited Projects</H2>
+            <H2 color='blue-dark'>{`${firstName}`}'s Credited Projects</H2>
             <p className='text-cream font-semibold'>
               Check out some of the awesome projects {`${firstName}`} has worked on.
             </p>

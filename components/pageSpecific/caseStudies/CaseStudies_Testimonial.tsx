@@ -49,10 +49,9 @@ function CaseStudies_Testimonial({
                     <Image
                       src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${headshot}`}
                       alt={`${name} is the ${title} of Pixel Bakery's client, ${client}.`}
-                      fill={true}
+                      width={16}
+                      height={16}
                       className='object-cover object-center w-full h-full'
-                      placeholder={'blur'}
-                      blurDataURL={`${Shimmer(16, 16)}`}
                     />
                   </div>
                 </div>

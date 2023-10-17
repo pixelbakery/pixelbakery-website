@@ -76,13 +76,14 @@ export const Footer: NextPage = () => {
                     >
                       <Image
                         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/icons/doodles/PB_ColorIcon_PopTart.svg`}
-                        width={133.6536}
-                        height={169.8851}
+                        width={218}
+                        height={278}
                         className={'rotate-6 origin-center w-full block relative'}
                         alt={'Pixel Bakery Design Studio'}
                       />
                     </m.div>
                   </m.div>
+                  <span className='sr-only'>Home</span>
                 </LazyMotion>
               </Link>
 

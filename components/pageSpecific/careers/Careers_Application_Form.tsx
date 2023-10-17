@@ -34,8 +34,9 @@ export default function Careers_Application_Form({ allJobs }) {
     }
 
     await setIsLoading(true)
-    await SendToSendgrid(data)
     await SendToMonday_JobApplication(data)
+    await SendToSendgrid(data)
+
     await SendtosSendgridconfirmation(data)
 
     await SendToMailchimp(data, 'Job Application')

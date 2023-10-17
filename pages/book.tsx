@@ -6,13 +6,12 @@ const Book = () => {
     <>
       <Onboarding_Calendly className='pt-48 lg:pt-56' h1={true} />
       <NextSeo
-        title='Schedule A Meeting'
+        title={`Schedule A Meeting. Let's Get That Video Project Going`}
         description={`Let's talk about you and your project. Schedule either an in-person or virtual meeting with our leadership team.`}
         canonical={`https://pixelbakery.com/book`}
-        noindex={true}
         openGraph={{
           url: `https://pixelbakery.com/book`,
-          title: 'Schedule A Meeting',
+          title: `Schedule A Meeting. Let's Get That Video Project Going`,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixelbakery-thumbnail.jpg`,
