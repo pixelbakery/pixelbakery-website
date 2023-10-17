@@ -55,10 +55,10 @@ As with everything else, you can enter frontmatter variables into the top of the
 - The naming convention for the client logo should be 'pixelbakery_client_clientname.png'. Make sure you use the appropriate illustrator file to generate these. They should be exported as greyscale PNGs with transparent backgrounds.
 - All available tags are commented out in the template gist listed above. Simply uncomment any tags you'd like to use or copy/paste them from here. Available tags are:
 
-- 2d animation
-- 3d Animation
+- 2D animation
+- 3D Animation
 - Motion design
-- 3d modeling
+- 3D modeling
 - Artificial reality
 - film production
 - Post-production

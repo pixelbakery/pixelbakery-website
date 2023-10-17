@@ -88,7 +88,7 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 fill={true}
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
                 className='absolute object-cover object-center w-full h-full'
-                alt='polaroid 3d model made in cinema 4d'
+                alt='polaroid 3D model made in cinema 4d'
               />
             </div>
             <div className='hidden lg:block relative col-span-1 h-full w-full '>
