@@ -2,6 +2,67 @@
 
 const redirectsArray = [
   {
+    source: '/recipes/tutorial-after-effects',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/recipes/being-polite-at-conferences',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/recipes/halloween-monster-toes',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/recipes/bts-storyboards-for-lincoln-calling',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/services/web-hosting',
+    destination: '/services',
+    permanent: true,
+  },
+  {
+    source: '/recipes/tutorial-composition-settings-in-after-effects',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/rant',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/recipes/nebraska-type-challenge-04-03',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source:
+      '/recipes/a-pretty-long-rant-about-being-polite-at-conferences-because-people-need-to-hear-it/',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/recipes/day-2',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
+    source: '/ul',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/recipes/pixel-bakery-internship-day-1',
+    destination: '/recipes',
+    permanent: true,
+  },
+  {
     source: '/work/the-price-of-free',
     destination: '/work/case-studies/soulpancake-price-free',
     permanent: true,
