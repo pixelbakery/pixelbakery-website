@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.6](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.5...v5.0.6) (2023-11-10)
+
+
+### Bug Fixes
+
+* [#245](https://github.com/pixelbakery/pixelbakery-website/issues/245) ([792fa3b](https://github.com/pixelbakery/pixelbakery-website/commits/792fa3bd5c3e4e596e3e25f1c5ca0ac2ac02b4b4))
+
 ### [5.0.5](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.2...v5.0.5) (2023-11-10)
 
 
