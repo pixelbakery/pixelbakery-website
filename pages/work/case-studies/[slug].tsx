@@ -40,7 +40,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import Image_VarH from '@parts/Image_VarH'
 //stuff built for Marq
 
-import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
+// import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
 import dynamic from 'next/dynamic'
 import remarkGfm from 'remark-gfm'
@@ -53,8 +53,8 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     CaseStudies_Storyboards: CaseStudies_Storyboards,
     Video: Video,
     //Stuff built for Marq
-    Marq_MarchingSolders: Marq_MarchingSolders,
-    Marq_Unicorn: Marq_Unicorn,
+    // Marq_MarchingSolders: Marq_MarchingSolders,
+    // Marq_Unicorn: Marq_Unicorn,
     //Stuff built for SNACKLINS
     CaseStudies_Testimonial: CaseStudies_Testimonial,
     CaseStudies_TikTok: CaseStudies_TikTok,
@@ -95,7 +95,6 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     InnerWrapper: InnerWrapper,
     h2: ({ children, color }) => <H2 color={color}>{children}</H2>,
-    CaseStudiesTags: () => <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} />,
   }
   return (
     <Main>
@@ -133,7 +132,7 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
   //MDX Stuff
   const temp = path.join(CASESTUDIES_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(temp)
