@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.7](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.6...v5.0.7) (2023-11-10)
+
+
+### Bug Fixes
+
+* [#246](https://github.com/pixelbakery/pixelbakery-website/issues/246) incomplete string escaping ([fc8bd7c](https://github.com/pixelbakery/pixelbakery-website/commits/fc8bd7cfd89b72e57c842befab57ad82add79d7a))
+
+
+### Documentation
+
+* added new badges ([abf49f8](https://github.com/pixelbakery/pixelbakery-website/commits/abf49f88a4686b3557c5a254b21f982eabed0e13))
+
 ### [5.0.6](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.5...v5.0.6) (2023-11-10)
 
 
