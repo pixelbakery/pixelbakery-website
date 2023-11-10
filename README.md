@@ -1,5 +1,6 @@
 # pb-oct-2022
 
+![GitHub last commit](https://img.shields.io/github/last-commit/pixelbakery/pixelbakery-website)
 ![](https://api.checklyhq.com/v1/badges/checks/1ae52858-2167-4382-a9bd-d0787ba41243?style=flat&theme=dark)
 [![OSSAR](https://github.com/pixelbakery/pixelbakery-website/actions/workflows/ossar.yml/badge.svg)](https://github.com/pixelbakery/pixelbakery-website/actions/workflows/ossar.yml)
 
