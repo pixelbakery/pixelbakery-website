@@ -301,7 +301,7 @@ export async function SendToMonday_FreelancerForm(data) {
       message += `<b>Email:</b> <a href='mailto:${d.email}'>${d.email}</a><br><br><br>`
       message += `<h3>Skills:</h3><br>`
       message += `<em>${skills}</em>`
-      const cleanedText = message.replace(/"/g, '\\"')
+      const cleanedText = message.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
 
       let updateQuery = `mutation {create_update (item_id: ${id}, body: "${cleanedText}") { id }}`
       // console.log(cleanedText)
