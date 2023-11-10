@@ -9,7 +9,7 @@ import matter from 'gray-matter'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
 import { Work_SEO, Work_Callout, Work_Portfolio, Work_Clients, Work_Industries } from '@work/index'
-const Work = ({ allCaseStudies }) => {
+const Work = ({ allCaseStudies }: any) => {
   return (
     <Main>
       <PageHeader_VarH header='What We Make' subheader='knead the dough, baby' />
