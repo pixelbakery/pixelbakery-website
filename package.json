@@ -17,7 +17,8 @@
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "release:major": "standard-version --release-as major"
+    "release:major": "standard-version --release-as major",
+    "git push": "git push --follow-tags origin main && yarn publish"
   },
   "prettier": {
     "trailingComma": "all",
@@ -67,7 +68,6 @@
     "zustand": "^4.1.1"
   },
   "devDependencies": {
-    "standard-version": "^9.5.0",
     "@commitlint/cli": "^18.4.0",
     "@commitlint/config-conventional": "^18.4.0",
     "@next/bundle-analyzer": "^14.0.1",
@@ -91,9 +91,10 @@
     "husky": "^8.0.0",
     "next-sitemap": "^4.0.5",
     "postcss": "^8.4.16",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^3.1.8",
     "typescript": "^5.0.2",
     "why": "0.6.2"
   },
-  "version": null
+  "version": "4.4.0"
 }
