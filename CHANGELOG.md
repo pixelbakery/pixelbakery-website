@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.7...v5.1.0) (2023-11-10)
+
+
+### Features
+
+* added option to center content in wrapper ([0833710](https://github.com/pixelbakery/pixelbakery-website/commits/083371058d4b9414a2e2d2bd3e24f50eca239261))
+* added Verdi as a client ([84d420b](https://github.com/pixelbakery/pixelbakery-website/commits/84d420b6fd926539a9ebf7da4ddabae25b5b9bab))
+
+
+### Bug Fixes
+
+* added typescript types ([2ad9476](https://github.com/pixelbakery/pixelbakery-website/commits/2ad947612dab3b4fc33dfdea53ac50e309de4139))
+* image resolution on testimonial photo ([01c867a](https://github.com/pixelbakery/pixelbakery-website/commits/01c867a885434118ab070313680dd3727f7db06f))
+
+
+### Styling
+
+* tags now reduce to four on mobile ([3a05d62](https://github.com/pixelbakery/pixelbakery-website/commits/3a05d6217ed73240ce9ea15984368afc0ca56f20))
+
+
+### Chores
+
+* added ts types ([87a6d0d](https://github.com/pixelbakery/pixelbakery-website/commits/87a6d0d178279e6e3a0e1d53fffc074362f5355d))
+* checkly configs maybe? ([b983032](https://github.com/pixelbakery/pixelbakery-website/commits/b983032ab43e26018134cef328cecd565c0c16c5))
+* config updates ([2a40b84](https://github.com/pixelbakery/pixelbakery-website/commits/2a40b84babeffa8caa3bc6f81ba70e5b338e6b09))
+* removed bad lottie code ([c721de0](https://github.com/pixelbakery/pixelbakery-website/commits/c721de0958dd20ac6b636040b7f3df9b5e15aeb3))
+* removed outdated code ([36b208c](https://github.com/pixelbakery/pixelbakery-website/commits/36b208ce4e5e4b22837f04d5050ce128eaaf0fb5))
+
 ### [5.0.7](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.6...v5.0.7) (2023-11-10)
 
 
