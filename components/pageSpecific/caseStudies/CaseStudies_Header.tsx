@@ -41,7 +41,7 @@ function CaseStudies_Header({ ...props }) {
           </H1>
           <div className='mt-12'>
             <div className='flex flex-row justify-left gap-3 flex-wrap max-w-3xl'>
-              {props.tags.map((tag) => {
+              {props.tags.map((tag: string, index: number) => {
                 return (
                   <Pill
                     key={tag}
@@ -49,6 +49,7 @@ function CaseStudies_Header({ ...props }) {
                     bgColor={'blue'}
                     textColor={'egg'}
                     size={'sm'}
+                    className={`${index > 2 ? 'hidden md:inline' : ''}`}
                   />
                 )
               })}
