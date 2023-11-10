@@ -1,8 +1,22 @@
 import { useEffect, useState } from 'react'
-import PageHeader_VarH_Content from '@pageHeaders/PageHeader_VarH_Content'
+// import PageHeader_VarH_Content from '@pageHeaders/PageHeader_VarH_Content'
 import { RandomArrayItem } from '@lib/helpers'
 import cn from 'classnames'
 import PageHeader_TextBox from '@pageHeaders/PageHeader_TextBox'
+import dynamic from 'next/dynamic'
+
+const PageHeader_VarH_Content = dynamic(() => import('@pageHeaders/PageHeader_VarH_Content'), {
+  ssr: false,
+  loading: () => (
+    <PageHeader_TextBox
+      header={''}
+      primaryColor={'blue'}
+      accentColor={'cream'}
+      subheader={''}
+      subheaderColor={'blue'}
+    />
+  ),
+})
 
 interface Props {
   header: string
