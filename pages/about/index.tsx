@@ -4,6 +4,9 @@ import path from 'path'
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
 import Main from '@parts/Main'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+// const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
+//   ssr: false,
+// })
 
 import {
   About_Team,
@@ -16,7 +19,7 @@ import {
 
 // import About_FamilyPhotos from '@about/About_FamilyPhotos'
 
-const About = ({ allPeople }) => {
+const About = ({ allPeople }: any) => {
   return (
     <Main>
       <PageHeader_VarH header='About' subheader='Just add flour.' />
