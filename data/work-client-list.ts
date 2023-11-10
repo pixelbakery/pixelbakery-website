@@ -3,6 +3,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default [
   {
+    client: 'Verdi',
+    logo: '/img/clients/pixelbakery_client_verdi_greyscale.png',
+    url: 'https://verdi.com',
+    active: true,
+  },
+  {
     client: 'Daake',
     logo: '/img/clients/pixelbakery_client_daake.png',
     url: 'https://daake.com',
