@@ -7,6 +7,7 @@ type Props = {
   color?: string
   className?: string
   disableSpacing?: boolean
+  center?: boolean
 }
 
 const InnerWrapper = ({
@@ -15,6 +16,7 @@ const InnerWrapper = ({
   children,
   disableSpacing,
   className,
+  center,
 }: PropsWithChildren<Props>) => {
   return (
     <div
@@ -23,6 +25,7 @@ const InnerWrapper = ({
         'max-w-md md:max-w-3xl xl:max-w-6xl mx-auto',
         { [`bg-${color}`]: color != undefined },
         { [`max-w-md md:max-w-3xl xl:max-w-6xl`]: !disableSpacing || disableSpacing === null },
+        { [`mx-auto flex flex-col items-center text-center`]: center },
         className,
       )}
     >
