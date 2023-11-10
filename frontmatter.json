@@ -3,6 +3,7 @@
   "frontMatter.taxonomy.seoDescriptionField": "excerpt",
   "frontMatter.taxonomy.seoSlugLength": 75,
   "frontMatter.taxonomy.seoDescriptionLength": 155,
+  "frontMatter.snippets.wrapper.enabled":false,
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "_jobs",
@@ -677,6 +678,18 @@
           "default": true
         }
       ]
+    },
+    "Case Study: Client Testimonial": {
+      "description": "",
+      "body": [
+        "<CaseStudies_Testimonial client={'CLIENT COMPANY NAME'} name={\"CLIENT CONTACT NAME\"} title={'CONTACT TITLE'} headshot={'/img/case-studies/.../....jpg'} linkedIn={'https://www.linkedin.com/in/.../'}>",
+        " **From the Client:**",
+        "",
+        "\"yada yada yada\"",
+        "",
+        "</CaseStudies_Testimonial>"
+      ],
+      "fields": []
     }
   },
   "frontMatter.data.files": [
