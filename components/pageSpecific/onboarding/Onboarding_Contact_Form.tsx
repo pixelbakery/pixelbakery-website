@@ -53,7 +53,7 @@ const yupValidation = Yup.object().shape({
       /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
       'Name can only contain Latin letters.',
     )
-    .matches(/^\s*[\S]+(\s[\S]+)+\s*$/gms, 'Please enter your full name.'),
+    .matches(/^\s*\S+(?:\s+\S+)+\s*$/, 'Please enter your full name.'),
   subject: Yup.string()
     .required('Please enter a subject line.')
     .min(8, `That's a pretty short subject line.`),

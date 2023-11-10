@@ -30,7 +30,7 @@ function Careers_JobShadow_Form() {
         /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
         'Name can only contain Latin letters.',
       )
-      .matches(/^\s*[\S]+(\s[\S]+)+\s*$/gms, 'Please enter your full name.'),
+      .matches(/^\s*\S+(?:\s+\S+)+\s*$/, 'Please enter your full name.'),
     school: Yup.string().required(`Please enter your school.`),
     message: Yup.string().min(100, `C'mon, put a little bit more effort into your message.`),
     email: Yup.string()
