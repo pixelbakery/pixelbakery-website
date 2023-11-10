@@ -3,3 +3,4 @@
 
 npx --no -- commitlint --edit ${1}
 npm run commitlint ${1}
+yarn commitlint --edit $1
