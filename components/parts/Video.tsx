@@ -21,6 +21,8 @@ interface video {
   caption?: string
   light?: any
   className?: string
+  useCDN?: boolean
+  dummy?: boolean
 }
 function Video({ url, ...props }: video) {
   return (
@@ -47,7 +49,7 @@ function Video({ url, ...props }: video) {
           </div>
         </div> */}
         <ReactPlayer
-          url={url}
+          url={props.useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url}
           autoPlay={props.autoPlay != undefined ? props.autoPlay : false}
           playing={props.autoPlay != undefined ? props.autoPlay : false}
           poster={
