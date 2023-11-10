@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/mokkapps/changelog-generator-demo/compare/v3.2.0...v4.5.0) (2023-11-10)
+
+
+### Features
+
+* added Husky ([ba3da56](https://github.com/mokkapps/changelog-generator-demo/commits/ba3da5605456e501b40a2432d6df882f103b8d35))
+* added Verdi casestudy ([0625303](https://github.com/mokkapps/changelog-generator-demo/commits/062530392b2270d076261bf760d62695fe5103c7))
+* added versioning ([ec380ea](https://github.com/mokkapps/changelog-generator-demo/commits/ec380eaec8a344d12326fe835fec14aba0f9f812))
+
+
+### Bug Fixes
+
+* removed large gifs ([b758bb4](https://github.com/mokkapps/changelog-generator-demo/commits/b758bb418e3e0f575eb4267b916af3a3763dc9c7))
+
 ## [4.4.0](https://github.com/mokkapps/changelog-generator-demo/compare/v4.3.0...v4.4.0) (2023-11-10)
 
 
