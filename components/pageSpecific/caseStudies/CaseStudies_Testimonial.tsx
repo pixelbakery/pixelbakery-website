@@ -39,7 +39,10 @@ function CaseStudies_Testimonial({
               { ['grid grid-cols-1 lg:grid-cols-2 gap-x-12']: !image },
             )}
           >
-            <H2>Why Pixel Bakery?</H2>
+            <H2>
+              Why Pixel
+              <br /> Bakery?
+            </H2>
 
             <div>
               {children}
@@ -49,8 +52,8 @@ function CaseStudies_Testimonial({
                     <Image
                       src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${headshot}`}
                       alt={`${name} is the ${title} of Pixel Bakery's client, ${client}.`}
-                      width={16}
-                      height={16}
+                      width={64}
+                      height={64}
                       className='object-cover object-center w-full h-full'
                     />
                   </div>
