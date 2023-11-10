@@ -1,6 +1,6 @@
 # pb-oct-2022
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2f45400a-22ec-4fbf-a0e3-69be82b7aa1b/deploy-status)](https://app.netlify.com/sites/pixelbakery/deploys)
+![](https://api.checklyhq.com/v1/badges/checks/1ae52858-2167-4382-a9bd-d0787ba41243?style=flat&theme=dark)
 [![OSSAR](https://github.com/pixelbakery/pixelbakery-website/actions/workflows/ossar.yml/badge.svg)](https://github.com/pixelbakery/pixelbakery-website/actions/workflows/ossar.yml)
 
 Link to XD Mockups: [HERE](https://xd.adobe.com/view/a95dc4ca-cea6-4af3-be90-78a0cef0a1dd-fc0e/)
