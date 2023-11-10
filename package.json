@@ -14,7 +14,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "commitlint": "commitlint --edit",
-    "release": "standard-version",
+    "release": "standard-version --sign",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major"
@@ -37,6 +37,7 @@
     "@stripe/react-stripe-js": "^2.0.0",
     "@stripe/stripe-js": "^2.1.1",
     "@types/chec__commerce.js": "^2.8.5",
+    "axios": "^1.6.1",
     "busboy": "1.6.0",
     "classnames": "2.3.2",
     "dayjs": "^1.11.6",
@@ -87,6 +88,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "formidable": "v3",
     "husky": "^8.0.0",
     "next-sitemap": "^4.0.5",
     "postcss": "^8.4.16",
@@ -96,5 +98,5 @@
     "typescript": "^5.0.2",
     "why": "0.6.2"
   },
-  "version": "5.0.2"
+  "version": "5.0.4"
 }
