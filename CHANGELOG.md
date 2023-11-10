@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.1](https://github.com/mokkapps/changelog-generator-demo/compare/v5.0.0...v5.0.1) (2023-11-10)
+
+
+### Chores
+
+* updated versioning config ([a064bb8](https://github.com/mokkapps/changelog-generator-demo/commits/a064bb8e345a0aa01470a59d03d38a7e77c61ebe))
+
 ## [5.0.0](https://github.com/mokkapps/changelog-generator-demo/compare/v4.6.0...v5.0.0) (2023-11-10)
 
 ## [4.6.0](https://github.com/mokkapps/changelog-generator-demo/compare/v4.5.0...v4.6.0) (2023-11-10)
