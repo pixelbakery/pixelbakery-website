@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.1.1...v5.2.0) (2023-11-28)
+
+
+### Features
+
+* added kaden to the website ([c69c0a8](https://github.com/pixelbakery/pixelbakery-website/commits/c69c0a8711e6bdf77d7ee1c9019e88fce8c74db4))
+
+
+### Documentation
+
+* added new badge ([24bd204](https://github.com/pixelbakery/pixelbakery-website/commits/24bd204dc346e1fa31e746cdb622015a9c100cf9))
+
 ### [5.1.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.1.0...v5.1.1) (2023-11-10)
 
 ## [5.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.0.7...v5.1.0) (2023-11-10)
