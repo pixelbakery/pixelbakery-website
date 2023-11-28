@@ -81,7 +81,7 @@ module.exports = () => {
     },
     trailingSlash: false,
     // productionBrowserSourceMaps: true,
-    reactStrictMode: true,
+    reactStrictMode: false,
     eslint: {
       // Warning: This allows production builds to successfully complete even if
       // your project has ESLint errors.
