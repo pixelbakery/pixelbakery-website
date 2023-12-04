@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.2.0...v5.3.0) (2023-12-04)
+
+
+### Features
+
+* added blog post ([d484ab5](https://github.com/pixelbakery/pixelbakery-website/commits/d484ab5a64202abe26758d45ed5fb051ed8fd350))
+* added blog post ([e199f14](https://github.com/pixelbakery/pixelbakery-website/commits/e199f14dcd6e4102878b9f25b8954a5488bde773))
+
+
+### Bug Fixes
+
+* missing alt text ([2c5ebc4](https://github.com/pixelbakery/pixelbakery-website/commits/2c5ebc45aaa643102dcb2983faf56249205a1744))
+
+
+### Chores
+
+* removed 3d modeling ([91dddd6](https://github.com/pixelbakery/pixelbakery-website/commits/91dddd6287ac11609345144e5b2d1cb94820cc13))
+
 ## [5.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.1.1...v5.2.0) (2023-11-28)
 
 
