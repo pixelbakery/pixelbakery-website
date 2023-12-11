@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.4.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.4.0...v5.4.1) (2023-12-11)
+
+
+### Chores
+
+* package upgrades and sitemap update ([aca79c8](https://github.com/pixelbakery/pixelbakery-website/commits/aca79c81a9910bb143f557783125ff594632e875))
+
 ## [5.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.3.1...v5.4.0) (2023-12-11)
 
 
