@@ -65,14 +65,20 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotFun}`,
               alt: `Pixel Bakery Design Studio funny headshot for ${frontMatter.name}, ${frontMatter.title}`,
+              width: 1280,
+              height: 1920,
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotSerious}`,
               alt: `Pixel Bakery Design Studio serious headshot for ${frontMatter.name}, ${frontMatter.title}`,
+              width: 720,
+              height: 980,
             },
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.headshotSmiling}`,
               alt: `Pixel Bakery Design Studio smiling headshot for ${frontMatter.name}, ${frontMatter.title}`,
+              width: 720,
+              height: 980,
             },
           ],
         }}

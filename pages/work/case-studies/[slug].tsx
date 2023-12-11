@@ -9,7 +9,7 @@ import Main from '@parts/Main'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
-import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
+// import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 
 import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
 import CaseStudies_Description from '@caseStudies/CaseStudies_Description'

@@ -52,6 +52,8 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
               alt: `${frontMatter.title} written by ${frontMatter.author.name}`,
+              width: 1280,
+              height: 960,
             },
           ],
         }}
@@ -60,7 +62,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
         url={`https://pixelbakery.com/recipes/${slug}`}
         title={` ${metaTitle}`}
         images={[`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`]}
-        datePublished={`${datePostedISO}`}
+        datePublished={`${datePostedISO}-06:00`}
         authorName={[
           {
             name: `${frontMatter.author.name}`,
@@ -68,6 +70,7 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
           },
         ]}
         description={`${frontMatter.excerpt}`}
+        isAccessibleForFree={true}
       />
     </>
   )

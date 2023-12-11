@@ -35,7 +35,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
         description={frontMatter.excerpt}
         // contentUrl='http://player.vimeo.com/video123.mp4'
         embedUrl={`http://player.vimeo.com/video/${frontMatter.vimeoID}`}
-        uploadDate={`${datePostedISO}`}
+        uploadDate={`${datePostedISO}−06:00`}
         thumbnailUrls={[
           `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,
         ]}
@@ -53,6 +53,8 @@ function CaseStudies_SEO({ frontMatter, slug }) {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,
               alt: frontMatter.excerpt,
               type: 'image/jpeg',
+              width: 854,
+              height: 480,
             },
           ],
           siteName: 'Pixel Bakery Design Studio',
