@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.3.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.3.0...v5.3.1) (2023-12-11)
+
+
+### Chores
+
+* added EXIF data to images, organized FrontMatter structure ([352709f](https://github.com/pixelbakery/pixelbakery-website/commits/352709f169bd58007f0a1f2e7686fb5b7049b37a))
+* minor tweaks to meta schema for SEO ([d493227](https://github.com/pixelbakery/pixelbakery-website/commits/d4932272f6e389e530120445528ed57978884bd9))
+
 ## [5.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.2.0...v5.3.0) (2023-12-04)
 
 
