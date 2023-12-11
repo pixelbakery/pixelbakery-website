@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.3.1...v5.4.0) (2023-12-11)
+
+
+### Chores
+
+* added vercel's new speed insights package ([8445d07](https://github.com/pixelbakery/pixelbakery-website/commits/8445d07c56fdebfa2501f86d1a4b06e9af9326c9))
+
 ### [5.3.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.3.0...v5.3.1) (2023-12-11)
 
 
