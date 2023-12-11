@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Html, Head, Main, NextScript } from 'next/document'
-
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FB_PIXEL_ID } from '../lib/fpixel'
 
 const MyDocument = () => {
@@ -19,6 +19,7 @@ const MyDocument = () => {
         </noscript>
         <Main />
         <NextScript />
+        <SpeedInsights />
       </body>
     </Html>
   )
