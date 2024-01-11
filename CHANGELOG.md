@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.5.2](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.1...v5.5.2) (2024-01-11)
+
+
+### Chores
+
+* **deps:** bump follow-redirects from 1.15.3 to 1.15.4 ([357a6e3](https://github.com/pixelbakery/pixelbakery-website/commits/357a6e315598fb8685a64091235659b36c89b005))
+* merge ([b1f67d0](https://github.com/pixelbakery/pixelbakery-website/commits/b1f67d082521a5b7300d90d683114dc582d85732))
+
 ### [5.5.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.0...v5.5.1) (2024-01-11)
 
 
