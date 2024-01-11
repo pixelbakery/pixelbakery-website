@@ -7,6 +7,11 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/wp-content/uploads/PB/2021/01/ExampleOfAlphaLayers.png',
+    destination: 'https://cdn.pixelbakery.com/img/blog/ExampleOfAlphaLayers.png',
+    permanent: true,
+  },
+  {
     source: '/recipes/being-polite-at-conferences',
     destination: '/recipes',
     permanent: true,
