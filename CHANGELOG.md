@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.5.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.0...v5.5.1) (2024-01-11)
+
+
+### Chores
+
+* added redirect ([3f50786](https://github.com/pixelbakery/pixelbakery-website/commits/3f50786eea9f453bc9f635c6a0f4013ba2fc987b))
+* removed experimental features ([ba7f6a5](https://github.com/pixelbakery/pixelbakery-website/commits/ba7f6a54efb54a672f62946bc2bb1ddde7f9e3c7))
+* updated packages ([780e8b9](https://github.com/pixelbakery/pixelbakery-website/commits/780e8b97c54425c6eb22d66e665c794f2461ad4a))
+
 ## [5.5.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.4.1...v5.5.0) (2024-01-11)
 
 ### [5.4.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.4.0...v5.4.1) (2023-12-11)
