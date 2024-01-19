@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.5.3](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.2...v5.5.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* changed where vercel speed analytics loads ([d832f62](https://github.com/pixelbakery/pixelbakery-website/commits/d832f629004b92835d6d6c6311711b403bcf3d33))
+
+
+### Chores
+
+* removed cookies banner ([6164d52](https://github.com/pixelbakery/pixelbakery-website/commits/6164d5229b6a1dc76c00e63ad20737f82fa790a3))
+* upgraded packages ([f77f5de](https://github.com/pixelbakery/pixelbakery-website/commits/f77f5defc44bb721e00a99f8d9f47eeeaf285b00))
+
 ### [5.5.2](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.1...v5.5.2) (2024-01-11)
 
 
