@@ -45,7 +45,7 @@ function Onboarding_Calendly({ ...props }: Calendly) {
         </Lead>
         <div className='xl:hidden mx-auto'>
           <InlineWidget
-            url='https://calendly.com/pixelbakery/exploratory-meeting'
+            url='https://calendly.com/pixelbakery/exploratory-meeting?hide_gdpr_banner=1'
             styles={{
               height: '1250px',
               width: '100%',
@@ -55,7 +55,7 @@ function Onboarding_Calendly({ ...props }: Calendly) {
         </div>
         <div className='hidden xl:block'>
           <InlineWidget
-            url='https://calendly.com/pixelbakery/exploratory-meeting'
+            url='https://calendly.com/pixelbakery/exploratory-meeting?hide_gdpr_banner=1'
             styles={{
               height: '800px',
               width: '100%',
