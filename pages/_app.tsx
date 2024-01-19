@@ -6,13 +6,17 @@ import '@styles/globals.css'
 import '@styles/typography.css'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import ReactGA from 'react-ga4'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 function App({ Component, pageProps }: AppProps) {
   const LayoutWithNav = () => {
     return (
-      <Layout__HasNav>
-        <Component {...pageProps} />
-      </Layout__HasNav>
+      <>
+        <Layout__HasNav>
+          <Component {...pageProps} />
+        </Layout__HasNav>
+        <SpeedInsights />
+      </>
     )
   }
   const LayoutWithoutNav = () => {
