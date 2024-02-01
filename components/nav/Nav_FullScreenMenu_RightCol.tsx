@@ -2,7 +2,7 @@ import H3 from '@typography/H3'
 import Link from 'next/link'
 import Obfuscate from 'react-obfuscate'
 import Nav_FullScreenMenu_CTA from './Nav_FullScreenMenu_CTA'
-function Nav_FullScreenMenu_RightCol({ update }) {
+function Nav_FullScreenMenu_RightCol({ update }: any) {
   return (
     <div className='hidden  w-full  xl:flex flex-col justify-between xl:w-1/3'>
       <div className='hidden xl:block'>
@@ -44,6 +44,11 @@ function Nav_FullScreenMenu_RightCol({ update }) {
           </div>
           <nav className=''>
             <ul className='mt-3 mb-0 grid grid-cols-1 lg:grid-cols-1 w-fit align-center gap-y-2 gap-x-3 text-blue-dark'>
+              <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
+                <Link href={'https://clients.pixelbakery.com'} onClick={update}>
+                  Client Portal
+                </Link>
+              </li>
               <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 '>
                 <Link href={'/careers'} onClick={update}>
                   Careers

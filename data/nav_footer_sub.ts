@@ -2,6 +2,10 @@
 
 export default [
   {
+    text: 'Client Portal',
+    url: 'https://clients.pixelbakery.com',
+  },
+  {
     text: 'Privacy Policy',
     url: '/privacy-policy',
   },

@@ -40,7 +40,7 @@ function Home_Landing() {
             </ul>
           </div>
         </div>
-        <div className=''>
+        <div>
           <div className='flex justify-center w-full xl:my-2'>
             <Button_Filled
               center={true}
@@ -54,6 +54,14 @@ function Home_Landing() {
           </div>
           <div className='mx-auto w-full '>
             <Nav_SocialLinks color={'peach'} textSize={'text-xl xl:text-3xl'} />
+          </div>
+          <div>
+            <Link
+              href={'https://clients.pixelbakery.com'}
+              className='relative text-peach underline text-sm duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'
+            >
+              Client Portal ↗️
+            </Link>
           </div>
         </div>
       </nav>
