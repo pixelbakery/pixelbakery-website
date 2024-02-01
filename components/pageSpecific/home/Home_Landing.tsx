@@ -55,10 +55,10 @@ function Home_Landing() {
           <div className='mx-auto w-full '>
             <Nav_SocialLinks color={'peach'} textSize={'text-xl xl:text-3xl'} />
           </div>
-          <div>
+          <div className='mt-1 pt-1 mx-auto relative w-full justify-center'>
             <Link
               href={'https://clients.pixelbakery.com'}
-              className='relative text-peach underline text-sm duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'
+              className='relative inline-block text-peach no-underline text-center text-md duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 border-b border-b-peach pb-1'
             >
               Client Portal ↗️
             </Link>

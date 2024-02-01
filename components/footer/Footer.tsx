@@ -161,13 +161,13 @@ export const Footer: NextPage = () => {
                         .filter((s) => s.service != 'Creative Concepting & Strategy')
                         .map((navitem, i) => (
                           <li
-                            className='text-left leading-none text-cream text-md cursor-pointer my-0 py-0'
+                            className='relative text-left leading-none text-cream text-md cursor-pointer my-0 py-0 duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'
                             key={i}
                           >
                             <Link
                               hrefLang={'en-US'}
                               href={navitem.url}
-                              className='my-0 py-0 leading-none hover-98 hover-shadow-none'
+                              className='relative my-0 py-0 leading-none hover-98 hover-shadow-none'
                             >
                               {navitem.service}
                             </Link>
