@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.6.2](https://github.com/pixelbakery/pixelbakery-website/compare/v5.6.1...v5.6.2) (2024-02-01)
+
+
+### Styling
+
+* more oopsie ([e39a05d](https://github.com/pixelbakery/pixelbakery-website/commits/e39a05d27761a438bf680b738805691564b80d37))
+
 ### [5.6.1](https://github.com/pixelbakery/pixelbakery-website/compare/v5.6.0...v5.6.1) (2024-02-01)
 
 
