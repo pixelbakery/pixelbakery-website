@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.6.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.3...v5.6.0) (2024-02-01)
+
+
+### Features
+
+* added client portal link throughout navs ([cac8277](https://github.com/pixelbakery/pixelbakery-website/commits/cac8277d0237a8dc7bb4f4e30e5a739a741ae919))
+
+
+### Bug Fixes
+
+* typescript prop warning ([b5a5a98](https://github.com/pixelbakery/pixelbakery-website/commits/b5a5a98353345b03dcca13a77d8194750b4bf736))
+
+
+### Documentation
+
+* cleaned up README / added source attribution ([08c54d2](https://github.com/pixelbakery/pixelbakery-website/commits/08c54d25e42100ca0e31f0fa1ffc191b44ae4a88))
+
+
+### Chores
+
+* uploaded deck to CDN ([c6bad97](https://github.com/pixelbakery/pixelbakery-website/commits/c6bad975b281614f3fbd0dccf578792a075b1c2b))
+
+
+### Styling
+
+* hover styling on links. closed [#248](https://github.com/pixelbakery/pixelbakery-website/issues/248) ([bed7eb5](https://github.com/pixelbakery/pixelbakery-website/commits/bed7eb5f2c0e85d4a27969d60c350a14c98436ea))
+
 ### [5.5.3](https://github.com/pixelbakery/pixelbakery-website/compare/v5.5.2...v5.5.3) (2024-01-19)
 
 
