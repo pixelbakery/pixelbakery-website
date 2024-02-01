@@ -105,7 +105,7 @@ export const Footer: NextPage = () => {
                   </div>
                   <div>
                     <ul className='mt-3 text-center md:text-left'>
-                      <li>
+                      <li className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'>
                         <Link
                           className='text-cream text-xl'
                           target='_blank'
@@ -119,8 +119,8 @@ export const Footer: NextPage = () => {
                           </>
                         </Link>
                       </li>
-                      <li className='mt-3 text-xl text-cream'>
-                        <address>
+                      <li className='mt-3 text-xl text-cream '>
+                        <address className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'>
                           <Obfuscate
                             tel={'tel:402-302-0323'}
                             linkText={'tel:000-000-0000'}
