@@ -3,8 +3,10 @@ import Link from 'next/link'
 import { domAnimation, LazyMotion, m, Variants } from 'framer-motion'
 import Nav_HamburgerNav from '@nav/Nav_HamburgerMenu'
 import cn from 'classnames'
-import Nav_FullscreenMenu from './Nav_FullscreenMenu'
+
+const Nav_FullscreenMenu = dynamic(() => import('@nav/Nav_FullscreenMenu'))
 import Nav_Logo from './Nav_Logo'
+import dynamic from 'next/dynamic'
 export default function Navbar() {
   const [isHamActive, setHamToggle] = useState(false)
   const [windowHeight, setwindowHeight] = useState(0)
