@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import clientList from '@data/work-client-list'
+import clientList from '@data/work_clientList'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import Lead from '@typography/Lead'
@@ -44,6 +44,6 @@ function Work_Clients() {
         </div>
       </InnerWrapper>
     </PageSection>
-  );
+  )
 }
 export default Work_Clients

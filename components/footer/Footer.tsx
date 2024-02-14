@@ -1,19 +1,18 @@
-import { NextPage } from 'next'
-import Footer_Nav from '@footer/Footer_Nav_Link'
-import Footer_Nav_SubNav from 'components/footer/Footer_Nav_SubNav'
-import Footer_HappyCard from 'components/footer/Footer_HappyCard'
-import Button_Filled from '@parts/Button_Filled'
-import Footer_SocialLinks from '@nav/Nav_SocialLinks'
-import Footer_Croissant from 'components/footer/Footer_Croissant'
-import nav_footer_main from '@data/nav_footer_main'
-import nav_footer_sub from '@data/nav_footer_sub'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import H3 from '@typography/H3'
-import Obfuscate from 'react-obfuscate'
+import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import services from '@data/services'
+import Obfuscate from 'react-obfuscate'
 import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
+
+import Button_Filled from '@parts/Button_Filled'
+import H3 from '@typography/H3'
+
+import { Nav_SocialLinks } from '@nav/index'
+import { Footer_HappyCard, Footer_Nav_SubNav, Footer_Nav_Link } from '@footer/index'
+const Footer_Croissant = dynamic(() => import('@footer/Footer_Croissant'))
+import { services, nav_footer_main, nav_footer_sub } from '@data/index'
 
 export const Footer: NextPage = () => {
   const [testModalOpen, setTestModal] = useState(false)
@@ -86,11 +85,10 @@ export const Footer: NextPage = () => {
                   <span className='sr-only'>Home</span>
                 </LazyMotion>
               </Link>
-
               <nav className='hidden lg:block pt-5 mt-3'>
                 <ul className='grid grid-cols-1 lg:grid-cols-1  text-left text-xl md:text-3xl xl:text-4xl font-semibold gap-x-2 xl:gap-y-2 lg:font-black mb-0 pb-0'>
                   {nav_footer_main.map((navitem) => (
-                    <Footer_Nav navitem={navitem} key={navitem.text} />
+                    <Footer_Nav_Link navitem={navitem} key={navitem.text} />
                   ))}
                 </ul>
               </nav>
@@ -183,7 +181,7 @@ export const Footer: NextPage = () => {
               <ul className='flex flex-col gap-y-3'>
                 {nav_footer_main.map((navitem, index) => (
                   <div key={index} className={'font-extrabold text-xl leading-none'}>
-                    <Footer_Nav navitem={navitem} key={navitem.text} />
+                    <Footer_Nav_Link navitem={navitem} key={navitem.text} />
                   </div>
                 ))}
               </ul>
@@ -202,7 +200,7 @@ export const Footer: NextPage = () => {
               </div>
               <div className='w-full lg:py-4 xl:my-3'>
                 <div className='w-full' id='footer-social'>
-                  <Footer_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
+                  <Nav_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
                 </div>
               </div>
               <div className='hidden lg:flex justify-center w-full my-3'>

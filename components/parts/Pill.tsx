@@ -46,7 +46,7 @@ export default function Pill({ text, bgColor, textColor, size, className }: Pill
       default:
         py = ' py-1'
         px = ' px-3'
-        fontWeight = ' font-normal'
+        fontWeight = ' font-medium'
         break
     }
     textSize = ' text-' + size

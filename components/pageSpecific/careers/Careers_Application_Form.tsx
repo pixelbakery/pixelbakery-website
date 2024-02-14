@@ -442,7 +442,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 {...register('authorized' as never)}
               />
               <label
-                className={'cursor-pointer self-center text-sm font-normal leading-none my-0 py-0'}
+                className={'cursor-pointer self-center text-sm font-medium leading-none my-0 py-0'}
                 htmlFor='authorized'
                 onClick={handleAuthorized}
               >
@@ -480,7 +480,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 {...register('mailchimp' as never)}
               />
               <label
-                className={'cursor-pointer self-center text-sm font-normal leading-none my-0 py-0'}
+                className={'cursor-pointer self-center text-sm font-medium leading-none my-0 py-0'}
                 htmlFor='handleMailchimp'
                 onClick={handleMailchimp}
               >
