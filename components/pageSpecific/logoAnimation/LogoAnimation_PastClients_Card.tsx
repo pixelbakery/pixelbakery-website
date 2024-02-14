@@ -36,7 +36,7 @@ function LogoAnimation_PastClients_Card({ video, client }: Card) {
           className=' object-cover w-full h-full'
         /> */}
       </div>
-      <h3 className='text-wine text-lg mt-3 font-normal italic'>{client}</h3>
+      <h3 className='text-wine text-lg mt-3 font-medium italic'>{client}</h3>
     </article>
   )
 }

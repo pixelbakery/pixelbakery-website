@@ -7,7 +7,8 @@ import cn from 'classnames'
 const Nav_FullscreenMenu = dynamic(() => import('@nav/Nav_FullscreenMenu'))
 import Nav_Logo from './Nav_Logo'
 import dynamic from 'next/dynamic'
-export default function Navbar() {
+
+const Navigation = () => {
   const [isHamActive, setHamToggle] = useState(false)
   const [windowHeight, setwindowHeight] = useState(0)
   const [showNavBar, setShowNavBar] = useState(true)
@@ -71,7 +72,7 @@ export default function Navbar() {
   return (
     <>
       <LazyMotion features={domAnimation}>
-        <nav className={'z-40 '}>
+        <div className={'z-40 '}>
           <m.div
             initial={'offscreen'}
             animate={'onscreen'}
@@ -168,7 +169,7 @@ export default function Navbar() {
               <Nav_HamburgerNav isActive={isHamActive} onModalUpdate={setHamToggle} />
             </m.div>
           </div>
-        </nav>
+        </div>
       </LazyMotion>
       <div
         className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 pb-2 pt-4 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
@@ -189,3 +190,5 @@ export default function Navbar() {
     </>
   )
 }
+
+export default Navigation
