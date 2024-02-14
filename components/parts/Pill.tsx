@@ -14,7 +14,7 @@ export default function Pill({ text, bgColor, textColor, size, className }: Pill
     py = '',
     fontWeight = '',
     textSize = ''
-  const setSize = (size) => {
+  const setSize = (size: string) => {
     switch (size) {
       case 'xl':
         py = ' py-4'

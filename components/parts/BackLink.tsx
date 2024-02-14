@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { ChevronRightIcon } from '@images/UI_Icons/index'
 
-function BackLink({ text, href }) {
+type Props = {
+  text: string
+  href: string
+}
+function BackLink({ text, href }: Props) {
   return (
     <Link hrefLang={'en-US'} href={href}>
       <div className='mt-0 -mb-2 py-0 text-blue font-extrabold text-lg  border-b-2 w-max inline-flex cursor-pointer hover:scale-99 duration-200 ease-in-out'>

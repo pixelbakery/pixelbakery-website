@@ -384,8 +384,8 @@ const redirectsArray = [
     permanent: true,
   },
   {
-    source: '/store/product',
-    destination: '/store',
+    source: '/store',
+    destination: '/',
     permanent: true,
   },
   // {
@@ -619,7 +619,7 @@ const redirectsArray = [
   },
   {
     source: '/shop',
-    destination: '/store',
+    destination: '/',
     permanent: true,
   },
 ]

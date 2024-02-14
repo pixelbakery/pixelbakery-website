@@ -25,8 +25,4 @@ export default [
     text: "Mom's Recipes",
     url: '/recipes',
   },
-  {
-    text: 'Company Store',
-    url: '/store',
-  },
 ]
