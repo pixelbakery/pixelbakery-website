@@ -1,10 +1,12 @@
 // import Lottie from 'react-lottie-player'
 
-import dynamic from 'next/dynamic'
-const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'))
 import cn from 'classnames'
+import LottiePatternPlayer from '@parts/LottiePatternPlayer'
 
-const PageHeader_VariableHeight = ({ primaryColor }) => {
+interface Props {
+  primaryColor: string
+}
+const PageHeader_VariableHeight = ({ primaryColor }: Props) => {
   return (
     <div
       className={cn(

@@ -6,6 +6,19 @@ import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
 import PixelBakery_EasyBakeOven from '@data/lottie_misc/PixelBakery_EasyBakeOven.json' assert { type: 'json' }
 
+// import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', { assert: { type: 'json' } }).then(
+//   (module) => module.default,
+// )
+// const PixelBakery_EasyBakeOven = dynamic(
+//   () => import('@data/lottie_misc/PixelBakery_EasyBakeOven.json').then((module) => module.default),
+//   {
+//     ssr: false,
+//   },
+// )
+// const PixelBakery_EasyBakeOven = import('@data/lottie_misc/PixelBakery_EasyBakeOven.json').then(
+//   ({ default: PixelBakery_EasyBakeOven }) => PixelBakery_EasyBakeOven,
+// )
+
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
   ssr: false,
 })
@@ -14,6 +27,15 @@ const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'), 
 })
 
 function Home_Landing() {
+  // import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', { assert: { type: 'json' } }).then(
+  //   (PixelBakery_EasyBakeOven) => PixelBakery_EasyBakeOven.default,
+  // )
+  // const test = '@data/lottie_misc/PixelBakery_EasyBakeOven.json'
+  // const DynamicComponent = dynamic(() => import(`${test}`))
+  // const jsonModule = await import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', {
+  //   assert: { type: 'json' },
+  // })
+  // console.log(jsonModule)
   return (
     <section className='lander overflow-hidden w-full my-4 flex'>
       <nav className='w-2/5 xl:w-1/3 max-w-lg bg-egg h-full hidden lg:flex flex-col justify-center py-10 px-16 '>
@@ -48,7 +70,7 @@ function Home_Landing() {
               link={'/onboarding'}
               className={'w-full hover:animate-pulse'}
               bgColor={'peach'}
-              textColor={'pink-lighter'}
+              textColor={'pink-light'}
               chevronDirection='right'
             />
           </div>
@@ -58,7 +80,7 @@ function Home_Landing() {
           <div className='mt-2 pt-1 mx-auto relative w-full flex justify-center'>
             <Link
               href={'https://clients.pixelbakery.com'}
-              className='relative inline-block text-peach no-underline text-center text-md duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95 center'
+              className='relative inline-block text-peach no-underline text-center text-lg font-semibold duration-100 hover:scale-98 origin-center ease-in-out hover:opacity-95 center'
             >
               Client Portal ↗️
             </Link>

@@ -1,35 +1,52 @@
-import { useRef, useEffect } from 'react'
-// import lottie from 'lottie-web'
-import lottie from 'lottie-web/build/player/lottie_light'
+/* eslint-disable no-unused-vars */
+import React, { useRef, useState } from 'react'
 
-interface LottieProps {
+import dynamic from 'next/dynamic'
+const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
+  ssr: false,
+})
+interface Props {
   anim: any
-  preserveAspectRatio?: boolean
+}
+function AnimationFile({ anim }: Props) {
+  const [animationData, setAnimationData] = useState<object>(anim)
+  const [segmentsEnabled, setSegmentsEnabled] = useState<boolean>(true)
+  const [loopCount, setLoopCount] = useState<number>(0)
+  const [segments, setSegments] = useState([0, 95])
+
+  const lottieRef = useRef()
+
+  function getLoopVal() {
+    setLoopCount(loopCount + 1)
+    if (loopCount >= 0) {
+      setSegments([24, 95])
+    } else return
+  }
+  if (!animationData)
+    return (
+      <div className='relative flex flex-col w-full h-full justify-center text-center self-center'>
+        <span className='text-lg text-wine font-semibold transition-all duration-700'>
+          Loading...
+        </span>
+      </div>
+    )
+  return (
+    <LottieLight
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+      ref={lottieRef}
+      loop={true}
+      play={true}
+      animationData={animationData}
+      segments={segmentsEnabled && segments}
+      style={{
+        alignSelf: 'center',
+        width: '100%',
+        height: '100%',
+      }}
+      useSubframes={true}
+      onLoopComplete={() => getLoopVal()}
+    />
+  )
 }
 
-const LottiePlayer = ({ anim, preserveAspectRatio }: LottieProps) => {
-  const animationData = anim
-  const element = useRef<HTMLDivElement>(null)
-  const lottieInstance = useRef<any>()
-  let aspect = 'xMidYMid slice'
-  if (preserveAspectRatio === false) aspect = ''
-  useEffect(() => {
-    lottieInstance.current = lottie.loadAnimation({
-      animationData,
-      renderer: 'svg',
-      container: element.current,
-      rendererSettings: {
-        preserveAspectRatio: aspect,
-        progressiveLoad: true,
-      },
-    })
-
-    return () => {
-      lottieInstance.current?.destroy()
-      lottieInstance.current = null
-    }
-  }, [animationData])
-
-  return <div style={{ height: '100%', width: '100%' }} ref={element}></div>
-}
-export default LottiePlayer
+export default AnimationFile

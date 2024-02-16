@@ -38,10 +38,8 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.6",
     "embla-carousel-react": "^7.0.3",
-
     "framer-motion": "^11.0.0",
     "gray-matter": "latest",
-    "lottie-web": "^5.10.0",
     "multiselect-react-dropdown": "^2.0.25",
     "next": "^14.0.0",
     "next-mdx-remote": "^4.4.1",
@@ -51,17 +49,15 @@
     "react-dom": "18.2.0",
     "react-ga4": "^2.1.0",
     "react-hook-form": "^7.35.0",
+    "react-lottie-player": "^1.5.6",
     "react-number-format": "^4.9.3",
     "react-obfuscate": "^3.6.8",
     "react-player": "^2.11.0",
-
     "react-select": "^5.7.4",
-
     "remark-gfm": "3.0.1",
     "sharp": "^0.33.0",
     "swr": "^2.0.0",
     "yup": "^1.0.0"
-
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.0",

@@ -18,6 +18,7 @@
     "incremental": true,
     "paths": {
       "@parts/*": ["components/parts/*"],
+      "@components/*": ["components/components/*"],
       "@data/*": ["data/*"],
       "@footer/*": ["components/footer/*"],
       "@about/*": ["components/pageSpecific/about/*"],
@@ -25,7 +26,6 @@
       "@caseStudies/*": ["components/pageSpecific/caseStudies/*"],
       "@contact/*": ["components/pageSpecific/contact/*"],
       "@education/*": ["components/pageSpecific/education/*"],
-      "@emailGenerator/*": ["components/pageSpecific/emailGenerator/*"],
       "@industries/*": ["components/pageSpecific/industries/*"],
       "@home/*": ["components/pageSpecific/home/*"],
       "@onboarding/*": ["components/pageSpecific/onboarding/*"],
@@ -51,7 +51,7 @@
         "name": "next"
       }
     ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js", "types/**/*"],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }

@@ -1,50 +1,57 @@
-import { useEffect, useRef, useState } from 'react'
-// import Patterns_Master from '@data/lottie_patterns/Patterns_Master.json' assert { type: 'json' }
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useRef, useState } from 'react'
 
-// import lottie from 'lottie-web'
-import lottie from 'lottie-web/build/player/lottie_light'
+import dynamic from 'next/dynamic'
+const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
+  ssr: false,
+})
 
-const LottiePatternPlayer = () => {
-  const element = useRef<HTMLDivElement>()
-  const lottieInstance = useRef<any>()
-  const [data, setData] = useState(null)
+function AnimationFile() {
+  const [animationData, setAnimationData] = useState<object>()
+  const [segmentsEnabled, setSegmentsEnabled] = useState<boolean>(true)
+  const [loopCount, setLoopCount] = useState<number>(0)
+  const [segments, setSegments] = useState([0, 95])
+
+  const lottieRef = useRef()
   useEffect(() => {
-    import('@data/lottie_patterns/Patterns_Master.json').then((data) => {
-      setData(data)
-    })
+    setTimeout(() => {
+      import('@data/lottie_patterns/Patterns_Master.json').then(setAnimationData)
+    }, 1000)
   }, [])
-  useEffect(() => {
-    if (element.current) {
-      lottieInstance.current?.destroy()
-      lottieInstance.current = lottie.loadAnimation({
-        container: element.current,
-        renderer: 'svg',
-        loop: true,
-        // autoplay: true,
 
-        rendererSettings: {
-          preserveAspectRatio: 'xMidYMid slice',
-          // progressiveLoad: true,
-        },
-        animationData: data,
-      })
-    }
-
-    lottieInstance.current.playSegments(
-      [
-        [0, 23],
-        [24, 95],
-      ],
-      true,
+  function getLoopVal() {
+    setLoopCount(loopCount + 1)
+    if (loopCount >= 0) {
+      setSegments([24, 95])
+    } else return
+  }
+  if (!animationData)
+    return (
+      <div className='absolute top-0 left-0 w-full h-full transition-all duration-700'>
+        <div className='relative flex flex-col w-full h-full justify-center text-center self-center'>
+          <span className='text-lg text-wine font-semibold transition-all duration-700'>
+            Loading...
+          </span>
+        </div>
+      </div>
     )
-
-    return () => {
-      lottieInstance.current?.destroy()
-      lottieInstance.current = null
-    }
-  })
-
-  return <div style={{ height: '100%', width: '100%' }} ref={element} />
+  return (
+    <LottieLight
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+      ref={lottieRef}
+      loop={true}
+      play={true}
+      animationData={animationData}
+      segments={segmentsEnabled && segments}
+      style={{
+        alignSelf: 'center',
+        width: '100%',
+        height: '100%',
+      }}
+      useSubframes={true}
+      onLoopComplete={() => getLoopVal()}
+    />
+  )
 }
 
-export default LottiePatternPlayer
+export default AnimationFile

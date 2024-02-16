@@ -1,5 +1,5 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import type { ReactElement } from 'react'
+// import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import { type ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import {
@@ -16,6 +16,7 @@ import {
 
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
+import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
 function Page_Services() {
   return (

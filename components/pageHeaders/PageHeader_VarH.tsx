@@ -1,22 +1,8 @@
 import { useEffect, useState } from 'react'
-// import PageHeader_VarH_Content from '@pageHeaders/PageHeader_VarH_Content'
+import PageHeader_VarH_Content from '@pageHeaders/PageHeader_VarH_Content'
 import { RandomArrayItem } from '@lib/helpers'
 import cn from 'classnames'
 import PageHeader_TextBox from '@pageHeaders/PageHeader_TextBox'
-import dynamic from 'next/dynamic'
-
-const PageHeader_VarH_Content = dynamic(() => import('@pageHeaders/PageHeader_VarH_Content'), {
-  ssr: false,
-  loading: () => (
-    <PageHeader_TextBox
-      header={''}
-      primaryColor={'blue'}
-      accentColor={'cream'}
-      subheader={''}
-      subheaderColor={'blue'}
-    />
-  ),
-})
 
 interface Props {
   header: string
@@ -24,20 +10,20 @@ interface Props {
 }
 
 const loadingTheme = {
-  primaryColor: 'wine',
-  accentColor: 'cream',
-  subheaderColor: 'wine',
+  primaryColor: 'egg',
+  accentColor: 'egg',
+  subheaderColor: 'egg',
 }
 const themes = [
   {
     primaryColor: 'blue',
     accentColor: 'blue-dark',
-    subheaderColor: 'cream',
+    subheaderColor: 'blue',
   },
   {
     primaryColor: 'blue-dark',
     accentColor: 'blue',
-    subheaderColor: 'cream',
+    subheaderColor: 'blue-dark',
   },
   {
     primaryColor: 'cream',
@@ -77,14 +63,18 @@ const PageHeader_VarH = ({ header, subheader }: Props) => {
   return (
     <header className='bg-cream relative overflow-hidden lander-variableHeight my-4'>
       <div
-        className={cn('absolute overflow-hidden w-full h-full', [
+        className={cn(
+          'absolute overflow-hidden w-full h-full transition delay-150 duration-700 opacity-0',
           `bg-${selectedTheme.accentColor}`,
-        ])}
+          { ['opacity-0']: loading },
+          { ['opacity-100 ']: !loading },
+        )}
         id='topOfPage'
       >
         {loading ? '' : <PageHeader_VarH_Content primaryColor={selectedTheme.primaryColor} />}
       </div>
       <PageHeader_TextBox
+        loading={loading}
         header={header}
         primaryColor={selectedTheme.primaryColor}
         accentColor={selectedTheme.accentColor}
