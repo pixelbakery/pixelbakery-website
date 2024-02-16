@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.6.3...v6.0.0) (2024-02-16)
+
+
+### Bug Fixes
+
+* hydration error with lottie ([afa0932](https://github.com/pixelbakery/pixelbakery-website/commits/afa0932949672ae5a65969bf83017b9a32e03bbd))
+
+
+### Chores
+
+* code cleanup ([6f4877f](https://github.com/pixelbakery/pixelbakery-website/commits/6f4877f7d3cb6651d847201c23803a5b114f653f))
+* code cleanup ([f5f3de0](https://github.com/pixelbakery/pixelbakery-website/commits/f5f3de0aabe6f27059796ce85cb59ba773d79875))
+* removed unused fonts ([e44b216](https://github.com/pixelbakery/pixelbakery-website/commits/e44b2165fe9097dd6ce8a43c943757c77f4ecfe3))
+
 ### [5.6.3](https://github.com/pixelbakery/pixelbakery-website/compare/v5.6.2...v5.6.3) (2024-02-01)
 
 
