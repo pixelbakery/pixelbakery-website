@@ -44,8 +44,6 @@ export const Footer: NextPage = () => {
         <div className='mx-auto max-w-6xl'>
           <div className='grid grid-cols-1 lg:grid-cols-3 lg:mb-12 gap-8 h-full'>
             <div className='h-full flex flex-col justify-between'>
-              {/* <Logo_Type /> */}
-
               <Link href={'/'} className='relative flex justify-center lg:justify-start'>
                 <LazyMotion features={domAnimation}>
                   <m.div

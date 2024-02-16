@@ -1,5 +1,5 @@
 //react imports
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 
 //MDX & frontmatter imports
 import fs from 'fs'
@@ -15,7 +15,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Main, InnerWrapper, PageSection, Button_Filled } from '@parts/index'
+import { InnerWrapper, PageSection, Button_Filled } from '@parts/index'
 
 import { H1, H2AndLead } from '@typography/index'
 
@@ -25,13 +25,14 @@ import DateFormatter from '@lib/date-formatter'
 import markdownStyles from '@styles/markdown-styles.module.css'
 import Careers_SEO from '@careers/Careers_Post_SEO'
 import dayjs from 'dayjs'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 const components = {
   Head,
 }
 const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
 
-export default function JobsPage({ slug, source, frontMatter }) {
+function Page_JobPosting({ slug, source, frontMatter }) {
   const [coverImage] = useState(handleCoverImage())
   function handleCoverImage() {
     if (frontMatter.coverImage != undefined) {
@@ -43,7 +44,7 @@ export default function JobsPage({ slug, source, frontMatter }) {
   const datePostedISO = dayjs(frontMatter.date).toISOString()
   const dateExpiredISO = dayjs(datePostedISO).add(2, 'month').toISOString()
   return (
-    <Main>
+    <>
       <Careers_SEO
         datePostedISO={datePostedISO}
         dateExpiredISO={dateExpiredISO}
@@ -131,10 +132,15 @@ export default function JobsPage({ slug, source, frontMatter }) {
           </InnerWrapper>
         </article>
       </PageSection>
-    </Main>
+    </>
   )
 }
+//Set page layout
+Page_JobPosting.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 
+export default Page_JobPosting
 export const getStaticProps = async ({ params }) => {
   //MDX Stuff
   const jobsFilePath = path.join(JOBS_PATH, `${params.slug}.mdx`.toString())

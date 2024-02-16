@@ -1,4 +1,5 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
@@ -9,9 +10,9 @@ import LogoAnimation_Tiers from '@logoAnimation/LogoAnimation_Tiers'
 import LogoAnimation_GetStarted from '@logoAnimation/LogoAnimation_GetStarted'
 import LogoAnimation_SEO from '@logoAnimation/LogoAnimation_SEO'
 
-function LogoAnimation() {
+function Page_LogoAnimation() {
   return (
-    <Main>
+    <>
       <LogoAnimation_SEO />
       <PageHeader_VarH
         header={'Logo Animation'}
@@ -22,7 +23,11 @@ function LogoAnimation() {
       <LogoAnimation_GetStarted />
       <LogoAnimation_Descriptions />
       <LogoAnimation_PastClients />
-    </Main>
+    </>
   )
 }
-export default LogoAnimation
+//Set page layout
+Page_LogoAnimation.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_LogoAnimation

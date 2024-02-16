@@ -2,7 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
-import Main from '@parts/Main'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 // const PageHeader_VarH = dynamic(() => import('@pageHeaders/PageHeader_VarH'), {
 //   ssr: false,
@@ -16,12 +15,14 @@ import {
   About_Spotify,
   About_SEO,
 } from '@about/index'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 // import About_FamilyPhotos from '@about/About_FamilyPhotos'
 
-const About = ({ allPeople }: any) => {
+const Page_About = ({ allPeople }: any) => {
   return (
-    <Main>
+    <>
       <PageHeader_VarH header='About' subheader='Just add flour.' />
       <About_Team allPeople={allPeople} />
       <About_Values />
@@ -31,11 +32,9 @@ const About = ({ allPeople }: any) => {
       <About_Awards />
       <About_Faq />
       <About_SEO />
-    </Main>
+    </>
   )
 }
-
-export default About
 
 export function getStaticProps() {
   const allPeople = peopleFilePaths
@@ -53,3 +52,9 @@ export function getStaticProps() {
 
   return { props: { allPeople } }
 }
+//Set page layout
+Page_About.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+
+export default Page_About

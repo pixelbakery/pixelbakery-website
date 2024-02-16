@@ -1,6 +1,7 @@
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Work_Services from '@work/Work_Services'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
   Industries_Header,
   Industries_MoreIndustries,
@@ -12,7 +13,7 @@ import {
 import Lead from '@typography/Lead'
 const Page_EducationVideoProduction = () => {
   return (
-    <Main>
+    <>
       <Industries_Header title={'Educational Video Production'}>
         <Lead color='peach'>Using the power of motion to give educators the tools they need.</Lead>
       </Industries_Header>
@@ -23,8 +24,11 @@ const Page_EducationVideoProduction = () => {
       <Work_Services />
       <CaseStudies_CTA />
       <Industries_SEO_Education />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_EducationVideoProduction.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_EducationVideoProduction

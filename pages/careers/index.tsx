@@ -4,8 +4,9 @@ import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import Careers_JobShadow from '@careers/Careers_JobShadow'
-import Main from '@parts/Main'
 
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
   Careers_Intro,
   Careers_Benefits,
@@ -16,12 +17,12 @@ import {
   Careers_Freelancers,
 } from '@careers/index'
 
-const Careers = ({ allJobs }) => {
+const Page_Careers = ({ allJobs }) => {
   const openPositions = allJobs.filter((job) => job.data.active && !job.data.internship)
   const internships = allJobs.filter((job) => job.data.internship && job.data.active)
   const closedPositions = allJobs.filter((job) => !job.data.active)
   return (
-    <Main id='careers-page'>
+    <>
       <Careers_SEO />
       <PageHeader_VarH header='Future Bakers' subheader='Come rise with us' />
       <Careers_Intro />
@@ -42,11 +43,14 @@ const Careers = ({ allJobs }) => {
       <Careers_Breadwinners />
       <Careers_Benefits />
       <Careers_JobShadow />
-    </Main>
+    </>
   )
 }
-
-export default Careers
+//Set page layout
+Page_Careers.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Careers
 
 export function getStaticProps() {
   const allJobs = jobFilePaths

@@ -10,14 +10,15 @@ import {
   Services_FAQ_Animation,
 } from '@services/index'
 
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json'
 import Work_Industries from '@work/Work_Industries'
 
 const Page_Services_Animation = () => {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Animation'}
         isLottie={true}
@@ -44,8 +45,11 @@ const Page_Services_Animation = () => {
       <Services_AllServices />
       <Services_OurApproach />
       <Services_SEO_Animation />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_Services_Animation.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_Services_Animation

@@ -8,7 +8,8 @@ import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import Recipes_MoreStories from '@recipes/Recipes_MoreStories'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import InnerWrapper from '@parts/InnerWrapper'
 import Recipes_SEO from '@recipes/Recipes_SEO'
@@ -66,7 +67,7 @@ const Page_Recipes = ({ allPosts }) => {
   const morePosts = allPosts.slice(secondaryPostNo + featuredPostNo)
 
   return (
-    <Main>
+    <>
       <PageHeader_VarH header="Mom's Recipes" subheader='No word yet on her spaghetti, though' />
       <PageSection id='recent-posts'>
         <InnerWrapper>
@@ -84,10 +85,13 @@ const Page_Recipes = ({ allPosts }) => {
         </InnerWrapper>
       </PageSection>
       <Recipes_SEO />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_Recipes.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_Recipes
 
 export function getStaticProps() {

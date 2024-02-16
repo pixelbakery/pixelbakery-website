@@ -1,14 +1,16 @@
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
+import dynamic from 'next/dynamic'
+
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
-import dynamic from 'next/dynamic'
+import { caseStudyFilePaths, CASESTUDIES_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
+import Layout_Home from 'components/layouts/Layout_Home'
+import Work_Industries from '@work/Work_Industries'
 import Loading from '@utility/Loading'
 
-import { caseStudyFilePaths, CASESTUDIES_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
-
-import Work_Industries from '@work/Work_Industries'
-import Main from '@parts/Main'
 import {
   Home_Services,
   Home_SEO,
@@ -34,9 +36,9 @@ const Home_Recipes = dynamic(() => import('@home/Home_Recipes'), {
   ),
 })
 
-const Home = ({ allPosts, allCaseStudies }) => {
+const Page_Home: NextPageWithLayout = ({ allPosts, allCaseStudies }: any) => {
   return (
-    <Main>
+    <>
       <Home_Landing />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />
@@ -45,11 +47,16 @@ const Home = ({ allPosts, allCaseStudies }) => {
       <Work_Industries header={'Industries We Love Working With'} />
       <Home_Recipes allPosts={allPosts} />
       <Home_SEO />
-    </Main>
+    </>
   )
 }
 
-export default Home
+//Set page layout
+Page_Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Home>{page}</Layout_Home>
+}
+
+export default Page_Home
 
 export function getStaticProps() {
   // Get all blog posts:

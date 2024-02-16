@@ -1,69 +1,45 @@
+import type { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { Layout__HasNav, Layout__NavMobile, Layout__NoNav } from '../components/parts/Layout'
 import '@styles/globals.css'
-// import { Analytics } from '@vercel/analytics/react'
 import '@styles/typography.css'
-import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
-import ReactGA from 'react-ga4'
+
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import ReactGA from 'react-ga4'
 
-function App({ Component, pageProps }: AppProps) {
-  const LayoutWithNav = () => {
-    return (
-      <>
-        <Layout__HasNav>
-          <Component {...pageProps} />
-        </Layout__HasNav>
-        <SpeedInsights />
-      </>
-    )
-  }
-  const LayoutWithoutNav = () => {
-    const { QueryClientProvider, QueryClient } = require('react-query')
+import localFont from 'next/font/local'
 
-    const client = new QueryClient()
-    return (
-      <QueryClientProvider client={client}>
-        <Layout__NoNav>
-          <Component {...pageProps} />
-        </Layout__NoNav>
-      </QueryClientProvider>
-    )
-  }
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
 
-  const LayoutHambOnly = () => {
-    return (
-      <Layout__NavMobile>
-        <Component {...pageProps} />
-      </Layout__NavMobile>
-    )
-  }
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
 
-  // Define which pages get which specific layout
-  const getLayout = (path) => {
-    switch (true) {
-      case path === '/':
-        return LayoutHambOnly()
-      case path.startsWith('/store'):
-        return LayoutWithoutNav()
-      default:
-        return LayoutWithNav()
-    }
-  }
+// eslint-disable-next-line no-unused-vars
+const Rachel = localFont({
+  src: [
+    {
+      path: '../public/fonts/RachelDempsey/Dempsey-Regular.woff2',
+      weight: '400', // font-semibold
+      style: 'normal',
+    },
+  ],
+  variable: '--font-rachel',
+})
 
+//future self: leave this as a function and not a const
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Figure out which layout to use and build the page
-  const router = useRouter()
-  const path = router.pathname
-  ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID)
+
+  ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string)
+  const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
     <>
-      <NextSEO_DefaultSEO />
-      {getLayout(path)}
-      {/* <Analytics /> */}
+      {getLayout(<Component {...pageProps} />)}
+      <SpeedInsights />
     </>
   )
 }
-
-export default App

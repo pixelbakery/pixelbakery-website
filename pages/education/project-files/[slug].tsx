@@ -5,9 +5,9 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Main from '@parts/Main'
 import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 import Button_Filled from '@parts/Button_Filled'
 
@@ -26,7 +26,7 @@ const components = {
 
 const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
   return (
-    <Main id='' className=''>
+    <>
       <NextSeo
         title={`${frontMatter.title} | Project Files`}
         description={`${frontMatter.excerpt}`}
@@ -156,10 +156,14 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
         </div>
       </section>
       <Education_SupportUs />
-    </Main>
+    </>
   )
 }
 
+//Set page layout
+Page_Education_ProjectFiles.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_Education_ProjectFiles
 
 export const getStaticProps = async ({ params }) => {

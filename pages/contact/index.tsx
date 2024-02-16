@@ -6,20 +6,23 @@ import {
   Contact_HangOut,
   Contact_SEO,
 } from '@contact/index'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
-import Main from '@parts/Main'
-
-function Contact() {
+function Page_Contact() {
   return (
-    <Main id='contact-page'>
+    <>
       <Contact_SEO />
       <PageHeader_VarH header='Contact Us' subheader="Please don't ask us about catering" />
       <Contact_Clients />
       <Contact_ContactForm />
       <Contact_Jobs />
       <Contact_HangOut />
-    </Main>
+    </>
   )
 }
-
-export default Contact
+//Set page layout
+Page_Contact.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Contact

@@ -1,6 +1,5 @@
 import { peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
 import InnerWrapper from '@parts/InnerWrapper'
-import Main from '@parts/Main'
 import fs from 'fs'
 import PageSection from '@parts/PageSection'
 import matter from 'gray-matter'
@@ -13,10 +12,12 @@ import Link from 'next/link'
 import H2 from '@typography/H2'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
+import type { ReactElement } from 'react'
 
 const Page_PastEmployees = ({ allPeople }) => {
   return (
-    <Main>
+    <>
       <PageHeader_VarH header={'Past Employees'} subheader={'Gone But Not Forgotten'} />
       <PageSection id='pastEmployees'>
         <InnerWrapper>
@@ -100,8 +101,12 @@ const Page_PastEmployees = ({ allPeople }) => {
           ],
         }}
       />
-    </Main>
+    </>
   )
+}
+//Set page layout
+Page_PastEmployees.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
 }
 
 export default Page_PastEmployees

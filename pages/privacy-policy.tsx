@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { NextSeo } from 'next-seo'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 
-function PrivacyPolicy() {
+function Page_PrivacyPolicy() {
   return (
-    <Main id='priv' className='my-4'>
+    <>
       <NextSeo
         title='Privacy Policy - Does Anyone Really Read These Things?'
         canonical={`https://pixelbakery.com/privacy-policy`}
@@ -219,8 +220,12 @@ function PrivacyPolicy() {
           </p>
         </InnerWrapper>
       </PageSection>
-    </Main>
+    </>
   )
 }
 
-export default PrivacyPolicy
+//Set page layout
+Page_PrivacyPolicy.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_PrivacyPolicy

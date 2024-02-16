@@ -1,7 +1,8 @@
 import Onboarding_Calendly from '@onboarding/Onboarding_Calendly'
 import { NextSeo } from 'next-seo'
-
-const Book = () => {
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
+const Page_Book = () => {
   return (
     <>
       <Onboarding_Calendly className='pt-48 lg:pt-56' h1={true} />
@@ -38,5 +39,9 @@ const Book = () => {
     </>
   )
 }
+//Set page layout
+Page_Book.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 
-export default Book
+export default Page_Book

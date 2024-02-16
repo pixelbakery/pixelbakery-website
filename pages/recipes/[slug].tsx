@@ -1,23 +1,21 @@
 import fs from 'fs'
-import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
+import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 import remarkGfm from 'remark-gfm'
-import { shuffleArray } from '@lib/helpers'
-import Loading from '@utility/Loading'
 import dynamic from 'next/dynamic'
-import { peopleFilePaths, PEOPLE_PATH, postFilePaths, POSTS_PATH } from '@lib/mdxUtils'
 import dayjs from 'dayjs'
-
-import markdownStyles from '@styles/markdown-styles.module.css'
-
 import readingTime from '@lib/readingTime'
-import Carousel from '@parts/carousel/Carousel'
-
-import { Main, Video } from '@parts/index'
-
+import { shuffleArray } from '@lib/helpers'
+import { postFilePaths, POSTS_PATH, peopleFilePaths, PEOPLE_PATH } from '@lib/mdxUtils'
+import markdownStyles from '@styles/markdown-styles.module.css'
+import { Video } from '@parts/index' // Adjust imports based on actual paths
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { Recipes_Post_SEO, Recipes_Post_Header, Recipes_Post_Tags } from '@recipes/index'
+import Carousel from '@parts/carousel/Carousel'
+import Loading from '@utility/Loading'
 const Recipes_Post_Related = dynamic(() => import('@recipes/Recipes_Post_Related'), {
   ssr: false,
   loading: () => (
@@ -45,7 +43,7 @@ const components = {
 }
 const datePostedISO = (date) => new Date(JSON.parse(JSON.stringify(date))).toISOString()
 
-export default function PostPage({
+function Page_Recipes_Post({
   slug,
   freshPosts,
   source,
@@ -60,7 +58,7 @@ export default function PostPage({
   prevTitle,
 }) {
   return (
-    <Main>
+    <>
       <div className='mb-32'>
         <Recipes_Post_Header
           frontMatter={frontMatter}
@@ -91,9 +89,14 @@ export default function PostPage({
       />
       <Recipes_Post_Related relatedPosts={freshPosts} />
       <Recipes_Post_SEO datePostedISO={datePostedISO} frontMatter={frontMatter} slug={slug} />
-    </Main>
+    </>
   )
 }
+//Set page layout
+Page_Recipes_Post.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Recipes_Post
 
 export const getStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)

@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { InnerWrapper, PageSection } from '@parts/index'
 import { H1 } from '@typography/index'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-import Obfuscate from 'react-obfuscate'
-function SubmissionConfirmation() {
+
+function Page_Careers_SubmissionConfirmation() {
   return (
-    <Main>
+    <>
       <NextSeo noindex={true} title='Application Submitted | Careers' />
       <PageSection color='pink-lighter' id='application-submitted'>
         <InnerWrapper className='pt-24'>
@@ -17,13 +18,7 @@ function SubmissionConfirmation() {
           <p className='my-4 pb-2 text-lg font-md text-wine'>
             We received your application for a position with us. We'll be in touch shortly if we
             think you'll be a good fit here. If you have any questions, feel free to give Maddie a
-            shout at{' '}
-            <Obfuscate
-              linkText={'mailto:no@nope.com'}
-              email={'careers@pixelbakery.com'}
-              className={'underline text-peach'}
-            />
-            .
+            shout at <Link href={'mailto:careers@pixelbakery.com'}> careers@pixelbakery.com</Link>.
           </p>
 
           <p className='my-4 pb-2 text-lg font-md text-wine'>
@@ -68,8 +63,11 @@ function SubmissionConfirmation() {
           </ul>
         </InnerWrapper>
       </PageSection>
-    </Main>
+    </>
   )
 }
-
-export default SubmissionConfirmation
+//Set page layout
+Page_Careers_SubmissionConfirmation.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Careers_SubmissionConfirmation

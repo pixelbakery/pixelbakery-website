@@ -4,7 +4,8 @@ import H2 from '@typography/H2'
 import H1 from '@typography/H1'
 import Hooray_ContactForm from 'components/pageSpecific/hooray/Hooray_ContactForm'
 import { NextSeo } from 'next-seo'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 const Page_Hooray = () => {
   return (
     <>
@@ -53,4 +54,8 @@ const Page_Hooray = () => {
   )
 }
 
+//Set page layout
+Page_Hooray.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_Hooray

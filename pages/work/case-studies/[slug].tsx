@@ -5,7 +5,8 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
@@ -38,14 +39,30 @@ import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_
 import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
 import InnerWrapper from '@parts/InnerWrapper'
 import Image_VarH from '@parts/Image_VarH'
-//stuff built for Marq
 
-// import { Marq_MarchingSolders, Marq_Unicorn } from '@parts/InlineLottie'
 import { shuffleArray } from '@lib/helpers'
 import dynamic from 'next/dynamic'
 import remarkGfm from 'remark-gfm'
-
-export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter }) {
+interface CaseStudyProps {
+  otherCaseStudies: Array<any> // Define a more specific type based on your data structure
+  source: any
+  slug: string
+  frontMatter: {
+    title: string
+    excerpt?: string
+    date?: string
+    client: string
+    website: string
+    logo: string
+    vimeoID?: string
+    vimeoPreview?: string
+    tags?: Array<string>
+    credits?: Array<any> // Define a more specific type
+    isCustomLayout?: boolean
+    // Add other frontMatter properties as needed
+  }
+}
+function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: CaseStudyProps) {
   const components = {
     // It also works with dynamically-imported components, which is especially
     // useful for conditionally loading components for certain routes.
@@ -94,10 +111,9 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
     ),
     H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
     InnerWrapper: InnerWrapper,
-    h2: ({ children, color }) => <H2 color={color}>{children}</H2>,
   }
   return (
-    <Main>
+    <>
       <CaseStudies_SEO frontMatter={frontMatter} slug={slug} />
       {!frontMatter.isCustomLayout ? (
         <>
@@ -128,10 +144,14 @@ export default function CaseStudy({ otherCaseStudies, source, slug, frontMatter 
       <CaseStudies_CTA />
       <CaseStudies_OtherProjects otherCaseStudies={otherCaseStudies} />
       {/* <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} /> */}
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_Work_CaseStudy.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Work_CaseStudy
 export const getStaticProps = async ({ params }: any) => {
   //MDX Stuff
   const temp = path.join(CASESTUDIES_PATH, `${params.slug}.mdx`)

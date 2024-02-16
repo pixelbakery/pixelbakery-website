@@ -1,5 +1,6 @@
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import Work_Services from '@work/Work_Services'
 import {
   Industries_Header,
@@ -12,7 +13,7 @@ import {
 import Lead from '@typography/Lead'
 const Page_CPGVideoProduction = () => {
   return (
-    <Main>
+    <>
       <Industries_Header title={'CPG Video Production'}>
         <Lead color='peach'>
           We love working with Consumer Packaged Goods (CPG) companies to elevate their product
@@ -26,8 +27,11 @@ const Page_CPGVideoProduction = () => {
       <Industries_MoreIndustries />
       <CaseStudies_CTA />
       <Industries_SEO_CPG />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_CPGVideoProduction.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_CPGVideoProduction

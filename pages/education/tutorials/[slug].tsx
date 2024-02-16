@@ -5,13 +5,14 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 import markdownStyles from '@styles/markdown-styles.module.css'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
 import readingTime from '@lib/readingTime'
 
 import Video from '@parts/Video'
 
-import { PageSection, Main } from '@parts/index'
+import { PageSection } from '@parts/index'
 import {
   Education_PostHeader,
   // Education_MadeToOrder_GetPrevNextPost,
@@ -24,7 +25,7 @@ const components = {
   Video: Video,
 }
 
-export default function Page_Education_Tutorials({
+function Page_Education_Tutorials({
   slug,
   source,
   frontMatter,
@@ -39,7 +40,7 @@ export default function Page_Education_Tutorials({
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   return (
-    <Main>
+    <>
       <Education_PostHeader
         title={frontMatter.title}
         category={`${frontMatter.category} Tutorial`}
@@ -81,10 +82,14 @@ export default function Page_Education_Tutorials({
         slug={slug}
         datePostedISO={datePostedISO}
       />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_Education_Tutorials.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Education_Tutorials
 export const getStaticProps = async ({ params }) => {
   //MDX Stuff
   const tutorialFilePath = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())

@@ -1,8 +1,8 @@
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import Main from '@parts/Main'
 import Work_Services from '@work/Work_Services'
 import Lead from '@typography/Lead'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
   Industries_Header,
   Industries_Reasons_Corporate,
@@ -14,7 +14,7 @@ import {
 
 const Page_CorporateVideoProduction = () => {
   return (
-    <Main>
+    <>
       <Industries_Header title={'Corporate Video Production'}>
         <Lead color='peach'>
           Our specialty is telling brand stories. Wether that’s through animation or video
@@ -29,8 +29,11 @@ const Page_CorporateVideoProduction = () => {
       <Industries_MoreIndustries />
       <CaseStudies_CTA />
       <Industries_SEO_Corporate />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_CorporateVideoProduction.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_CorporateVideoProduction

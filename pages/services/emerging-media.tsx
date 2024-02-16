@@ -1,4 +1,5 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Lottie_Animation from '@data/lottie_services/lottie_services_emergingMedia.json'
 
@@ -10,9 +11,9 @@ import {
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 
-export default function Services_EmergingMedia() {
+function Page_Services_EmergingMedia() {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Emerging Media'}
         isLottie={true}
@@ -36,6 +37,11 @@ export default function Services_EmergingMedia() {
       <Services_AllServices />
       <Services_OurApproach />
       <Services_SEO_EmergingMedia />
-    </Main>
+    </>
   )
 }
+//Set page layout
+Page_Services_EmergingMedia.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Services_EmergingMedia

@@ -1,9 +1,10 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
-function FourOhFour() {
+function Page_FiveOhFive() {
   return (
-    <Main>
+    <>
       <NextSeo noindex={true} title='404 Page Not Found' />
       <section className='lander' id='topOfPage'>
         <div className='mx-auto flex flex-col justify-center max-w-4xl h-full'>
@@ -19,8 +20,12 @@ function FourOhFour() {
           />
         </div>
       </section>
-    </Main>
+    </>
   )
 }
 
-export default FourOhFour
+//Set page layout
+Page_FiveOhFive.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_FiveOhFive

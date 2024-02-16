@@ -1,4 +1,5 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Link from 'next/link'
 
@@ -10,9 +11,9 @@ import {
   Services_FAQ_SocialMedia,
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
-export default function Services() {
+function Page_Services_SocialMedia() {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Social Videos'}
         isLottie={false}
@@ -43,6 +44,11 @@ export default function Services() {
       <Services_OurApproach />
       <Work_Industries header={'Industries We Love Making Social Media Video Content For'} />
       <Services_SEO_SocialMedia />
-    </Main>
+    </>
   )
 }
+//Set page layout
+Page_Services_SocialMedia.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Services_SocialMedia

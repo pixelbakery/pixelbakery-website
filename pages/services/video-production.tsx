@@ -8,14 +8,15 @@ import {
   Services_FAQ_VideoProduction,
 } from '@services/index'
 
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Work_Industries from '@work/Work_Industries'
 
-export default function Services() {
+function Page_Services_VideoProduction() {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Video Production'}
         isLottie={false}
@@ -39,6 +40,12 @@ export default function Services() {
       <Services_FAQ_VideoProduction />
       <Services_AllServices />
       <Services_SEO_VideoProduction />
-    </Main>
+    </>
   )
 }
+
+//Set page layout
+Page_Services_VideoProduction.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Services_VideoProduction

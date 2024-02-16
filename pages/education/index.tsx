@@ -1,5 +1,6 @@
-import Main from '@parts/Main'
 import fs from 'fs'
+import type { EducationPageProps } from 'types/educationTypes'
+
 import {
   madeToOrderFilePaths,
   MADETOORDER_PATH,
@@ -8,7 +9,8 @@ import {
 } from '@lib/mdxUtils'
 import matter from 'gray-matter'
 import path from 'path'
-
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
   Education_Header,
   Education_SEO,
@@ -18,10 +20,11 @@ import {
   Education_TutorialRequests,
   Education_ProjectFiles,
 } from '@education/index'
+import { GetStaticProps } from 'next/types'
 
-function EducationPage({ allMadeToOrders, allProjectFiles }) {
+function Page_Education({ allMadeToOrders, allProjectFiles }: EducationPageProps) {
   return (
-    <Main className='max-w-screen overflow-x-hidden' id='educationPage'>
+    <>
       <Education_SEO />
       <Education_Header />
       <Education_Why />
@@ -29,12 +32,17 @@ function EducationPage({ allMadeToOrders, allProjectFiles }) {
       <Education_MadeToOrder allMadeToOrders={allMadeToOrders} />
       <Education_FromScratch />
       <Education_TutorialRequests />
-    </Main>
+    </>
   )
 }
-export default EducationPage
 
-export const getStaticProps = async () => {
+//Set page layout
+Page_Education.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Education
+
+export const getStaticProps: GetStaticProps = async () => {
   const allProjectFiles = projectFilesFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(PROJECTFILE_PATH, filePath))

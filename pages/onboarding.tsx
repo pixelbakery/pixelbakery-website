@@ -1,4 +1,5 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import {
   Onboarding_Calendly,
@@ -9,16 +10,20 @@ import {
 
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 
-function Onboarding() {
+function Page_Onboarding() {
   return (
-    <Main id='page-onboarding'>
+    <>
       <PageHeader_VarH header='Become a Client' subheader='All it takes is one great idea' />
       <Onboarding_Contact />
       <Onboarding_Calendly />
       <Onboarding_Expectations />
       <Onboarding_SEO />
-    </Main>
+    </>
   )
 }
 
-export default Onboarding
+//Set page layout
+Page_Onboarding.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Onboarding

@@ -1,5 +1,5 @@
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { InnerWrapper, PageSection } from '@parts/index'
 import { H2AndLead, Lead } from '@typography/index'
 import Careers_Application_Form from '@careers/Careers_Application_Form'
 
@@ -9,10 +9,12 @@ import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
-function Careers_Application({ allJobs }) {
+function Page_Careers_Application({ allJobs }) {
   return (
-    <Main>
+    <>
       <NextSeo
         noindex={true}
         title='Submit an Application | Careers'
@@ -75,10 +77,16 @@ function Careers_Application({ allJobs }) {
           <Careers_Application_Form allJobs={allJobs} />
         </InnerWrapper>
       </PageSection>
-    </Main>
+    </>
   )
 }
-export default Careers_Application
+
+//Set page layout
+Page_Careers_Application.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Careers_Application
+
 export function getStaticProps() {
   const allJobs = jobFilePaths
     .map((filePath) => {

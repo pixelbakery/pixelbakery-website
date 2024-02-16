@@ -1,4 +1,5 @@
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Lottie_Animation from '@data/lottie_services/lottie_services_animatedExplainers.json'
 
@@ -14,9 +15,9 @@ import {
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 
-const Services_Animated_Explainer_Videos = () => {
+const Page_Services_AnimatedExplainerVideos = () => {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Animated Explainers'}
         isLottie={true}
@@ -39,7 +40,11 @@ const Services_Animated_Explainer_Videos = () => {
       <Services_AllServices />
       <Services_OurApproach />
       <Services_SEO_ExplainerVideos />
-    </Main>
+    </>
   )
 }
-export default Services_Animated_Explainer_Videos
+//Set page layout
+Page_Services_AnimatedExplainerVideos.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+export default Page_Services_AnimatedExplainerVideos

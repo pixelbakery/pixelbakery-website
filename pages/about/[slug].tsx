@@ -13,7 +13,6 @@ import {
 import { serialize } from 'next-mdx-remote/serialize'
 
 //Utilities & Components imports
-import Main from '@parts/Main'
 import remarkGfm from 'remark-gfm'
 
 import {
@@ -23,6 +22,9 @@ import {
   About_Team_Details,
 } from '@about/index'
 import dynamic from 'next/dynamic'
+import { GetStaticPaths } from 'next'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 const About_Team_MatchingPosts = dynamic(() => import('@about/About_Team_MatchingPosts'), {
   ssr: false,
@@ -34,7 +36,7 @@ const About_Team_MatchingCaseStudies = dynamic(
     ssr: false,
   },
 )
-function PersonPage({
+function Page_People({
   matchingCaseStudies,
   slug,
   source,
@@ -46,7 +48,7 @@ function PersonPage({
   // console.log(new_data[0].length)
 
   return (
-    <Main>
+    <>
       <About_Team_SEO frontMatter={frontMatter} slug={slug} />
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
@@ -61,7 +63,7 @@ function PersonPage({
         next={nextIndex}
         name={frontMatter.name}
       />
-    </Main>
+    </>
   )
 }
 
@@ -167,7 +169,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = peopleFilePaths
     .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }))
@@ -177,4 +179,9 @@ export const getStaticPaths = async () => {
     fallback: false,
   }
 }
-export default PersonPage
+//Set page layout
+Page_People.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+
+export default Page_People

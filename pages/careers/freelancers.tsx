@@ -1,11 +1,13 @@
 import { Careers_Freelancer_Application_Form } from '@careers/index'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import { InnerWrapper, PageSection, Main } from '@parts/index'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
+import { InnerWrapper, PageSection } from '@parts/index'
 import { H2, Lead } from '@typography/index'
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo'
 const Page_Freelancers = () => {
   return (
-    <Main>
+    <>
       <PageHeader_VarH header='Freelancers' subheader='Join Our Professional Network' />
       <PageSection id={'freelancer-application'}>
         <InnerWrapper>
@@ -68,8 +70,11 @@ const Page_Freelancers = () => {
           },
         ]}
       />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_Freelancers.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_Freelancers

@@ -1,5 +1,6 @@
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import {
   ServicesOverview_Intro,
@@ -16,9 +17,9 @@ import {
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import { NextSeo } from 'next-seo'
 
-function Services_Page() {
+function Page_Services() {
   return (
-    <Main>
+    <>
       <PageHeader_VarH header='Our Services' subheader='We do a few things, and we do them well' />
       <ServicesOverview_Intro />
       <ServicesOverview_Animation />
@@ -61,7 +62,12 @@ function Services_Page() {
           ],
         }}
       />
-    </Main>
+    </>
   )
 }
-export default Services_Page
+//Set page layout
+Page_Services.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
+
+export default Page_Services

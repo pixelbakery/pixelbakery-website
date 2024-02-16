@@ -1,5 +1,6 @@
 import { CaseStudies_CTA } from '@caseStudies/index'
-import Main from '@parts/Main'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
   Services_AllServices,
   Services_Header,
@@ -12,7 +13,7 @@ import Work_Industries from '@work/Work_Industries'
 
 const Page_ProductPhotography = () => {
   return (
-    <Main>
+    <>
       <Services_Header
         serviceName={'Product Photography'}
         isLottie={false}
@@ -36,8 +37,11 @@ const Page_ProductPhotography = () => {
       <Services_AllServices />
       <Services_OurApproach />
       <Services_SEO_ProductPhotography />
-    </Main>
+    </>
   )
 }
-
+//Set page layout
+Page_ProductPhotography.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
+}
 export default Page_ProductPhotography

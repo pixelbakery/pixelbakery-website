@@ -1,12 +1,14 @@
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import { InnerWrapper, Main, PageSection } from '@parts/index'
+import { InnerWrapper, PageSection } from '@parts/index'
 import { H2AndLead, Lead } from '@typography/index'
 import { Careers_JobShadow_Form } from '@careers/index'
 import { NextSeo } from 'next-seo'
 import Obfuscate from 'react-obfuscate'
+import type { ReactElement } from 'react'
+import Layout_Defaualt from 'components/layouts/Layout_Default'
 function Page_Careers_JobShadow() {
   return (
-    <Main>
+    <>
       <NextSeo
         title='Job Shadows | Careers'
         description={`Discover design careers with Pixel Bakery! Shadow our team, see our projects, and learn about the creative process. Join us for an inspiring experience.`}
@@ -137,7 +139,11 @@ function Page_Careers_JobShadow() {
           </div>
         </InnerWrapper>
       </PageSection>
-    </Main>
+    </>
   )
+}
+//Set page layout
+Page_Careers_JobShadow.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Defaualt>{page}</Layout_Defaualt>
 }
 export default Page_Careers_JobShadow
