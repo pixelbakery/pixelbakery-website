@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
-import type { ReactElement } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import H2 from '@typography/H2'
@@ -47,6 +47,7 @@ interface CaseStudyProps {
   otherCaseStudies: Array<any> // Define a more specific type based on your data structure
   source: any
   slug: string
+  children: ReactNode
   frontMatter: {
     title: string
     excerpt?: string
@@ -62,6 +63,18 @@ interface CaseStudyProps {
     // Add other frontMatter properties as needed
   }
 }
+interface Children {
+  children: ReactNode
+}
+interface PageSectionProps {
+  children: ReactNode
+  id: string
+  color?: string
+}
+interface CaseStudiesDescription extends Children {
+  [x: string]: any
+}
+
 function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: CaseStudyProps) {
   const components = {
     // It also works with dynamically-imported components, which is especially
@@ -82,12 +95,12 @@ function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: Ca
     CaseStudies_Gallery_Email: CaseStudies_Gallery_Email,
     Image: Image,
     // PageSection: ({children}) => <PageSection children={children} />,
-    PageSection: ({ children, color, id }) => (
+    PageSection: ({ children, color, id }: PageSectionProps) => (
       <PageSection color={color} id={id}>
         {children}
       </PageSection>
     ),
-    CaseStudiesDescription: ({ children, ...props }) => (
+    CaseStudiesDescription: ({ children, ...props }: CaseStudiesDescription) => (
       <CaseStudies_Description
         header={props.header}
         textColor={props.textColor}
@@ -99,7 +112,7 @@ function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: Ca
       </CaseStudies_Description>
     ),
     Image_VarH: Image_VarH,
-    CaseStudiesIntro: ({ title, children }) => (
+    CaseStudiesIntro: ({ title, children }: CaseStudiesDescription) => (
       <CaseStudies_Intro
         title={title}
         url={frontMatter.website}
@@ -109,7 +122,7 @@ function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: Ca
         {children}
       </CaseStudies_Intro>
     ),
-    H2: ({ children, color }) => <H2 color={color}>{children}</H2>,
+    H2: ({ children, color }: CaseStudiesDescription) => <H2 color={color}>{children}</H2>,
     InnerWrapper: InnerWrapper,
   }
   return (

@@ -6,8 +6,9 @@ import Shimmer from '@lib/Shimmer'
 import cn from 'classnames'
 import Link from 'next/link'
 import { LinkedIn } from 'components/images/Icons_Social/Icons'
+import { type ReactNode } from 'react'
 interface Props {
-  children: any
+  children: ReactNode
   name: string
   title: string
   headshot: string
