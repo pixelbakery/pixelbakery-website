@@ -3,9 +3,10 @@ import { InnerWrapper, PageSection } from '@parts/index'
 import { H2AndLead, Lead } from '@typography/index'
 import { Careers_JobShadow_Form } from '@careers/index'
 import { NextSeo } from 'next-seo'
-import Obfuscate from 'react-obfuscate'
+
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
+import Link from 'next/link'
 function Page_Careers_JobShadow() {
   return (
     <>
@@ -115,11 +116,9 @@ function Page_Careers_JobShadow() {
               </Lead>
               <p className='text-white text-2xl '>
                 Shoot us an email{' '}
-                <Obfuscate
-                  linkText={'mailto:no@nope.com'}
-                  email={'careers@pixelbakery.com'}
-                  className={'underline text-white'}
-                />{' '}
+                <Link href={'careers@pixelbakery.com'} className={'underline text-white'}>
+                  careers@pixelbakery.com
+                </Link>{' '}
                 with any questions. Fill out the form and we can get something scheduled. In the
                 meantime, go ahead and follow us on social media (
                 <a
