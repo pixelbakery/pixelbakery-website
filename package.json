@@ -12,7 +12,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
+    "prepare": "husky",
     "commitlint": "commitlint --edit",
     "release": "standard-version --sign",
     "release:minor": "standard-version --release-as minor",

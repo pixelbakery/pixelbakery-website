@@ -53,7 +53,7 @@
         "name": "next"
       }
     ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js", "types/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js", "types/**/*", "fonts/**/*"],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }

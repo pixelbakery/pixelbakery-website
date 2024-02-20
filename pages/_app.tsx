@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import '@styles/fonts'
+import 'fonts/fonts'
 import '@styles/globals.css'
 
 import { SpeedInsights } from '@vercel/speed-insights/next'
