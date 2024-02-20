@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { dempsey, poppins, gilroy } from '@styles/fonts'
+
 // import '@styles/fonts'
 const MyDocument = () => {
   return (
