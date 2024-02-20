@@ -6824,11 +6824,6 @@ react-number-format@^4.9.3:
   dependencies:
     prop-types "^15.7.2"
 
-react-obfuscate@^3.6.8:
-  version "3.6.9"
-  resolved "https://registry.yarnpkg.com/react-obfuscate/-/react-obfuscate-3.6.9.tgz#ca87f731db575e52288680e08de266fddafdcb3e"
-  integrity sha512-WteD1ZBuuyGuzvzt0pVSYS9FRodB5PDFSWUTKFs2QHez4Ud3N4K1+1vyMAYg88DPeKvmzvgoLSTCsKvJhwOz+A==
-
 react-player@^2.11.0:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.14.1.tgz#fc434c0e1e6161e76f5d5970721596c4acec52b1"
