@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v7.0.1...v7.0.2) (2024-02-20)
+
+
+### Chores
+
+* compressed case study preview videos ([b0bfbd2](https://github.com/pixelbakery/pixelbakery-website/commits/b0bfbd2646f67cfc1eda2bae1302e4dd12589d0d))
+* did away with react-obfuscate ([d950f40](https://github.com/pixelbakery/pixelbakery-website/commits/d950f40bacdf8d0db091c4897821ed45df8dad6f))
+
 ### [7.0.1](https://github.com/pixelbakery/pixelbakery-website/compare/v7.0.0...v7.0.1) (2024-02-20)
 
 ## [7.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v6.0.0...v7.0.0) (2024-02-20)
