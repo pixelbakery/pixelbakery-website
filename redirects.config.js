@@ -7,6 +7,31 @@ const redirectsArray = [
     permanent: true,
   },
   {
+    source: '/:path*.php',
+    destination: 'https://www.youtube.com/watch?v=5ZCgbGgA-_8',
+    permanent: true,
+  },
+  {
+    source: '/wp-admin/:path*',
+    destination: 'https://www.youtube.com/watch?v=5ZCgbGgA-_8',
+    permanent: true,
+  },
+  {
+    source: '/wp-login/:path*',
+    destination: 'https://www.youtube.com/watch?v=5ZCgbGgA-_8',
+    permanent: true,
+  },
+  {
+    source: '/wp-content/:path*',
+    destination: 'https://www.youtube.com/watch?v=5ZCgbGgA-_8',
+    permanent: true,
+  },
+  {
+    source: '/wp-includes/:path*',
+    destination: 'https://www.youtube.com/watch?v=5ZCgbGgA-_8',
+    permanent: true,
+  },
+  {
     source: '/wp-content/uploads/PB/2021/01/ExampleOfAlphaLayers.png',
     destination: 'https://cdn.pixelbakery.com/img/blog/ExampleOfAlphaLayers.png',
     permanent: true,
