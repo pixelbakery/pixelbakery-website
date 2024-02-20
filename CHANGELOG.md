@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.0.2...v7.1.0) (2024-02-20)
+
+
+### Chores
+
+* seo updates, minor ([b82031a](https://github.com/pixelbakery/pixelbakery-website/commits/b82031a88bdad6f0ea181211de78e87c744edc65))
+* trying to get less SEO towards my bio ([7c50c2e](https://github.com/pixelbakery/pixelbakery-website/commits/7c50c2e02d5cf399b3bb33a7bd0b69c74c20de65))
+* trying to get less SEO towards my bio ([adf3a88](https://github.com/pixelbakery/pixelbakery-website/commits/adf3a8821bb91fab7597f159b6121585cfc8950b))
+
 ### [7.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v7.0.1...v7.0.2) (2024-02-20)
 
 
