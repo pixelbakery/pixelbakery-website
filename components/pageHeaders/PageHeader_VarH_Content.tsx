@@ -4,14 +4,13 @@ import cn from 'classnames'
 import LottiePatternPlayer from '@parts/LottiePatternPlayer'
 
 interface Props {
-  primaryColor: string
+  objectColor: string
 }
-const PageHeader_VariableHeight = ({ primaryColor }: Props) => {
+const PageHeader_VariableHeight = ({ objectColor }: Props) => {
+  const color = `lottie-${objectColor}`
   return (
     <div
-      className={cn(
-        `z-0 absolute top-0 left-0 w-full h-full overflow-hidden lottie lottie-${primaryColor}`,
-      )}
+      className={cn(`z-0 absolute top-0 left-0 w-full h-full overflow-hidden lottie ${color}`)}
       id='lottie'
     >
       <LottiePatternPlayer />

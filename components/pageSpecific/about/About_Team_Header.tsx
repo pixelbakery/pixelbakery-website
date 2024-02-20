@@ -3,14 +3,14 @@ import PageSection from '@parts/PageSection'
 import H1 from '@typography/H1'
 import Lead from '@typography/Lead'
 import { MDXRemote } from 'next-mdx-remote'
-import SocialLinks from '@images/Icons_Social/SocialLinks'
+import { SocialIcon } from '@SocialIcons/SocialIcon'
 import Image from 'next/image'
 import Head from 'next/head'
-import Obfuscate from 'react-obfuscate'
 import Shimmer from '@lib/Shimmer'
 //CSS imports
 import markdownStyles from '@styles/markdown-styles.module.css'
 import Loading from '@utility/Loading'
+import Link from 'next/link'
 
 const About_Team_Header = ({ source, frontMatter }) => {
   const socialList = frontMatter.socials
@@ -49,11 +49,12 @@ const About_Team_Header = ({ source, frontMatter }) => {
             </div>
             <div className='pb-8'>
               {frontMatter.email ? (
-                <Obfuscate
-                  linkText={'mailto:no@no.com'}
-                  email={frontMatter.email}
+                <Link
+                  href={`mailto:${frontMatter.email}`}
                   className={'block italic text-peach cursor-pointer text-left'}
-                />
+                >
+                  {frontMatter.email}
+                </Link>
               ) : (
                 ''
               )}
@@ -76,7 +77,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
                 {socialList.map((s) => {
                   return (
                     <div key={Object.values(s).toString()}>
-                      <SocialLinks
+                      <SocialIcon
                         color='blue'
                         size={'3xl'}
                         iconName={Object.keys(s).toString()}

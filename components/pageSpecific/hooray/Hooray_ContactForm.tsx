@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { SendToMonday_InstagramMerchCampaign } from '@lib/api_sendToMonday'
-import { ChevronRightIcon } from '@images/UI_Icons/index'
+import { ChevronRightIcon } from 'components/icons/Icons_UI/index'
 import dynamic from 'next/dynamic'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {

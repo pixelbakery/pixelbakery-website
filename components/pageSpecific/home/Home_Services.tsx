@@ -20,7 +20,7 @@ const Home_Services = () => {
             <H2 color='blue-dark' className='text-blue-dark '>
               We are builders and this is our craft.
             </H2>
-            <Lead color='cream  '>
+            <Lead color='cream'>
               Our team creates intentional, custom-tailored video content by having a purposeful
               vision and not taking any shortcuts.
             </Lead>

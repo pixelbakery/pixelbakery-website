@@ -2,7 +2,7 @@ import PageSection from '@parts/PageSection'
 
 import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
-import { ChevronRightIcon } from '@images/UI_Icons'
+import { ChevronRightIcon } from 'components/icons/Icons_UI'
 function CaseStudies_PrevNext({ prev, next }) {
   // const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
   // temp.forEach((cs, index) => {

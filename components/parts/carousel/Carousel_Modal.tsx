@@ -1,4 +1,4 @@
-import { DownloadIcon, CopyIcon } from '@images/UI_Icons'
+import { DownloadIcon, CopyIcon } from 'components/icons/Icons_UI'
 import Close from '@images/Close'
 import Image from 'next/image'
 

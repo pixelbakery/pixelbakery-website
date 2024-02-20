@@ -2,7 +2,7 @@ import PageSection from '@parts/PageSection'
 
 import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
-import { ChevronRightIcon } from '@images/UI_Icons'
+import { ChevronRightIcon } from 'components/icons/Icons_UI'
 import Lead from '@typography/Lead'
 import Button_Filled from '@parts/Button_Filled'
 import H2 from '@typography/H2'
@@ -80,7 +80,7 @@ function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
         <InnerWrapper className='py-2 my-2 flex flex-col justify-center'>
           <H2
             color={'blue-dark'}
-            className='self-center mb-6 font-pbheading text-center'
+            className='self-center mb-6 font-gilroy text-center'
           >{`${firstName} has since moved on from PB.`}</H2>
           <Lead className='text-center self-center'>And we miss them very much.</Lead>
           <Button_Filled

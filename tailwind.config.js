@@ -1,36 +1,37 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      gilroy: ['var(--font-gilroy)'],
+      poppins: ['var(--font-poppins)'],
+      dempsey: ['var(--font-dempsey)'],
+    },
     colors: {
       transparent: 'transparent',
-      cream: 'rgb(239, 232, 242)', //#EFE8F2},
-      white: '#ffffff',
+      cream: 'rgb(239, 232, 242)',
+      white: 'rgb(255,255,255)',
       egg: 'rgb(243, 244, 246)',
       blue: {
         light: 'rgb(204, 238, 255)',
         DEFAULT: 'rgb(56, 204, 255)',
         dark: 'rgb(0, 81, 116)',
       },
-      peach: {
-        light: '#FFD9D3',
-        DEFAULT: 'rgb(255, 94, 100)',
-      },
-      error: '#ff0033',
+      peach: 'rgb(255, 94, 100)',
+      error: 'rgb(255,0,51)',
       yellow: 'rgb(250, 216, 105)',
-      pink: {
-        extralight: '#FFEFFF',
-        lighter: 'rgb(241, 224, 237)',
-        light: 'rgb(255, 224, 255)',
-        DEFAULT: 'rgb(255, 163, 204)', //#F2A8CA
-      },
+      pink: 'rgb(255, 163, 204)',
+      'pink-lighter': 'rgb(241, 224, 237)',
+      'pink-light': 'rgb(255, 224, 255)',
+      pinkLight: 'rgb(255, 224, 255)',
       wine: {
         100: 'rgb(210, 207, 218)',
         200: 'rgb(182, 180, 190)',
         300: 'rgb(155, 153, 163)',
         400: 'rgb(129, 127, 137)',
         500: 'rgb(104, 102, 111)',
-        DEFAULT: 'rgb(80, 78, 87)', //#504E57
+        DEFAULT: 'rgb(80, 78, 87)',
       },
       current: 'currentColor',
       none: 'none',
@@ -39,11 +40,6 @@ module.exports = {
     stroke: (theme) => theme('colors'),
     fill: (theme) => theme('colors'),
 
-    fontFamily: {
-      pbheading: 'Gilroy, sans-serif',
-      rachelDempsey: 'RachelDempsey, sans-serif',
-      body: 'Poppins, sans-serif',
-    },
     extend: {
       animation: {
         'spin-slow': 'spin 30s linear infinite',
@@ -132,4 +128,18 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
+  safelist: [
+    {
+      pattern: /(bg|text|border)-pink-(light|lighter)/,
+    },
+    {
+      pattern: /text-(pink|blue)-(light|DEFAULT)/,
+    },
+    {
+      pattern: /text-(pink|cream|egg|blue|peach|wine|white|yellow)/,
+    },
+    {
+      pattern: /text-(blue)-(dark|DEFAULT)/,
+    },
+  ],
 }

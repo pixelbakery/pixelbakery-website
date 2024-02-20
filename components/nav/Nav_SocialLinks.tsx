@@ -1,48 +1,48 @@
-import SocialLinks from '@images/Icons_Social/SocialLinks'
+import { SocialIcon } from '@SocialIcons/SocialIcon'
+import { TextColorVariant } from '@lib/colorHelper'
+import { textSizeProps } from '@lib/textSizeHelper'
 
-function Nav_SocialLinks({ color, textSize }) {
+interface SocialLinksProps {
+  color: TextColorVariant
+  textSize: textSizeProps
+}
+function Nav_SocialLinks({ color, textSize }: SocialLinksProps) {
   return (
     <div className='max-w-xs mx-auto flex justify-between gap-3 px-8'>
-      <SocialLinks
+      <SocialIcon
         iconName={'Instagram'}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://instagram.com/pixelbakery'}
       />
-      <SocialLinks
+      <SocialIcon
         iconName={'Youtube'}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://www.youtube.com/c/pixelbakery'}
       />
-      <SocialLinks
+      <SocialIcon
         iconName={'Discord'}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://discord.gg/DBxgDGJzAg'}
       />
-      <SocialLinks
+      <SocialIcon
         iconName={'Vimeo'}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://vimeo.com/pixelbakery'}
       />
-      <SocialLinks
+      <SocialIcon
         iconName={'Twitch'}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://twitch.tv/pixelbakery'}
       />
-      <SocialLinks
+      <SocialIcon
         iconName={`LinkedIn`}
-        color={color}
-        textSize={textSize}
-        size={'2xl'}
+        color={`${color}`}
+        size={`${textSize}`}
         href={'https://www.linkedin.com/company/7593086'}
       />
     </div>

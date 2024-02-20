@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@images/UI_Icons'
+import { ChevronRightIcon } from 'components/icons/Icons_UI'
 import cn from 'classnames'
 
 export const DotButton = ({ scrollSnaps, selectedIndex, scrollTo }) => (

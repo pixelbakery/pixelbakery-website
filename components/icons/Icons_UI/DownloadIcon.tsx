@@ -1,6 +1,6 @@
 import { createElement } from 'react'
 
-function DownloadIcon(props) {
+function DownloadIcon({ props }: any) {
   return /*#__PURE__*/ createElement(
     'svg',
     Object.assign(

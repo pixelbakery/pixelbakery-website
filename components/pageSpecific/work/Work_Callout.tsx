@@ -23,7 +23,7 @@ function Work_Callout() {
                 className=' max-w-max 2xl:max-w-min mb-0 pb-0 pt-0 mt-0 2xl:mb-0 self-center'
               >
                 <span className=' text-blue-dark  w-max '>Nothing is Lazy.</span>{' '}
-                <span className=' text-cream  mt-6 w-min xl:break-normal xl:whitespace-nowrap font-pbheading'>
+                <span className=' text-cream  mt-6 w-min xl:break-normal xl:whitespace-nowrap font-gilroy'>
                   Everything is Intentional.
                 </span>
               </H2>

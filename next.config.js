@@ -47,9 +47,9 @@ module.exports = () => {
       ]
     },
     compress: true,
-    // experimental: {
-    //   webpackBuildWorker: true,
-    // },
+    experimental: {
+      webpackBuildWorker: true,
+    },
     images: {
       minimumCacheTTL: 31536000,
       formats: ['image/avif', 'image/webp'],

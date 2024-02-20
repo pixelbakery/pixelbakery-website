@@ -20,7 +20,7 @@ const About_Awards = () => {
           </div>
           <div className='col-span-2  flex flex-col justify-between mx-auto w-full '>
             <ul
-              className='w-fit self-end text-cream font-body text-sm sm:text-sm md:text-lg font-medium md:font-bold  relative awardsList'
+              className='w-fit self-end text-cream font-poppins text-sm sm:text-sm md:text-lg font-medium md:font-bold  relative awardsList'
               id='awardsList1'
             >
               {awards.map((award, index) => {

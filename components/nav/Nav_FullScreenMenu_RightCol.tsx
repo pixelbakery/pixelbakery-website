@@ -1,13 +1,12 @@
 import H3 from '@typography/H3'
 import Link from 'next/link'
-import Obfuscate from 'react-obfuscate'
 import Nav_FullScreenMenu_CTA from './Nav_FullScreenMenu_CTA'
 function Nav_FullScreenMenu_RightCol({ update }: any) {
   return (
     <div className='hidden  w-full  xl:flex flex-col justify-between xl:w-1/3'>
       <div className='hidden xl:block'>
         <div className='border-b-4 border-blue-dark text-bold max-w-xs  md:pr-4  md:mr-4'>
-          <H3 className='text-center md:text-left font-extrabold text-3xl text-blue-dark'>
+          <H3 className='text-center md:text-left font-extrabold text-3xl' color='blue-dark'>
             studio
           </H3>
         </div>
@@ -25,20 +24,19 @@ function Nav_FullScreenMenu_RightCol({ update }: any) {
             </a>
           </li>
           <li className='mt-3 text-xl text-blue-dark relative duration-100 hover:scale-98 origin-left'>
-            <Obfuscate
-              linkText={'tel:000-000-0000'}
-              tel={'402-302-0323'}
-              className={'text-blue-dark  '}
-            >
+            <Link href={'tel:000-000-0000'} className={'text-blue-dark  '}>
               402 302 0323
-            </Obfuscate>
+            </Link>
           </li>
         </ul>
       </div>
       <div className='hidden xl:block'>
         <div className=' '>
           <div className='hidden lg:block lg:mt-4 border-b-4 border-blue-dark mb-4 max-w-xs md:pr-4'>
-            <H3 className=' md:text-left font-extrabold text-3xl  leading-none mt-0 text-blue-dark'>
+            <H3
+              className=' md:text-left font-extrabold text-3xl  leading-none mt-0'
+              color='blue-dark'
+            >
               more stuff
             </H3>
           </div>

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Shimmer from '@lib/Shimmer'
 import cn from 'classnames'
 import Link from 'next/link'
-import { LinkedIn } from 'components/images/Icons_Social/Icons'
+import { LinkedIn } from 'components/icons/icons_social'
 import { type ReactNode } from 'react'
 interface Props {
   children: ReactNode

@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react'
+import { MutableRefObject, useRef, useState } from 'react'
 import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
 import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
 
 function BackToTop() {
   const [showTopButton, setShowTopBtn] = useState(false)
   const elem = useRef(null)
-  const pointer = useRef(null)
+  const pointer = useRef() as MutableRefObject<HTMLDivElement>
 
   useIsomorphicLayoutEffect(() => {
     // Button is displayed after scrolling for 500 pixels

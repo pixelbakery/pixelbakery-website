@@ -47,7 +47,7 @@ function Contact_HangOut() {
                 y='77%'
                 strokeWidth={0}
                 className={cn(
-                  'font-black font-body w-full tracking-wider text-blue animate-horizontal',
+                  'font-black font-poppins w-full tracking-wider text-blue animate-horizontal',
                 )}
                 fill='currentColor'
               >
@@ -57,7 +57,7 @@ function Contact_HangOut() {
                 x='10px'
                 y='80%'
                 strokeWidth={0}
-                className={cn('font-black font-body w-full tracking-wider  text-yellow')}
+                className={cn('font-black font-poppins w-full tracking-wider  text-yellow')}
                 fill='currentColor'
               >
                 Let's Hang Out... IRL
@@ -67,7 +67,7 @@ function Contact_HangOut() {
                 y='80%'
                 fill='none'
                 className={cn(
-                  'font-black font-body w-full tracking-wider stroke-2 letting-none lg:stroke-3',
+                  'font-black font-poppins w-full tracking-wider stroke-2 letting-none lg:stroke-3',
                 )}
               >
                 Let's Hang Out... IRL

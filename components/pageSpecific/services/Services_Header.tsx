@@ -81,7 +81,9 @@ function Services_Header({
         <div className=' col-span-1 flex flex-col justify-start py-6 px-10 '>
           <div className='xl:pt-40 max-w-lg 4xl:max-w-3xl mx-auto'>
             <BackLink text={'Services'} href={'/services'} />
-            <H1 className='mt-2 pt-0 mb-4 2xl:mb-2 text-blue-dark'>{serviceName}</H1>
+            <H1 color='blue-dark' className='mt-2 pt-0 mb-4 2xl:mb-2'>
+              {serviceName}
+            </H1>
             <Lead color='peach'>{`${subheader}`}</Lead>
             {children}
           </div>

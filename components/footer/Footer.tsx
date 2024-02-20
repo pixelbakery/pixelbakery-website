@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Obfuscate from 'react-obfuscate'
+
 import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
 
 import Button_Filled from '@parts/Button_Filled'
@@ -95,7 +95,7 @@ export const Footer: NextPage = () => {
               <div className='hidden sm:flex flex-col justify-start h-full md:pr-6'>
                 <div className='self-center w-full hidden lg:block'>
                   <div className='mx-auto border-b-4 border-cream text-bold max-w-xs  md:pr-4  md:mr-4'>
-                    <H3 className='text-center md:text-left font-extrabold text-3xl text-cream'>
+                    <H3 className='text-center md:text-left font-extrabold text-3xl' color='cream'>
                       studio
                     </H3>
                   </div>
@@ -117,13 +117,9 @@ export const Footer: NextPage = () => {
                       </li>
                       <li className='mt-3 text-xl text-cream '>
                         <address className='relative duration-100 hover:scale-98 origin-left ease-in-out hover:opacity-95'>
-                          <Obfuscate
-                            tel={'tel:402-302-0323'}
-                            linkText={'tel:000-000-0000'}
-                            className={'text-cream  '}
-                          >
+                          <Link href={'tel:402-302-0323'} className={'text-cream  '}>
                             402 302 0323
-                          </Obfuscate>
+                          </Link>
                         </address>
                       </li>
                     </ul>
@@ -131,7 +127,10 @@ export const Footer: NextPage = () => {
                 </div>
                 <div className='xl:pt-4 md:pr-4 hidden lg:block'>
                   <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
-                    <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                    <H3
+                      className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0'
+                      color='cream'
+                    >
                       more stuff
                     </H3>
                   </div>
@@ -145,7 +144,10 @@ export const Footer: NextPage = () => {
                 </div>
                 <div className='mb-0 pb-0 mt-4 xl:pt-4 md:pr-4 hidden lg:block'>
                   <div className='hidden lg:block mx-auto lg:mt-4 border-b-4 border-cream mb-4 max-w-xs md:pr-4'>
-                    <H3 className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0 text-cream'>
+                    <H3
+                      className='text-center md:text-left font-extrabold text-3xl  leading-none mt-0'
+                      color='cream'
+                    >
                       Services
                     </H3>
                   </div>
@@ -198,7 +200,7 @@ export const Footer: NextPage = () => {
               </div>
               <div className='w-full lg:py-4 xl:my-3'>
                 <div className='w-full' id='footer-social'>
-                  <Nav_SocialLinks color={'cream'} textSize={'text-2xl md:text-3xl'} />
+                  <Nav_SocialLinks color={'cream'} textSize='2xl' />
                 </div>
               </div>
               <div className='hidden lg:flex justify-center w-full my-3'>
@@ -212,11 +214,12 @@ export const Footer: NextPage = () => {
                 />
               </div>
               <div className='hidden lg:block text-center lg:mt-3'>
-                <Obfuscate
-                  linkText={'mailto:no@no.com'}
-                  email={'hello@pixelbakery.com'}
+                <Link
+                  href={'mailto:hello@pixelbakery.com'}
                   className={'text-cream  text-2xl font-extrabold mb-0 pb-0 leading-none'}
-                />
+                >
+                  hello@pixelbakery.com
+                </Link>
               </div>
             </div>
           </div>

@@ -70,19 +70,19 @@ function Home_Landing() {
               link={'/onboarding'}
               className={'w-full hover:animate-pulse'}
               bgColor={'peach'}
-              textColor={'pink-light'}
+              textColor={'pink-lighter'}
               chevronDirection='right'
             />
           </div>
           <div className='mx-auto w-full '>
-            <Nav_SocialLinks color={'peach'} textSize={'text-xl xl:text-3xl'} />
+            <Nav_SocialLinks color={'peach'} textSize={'2xl'} />
           </div>
           <div className='mt-2 pt-1 mx-auto relative w-full flex justify-center'>
             <Link
               href={'https://clients.pixelbakery.com'}
               className='relative inline-block text-peach no-underline text-center text-lg font-semibold duration-100 hover:scale-98 origin-center ease-in-out hover:opacity-95 center'
             >
-              Client Portal ↗️
+              Client Portal ↗
             </Link>
           </div>
         </div>

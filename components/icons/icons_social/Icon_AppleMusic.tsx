@@ -3,7 +3,7 @@ interface SVGRProps {
   title?: string
 }
 
-const SvgFacebook = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgAppleMusic = ({ title }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
@@ -11,7 +11,6 @@ const SvgFacebook = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) =
     fill='currentColor'
     className='facebook_svg__bi facebook_svg__bi-facebook'
     viewBox='0 0 16 16'
-    {...props}
   >
     {title ? <title>{title}</title> : null}
     <g>
@@ -35,4 +34,4 @@ const SvgFacebook = ({ title, ...props }: SVGProps<SVGSVGElement> & SVGRProps) =
   </svg>
 )
 
-export default SvgFacebook
+export default SvgAppleMusic

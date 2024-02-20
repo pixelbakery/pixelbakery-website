@@ -1,7 +1,7 @@
 import Button_Filled from '@parts/Button_Filled'
 import Nav_SocialLinks from './Nav_SocialLinks'
 
-const Nav_FullScreenMenu_CTA = ({ update }) => {
+const Nav_FullScreenMenu_CTA = ({ update }: any) => {
   return (
     <div className=''>
       <div className='flex justify-center w-full mt-4  lg:mt-8 2xl:mt-3' onClick={update}>
@@ -10,12 +10,12 @@ const Nav_FullScreenMenu_CTA = ({ update }) => {
           text={'Start a New Project'}
           link={'/onboarding'}
           bgColor={'peach'}
-          textColor={'pink-lighter'}
+          textColor={'pink-light'}
           chevronDirection='right'
         />
       </div>
       <div className='mx-auto mt-2'>
-        <Nav_SocialLinks color={'blue-dark'} textSize={'text-2xl md:text-3xl'} />
+        <Nav_SocialLinks color={'blue-dark'} textSize={'2xl'} />
       </div>
     </div>
   )

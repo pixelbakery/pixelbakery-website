@@ -79,7 +79,7 @@ const StrokeText = ({
         y='80%'
         id={`text-${index}`}
         className={cn(
-          'font-body w-full tracking-wider ',
+          'font-poppins w-full tracking-wider ',
           `${fontSize}`,
           `${fontWeight}`,
           `${strokeWidth}`,

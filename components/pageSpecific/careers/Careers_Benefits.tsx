@@ -14,7 +14,7 @@ const Careers_Benefits = () => {
           <div className='mx-4 px-4'>
             <div>
               <ul
-                className='text-blue font-body font-bold text-lg relative benefitslist'
+                className='text-blue font-poppins font-bold text-lg relative benefitslist'
                 id='awardslist1'
               >
                 <li className='my-3 benefit'>🐶 office dogs</li>

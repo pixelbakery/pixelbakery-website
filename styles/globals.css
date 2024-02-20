@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: 'Poppins', system-ui, sans-serif;
-  }
   body::-webkit-scrollbar,
   .changeScrollbar::-webkit-scrollbar {
     @apply w-2 cursor-pointer;
@@ -38,7 +35,45 @@
   ::-moz-selection {
     @apply bg-peach bg-opacity-90 text-white;
   }
+  html {
+    @apply font-poppins;
+  }
+  p,
+  ul,
+  ol,
+  blockquote {
+    @apply my-6;
+  }
+  blockquote {
+    @apply border border-l-8 border-wine-100 px-8 lg:px-16 py-3 my-6 italic;
+  }
+  p {
+    @apply text-lg text-wine my-4 pb-3 max-w-lg;
+  }
 
+  p a {
+    @apply underline text-peach underline-offset-4 hover:opacity-75 duration-200;
+  }
+
+  h1 {
+    @apply font-gilroy text-8xl;
+  }
+  h2 {
+    @apply font-dempsey text-6xl font-extrabold  text-peach my-8;
+  }
+  p.lead {
+    @apply mt-2 text-2xl pb-6 leading-relaxed;
+  }
+  sub {
+    @apply leading-none text-wine my-0 py-0;
+  }
+  label {
+    @apply text-lg text-wine mt-4 mb-2  font-bold block;
+  }
+  label.required::after {
+    content: ' *';
+    @apply text-sm align-top inline text-peach;
+  }
   input.form-border-b,
   textarea.form-border-b,
   select.form-border-b,
@@ -454,9 +489,9 @@ label.form-label {
     opacity: 1;
   }
 }
-.text-egg {
+/* .text-egg {
   color: rgb(243, 244, 246) !important;
-}
+} */
 .grid--wrapper {
   display: grid;
   grid-template-columns: 1fr min(65ch, calc(100% - 64px)) 1fr;

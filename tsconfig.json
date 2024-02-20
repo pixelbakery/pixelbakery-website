@@ -17,6 +17,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@/fonts": ["public/fonts"],
+      "@SocialIcons/*": ["components/icons/icons_social"],
       "@parts/*": ["components/parts/*"],
       "@components/*": ["components/components/*"],
       "@data/*": ["data/*"],
