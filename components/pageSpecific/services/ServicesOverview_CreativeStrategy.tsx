@@ -44,7 +44,7 @@ function ServicesOverview_CreativeStrategy() {
             is all about strategizing the best way to deliver your message.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Creative Strategy Services'}
             link={'/services/creative-strategy'}
             color={'blue'}
             chevronDirection='right'

@@ -45,7 +45,7 @@ const ServicesOverview_AnimatedExplainers = () => {
             accurately reflect the effort and consideration you’ve put into everything you’ve built.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Product Photography Services'}
             link={'/services/product-photography'}
             color={'pink'}
             chevronDirection='right'

@@ -22,7 +22,7 @@ function ServicesOverview_VideoProduction() {
             production and animation, there are no limits to what we can produce for your brand.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Video Production Services'}
             link={'/services/video-production'}
             color={'pink'}
             chevronDirection='right'

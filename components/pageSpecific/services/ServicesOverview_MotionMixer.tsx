@@ -20,7 +20,7 @@ function ServicesOverview_MotionMixer() {
               way that shouts your brand’s persona.
             </p>
             <Button_Outlined
-              text={'More'}
+              text={'Logo Animation Services'}
               link={'/logo-animation'}
               color={'blue'}
               chevronDirection='right'

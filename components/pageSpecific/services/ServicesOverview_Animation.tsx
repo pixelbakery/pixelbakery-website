@@ -25,7 +25,7 @@ function ServicesOverview_Animation() {
             products, we’ve got you covered.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Animation Services'}
             link={'/services/animation'}
             color={'blue-dark'}
             chevronDirection='right'

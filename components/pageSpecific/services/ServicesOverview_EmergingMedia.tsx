@@ -21,7 +21,7 @@ function ServicesOverview_EmergingMedia() {
             trends in marketing are ever-evolving. Why not evolve with them?
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Emerging Media Services'}
             link={'/services/emerging-media'}
             color={'blue-dark'}
             chevronDirection='right'

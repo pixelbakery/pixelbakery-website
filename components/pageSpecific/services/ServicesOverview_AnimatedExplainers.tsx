@@ -31,7 +31,7 @@ const ServicesOverview_AnimatedExplainers = () => {
             fast.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Animated Explainer Services'}
             link={'/services/animated-explainer-videos'}
             color={'blue'}
             chevronDirection='right'

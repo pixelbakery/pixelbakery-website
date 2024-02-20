@@ -44,7 +44,7 @@ function ServicesOverview_SocialMedia() {
             favorite platforms. We bring your feeds to life using dynamic content and motion design.
           </p>
           <Button_Outlined
-            text={'More'}
+            text={'Social Media Services'}
             link={'/services/social-media'}
             color={'blue-dark'}
             chevronDirection='right'
