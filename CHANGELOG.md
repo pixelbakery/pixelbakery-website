@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v6.0.0...v7.0.0) (2024-02-20)
+
+
+### Chores
+
+* prop types ([03ec792](https://github.com/pixelbakery/pixelbakery-website/commits/03ec7922cab2f08c35d812845a6c46782ce60365))
+* removed employee from about page ([f8d1a93](https://github.com/pixelbakery/pixelbakery-website/commits/f8d1a936a42af5add3bfb037c014fbdd0772769a))
+
 ## [6.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v5.6.3...v6.0.0) (2024-02-16)
 
 
