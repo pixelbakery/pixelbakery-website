@@ -40,7 +40,7 @@ function Onboarding_Calendly({ ...props }: Calendly) {
             Schedule a meeting
           </H2>
         )}
-        <Lead color='blue-dark text-center mx-auto mt-2' noMargins>
+        <Lead color='blue-dark' className='blue-dark text-center mx-auto mt-2' noMargins>
           Find a time that works best for you and your team.
         </Lead>
         <div className='xl:hidden mx-auto'>
