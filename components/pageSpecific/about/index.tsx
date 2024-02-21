@@ -1,5 +1,4 @@
 export { default as About_Awards } from '@about/About_Awards'
-export { default as About_FamilyPhotos } from '@about/About_FamilyPhotos'
 export { default as About_Faq_Card } from '@about/About_Faq_Card'
 export { default as About_Faq } from '@about/About_Faq'
 export { default as About_SEO } from '@about/About_SEO'
