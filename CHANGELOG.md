@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.1](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.0...v7.1.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* broken dependencies ([0b25b6b](https://github.com/pixelbakery/pixelbakery-website/commits/0b25b6b55c6b092739eb92b32542d987678cbd37))
+
+
+### Styling
+
+* recentered text ([23c73e6](https://github.com/pixelbakery/pixelbakery-website/commits/23c73e6bbf29432e537f52bb78aa002ba4f9ff2c))
+
+
+### Chores
+
+* **release:** 7.1.0 ([19edf5e](https://github.com/pixelbakery/pixelbakery-website/commits/19edf5eb070fc8636509ee50b1cc5d77f95cf8b1))
+
 ## [7.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.0.2...v7.1.0) (2024-02-20)
 
 
