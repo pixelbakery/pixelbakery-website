@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import mail from '@sendgrid/mail'
 
-mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
+mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string)
 
 export default async function sendJobApplication(req, res) {
   const body = JSON.parse(req.body)

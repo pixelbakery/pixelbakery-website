@@ -116,7 +116,7 @@ function Page_Careers_JobShadow() {
               </Lead>
               <p className='text-white text-2xl '>
                 Shoot us an email{' '}
-                <Link href={'careers@pixelbakery.com'} className={'underline text-white'}>
+                <Link href={'mailto:careers@pixelbakery.com'} className={'underline text-white'}>
                   careers@pixelbakery.com
                 </Link>{' '}
                 with any questions. Fill out the form and we can get something scheduled. In the
