@@ -9,9 +9,10 @@ type Props = {
   color: string
   chevronDirection?: string
   className?: string
+  title?: string
 }
 
-function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
+function Button_Filled({ title, center, text, link, color, chevronDirection }: Props) {
   let chevronRotation = ''
   if (chevronDirection === 'right') {
     chevronRotation = ''
@@ -30,6 +31,7 @@ function Button_Filled({ center, text, link, color, chevronDirection }: Props) {
     <Link
       hrefLang={'en-US'}
       href={link}
+      title={title}
       className={cn(
         'block my-3 py-3 rounded-lg px-6 w-full max-w-sm  text-center hover-99 shadow-none',
         `border-${color} border-4`,

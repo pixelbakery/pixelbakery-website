@@ -1,11 +1,11 @@
-import Onboarding_Calendly from '@onboarding/Onboarding_Calendly'
+import Onboarding_Book from '@onboarding/Onboarding_Book'
 import { NextSeo } from 'next-seo'
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 const Page_Book = () => {
   return (
     <>
-      <Onboarding_Calendly className='pt-48 lg:pt-56' h1={true} />
+      <Onboarding_Book className='pt-48 lg:pt-56' h1={true} />
       <NextSeo
         title={`Schedule A Meeting. Let's Get That Video Project Going`}
         description={`Let's talk about you and your project. Schedule either an in-person or virtual meeting with our leadership team.`}
