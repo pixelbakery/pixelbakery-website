@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.2](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.1...v7.1.2) (2024-02-22)
+
 ### [7.1.1](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.0...v7.1.1) (2024-02-21)
 
 
