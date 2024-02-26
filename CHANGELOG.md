@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.3](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.2...v7.1.3) (2024-02-26)
+
+
+### Features
+
+* added Sentry for site monitoring ([a1ee323](https://github.com/pixelbakery/pixelbakery-website/commits/a1ee323957906af1317d4badae2ad109f1bce1c3))
+
+
+### Bug Fixes
+
+* broken mailto link ([b241d80](https://github.com/pixelbakery/pixelbakery-website/commits/b241d80d5fb08e50f26cd39a44a3035c4c156fc0))
+
 ### [7.1.2](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.1...v7.1.2) (2024-02-22)
 
 ### [7.1.1](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.0...v7.1.1) (2024-02-21)
