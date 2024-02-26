@@ -33,6 +33,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@mailchimp/mailchimp_marketing": "^3.0.8",
     "@sendgrid/mail": "^8.1.0",
+    "@sentry/nextjs": "^7.102.1",
     "@vercel/speed-insights": "^1.0.1",
     "busboy": "1.6.0",
     "classnames": "^2.5.1",

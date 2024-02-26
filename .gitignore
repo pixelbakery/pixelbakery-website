@@ -48,3 +48,6 @@ public/img/blog/
 
 # Sentry
 .sentryclirc
+
+# Sentry Config File
+.sentryclirc
