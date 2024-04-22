@@ -1,0 +1,67 @@
+/* label {
+  @apply text-lg text-wine mt-4 mb-2  font-bold block;
+} */
+/* label.required::after {
+  content: ' *';
+  @apply text-sm align-top inline text-peach;
+} */
+input.form-border-b,
+textarea.form-border-b,
+select.form-border-b,
+.form-border-b input,
+.form-border-b select {
+  @apply rounded-md  border-blue bg-transparent my-1 py-4  text-wine text-opacity-70;
+}
+
+.config-select .switch {
+  @apply left-0 w-full;
+}
+.config-select input[type='radio']:checked + label {
+  @apply text-cream delay-300 ease-in-out duration-300;
+}
+.config-select input[type='radio']:nth-of-type(1):checked + label ~ .switch,
+.config-select input[type='radio']:nth-of-type(1):checked + label:nth-of-type(1) ~ .switch {
+  @apply transform  duration-300 ease-in-out -translate-y-[4.5rem] md:translate-y-0 md:w-[11.25rem] md:translate-x-7;
+}
+.config-select input[type='radio']:nth-of-type(2):checked + label ~ .switch,
+.config-select input[type='radio']:nth-of-type(2):checked + label:nth-of-type(2) ~ .switch {
+  @apply transition  duration-300 ease-in-out transform  -translate-y-[1.33rem] translate-x-0 md:translate-y-0  md:w-[9.5rem] md:translate-x-[11.5rem];
+}
+.config-select input[type='radio']:nth-of-type(3):checked + label ~ .switch,
+.config-select input[type='radio']:nth-of-type(3):checked + label:nth-of-type(3) ~ .switch {
+  @apply transition duration-300 ease-in-out transform  translate-y-[1.75rem] translate-x-0 md:translate-y-0 md:w-[9.1rem] md:translate-x-[20rem];
+}
+.config-select input[type='radio']:nth-of-type(4):checked + label ~ .switch,
+.config-select input[type='radio']:nth-of-type(4):checked + label:nth-of-type(4) ~ .switch {
+  @apply transition duration-300 ease-in-out transform translate-y-[5rem] translate-x-0 md:translate-y-0 md:w-[10.95rem] md:translate-x-[28.25rem];
+}
+
+label.radio-button {
+  @apply border-blue border-2 bg-transparent rounded-xl font-semibold py-2   text-lg text-wine-500 cursor-pointer focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark peer-checked:bg-blue peer-checked:text-cream hover:scale-98 duration-300 mt-2 w-20 text-center;
+}
+
+
+input.form-submit {
+  @apply bg-blue text-lg font-bold text-cream rounded-md px-8 py-3  cursor-pointer hover:scale-98 duration-300 disabled:hover:scale-100 disabled:bg-opacity-30;
+}
+/* .skills__control {
+  @apply cursor-pointer bg-transparent border-2 border-blue rounded-xl pl-8 py-2 focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark !important;
+}
+.skills__menu,
+.skills__menuPortal,
+.skills__menuList {
+  @apply cursor-pointer overflow-y-scroll !important;
+}
+.skills__menu::-webkit-scrollbar-thumb,
+.skills__menuList::-webkit-scrollbar-thumb,
+.skills__menuPortal::-webkit-scrollbar-thumb {
+  @apply bg-peach rounded-md cursor-pointer !important;
+}
+.skills__control--is-focused {
+  @apply ring-1 border-blue-dark ring-blue-dark !important;
+}
+.skills__multi-value__remove {
+  @apply hover:bg-wine-100 hover:border-cream hover:text-wine-400 !important;
+} */
+
+
