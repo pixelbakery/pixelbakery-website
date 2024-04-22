@@ -18,17 +18,13 @@ import {
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 
-// import About_FamilyPhotos from '@about/About_FamilyPhotos'
-
 const Page_About = ({ allPeople }: any) => {
   return (
     <>
       <PageHeader_VarH header='About' subheader='Just add flour.' />
       <About_Team allPeople={allPeople} />
       <About_Values />
-      {/* <About_FamilyPhotos /> */}
       <About_Spotify />
-      {/* <About_Twitch /> */}
       <About_Awards />
       <About_Faq />
       <About_SEO />

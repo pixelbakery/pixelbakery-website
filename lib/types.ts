@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 export type Song = {
   songUrl: string
   artist: string
@@ -42,4 +43,7 @@ export interface Uploader {
     file: File,
     onProgress?: (bytesUploaded: number, bytesTotal: number) => void,
   ): Promise<MediaItem>
+}
+export type Children {
+ children: ReactNode
 }
