@@ -17,6 +17,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@forms": ["components/forms/forms_parts/index"],
       "@fonts/*": ["fonts/*"],
       "@SocialIcons/*": ["components/icons/icons_social"],
       "@parts/*": ["components/parts/*"],
@@ -42,7 +43,6 @@
       "@nav/*": ["components/nav/*"],
       "@lib/*": ["lib/*"],
       "@types/*": ["types/*"],
-      "@hooks/*": ["hooks/*"],
       "@styles/*": ["styles/*"],
       "@typography/*": ["components/typography/*"],
       "@utility/*": ["components/utility/*"]
@@ -53,7 +53,7 @@
         "name": "next"
       }
     ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js", "types/**/*", "fonts/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js", "fonts/**/*"],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }
