@@ -8,7 +8,25 @@ Link to XD Mockups: [HERE](https://xd.adobe.com/view/a95dc4ca-cea6-4af3-be90-78a
 
 Link to Production Server: [pixelbakery.netlify.app](https://pixelbakery.netlify.app)
 
-#### Project Previews
+## Image/Video Dimensions
+
+**Blog Headers:** 1280 × 960px
+**Career Post Headers:** 1280 × 960px
+**Client Logos:** 256 × 256px
+**Tutorial Thumbnails:** 300 x 400px
+**Case Studies, Storyboards:** 1920 × 1080px
+**Case Studies, Testimonial Headshots:** 150 x 150px
+**Case Studies, Image Thumbnails:** 960 × 540px
+**Case Studies, Video Thumbnails:** 720 × 404px
+**Case Studies, Older Image Thumbnails:**854 × 480
+**Case Studies, Older Video Thumbnails:** 544 × 310px
+**Motion Mixer Videos:** 540 × 540px
+**Services Animations:** 1440 × 1920px
+**Store, Item Video:** 800 × 600px
+**Store, Item Thumbnail:** 960 × 720px
+**Page OG Meta Images:** 800 x 600px, 800 x 800px, 1280 x 720px
+
+## Project Previews
 
 Project previews are what is displayed on the /work page. There are three critical items that need to be added for this.
 
