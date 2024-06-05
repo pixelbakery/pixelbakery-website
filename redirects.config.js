@@ -2,6 +2,16 @@
 
 const redirectsArray = [
   {
+    source: '/sale/buy-it',
+    destination: 'https://forms.monday.com/forms/a781a619bedf20ceedb03c360dfd6b22?r=use1',
+    permanent: true,
+  },
+  {
+    source: '/sale/see-it',
+    destination: 'https://view.monday.com/6691762875-dab7c9039f34ce37740d16e152af59d2?r=use1',
+    permanent: true,
+  },
+  {
     source: '/recipes/tutorial-after-effects',
     destination: '/recipes',
     permanent: true,
