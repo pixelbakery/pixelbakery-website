@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.3...v7.2.0) (2024-06-05)
+
+
+### Features
+
+* added new helpers ([d3ec889](https://github.com/pixelbakery/pixelbakery-website/commits/d3ec8894cc5798d4a89b62c29bf2765cfa61e62c))
+* laid foundation for new form parts ([53c48ba](https://github.com/pixelbakery/pixelbakery-website/commits/53c48babefc3d61da807184112177fe4c5d70f0b))
+* laid foundation for new form parts ([79af638](https://github.com/pixelbakery/pixelbakery-website/commits/79af6380a90d3b5596c2b2e15a9834a7bc63a07e))
+
+
+### Documentation
+
+* added video/image dimensions section ([2024318](https://github.com/pixelbakery/pixelbakery-website/commits/20243188985da708ef2887a0f413148e261e6d86))
+
+
+### Chores
+
+* added inventory sales redirects ([30fdbdd](https://github.com/pixelbakery/pixelbakery-website/commits/30fdbdd4b31f0f965bbb85bc40076a265bcac491))
+* upgraded packages ([bf13986](https://github.com/pixelbakery/pixelbakery-website/commits/bf1398644eabe2796d544e80fd3da8128f37e4c1))
+
 ### [7.1.3](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.2...v7.1.3) (2024-02-26)
 
 
