@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.2.0...v7.3.0) (2024-06-05)
+
+
+### Chores
+
+* added blog post and updated deps ([5bbe848](https://github.com/pixelbakery/pixelbakery-website/commits/5bbe848c9f884886a9e7af7804a68a615e6ec780))
+
 ## [7.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.1.3...v7.2.0) (2024-06-05)
 
 
