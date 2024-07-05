@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.3.0...v7.5.0) (2024-07-05)
+
+
+### Chores
+
+* added IndexNow file for ahrefs ([e4fe0e9](https://github.com/pixelbakery/pixelbakery-website/commits/e4fe0e98909a2b335d402beb47335e3e10b53709))
+
 ## [7.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.3.0...v7.4.0) (2024-07-05)
 
 ## [7.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.2.0...v7.3.0) (2024-06-05)
