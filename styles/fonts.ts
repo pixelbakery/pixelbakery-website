@@ -93,46 +93,46 @@ const poppins = localFont({
 /*              GILROY                    */
 /******************************************/
 
-// const gilroy = localFont({
-//   preload: true,
-//   display: 'swap',
-//   src: [
-//     // SemiBold (600)
-//     {
-//       path: '../public/fonts/gilroy/gilroy-bold.woff2',
-//       weight: '600',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../public/fonts/gilroy/gilroy-bolditalic.woff2',
-//       weight: '600',
-//       style: 'italic',
-//     },
-//     // Bold (700)
-//     {
-//       path: '../public/fonts/gilroy/gilroy-extrabold.woff2',
-//       weight: '700',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../public/fonts/gilroy/gilroy-extrabolditalic.woff2',
-//       weight: '700',
-//       style: 'italic',
-//     },
-//     // ExtraBold (800)
-//     {
-//       path: '../public/fonts/gilroy/gilroy-black.woff2',
-//       weight: '800',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../public/fonts/gilroy/gilroy-blackitalic.woff2',
-//       weight: '800',
-//       style: 'italic',
-//     },
-//   ],
+const gilroy = localFont({
+  preload: true,
+  display: 'swap',
+  src: [
+    // SemiBold (600)
+    {
+      path: '../public/fonts/gilroy/gilroy-bold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/gilroy/gilroy-bolditalic.woff2',
+      weight: '600',
+      style: 'italic',
+    },
+    // Bold (700)
+    {
+      path: '../public/fonts/gilroy/gilroy-extrabold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/gilroy/gilroy-extrabolditalic.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+    // ExtraBold (800)
+    {
+      path: '../public/fonts/gilroy/gilroy-black.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/gilroy/gilroy-blackitalic.woff2',
+      weight: '800',
+      style: 'italic',
+    },
+  ],
 
-//   variable: '--font-gilroy',
-// })
+  variable: '--font-gilroy',
+})
 
-export { poppins, dempsey }
+export { poppins, dempsey, gilroy }

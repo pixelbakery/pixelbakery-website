@@ -43,7 +43,7 @@ yarn-error.log*
 
 .prettierignore
 
-public/img/blog/
+public/img/blog/*
 .vscode/settings.json
 
 # Sentry

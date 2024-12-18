@@ -1,6 +1,6 @@
 import type { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
-import { dempsey, poppins } from '@styles/fonts'
+import { dempsey, poppins, gilroy } from '@styles/fonts'
 type Props = {
   children?: ReactNode
   id?: string
@@ -17,7 +17,7 @@ const Main = ({ children, id, className }: PropsWithChildren<Props>) => {
         className,
       )}
     >
-      <div className={`${dempsey.variable} ${poppins.variable}`}></div>
+      <div className={`${dempsey.variable} ${poppins.variable} ${gilroy.variable}`}></div>
       {children}
     </main>
   )
