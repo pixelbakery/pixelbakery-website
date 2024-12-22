@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Link from 'next/link'
-
+import faqData from '@data/faq_socialMedia'
 import {
   Services_AllServices,
   Services_OurApproach,
@@ -12,6 +12,11 @@ import {
 } from '@services/index'
 import Work_Industries from '@work/Work_Industries'
 function Page_Services_SocialMedia() {
+  const faqs = faqData
+  if (!faqs || !Array.isArray(faqs)) {
+    console.error('FAQs data is missing or invalid')
+    return null
+  }
   return (
     <>
       <Services_Header
@@ -20,6 +25,7 @@ function Page_Services_SocialMedia() {
         subheader={'We create capitvating and engaging social ecosystems'}
         bgColor={'yellow'}
         videoSourceMP4={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/services/PB_ServiceAniamtion_SocialMedia.mp4`}
+        id={'multichannel-videos'}
       >
         <p className='mt-6 leading-loose'>
           You typically have 5 seconds to grab the attention of your user base on social media. In a
@@ -47,7 +53,7 @@ function Page_Services_SocialMedia() {
     </>
   )
 }
-//Set page layout
+
 Page_Services_SocialMedia.getLayout = function getLayout(page: ReactElement) {
   return <Layout_Defaualt>{page}</Layout_Defaualt>
 }
