@@ -1,7 +1,25 @@
 import H3 from '@typography/H3'
 import Recipes_FeaturedPost from './Recipes_FeaturedPost'
 
-const Recipes_Posts_Related = ({ relatedPosts }) => {
+type Post = {
+  filePath: string
+  data: {
+    title: string
+    author: {
+      name: string
+    }
+    categories: string[]
+    date: string
+    coverImage: string
+    excerpt: string
+  }
+}
+
+type RecipesPostsRelatedProps = {
+  relatedPosts: Post[]
+}
+
+const Recipes_Posts_Related = ({ relatedPosts }: RecipesPostsRelatedProps) => {
   return (
     <section className='px-6 py-12 my-4 bg-pink-lighter' id='blog-related'>
       <div className='mx-auto md:max-w-6xl'>
@@ -30,9 +48,9 @@ const Recipes_Posts_Related = ({ relatedPosts }) => {
             )
           })}
         </div>
-        <div className='grid grid-cols-3 gap-8 my-8 '></div>
       </div>
     </section>
   )
 }
+
 export default Recipes_Posts_Related
