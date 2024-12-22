@@ -23,7 +23,7 @@ const H2AndLead = ({
   center,
 }: PropsWithChildren<Props>) => {
   return (
-    <div className={cn([`${className}`])}>
+    <hgroup className={cn([`${className}`])} itemScope itemType='https://schema.org/CreativeWork'>
       <H2
         noMargins={true}
         className={cn(' mb-4', [`${textColorVariants[headerColor]}`], {
@@ -31,6 +31,8 @@ const H2AndLead = ({
         })}
       >{`${headerText}`}</H2>
       <p
+        role='doc-subtitle'
+        itemProp='alternativeHeadline'
         className={cn(
           'text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg lg:mb-12',
           [`${textColorVariants[headerColor]}`],
@@ -40,7 +42,7 @@ const H2AndLead = ({
       >
         {leadText}
       </p>
-    </div>
+    </hgroup>
   )
 }
 

@@ -33,6 +33,7 @@ type Props = {
   videoSourceMP4?: string
   videoSourceWEBM?: string
   bgColor: string
+  id: string
 }
 
 function Services_Header({
@@ -43,6 +44,7 @@ function Services_Header({
   videoSourceMP4,
   subheader,
   children,
+  id,
 }: PropsWithChildren<Props>) {
   const VideoContent = () => {
     return (
@@ -73,15 +75,18 @@ function Services_Header({
   }
 
   return (
-    <section className='lander-services my-4  overflow-hidden h-full xl:h-screen xl:max-h-screen'>
-      <div className=' grid gap-y-12 md:gap-3 grid-cols-1 xl:grid-cols-2 h-full'>
+    <section
+      className='h-full my-4 overflow-hidden lander-services xl:h-screen xl:max-h-screen'
+      id={id}
+    >
+      <div className='grid h-full grid-cols-1  gap-y-12 md:gap-3 xl:grid-cols-2'>
         <div className={cn(`overflow-hidden h-[66vh] col-span-1  xl:h-full`, `bg-${bgColor}`)}>
           {isLottie ? <LottiePlayer anim={lottieComponent} /> : <VideoContent />}
         </div>
-        <div className=' col-span-1 flex flex-col justify-start py-6 px-10 '>
-          <div className='xl:pt-40 max-w-lg 4xl:max-w-3xl mx-auto'>
+        <div className='flex flex-col justify-start col-span-1 px-10 py-6 '>
+          <div className='max-w-lg mx-auto xl:pt-40 4xl:max-w-3xl'>
             <BackLink text={'Services'} href={'/services'} />
-            <H1 color='blue-dark' className='mt-2 pt-0 mb-4 2xl:mb-2'>
+            <H1 color='blue-dark' className='pt-0 mt-2 mb-4 2xl:mb-2'>
               {serviceName}
             </H1>
             <Lead color='peach'>{`${subheader}`}</Lead>

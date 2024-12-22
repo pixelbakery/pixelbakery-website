@@ -12,12 +12,11 @@ const Main = ({ children, id, className }: PropsWithChildren<Props>) => {
     <main
       id={id}
       className={cn(
-        'max-w-screen overflow-hidden',
-
+        `max-w-screen overflow-x-hidden ${dempsey.variable} ${poppins.variable} ${gilroy.variable}`,
         className,
       )}
     >
-      <div className={`${dempsey.variable} ${poppins.variable} ${gilroy.variable}`}></div>
+      {/* <div className={`${dempsey.variable} ${poppins.variable} ${gilroy.variable}`}></div> */}
       {children}
     </main>
   )

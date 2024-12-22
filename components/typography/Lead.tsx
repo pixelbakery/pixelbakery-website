@@ -13,6 +13,8 @@ type Props = {
 const Lead = ({ color = 'blue', children, className, noMargins }: PropsWithChildren<Props>) => {
   return (
     <p
+      role='doc-subtitle'
+      itemProp='alternativeHeadline'
       className={cn(
         'text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg',
         { [`lg:mb-12 `]: !noMargins },

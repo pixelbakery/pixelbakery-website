@@ -16,7 +16,7 @@ type Props = {
 const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props) => {
   return (
     <header className='mt-44'>
-      <section className='px-6 md:max-w-3xl mx-auto '>
+      <section className='px-6 mx-auto md:max-w-3xl '>
         <div className='' id='blog-body-intro'>
           <div className='mb-6'>
             <div className='mb-6'>
@@ -27,9 +27,9 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                 size={'md'}
               />
             </div>
-            <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{frontMatter.title}</h1>
+            <h1 className='mt-3 text-4xl text-blue-dark md:text-6xl'>{frontMatter.title}</h1>
             <div
-              className='my-3 inline-block text-lg md:text-xl font-bold md:font-semibold text-wine opacity-80 max-w-lg'
+              className='inline-block max-w-lg my-3 text-lg font-bold md:text-xl md:font-semibold text-wine opacity-80'
               role='doc-subtitle '
             >
               {frontMatter.subtitle}
@@ -42,7 +42,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                 as={`/about/${matchingBio.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/about/[slug]`}
                 hrefLang={'en-US'}
-                className='w-12 h-12 rounded-full relative cursor-pointer overflow-hidden'
+                className='relative w-12 h-12 overflow-hidden rounded-full cursor-pointer'
               >
                 <Image
                   placeholder='blur'
@@ -51,7 +51,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                   height={124}
                   alt={frontMatter.author.name}
                   quality={75}
-                  className='w-full h-full object-cover'
+                  className='object-cover w-full h-full'
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
                 />
                 {matchingBio.data.avatar ? (
@@ -62,7 +62,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                     height={124}
                     alt={frontMatter.author.name}
                     quality={75}
-                    className='object-center object-cover'
+                    className='object-cover object-center'
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.avatar}`}
                   />
                 ) : matchingBio.data.headshotSmiling ? (
@@ -74,7 +74,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                     height={124}
                     alt={frontMatter.author.name}
                     quality={25}
-                    className='object-top scale-175 object-cover'
+                    className='object-cover object-top scale-175'
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${matchingBio.data.headshotSmiling}`}
                   />
                 ) : (
@@ -93,7 +93,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
               </Link>
             ) : (
               // If there isn't a match, use a placeholder image and don't link anywhere
-              <div className='animate-spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
+              <div className='relative w-12 h-12 overflow-hidden rounded-full animate-spin-slow'>
                 <Image
                   placeholder='blur'
                   blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder01.png`}
@@ -109,7 +109,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
 
             <div className={cn('ml-4 flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
-                <DateFormatter dateString={date} />
+                <DateFormatter dateString={date as any} />
                 <span className='mx-2'>|</span>
                 <span>{readTime.minutes.toString()} min read</span>
               </div>
@@ -133,13 +133,13 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
           </div>
         </div>
       </section>
-      <div className=' md:max-w-6xl mx-auto mb-24 '>
+      <div className='mx-auto mb-24  md:max-w-6xl'>
         {frontMatter.video != null ? (
-          <div className='w-full   bg-peach mx-auto'>
+          <div className='w-full mx-auto bg-peach'>
             <Video url={frontMatter.video} poster={frontMatter.coverImage} />
           </div>
         ) : (
-          <div className='relative w-full  aspect-w-4 aspect-h-3  mx-auto'>
+          <div className='relative w-full mx-auto aspect-w-4 aspect-h-3'>
             <Image
               priority={true}
               className='object-cover object-center '

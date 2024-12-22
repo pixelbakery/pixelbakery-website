@@ -5,6 +5,7 @@ import { dempsey, poppins, gilroy } from '@styles/fonts'
 const MyDocument = () => {
   return (
     <Html lang='en-US' className={`${dempsey.variable} ${poppins.variable} ${gilroy.variable} `}>
+      {/* <Html lang='en-US'> */}
       <Head></Head>
       <body className={`px-4 bg-egg max-w-screen overflow-x-hidden`}>
         <Main />
