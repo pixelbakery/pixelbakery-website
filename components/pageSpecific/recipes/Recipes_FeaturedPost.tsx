@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Pill from '@parts/Pill'
 import DateFormatter from '../../../lib/date-formatter'
-
+import CustomImage from '@parts/CustomImage'
+import Image from 'next/image'
 interface Props {
   title: string
   coverImage: string
@@ -44,12 +44,12 @@ const Recipes_FeaturedPost = ({
           }
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
+            src={`${coverImage}`}
             placeholder='blur'
             width={width}
             height={height}
-            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
-            quality={25}
+            blurDataURL={`${coverImage}`}
+            quality={75}
             className='object-cover object-center w-full h-full'
             alt={`cover photo for ${title}, written by ${author}`}
           />
@@ -58,13 +58,13 @@ const Recipes_FeaturedPost = ({
             <Pill text={categories[0]} bgColor={'blue'} textColor={'cream'} size='xs' />
           </div>
         </div>
-        <div className='mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+        <div className='z-20 flex flex-col justify-between p-2 mt-2 h-100'>
           <div className=''>
-            <div className='text-sm text-wine text-opacity-75'>
+            <div className='text-sm text-opacity-75 text-wine'>
               <span className='hidden md:inline'>{author} – </span>{' '}
               <DateFormatter dateString={date} />
             </div>
-            <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+            <h3 className='font-semibold leading-none text-md md:text-xl text-wine line-clamp-3'>
               {title}
             </h3>
           </div>
