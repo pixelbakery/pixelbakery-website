@@ -1,13 +1,32 @@
-import Button_Filled from '@parts/Button_Filled'
-import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import React from 'react'
+import ButtonFilled from '@parts/Button_Filled'
+import RecipesFeaturedPost from '@recipes/Recipes_FeaturedPost'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
 import H2 from '@typography/H2'
 
-const getSecondaryPosts = ({ allPosts }) => {
-  return allPosts.map((post) => {
-    return (
-      <Recipes_FeaturedPost
+// Type definition for a single post
+interface Post {
+  filePath: string
+  data: {
+    title: string
+    author: { name: string }
+    categories: string[]
+    date: string
+    coverImage: string
+    excerpt: string
+  }
+}
+
+// Type definition for the props of HomeRecipes component
+interface HomeRecipesProps {
+  allPosts: Post[]
+}
+
+const SecondaryPosts = ({ allPosts }: HomeRecipesProps) => (
+  <>
+    {allPosts.map((post) => (
+      <RecipesFeaturedPost
         as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
         href={`/recipes/[slug]`}
         key={post.filePath}
@@ -15,26 +34,26 @@ const getSecondaryPosts = ({ allPosts }) => {
         author={post.data.author.name}
         categories={post.data.categories}
         date={post.data.date}
-        aspectW={'3'}
-        aspectY={'4'}
+        aspectW='3'
+        aspectY='4'
         coverImage={post.data.coverImage}
         excerpt={post.data.excerpt}
         width={273}
         height={364}
       />
-    )
-  })
-}
+    ))}
+  </>
+)
 
-function Home_Recipes({ allPosts }) {
+const HomeRecipes = ({ allPosts }: HomeRecipesProps) => {
   return (
-    <PageSection id={'recipes'}>
+    <PageSection id='recipes'>
       <InnerWrapper>
         <H2>Mom&apos;s Recipes</H2>
-        <div className='my-16 grid grid-cols-2  sm:grid-cols-4  gap-4 md:gap-y-20 md:gap-5'>
-          {getSecondaryPosts({ allPosts })}
+        <div className='grid grid-cols-2 gap-4 my-16 sm:grid-cols-4 md:gap-y-20 md:gap-5'>
+          <SecondaryPosts allPosts={allPosts} />
         </div>
-        <Button_Filled
+        <ButtonFilled
           text='we got more'
           link='/recipes'
           chevronDirection='right'
@@ -46,4 +65,4 @@ function Home_Recipes({ allPosts }) {
     </PageSection>
   )
 }
-export default Home_Recipes
+export default HomeRecipes

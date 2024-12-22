@@ -10,11 +10,12 @@ interface Props {
   bgPosition: string
   project: any
 }
+const IMAGE_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX || ''
 const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
   const datePostedISO = new Date(project.data.date).toISOString()
 
   return (
-    <article className='w-full  lg:w-3/5 2xl:w-full px-1'>
+    <article className='w-full px-1 lg:w-3/5 2xl:w-full'>
       <div
         className={cn(
           'relative home-portfolio rounded-md  aspect-w-16 aspect-h-9 z-10',
@@ -22,7 +23,7 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
           bgPosition,
         )}
       >
-        <div className='absolute block w-full h-full rounded-md overflow-hidden'>
+        <div className='absolute block w-full h-full overflow-hidden rounded-md'>
           <Link
             as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
@@ -36,11 +37,11 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
               preload='true'
               loop
               autoPlay={true}
-              poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
-              className='block relative object-cover w-full h-full scale-101 shadow-xl overflow-hidden'
+              poster={`${IMAGE_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+              className='relative block object-cover w-full h-full overflow-hidden shadow-xl scale-101'
             >
               <source
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
+                src={`${IMAGE_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
                 type='video/mp4'
               />
             </video>
@@ -51,15 +52,15 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
         as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
         href={`/work/case-studies/[slug]`}
       >
-        <div className='mt-6 pt-4 lg:mt-12 cursor-pointer'>
-          <span className='text-pink text-2xl font-bold mb-0 pb-0 leading-none'>
+        <div className='pt-4 mt-6 cursor-pointer lg:mt-12'>
+          <span className='pb-0 mb-0 text-2xl font-bold leading-none text-pink'>
             {project.data.client}
           </span>
           <H3 className='text-wine'>{project.data.title}</H3>
-          <p className='text-wine opacity-60 text-md font-medium lg:w-2/3 leading-snug pt-2 pb-2'>
+          <p className='pt-2 pb-2 font-medium leading-snug text-wine opacity-60 text-md lg:w-2/3'>
             {project.data.excerpt}
           </p>
-          <div className='flex justify-start gap-2 flex-wrap mt-6'>
+          <div className='flex flex-wrap justify-start gap-2 mt-6'>
             {Object.entries(project.data.tags)
               .slice(0, 3)
               .map(([index, tag]) => {
