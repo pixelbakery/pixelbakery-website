@@ -42,9 +42,10 @@
       "@pageHeaders/*": ["components/pageHeaders/*"],
       "@nav/*": ["components/nav/*"],
       "@lib/*": ["lib/*"],
-      "@types/*": ["types/*"],
+      "@types": ["./types/index"],
       "@styles/*": ["styles/*"],
       "@typography/*": ["components/typography/*"],
+      "@typography": ["./components/typography/index"],
       "@utility/*": ["components/utility/*"]
     }
   },

@@ -3,7 +3,7 @@
 // @ts-nocheck
 import Image from 'next/image'
 import useSWR from 'swr'
-import { Playlist } from '@lib/types'
+import { Playlist } from '@types'
 import fetcher from '@lib/fetcher'
 import { pluralize } from '@lib/helpers'
 import H3 from '@typography/H3'
@@ -15,15 +15,15 @@ export default function Spotify_Playlist() {
     return null
   }
   return (
-    <div className='bg-white h-full py-4 flex flex-col px-4'>
-      <div className='flex flex-col xl:flex-row gap-12 xl:my-4 xl:py-4'>
+    <div className='flex flex-col h-full px-4 py-4 bg-white'>
+      <div className='flex flex-col gap-12 xl:flex-row xl:my-4 xl:py-4'>
         <a
           href={data.external_urls.spotify}
           className={'hidden xl:block cursor-pointer'}
           target='_blank'
           rel='noreferrer'
         >
-          <div className='absolute xl:relative w-32 h-32 overflow-hidden'>
+          <div className='absolute w-32 h-32 overflow-hidden xl:relative'>
             <Image
               src={data.albumCoverImage}
               alt='Pixel Bakery Spotify Playlist'
@@ -44,30 +44,30 @@ export default function Spotify_Playlist() {
             // target='_blank'
             // rel='noopener'
           >
-            <H3 color='peach' className='mb-1 md:mb-0 2xl:mb-0 mt-0 pt-0'>
+            <H3 color='peach' className='pt-0 mt-0 mb-1 md:mb-0 2xl:mb-0'>
               {data.name}
             </H3>
-            <p className='italic text-wine-400 xl:mb-0 text-lg font-medium mt-0 pt-0 mb-0 pb-0'>
+            <p className='pt-0 pb-0 mt-0 mb-0 text-lg italic font-medium text-wine-400 xl:mb-0'>
               {' '}
               {data.description ? data.description : ''}
             </p>
             <a
-              className='bg-peach  text-cream px-8 py-1 my-1 rounded-xl font-semibold drop-shadow-sm inline-block duration-300 transition-all ease-in-out hover:drop-shadow-xs hover:scale-98'
+              className='inline-block px-8 py-1 my-1 font-semibold transition-all duration-300 ease-in-out bg-peach text-cream rounded-xl drop-shadow-sm hover:drop-shadow-xs hover:scale-98'
               href={data.external_urls.spotify}
               target='_blank'
               rel='noopener noreferrer'
             >
-              Play <span className=' my-auto ml-3'>▶</span>
+              Play <span className='my-auto ml-3 '>▶</span>
             </a>
           </div>
-          <p className=' my-1 py-0 text-xs md:text-sm xl:text-md text-wine '>
+          <p className='py-0 my-1 text-xs  md:text-sm xl:text-md text-wine'>
             {pluralize(data.followers.total, 'follower')}, {pluralize(data.tracks.total, 'song')},{' '}
             {data.albumLength}
           </p>
         </div>
       </div>
-      <div className='bg-cream py-3 h-full overflow-auto'>
-        <div className='changeScrollbar h-full overflow-y-scroll bg-cream px-1 xl:px-4 '>
+      <div className='h-full py-3 overflow-auto bg-cream'>
+        <div className='h-full px-1 overflow-y-scroll changeScrollbar bg-cream xl:px-4 '>
           <ul className='grid gap-1 xl:gap-2'>
             {data.tracksSelected.map((track, index) => (
               <li className='my-0' key={index}>
@@ -78,23 +78,23 @@ export default function Spotify_Playlist() {
                   rel='noopener noreferrer'
                 >
                   <div className='flex gap-1 xl:gap-x-4'>
-                    <div className='relative h-12 w-12 overflow-hidden'>
+                    <div className='relative w-12 h-12 overflow-hidden'>
                       <Image
                         src={track.albumArt}
                         width={12}
                         height={12}
                         unoptimized={true}
                         quality={25}
-                        className='h-12 w-12 object-cover'
+                        className='object-cover w-12 h-12'
                         alt={`${track.artist} – ${track.album}`}
                       />
                     </div>
 
                     <div className='flex flex-col justify-center'>
-                      <p className='line-clamp-2 text-wine mt-0 mb-1 py-0 leading-none text-sm xl:text-md'>
+                      <p className='py-0 mt-0 mb-1 text-sm leading-none line-clamp-2 text-wine xl:text-md'>
                         {track.title}
                       </p>
-                      <span className='line-clamp-1 my-0 py-0 leading-none text-wine text-opacity-75 text-xs'>
+                      <span className='py-0 my-0 text-xs leading-none text-opacity-75 line-clamp-1 text-wine'>
                         {track.artist} – {track.album}
                       </span>
                     </div>
@@ -106,7 +106,7 @@ export default function Spotify_Playlist() {
         </div>
       </div>
       {/* <div className='h-3/4'>
-        <div className='h-full   bg-blue overflow-y-scroll'>
+        <div className='h-full overflow-y-scroll bg-blue'>
      
         </div>
       </div> */}
