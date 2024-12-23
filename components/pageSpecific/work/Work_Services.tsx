@@ -10,19 +10,19 @@ function Work_Services() {
     <PageSection color={'white'} id='whatwemake'>
       <InnerWrapper>
         <div className='grid grid-cols-2 gap-12'>
-          <div className='col-span-2 xl:col-span-1 grid grid-cols-2'>
+          <div className='grid grid-cols-2 col-span-2 xl:col-span-1'>
             <div className='col-span-1 lg:col-span-2'>
-              <H2 className='text-blue-dark pr-8'>We&apos;re a specialized team</H2>
+              <H2 className='pr-8 text-blue-dark'>We&apos;re a specialized team</H2>
             </div>
             <div className='col-span-2'>
-              <Lead color='pink'>we do a few things and we do them well.</Lead>
+              <Lead color='pink'>We do a few things and we do them well.</Lead>
               <Lead color='pink'>
-                we&apos;re like a scalpel; <br /> we operate with precision and intent.
+                We&apos;re like a scalpel; <br /> we operate with precision and intent.
               </Lead>
-              <Lead color='pink'>but, like, keyframes instead of open heart surgery.</Lead>
+              <Lead color='pink'>But, like, keyframes instead of open heart surgery.</Lead>
             </div>
           </div>
-          <div className=' col-span-2 xl:col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-3  '>
+          <div className='grid grid-cols-1 col-span-2 gap-3  xl:col-span-1 sm:grid-cols-2'>
             {services.map((service) => (
               <Work_Services_Card
                 service={service.service}
