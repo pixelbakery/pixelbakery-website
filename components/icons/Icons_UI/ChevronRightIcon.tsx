@@ -1,12 +1,14 @@
-const ChevronRightIcon = () => {
+import type { SVGProps } from 'react'
+const ChevronRightIcon = ({ fill = 'currentColor', ...props }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox='0 0 9.6 16'
-      fill='currentColor'
+      fill={fill}
       xmlns='http://www.w3.org/2000/svg'
       width='1em'
       height='1em'
       aria-hidden='true'
+      {...props}
     >
       <path
         d='M12.3,7L5.7,0.4C5.5,0.1,5.1,0,4.8,0c0,0,0,0,0,0c-0.4,0-0.7,0.1-1,0.4c-0.5,0.5-0.5,1.4,0,1.9L9.4,8l-5.6,5.7
