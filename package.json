@@ -32,6 +32,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
     "@mailchimp/mailchimp_marketing": "^3.0.8",
+    "@next/font": "^14.2.15",
     "@sendgrid/mail": "^8.1.0",
     "@sentry/nextjs": "^7.103.0",
     "@sentry/profiling-node": "^7.103.0",
