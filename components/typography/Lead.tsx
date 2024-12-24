@@ -16,7 +16,7 @@ const Lead = ({ color = 'blue', children, className, noMargins }: PropsWithChild
       role='doc-subtitle'
       itemProp='alternativeHeadline'
       className={cn(
-        'text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg',
+        'font-geologica text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg',
         { [`lg:mb-12 `]: !noMargins },
         { [`${textColorVariants[color]}`]: color != undefined && 'text-blue' },
         { [`${className}`]: className },

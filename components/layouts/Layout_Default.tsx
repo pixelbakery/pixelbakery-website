@@ -1,5 +1,5 @@
 import Navigation from '@nav/Navigation'
-import Footer from '@footer/Footer'
+import { Footer } from '@footer'
 import Meta from '@parts/Meta'
 import BackToTop from '@utility/BackToTop'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'

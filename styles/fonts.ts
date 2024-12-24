@@ -1,11 +1,19 @@
 import localFont from 'next/font/local'
+import { Geologica } from 'next/font/google'
+
+const geologica = Geologica({
+  subsets: ['latin'], // Adjust based on your language needs
+  variable: '--font-geologica', // Define a CSS variable for Tailwind
+  // preload: true,
+  display: 'swap',
+})
 
 /*****************************************/
 /*               DEMPSEY                  */
 /*****************************************/
 const dempsey = localFont({
   display: 'swap',
-  preload: true,
+  // preload: true,
   variable: '--font-dempsey',
   src: '../public/fonts/dempsey/dempsey-regular.woff2',
   weight: '400', // font-semibold
@@ -16,7 +24,7 @@ const dempsey = localFont({
 /*               POPPINS                 */
 /*****************************************/
 const poppins = localFont({
-  preload: true,
+  // preload: true,
   display: 'swap',
   src: [
     // 400, font-normal
@@ -89,50 +97,4 @@ const poppins = localFont({
   variable: '--font-poppins',
 })
 
-/******************************************/
-/*              GILROY                    */
-/******************************************/
-
-const gilroy = localFont({
-  preload: true,
-  display: 'swap',
-  src: [
-    // SemiBold (600)
-    {
-      path: '../public/fonts/gilroy/gilroy-bold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/gilroy/gilroy-bolditalic.woff2',
-      weight: '600',
-      style: 'italic',
-    },
-    // Bold (700)
-    {
-      path: '../public/fonts/gilroy/gilroy-extrabold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/gilroy/gilroy-extrabolditalic.woff2',
-      weight: '700',
-      style: 'italic',
-    },
-    // ExtraBold (800)
-    {
-      path: '../public/fonts/gilroy/gilroy-black.woff2',
-      weight: '800',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/gilroy/gilroy-blackitalic.woff2',
-      weight: '800',
-      style: 'italic',
-    },
-  ],
-
-  variable: '--font-gilroy',
-})
-
-export { poppins, dempsey, gilroy }
+export { poppins, dempsey, geologica }

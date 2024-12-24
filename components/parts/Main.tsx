@@ -1,6 +1,6 @@
 import type { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
-import { dempsey, poppins, gilroy } from '@styles/fonts'
+import { dempsey, poppins, geologica } from '@styles/fonts'
 type Props = {
   children?: ReactNode
   id?: string
@@ -12,11 +12,10 @@ const Main = ({ children, id, className }: PropsWithChildren<Props>) => {
     <main
       id={id}
       className={cn(
-        `max-w-screen overflow-x-hidden ${dempsey.variable} ${poppins.variable} ${gilroy.variable}`,
+        `max-w-screen overflow-x-hidden ${dempsey.variable} ${poppins.variable} ${geologica.variable}`,
         className,
       )}
     >
-      {/* <div className={`${dempsey.variable} ${poppins.variable} ${gilroy.variable}`}></div> */}
       {children}
     </main>
   )

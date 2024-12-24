@@ -42,7 +42,7 @@ function Button_Filled({
     >
       <div
         className={cn(
-          ' font-bold text-xl lowercase flex flex-row ',
+          'font-geologica font-bold text-xl lowercase flex flex-row ',
           `${textColorVariants[textColor]}`,
         )}
       >

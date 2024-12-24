@@ -1,9 +1,11 @@
-import Footer from '@footer/Footer'
+import { Footer } from '@footer'
 import Nav_HamWrapper from '@nav/Nav_HamWrapper'
 import Main from '@parts/Main'
 import Meta from '@parts/Meta'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
-import BackToTop from '@utility/BackToTop'
+import dynamic from 'next/dynamic'
+const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })
+
 import type { ReactNode } from 'react'
 
 type Props = {
@@ -19,7 +21,6 @@ const Layout_Home = ({ children, id, className }: Props) => {
       <Meta />
       <Nav_HamWrapper />
       {children}
-
       <Footer />
       <BackToTop />
     </Main>
