@@ -1,3 +1,4 @@
+// types/index.ts
 import type { ReactNode } from 'react'
 
 export type Song = {
@@ -24,6 +25,28 @@ export type Playlist = {
   title: string
   id: string
 }
+export interface CaseStudyData {
+  date: string
+  active: boolean
+  client: string
+  title: string
+  excerpt: string
+  tags: Record<string, string>
+  vimeoPreview: string
+  vimeoID: string
+}
+
+export interface CaseStudyProject {
+  filePath: string
+  data: CaseStudyData
+}
+
+export interface HomePortfolioCardProps {
+  bgColor: string
+  bgPosition: string
+  project: CaseStudyProject
+}
+
 export enum MediaProvider {
   VIMEO = 'Vimeo',
   // here you may include any other providers
@@ -46,11 +69,19 @@ export interface Uploader {
 
 export interface PostData {
   title: string
-  author: { name: string }
+  author: { name: string } | string
+  tags?: string[] | undefined
   categories: string[]
   date: string
   coverImage: string
-  excerpt: string
+  excerpt?: string
+  aspectW?: string
+  aspectY?: string
+  width?: number
+  height?: number
+  href?: string
+  slug?: string
+  as?: string
 }
 export interface FullscreenMenuProps {
   isActive: boolean

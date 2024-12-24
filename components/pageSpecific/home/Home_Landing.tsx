@@ -1,3 +1,4 @@
+// components/pageSpecific/home/Home_Landing.tsx
 import Link from 'next/link'
 import Button_Filled from '@parts/Button_Filled'
 import dynamic from 'next/dynamic'
@@ -6,18 +7,6 @@ import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'
 import PixelBakery_EasyBakeOven from '@data/lottie_misc/PixelBakery_EasyBakeOven.json' assert { type: 'json' }
 import { NorthEastArrowIcon } from '@icons'
-// import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', { assert: { type: 'json' } }).then(
-//   (module) => module.default,
-// )
-// const PixelBakery_EasyBakeOven = dynamic(
-//   () => import('@data/lottie_misc/PixelBakery_EasyBakeOven.json').then((module) => module.default),
-//   {
-//     ssr: false,
-//   },
-// )
-// const PixelBakery_EasyBakeOven = import('@data/lottie_misc/PixelBakery_EasyBakeOven.json').then(
-//   ({ default: PixelBakery_EasyBakeOven }) => PixelBakery_EasyBakeOven,
-// )
 
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
   ssr: false,
@@ -27,15 +16,6 @@ const LottiePatternPlayer = dynamic(() => import('@parts/LottiePatternPlayer'), 
 })
 
 function Home_Landing() {
-  // import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', { assert: { type: 'json' } }).then(
-  //   (PixelBakery_EasyBakeOven) => PixelBakery_EasyBakeOven.default,
-  // )
-  // const test = '@data/lottie_misc/PixelBakery_EasyBakeOven.json'
-  // const DynamicComponent = dynamic(() => import(`${test}`))
-  // const jsonModule = await import('@data/lottie_misc/PixelBakery_EasyBakeOven.json', {
-  //   assert: { type: 'json' },
-  // })
-  // console.log(jsonModule)
   return (
     <section className='flex w-full my-4 overflow-hidden lander'>
       <nav className='flex-col justify-center hidden w-2/5 h-full max-w-lg px-16 py-10 xl:w-1/3 bg-egg lg:flex '>

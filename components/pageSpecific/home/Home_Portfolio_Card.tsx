@@ -1,24 +1,21 @@
+// components/pageSpecific/home/Home_Portfolio_Card.tsx
+import { HomePortfolioCardProps } from '@types'
 import Pill from '@parts/Pill'
 import Link from 'next/link'
-
 import cn from 'classnames'
-import H3 from '@typography/H3'
+import { H3 } from '@typography'
 import { VideoJsonLd } from 'next-seo'
 
-interface Props {
-  bgColor: string
-  bgPosition: string
-  project: any
-}
 const IMAGE_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX || ''
-const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
+
+function Home_Portfolio_Card({ bgColor, bgPosition, project }: HomePortfolioCardProps) {
   const datePostedISO = new Date(project.data.date).toISOString()
 
   return (
     <article className='w-full px-1 lg:w-3/5 2xl:w-full'>
       <div
         className={cn(
-          'relative home-portfolio rounded-md  aspect-w-16 aspect-h-9 z-10',
+          'relative home-portfolio rounded-md aspect-w-16 aspect-h-9 z-10',
           bgColor,
           bgPosition,
         )}
@@ -27,16 +24,16 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
           <Link
             as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
             href={`/work/case-studies/[slug]`}
-            hrefLang={'en-US'}
-            className='cursor-pointer'
+            hrefLang='en-US'
             aria-label={project.data.title}
+            className='cursor-pointer'
           >
             <video
               muted
               playsInline
               preload='true'
               loop
-              autoPlay={true}
+              autoPlay
               poster={`${IMAGE_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
               className='relative block object-cover w-full h-full overflow-hidden shadow-xl scale-101'
             >
@@ -63,17 +60,9 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
           <div className='flex flex-wrap justify-start gap-2 mt-6'>
             {Object.entries(project.data.tags)
               .slice(0, 3)
-              .map(([index, tag]) => {
-                return (
-                  <Pill
-                    key={index}
-                    text={tag as string}
-                    bgColor={'blue'}
-                    textColor={'cream'}
-                    size={'sm'}
-                  />
-                )
-              })}
+              .map(([key, tag]) => (
+                <Pill key={key} text={tag as string} bgColor='blue' textColor='cream' size='sm' />
+              ))}
           </div>
         </div>
       </Link>
@@ -81,12 +70,11 @@ const Home_Portfolio_Card = ({ bgColor, bgPosition, project }: Props) => {
         name={`${project.data.client}: ${project.data.title}`}
         description={project.data.excerpt}
         embedUrl={`http://player.vimeo.com/video/${project.data.vimeoID}`}
-        uploadDate={`${datePostedISO}`}
-        thumbnailUrls={[
-          `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`,
-        ]}
+        uploadDate={datePostedISO}
+        thumbnailUrls={[`${IMAGE_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`]}
       />
     </article>
   )
 }
+
 export default Home_Portfolio_Card

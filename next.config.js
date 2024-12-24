@@ -1,6 +1,32 @@
+/** @type {import('next').NextConfig} */
+
 const { redirects } = require('./redirects.config.js')
 
-const config = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+const nextConfig = {
+  bundlePagesRouterDependencies: true,
+  experimental: {
+    optimizePackageImports: [
+      'react-lottie-player',
+      'react-dom',
+      'react-select',
+      'framer-motion',
+      '@sendgrid/mail',
+      'sharp',
+      'busboy',
+      'react-ga4',
+      'embla-carousel-react',
+      'react-hook-form',
+      'yup',
+      'dayjs',
+      'remark-gfm',
+      'react-player',
+      'swr',
+    ],
+  },
   async headers() {
     return [
       {
@@ -56,7 +82,15 @@ const config = {
       { protocol: 'https', hostname: 'scontent-akl1-1.cdninstagram.com' },
       { protocol: 'https', hostname: 'i.scdn.co' },
       { protocol: 'https', hostname: '*.scdn.co' },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixelbakery.com',
+      },
       { protocol: 'https', hostname: 'scdn.co' },
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
+      },
       { protocol: 'https', hostname: 'mosaic.scdn.co' },
       { protocol: 'https', hostname: 'images234-focus-opensocial.googleusercontent.com' },
       { protocol: 'https', hostname: 'scontent.cdninstagram.com' },
@@ -66,8 +100,6 @@ const config = {
   trailingSlash: false,
   reactStrictMode: false,
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   typescript: {
@@ -76,4 +108,4 @@ const config = {
   redirects,
 }
 
-module.exports = config
+module.exports = withBundleAnalyzer(nextConfig)

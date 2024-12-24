@@ -1,22 +1,9 @@
+// components/pageSpecific/recipes/Recipes_FeaturedPost.tsx
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import DateFormatter from '../../../lib/date-formatter'
-import CustomImage from '@parts/CustomImage'
+import DateFormatter from '@lib/date-formatter'
+import type { PostData } from '@types'
 import Image from 'next/image'
-interface Props {
-  title: string
-  coverImage: string
-  date: string
-  categories: Array<string>
-  excerpt: string
-  author: any
-  as: string
-  href: string
-  aspectW: string
-  aspectY: string
-  width: number
-  height: number
-}
 
 const Recipes_FeaturedPost = ({
   title,
@@ -29,7 +16,7 @@ const Recipes_FeaturedPost = ({
   height,
   href,
   ...props
-}: Props) => {
+}: PostData) => {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
 
@@ -61,10 +48,12 @@ const Recipes_FeaturedPost = ({
         <div className='z-20 flex flex-col justify-between p-2 mt-2 h-100'>
           <div className=''>
             <div className='text-sm text-opacity-75 text-wine'>
-              <span className='hidden md:inline'>{author} – </span>{' '}
+              <span className='hidden md:inline'>
+                {typeof author === 'string' ? author : author.name} –{' '}
+              </span>{' '}
               <DateFormatter dateString={date} />
             </div>
-            <h3 className='font-semibold leading-none text-md md:text-xl text-wine line-clamp-3'>
+            <h3 className='font-semibold leading-none font-geologica text-md md:text-xl text-wine line-clamp-3'>
               {title}
             </h3>
           </div>

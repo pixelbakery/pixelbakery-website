@@ -1,47 +1,47 @@
-import React from 'react'
+// components/pageSpecific/home/Home_Recipes.tsx
+
 import ButtonFilled from '@parts/Button_Filled'
 import RecipesFeaturedPost from '@recipes/Recipes_FeaturedPost'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
+import type { PostData } from '@types'
 
-// Type definition for a single post
 interface Post {
   filePath: string
-  data: {
-    title: string
-    author: { name: string }
-    categories: string[]
-    date: string
-    coverImage: string
-    excerpt: string
+  data: PostData & {
+    active: boolean
   }
 }
 
-// Type definition for the props of HomeRecipes component
 interface HomeRecipesProps {
   allPosts: Post[]
 }
 
 const SecondaryPosts = ({ allPosts }: HomeRecipesProps) => (
   <>
-    {allPosts.map((post) => (
-      <RecipesFeaturedPost
-        as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
-        href={`/recipes/[slug]`}
-        key={post.filePath}
-        title={post.data.title}
-        author={post.data.author.name}
-        categories={post.data.categories}
-        date={post.data.date}
-        aspectW='3'
-        aspectY='4'
-        coverImage={post.data.coverImage}
-        excerpt={post.data.excerpt}
-        width={273}
-        height={364}
-      />
-    ))}
+    {allPosts.map((post) => {
+      const authorName =
+        typeof post.data.author === 'string' ? post.data.author : post.data.author.name
+
+      return (
+        <RecipesFeaturedPost
+          as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
+          href={`/recipes/[slug]`}
+          key={post.filePath}
+          title={post.data.title}
+          author={authorName}
+          categories={post.data.categories}
+          date={post.data.date}
+          aspectW='3'
+          aspectY='4'
+          coverImage={post.data.coverImage}
+          excerpt={post.data.excerpt}
+          width={273}
+          height={364}
+        />
+      )
+    })}
   </>
 )
 
