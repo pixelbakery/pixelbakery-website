@@ -4,9 +4,9 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      gilroy: ['var(--font-gilroy)'],
       poppins: ['var(--font-poppins)'],
       dempsey: ['var(--font-dempsey)'],
+      geologica: ['var(--font-geologica)', 'sans-serif'],
     },
     colors: {
       transparent: 'transparent',
@@ -44,11 +44,37 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 30s linear infinite',
         bob: 'bob 5s ease-in infinite',
+        pulse: 'pulse var(--duration) ease-out infinite',
+        'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+        'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
       },
       keyframes: {
+        'spin-around': {
+          '0%': {
+            transform: 'translateZ(0) rotate(0)',
+          },
+          '15%, 35%': {
+            transform: 'translateZ(0) rotate(90deg)',
+          },
+          '65%, 85%': {
+            transform: 'translateZ(0) rotate(270deg)',
+          },
+          '100%': {
+            transform: 'translateZ(0) rotate(360deg)',
+          },
+        },
+        'shimmer-slide': {
+          to: {
+            transform: 'translate(calc(100cqw - 100%), 0)',
+          },
+        },
         bob: {
           '0%, 100%': { transform: 'rotate(-.3deg) translateY(4px)' },
           '50%': { transform: 'rotate(.3deg) translateY(-4px)' },
+        },
+        pulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 var(--pulse-color)' },
+          '50%': { boxShadow: '0 0 0 8px var(--pulse-color)' },
         },
       },
       screens: {

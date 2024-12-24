@@ -1,3 +1,4 @@
+// components/parts/Pill.tsx
 /* eslint-disable no-unused-vars */
 import cn from 'classnames'
 // must pass a size: xl, lg, md, sm

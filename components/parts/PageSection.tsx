@@ -1,3 +1,4 @@
+// components/parts/PageSection.tsx
 import cn from 'classnames'
 type Props = {
   className?: string

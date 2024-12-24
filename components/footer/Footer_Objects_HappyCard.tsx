@@ -37,8 +37,10 @@ const HappyCard = () => {
   }
 
   return (
-    <div className='my-0 text-xl italic font-bold leading-none md:text-4xl xl:text-6xl md:font-extrabold text-cream md:py-0'>
-      {error ? error : word ? word.text : 'Loading...'}
+    <div className='col-span-1 mx-auto text-center lg:text-left '>
+      <div className='my-0 text-xl italic font-bold leading-none md:text-4xl xl:text-6xl md:font-extrabold text-cream md:py-0'>
+        {error ? error : word ? word.text : 'Loading...'}
+      </div>
     </div>
   )
 }

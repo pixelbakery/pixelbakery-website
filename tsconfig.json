@@ -19,12 +19,14 @@
     "paths": {
       "@forms": ["components/forms/forms_parts/index"],
       "@fonts/*": ["fonts/*"],
-      "@SocialIcons/*": ["components/icons/icons_social"],
+      "@SocialIcons/*": ["./components/icons/icons_social"],
+      "@icons": ["./components/icons/Icons_UI/index"],
       "@parts/*": ["./components/parts/*"],
       "@parts": ["./components/parts/index"],
       "@components/*": ["components/components/*"],
       "@data/*": ["data/*"],
-      "@footer/*": ["components/footer/*"],
+      "@data": ["data/index"],
+      "@footer": ["./components/footer/index"],
       "@about/*": ["components/pageSpecific/about/*"],
       "@careers/*": ["components/pageSpecific/careers/*"],
       "@caseStudies/*": ["components/pageSpecific/caseStudies/*"],
@@ -47,7 +49,8 @@
       "@styles/*": ["styles/*"],
       "@typography/*": ["components/typography/*"],
       "@typography": ["./components/typography/index"],
-      "@utility/*": ["components/utility/*"]
+      "@utility/*": ["components/utility/*"],
+      "@/*": ["./*"]
     }
   },
   "plugins": [

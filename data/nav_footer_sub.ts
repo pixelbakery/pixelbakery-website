@@ -2,7 +2,7 @@
 
 export default [
   {
-    text: 'Client Portal',
+    text: 'Client Portal ↗️',
     url: 'https://clients.pixelbakery.com',
   },
   {
@@ -14,7 +14,7 @@ export default [
     url: '/careers',
   },
   {
-    text: 'Nebraska Creative',
+    text: 'Nebraska Creative ↗️',
     url: 'https://nebraska-creative.com',
   },
 
@@ -22,8 +22,8 @@ export default [
     text: 'Motion Mixer',
     url: '/logo-animation',
   },
-  // {
-  //   text: 'Pay-What-Ya-Want Web Hosting',
-  //   url: '/services/web-hosting',
-  // },
+  {
+    text: 'Video of Capybaras Being Cute ↗️',
+    url: 'https://www.youtube.com/watch?v=u2Xx4dOGPJY',
+  },
 ]

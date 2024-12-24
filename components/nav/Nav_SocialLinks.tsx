@@ -8,7 +8,7 @@ interface SocialLinksProps {
 }
 function Nav_SocialLinks({ color, textSize }: SocialLinksProps) {
   return (
-    <div className='flex justify-between max-w-xs gap-3 px-8 mx-auto'>
+    <div className='flex justify-center max-w-xs px-8 mx-auto lg:justify-between gap-x-1 lg:gap-3'>
       <SocialIcon
         iconName={'Instagram'}
         color={`${color}`}
