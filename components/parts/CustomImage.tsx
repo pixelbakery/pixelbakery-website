@@ -1,3 +1,4 @@
+// components/parts/CustomImage.tsx
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -41,14 +42,13 @@ function CustomImage({
         width={width}
         height={height}
         className='object-cover w-full h-full'
-        layout='responsive'
         placeholder={placeholder}
         blurDataURL={blurDataURL}
         quality={quality}
         priority={priority}
         loading={loading}
         unoptimized={unoptimized}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
   )
