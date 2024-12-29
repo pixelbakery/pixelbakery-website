@@ -8,7 +8,6 @@ import Layout_Defaualt from 'components/layouts/Layout_Default'
 import matter from 'gray-matter'
 
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-
 import { Work_SEO, Work_Callout, Work_Portfolio, Work_Clients, Work_Industries } from '@work/index'
 const Page_Work = ({ allCaseStudies }: any) => {
   return (

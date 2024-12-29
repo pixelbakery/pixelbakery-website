@@ -25,7 +25,7 @@ export interface Theme {
 interface HeaderThemeProps {
   header: string
   subheader: string
-  theme: Theme
+  theme?: Theme
 }
 
 const themes: Theme[] = [
