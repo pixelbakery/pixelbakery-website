@@ -1,3 +1,4 @@
+// components/pageHeaders/PageHeader_TextBox.tsx
 import cn from 'classnames'
 import H1 from '@typography/H1'
 
@@ -7,6 +8,7 @@ import {
   textColorVariants,
   TextColorVariant,
 } from '@lib/colorHelper'
+
 interface Props {
   backgroundColor: backgroundColorVariant
   header: string
@@ -15,35 +17,33 @@ interface Props {
   subheaderColor: TextColorVariant
   loading: boolean
 }
-const PageHeader_TextBox = ({
+
+export default function PageHeader_TextBox({
   backgroundColor,
   header,
   headerColor,
   subheader,
   subheaderColor,
   loading,
-}: Props) => {
+}: Props) {
   return (
-    <div
-      className={
-        'z-10 relative py-16  2xl:my-20 h-full flex flex-col justify-center  transition-all duration-700'
-      }
-    >
+    <div className='relative z-10 flex flex-col justify-center h-full py-16 2xl:my-20'>
       <div
         className={cn(
-          'my-20 max-w-sm  sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center transition-all duration-700 bg-egg opacity-0',
+          'my-20 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl py-12 flex justify-center transition-all duration-700 bg-egg',
           {
-            [`${backgroundColorVariants[backgroundColor]} opacity-100`]: !loading,
-            [`bg-egg opacity-0`]: loading,
+            [backgroundColorVariants[backgroundColor]]: !loading,
+            ['opacity-100']: !loading,
+            ['opacity-0']: loading,
           },
         )}
       >
-        <div className='w-fit px-6 mx-12'>
+        <div className='px-6 mx-12 w-fit'>
           <H1 color={headerColor}>{header}</H1>
           <div
             className={cn(
               'lowercase 2xl:my-2 text-2xl font-bold italic transition-all duration-700',
-              [`${textColorVariants[subheaderColor]}`],
+              textColorVariants[subheaderColor],
             )}
           >
             {subheader}
@@ -53,4 +53,3 @@ const PageHeader_TextBox = ({
     </div>
   )
 }
-export default PageHeader_TextBox

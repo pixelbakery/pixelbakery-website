@@ -2,12 +2,7 @@ import { Button_Filled, InnerWrapper, PageSection } from '@parts'
 import { H2AndLead } from '@typography'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
 import type { CaseStudyProject } from '@types'
-// interface FeaturedProject {
-//   allCaseStudies: Array<{ data: { active: boolean } }>
-//   bgPosition: string
-//   bgColor: string
-//   project: any
-// }
+
 interface FeaturedProjects {
   allCaseStudies: CaseStudyProject[]
   bgPosition?: string

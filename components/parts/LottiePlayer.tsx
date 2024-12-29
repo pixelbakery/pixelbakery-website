@@ -1,50 +1,68 @@
+//  ./components/parts/LottiePlayer.tsx
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react'
-
 import dynamic from 'next/dynamic'
+
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
   ssr: false,
 })
+
 interface Props {
   anim: any
 }
-function AnimationFile({ anim }: Props) {
-  const [animationData, setAnimationData] = useState<object>(anim)
-  const [segmentsEnabled, setSegmentsEnabled] = useState<boolean>(true)
-  const [loopCount, setLoopCount] = useState<number>(0)
-  const [segments, setSegments] = useState([0, 95])
 
-  const lottieRef = useRef()
+// If needed, define a minimal type for the player (rendererSettings, etc.)
+interface LottieLightProps {
+  rendererSettings?: {
+    preserveAspectRatio?: string
+    [key: string]: any
+  }
+  animationData: any
+  loop?: boolean
+  play?: boolean
+  // Accept either a single [start, end] pair, multiple segment pairs, or a boolean:
+  segments?: [number, number] | [number, number][] | boolean
+  style?: React.CSSProperties
+  useSubframes?: boolean
+  onLoopComplete?: () => void
+}
+
+function AnimationFile({ anim }: Props) {
+  const [segments, setSegments] = useState<[number, number] | [number, number][] | undefined>([
+    0, 95,
+  ])
+  const [segmentsEnabled, setSegmentsEnabled] = useState<boolean>(true)
+
+  const [loopCount, setLoopCount] = useState<number>(0)
 
   function getLoopVal() {
-    setLoopCount(loopCount + 1)
-    if (loopCount >= 0) {
-      setSegments([24, 95])
-    } else return
+    setLoopCount((prev) => prev + 1)
+    // Combine the two segment pairs here
+    setSegments([
+      [0, 95],
+      [24, 95],
+    ])
   }
-  if (!animationData)
+
+  if (!Animation)
     return (
-      <div className='relative flex flex-col w-full h-full justify-center text-center self-center'>
-        <span className='text-lg text-wine font-semibold transition-all duration-700'>
+      <div className='relative flex flex-col self-center justify-center w-full h-full text-center'>
+        <span className='text-lg font-semibold transition-all duration-700 text-wine'>
           Loading...
         </span>
       </div>
     )
+
   return (
     <LottieLight
       rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-      ref={lottieRef}
-      loop={true}
-      play={true}
-      animationData={animationData}
-      segments={segmentsEnabled && segments}
-      style={{
-        alignSelf: 'center',
-        width: '100%',
-        height: '100%',
-      }}
-      useSubframes={true}
-      onLoopComplete={() => getLoopVal()}
+      loop
+      play
+      animationData={anim}
+      // Only supply segments if they're enabled
+      segments={segmentsEnabled ? segments : undefined}
+      style={{ width: '100%', height: '100%' }}
+      onLoopComplete={getLoopVal}
     />
   )
 }

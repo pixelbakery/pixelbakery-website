@@ -27,13 +27,15 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
                 size={'md'}
               />
             </div>
-            <h1 className='mt-3 text-4xl text-blue-dark md:text-6xl'>{frontMatter.title}</h1>
-            <div
-              className='inline-block max-w-lg my-3 text-lg font-bold md:text-xl md:font-semibold text-wine opacity-80'
+            <h1 className='mt-3 text-4xl font-bold font-geologica text-blue-dark md:text-6xl'>
+              {frontMatter.title}
+            </h1>
+            <p
+              className='max-w-lg my-3 text-xl font-medium font-geologica md:text-xl text-wine opacity-80'
               role='doc-subtitle '
             >
               {frontMatter.subtitle}
-            </div>
+            </p>
           </div>
           <div className='flex mt-3 mb-16'>
             {matchingBio ? (
@@ -133,7 +135,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
           </div>
         </div>
       </section>
-      <div className='mx-auto mb-24  md:max-w-6xl'>
+      <div className='mx-auto mb-24 md:max-w-6xl'>
         {frontMatter.video != null ? (
           <div className='w-full mx-auto bg-peach'>
             <Video url={frontMatter.video} poster={frontMatter.coverImage} />
