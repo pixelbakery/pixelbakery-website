@@ -1,6 +1,6 @@
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import Work_Services from '@work/Work_Services'
-import Lead from '@typography/Lead'
+import { Lead } from '@typography'
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import {
@@ -15,8 +15,9 @@ import {
 const Page_CorporateVideoProduction = () => {
   return (
     <>
+      <Industries_SEO_Corporate />
       <Industries_Header title={'Corporate Video Production'}>
-        <Lead color='peach'>
+        <Lead color='wine' className='font-medium'>
           Our specialty is telling brand stories. Wether that’s through animation or video
           production, there’s no better way to illuminate your brand than by bringing it to life
           with video.
@@ -28,7 +29,6 @@ const Page_CorporateVideoProduction = () => {
       <Work_Services />
       <Industries_MoreIndustries />
       <CaseStudies_CTA />
-      <Industries_SEO_Corporate />
     </>
   )
 }
