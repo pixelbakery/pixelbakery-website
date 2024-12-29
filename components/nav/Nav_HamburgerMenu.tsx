@@ -1,33 +1,30 @@
+// components/nav/Nav_HamburgerMenu.tsx
 import React, { useRef } from 'react'
 import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
-//Public Dev Note: The html and css for the hamburger nav is forked from Mikael Ainalem's Flippin' Burgers pen: https://codepen.io/ainalem/pen/LJYRxz All credit goes to him <3
 
-interface Props {
-  isActive: boolean
-  onModalUpdate: any
-}
+import type { FullscreenMenuProps } from '@types'
 
-function Nav_HamburgerMenu({ isActive, onModalUpdate }: Props) {
-  const hamRef = useRef(null)
+export default function Nav_HamburgerMenu({ isActive, onModalUpdate }: FullscreenMenuProps) {
+  const hamRef = useRef<HTMLDivElement>(null)
 
   const updateModal = () => {
     onModalUpdate(!isActive)
   }
+
   return (
     <div
       id='nav-ham'
-      className='relative z-50 inline-block pointer-events-auto self-center  md:w-16 w-12 md:h-16 '
+      className='relative z-50 self-center inline-block w-12 pointer-events-auto md:w-16 md:h-16'
       ref={hamRef}
       onClick={updateModal}
     >
-      <div
-        className='group inline-block bg-cream rounded-lg transform transition-all duration-600 ease-in-out scale-100 opacity-100
-hover:scale-95 active:scale-97'
-      >
+      <div className='inline-block transition-all ease-in-out transform scale-100 rounded-lg opacity-100 group bg-cream duration-600 hover:scale-95 active:scale-97'>
         <div className={cn(style.hamWrapper)}>
           <svg
-            className={cn(style.ham, style.hamRotate, { [style.active]: isActive })}
+            className={cn(style.ham, style.hamRotate, {
+              [style.active]: isActive,
+            })}
             viewBox='0 0 100 100'
           >
             <path
@@ -45,5 +42,3 @@ hover:scale-95 active:scale-97'
     </div>
   )
 }
-
-export default Nav_HamburgerMenu

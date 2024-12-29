@@ -7,6 +7,7 @@ import cn from 'classnames'
 const Nav_FullscreenMenu = dynamic(() => import('@nav/Nav_FullscreenMenu'))
 import Nav_Logo from './Nav_Logo'
 import dynamic from 'next/dynamic'
+
 export default function Navbar() {
   const [isHamActive, setHamToggle] = useState(false)
   const [windowHeight, setwindowHeight] = useState(0)
@@ -78,12 +79,12 @@ export default function Navbar() {
             variants={navItem}
             custom={0.3}
             layout
-            className='flex w-full origin-top ml-8 mt-8 fixed top-0 left-0 z-40 pointer-events-none'
+            className='fixed top-0 left-0 z-40 flex w-full mt-8 ml-8 origin-top pointer-events-none'
           >
             <Link
               href={'/'}
               hrefLang='en'
-              className=' max-w-fit flex pointer-events-auto hover:scale-99 duration-200 '
+              className='flex duration-200 pointer-events-auto  max-w-fit hover:scale-99'
             >
               <m.div
                 initial={{ width: '100%' }}
@@ -104,7 +105,7 @@ export default function Navbar() {
                       }
                 }
                 exit={{ width: '100%' }}
-                className=' bg-cream  rounded-md origin-top-left object-left-top hidden xl:flex flex-col justify-center item-start  px-4   overflow-hidden'
+                className='flex-col justify-center hidden object-left-top px-4 overflow-hidden origin-top-left rounded-md  bg-cream xl:flex item-start'
                 layout
               >
                 <Nav_Logo showNavBar={showNavBar} />
@@ -112,7 +113,7 @@ export default function Navbar() {
               </m.div>
             </Link>
           </m.div>
-          <div className='pointer-events-none select-none cursor-none overflow-visible mt-8 mr-8 fixed top-0 right-0 z-50 flex justify-end gap-x-6'>
+          <div className='fixed top-0 right-0 z-50 flex justify-end mt-8 mr-8 overflow-visible pointer-events-none select-none cursor-none gap-x-6'>
             <m.div
               initial={'offscreen'}
               animate={showNavBar ? 'onscreen' : 'offscreen'}
@@ -127,7 +128,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/about'}
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block font-extrabold text-peach tracking-wide lowercase hover:scale-98 duration-200'
+                className='z-20 self-center hidden px-4 py-3 font-extrabold tracking-wide lowercase duration-200 rounded-sm cursor-pointer pointer-events-auto select-auto bg-cream md:block text-peach hover:scale-98'
               >
                 Who We Are
               </Link>
@@ -143,7 +144,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/work'}
-                className='pointer-events-auto select-auto cursor-pointer bg-cream px-4 py-3 rounded-sm  self-center z-20 hidden md:block  font-extrabold text-peach tracking-wide lowercase hover:scale-98 duration-200'
+                className='z-20 self-center hidden px-4 py-3 font-extrabold tracking-wide lowercase duration-200 rounded-sm cursor-pointer pointer-events-auto select-auto bg-cream md:block text-peach hover:scale-98'
               >
                 What We Make
               </Link>
@@ -159,7 +160,7 @@ export default function Navbar() {
               <Link
                 hrefLang={'en-US'}
                 href={'/onboarding'}
-                className='pointer-events-auto select-auto bg-peach px-4 py-3 rounded-sm  self-center z-20 hidden md:block cursor-pointer font-extrabold text-cream tracking-wide lowercase hover:scale-98 duration-200'
+                className='z-20 self-center hidden px-4 py-3 font-extrabold tracking-wide lowercase duration-200 rounded-sm cursor-pointer pointer-events-auto select-auto bg-peach md:block text-cream hover:scale-98'
               >
                 start a project
               </Link>
@@ -171,13 +172,13 @@ export default function Navbar() {
         </nav>
       </LazyMotion>
       <div
-        className=' z-50 xl:hidden absolute bg-egg rounded-lg px-3 pb-2 pt-4 top-8 left-8 pointer-events-auto transform transition-all duration-400 hover:scale-105'
+        className='absolute z-50 px-3 pt-4 pb-2 transition-all transform rounded-lg pointer-events-auto  xl:hidden bg-egg top-8 left-8 duration-400 hover:scale-105'
         id='mobile-logo'
       >
         <Link
           hrefLang={'en-US'}
           href={'/'}
-          className='text-4xl font-extrabold text-peach leading-none'
+          className='text-4xl font-extrabold leading-none text-peach'
         >
           <>
             <div>pb</div>

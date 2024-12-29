@@ -1,10 +1,11 @@
 import Button_Filled from '@parts/Button_Filled'
 import Nav_SocialLinks from './Nav_SocialLinks'
+import type { MenuComponentBaseProps } from '@types'
 
-const Nav_FullScreenMenu_CTA = ({ update }: any) => {
+const Nav_FullScreenMenu_CTA = ({ update }: MenuComponentBaseProps) => {
   return (
     <div className=''>
-      <div className='flex justify-center w-full mt-4  lg:mt-8 2xl:mt-3' onClick={update}>
+      <div className='flex justify-center w-full mt-4 lg:mt-8 2xl:mt-3' onClick={update}>
         <Button_Filled
           center={true}
           text={'Start a New Project'}
