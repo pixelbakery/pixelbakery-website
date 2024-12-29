@@ -49,13 +49,18 @@ interface Post {
 interface PageHomeProps {
   allPosts: Post[]
   allCaseStudies: CaseStudyProject[]
+  dynamicAnimation: string
 }
 
-const Page_Home: NextPageWithLayout<PageHomeProps> = ({ allPosts, allCaseStudies }) => {
+const Page_Home: NextPageWithLayout<PageHomeProps> = ({
+  allPosts,
+  allCaseStudies,
+  dynamicAnimation,
+}) => {
   return (
     <>
       <h1 className='sr-only'>Pixel Bakery Design Studio</h1>
-      <Home_Landing />
+      <Home_Landing dynamicAnimation={dynamicAnimation} />
       <Home_WhoTheHeck />
       <Home_WhatWeMake />
       <Home_Services />
@@ -120,8 +125,14 @@ export const getStaticProps: GetStaticProps<PageHomeProps> = async () => {
     .sort((cs1, cs2) => (cs1.data.date > cs2.data.date ? -1 : 1))
     .slice(0, 4)
 
+  const currentMonth = new Date().getMonth()
+  const dynamicAnimation =
+    currentMonth === 10 // December
+      ? 'december'
+      : 'normal'
+
   return {
-    props: { allPosts, allCaseStudies },
-    revalidate: 86400, // Set ISR
+    props: { allPosts, allCaseStudies, dynamicAnimation },
+    revalidate: 86400, // Revalidate every 24 hours
   }
 }
