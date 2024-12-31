@@ -51,7 +51,7 @@ const Recipes_FeaturedPost = ({
               <span className='hidden md:inline'>
                 {typeof author === 'string' ? author : author.name} –{' '}
               </span>{' '}
-              <DateFormatter dateString={date} />
+              {/* <DateFormatter dateString={date} /> */}
             </div>
             <h3 className='font-semibold leading-none font-geologica text-md md:text-xl text-wine line-clamp-3'>
               {title}

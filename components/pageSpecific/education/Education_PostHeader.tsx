@@ -22,16 +22,16 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
   // }
   return (
     <header className='mt-44'>
-      <section className='px-6 md:max-w-3xl mx-auto '>
+      <section className='px-6 mx-auto md:max-w-3xl '>
         <div className='' id='blog-body-intro'>
           <div className='mb-6'>
             <div className='mb-6'>
               <Pill text={category} bgColor={'blue'} textColor={'cream'} size={'md'} />
             </div>
-            <h1 className='text-blue-dark text-4xl md:text-6xl mt-3'>{title}</h1>
+            <h1 className='mt-3 text-4xl text-blue-dark md:text-6xl'>{title}</h1>
           </div>
-          <div className='flex gap-x-3 mt-3 mb-16 relative'>
-            <div className='animate-spin-slow w-12 h-12 rounded-full relative overflow-hidden'>
+          <div className='relative flex mt-3 mb-16 gap-x-3'>
+            <div className='relative w-12 h-12 overflow-hidden rounded-full animate-spin-slow'>
               <Image
                 placeholder='blur'
                 blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
@@ -39,14 +39,14 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                 height={1920}
                 alt={author}
                 quality={25}
-                className=' relative object-top object-cover '
+                className='relative object-cover object-top '
                 src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/placeholder02.jpg`}
               />
             </div>
             <div className={cn(' flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
-                <DateFormatter dateString={date} />
-                <span className='mx-2'>|</span>
+                {/* <DateFormatter dateString={date} /> */}
+                {/* <span className='mx-2'>|</span> */}
                 <span>{readTime.minutes.toString()} min read</span>
               </div>
 
@@ -58,7 +58,7 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
                       hrefLang={'en-US'}
                       href={authorUrl}
                       passHref
-                      className='text-blue underline'
+                      className='underline text-blue'
                     >
                       {author}
                     </Link>
