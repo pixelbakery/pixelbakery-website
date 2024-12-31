@@ -54,3 +54,6 @@ public/img/blog
 
 .continuerules
 .frontmatter/database/mediaDb.json
+
+.codegpt
+.frontmatter/database/pinnedItemsDb.json
