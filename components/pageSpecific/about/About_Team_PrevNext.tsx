@@ -62,7 +62,7 @@ function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
                     {next.data.title}
                   </p>
                 </div>
-                <div className='flex flex-col self-center justify-center h-full  text-peach'>
+                <div className='flex flex-col self-center justify-center h-full text-peach'>
                   {' '}
                   <i className='p-2 text-3xl'>
                     <ChevronRightIcon />

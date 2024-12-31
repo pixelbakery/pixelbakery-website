@@ -20,6 +20,7 @@
       "@forms": ["components/forms/forms_parts/index"],
       "@fonts/*": ["fonts/*"],
       "@SocialIcons/*": ["./components/icons/icons_social"],
+      "@SocialIcons": ["./components/icons/icons_social/index"],
       "@icons": ["./components/icons/Icons_UI/index"],
       "@parts/*": ["./components/parts/*"],
       "@parts": ["./components/parts/index"],
