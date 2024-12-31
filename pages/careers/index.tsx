@@ -3,7 +3,6 @@ import matter from 'gray-matter'
 import path from 'path'
 import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import Careers_JobShadow from '@careers/Careers_JobShadow'
 
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
@@ -12,7 +11,6 @@ import {
   Careers_Benefits,
   Careers_SEO,
   Careers_OpenPositions,
-  Careers_Breadwinners,
   Careers_PastCareers,
   Careers_Freelancers,
 } from '@careers/index'
@@ -40,9 +38,9 @@ const Page_Careers = ({ allJobs }) => {
         }
       />
       <Careers_PastCareers jobs={closedPositions} />
-      <Careers_Breadwinners />
+      {/* <Careers_Breadwinners /> */}
       <Careers_Benefits />
-      <Careers_JobShadow />
+      {/* <Careers_JobShadow /> */}
     </>
   )
 }
