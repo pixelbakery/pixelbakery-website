@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Shimmer from '@lib/Shimmer'
 import cn from 'classnames'
 import Link from 'next/link'
-import { LinkedIn } from 'components/icons/icons_social'
+import { Icon_LinkedIn } from '@SocialIcons'
 import { type ReactNode } from 'react'
 interface Props {
   children: ReactNode
@@ -49,7 +49,7 @@ function CaseStudies_Testimonial({
               {children}
               <div className='flex gap-x-4'>
                 <div className='w-16'>
-                  <div className='w-16 h-16 rounded-full overflow-hidden relative flex-grow'>
+                  <div className='relative flex-grow w-16 h-16 overflow-hidden rounded-full'>
                     <Image
                       src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${headshot}`}
                       alt={`${name} is the ${title} of Pixel Bakery's client, ${client}.`}
@@ -61,21 +61,21 @@ function CaseStudies_Testimonial({
                 </div>
                 <div className='self-center'>
                   <div className='flex gap-x-4'>
-                    <p className='font-bold text-md my-0 py-0'>{`${name}`} </p>
+                    <p className='py-0 my-0 font-bold text-md'>{`${name}`} </p>
                     {linkedIn ? (
                       <Link
                         href={`${linkedIn}`}
-                        className='self-center transform-gpu transition duration-700 ease-in-out hover:-translate-y-2 hover:animate-pulse text-md my-0 py-0'
+                        className='self-center py-0 my-0 transition duration-700 ease-in-out transform-gpu hover:-translate-y-2 hover:animate-pulse text-md'
                       >
                         <i className={' text-wine'} role='img'>
-                          <LinkedIn />
+                          <Icon_LinkedIn />
                         </i>
                       </Link>
                     ) : (
                       ''
                     )}
                   </div>
-                  <span className='block text-peach font-semibold text-md leading-none mt-1 py-0'>
+                  <span className='block py-0 mt-1 font-semibold leading-none text-peach text-md'>
                     {`${title}`}
                   </span>
                 </div>
@@ -83,8 +83,8 @@ function CaseStudies_Testimonial({
             </div>
           </div>
           {image ? (
-            <div className='col-span-5 md:col-span-2 xl:col-span-2 order-first xl:order-last block md:block 2xl:block'>
-              <div className='w-full aspect-h-1 aspect-w-1 overflow-hidden'>
+            <div className='order-first block col-span-5 md:col-span-2 xl:col-span-2 xl:order-last md:block 2xl:block'>
+              <div className='w-full overflow-hidden aspect-h-1 aspect-w-1'>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${image}`}
                   fill={true}
