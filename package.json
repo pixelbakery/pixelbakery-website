@@ -30,7 +30,7 @@
     "printWidth": 100
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.0",
+    "@hookform/resolvers": "^3.9.1",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/third-parties": "^15.1.2",
     "@sendgrid/mail": "^8.1.4",
@@ -44,19 +44,21 @@
     "gray-matter": "4.0.3",
     "next": "^15.1.2",
     "next-mdx-remote": "^4.4.1",
+    "next-plausible": "^3.12.4",
     "next-seo": "^6.6.0",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
     "react-dom": "19.0.0",
-    "react-hook-form": "^7.54.0",
+    "react-hook-form": "^7.54.2",
     "react-lottie": "^1.2.10",
     "react-lottie-player": "^2.1.0",
+    "react-number-format": "^5.4.3",
     "react-player": "^2.16.0",
     "react-select": "^5.9.0",
     "remark-gfm": "3.0.1",
     "sharp": "^0.33.0",
     "swr": "^2.2.5",
-    "yup": "^1.6.0"
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
