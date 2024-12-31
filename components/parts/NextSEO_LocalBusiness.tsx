@@ -1,15 +1,16 @@
 import { LocalBusinessJsonLd, LogoJsonLd, OrganizationJsonLd, SocialProfileJsonLd } from 'next-seo'
 import services from '@data/services'
+import { Offer } from 'next-seo/lib/types'
 
 function NextSEO_LocalBusiness() {
-  let itemsOffered = []
+  let itemsOffered: Offer[] | undefined = []
   services.forEach((x) => {
     let temp = {
       name: x.service,
       description: x.description,
     }
 
-    itemsOffered.push(temp)
+    itemsOffered.push(temp as any)
   })
   return (
     <>

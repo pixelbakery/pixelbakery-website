@@ -1,15 +1,17 @@
 import Lead from '@typography/Lead'
 import dynamic from 'next/dynamic'
+import cn from 'classnames'
+
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   ssr: false,
   loading: () => (
-    <div className={'relative  w-full aspect-16/9 bg-wine-100 py-96 flex flex-col justify-center'}>
-      <p className='text-center text-wine font-extrabold text-4xl self-center'>Loading...</p>
+    <div className='relative flex flex-col justify-center w-full aspect-16/9 bg-wine-100 py-96'>
+      <p className='self-center text-4xl font-extrabold text-center text-wine'>Loading...</p>
     </div>
   ),
 })
-import cn from 'classnames'
-interface video {
+
+interface VideoProps {
   url: string
   title?: string
   autoPlay?: boolean
@@ -24,45 +26,44 @@ interface video {
   useCDN?: boolean
   dummy?: boolean
 }
-function Video({ url, ...props }: video) {
+
+function Video({
+  url,
+  title,
+  autoPlay,
+  poster,
+  loop,
+  muted,
+  playsInline,
+  controls,
+  caption,
+  light,
+  className,
+  useCDN,
+}: VideoProps) {
   return (
-    <div className='h-full w-full'>
-      {props.title != undefined ? (
+    <div className='w-full h-full'>
+      {title && (
         <div className='mt-12'>
-          {' '}
-          <Lead color='blue-dark mb-2 pb-2' noMargins={true}>
-            {props.title}
+          <Lead color='blue-dark' noMargins className='pb-2 mb-2 '>
+            {title}
           </Lead>
         </div>
-      ) : (
-        ''
       )}
-      <div
-        className={cn(
-          { ['w-full  aspect-w-16 aspect-h-9']: props.className === undefined },
-          { [`${props.className}`]: props.className != undefined },
-        )}
-      >
-        {/* <div className='w-full aspect-w-16 aspect-h-9'>
-          <div className='z-0 absolute left-0 top-0  w-full h-[99%] bg-blue text-cream flex flex-col justify-center text-center text-lg'>
-            🙃 Loading...
-          </div>
-        </div> */}
+      <div className={cn(className || 'w-full aspect-w-16 aspect-h-9')}>
         <ReactPlayer
-          url={props.useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url}
-          autoPlay={props.autoPlay != undefined ? props.autoPlay : false}
-          playing={props.autoPlay != undefined ? props.autoPlay : false}
-          poster={
-            props.poster != undefined ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${props.poster}` : ''
-          }
-          light={props.light}
-          width={'100%'}
-          height={'100%'}
-          loop={props.loop != undefined ? props.loop : false}
-          muted={props.muted != undefined ? props.muted : true}
-          playsInline={props.playsInline != undefined ? props.playsInline : true}
-          controls={props.controls != undefined ? props.controls : true}
-          className={'w-full videoWrapper'}
+          url={useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url}
+          autoPlay={autoPlay || false}
+          playing={autoPlay || false}
+          poster={poster ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${poster}` : ''}
+          light={light}
+          width='100%'
+          height='100%'
+          loop={loop || false}
+          muted={muted !== undefined ? muted : true}
+          playsInline={playsInline !== undefined ? playsInline : true}
+          controls={controls !== undefined ? controls : true}
+          className='w-full videoWrapper'
           config={{
             vimeo: {
               playerOptions: {
@@ -71,17 +72,14 @@ function Video({ url, ...props }: video) {
             },
           }}
         />
-
-        {props.caption != undefined ? (
-          <em className='max-w-md mx-auto -mt-7 pt-1 mb-14 text-sm leading-none text-blue-dark font-medium '>
-            {' '}
-            {props.caption}
+        {caption && (
+          <em className='max-w-md pt-1 mx-auto text-sm font-medium leading-none -mt-7 mb-14 text-blue-dark'>
+            {caption}
           </em>
-        ) : (
-          ''
         )}
       </div>
     </div>
   )
 }
+
 export default Video

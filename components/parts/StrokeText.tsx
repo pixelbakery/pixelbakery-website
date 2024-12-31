@@ -1,5 +1,7 @@
 import { useEffect, SVGProps } from 'react'
 import cn from 'classnames'
+
+// Define the type for component props
 type Props = {
   index: number
   active: boolean
@@ -9,20 +11,24 @@ type Props = {
   color: string
   fontWeight: string
 }
+
+// Interface for optional SVG title prop
 interface SVGRProps {
   title?: string
 }
-function debounce(fn, ms) {
-  let timer
+
+// Debounce function to limit the rate at which a function can fire
+function debounce(fn: Function, ms: number) {
+  let timer: NodeJS.Timeout | null
   return () => {
-    clearTimeout(timer)
+    if (timer) clearTimeout(timer)
     timer = setTimeout(() => {
-      timer = null
-      fn.apply(this)
+      fn()
     }, ms)
   }
 }
 
+// Main component definition
 const StrokeText = ({
   index,
   active,
@@ -31,58 +37,67 @@ const StrokeText = ({
   strokeWidth,
   color,
   fontWeight,
-}: Props & SVGProps<SVGGraphicsElement> & SVGRProps) => {
-  // const [dimensions, setDimensions] = useState({
-  //   w_text: 0,
-  //   h_text: 0,
-  // })
-
+}: Props & SVGProps<SVGSVGElement> & SVGRProps) => {
+  // Effect to handle SVG attribute updates on resize
   useEffect(() => {
-    function setAttributes(w, h) {
+    // Function to set width and height of the SVG element
+    function setAttributes(w: number, h: number) {
       const svg = document.getElementById(`svg-${index}`)
-      svg.setAttribute('width', w)
-      svg.setAttribute('height', h)
+      if (svg) {
+        svg.setAttribute('width', w.toString())
+        svg.setAttribute('height', h.toString())
+      }
     }
-    const debouncedHandleResize = debounce(function handleResize() {
+
+    // Debounced resize handler function
+    const debouncedHandleResize = debounce(() => {
       const svg = document.getElementById(`svg-${index}`)
+      const textElement = document.querySelector(`#text-${index}`) as SVGTextElement | null
 
-      let w_text = document.querySelector(`#text-${index}` as any).getBBox().width
-      let h_text = document.querySelector(`#text-${index}` as any).getBBox().height
-
-      svg.setAttribute('width', w_text)
-      svg.setAttribute('height', h_text)
+      if (svg && textElement) {
+        const bbox = textElement.getBBox()
+        svg.setAttribute('width', bbox.width.toString())
+        svg.setAttribute('height', bbox.height.toString())
+      }
     }, 1000)
 
+    // Initial setting of SVG dimensions
+    const textElement = document.querySelector(`#text-${index}`) as SVGTextElement | null
+    if (textElement) {
+      const bbox = textElement.getBBox()
+      setAttributes(bbox.width, bbox.height)
+    }
+
+    // Add and cleanup resize event listener
     window.addEventListener('resize', debouncedHandleResize)
-    setAttributes(
-      document.querySelector(`#text-${index}` as any).getBBox().width,
-      document.querySelector(`#text-${index}` as any).getBBox().height,
-    )
     return () => {
       window.removeEventListener('resize', debouncedHandleResize)
     }
-  }, [])
+  }, [index])
+
+  // Render SVG with text element inside
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className={cn(
+        // Classnames with dynamic styling based on 'active' prop
         'lowercase cursor-pointer top-0 left-0 social-link transform transition-all duration-300 ease-in-out text-blue-dark hover:fill-current hover:text-blue-dark motion-safe:hover:-skew-x-12 overflow-visible',
         { ['fill-current']: active },
       )}
       fill='none'
       stroke='currentColor'
       id={`svg-${index}`}
-      // width={'100%'}
     >
       <text
         x='0px'
         y='80%'
         id={`text-${index}`}
         className={cn(
-          'font-poppins w-full tracking-wider ',
-          `${fontSize}`,
-          `${fontWeight}`,
-          `${strokeWidth}`,
+          // Dynamic text styling with customization options
+          'font-poppins w-full tracking-wider',
+          fontSize,
+          fontWeight,
+          strokeWidth,
           `hover:fill-${color}`,
         )}
       >

@@ -1,6 +1,6 @@
 //  ./components/parts/LottiePlayer.tsx
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
@@ -55,7 +55,7 @@ function AnimationFile({ anim }: Props) {
 
   return (
     <LottieLight
-      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+      rendererSettings={{ preserveAspectRatio: 'xMidYMid meet' }}
       loop
       play
       animationData={anim}

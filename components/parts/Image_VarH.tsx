@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-function Image_VarH({ src, openInNewWindow, ...props }) {
+function Image_VarH({ src, openInNewWindow, ...props }: any) {
   const [paddingTop, setPaddingTop] = useState('0')
 
   const ImageComponent = () => {

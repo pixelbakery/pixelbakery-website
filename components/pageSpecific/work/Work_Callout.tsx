@@ -16,7 +16,7 @@ function Work_Callout() {
           <div className='relative flex col-span-7 sm:col-span-3 xl:col-span-2 sm:flex-col sm:justify-center md:justify-start sm:-ml-14 sm:pr-6 sm:-mt-6 md:-ml-0 md:pr-0 md:-mt-6 lg:-mt-12 xl:-mt-10 2xl:-mt-12 max-h-64 sm:max-h-full'>
             <LottiePlayer
               anim={require('@data/lottie_misc/Lottie_BouncingTV_Anim.json')}
-              preserveAspectRatio={false}
+              // preserveAspectRatio={false}
             />
           </div>
 

@@ -6,7 +6,13 @@ import dynamic from 'next/dynamic'
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
   ssr: false,
 })
-
+interface Theme {
+  objectColor: string
+  backgroundColor: string
+  textboxColor: string
+  headerColor: string
+  subheaderColor: string
+}
 const themes: Theme[] = [
   {
     objectColor: 'blue',
