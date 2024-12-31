@@ -1,28 +1,34 @@
 import { NextSeo, CollectionPageJsonLd } from 'next-seo'
+import { CreativeWork } from 'next-seo/lib/types'
 
 interface Props {
   allCaseStudies: any
 }
 function Work_SEO({ allCaseStudies }: Props) {
-  let arr = []
-  allCaseStudies.forEach((x) => {
-    let keywords = ''
-    x.data.tags.map((tag) => {
-      keywords += `${tag}, `
-    })
-    keywords = keywords.substring(0, keywords.length - 2)
-    let temp = {
-      name: `${x.data.client}: ${x.data.title}`,
-      about: x.data.excerpt,
-      datePublished: x.data.date,
-      author: `Pixel Bakery Design Studio`,
-      keywords: keywords,
-      url: `https://pixelbakery.com/work/case-studies/${x.filePath.replace(/\.mdx?$/, '')}`,
-      image: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
-      thumbnailUrl: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
-    }
-    arr.push(temp)
-  })
+  let arr: CreativeWork[] = []
+  allCaseStudies.forEach(
+    (x: {
+      data: { tags: any[]; client: any; title: any; excerpt: any; date: any; vimeoPreview: any }
+      filePath: string
+    }) => {
+      let keywords = ''
+      x.data.tags.map((tag) => {
+        keywords += `${tag}, `
+      })
+      keywords = keywords.substring(0, keywords.length - 2)
+      let temp = {
+        name: `${x.data.client}: ${x.data.title}`,
+        about: x.data.excerpt,
+        datePublished: x.data.date,
+        author: `Pixel Bakery Design Studio`,
+        keywords: keywords,
+        url: `https://pixelbakery.com/work/case-studies/${x.filePath.replace(/\.mdx?$/, '')}`,
+        image: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
+        thumbnailUrl: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${x.data.vimeoPreview}.jpg`,
+      }
+      arr.push(temp)
+    },
+  )
   // console.log(arr)
   return (
     <>

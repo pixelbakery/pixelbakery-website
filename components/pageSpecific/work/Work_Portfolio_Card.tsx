@@ -1,86 +1,109 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Pill from '@parts/Pill'
+import { Pill } from '@parts'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 import Shimmer from '@lib/Shimmer'
 import { domAnimation, LazyMotion, m, Variants } from 'framer-motion'
+import Loading from '@utility/Loading'
 
-// type MediaType = HTMLVideoElement | HTMLAudioElement
-function Work_Portfolio_Card({ project }) {
-  const [isHovered, setHover] = useState(false)
-  const handleHover = () => {
-    setHover(!isHovered)
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+  loading: () => <Loading />,
+})
+
+interface ProjectData {
+  client: string
+  title: string
+  tags: string[]
+  sources: { src: string; type: string }[]
+  vimeoPreview: string
+}
+
+interface Project {
+  filePath: string
+  data: ProjectData
+}
+
+interface WorkPortfolioCardProps {
+  project: Project
+}
+
+const cardOverlay: Variants = {
+  show: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.2 } },
+  hide: { opacity: 0, transition: { when: 'afterChildren' } },
+}
+
+const cardOverlayItem_Tag: Variants = {
+  show: { y: 5, opacity: 1 },
+  hide: { y: -15, opacity: 0 },
+}
+
+const cardOverlayItem_Title: Variants = {
+  show: { y: -5, opacity: 1 },
+  hide: { y: 15, opacity: 0 },
+}
+
+function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
+  if (!project || !project.data) {
+    return (
+      <div className='p-4 bg-gray-200'>
+        <h3 className='text-lg text-center'>Unable to load project data.</h3>
+        <p className='text-center'>Please try again later or contact support.</p>
+      </div>
+    )
+  }
+  const { filePath, data } = project
+  const {
+    client = 'Unknown Client',
+    title = 'Untitled',
+    tags = [],
+    sources = [],
+    vimeoPreview = '',
+  } = data
+
+  const [isHovered, setIsHovered] = useState(false)
+  const [filteredSources, setFilteredSources] = useState(sources)
+  function toggleHover() {
+    setIsHovered((prev) => !prev)
   }
 
-  const cardOverlay: Variants = {
-    show: {
-      opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.2,
-      },
-    },
-    hide: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-      },
-    },
-  }
+  const previewImageUrl = `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${vimeoPreview}.jpg`
 
-  const cardOverlayItem_Tag: Variants = {
-    show: {
-      y: 5,
-      opacity: 1,
-    },
-    hide: {
-      y: -15,
-      opacity: 0,
-    },
-  }
-
-  const cardOverlayItem_Title: Variants = {
-    show: {
-      y: -5,
-      opacity: 1,
-    },
-    hide: {
-      y: 15,
-      opacity: 0,
-    },
+  // Remove failed video sources
+  const handleError = () => {
+    setFilteredSources((prevSources) =>
+      prevSources.filter((source) => source.type !== 'video/webm'),
+    )
   }
   return (
     <Link
       as={`/work/case-studies/${project.filePath.replace(/\.mdx?$/, '')}`}
       href={`/work/case-studies/[slug]`}
-      className=' cursor-pointer '
     >
       <div
-        className='cursor-pointer relative block origin-center aspect-16/9 bg-blue overflow-hidden  '
-        onMouseEnter={() => handleHover()}
-        onMouseLeave={() => handleHover()}
+        className='relative block overflow-hidden origin-center cursor-pointer aspect-16/9 bg-blue'
+        onMouseEnter={toggleHover}
+        onMouseLeave={toggleHover}
       >
-        <div
-          className={cn(
-            'opacity-100 aspect-16/9 relative w-full h-full transform-opacity transition duration-500 z-0 pointer-events-none',
-          )}
-        >
+        <div className='relative z-0 w-full h-full transition duration-500 opacity-100 transform-opacity '>
           <Image
-            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+            src={previewImageUrl}
             width={854}
             height={480}
-            className={'object-cover w-full h-full'}
             placeholder='blur'
-            blurDataURL={`${Shimmer(854, 480)}`}
-            alt={`animation or video production work created for ${project.data.client}`}
+            blurDataURL={Shimmer(854, 480)}
+            alt={`${
+              tags[0] || 'Motion design'
+            } creative project for ${client} by Pixel Bakery Design Studio`}
+            className='object-cover w-full h-full'
             quality={75}
           />
         </div>
 
+        {/* Video Player */}
         <div
           className={cn(
             'absolute block transform-opacity duration-300 ease-in-out z-10 top-0 left-0 -right-1 -bottom-1',
@@ -91,16 +114,14 @@ function Work_Portfolio_Card({ project }) {
           )}
         >
           <ReactPlayer
-            muted={true}
-            playsInline={true}
-            loop={true}
+            muted
+            playsInline
+            loop
             controls={false}
-            preload={'true'}
             width='100%'
             height='100%'
             playing={isHovered}
-            className=''
-            url={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${project.data.vimeoPreview}.mp4`}
+            url={filteredSources}
             config={{
               file: {
                 attributes: {
@@ -112,12 +133,12 @@ function Work_Portfolio_Card({ project }) {
                 },
               },
             }}
+            onError={handleError}
           />
         </div>
-        {/* This is the Scrim that sits on top of videos */}
         <div
           className={cn(
-            'absolute z-20 top-0 left-0 w-full h-full bg-gradient-to-t from-blue-dark via-transparent to-blue-dark  pointer-events-none transform duration-300',
+            'absolute z-20 top-0 left-0 w-full h-full bg-gradient-to-t from-blue-dark via-transparent to-blue-dark pointer-events-none transform duration-300',
             { ['opacity-25 ']: isHovered, ['opacity-0 ']: !isHovered },
           )}
         ></div>
@@ -130,17 +151,16 @@ function Work_Portfolio_Card({ project }) {
             <m.div
               variants={cardOverlay}
               animate={isHovered ? 'show' : 'hide'}
-              // id={projID_tags}
-              className={' pointer-events-none  -py-3 hidden md:flex flex-wrap flex-row  gap-4'}
+              className='flex-row flex-wrap hidden gap-4 pointer-events-none -py-3 md:flex'
             >
-              {project.data.tags.slice(0, 3).map((tag) => (
+              {tags.slice(0, 3).map((tag) => (
                 <m.span key={tag} variants={cardOverlayItem_Tag}>
                   <Pill
                     text={tag}
-                    bgColor={'blue'}
-                    textColor={'cream'}
+                    bgColor='blue'
+                    textColor='cream'
                     size='xs'
-                    className={'hidden md:inline'}
+                    className='hidden md:inline'
                   />
                 </m.span>
               ))}
@@ -148,33 +168,34 @@ function Work_Portfolio_Card({ project }) {
           </LazyMotion>
           <LazyMotion features={domAnimation}>
             <m.div
-              className={cn('projectTitle hidden lg:block')}
+              className='hidden projectTitle lg:block'
               variants={cardOverlay}
               animate={isHovered ? 'show' : 'hide'}
             >
               <m.div
-                className='detail  text-sm text-white text-shadow-sm hidden lg:block'
+                className='hidden text-sm text-white detail text-shadow-sm lg:block'
                 variants={cardOverlayItem_Title}
               >
-                {project.data.client}
+                {client}
               </m.div>
               <m.h3
-                className='detail text-2xl text-white text-shadow-sm hidden lg:block'
+                className='hidden text-2xl font-semibold text-white detail text-shadow-sm lg:block font-geologica'
                 variants={cardOverlayItem_Title}
               >
-                {project.data.title}
+                {title}
               </m.h3>
             </m.div>
           </LazyMotion>
         </div>
-        <div
-          className={cn('absolute bottom-0 left-0  mb-1 ml-1 z-40  lg:hidden py-2 px-4 bg-cream')}
-        >
-          <div className='text-xs text-wine leading-none '>{project.data.client}</div>
-          <h3 className='  text-md text-wine leading-none'>{project.data.title}</h3>
+
+        <span className='hidden lg:sr-only'>{`Project for ${client} - ${title}`}</span>
+        <div className='absolute bottom-0 left-0 z-40 px-4 py-2 mb-1 ml-1 lg:hidden bg-cream'>
+          <div className='text-xs leading-none text-wine'>{client}</div>
+          <h3 className='leading-none text-md text-wine'>{title}</h3>
         </div>
       </div>
     </Link>
   )
 }
+
 export default Work_Portfolio_Card

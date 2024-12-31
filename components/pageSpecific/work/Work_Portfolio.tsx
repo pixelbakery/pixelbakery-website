@@ -1,36 +1,60 @@
 import Work_Portfolio_Card from './Work_Portfolio_Card'
 import cn from 'classnames'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@typography/H2'
+import { PageSection, InnerWrapper } from '@parts'
+import { H2 } from '@typography'
 
 import Lead from '@typography/Lead'
 
+interface CaseStudy {
+  filePath: string
+  data: {
+    client: string
+    title: string
+    tags: string[]
+    sources: { src: string; type: string }[]
+    vimeoPreview: string
+  }
+}
+
+interface WorkPortfolioProps {
+  allCaseStudies: CaseStudy[]
+}
+
 const featuredProjNo = 5
 
-const getFeaturedWork = (allCaseStudies) => {
-  return allCaseStudies.slice(0, featuredProjNo).map((project, index) => {
-    return <Work_Portfolio_Card key={index} project={project} />
-  })
+const getFeaturedWork = (allCaseStudies: CaseStudy[]) => {
+  return allCaseStudies
+    .slice(0, featuredProjNo)
+    .map((project, index) => (
+      <Work_Portfolio_Card key={project.filePath || index} project={project} />
+    ))
 }
 
-const getOtherWork = (allCaseStudies) => {
-  return allCaseStudies.slice(featuredProjNo).map((project, index) => {
+const getOtherWork = (allCaseStudies: CaseStudy[]) => {
+  return allCaseStudies.slice(featuredProjNo).map((project, index) => (
+    <div key={project.filePath || index} className={cn({ ['hidden md:block']: index > 12 })}>
+      <Work_Portfolio_Card project={project} />
+    </div>
+  ))
+}
+
+const Work_Portfolio = ({ allCaseStudies = [] }: WorkPortfolioProps) => {
+  if (!allCaseStudies || !allCaseStudies.length) {
     return (
-      <div key={index} className={cn({ ['hidden md:block']: index > 12 })}>
-        <Work_Portfolio_Card project={project} />
-      </div>
+      <section id='work-portfolio'>
+        <div className='py-10 text-center'>
+          <H2>No work to display</H2>
+          <p>We are unable to display work projects at the moment. Please check back later.</p>
+        </div>
+      </section>
     )
-  })
-}
-
-const Work_Portfolio = ({ allCaseStudies }) => {
+  }
   return (
     <>
-      <PageSection id='portfolio-intro' className='lg:mb-0 pb-8 lg:pb-12'>
+      <PageSection id='portfolio-intro' className='pb-8 lg:mb-0 lg:pb-12'>
         <InnerWrapper>
-          <div className='w-full flex justify-center'>
-            <H2 className='mb-0 lg:mb-0 text-center mx-auto'>
+          <div className='flex justify-center w-full'>
+            <H2 className='mx-auto mb-0 text-center lg:mb-0'>
               Work we&apos;re really really really <br className='md:hidden' /> proud of
             </H2>
           </div>
@@ -38,12 +62,13 @@ const Work_Portfolio = ({ allCaseStudies }) => {
       </PageSection>
 
       <section className='mx-auto max-w-10xl ' id='work-portfolio'>
-        {/* <div className='w-full grid grid-cols-1 gap-4 mb-4'>{getLatestWork(allCaseStudies)}</div> */}
-
-        <div className='grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 4xl:grid-cols-3 gap-4'>
-          <div className='col-span-1 bg-egg px-12 py-12'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-1 xl:grid-cols-2 4xl:grid-cols-3'>
+          <div className='col-span-1 px-12 py-12 bg-egg'>
             <div className='flex flex-col justify-center h-full'>
-              <Lead color='blue-dark mb-0 pb-0 lg:mb-0 lg:self-center h-min text-center xl:text-left mx-auto'>
+              <Lead
+                className='pb-0 mx-auto mb-0 text-center lg:mb-0 lg:self-center h-min xl:text-left'
+                color='blue-dark'
+              >
                 Everything we put out into the world is a unique piece of its own. <br />
                 <br />
                 <span className='text-blue'> Here are a few of our favorites.</span>
@@ -53,7 +78,7 @@ const Work_Portfolio = ({ allCaseStudies }) => {
           {getFeaturedWork(allCaseStudies)}
         </div>
 
-        <div className='my-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 4xl:grid-cols-6 gap-4'>
+        <div className='grid grid-cols-1 gap-4 my-4 md:grid-cols-2 xl:grid-cols-3 4xl:grid-cols-6'>
           {getOtherWork(allCaseStudies)}
         </div>
       </section>
