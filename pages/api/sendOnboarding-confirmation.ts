@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-vars */
 import mail from '@sendgrid/mail'
+import type { NextApiRequest, NextApiResponse } from 'next'
+const apiKey = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
+if (!apiKey) {
+  throw new Error('SendGrid API key is not defined')
+}
 
-mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
+mail.setApiKey(apiKey)
 
-export default async function sendJobApplication(req, res) {
+export default async function sendJobApplication(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
   let sendTo
   if (process.env.NODE_ENV === 'development') {

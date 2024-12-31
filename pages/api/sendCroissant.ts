@@ -1,5 +1,5 @@
 import mail from '@sendgrid/mail'
-
+import type { NextApiRequest, NextApiResponse } from 'next'
 const pastries = [
   `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/something-yummy/pixel-bakery-something-yummy1.jpg`,
   `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/something-yummy/pixel-bakery-something-yummy2.jpg`,
@@ -21,9 +21,14 @@ const pastries = [
   `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/something-yummy/pixel-bakery-something-yummy18.jpg`,
 ]
 
-mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
+const apiKey = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
+if (!apiKey) {
+  throw new Error('SendGrid API key is not defined')
+}
 
-export default async function sendCroissant(req, res) {
+mail.setApiKey(apiKey)
+
+export default async function sendCroissant(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
   const rand = Math.floor(Math.random() * pastries.length)
   const randomPastry = pastries[rand]

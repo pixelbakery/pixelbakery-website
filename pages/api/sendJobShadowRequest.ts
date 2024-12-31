@@ -1,9 +1,14 @@
 import mail from '@sendgrid/mail'
+import type { NextApiRequest, NextApiResponse } from 'next'
+const apiKey = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
+if (!apiKey) {
+  throw new Error('SendGrid API key is not defined')
+}
 
-mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
+mail.setApiKey(apiKey)
 
 // eslint-disable-next-line no-unused-vars
-export default async function sendOnboarding(req, res) {
+export default async function sendOnboarding(req: NextApiRequest, res: NextApiResponse) {
   const body = JSON.parse(req.body)
   let agree1 = "I'm filling this out for myself: "
   let agree2 = 'I have at least 3 people in my group: '

@@ -12,7 +12,22 @@ import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 
-function Page_Careers_Application({ allJobs }) {
+interface Job {
+  title: string
+  active: boolean
+  internship?: boolean
+  commitment?: string
+  location?: string
+  date?: string | Date // or Date if you handle it as a Date object
+}
+interface CareersApplicationProps {
+  allJobs: {
+    content: string
+    data: Job
+    filePath: string
+  }[]
+}
+function Page_Careers_Application({ allJobs }: CareersApplicationProps) {
   return (
     <>
       <NextSeo

@@ -2,15 +2,22 @@
 import { getTodaysDate } from '@lib/helpers'
 import mail from '@sendgrid/mail'
 const busboy = require('busboy')
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY)
+const apiKey = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
+if (!apiKey) {
+  throw new Error('SendGrid API key is not defined')
+}
+
+mail.setApiKey(apiKey)
+
 export const config = {
   api: {
     bodyParser: false,
   },
 }
 
-export default async function sendJobApplication(req, res) {
+export default async function sendJobApplication(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { fields, files } = await parseReq(req)
 
@@ -31,7 +38,7 @@ export default async function sendJobApplication(req, res) {
   }
 }
 
-function parseReq(req: any): Promise<any> {
+function parseReq(req: NextApiRequest): Promise<any> {
   return new Promise((resolve, reject) => {
     const fields = {}
     const files = {}

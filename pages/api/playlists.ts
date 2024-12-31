@@ -1,7 +1,8 @@
 import { getPlaylist } from 'lib/spotify'
 import { msToTime } from '@lib/helpers'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const response = await getPlaylist()
   const { tracks, name, description, images, external_urls, followers } = await response.json()
 
