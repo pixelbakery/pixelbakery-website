@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 
 import {
-  Onboarding_Book,
+  // Onboarding_Book,
   Onboarding_Contact,
   Onboarding_Expectations,
   Onboarding_SEO,
@@ -15,7 +15,7 @@ function Page_Onboarding() {
     <>
       <PageHeader_VarH header='Become a Client' subheader='All it takes is one great idea' />
       <Onboarding_Contact />
-      <Onboarding_Book />
+      {/* <Onboarding_Book /> */}
       <Onboarding_Expectations />
       <Onboarding_SEO />
     </>
