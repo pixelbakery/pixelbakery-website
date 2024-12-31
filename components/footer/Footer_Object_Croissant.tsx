@@ -5,6 +5,7 @@ import Close from '@images/Close'
 import cn from 'classnames'
 import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
 import { SendToMailchimp, SendEmail_Croissants } from '@lib/helpers'
+import { usePlausible } from 'next-plausible'
 
 interface FooterObjectCroissantProps {
   onModalUpdate: (value: boolean) => void
@@ -19,7 +20,7 @@ export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectC
   const [checked, setChecked] = useState<boolean>(true)
   const [submitted, setSubmitted] = useState<boolean>(false)
   const [message, setMessage] = useState<string>('')
-
+  const plausible = usePlausible()
   const handleOnClick = () => {
     onModalUpdate(false)
     setSubmitted(false)
@@ -37,6 +38,7 @@ export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectC
     SendToMailchimp(data, 'Croissants')
     SendEmail_Croissants(data)
     resetField('email')
+    plausible('Custom Event', { props: { source: 'croissant-submit' } })
     setSubmitted(true)
     setMessage('👩‍🍳 Nice. Check your inbox. <br/><br/><em>bon appetit</em>')
   }

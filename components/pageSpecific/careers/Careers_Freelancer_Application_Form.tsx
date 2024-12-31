@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useForm, Control } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+
 import {
   SendToMonday_FreelancerForm,
   SendToMonday_FreelancerForm_GetSkills,
@@ -24,6 +25,7 @@ import {
   ContactForm_MultiSelect,
   ContactForm_PhoneInput,
 } from '@utility/ContactForm_Parts'
+import { usePlausible } from 'next-plausible'
 // --------------------------------------------------------------------------------------
 // TYPES
 // --------------------------------------------------------------------------------------
@@ -79,6 +81,7 @@ function Careers_Freelancer_Application_Form() {
   const [hideForm, setHideForm] = useState(false)
   const [skillsOptions, setSkillsOptions] = useState<Array<{ value: string; label: string }>>([])
 
+  const plausible = usePlausible()
   // Fetch dynamic skills from Monday
   useEffect(() => {
     const fetchSkills = async () => {
@@ -117,6 +120,7 @@ function Careers_Freelancer_Application_Form() {
       setHideForm(true)
     } else {
       // Otherwise proceed with sending data
+      plausible('Custom Event', { props: { source: 'freelancer-application-submit' } })
       SendEmail_Freelancers(data)
       SendToMonday_FreelancerForm(data)
       SendEmail_FreelancersConfirmation(data)

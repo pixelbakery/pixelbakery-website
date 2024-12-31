@@ -9,7 +9,7 @@ import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
 import { SendToMailchimp } from '@lib/helpers'
 import router from 'next/router'
 import Link from 'next/link'
-
+import { usePlausible } from 'next-plausible'
 type FormInputs = {
   test: string
 }
@@ -27,12 +27,13 @@ export default function Careers_Application_Form({ allJobs }) {
     defaultValues: {},
   })
 
+  const plausible = usePlausible()
   // Handle the  submit
   const onSubmit = async (data: FormInputs) => {
     if (isLoading) {
       return
     }
-
+    plausible('Custom Event', { props: { source: 'job-application-submit' } })
     await setIsLoading(true)
     await SendToMonday_JobApplication(data)
     await SendToSendgrid(data)
@@ -100,19 +101,19 @@ export default function Careers_Application_Form({ allJobs }) {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete={'true'}>
-        <div className='mx-auto max-w-4xl grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-10'>
-          <div className='col-span-2 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-y-1 lg:gap-x-4'>
+        <div className='grid max-w-4xl grid-cols-2 gap-4 mx-auto lg:grid-cols-3 lg:gap-y-10'>
+          <div className='grid grid-cols-1 col-span-2 lg:col-span-3 lg:grid-cols-3 gap-y-1 lg:gap-x-4'>
             <div className='col-span-1 lg:col-span-3'>
               <label className='required' htmlFor='given-name'>
                 {' '}
                 Full Name
               </label>
-              <span className='text-sm text-wine-400 mt-0 mb-3 py-0 leading-none block'>
+              <span className='block py-0 mt-0 mb-3 text-sm leading-none text-wine-400'>
                 What your momma calls you when she&apos;s mad.
               </span>
             </div>
             <input
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='text'
               required
               autoComplete='given-name'
@@ -121,7 +122,7 @@ export default function Careers_Application_Form({ allJobs }) {
               {...register('first_name' as never, {})}
             />
             <input
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='text'
               autoComplete='additional-name'
               id='additional-name'
@@ -129,7 +130,7 @@ export default function Careers_Application_Form({ allJobs }) {
               {...register('middle_name' as never, {})}
             />
             <input
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               required
               type='text'
               autoComplete='family-name'
@@ -145,7 +146,7 @@ export default function Careers_Application_Form({ allJobs }) {
             </label>
             <input
               id='pronoun'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='text'
               placeholder='(totally optional)'
               {...register('pronoun' as never, {})}
@@ -157,7 +158,7 @@ export default function Careers_Application_Form({ allJobs }) {
               Email
             </label>
             <input
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='email'
               id='email'
               autoComplete='email'
@@ -176,7 +177,7 @@ export default function Careers_Application_Form({ allJobs }) {
               type='tel'
               autoComplete='tel'
               required
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               placeholder='Phone'
               {...register('phone_number' as never, {})}
             />
@@ -189,7 +190,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               id='social'
               type='url'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               placeholder='https://'
               {...register('social' as never, {})}
             />
@@ -202,7 +203,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               type='text'
               id='zodiac'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               placeholder='scorpio scorpio scorpio'
               {...register('zodiac' as never, {})}
             />
@@ -216,7 +217,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <select
               id='position'
               {...register('position' as never, {})}
-              className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md cursor-pointer text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
             >
               {allJobs
                 .filter((job) => job.data.active)
@@ -238,7 +239,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <select
               required
               id='commitment'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md cursor-pointer text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               {...register('commitment' as never, {})}
             >
               <option value='Full-Time'>Full-Time</option>
@@ -256,7 +257,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <select
               required
               id='education'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 cursor-pointer focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md cursor-pointer text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               {...register('education' as never, {})}
             >
               <option value='High School Diploma'>High School Diploma</option>
@@ -276,13 +277,13 @@ export default function Careers_Application_Form({ allJobs }) {
             <div className='flex gap-2'>
               <input
                 id='hours'
-                className='w-1/2 border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+                className='w-1/2 px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
                 type='number'
                 placeholder='hrs'
                 {...register('hours' as never, {})}
               />
               <input
-                className='w-1/2 border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+                className='w-1/2 px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
                 type='text'
                 placeholder='$'
                 {...register('pay' as never, {})}
@@ -300,7 +301,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 type='text'
                 id='street-address'
                 autoComplete='street-address'
-                className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+                className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
                 placeholder='Address'
                 {...register('address_line_1' as never, {})}
               />
@@ -308,7 +309,7 @@ export default function Careers_Application_Form({ allJobs }) {
                 required
                 type='text'
                 autoComplete='address-level2'
-                className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+                className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
                 placeholder='City, State, Zip'
                 {...register('address_line_2' as never, {})}
               />
@@ -323,7 +324,7 @@ export default function Careers_Application_Form({ allJobs }) {
               required
               id='about_personal'
               rows={5}
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               {...register('about_personal' as never, {})}
             />
           </div>
@@ -336,7 +337,7 @@ export default function Careers_Application_Form({ allJobs }) {
               required
               id='about_professional'
               rows={5}
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               {...register('about_professional' as never, {})}
             />
           </div>
@@ -349,31 +350,31 @@ export default function Careers_Application_Form({ allJobs }) {
               required
               rows={5}
               id='why'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               {...register('why' as never, {})}
             />
           </div>
 
           <div className='col-span-2 xl:col-span-1 '>
-            <label className=' ' htmlFor='band'>
+            <label className='' htmlFor='band'>
               What&apos;s your favorite band?
             </label>
             <input
               type='text'
               id='band'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               placeholder="Please don't say Chris Brown"
               {...register('band' as never, {})}
             />
           </div>
 
           <div className='col-span-2'>
-            <label className=' ' htmlFor='website'>
+            <label className='' htmlFor='website'>
               Website / Portfolio Link
             </label>
             <input
               id='website'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='url'
               placeholder='https://'
               {...register('website' as never, {})}
@@ -385,7 +386,7 @@ export default function Careers_Application_Form({ allJobs }) {
               Upload Resume
             </label>
             <input
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='file'
               id='resume'
               onChange={setFile}
@@ -399,13 +400,13 @@ export default function Careers_Application_Form({ allJobs }) {
               })}
             />
             {errors.resume?.type === 'lessThan10MB' && (
-              <p className='text-peach font-semibold italic'>Error: Must Be Under 10MB</p>
+              <p className='italic font-semibold text-peach'>Error: Must Be Under 10MB</p>
             )}
             <span>{fileName}</span>
             {errors.resume?.type === 'acceptedFormats' && (
-              <p className='text-peach font-semibold italic'>Error: Must Be A PDF</p>
+              <p className='italic font-semibold text-peach'>Error: Must Be A PDF</p>
             )}
-            <p className='text-sm text-wine-400 mb-0 pb-0'>
+            <p className='pb-0 mb-0 text-sm text-wine-400'>
               Must be a PDF. Please upload a .pdf under 10MB. If you need help reducing your file
               size, check out:{' '}
               <Link hrefLang={'en-US'} href='https://ilovepdf.com' rel='noopener' target={'_blank'}>
@@ -420,7 +421,7 @@ export default function Careers_Application_Form({ allJobs }) {
             <input
               type='text'
               id='hear'
-              className='w-full border-0 rounded-md text-lg text-wine px-6 focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+              className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               placeholder='bc you totally follow us on insta'
               {...register('hear' as never, {})}
             />
@@ -450,16 +451,16 @@ export default function Careers_Application_Form({ allJobs }) {
               </label>
             </div>
           </div>
-          <div className='col-span-2 border-t border-wine pt-4 mt-4'>
+          <div className='col-span-2 pt-4 mt-4 border-t border-wine'>
             <p className='font-bold'>See? That wasn&apos;t too bad.</p>
-            <p className='my-0 py-0'>
+            <p className='py-0 my-0'>
               Look it over, upload your resume, and send it off. Ditch the cover letter, chances are
               we won&apos;t read it anyways. We&apos;ll be in touch.
             </p>
           </div>
           <div className='col-span-2 my-2'>
             <button
-              className='my-3 py-2 px-12 cursor-pointer bg-blue text-cream rounded-md text-center inline-block drop-shadow-md hover:drop-shadow-sm font-bold text-2xl disabled:bg-wine-300 disabled:cursor-progress disabled:hover:drop-shadow-md'
+              className='inline-block px-12 py-2 my-3 text-2xl font-bold text-center rounded-md cursor-pointer bg-blue text-cream drop-shadow-md hover:drop-shadow-sm disabled:bg-wine-300 disabled:cursor-progress disabled:hover:drop-shadow-md'
               type='submit'
               disabled={isLoading}
             >

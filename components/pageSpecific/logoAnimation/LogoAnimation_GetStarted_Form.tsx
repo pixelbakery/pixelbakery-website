@@ -2,11 +2,16 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { SendToMonday_LogoAnimation } from '@lib/api_sendToMonday'
+import { usePlausible } from 'next-plausible'
+
 export default function LogoAnimation_GetStarted_Form() {
   const [checked, setChecked] = useState(true)
   const handleCheck = () => {
     setChecked(!checked)
   }
+
+  const plausible = usePlausible()
+
   const [submitted, setSubmitted] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
 
@@ -17,10 +22,11 @@ export default function LogoAnimation_GetStarted_Form() {
     // setError,
   } = useForm()
   // Handle the submit
-  const onSubmit = (data) => {
+  const onSubmit = ({ data }: any) => {
     SendToSendgrid(data)
     SendToMonday_LogoAnimation(data)
     SendToMailchimp(data)
+    plausible('Custom Event', { props: { source: 'logo-animation-submit' } })
     // SendToMailchimp(data)
     resetField('email')
     resetField('phone')
@@ -37,7 +43,7 @@ export default function LogoAnimation_GetStarted_Form() {
   ////////////
   // MAILCHIMP
   ////////////
-  async function SendToMailchimp(data) {
+  async function SendToMailchimp({ data }: any) {
     data.tag = 'Logo Animation Form'
     if (checked) {
       await fetch('/api/mailchimp', {
@@ -55,7 +61,7 @@ export default function LogoAnimation_GetStarted_Form() {
   ///////////
   // SENDGRID
   ///////////
-  async function SendToSendgrid(data) {
+  async function SendToSendgrid({ data }: any) {
     await fetch('/api/sendLogoAnimation ', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -71,32 +77,32 @@ export default function LogoAnimation_GetStarted_Form() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
-          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='w-full form-border-b focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='text'
           placeholder='name'
           {...register('name', { required: true })}
         />
         <input
-          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='w-full form-border-b focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='email'
           placeholder='email'
           {...register('email', { required: true })}
         />
         <input
-          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='w-full form-border-b focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='tel'
           placeholder='phone'
           {...register('phone', {})}
         />
         <input
-          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='w-full form-border-b focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='text'
           placeholder='company / entity'
           {...register('entity', {})}
         />
 
-        <div className='w-full mx-auto config-select text-center z-20 mt-2'>
-          <div className='px-4  py-2 flex flex-col md:flex-row gap-x-8 justify-center  relative   mb-1 rounded-xl border border-blue bg-transparent'>
+        <div className='z-20 w-full mx-auto mt-2 text-center config-select'>
+          <div className='relative flex flex-col justify-center px-4 py-2 mb-1 bg-transparent border md:flex-row gap-x-8 rounded-xl border-blue'>
             <input
               {...register('package', { required: true })}
               type='radio'
@@ -107,7 +113,7 @@ export default function LogoAnimation_GetStarted_Form() {
             />
             <label
               htmlFor='package-essentials'
-              className='relative z-10 inline-block cursor-pointer text-wine transition-all duration-500 ease-in-out leading-none self-center my-0 py-4 px-3'
+              className='relative z-10 self-center inline-block px-3 py-4 my-0 leading-none transition-all duration-500 ease-in-out cursor-pointer text-wine'
             >
               <span>Essentials</span>
             </label>
@@ -122,7 +128,7 @@ export default function LogoAnimation_GetStarted_Form() {
             />
             <label
               htmlFor='package-standard'
-              className='relative z-10 inline-block cursor-pointer text-wine transition-all duration-500 ease-in-out leading-none self-center my-0 py-4 px-3'
+              className='relative z-10 self-center inline-block px-3 py-4 my-0 leading-none transition-all duration-500 ease-in-out cursor-pointer text-wine'
             >
               <span>Standard</span>
             </label>
@@ -136,7 +142,7 @@ export default function LogoAnimation_GetStarted_Form() {
             />{' '}
             <label
               htmlFor='package-gourmet'
-              className='relative z-10 inline-block cursor-pointer text-wine transition-all duration-500 ease-in-out leading-none self-center my-0 py-4 px-3'
+              className='relative z-10 self-center inline-block px-3 py-4 my-0 leading-none transition-all duration-500 ease-in-out cursor-pointer text-wine'
             >
               <span>Gourmet</span>
             </label>
@@ -150,36 +156,35 @@ export default function LogoAnimation_GetStarted_Form() {
             />
             <label
               htmlFor='package-kitchenSink'
-              className=' relative z-10 inline-block cursor-pointer text-wine transition-all duration-500 ease-in-out leading-none self-center my-0 py-4 px-3'
+              className='relative z-10 self-center inline-block px-3 py-4 my-0 leading-none transition-all duration-500 ease-in-out cursor-pointer text-wine'
             >
               <span>Kitchen Sink</span>
             </label>
-            <span className='absolute px-2 duration-500 switch pb-2 '>
-              <div className='bg-blue w-full h-12 rounded-xl'></div>
+            <span className='absolute px-2 pb-2 duration-500 switch '>
+              <div className='w-full h-12 bg-blue rounded-xl'></div>
             </span>
           </div>
         </div>
         <textarea
-          className='form-border-b w-full focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='w-full form-border-b focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           placeholder='Any additional details you would like to share?'
           rows={5}
           {...register('message', {})}
         />
 
         <input
-          className='cursor-pointer bg-blue text-lg font-bold text-cream rounded-md px-8 py-3 '
+          className='px-8 py-3 text-lg font-bold rounded-md cursor-pointer bg-blue text-cream '
           type='submit'
         />
-        <div className='col-span-2 flex my-2'>
+        <div className='flex col-span-2 my-2'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-2 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
             }
             type='checkbox'
             checked={checked}
-            name={'newsletter'}
             onClick={handleCheck}
-            {...register('check')}
+            {...register('newsletter')}
           />
           <label
             className={
@@ -194,7 +199,7 @@ export default function LogoAnimation_GetStarted_Form() {
       </form>
 
       <div
-        className='max-w-2xl font-semibold text-lg '
+        className='max-w-2xl text-lg font-semibold '
         dangerouslySetInnerHTML={{
           __html: successMessage,
         }}

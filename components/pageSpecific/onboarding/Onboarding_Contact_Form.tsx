@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { usePlausible } from 'next-plausible'
+
 import * as Yup from 'yup'
 import {
   ContactForm_TextInput,
@@ -86,6 +88,8 @@ function Form({
   setSubmitted,
   setHideForm,
 }: FormProps) {
+  const plausible = usePlausible()
+
   const onSubmit = (data: BaseFormInputs) => {
     if (data.soliciting === 'true') {
       // the user is soliciting us => hide form
@@ -95,6 +99,7 @@ function Form({
       SendEmail_Onboarding(data)
       SendEmail_OnboardingConfirmation(data)
       SendToMonday_ContactForm(data)
+      plausible('Custom Event', { props: { source: 'onboarding-form-submit' } })
       SendToMailchimp(data, 'onboarding')
       setSubmitted(true)
     }

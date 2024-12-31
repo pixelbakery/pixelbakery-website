@@ -4,6 +4,8 @@ import * as Yup from 'yup'
 import { useState } from 'react'
 import { SendToMonday_ContactForm } from '@lib/api_sendToMonday'
 import { SendToMailchimp, SendEmail_Contact } from '@lib/helpers'
+import { usePlausible } from 'next-plausible'
+
 import {
   ContactForm_NotInterested,
   ContactForm_ThankYou,
@@ -18,6 +20,7 @@ import {
 } from '@utility/ContactForm_Parts'
 
 import type { FormInputs, FormProps } from '@types'
+const plausible = usePlausible()
 
 // -----------------------------------------------------------------------------
 // Yup Schema
@@ -61,7 +64,7 @@ function handleFormSubmit(
 ) {
   // Always send to Monday
   SendToMonday_ContactForm(data)
-
+  plausible('Custom Event', { props: { source: 'croissant-submit' } })
   // If soliciting is false => legit inquiry
   if (data.soliciting === 'false') {
     SendEmail_Contact(data)
