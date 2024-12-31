@@ -12,10 +12,10 @@ const Page_Freelancers = () => {
       <PageSection id={'freelancer-application'}>
         <InnerWrapper>
           <div className='flex flex-col justify-center'>
-            <H2 noMargins={true} className='text-center mx-auto'>
+            <H2 noMargins={true} className='mx-auto text-center'>
               We're Always Looking For New Bakers
             </H2>
-            <Lead className='text-center self-center' noMargins={true}>
+            <Lead className='self-center text-center' noMargins={true}>
               We're constantly on the lookout to expand our network of talented animators,
               videographers, and producers. <span className='font-bold'>Note:</span> We are not
               looking for voiceover artists at this time.

@@ -1,11 +1,49 @@
 // types/index.ts
+//
+// This file merges previously defined props with existing interfaces for
+// the contact form and general data structures used throughout the app.
+//
+
 import type { ReactNode } from 'react'
+import type { Controller, FieldErrors, UseFormRegister, Control } from 'react-hook-form'
+
+// ────────────────────────────────────────────────────────────────────────────
+// SHARED / GENERIC TYPES
+// ────────────────────────────────────────────────────────────────────────────
+
+export type Children = {
+  children: ReactNode
+}
+
+export interface Data {
+  date: string
+}
+
+export interface ProjectFile {
+  data: Data
+  filePath: string
+}
+
+export interface MadeToOrder {
+  data: Data
+  filePath: string
+}
+
+export interface EducationPageProps {
+  allMadeToOrders: MadeToOrder[]
+  allProjectFiles: ProjectFile[]
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// SPOTIFY / PLAYLIST TYPES
+// ────────────────────────────────────────────────────────────────────────────
 
 export type Song = {
   songUrl: string
   artist: string
   title: string
 }
+
 export type Playlist = {
   album: string
   albumImageUrl: string
@@ -25,6 +63,11 @@ export type Playlist = {
   title: string
   id: string
 }
+
+// ────────────────────────────────────────────────────────────────────────────
+// CASE STUDY TYPES
+// ────────────────────────────────────────────────────────────────────────────
+
 export interface CaseStudyData {
   date: string
   active: boolean
@@ -47,15 +90,20 @@ export interface HomePortfolioCardProps {
   project: CaseStudyProject
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// MEDIA / VIDEO TYPES
+// ────────────────────────────────────────────────────────────────────────────
+
 export enum MediaProvider {
   VIMEO = 'Vimeo',
-  // here you may include any other providers
+  // add more providers as needed
 }
 
 export type MediaVimeoItem = {
   provider: MediaProvider.VIMEO
   id: string
 }
+
 export type MediaItem = {
   provider: MediaProvider
 } & MediaVimeoItem
@@ -66,6 +114,10 @@ export interface Uploader {
     onProgress?: (bytesUploaded: number, bytesTotal: number) => void,
   ): Promise<MediaItem>
 }
+
+// ────────────────────────────────────────────────────────────────────────────
+// POSTS / BLOG TYPES
+// ────────────────────────────────────────────────────────────────────────────
 
 export interface PostData {
   title: string
@@ -83,43 +135,103 @@ export interface PostData {
   slug?: string
   as?: string
 }
-export interface FullscreenMenuProps {
-  isActive: boolean
-  onModalUpdate: (isActive: boolean) => void
-}
-export interface MenuComponentBaseProps {
-  update: () => void
-  className?: string
-}
+
 export interface Post {
   data: PostData
   filePath: string
 }
 
-export type Children = {
-  children: ReactNode
+export interface FullscreenMenuProps {
+  isActive: boolean
+  onModalUpdate: (isActive: boolean) => void
 }
 
-export interface Data {
-  date: string // Adjust and extend this interface as necessary based on the actual data structure
-  // Include additional properties here
+export interface MenuComponentBaseProps {
+  update: () => void
+  className?: string
 }
 
-export interface ProjectFile {
-  data: Data
-  filePath: string
+// ────────────────────────────────────────────────────────────────────────────
+// CONTACT FORM TYPES
+// ────────────────────────────────────────────────────────────────────────────
+
+// The core shape of data from the main contact forms.
+export interface FormInputs {
+  name: string
+  entity?: string
+  multipleErrorInput?: string
+  newsletter?: boolean
+  message: string
+  soliciting: string | null
+  subject: string
+  value?: string
+  phone?: string
+  email: string
+  website?: string | undefined
 }
 
-export interface MadeToOrder {
-  data: Data
-  filePath: string
+// Props for the sub-form
+export interface FormProps {
+  register: UseFormRegister<FormInputs>
+  errors: FieldErrors<FormInputs>
+  control: Control<FormInputs>
+  hideForm: boolean
+  handleSubmit: (
+    callback: (data: FormInputs) => void,
+  ) => (e?: React.BaseSyntheticEvent) => Promise<void>
+  setSubmitted: React.Dispatch<React.SetStateAction<boolean>>
+  setHideForm: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export interface EducationPageProps {
-  allMadeToOrders: MadeToOrder[]
-  allProjectFiles: ProjectFile[]
+// Basic error record: keyed by field name, each with a `message`.
+export interface ErrorsProps {
+  errors: FieldErrors<FormInputs>
+  className?: string
 }
 
-export interface CommonInputProps {
-  placeholder?: string
+export interface PhoneInputProps {
+  register: UseFormRegister<FormInputs>
+  errors: FieldErrors<FormInputs>
+  fieldName?: keyof FormInputs
+  control?: Control<any>
+  placeHolder?: string
+  className?: string
+}
+// Base props shared by text inputs, email inputs, etc.
+export interface BaseFieldProps {
+  register: UseFormRegister<any>
+  errors: FieldErrors<any>
+  fieldName: string
+  placeHolder?: string
+  className?: string
+  autoComplete?: string
+  rows?: number
+}
+
+// Newsletter checkbox props.
+export interface NewsletterProps {
+  register: UseFormRegister<any>
+}
+
+// Props for the submit button.
+export interface SubmitProps {
+  valueText?: string
+  className?: string
+  disabled?: boolean
+}
+
+// Radio buttons for whether the user is soliciting or not.
+export interface SolicitationProps {
+  register: UseFormRegister<any>
+  errors: Record<string, any>
+  value?: boolean
+}
+
+// Multi-select dropdown props.
+export interface MultiSelectProps {
+  control: Control<any>
+  errors: Record<string, any>
+  fieldName: string
+  className?: string
+  options: Array<{ value: string; label: string }>
 }
