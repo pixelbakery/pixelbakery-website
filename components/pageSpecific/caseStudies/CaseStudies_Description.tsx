@@ -34,7 +34,8 @@ function CaseStudies_Description({ children, ...props }: Props) {
         <div className='grid grid-cols-1 lg:grid-cols-5'>
           <div className='col-span-1 lg:col-span-2'>
             <H2
-              className={cn(' text-left mt-0 pt-0 text-4xl max-w-md', `text-${props.headerColor}`)}
+              className={cn(' text-left mt-0 pt-0 text-4xl max-w-md', `text-`)}
+              color={props.headerColor}
             >
               {props.header}
             </H2>
