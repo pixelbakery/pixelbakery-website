@@ -21,12 +21,13 @@ const H2AndLead = ({
   leadColor = 'wine',
   className,
   center,
-}: PropsWithChildren<Props>) => {
+}: Props) => {
   return (
     <hgroup className={cn([`${className}`])} itemScope itemType='https://schema.org/CreativeWork'>
       <H2
         noMargins={true}
-        className={cn(' mb-4', [`${textColorVariants[headerColor]}`], {
+        color={headerColor}
+        className={cn(' mb-4 ', [`${textColorVariants[headerColor]}`], {
           [`text-center`]: center === true,
         })}
       >{`${headerText}`}</H2>
@@ -34,8 +35,8 @@ const H2AndLead = ({
         role='doc-subtitle'
         itemProp='alternativeHeadline'
         className={cn(
-          'text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg lg:mb-12',
-          [`${textColorVariants[headerColor]}`],
+          'text-2xl lg:text-2xl mt-0 font-semibold leading-tight max-w-lg lg:mb-12 font-geologica',
+          [`${textColorVariants[leadColor]}`],
           { [`${className}`]: leadColor },
           { [`text-center`]: center === true },
         )}

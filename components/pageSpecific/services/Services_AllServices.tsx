@@ -1,7 +1,6 @@
 import Services_AllServices_Card_Filled from './Services_AllServices_Card_Filled'
 import services from '@data/services'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import BackLink from '@parts/BackLink'
 import Link from 'next/link'

@@ -3,8 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import cn from 'classnames'
 const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
+import type { AboutTeamHeadshotProps } from '@types'
 
-const About_Team_Headshot = ({ person }) => {
+const About_Team_Headshot = ({ person }: AboutTeamHeadshotProps) => {
   const [hover, setHover] = useState(false)
   const handleHover = () => setHover(!hover)
 
@@ -13,7 +14,7 @@ const About_Team_Headshot = ({ person }) => {
       hrefLang={'en-US'}
       as={`/about/${person.filePath.replace(/\.mdx?$/, '')}`}
       href={`/about/[slug]`}
-      className='relative w-full  aspect-w-3 aspect-h-4 col-span-1 bg-blue'
+      className='relative w-full col-span-1 aspect-w-3 aspect-h-4 bg-blue'
       onMouseOver={handleHover}
       onMouseLeave={handleHover}
     >
@@ -33,7 +34,7 @@ const About_Team_Headshot = ({ person }) => {
           src={`${ImgPrefix}${person.data.headshotSmiling}`}
           width={720}
           height={980}
-          className='absolute top-0 left-0  w-full h-full object-cover z-10'
+          className='absolute top-0 left-0 z-10 object-cover w-full h-full'
           alt={'pixel bakery ' + person.data.name + ', ' + person.data.title + ' company headshot'}
           placeholder={'blur'}
           blurDataURL={`${ImgPrefix}${person.data.headshotSmiling}`}
