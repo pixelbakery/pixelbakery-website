@@ -17,7 +17,8 @@
     "release": "standard-version --sign",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "release:major": "standard-version --release-as major"
+    "release:major": "standard-version --release-as major",
+    "knip": "knip"
   },
   "prettier": {
     "trailingComma": "all",
@@ -69,7 +70,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.9",
     "@types/busboy": "^1.5.3",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.5",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
@@ -82,6 +83,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-unused-imports": "^4.1.0",
     "husky": "^9.1.0",
+    "knip": "^5.41.1",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.16",
     "semantic-release": "^24.2.0",

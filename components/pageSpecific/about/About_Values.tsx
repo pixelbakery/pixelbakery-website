@@ -37,9 +37,9 @@ const VALUES: ValueItem[] = [
   {
     id: 4,
     title: "You've Got to Be Kind",
-    content: `“Hello babies. Welcome to Earth. It’s hot in the summer and cold in the winter.
-      It's round and wet and crowded. On the outside, babies, you’ve got a hundred years here.
-      There’s only one rule that I know of, babies—<em>God damn it, you’ve got to be kind.</em>” </br></br>
+    content: `“Hello babies. Welcome to Earth. It's hot in the summer and cold in the winter.
+      It's round and wet and crowded. On the outside, babies, you've got a hundred years here.
+      There's only one rule that I know of, babies—<em>God damn it, you've got to be kind.</em>” </br></br>
       – Kurt Vonnegut, <strong><em>God Bless You, Mr. Rosewater</em></strong><br><br>`,
   },
   {
@@ -91,7 +91,6 @@ export default function About_Values() {
                 onClick={() => handleSelect(index)}
                 className='pb-3 cursor-pointer'
               >
-                {/* Top bar - same color as desktop's progress background */}
                 <div className='w-full h-1 mb-2 bg-wine-100' />
 
                 <div className='flex items-center mb-2'>
