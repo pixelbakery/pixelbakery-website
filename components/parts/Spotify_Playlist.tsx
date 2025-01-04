@@ -16,7 +16,7 @@ export default function Spotify_Playlist() {
   }
   return (
     <div className='flex flex-col h-full px-4 py-4 bg-white'>
-      <div className='flex flex-col gap-12 xl:flex-row xl:my-4 xl:py-4'>
+      <div className='flex flex-col gap-12 px-1 xl:flex-row xl:my-4 xl:py-4'>
         <a
           href={data.external_urls.spotify}
           className={'hidden xl:block cursor-pointer'}
@@ -37,7 +37,7 @@ export default function Spotify_Playlist() {
           </div>
         </a>
 
-        <div className='flex flex-col justify-end '>
+        <div className='flex flex-col justify-end px-2'>
           <div
             // href={data.external_urls.spotify}
             className={'cursor-pointer'}
@@ -60,7 +60,7 @@ export default function Spotify_Playlist() {
               Play <span className='my-auto ml-3 '>▶</span>
             </a>
           </div>
-          <p className='py-0 my-1 text-xs  md:text-sm xl:text-md text-wine'>
+          <p className='py-0 my-1 text-xs md:text-sm xl:text-md text-wine'>
             {pluralize(data.followers.total, 'follower')}, {pluralize(data.tracks.total, 'song')},{' '}
             {data.albumLength}
           </p>
@@ -68,7 +68,7 @@ export default function Spotify_Playlist() {
       </div>
       <div className='h-full py-3 overflow-auto bg-cream'>
         <div className='h-full px-1 overflow-y-scroll changeScrollbar bg-cream xl:px-4 '>
-          <ul className='grid gap-1 xl:gap-2'>
+          <ul className='grid gap-2 px-2'>
             {data.tracksSelected.map((track, index) => (
               <li className='my-0' key={index}>
                 <a

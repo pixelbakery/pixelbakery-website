@@ -2,8 +2,7 @@
 import React, { ReactNode } from 'react'
 import cn from 'classnames'
 import H2 from '@typography/H2'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import type { TextColorVariant } from '@lib/colorHelper'
 
 interface Props {

@@ -163,6 +163,26 @@ export interface MenuComponentBaseProps {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
+// PEOPLE TYPES
+// ────────────────────────────────────────────────────────────────────────────
+export interface PersonData {
+  name: string
+  title: string
+  headshotSerious: string
+  headshotSmiling: string
+  bio?: string
+}
+
+// Define the structure of the `person` prop
+export interface Person {
+  data: PersonData
+  filePath: string
+}
+
+export interface AboutTeamHeadshotProps {
+  person: Person
+}
+// ────────────────────────────────────────────────────────────────────────────
 // CONTACT FORM TYPES
 // ────────────────────────────────────────────────────────────────────────────
 

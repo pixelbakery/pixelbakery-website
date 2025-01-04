@@ -1,7 +1,6 @@
 import Work_Services_Card from './Work_Services_Card'
 import services from '@data/services'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 

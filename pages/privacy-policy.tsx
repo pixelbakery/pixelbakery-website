@@ -3,8 +3,7 @@ import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { NextSeo } from 'next-seo'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 
 function Page_PrivacyPolicy() {
   return (

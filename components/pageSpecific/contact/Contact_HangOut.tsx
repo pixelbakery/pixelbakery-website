@@ -1,7 +1,6 @@
 import StrokeText from '@parts/StrokeText'
 import Link from 'next/link'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import cn from 'classnames'
 

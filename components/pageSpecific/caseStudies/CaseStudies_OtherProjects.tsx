@@ -1,6 +1,5 @@
 import CaseStudies_OtherProjects_Card from '@caseStudies/CaseStudies_OtherProjects_Card'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'
 import { Key } from 'react'

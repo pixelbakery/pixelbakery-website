@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 
 const Careers_Benefits = () => {
   return (

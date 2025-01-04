@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import clientList from '@data/work_clientList'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import Lead from '@typography/Lead'
 import H2 from '@typography/H2'
 import Link from 'next/link'

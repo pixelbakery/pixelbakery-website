@@ -2,8 +2,7 @@
 
 import ButtonFilled from '@parts/Button_Filled'
 import RecipesFeaturedPost from '@recipes/Recipes_FeaturedPost'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import { H2 } from '@typography'
 import type { PostData } from '@types'
 

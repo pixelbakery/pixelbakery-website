@@ -1,5 +1,4 @@
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Lead from '@typography/Lead'
 import Button_Filled from '@parts/Button_Filled'

@@ -1,7 +1,6 @@
 import Services_Subservices_Box from '@services/Services_Subservices_Box'
 import subservice from '@data/services-animation'
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import H2AndLead from '@typography/H2AndLead'
 
 function Services_Subservices() {

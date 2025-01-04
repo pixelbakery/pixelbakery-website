@@ -1,8 +1,7 @@
 import { SendToMonday_Tutorials } from '@lib/api_sendToMonday'
 import H2 from '@typography/H2'
 
-import PageSection from '@parts/PageSection'
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper, PageSection } from '@parts'
 import { useForm } from 'react-hook-form'
 import { usePlausible } from 'next-plausible'
 
