@@ -17,3 +17,4 @@ export { default as Footer_Sections_Column_Left } from './Footer_Sections_Column
 export { default as Footer_Sections_Column_Right } from './Footer_Sections_Column_Right'
 export { default as Footer_UI_LargeLinkList } from './Footer_UI_LargeLinkList'
 export { default as Footer_UI_SmallLinkList } from './Footer_UI_SmallLinkList'
+export { default as PulsatingButton } from './PulsatingButton'
