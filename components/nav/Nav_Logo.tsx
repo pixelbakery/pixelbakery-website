@@ -5,7 +5,7 @@ interface Props {
 
 const fadeAway: Variants = {
   hide: (delay) => ({
-    opacity: 0,
+    opacity: 0, // Explicitly setting opacity
     transition: {
       ease: 'easeOut',
       duration: 0.05,
@@ -13,7 +13,7 @@ const fadeAway: Variants = {
     },
   }),
   show: () => ({
-    opacity: 1,
+    opacity: 1, // Explicitly setting opacity
     transition: {
       ease: 'easeOut',
       duration: 0.25,
@@ -31,6 +31,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         id='Logo_Wordmark'
         viewBox={'0 0 494 138'}
         width={235}
+        initial='hide'
         height={'100%'}
         animate={showNavBar ? { scale: 1, y: 0 } : { scale: 1.3, y: -11 }}
         layout
@@ -43,12 +44,19 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         <m.path
           layout
           className={'fill-peach stroke-peach'}
+          initial='show'
           d='M48.8,42.6c0-13.5-9.8-24.1-22.3-24.1c-4.9,0-9,1.4-12.3,4v-2.8h-14v63h14v-20c3.2,2.6,7.4,4,12.3,4
   	C39,66.7,48.8,56.1,48.8,42.6z M24.5,53.2c-6.1,0-10.3-4.4-10.3-10.6c0-6.3,4.1-10.6,10.2-10.6c6.1,0,10.4,4.4,10.4,10.6
   	S30.5,53.2,24.5,53.2z'
         />
         {/* IXEL */}
-        <m.g variants={fadeAway} animate={showNavBar ? 'show' : 'hide'} custom={0.05} layout>
+        <m.g
+          variants={fadeAway}
+          animate={showNavBar ? 'show' : 'hide'}
+          custom={0.05}
+          layout
+          initial='hide'
+        >
           <g>
             <rect
               x='53.6'
@@ -79,6 +87,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         {/* B */}
         <m.path
           layout
+          initial='show'
           animate={showNavBar ? { x: -0 } : { x: -160 }}
           transition={showNavBar ? { delay: 0.2 } : { delay: 0 }}
           className={'fill-peach stroke-peach'}
@@ -89,6 +98,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         {/* AKERY */}
         <m.g
           variants={fadeAway}
+          initial='hide'
           animate={showNavBar ? 'show' : 'hide'}
           custom={0.1}
           transition={{ delay: 1 }}
@@ -132,12 +142,13 @@ const Nav_Logo = ({ showNavBar }: Props) => {
           }
           className={'fill-peach stroke-peach'}
           layout
+          initial='hide'
           d='M48,87.1c-2.3-1.9-5.2-2.8-8.1-2.7c-8.2,0-14.7,6.9-14.7,15.8c0,8.8,6.6,15.9,14.6,15.9c0,0,0,0,0,0
   	c0.2,0,0.5,0,0.7,0c2.7,0,5.4-1,7.5-2.7v1.9h9.2V74H48V87.1z M48,100.9c-0.2,3.6-3.2,6.4-6.8,6.3c-3.7-0.2-6.7-3.1-6.7-6.7
   	c-0.1-3.8,2.9-7,6.7-7.2l0.6,0c1.8,0.1,3.4,0.9,4.6,2.2c1.2,1.3,1.7,3,1.6,4.7l0,0L48,100.9z'
         />
         {/* ESIGN */}
-        <m.g variants={fadeAway} animate={showNavBar ? 'show' : 'hide'} layout>
+        <m.g variants={fadeAway} animate={showNavBar ? 'show' : 'hide'} layout initial='hide'>
           <path
             className={'fill-peach stroke-peach'}
             d='M81.8,84.5c-9.2,0-15.8,6.6-15.8,15.8c0,9.4,6.7,15.9,16.4,15.9c5.6,0,10.2-2.3,13-6.4l0.6-0.9l-7.5-4.4
@@ -176,6 +187,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
         </m.g>
         {/* S */}
         <m.path
+          initial='hide'
           animate={
             showNavBar
               ? { scale: 1, x: 0, y: 0, transition: { delay: 0.3, custom: 2 } }
@@ -188,7 +200,7 @@ const Nav_Logo = ({ showNavBar }: Props) => {
   	c-2,0.2-3.8-1.1-4.5-3l-0.4-1.1l-8.1,4.7l0.4,0.8c2.2,4.7,6.7,7.3,12.7,7.3c7.4,0,12.3-4,12.3-10C277,99,270.8,97.3,266.7,96.2z'
         />
         {/* TUDIO */}
-        <m.g variants={fadeAway} animate={showNavBar ? 'show' : 'hide'} layout>
+        <m.g variants={fadeAway} animate={showNavBar ? 'show' : 'hide'} layout initial='hide'>
           <path
             className={'fill-peach stroke-peach'}
             d='M296.6,106.4c-0.1-0.1-0.4-0.4-0.4-1.4V94.3h6.2v-9h-6.3V77l-9.2,2.8v5.4H282v9h4.9V105c0,4,0.9,6.6,2.8,8.4

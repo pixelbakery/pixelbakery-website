@@ -4,8 +4,8 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      poppins: ['var(--font-poppins)'],
-      dempsey: ['var(--font-dempsey)'],
+      poppins: ['var(--font-poppins)', 'sans-serif'],
+      dempsey: ['var(--font-dempsey)', 'sans-serif'],
       geologica: ['var(--font-geologica)', 'sans-serif'],
     },
     colors: {
