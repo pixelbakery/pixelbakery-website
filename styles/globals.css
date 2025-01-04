@@ -4,8 +4,7 @@
 
 @layer base {
   html {
-    @apply font-poppins;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-poppins, sans-serif);
   }
   body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.2);
@@ -67,13 +66,14 @@
     transform: rotate(90deg);
   }
   h1 {
-    @apply font-geologica text-8xl;
+    @apply text-8xl;
+    font-family: var(--font-geologica, sans-serif);
   }
   h2 {
     @apply my-8 text-6xl font-extrabold font-dempsey text-peach;
   }
   h3 {
-    @apply font-geologica;
+    font-family: var(--font-geologica, sans-serif);
   }
   p.lead {
     @apply pb-6 mt-2 text-2xl leading-relaxed;
