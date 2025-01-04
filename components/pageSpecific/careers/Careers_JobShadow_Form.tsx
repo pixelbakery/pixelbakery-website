@@ -18,8 +18,6 @@ type FormInputs = {
   email: string
 }
 function Careers_JobShadow_Form() {
-  // const recaptchaRef = useRef()
-
   const [submitted, setSubmitted] = useState(false)
 
   const yupValidation = Yup.object().shape({
@@ -57,7 +55,7 @@ function Careers_JobShadow_Form() {
   } = useForm<FormInputs>(setFormOptions as any)
 
   // Handle the submit
-  function onSubmit(data) {
+  function onSubmit(data: any) {
     SendEmail_JobShadow(data)
     SendToMonday_JobShadow(data)
     SendToMailchimp(data, 'Job Shadow')
@@ -70,12 +68,12 @@ function Careers_JobShadow_Form() {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className={cn('opacity-100 transition-opacity duration-500 grid grid-cols-2 gap-4', {
-          ['opacity-0 hidden pointer-events-none']: submitted,
+          // ['opacity-0 hidden pointer-events-none']: submitted,
         })}
       >
         {/* name */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='col-span-2 px-8 py-4 text-xl font-semibold border-0 rounded-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='text'
           placeholder='full name'
           {...register('name', { required: true })}
@@ -83,16 +81,15 @@ function Careers_JobShadow_Form() {
 
         {/* email */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='col-span-2 px-8 py-4 text-xl font-semibold border-0 rounded-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='email'
-          name='email'
           id={'email'}
           placeholder='email'
           {...register('email')}
         />
         {/* school */}
         <input
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='col-span-2 px-8 py-4 text-xl font-semibold border-0 rounded-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           type='text'
           placeholder='school'
           {...register('school', { required: true })}
@@ -100,18 +97,17 @@ function Careers_JobShadow_Form() {
         {/* message */}
         <textarea
           rows={4}
-          className='col-span-2  font-semibold py-4  px-8  rounded-xl border-0  text-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark  focus:ring-blue-dark'
+          className='col-span-2 px-8 py-4 text-xl font-semibold border-0 rounded-xl text-wine cursor-text focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
           placeholder='tell us about yourself and what about Pixel Bakery interests you'
           {...register('message', { required: true })}
         />
         {/* agreements */}
-        <div className='col-span-2 flex'>
+        <div className='flex col-span-2'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
             }
             type='checkbox'
-            name='noParents'
             id='noParents'
             {...register('noParents')}
           />
@@ -124,13 +120,12 @@ function Careers_JobShadow_Form() {
             I&apos;m filling this out for myself.
           </label>
         </div>
-        <div className='col-span-2 flex'>
+        <div className='flex col-span-2'>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
             }
             type='checkbox'
-            name='threePeople'
             id='threePeople'
             {...register('threePeople')}
           />
@@ -145,13 +140,12 @@ function Careers_JobShadow_Form() {
         </div>
 
         {/* newsletter */}
-        <div className='col-span-2 flex '>
+        <div className='flex col-span-2 '>
           <input
             className={
               'rounded-lg bg-cream border-6 border-cream p-2 my-0 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl ring-0 focus:ring-0 '
             }
             type='checkbox'
-            name='newsletter'
             id='newsletter'
             {...register('newsletter')}
           />
@@ -166,7 +160,7 @@ function Careers_JobShadow_Form() {
         </div>
         <button
           type='submit'
-          className='col-span-2 md:col-span-1 px-6 py-3 bg-blue-dark rounded-lg my-3 font-bold text-2xl duration-300 hover:scale-98 text-cream shadow-lg'
+          className='col-span-2 px-6 py-3 my-3 text-2xl font-bold duration-300 rounded-lg shadow-lg md:col-span-1 bg-blue-dark hover:scale-98 text-cream'
         >
           ✨ let&apos;s do it ✨
         </button>
@@ -176,7 +170,7 @@ function Careers_JobShadow_Form() {
         <ul>
           {Object.entries(errors).map(([type, message], index) => {
             return (
-              <li className='text-error font-semibold text-lg italic' key={index}>
+              <li className='text-lg italic font-semibold text-error' key={index}>
                 🚨 {Object.values(message)[0].toString()}
               </li>
             )

@@ -68,9 +68,20 @@ export type Playlist = {
 // CASE STUDY TYPES
 // ────────────────────────────────────────────────────────────────────────────
 
+export interface Credit {
+  name: string // Name of the person
+  title: string // Title or role of the person
+  website?: string // Optional website link
+}
+
+export interface CaseStudiesCreditsProps {
+  credits: Credit[] // List of credits
+}
+
 export interface CaseStudyData {
   date: string
   active: boolean
+  credits: Credit[]
   client: string
   title: string
   excerpt: string

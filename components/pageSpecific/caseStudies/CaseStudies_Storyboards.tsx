@@ -2,7 +2,7 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import Carousel from '@parts/carousel/Carousel'
 import H2 from '@typography/H2'
-
+import type { TextColorVariant } from '@lib/colorHelper'
 type CarouselProps = {
   slideColor?: string
   objectFit?: string
@@ -22,7 +22,7 @@ function CaseStudies_Storyboards({
   return (
     <PageSection id={id != undefined ? id : 'storyboards'} color={bgColor} className={'mt-0'}>
       <InnerWrapper>
-        <H2 color={headerColor} className={'relative z-20'}>
+        <H2 color={headerColor as TextColorVariant} className={'relative z-20'}>
           Storyboards
         </H2>
         <div className='relative'>

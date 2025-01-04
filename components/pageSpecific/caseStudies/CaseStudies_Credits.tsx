@@ -2,11 +2,12 @@ import InnerWrapper from '@parts/InnerWrapper'
 import PageSection from '@parts/PageSection'
 import H2 from '@typography/H2'
 import Link from 'next/link'
+import type { CaseStudiesCreditsProps } from '@types'
 
-function CaseStudies_Credits({ credits }) {
+function CaseStudies_Credits({ credits }: CaseStudiesCreditsProps) {
   const firstcolumn = Math.floor(credits.length / 2)
 
-  const innerHtml = (name, title) => {
+  const innerHtml = (name: string, title: string) => {
     return (
       <span>
         {name} <span className='hidden lg:inline'> – </span>
@@ -15,10 +16,10 @@ function CaseStudies_Credits({ credits }) {
     )
   }
 
-  const setCreditColumn = (start, end) => {
+  const setCreditColumn = (start: number, end: number) => {
     return (
-      <div className='mx-auto  w-max'>
-        <ul className='mx-auto list-none text-wine text-xs sm:text-sm lg:text-md text-opacity-75 '>
+      <div className='mx-auto w-max'>
+        <ul className='mx-auto text-xs text-opacity-75 list-none text-wine sm:text-sm lg:text-md '>
           {credits.slice(start, end).map((credit) => {
             return (
               <li className='my-3' key={credit.name}>
@@ -42,10 +43,10 @@ function CaseStudies_Credits({ credits }) {
   }
 
   return (
-    <PageSection className='px-6 my-4 py-12' id='credits'>
+    <PageSection className='px-6 py-12 my-4' id='credits'>
       <InnerWrapper>
-        <H2 className='text-left mt-0 pt-0 text-4xl max-w-md '> Credits</H2>
-        <div className=' mx-auto flex justify-center'>
+        <H2 className='max-w-md pt-0 mt-0 text-4xl text-left '> Credits</H2>
+        <div className='flex justify-center mx-auto '>
           {setCreditColumn(0, firstcolumn)}
           {setCreditColumn(firstcolumn, credits.length)}
         </div>

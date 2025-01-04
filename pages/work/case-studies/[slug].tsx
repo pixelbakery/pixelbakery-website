@@ -19,7 +19,7 @@ import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
 import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
 import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
 import Image from 'next/image'
-
+import type { Credit } from '@types'
 const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
   ssr: false,
 })
@@ -29,7 +29,6 @@ const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_S
 })
 import Video from '@parts/Video'
 
-//stuff built for snacklins
 import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
 import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
 import CaseStudies_Gallery from '@caseStudies/CaseStudies_Gallery'
@@ -153,7 +152,7 @@ function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: Ca
         </article>
       )}
 
-      <CaseStudies_Credits credits={frontMatter.credits} />
+      <CaseStudies_Credits credits={frontMatter.credits as Credit[]} />
       <CaseStudies_CTA />
       <CaseStudies_OtherProjects otherCaseStudies={otherCaseStudies} />
       {/* <CaseStudies_PrevNext allCaseStudies={allCaseStudies} title={frontMatter.title} /> */}

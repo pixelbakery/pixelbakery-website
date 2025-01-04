@@ -4,6 +4,7 @@ import cn from 'classnames'
 import H2 from '@typography/H2'
 import PageSection from '@parts/PageSection'
 import InnerWrapper from '@parts/InnerWrapper'
+import type { TextColorVariant } from '@lib/colorHelper'
 
 interface Props {
   children?: ReactNode
@@ -35,7 +36,7 @@ function CaseStudies_Description({ children, ...props }: Props) {
           <div className='col-span-1 lg:col-span-2'>
             <H2
               className={cn(' text-left mt-0 pt-0 text-4xl max-w-md', `text-`)}
-              color={props.headerColor}
+              color={props.headerColor as TextColorVariant}
             >
               {props.header}
             </H2>
