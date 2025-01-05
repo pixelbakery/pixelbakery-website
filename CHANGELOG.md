@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.1...v8.0.2) (2025-01-05)
+
+
+### Bug Fixes
+
+* fonts not loading in production ([151bb71](https://github.com/pixelbakery/pixelbakery-website/commits/151bb711b304935ea14ad52cc9d6e0b87f15f63b))
+
 ### [8.0.1](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.0...v8.0.1) (2025-01-05)
 
 
