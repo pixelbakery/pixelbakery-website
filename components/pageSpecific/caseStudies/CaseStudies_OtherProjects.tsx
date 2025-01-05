@@ -7,10 +7,8 @@ import { Key } from 'react'
 interface CaseStudiesOtherProjectsProps {
   otherCaseStudies: Array<{
     id: Key
-    // Add any other properties you expect each case study to have
     title: string
     description: string
-    // Add more fields based on the actual data structure
   }>
 }
 
@@ -20,7 +18,7 @@ function CaseStudies_OtherProjects({ otherCaseStudies }: CaseStudiesOtherProject
       <InnerWrapper>
         <H2 color='blue-dark'>More Projects</H2>
         <div className='grid grid-cols-1 gap-6 lg:grid-cols-3 md:gap-3 lg:gap-8'>
-          {otherCaseStudies.map((project: unknown, index: Key | null | undefined) => {
+          {otherCaseStudies.map((project, index) => {
             return <CaseStudies_OtherProjects_Card key={index} project={project} />
           })}
         </div>
@@ -32,10 +30,15 @@ function CaseStudies_OtherProjects({ otherCaseStudies }: CaseStudiesOtherProject
             bgColor={'blue-dark'}
             textColor={'cream'}
             chevronDirection={'left'}
+            plausibleEventName='ButtonClick'
+            plausibleEventProps={{
+              label: 'See All Projects',
+            }}
           />
         </div>
       </InnerWrapper>
     </PageSection>
   )
 }
+
 export default CaseStudies_OtherProjects

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePlausible } from 'next-plausible'
 
 import { InnerWrapper, PageSection } from '@parts'
 import { H2AndLead, Lead } from '@typography/index'
@@ -55,6 +56,8 @@ export default function About_Values() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeIndexMobile, setActiveIndexMobile] = useState(0)
 
+  const plausible = usePlausible()
+
   function handleProgressComplete(index: number) {
     // Only rotate if user hasn't switched items
     setActiveIndex((prev) => {
@@ -67,6 +70,7 @@ export default function About_Values() {
   function handleSelect(index: number) {
     setActiveIndex(index)
     setActiveIndexMobile(index)
+    plausible('Custom Event', { props: { source: 'core-values-cycle-click' } })
   }
 
   return (

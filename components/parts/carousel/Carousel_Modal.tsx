@@ -1,49 +1,126 @@
-import { DownloadIcon, CopyIcon } from 'components/icons/Icons_UI'
-import Close from '@images/Close'
-import Image from 'next/image'
-interface CarouselModalProps {
-  alt: string
+import { ChevronRightIcon } from '@icons'
+import cn from 'classnames'
+import { usePlausible } from 'next-plausible'
+
+interface SlideProgressionProps {
+  current: number
+  total: number
+  navColor: string
 }
-const Carousel_Modal = ({ alt }: CarouselModalProps) => {
+
+interface DotButtonProps {
+  scrollSnaps: number[]
+  selectedIndex: number
+  scrollTo: (index: number) => void
+}
+
+interface PrevButtonProps {
+  enabled: boolean
+  onClick: () => void
+  navColor?: string
+}
+
+interface DotButtonDotProps {
+  selected: boolean
+  onClick: () => void
+}
+
+export const DotButton = ({ scrollSnaps, selectedIndex, scrollTo }: DotButtonProps) => {
+  const plausible = usePlausible()
+
   return (
-    <div className='fixed top-0 bottom-0 left-0 right-0 z-50 w-screen h-screen bg-opacity-75  bg-wine-400 backdrop-blur-md'>
-      <div className='absolute z-50 right-4 top-4 '>
-        <button
-          // onClick={handleOnClick}
-          className='relative cursor-pointer hover-98 hover-shadow-none text-cream '
-        >
-          <Close className='w-12 h-12 ' />
-        </button>
-      </div>
-      <div className='relative w-full h-full px-24 py-24'>
-        <div className='relative flex flex-col w-full h-full overflow-hidden'>
-          <Image
-            src={'https://cdn.pixelbakery.com/img/placeholder01.png'}
-            width={320}
-            height={213}
-            alt={alt}
-            className='object-contain object-center w-full h-full'
-          />
-        </div>
-        <div className='relative flex gap-2'>
-          <a
-            href=''
-            download
-            className='relative cursor-pointer hover-98 hover-shadow-none text-cream '
-          >
-            <DownloadIcon className={'h-8 w-8'} />
-          </a>
-          <button
-            onClick={() =>
-              navigator.clipboard.writeText('https://cdn.pixelbakery.com/img/placeholder01.png')
-            }
-            className='relative cursor-pointer hover-98 hover-shadow-none text-cream '
-          >
-            <CopyIcon className={'h-7 w-7'} />
-          </button>
-        </div>
-      </div>
+    <div
+      className={cn('hidden md:flex list-none justify-center mt-4 gap-x-3', {
+        'hidden md:hidden': scrollSnaps.length > 6,
+      })}
+    >
+      {scrollSnaps.map((_, index) => (
+        <DotButton_Dot
+          key={index}
+          selected={index === selectedIndex}
+          onClick={() => {
+            plausible('DotButtonClick', { props: { dotIndex: index } })
+            scrollTo(index)
+          }}
+        />
+      ))}
     </div>
   )
 }
-export default Carousel_Modal
+
+const DotButton_Dot = ({ selected, onClick }: DotButtonDotProps) => (
+  <button
+    aria-label={selected ? 'Current slide' : 'Go to slide'}
+    className={cn(
+      'relative bg-transparent cursor-pointer w-[40px] flex align-items-center after:w-full after:h-2 after:rounded-sm transition-all duration-700',
+      {
+        'after:bg-blue-dark': selected,
+        'after:bg-wine-100': !selected,
+      },
+    )}
+    type='button'
+    onClick={onClick}
+  />
+)
+
+export const PrevButton = ({ enabled, onClick, navColor }: PrevButtonProps) => {
+  const plausible = usePlausible()
+
+  return (
+    <button
+      aria-label='Go to previous slide'
+      className={cn(
+        `m-0 p-0 self-center flex font-medium text-lg text-${navColor} transition-opacity duration-300`,
+        {
+          'cursor-default opacity-50': !enabled,
+          'cursor-pointer opacity-100': enabled,
+        },
+      )}
+      onClick={() => {
+        plausible('PrevButtonClick')
+        onClick()
+      }}
+      disabled={!enabled}
+    >
+      <i className='p-2 rotate-180 text-md'>
+        <ChevronRightIcon />
+      </i>
+      <span className='self-center py-0 my-0 leading-none'>Prev</span>
+    </button>
+  )
+}
+
+export const NextButton = ({ enabled, onClick, navColor }: PrevButtonProps) => {
+  const plausible = usePlausible()
+
+  return (
+    <button
+      aria-label='Go to next slide'
+      className={cn(
+        `m-0 p-0 self-center flex font-medium text-lg text-${navColor} transition-opacity duration-300`,
+        {
+          'cursor-default opacity-50': !enabled,
+          'cursor-pointer opacity-100': enabled,
+        },
+      )}
+      onClick={() => {
+        plausible('NextButtonClick')
+        onClick()
+      }}
+      disabled={!enabled}
+    >
+      <span className='self-center py-0 my-0 leading-none'>Next</span>
+      <i className='p-2 text-md'>
+        <ChevronRightIcon />
+      </i>
+    </button>
+  )
+}
+
+export const SlideProgression = ({ current, total, navColor }: SlideProgressionProps) => (
+  <div className={cn(`text-md my-0 py-0 leading-none self-center text-${navColor}`)}>
+    <span>
+      {current + 1} / {total}
+    </span>
+  </div>
+)

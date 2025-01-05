@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 type InputProps = {
   children: ReactNode
   id?: string
@@ -8,7 +9,7 @@ type InputProps = {
 
 const Input = ({ children }: InputProps) => {
   return (
-    <input className='border-2 border-blue bg-transparent rounded-xl w-full font-semibold py-4  px-8  md:text-lg text-wine cursor-text focus:ring-1 focus:border-blue-dark  focus:ring-blue-dark'>
+    <input className='w-full px-8 py-4 font-semibold bg-transparent border-2 border-blue rounded-xl md:text-lg text-wine cursor-text focus:ring-1 focus:border-blue-dark focus:ring-blue-dark'>
       {children}
     </input>
   )

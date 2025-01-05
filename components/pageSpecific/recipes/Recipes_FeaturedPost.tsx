@@ -1,7 +1,6 @@
 // components/pageSpecific/recipes/Recipes_FeaturedPost.tsx
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import DateFormatter from '@lib/date-formatter'
 import type { PostData } from '@types'
 import Image from 'next/image'
 
@@ -15,6 +14,7 @@ const Recipes_FeaturedPost = ({
   width,
   height,
   href,
+  onClick,
   ...props
 }: PostData) => {
   const aspectW = ' aspect-w-' + props.aspectW
@@ -22,7 +22,7 @@ const Recipes_FeaturedPost = ({
 
   return (
     <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`}>
-      <article>
+      <article onClick={onClick}>
         <div
           className={
             'bg-blue relative cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ' +

@@ -3,7 +3,6 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import '@styles/fonts'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import PlausibleProvider from 'next-plausible'
 
@@ -31,7 +30,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       >
         {getLayout(<Component {...pageProps} />)}
         <SpeedInsights />
-        <GoogleAnalytics gaId={(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string) || ''} />
       </PlausibleProvider>
     </>
   )

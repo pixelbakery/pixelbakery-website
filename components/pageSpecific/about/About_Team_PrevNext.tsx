@@ -1,11 +1,9 @@
-import PageSection from '@parts/PageSection'
-
-import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
-import { ChevronRightIcon } from 'components/icons/Icons_UI'
-import Lead from '@typography/Lead'
-import Button_Filled from '@parts/Button_Filled'
-import H2 from '@typography/H2'
+import { ChevronRightIcon } from '@icons'
+import { Lead, H2 } from '@typography'
+import { usePlausible } from 'next-plausible'
+
+import { Button_Filled, PageSection, InnerWrapper } from '@parts'
 interface PrevNext {
   active: boolean
   prev: any
@@ -16,6 +14,7 @@ interface PrevNext {
 function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
   // eslint-disable-next-line no-unused-vars
   const [firstName, lastName] = name.split(' ')
+  const plausible = usePlausible()
   if (active) {
     return (
       <PageSection className='py-2 bg-pink-lighter' id={'bio-nextPerson'}>
@@ -25,6 +24,11 @@ function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
               as={`/about/${prev.filePath.replace(/\.mdx?$/, '')}`}
               href={`/about/[slug]`}
               hrefLang={'en-US'}
+              onClick={() => {
+                plausible('cycle-team-profile-click', {
+                  props: { direction: 'previous', name: prev.data.name },
+                })
+              }}
             >
               <div className='flex justify-start'>
                 <div className='flex flex-col self-center justify-center w-12 h-full rotate-180 text-peach'>
@@ -49,6 +53,11 @@ function About_Team_PrevNext({ active, prev, next, name }: PrevNext) {
               as={`/about/${next.filePath.replace(/\.mdx?$/, '')}`}
               href={`/about/[slug]`}
               hrefLang={'en-US'}
+              onClick={() => {
+                plausible('cycle-team-profile-click', {
+                  props: { direction: 'next', name: next.data.name },
+                })
+              }}
             >
               <div className='flex justify-end h-full'>
                 <div className='self-center w-fit'>

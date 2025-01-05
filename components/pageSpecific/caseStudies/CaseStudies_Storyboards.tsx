@@ -1,7 +1,9 @@
 import { InnerWrapper, PageSection } from '@parts'
 import Carousel from '@parts/carousel/Carousel'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import type { TextColorVariant } from '@lib/colorHelper'
+
+import { usePlausible } from 'next-plausible'
 type CarouselProps = {
   slideColor?: string
   objectFit?: string
@@ -9,6 +11,7 @@ type CarouselProps = {
   bgColor?: string
   id?: string
   headerColor?: string
+  onInteract?: () => void
 }
 function CaseStudies_Storyboards({
   slideColor,
@@ -18,6 +21,13 @@ function CaseStudies_Storyboards({
   id,
   headerColor,
 }: CarouselProps) {
+  const plausible = usePlausible()
+  const handleCarouselInteraction = () => {
+    plausible('StoryboardInteraction', {
+      props: { id },
+    })
+  }
+
   return (
     <PageSection id={id != undefined ? id : 'storyboards'} color={bgColor} className={'mt-0'}>
       <InnerWrapper>
@@ -30,6 +40,7 @@ function CaseStudies_Storyboards({
             slides={slides}
             slideColor={slideColor}
             objectFit={objectFit}
+            onInteract={handleCarouselInteraction}
           />
         </div>
       </InnerWrapper>

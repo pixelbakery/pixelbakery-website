@@ -145,6 +145,7 @@ export interface PostData {
   href?: string
   slug?: string
   as?: string
+  onClick?: () => void
 }
 
 export interface Post {

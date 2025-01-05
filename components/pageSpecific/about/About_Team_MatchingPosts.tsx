@@ -1,8 +1,37 @@
-import Button_Filled from '@parts/Button_Filled'
+import { Button_Filled } from '@parts'
 import { InnerWrapper, PageSection } from '@parts'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import { usePlausible } from 'next-plausible'
 
-const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }) => {
+interface Post {
+  filePath: string
+  data: {
+    title: string
+    author: {
+      name: string
+    }
+    categories: string[]
+    date: string
+    coverImage: string
+    excerpt: string
+  }
+}
+
+interface AboutTeamMatchingPostsProps {
+  matchingAuthorPosts: Post[]
+  name: string
+}
+
+const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }: AboutTeamMatchingPostsProps) => {
+  const plausible = usePlausible()
+  function handlePostClick(postTitle: string) {
+    plausible('AuthorPostClicked', {
+      props: {
+        authorName: name,
+        postTitle,
+      },
+    })
+  }
   // eslint-disable-next-line no-unused-vars
   const [firstName, lastName] = name.split(' ')
   return (
@@ -11,7 +40,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }) => {
         <PageSection color='white' id={'bio-postsByPerson'}>
           <InnerWrapper>
             <h2>{`${firstName}`}'s Recent Posts</h2>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 gap-3 lg:grid-cols-3'>
               {matchingAuthorPosts.map((post) => {
                 return (
                   <Recipes_FeaturedPost
@@ -28,6 +57,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }) => {
                     excerpt={post.data.excerpt}
                     width={376}
                     height={282}
+                    onClick={() => handlePostClick(post.data.title)}
                   />
                 )
               })}
@@ -40,6 +70,11 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }) => {
                 textColor='cream'
                 bgColor='blue'
                 chevronDirection='right'
+                plausibleEventName='ViewMoreRecipes'
+                plausibleEventProps={{
+                  button: 'View More',
+                  location: 'About Team Matching Posts',
+                }}
               />
             </div>
           </InnerWrapper>

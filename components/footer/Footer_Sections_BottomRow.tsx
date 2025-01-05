@@ -2,6 +2,7 @@ import { LazyMotion, domAnimation, AnimatePresence, m } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { PulsatingButton } from '@footer'
+import { usePlausible } from 'next-plausible'
 
 const Footer_Croissant = dynamic(
   () => import('@footer').then((mod) => mod.Footer_Object_Croissant),
@@ -11,7 +12,11 @@ const Footer_Croissant = dynamic(
 const FooterBottomRow = () => {
   const year = new Date().getFullYear()
   const [isModalOpen, setModalOpen] = useState(false)
-  const toggleModal = () => setModalOpen((prev) => !prev)
+  const toggleModal = () => {
+    setModalOpen((prev) => !prev)
+    plausible('Custom Event', { props: { source: 'croissant-button-click' } })
+  }
+  const plausible = usePlausible()
 
   return (
     <LazyMotion features={domAnimation}>

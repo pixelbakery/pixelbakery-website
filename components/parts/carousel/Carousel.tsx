@@ -9,6 +9,7 @@ import {
 import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment, useCallback, useEffect, useState } from 'react'
 import Carousel_Slide from '@parts/carousel/Carousel_Slide'
+import { usePlausible } from 'next-plausible'
 
 type CarouselProps = {
   slides: Array<any>
@@ -20,9 +21,11 @@ type CarouselProps = {
   textColor?: string
   diminsions?: Array<number>
   className?: string
+  id?: string
+  onInteract?: () => void
 }
 
-const Carousel = ({ slides, className }: CarouselProps) => {
+const Carousel = ({ slides, className, onInteract }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
   const [emblaRef, embla] = useEmblaCarousel({ loop: false })
@@ -35,12 +38,14 @@ const Carousel = ({ slides, className }: CarouselProps) => {
 
   const onSelect = useCallback(() => {
     if (!embla) return
-    {
-      setSelectedIndex(embla.selectedScrollSnap())
-      setPrevBtnEnabled(embla.canScrollPrev())
-      setNextBtnEnabled(embla.canScrollNext())
+    setSelectedIndex(embla.selectedScrollSnap())
+    setPrevBtnEnabled(embla.canScrollPrev())
+    setNextBtnEnabled(embla.canScrollNext())
+
+    if (onInteract) {
+      onInteract() // Call the onInteract function
     }
-  }, [embla, setSelectedIndex])
+  }, [embla, setSelectedIndex, onInteract])
 
   useEffect(() => {
     if (!embla) return
@@ -61,13 +66,9 @@ const Carousel = ({ slides, className }: CarouselProps) => {
         ref={emblaRef}
       >
         <div className='flex w-full '>
-          {slides.map((slide, i) => {
-            return (
-              <Fragment key={i}>
-                <Carousel_Slide slide={slide} />
-              </Fragment>
-            )
-          })}
+          {slides.map((slide, i) => (
+            <Carousel_Slide key={i} slide={slide} />
+          ))}
         </div>
       </div>
       <div className='flex justify-between mt-6 mb-8'>
