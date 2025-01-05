@@ -2,6 +2,82 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.5.0...v8.0.0) (2025-01-05)
+
+
+### Features
+
+* added mojave case study ([c55ac28](https://github.com/pixelbakery/pixelbakery-website/commits/c55ac28bf8479626dfdce4b3719754d52e7c6df4))
+* added northeast arrow icon ([583d278](https://github.com/pixelbakery/pixelbakery-website/commits/583d278da6a710d3d2a6d449a1de8eda423d8822))
+* added northeast arrow icon ([217da83](https://github.com/pixelbakery/pixelbakery-website/commits/217da834d4a725c2b7b0e34f0cffc1644098a5c6))
+* added Plausible for analytics ([413531c](https://github.com/pixelbakery/pixelbakery-website/commits/413531c7776aad6c12b968d78c8fe03c3a1baada))
+* added pluasible custom events to form submit buttons ([bbc04d5](https://github.com/pixelbakery/pixelbakery-website/commits/bbc04d57011258d20744ae57e137146d05d8e739))
+* added portfolio links to relevant awards ([6c9714a](https://github.com/pixelbakery/pixelbakery-website/commits/6c9714a28a43737b1b82f04e82d8cf312206c250))
+* added several aria/accessability enhancements ([e8055b5](https://github.com/pixelbakery/pixelbakery-website/commits/e8055b5c181c67a6ab1cc2a5b4b8b861d3bfff20))
+* added several new blog posts ([7036cc6](https://github.com/pixelbakery/pixelbakery-website/commits/7036cc673d512d15638353dda80cdc8aa7c45647))
+* created aaf creative nebraska case study ([074a69a](https://github.com/pixelbakery/pixelbakery-website/commits/074a69a807817bd516bd40e036d6fa6cde83cef3))
+* created discovertech socialeyez case study ([10b1374](https://github.com/pixelbakery/pixelbakery-website/commits/10b1374b8cac5ea4f16ff23052476a6f8186b801))
+* created firework tech advantage case study ([3cb4e4b](https://github.com/pixelbakery/pixelbakery-website/commits/3cb4e4bb8bca56c640d69b85b53e4361f2bc9c0b))
+* created PatternAg case study ([382e0df](https://github.com/pixelbakery/pixelbakery-website/commits/382e0df932cf54d6718731bfa730b6c55c31849d))
+* created Quick Facts case study component, updated awards ([544a7d1](https://github.com/pixelbakery/pixelbakery-website/commits/544a7d14094d8b4debdb3c99fbb69abf2355a883))
+* created safe2help case study ([58f3298](https://github.com/pixelbakery/pixelbakery-website/commits/58f32989bb6337dd0c8fe62d8606eada8ebdd03a))
+* homepage animations now change with the seasons ([a3e3f68](https://github.com/pixelbakery/pixelbakery-website/commits/a3e3f68899c83c9c953a3a3ec99c393c770bd5d7))
+* rendered webm versions of portfolio preview videos ([7d5aef3](https://github.com/pixelbakery/pixelbakery-website/commits/7d5aef3068916fb6f119bc4117ee3f9e45d7af16))
+
+
+### Bug Fixes
+
+* bad url ([16276c2](https://github.com/pixelbakery/pixelbakery-website/commits/16276c28636b5f8e7a75ef0c9d2bc56a550f2d06))
+* console error with framer-motion ([1c70e35](https://github.com/pixelbakery/pixelbakery-website/commits/1c70e35cfd66a484fa1fcbed0efb5943e7e42e8f))
+* issue with static image loading on a case study ([ddfbec6](https://github.com/pixelbakery/pixelbakery-website/commits/ddfbec648632ceb6e4e74fcc69427fb17cdaf3b3))
+* resolved issue with linkedin icon ([5aeb2b2](https://github.com/pixelbakery/pixelbakery-website/commits/5aeb2b25eb8e2f907a961d12a018ad5fa28deaa6))
+* resolved naming convention issue for mojave case study ([ce5b976](https://github.com/pixelbakery/pixelbakery-website/commits/ce5b97621796c369c5acfed73191cbf391cb9fad))
+* solved issue with a font not resolving ([77ee5c6](https://github.com/pixelbakery/pixelbakery-website/commits/77ee5c6a039a4512affc96295e30b7f6ee938ffe))
+* solved issue with low-quality preview images ([81ccc6d](https://github.com/pixelbakery/pixelbakery-website/commits/81ccc6dd5d48c3d7edde34d78eaba579f7a806e3))
+
+
+### Styling
+
+* capitalization ([cdba593](https://github.com/pixelbakery/pixelbakery-website/commits/cdba5935efe753d685c3b39c0f42d5739ed7110b))
+* font fix ([0b9fc1d](https://github.com/pixelbakery/pixelbakery-website/commits/0b9fc1d126e1988d60833418e7856e8a5ee23169))
+* gave up on gilroy and switched it out ([7730a0a](https://github.com/pixelbakery/pixelbakery-website/commits/7730a0ac74be899a7c7b9e741ff9458548eabaeb))
+* minor typography improvements ([f0fdeae](https://github.com/pixelbakery/pixelbakery-website/commits/f0fdeae02ec287fd3fa3d53f5d6152eebcc54508))
+* switched over to a fancy new animated slider system ([34a62cb](https://github.com/pixelbakery/pixelbakery-website/commits/34a62cbe08224f314c14f0b356c6e51caaf8452e))
+* switched over to a fancy new animated slider system ([1c319f2](https://github.com/pixelbakery/pixelbakery-website/commits/1c319f2525565c15fa0ee61380914f1414465900))
+
+
+### Chores
+
+* added frontmatter item to gitignore ([f2c6a3e](https://github.com/pixelbakery/pixelbakery-website/commits/f2c6a3ee5a160435e6808dda2f73d2247dda2e71))
+* added type defs ([8327b6e](https://github.com/pixelbakery/pixelbakery-website/commits/8327b6e4f124ff4bdefafbf172f598db671e1ed3))
+* alphabetized class names to make linter happy ([c217214](https://github.com/pixelbakery/pixelbakery-website/commits/c217214689cb8842c18e60ebc53bb59d7f8583fc))
+* cropped down storyboard sizes ([7c66e94](https://github.com/pixelbakery/pixelbakery-website/commits/7c66e94e2734afdd37ec7d33eff12f14d10e6d41))
+* decided to retrack media assets on gh ([598b223](https://github.com/pixelbakery/pixelbakery-website/commits/598b22316c2b68e2f8300ed85acc810d8419143a))
+* disabled calendly integration (for now) ([b399a66](https://github.com/pixelbakery/pixelbakery-website/commits/b399a661eb50c87173413de9bc66dffabe7966cf))
+* font import clenaup ([f61c665](https://github.com/pixelbakery/pixelbakery-website/commits/f61c6658a4a85b4899803f1e2e75afd68176bbe0))
+* minor barrel file updates ([4a611bc](https://github.com/pixelbakery/pixelbakery-website/commits/4a611bc9c837802a23a08b19951c0ae8e5667a29))
+* minor code cleanup ([7e97df7](https://github.com/pixelbakery/pixelbakery-website/commits/7e97df761a2650dfe383ad9620761582db3f292e))
+* minor code cleanup ([e8f0bc4](https://github.com/pixelbakery/pixelbakery-website/commits/e8f0bc432bdfbda07450a73d9da403ce5665385e))
+* minor code cleanup ([6ee53bd](https://github.com/pixelbakery/pixelbakery-website/commits/6ee53bd5571366719b9fdd55030e34936227622b))
+* minor code improvements ([a8ecdfd](https://github.com/pixelbakery/pixelbakery-website/commits/a8ecdfdff1f9186fc1b1490167ecaabba6ccac7d))
+* minor style updates, type definitions ([a9d2629](https://github.com/pixelbakery/pixelbakery-website/commits/a9d2629b178b930e4e0739d509e3d7f5cc5ca5f2))
+* prop type defs ([770dfe7](https://github.com/pixelbakery/pixelbakery-website/commits/770dfe772c232dfb5dee8bd11e3fc8fcdd900aa8))
+* prop type defs ([c21fa81](https://github.com/pixelbakery/pixelbakery-website/commits/c21fa81b88fc7ed85c5206a7c73dec6bac730b95))
+* removed dates from blog posts and such ([ced5400](https://github.com/pixelbakery/pixelbakery-website/commits/ced540072a98fde86f1aa1189a8219007e5ea51e))
+* removed deprecated code ([4861ab0](https://github.com/pixelbakery/pixelbakery-website/commits/4861ab089e158643eac00d377e2d740ea93c8fe4))
+* removed deprecated husky commands ([c722b6e](https://github.com/pixelbakery/pixelbakery-website/commits/c722b6e55487e838c33ad64b246358c667859281))
+* removed discord and twitch social links from main navigation ([a44fff2](https://github.com/pixelbakery/pixelbakery-website/commits/a44fff2493dc522ae2b6072166a76e10ccd99fa0))
+* removed images from repo since we use aws ([8ece51e](https://github.com/pixelbakery/pixelbakery-website/commits/8ece51e05a08aa773c38e723833b3a14f6a7c335))
+* removed sentry ([8768fda](https://github.com/pixelbakery/pixelbakery-website/commits/8768fdaaa47d364813ec06113896e01b6611b96d))
+* removed sentry integration ([ba5bff0](https://github.com/pixelbakery/pixelbakery-website/commits/ba5bff0646b221cce6bdb72ba7ec53a81a98dae3))
+* removed sentry integration ([b77d0b0](https://github.com/pixelbakery/pixelbakery-website/commits/b77d0b099b8359fc5237b39aa1e5472798a679b5))
+* resolved a multitude of api prop type errors ([9e4f9f9](https://github.com/pixelbakery/pixelbakery-website/commits/9e4f9f943cc88ffcc0529a293136446c82ed01cc))
+* resolved a multitude of api prop type errors ([3b4d6d5](https://github.com/pixelbakery/pixelbakery-website/commits/3b4d6d56694be06e38693b904bbe2fa1ea888f9d))
+* sunset several options on career page ([ceeeb3a](https://github.com/pixelbakery/pixelbakery-website/commits/ceeeb3ad424d8089a518b6d17076fa745d7984c2))
+* type definitions ([1c1febe](https://github.com/pixelbakery/pixelbakery-website/commits/1c1febede9225e48f875c9a4c152ce63e74865a6))
+* type definitions ([3480176](https://github.com/pixelbakery/pixelbakery-website/commits/34801761cec3dd5a8d06ec91cb6a5b01719e6989))
+* updated gitignore for frontmatter stuff ([323693f](https://github.com/pixelbakery/pixelbakery-website/commits/323693f8411c7b386d02fd2aa015f10b741c62ea))
+
 ## [7.5.0](https://github.com/pixelbakery/pixelbakery-website/compare/v7.3.0...v7.5.0) (2024-07-05)
 
 
