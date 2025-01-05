@@ -1,4 +1,3 @@
-'use client'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'

@@ -1,5 +1,5 @@
 // components/parts/LottiePatternPlayer.tsx
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 // ❶ No SSR for Lottie. That’s usually good, as Lottie is purely client-based anyway.

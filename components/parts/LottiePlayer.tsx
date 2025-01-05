@@ -1,6 +1,6 @@
 //  ./components/parts/LottiePlayer.tsx
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {

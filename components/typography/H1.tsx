@@ -1,4 +1,4 @@
-import React, { ReactNode, PropsWithChildren } from 'react'
+import { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
 
 import { textColorVariants, TextColorVariant } from '@lib/colorHelper'

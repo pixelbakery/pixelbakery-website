@@ -1,9 +1,6 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 /**
- * Type definition for words of encouragement.
  * @typedef {Object} Encouragement
  * @property {string} text - The text of the encouragement.
  */

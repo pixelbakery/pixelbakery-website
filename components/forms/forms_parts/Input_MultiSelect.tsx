@@ -1,21 +1,20 @@
-import React from 'react';
-import { Controller, Control, FieldErrors } from 'react-hook-form';
-import cn from 'classnames';
-import Select from 'react-select';
-import Label from './Input_Label';
+import { Controller, Control, FieldErrors } from 'react-hook-form'
+import cn from 'classnames'
+import Select from 'react-select'
+import Label from './Input_Label'
 
 // Better to define this separately, if possible.
-type FormType = any;  // Replace `any` with your specific form type
+type FormType = any // Replace `any` with your specific form type
 
 interface MultiSelectInputs {
-  control: Control<FormType>;
-  errors: FieldErrors;
-  fieldName: string;
-  className?: string;
-  label: boolean;
-  isRequired: boolean;
-  labelText?: string;
-  options: Array<{ value: string; label: string }>;
+  control: Control<FormType>
+  errors: FieldErrors
+  fieldName: string
+  className?: string
+  label: boolean
+  isRequired: boolean
+  labelText?: string
+  options: Array<{ value: string; label: string }>
 }
 
 const Input_MultiSelect: React.FC<MultiSelectInputs> = ({
@@ -36,7 +35,7 @@ const Input_MultiSelect: React.FC<MultiSelectInputs> = ({
       render={({ field: { onChange, onBlur, value } }) => (
         <Select
           options={options}
-          className={cn({ 'error': errors[fieldName] })}
+          className={cn({ error: errors[fieldName] })}
           aria-invalid={errors[fieldName] ? 'true' : 'false'}
           onChange={onChange}
           isMulti
@@ -49,6 +48,6 @@ const Input_MultiSelect: React.FC<MultiSelectInputs> = ({
       )}
     />
   </span>
-);
+)
 
-export default Input_MultiSelect;
+export default Input_MultiSelect

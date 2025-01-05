@@ -3,7 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
 import { SendToMailchimp } from '@lib/helpers'

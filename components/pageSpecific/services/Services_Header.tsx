@@ -5,7 +5,6 @@ import BackLink from '@parts/BackLink'
 import Lead from '@typography/Lead'
 
 import dynamic from 'next/dynamic'
-// import ReactPlayer from 'react-player/lazy'
 import Loading from '@utility/Loading'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {
@@ -79,7 +78,7 @@ function Services_Header({
       className='h-full my-4 overflow-hidden lander-services xl:h-screen xl:max-h-screen'
       id={id}
     >
-      <div className='grid h-full grid-cols-1  gap-y-12 md:gap-3 xl:grid-cols-2'>
+      <div className='grid h-full grid-cols-1 gap-y-12 md:gap-3 xl:grid-cols-2'>
         <div className={cn(`overflow-hidden h-[66vh] col-span-1  xl:h-full`, `bg-${bgColor}`)}>
           {isLottie ? <LottiePlayer anim={lottieComponent} /> : <VideoContent />}
         </div>

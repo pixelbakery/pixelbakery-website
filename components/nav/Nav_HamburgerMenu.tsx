@@ -1,5 +1,5 @@
 // components/nav/Nav_HamburgerMenu.tsx
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
 

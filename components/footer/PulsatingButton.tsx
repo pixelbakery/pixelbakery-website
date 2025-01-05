@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import { CSSProperties, forwardRef } from 'react'
 
 import cn from 'classnames'
 
@@ -12,7 +12,7 @@ export interface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButto
   children?: React.ReactNode
 }
 
-const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
+const ShimmerButton = forwardRef<HTMLButtonElement, ShimmerButtonProps>(
   (
     {
       shimmerColor = '#ffffff',
