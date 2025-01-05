@@ -12,6 +12,7 @@ export { default as CaseStudies_OtherProjects } from './CaseStudies_OtherProject
 export { default as CaseStudies_OtherProjects_Card } from './CaseStudies_OtherProjects_Card'
 export { default as CaseStudies_PrevNext } from './CaseStudies_PrevNext'
 export { default as CaseStudies_ProjectIntro_Alt } from './CaseStudies_ProjectIntro_Alt'
+export { default as CaseStudies_QuickFacts } from './CaseStudies_QuickFacts'
 export { default as CaseStudies_SEO } from './CaseStudies_SEO'
 export { default as CaseStudies_Storyboards } from './CaseStudies_Storyboards'
 export { default as CaseStudies_Testimonial } from './CaseStudies_Testimonial'

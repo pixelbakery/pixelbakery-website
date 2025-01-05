@@ -8,16 +8,26 @@ import { serialize } from 'next-mdx-remote/serialize'
 import type { ReactElement, ReactNode } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import PageSection from '@parts/PageSection'
-// import CaseStudies_Tags from '@caseStudies/CaseStudies_Tags'
 
-import CaseStudies_Header from '@caseStudies/CaseStudies_Header'
-import CaseStudies_Description from '@caseStudies/CaseStudies_Description'
-import CaseStudies_Intro from '@caseStudies/CaseStudies_Intro'
-import CaseStudies_Credits from '@caseStudies/CaseStudies_Credits'
-import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
-import CaseStudies_SEO from '@caseStudies/CaseStudies_SEO'
+import {
+  CaseStudies_Header,
+  CaseStudies_Description,
+  CaseStudies_Intro,
+  CaseStudies_Credits,
+  CaseStudies_QuickFacts,
+  CaseStudies_CTA,
+  CaseStudies_SEO,
+  CaseStudies_Testimonial,
+  CaseStudies_TikTok,
+  CaseStudies_Gallery,
+  CaseStudies_Gallery_Alt,
+  CaseStudies_Header_NoVideo,
+  CaseStudies_ProjectIntro_Alt,
+  CaseStudies_Gallery_Email,
+} from '@caseStudies'
+
 import Image from 'next/image'
 import type { Credit } from '@types'
 const CaseStudies_OtherProjects = dynamic(() => import('@caseStudies/CaseStudies_OtherProjects'), {
@@ -29,15 +39,7 @@ const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_S
 })
 import Video from '@parts/Video'
 
-import CaseStudies_Testimonial from '@caseStudies/CaseStudies_Testimonial'
-import CaseStudies_TikTok from '@caseStudies/CaseStudies_TikTok'
-import CaseStudies_Gallery from '@caseStudies/CaseStudies_Gallery'
-import CaseStudies_Gallery_Alt from '@caseStudies/CaseStudies_Gallery_Alt'
-import CaseStudies_Header_NoVideo from '@caseStudies/CaseStudies_Header_NoVideo'
-import CaseStudies_ProjectIntro_Alt from '@caseStudies/CaseStudies_ProjectIntro_Alt'
-import CaseStudies_Gallery_Email from '@caseStudies/CaseStudies_Gallery_Email'
-import InnerWrapper from '@parts/InnerWrapper'
-import Image_VarH from '@parts/Image_VarH'
+import { InnerWrapper, Image_VarH } from '@parts'
 
 import { shuffleArray } from '@lib/helpers'
 import dynamic from 'next/dynamic'
@@ -59,6 +61,11 @@ interface CaseStudyProps {
     tags?: Array<string>
     credits?: Array<any> // Define a more specific type
     isCustomLayout?: boolean
+    quickfacts?: {
+      awards?: string[]
+      service_types?: string[]
+      industry?: string
+    }
     // Add other frontMatter properties as needed
   }
 }
@@ -140,6 +147,11 @@ function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: Ca
             tags={frontMatter.tags}
             logo={frontMatter.logo}
             website={frontMatter.website}
+          />
+          <CaseStudies_QuickFacts
+            client={frontMatter.client}
+            website={frontMatter.website}
+            quickfacts={frontMatter.quickfacts}
           />
           {/* <CaseStudies_Tags tags={Object.entries(frontMatter.tags)} /> */}
           <article id='blog-body-guts'>

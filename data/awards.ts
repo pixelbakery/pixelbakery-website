@@ -1,5 +1,12 @@
 export default [
   {
+    award: '🥈 Silver Telly Award',
+    project: 'Onyx Coffee Process',
+    category: 'Animation',
+    client: 'Onyx Coffee Lab',
+    projectLink: '/work/case-studies/onyx-coffee-process-animation',
+  },
+  {
     award: "🏅 AAF Judge's Citation",
     project: 'Onyx Coffee Process',
     category: 'Animation',
@@ -19,6 +26,13 @@ export default [
     category: 'video campaigns',
     client: 'NDOT',
     projectLink: '/work/case-studies/ndot-recruitment-video-campaign',
+  },
+  {
+    award: '🥉 Bronze Telly Award',
+    project: 'Animated Product Highlight',
+    client: 'Firework',
+    category: 'Mixed Media Campaign',
+    projectLink: 'http://localhost:3000/work/case-studies/firework-animated-explainer',
   },
   {
     award: '🏆 Gold ADDY',

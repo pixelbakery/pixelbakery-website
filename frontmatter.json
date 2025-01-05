@@ -78,6 +78,50 @@
       "previewPath": "work/case-studies",
       "fields": [
         {
+          "title": "Quick Facts",
+          "name": "quickfacts",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "Awards",
+              "name": "awards",
+              "type": "list"
+            },
+            {
+              "title": "services",
+              "name": "service_types",
+              "type": "choice",
+              "multiple": true,
+              "choices": [
+                { "id": "motion-design", "title": "Animation & Motion Design" },
+                { "id": "video-production", "title": "Commercial Video Production" },
+                { "id": "explainer-videos", "title": "Animated Explainer Videos" },
+                { "id": "product-photography", "title": "Product Photography" },
+                { "id": "logo-animation", "title": "Logo Animation" },
+                { "id": "creative-concepting", "title": "Creative Concepting & Strategy" },
+                { "id": "social-media", "title": "Social Media Video Content" },
+                { "id": "emerging-media", "title": "Emerging Media" },
+                { "id": "other", "title": "Other" }
+              ]
+            },
+            {
+              "title": "Industry",
+              "name": "industry",
+              "type": "choice",
+              "multiple": false,
+              "choices": [
+                { "id": "corporate", "title": "Corporate" },
+                { "id": "cpg", "title": "Consumer Packaged Goods" },
+                { "id": "nonprofit", "title": "Nonprofit & Government" },
+                { "id": "education", "title": "Education & Learning" },
+                { "id": "advertising", "title": "Advertising/Production Agency" },
+                { "id": "tech", "title": "Saas & Tech Industry" },
+                { "id": "other", "title": "Other" }
+              ]
+            }
+          ]
+        },
+        {
           "title": "Client",
           "name": "client",
           "type": "string",
@@ -725,7 +769,9 @@
       }
     }
   ],
+
   "frontMatter.taxonomy.fieldGroups": [
+    
     {
       "id": "credits",
       "labelField": "name",
