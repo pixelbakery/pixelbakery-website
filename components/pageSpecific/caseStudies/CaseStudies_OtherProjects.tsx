@@ -1,4 +1,4 @@
-import CaseStudies_OtherProjects_Card from '@caseStudies/CaseStudies_OtherProjects_Card'
+import { CaseStudies_OtherProjects_Card } from '@caseStudies'
 import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Button_Filled from '@parts/Button_Filled'

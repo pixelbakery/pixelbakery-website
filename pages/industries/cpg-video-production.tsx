@@ -1,4 +1,4 @@
-import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
+import { CaseStudies_CTA } from '@caseStudies'
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import Work_Services from '@work/Work_Services'

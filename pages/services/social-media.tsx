@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
-import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
+import { CaseStudies_CTA } from '@caseStudies'
 import Link from 'next/link'
 import faqData from '@data/faq_socialMedia'
 import {

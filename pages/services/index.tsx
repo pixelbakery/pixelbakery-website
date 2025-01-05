@@ -14,7 +14,7 @@ import {
   ServicesOverview_ProductPhotography,
 } from '@services/index'
 
-import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
+import { CaseStudies_CTA } from '@caseStudies'
 import { NextSeo } from 'next-seo'
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 

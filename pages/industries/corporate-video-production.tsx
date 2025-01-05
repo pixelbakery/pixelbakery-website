@@ -1,4 +1,4 @@
-import CaseStudies_CTA from '@caseStudies/CaseStudies_CTA'
+import { CaseStudies_CTA } from '@caseStudies'
 import Work_Services from '@work/Work_Services'
 import { Lead } from '@typography'
 import type { ReactElement } from 'react'
