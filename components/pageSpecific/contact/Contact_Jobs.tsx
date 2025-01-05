@@ -1,13 +1,10 @@
-import Button_Filled from '@parts/Button_Filled'
-import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
+import { InnerWrapper, PageSection, Button_Filled } from '@parts'
 
-import InnerWrapper from '@parts/InnerWrapper'
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 
 function Contact_Jobs() {
   return (
-    <PageSection className=' bg-wine ' id={'contact-careers'}>
+    <PageSection className=' bg-wine' id={'contact-careers'}>
       <InnerWrapper className=''>
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-12'>
           <div className='col-span-1'>
@@ -15,7 +12,7 @@ function Contact_Jobs() {
           </div>
           <div className='col-span-1'>
             <Lead color='cream'>We&apos;re always searching for new family members</Lead>
-            <p className='text-cream font-medium mb-8 leading-tight text-lg'>
+            <p className='mb-8 text-lg font-medium leading-tight text-cream'>
               Got what it takes to rise with us? Great! Send us a link to your résumé or portfolio
               to become part of our talent pool.
             </p>

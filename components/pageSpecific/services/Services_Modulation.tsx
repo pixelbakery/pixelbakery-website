@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2AndLead from '@typography/H2AndLead'
 import dynamic from 'next/dynamic'
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {

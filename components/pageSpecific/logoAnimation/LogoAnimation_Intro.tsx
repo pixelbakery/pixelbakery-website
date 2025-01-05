@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import dynamic from 'next/dynamic'
 const Video = dynamic(() => import('@parts/Video'), { ssr: false })

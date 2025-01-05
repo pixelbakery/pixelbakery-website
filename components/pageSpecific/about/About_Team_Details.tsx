@@ -1,6 +1,5 @@
 import { CamelCaseToSentence } from '@lib/helpers'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Lead from '@typography/Lead'
 import Loading from '@utility/Loading'
 

@@ -1,6 +1,5 @@
 import Button_Filled from '@parts/Button_Filled'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 
 const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }) => {

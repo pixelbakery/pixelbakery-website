@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Carousel from '@parts/carousel/Carousel'
 import H2 from '@typography/H2'
 import type { TextColorVariant } from '@lib/colorHelper'

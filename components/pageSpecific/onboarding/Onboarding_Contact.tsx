@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Onboarding_Contact_Form from './Onboarding_Contact_Form'
 

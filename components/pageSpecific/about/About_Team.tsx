@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 import About_Team_Headshot from '@about/About_Team_Headshot'
 import type { Person } from '@types'
 

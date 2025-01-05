@@ -1,7 +1,6 @@
 import Button_Filled from '@parts/Button_Filled'
 import Button_Outlined from '@parts/Button_Outlined'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Pill from '@parts/Pill'
 import H2 from '@typography/H2'
 import H3 from '@typography/H3'

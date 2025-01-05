@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H1 from '@typography/H1'
 import Lead from '@typography/Lead'
 import { MDXRemote } from 'next-mdx-remote'

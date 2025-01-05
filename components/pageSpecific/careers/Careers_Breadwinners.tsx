@@ -1,8 +1,6 @@
 import Button_Filled from '@parts/Button_Filled'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { InnerWrapper, PageSection } from '@parts'
+import { H2, Lead } from '@typography'
 
 function Careers_Breadwinners() {
   return (

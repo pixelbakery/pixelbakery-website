@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 import services from '@data/services'
 import Services_AllServices_Card_Filled from '@services/Services_AllServices_Card_Filled'
 import H3 from '@typography/H3'

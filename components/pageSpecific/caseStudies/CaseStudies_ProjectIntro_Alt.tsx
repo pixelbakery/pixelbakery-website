@@ -1,6 +1,5 @@
 import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 import H3 from '@typography/H3'
 import Image from 'next/image'
 

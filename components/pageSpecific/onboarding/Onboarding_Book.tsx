@@ -1,6 +1,5 @@
 import { Button_Outlined } from '@parts/index'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import { H1, H2 } from '@typography/index'
 // import { InlineWidget } from 'react-calendly'
 import Lead from '@typography/Lead'

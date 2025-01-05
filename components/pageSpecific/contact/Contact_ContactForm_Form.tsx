@@ -20,12 +20,10 @@ import {
 } from '@utility/ContactForm_Parts'
 
 import type { FormInputs, FormProps } from '@types'
-const plausible = usePlausible()
 
 // -----------------------------------------------------------------------------
 // Yup Schema
 // -----------------------------------------------------------------------------
-
 const yupValidation = Yup.object().shape({
   name: Yup.string()
     .required('Please enter your name, stranger.')
@@ -54,32 +52,8 @@ const yupValidation = Yup.object().shape({
 })
 
 // -----------------------------------------------------------------------------
-// Helpers
-// -----------------------------------------------------------------------------
-
-function handleFormSubmit(
-  data: FormInputs,
-  setHideForm: React.Dispatch<React.SetStateAction<boolean>>,
-  setSubmitted: React.Dispatch<React.SetStateAction<boolean>>,
-) {
-  // Always send to Monday
-  SendToMonday_ContactForm(data)
-  plausible('Custom Event', { props: { source: 'croissant-submit' } })
-  // If soliciting is false => legit inquiry
-  if (data.soliciting === 'false') {
-    SendEmail_Contact(data)
-    SendToMailchimp(data, 'Contact Form')
-    setSubmitted(true)
-  } else {
-    // They want to sell us something => hide form
-    setHideForm(true)
-  }
-}
-
-// -----------------------------------------------------------------------------
 // The Sub-Form
 // -----------------------------------------------------------------------------
-
 function Form({
   register,
   control,
@@ -88,7 +62,7 @@ function Form({
   handleSubmit,
   setSubmitted,
   setHideForm,
-}: FormProps) {
+}: FormProps & { plausible: ReturnType<typeof usePlausible> }) {
   return (
     <form
       noValidate
@@ -150,10 +124,11 @@ function Form({
 // -----------------------------------------------------------------------------
 // Main Component
 // -----------------------------------------------------------------------------
-
 function Contact_ContactForm_Form() {
   const [submitted, setSubmitted] = useState(false)
   const [hideForm, setHideForm] = useState(false)
+
+  const plausible = usePlausible()
 
   const formOptions = {
     criteriaMode: 'all' as const,
@@ -183,12 +158,37 @@ function Contact_ContactForm_Form() {
           handleSubmit={handleSubmit}
           setSubmitted={setSubmitted}
           setHideForm={setHideForm}
+          plausible={plausible}
         />
       ) : (
         <ContactForm_NotInterested />
       )}
     </div>
   )
+}
+
+// -----------------------------------------------------------------------------
+// Helper: handleFormSubmit
+// -----------------------------------------------------------------------------
+function handleFormSubmit(
+  data: FormInputs,
+  setHideForm: React.Dispatch<React.SetStateAction<boolean>>,
+  setSubmitted: React.Dispatch<React.SetStateAction<boolean>>,
+  plausible?: ReturnType<typeof usePlausible>, // if you want to track inside
+) {
+  SendToMonday_ContactForm(data)
+
+  plausible?.('Custom Event', { props: { source: 'contact-submit' } })
+
+  // If soliciting is false => legit inquiry
+  if (data.soliciting === 'false') {
+    SendEmail_Contact(data)
+    SendToMailchimp(data, 'Contact Form')
+    setSubmitted(true)
+  } else {
+    // They want to sell us something => hide form
+    setHideForm(true)
+  }
 }
 
 export default Contact_ContactForm_Form

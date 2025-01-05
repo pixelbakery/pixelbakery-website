@@ -1,17 +1,21 @@
-import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
 import {
+  Contact_SEO,
   Contact_Clients,
-  Contact_ContactForm,
   Contact_Jobs,
   Contact_HangOut,
-  Contact_SEO,
-} from '@contact/index'
+  Contact_ContactForm,
+} from '@contact'
+
+// import { Contact_ContactForm } from '@contact'
 import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
+import Layout_Defaualt from '@/components/layouts/Layout_Default'
+import { PageHeader_VarH } from '@pageHeaders/index'
+console.log(Contact_SEO)
 
 function Page_Contact() {
   return (
     <>
+      test
       <Contact_SEO />
       <PageHeader_VarH header='Contact Us' subheader="Please don't ask us about catering" />
       <Contact_Clients />

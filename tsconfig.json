@@ -33,6 +33,7 @@
       "@caseStudies": ["./components/pageSpecific/caseStudies/index"],
       "@caseStudies/*": ["./components/pageSpecific/caseStudies/*"],
       "@contact/*": ["components/pageSpecific/contact/*"],
+      "@contact": ["./components/pageSpecific/contact/index"],
       "@education/*": ["components/pageSpecific/education/*"],
       "@industries/*": ["components/pageSpecific/industries/*"],
       "@home/*": ["components/pageSpecific/home/*"],

@@ -1,8 +1,7 @@
 import { m, Variants, LazyMotion, domAnimation } from 'framer-motion'
 import Image from 'next/image'
 import H2 from '@typography/H2'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 
 const card1: Variants = {
   offscreen: {

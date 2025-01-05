@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Spotify_Playlist from '@parts/Spotify_Playlist'
 
 const About_Spotify = () => {

@@ -1,7 +1,5 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { InnerWrapper, PageSection } from '@parts'
+import { H2, Lead } from '@typography'
 import LogoAnimation_PastClients_Card from '@logoAnimation/LogoAnimation_PastClients_Card'
 
 function LogoAnimation_PastClients() {

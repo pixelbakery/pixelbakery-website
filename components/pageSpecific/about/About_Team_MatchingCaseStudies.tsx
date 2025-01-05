@@ -1,10 +1,24 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import { Fragment } from 'react'
 import { CaseStudies_OtherProjects_Card } from '@caseStudies'
 
-const About_Team_MatchingCaseStudies = ({ matchingCaseStudies, name }) => {
+interface CaseStudy {
+  title: string
+  description?: string
+  thumbnailUrl?: string
+  link?: string
+  [key: string]: any
+}
+
+interface AboutTeamMatchingCaseStudiesProps {
+  matchingCaseStudies: CaseStudy[]
+  name: string
+}
+const About_Team_MatchingCaseStudies = ({
+  matchingCaseStudies,
+  name,
+}: AboutTeamMatchingCaseStudiesProps) => {
   // eslint-disable-next-line no-unused-vars
   const [firstName, lastName] = name.split(' ')
 

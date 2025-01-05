@@ -1,8 +1,7 @@
 import Work_Services_Card from './Work_Services_Card'
 import services from '@data/services'
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 
 function Work_Services() {
   return (

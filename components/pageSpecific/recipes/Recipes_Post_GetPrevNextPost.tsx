@@ -1,6 +1,5 @@
 import { ChevronRightIcon } from 'components/icons/Icons_UI'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Lead from '@typography/Lead'
 import Link from 'next/link'
 

@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2AndLead from '@typography/H2AndLead'
 import { Industries_UseCases_Card } from '@industries/index'
 import Link from 'next/link'

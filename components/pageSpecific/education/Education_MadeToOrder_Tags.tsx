@@ -1,6 +1,5 @@
 import Button_Filled from '@parts/Button_Filled'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import Pill from '@parts/Pill'
 
 function Education_MadeToOrder_Tags({ tags }) {

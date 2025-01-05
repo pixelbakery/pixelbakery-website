@@ -1,6 +1,5 @@
 import Button_Filled from '@parts/Button_Filled'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2AndLead from '@typography/H2AndLead'
 
 function Careers_JobShadow() {

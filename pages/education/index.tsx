@@ -1,5 +1,5 @@
 import fs from 'fs'
-import type { EducationPageProps } from 'types/educationTypes'
+import type { EducationPageProps } from '@types'
 
 import {
   madeToOrderFilePaths,

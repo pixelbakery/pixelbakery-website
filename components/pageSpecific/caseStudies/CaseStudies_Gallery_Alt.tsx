@@ -1,5 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Image from 'next/image'
 import Shimmer from '@lib/Shimmer'

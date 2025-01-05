@@ -34,7 +34,7 @@ export const DotButton = ({ scrollSnaps, selectedIndex, scrollTo }: DotButtonPro
     ))}
   </div>
 )
-export const DotButton_Dot = ({ selected, onClick }: DotButtonDotProps) => (
+const DotButton_Dot = ({ selected, onClick }: DotButtonDotProps) => (
   <button
     className={cn(
       'relative bg-transparent cursor-pointer w-[40px] flex align-items-center after:w-full after:h-2 after:rounded-sm transition-all duration-700',

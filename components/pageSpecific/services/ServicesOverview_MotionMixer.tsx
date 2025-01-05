@@ -1,6 +1,5 @@
 import Button_Outlined from '@parts/Button_Outlined'
-import InnerWrapper from '@parts/InnerWrapper'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
 import H2AndLead from '@typography/H2AndLead'
 
 function ServicesOverview_MotionMixer() {

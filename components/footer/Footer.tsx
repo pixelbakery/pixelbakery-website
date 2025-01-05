@@ -1,9 +1,6 @@
 import { NextPage } from 'next'
 
 import {
-  Footer_Sections_Column_Left,
-  Footer_Sections_Column_Center,
-  Footer_Sections_Column_Right,
   Footer_Sections_BottomRow,
   Footer_MobileNav,
   Footer_Objects_EmailUs,
@@ -20,12 +17,7 @@ export const Footer: NextPage = () => {
   return (
     <footer className='relative px-6 py-12 mb-4 bg-peach lg:px-12 xl:py-24' id='footer'>
       <div className='max-w-6xl mx-auto'>
-        {/* <div className='grid h-full grid-cols-1 gap-8 lg:grid-cols-3 lg:mb-12'> */}
         <div className='flex flex-col grid-cols-1 lg:grid lg:gap-8 lg:grid-cols-3 gap-y-3 lg:gap-y-12'>
-          {/* <Footer_Sections_Column_Left />
-          <Footer_Sections_Column_Center />
-          <Footer_Sections_Column_Right /> */}
-          {/*  */}
           <Footer_Poptart />
           <Footer_MobileNav />
           <Footer_Objects_PrimaryNavigation />
