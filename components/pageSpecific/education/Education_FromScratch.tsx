@@ -1,18 +1,16 @@
-import H2 from '@typography/H2'
-
+import { H2, Lead } from '@typography'
 import { InnerWrapper, PageSection } from '@parts'
-import Lead from '@typography/Lead'
 
 function Education_FromScratch() {
   return (
     <PageSection className='bg-white' id={'from-scratch-intro'}>
       <InnerWrapper>
         <H2 id='from-scratch'>From Scratch</H2>
-        <Lead className='max-w-md text-xl text-blue-dark leading-none my-6'>
+        <Lead className='max-w-md my-6 text-xl leading-none text-blue-dark'>
           Complete A to Z tutorials on programs such as After Effects or Illustrator. Created for
           beginners.
         </Lead>
-        <p className='font-extrabold text-wine-100 italic text-4xl '>coming soon...</p>
+        <p className='text-4xl italic font-extrabold text-wine-100 '>coming soon...</p>
       </InnerWrapper>
     </PageSection>
   )

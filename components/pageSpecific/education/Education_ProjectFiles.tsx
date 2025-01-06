@@ -1,39 +1,33 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import H2 from '@typography/H2'
 
+import { H2 } from '@typography'
 import { InnerWrapper, PageSection } from '@parts'
-// import cn from 'classnames'
-// import { useState } from 'react'
-// import StrokeText from '@parts/StrokeText'
 
-function Education_ProjectFiles({ allProjectFiles }) {
-  // const [activeFilter, setFilter] = useState('all')
+interface ProjectFileData {
+  title: string
+  category: string
+  coverImage: string
+  video?: string // Optional video property
+  videoCoverImage?: boolean
+}
 
-  // const [filteredProjectFiles, setFilteredItems] = useState(allProjectFiles)
+interface ProjectFile {
+  filePath: string
+  data: ProjectFileData
+}
 
-  // const allCategories = []
-  // allProjectFiles.forEach(function (file, i) {
-  //   allCategories.push(file.category)
-  // })
-
-  // const filters = Array.from(new Set(allCategories))
-  // const handleFilteredItems = (filter) => {
-  //   setFilter(filter)
-
-  //   if (filter === 'all') {
-  //     setFilteredItems(allProjectFiles)
-  //   } else {
-  //     setFilteredItems(allProjectFiles.filter((file) => file.category === filter))
-  //   }
-  // }
+interface Props {
+  allProjectFiles: ProjectFile[]
+}
+function Education_ProjectFiles({ allProjectFiles }: Props) {
   return (
     <PageSection className='bg-pink-lighter' id={'projectFiles'}>
       <InnerWrapper>
         <H2 color='blue' id={'project-files'}>
           Project Files
         </H2>
-        <p className='text-wine-500 font-medium text-lg max-w-md text-opacity-90 mb-12 mt-0 pt-0 '>
+        <p className='max-w-md pt-0 mt-0 mb-12 text-lg font-medium text-wine-500 text-opacity-90 '>
           Expanding educational opportunities is more possible now than ever before with
           advancements in technology. <br />
           <br />
@@ -41,51 +35,6 @@ function Education_ProjectFiles({ allProjectFiles }) {
           financial, or technical barriers that prevent creativity and believe that everyone should
           have access to high-quality educational experiences and resources.
         </p>
-        {/* <div className='mb-6 pb-6 pt-6'>
-          <ul className='flex flex-wrap gap-8'>
-            <li
-              className={cn('-mt-12 cursor-pointer', {
-                ['fill-blue-dark text-blue-dark active']: 'all' === activeFilter,
-              })}
-              onClick={() => {
-                handleFilteredItems('all')
-              }}
-            >
-              <StrokeText
-                index={0}
-                text={'all'}
-                active={'all' === activeFilter ? true : false}
-                fontSize={'text-3xl lg:text-5xl'}
-                strokeWidth={'stroke-1'}
-                color={'blue-dark'}
-                fontWeight={'font-black'}
-              />
-            </li>
-            {filters.map((filter, index) => {
-              return (
-                <li
-                  key={index}
-                  className={cn('-mt-12', {
-                    ['fill-blue-dark text-blue-dark active']: filter === activeFilter,
-                  })}
-                  onClick={() => {
-                    handleFilteredItems(filter)
-                  }}
-                >
-                  <StrokeText
-                    text={filter}
-                    index={index + 1}
-                    active={filter === activeFilter ? true : false}
-                    fontSize={'text-3xl lg:text-5xl'}
-                    strokeWidth={'stroke-1'}
-                    color={'blue-dark'}
-                    fontWeight={'font-black'}
-                  />
-                </li>
-              )
-            })}
-          </ul>
-        </div> */}
         <div className='grid grid-cols-2 gap-6 md:grid-cols-5 3xl:grid-cols-6'>
           {allProjectFiles.map((pf) => {
             return (
@@ -94,8 +43,7 @@ function Education_ProjectFiles({ allProjectFiles }) {
                 as={`/education/project-files/${pf.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/education/project-files/[slug]`}
                 id={`${pf.data.title}`}
-                className='visible cursor-pointer
-transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn'
+                className='visible transition-all duration-300 ease-in-out transform cursor-pointer hover:scale-98 animate__fadeIn'
               >
                 <>
                   <div className='aspect-[3/4] relative overflow-hidden rounded-xl'>
@@ -117,7 +65,7 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                     ) : (
                       <Image
                         src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
-                        alt={`${pf.title}} project file free for ${pf.data.category}`}
+                        alt={`${pf.data.title} project file free for ${pf.data.category}`}
                         placeholder='blur'
                         blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${pf.data.coverImage}`}
                         className='bg-peach'
@@ -125,9 +73,9 @@ transform transition-all duration-300 hover:scale-98 ease-in-out animate__fadeIn
                     )}
                   </div>
                   <div>
-                    <div className='cursor-pointer mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+                    <div className='z-20 flex flex-col justify-between p-2 mt-2 cursor-pointer h-100'>
                       <div className=''>
-                        <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+                        <h3 className='font-semibold leading-none text-md md:text-xl text-wine line-clamp-3'>
                           {pf.data.title}
                         </h3>
                       </div>

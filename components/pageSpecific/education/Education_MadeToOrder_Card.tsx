@@ -1,8 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Pill from '@parts/Pill'
+import { Pill } from '@parts'
 import cn from 'classnames'
-const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
+
+interface TutorialData {
+  coverImage: string
+  title: string
+  category: string
+}
+
+interface Tutorial {
+  filePath: string
+  data: TutorialData
+}
+
+interface Props {
+  tutorial: Tutorial
+  aspectW: string
+  aspectH: string
+}
+
+const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }: Props) => {
   return (
     <Link
       as={`/education/tutorials/${tutorial.filePath.replace(/\.mdx?$/, '')}`}
@@ -23,7 +41,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
             height={400}
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
             quality={50}
-            className='bg-blue object-cover w-full h-full'
+            className='object-cover w-full h-full bg-blue'
             alt={`cover photo for ${tutorial.data.title}`}
           />
 
@@ -36,9 +54,9 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }) => {
             />
           </div>
         </div>
-        <div className='cursor-pointer mt-2 z-20 h-100 p-2 flex flex-col justify-between'>
+        <div className='z-20 flex flex-col justify-between p-2 mt-2 cursor-pointer h-100'>
           <div className=''>
-            <h3 className='text-md md:text-xl text-wine font-semibold leading-none line-clamp-3'>
+            <h3 className='font-semibold leading-none text-md md:text-xl text-wine line-clamp-3'>
               {tutorial.data.title}
             </h3>
           </div>
