@@ -1,4 +1,4 @@
-import DateFormatter from '@lib/date-formatter'
+import { dateFormatter } from '@lib'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pill from '@parts/Pill'
@@ -7,7 +7,7 @@ import Video from '@parts/Video'
 import Loading from '@utility/Loading'
 
 type Props = {
-  date?: string
+  date?: string | Date
   frontMatter: any
   readTime: any
   matchingBio: any
@@ -111,7 +111,7 @@ const Recipes_Post_Header = ({ date, frontMatter, matchingBio, readTime }: Props
 
             <div className={cn('ml-4 flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
-                <DateFormatter dateString={date as any} />
+                {date && dateFormatter({ dateString: date })}
                 <span className='mx-2'>|</span>
                 <span>{readTime.minutes.toString()} min read</span>
               </div>
