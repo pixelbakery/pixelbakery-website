@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js and Install pnpm
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+          pnpm --version
+
+      # 3. Cache pnpm dependencies
+      - name: Setup pnpm Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      # 4. Install Dependencies
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 5. Run Semantic Release
+      - name: Run Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
+
+      # 6. Commit Updated Changelog (Optional)
+      - name: Commit Updated Changelog
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "chore: update CHANGELOG"
+          git push
