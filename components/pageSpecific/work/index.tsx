@@ -1,8 +1,0 @@
-export { default as Work_Callout } from '@work/Work_Callout'
-export { default as Work_Clients } from '@work/Work_Clients'
-export { default as Work_Portfolio } from '@work/Work_Portfolio'
-export { default as Work_Portfolio_Card } from '@work/Work_Portfolio_Card'
-export { default as Work_SEO } from '@work/Work_SEO'
-export { default as Work_Services } from '@work/Work_Services'
-export { default as Work_Services_Card } from '@work/Work_Services_Card'
-export { default as Work_Industries } from '@work/Work_Industries'

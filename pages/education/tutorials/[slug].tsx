@@ -51,11 +51,14 @@ function Page_Education_Tutorials({
       />
 
       <div className='max-w-6xl mx-auto'>
-        <div className='w-full mx-auto  aspect-w-16 aspect-h-9 bg-peach'>
+        <div className='w-full mx-auto aspect-w-16 aspect-h-9 bg-peach'>
           <Video
             url={frontMatter.video}
             poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
             controls={true}
+            enableTracking={true}
+            eventName='Tutorial Video Plays'
+            title={`${frontMatter.title} `}
           />
         </div>
       </div>
