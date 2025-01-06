@@ -1,7 +1,7 @@
 import { LazyMotion, domAnimation, AnimatePresence, m } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import { PulsatingButton } from '@footer'
+import { Footer_UI_CroissantButton } from '@footer'
 import { usePlausible } from 'next-plausible'
 
 const Footer_Croissant = dynamic(
@@ -43,7 +43,7 @@ const FooterBottomRow = () => {
           Made with love and flour in Lincoln, Nebraska
         </span>
 
-        <PulsatingButton
+        <Footer_UI_CroissantButton
           shimmerColor='rgb(56, 204, 255)'
           shimmerSize='0.05em'
           background='#fff'
@@ -53,7 +53,7 @@ const FooterBottomRow = () => {
           onClick={toggleModal}
         >
           <i className='text-2xl leading-none group-hover:rotate-360'>🥐</i>
-        </PulsatingButton>
+        </Footer_UI_CroissantButton>
       </div>
     </LazyMotion>
   )

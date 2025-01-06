@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
 import cn from 'classnames'
-import { SendToMonday_Croissants } from '@lib/api_sendToMonday'
-import { SendToMailchimp, SendEmail_Croissants } from '@lib/helpers'
+import { SendToMonday_Croissants, SendToMailchimp, SendEmail_Croissants } from '@lib'
 import { usePlausible } from 'next-plausible'
 
 interface FooterObjectCroissantProps {
@@ -13,6 +12,7 @@ interface FooterObjectCroissantProps {
 interface CroissantFormData {
   email: string
   check?: boolean
+  tag: string
 }
 
 export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectCroissantProps) {

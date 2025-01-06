@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRightIcon } from 'components/icons/Icons_UI/index'
+import { ChevronRightIcon } from '@icons'
 
 type Props = {
   text: string

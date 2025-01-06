@@ -6,7 +6,7 @@
 
 import type { ReactNode } from 'react'
 import type { Controller, FieldErrors, UseFormRegister, Control } from 'react-hook-form'
-
+import type { NextApiRequest, NextApiResponse } from 'next'
 // ────────────────────────────────────────────────────────────────────────────
 // SHARED / GENERIC TYPES
 // ────────────────────────────────────────────────────────────────────────────
@@ -200,6 +200,7 @@ export interface FormInputs {
   phone?: string
   email: string
   website?: string | undefined
+  tag?: string
 }
 
 // Props for the sub-form
@@ -266,4 +267,105 @@ export interface MultiSelectProps {
   fieldName: string
   className?: string
   options: Array<{ value: string; label: string }>
+}
+
+export interface ParsedFile {
+  filename: string
+  encoding: string
+  mimeType: string
+  data: Buffer
+}
+
+export interface ParsedRequest {
+  fields: {
+    [key: string]: string // All form fields as key-value pairs
+  }
+  files: {
+    [key: string]: ParsedFile // Files as key-value pairs
+  }
+}
+// ────────────────────────────────────────────────────────────────────────────
+// MAIL API TYPES
+// ────────────────────────────────────────────────────────────────────────────
+
+export interface SendMailBody {
+  about_personal: string
+  about_professional: string
+  address_line_1: string
+  address_line_2?: string
+  authorized: string
+  band: string
+  commitment: string
+  education: string
+  email: string
+  first_name: string
+  hear: string
+  hours: string
+  last_name: string
+  middle_name?: string
+  pay: string
+  phone_number: string
+  position: string
+  pronoun?: string
+  social?: string
+  website?: string
+  why: string
+  zodiac?: string
+}
+
+export interface SendMailAttachments {
+  content: string
+  filename: string
+  type: string
+  disposition: string
+}
+
+/**
+ * Props for the Video component.
+ */
+export interface BaseVideoProps {
+  /** URL of the video (e.g., YouTube, Vimeo, or direct link). */
+  url: string
+  /** Should the video play automatically? Default is `false`. */
+  autoPlay?: boolean
+  /** URL of the poster image to show before the video plays. */
+  poster?: string
+  /**
+   * If `true`, the poster is only used as a loading placeholder while the video loads
+   * and is not passed to the video player's `poster` prop.
+   */
+  posterAsPlaceholderOnly?: boolean
+  /** Should the video loop when it ends? Default is `false`. */
+  loop?: boolean
+  /** Should the video start muted? Default is `true`. */
+  muted?: boolean
+  /** Should the video play inline on mobile? Default is `true`. */
+  playsInline?: boolean
+  /** Should player controls be displayed? Default is `true`. */
+  controls?: boolean
+  /** Optional caption to display below the video. */
+  caption?: string
+  /** Use a light preview mode for the video. */
+  light?: boolean
+  /** Additional CSS classes for the video container. */
+  className?: string
+  /** Enable Plausible tracking for video events. */
+  enableTracking?: boolean
+  /**
+   * Name of the event to track. Required if `enableTracking` is `true`.
+   * Example: `case-study-video-play`.
+   */
+  eventName?: string
+  /**
+   * If `true`, prefixes the video URL with a custom CDN path.
+   * If a string is provided, it is used as the custom prefix.
+   */
+  useCDN?: boolean
+  /** Enable dummy mode for testing; no real video is loaded. */
+  dummy?: boolean
+  /**
+   * Title of the video, used for tracking events.
+   * Required if `enableTracking` is `true`.
+   */
+  title?: string
 }
