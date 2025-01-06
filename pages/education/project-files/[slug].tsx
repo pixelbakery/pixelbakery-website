@@ -18,7 +18,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Education_SupportUs from '@education/Education_SupportUs'
 import dynamic from 'next/dynamic'
-import DateFormatter from '@lib/date-formatter'
+import DateFormatter from '@lib/dateFormatter'
 
 const components = {
   Video: Video,

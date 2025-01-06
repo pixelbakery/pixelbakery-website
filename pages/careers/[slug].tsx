@@ -19,7 +19,7 @@ import { InnerWrapper, PageSection, Button_Filled } from '@parts/index'
 
 import { H1, H2AndLead } from '@typography/index'
 
-import DateFormatter from '@lib/date-formatter'
+import DateFormatter from '@lib/dateFormatter'
 
 //css imports
 import markdownStyles from '@styles/markdown-styles.module.css'
