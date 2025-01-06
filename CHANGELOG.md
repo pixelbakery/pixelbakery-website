@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.1.0...v8.2.0) (2025-01-06)
+
+
+### Features
+
+* added plausible tracking on videos ([553bd92](https://github.com/pixelbakery/pixelbakery-website/commits/553bd92b4eaebe8e5d0b0040d92aa17a7649668e))
+
 ## [8.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.4...v8.1.0) (2025-01-06)
 
 
