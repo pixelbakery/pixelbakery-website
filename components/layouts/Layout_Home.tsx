@@ -1,7 +1,6 @@
 import { Footer } from '@footer'
 import Nav_HamWrapper from '@nav/Nav_HamWrapper'
-import Main from '@parts/Main'
-import Meta from '@parts/Meta'
+import { Main, Meta } from '@parts'
 import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
 import dynamic from 'next/dynamic'
 const BackToTop = dynamic(() => import('@utility/BackToTop'), { ssr: false })

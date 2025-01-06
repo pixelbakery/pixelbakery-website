@@ -1,10 +1,9 @@
 import Navigation from '@nav/Navigation'
 import { Footer } from '@footer'
-import Meta from '@parts/Meta'
+import { Meta, NextSEO_DefaultSEO, Main } from '@parts'
 import BackToTop from '@utility/BackToTop'
-import NextSEO_DefaultSEO from '@parts/NextSEO_DefaultSEO'
+
 import type { ReactNode } from 'react'
-import Main from '@parts/Main'
 
 type Props = {
   children: ReactNode
@@ -13,7 +12,7 @@ type Props = {
 
 const Layout_Defaualt = ({ children, id }: Props) => {
   return (
-    <Main id={id}>
+    <Main id={id} className='font-poppins font-dempsey font-geologica'>
       <NextSEO_DefaultSEO />
       <Meta />
       <Navigation />

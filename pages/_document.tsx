@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { dempsey, poppins, geologica } from '../styles/fonts'
+import { dempsey, poppins, geologica } from '@styles/fonts'
 
 const MyDocument = () => {
   return (

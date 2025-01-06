@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "aws-push": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control max-age=31536000",
     "aws-push-delete": "aws s3 sync public s3://cdn.pixelbakery.com --exclude '*.DS_Store' --cache-control 'max-age=31536000' --delete",
     "build": "next build",
@@ -41,6 +41,7 @@
     "dayjs": "^1.11.13",
     "embla-carousel-react": "^8.5.1",
     "framer-motion": "^11.15.0",
+    "fs": "^0.0.1-security",
     "gray-matter": "4.0.3",
     "next": "^15.1.2",
     "next-mdx-remote": "^4.4.1",

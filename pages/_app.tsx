@@ -1,8 +1,8 @@
 import '@styles/globals.css'
+import '@styles/fonts'
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import '@styles/fonts'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import PlausibleProvider from 'next-plausible'
 
@@ -25,7 +25,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         trackLocalhost={process.env.NODE_ENV !== 'production'}
         selfHosted
         customDomain='https://analytics.jordy.world'
-        // enabled={process.env.NODE_ENV === "production"}
         enabled
       >
         {getLayout(<Component {...pageProps} />)}
