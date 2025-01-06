@@ -1,5 +1,4 @@
-import { InnerWrapper, PageSection } from '@parts'
-import Spotify_Playlist from '@parts/Spotify_Playlist'
+import { InnerWrapper, PageSection, Spotify_Playlist } from '@parts'
 
 const About_Spotify = () => {
   return (
@@ -10,7 +9,7 @@ const About_Spotify = () => {
       disableSpacing={true}
     >
       <InnerWrapper className='h-full py-3' disableSpacing={true}>
-        <Spotify_Playlist playlistID={'3Ga7aZmRtBi3sLFbJ2Tz4e'} />
+        <Spotify_Playlist />
       </InnerWrapper>
     </PageSection>
   )

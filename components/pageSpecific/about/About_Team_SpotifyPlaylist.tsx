@@ -1,4 +1,4 @@
-import InnerWrapper from '@parts/InnerWrapper'
+import { InnerWrapper } from '@parts'
 
 type spotifyPlaylist = {
   playlistID: string
