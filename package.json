@@ -28,7 +28,10 @@
     "jsxSingleQuote": true,
     "bracketSpacing": true,
     "arrowParens": "always",
-    "printWidth": 100
+    "printWidth": 100,
+    "plugins": [
+      "prettier-plugin-jsdoc"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -47,6 +50,7 @@
     "next-mdx-remote": "^4.4.1",
     "next-plausible": "^3.12.4",
     "next-seo": "^6.6.0",
+    "prettier-plugin-jsdoc": "^1.3.2",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
     "react-dom": "19.0.0",

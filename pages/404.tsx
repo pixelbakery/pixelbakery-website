@@ -1,16 +1,30 @@
-import type { ReactElement } from 'react'
+import { ReactElement, useEffect } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+import { H1 } from '@typography'
+import { usePlausible } from 'next-plausible'
+
 function Page_FourOhFour() {
+  const plausible = usePlausible()
+
+  useEffect(() => {
+    plausible('404-page', {
+      props: {
+        url: window.location.href,
+        referrer: document.referrer || 'None',
+      },
+    })
+  }, [plausible])
+
   return (
     <>
       <NextSeo noindex={true} title='404 Page Not Found' />
       <section className='lander' id='topOfPage'>
         <div className='flex flex-col justify-center h-full max-w-4xl mx-auto'>
-          <h1 className='mb-12 text-4xl font-extrabold text-center font-geologica text-blue'>
+          <H1 color={'blue'} centered className='font-geologica'>
             404: Page Not Found
-          </h1>
+          </H1>
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
             width={480}
