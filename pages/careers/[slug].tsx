@@ -1,170 +1,174 @@
+// React imports
+import { ReactElement } from 'react'
+
+// MDX & frontmatter imports
 import fs from 'fs'
-import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
+import matter from 'gray-matter'
+import { jobFilePaths, JOBS_PATH } from '@lib/mdxUtils'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import remarkGfm from 'remark-gfm'
-import markdownStyles from '@styles/markdown-styles.module.css'
-import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
-import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
-import Button_Filled from '@parts/Button_Filled'
-import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
-import H1 from '@typography/H1'
-import Link from 'next/link'
+
+// Next.js imports
 import Image from 'next/image'
-import Education_SupportUs from '@education/Education_SupportUs'
-import dynamic from 'next/dynamic'
+import Link from 'next/link'
+import type { GetStaticPaths, GetStaticProps } from 'next/types'
+
+// Component imports
+import { InnerWrapper, PageSection, Button_Filled } from '@parts'
+import { H1, H2AndLead } from '@typography/index'
 import DateFormatter from '@lib/date-formatter'
-const components = {
-  Video: Video,
+import Careers_SEO from '@careers/Careers_Post_SEO'
+import Layout_Default from 'components/layouts/Layout_Default'
+
+// CSS imports
+import markdownStyles from '@styles/markdown-styles.module.css'
+
+// Utility imports
+import dayjs from 'dayjs'
+
+// Define the structure of the frontmatter and props
+interface FrontMatter {
+  title: string
+  date: string
+  commitment: string
+  coverImage?: string
+  active: boolean
 }
 
-const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
-return (
-    <>
-      <NextSeo
-        title={`${frontMatter.title} | Project Files`}
-        description={`${frontMatter.excerpt}`}
-        canonical={`https://pixelbakery.com/education/project-files/${slug}`}
-        openGraph={{
-          url: `https://pixelbakery.com/education/project-files/${slug}`,
-          title: `${frontMatter.title} | Project Files`,
-          description: `${frontMatter.excerpt}`,
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
-              alt: `${frontMatter.excerpt}`,
-            },
-          ],
-        }}
-      />
-      <BreadcrumbJsonLd
-        itemListElements={[
-          {
-            position: 1,
-            name: 'Education',
-            item: 'https://pixelbakery.com/education',
-          },
-          {
-            position: 2,
-            name: `${frontMatter.title}`,
-            item: `https://pixelbakery.com/education/project-files/${slug}`,
-          },
-        ]}
-      />
-      <section className='grid grid-cols-1 pt-32 my-4 lg:pt-0 lander-education lg:grid-cols-2 '>
-        {frontMatter.videoCoverImage ? (
-          <div className='relative col-span-1 max-h-[75vh] lg:max-h-full lg:h-full w-full'>
-            <div className='relative w-full h-full lg:absolute'>
-              <video
-                autoPlay={true}
-                playsInline
-                muted
-                controls={false}
-                loop
-                poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                className='object-cover w-full h-full hideControls'
-              >
-                <source
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.video}`}
-                  type={'video/mp4'}
-                />
-              </video>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className='relative w-full h-full col-span-1  lg:hidden'>
-              <Image
-                placeholder='blur'
-                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                quality={90}
-                fill={true}
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                className='absolute object-cover object-center w-full h-full'
-                alt='polaroid 3D model made in cinema 4d'
-              />
-            </div>
-            <div className='relative hidden w-full h-full col-span-1 lg:block '>
-              <Image
-                placeholder='blur'
-                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                quality={90}
-                fill={true}
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                className='absolute object-cover object-center w-full h-full'
-                alt={`${frontMatter.title} project file made in ${frontMatter.category}`}
-              />
-            </div>
-          </div>
-        )}
+interface PageJobPostingProps {
+  slug: string
+  source: MDXRemoteSerializeResult
+  frontMatter: FrontMatter
+}
 
-        <div className='relative flex flex-col justify-center w-full h-full col-span-1 px-12 md:overflow-hidden'>
-          <div className='grid self-center w-full grid-cols-1 px-8 py-24 lg:max-w-xl 4xl:max-w-2xl md:grid-cols-2 lg:grid-cols-1'>
-            <div>
-              <div className='pb-0 mb-0 text-2xl font-bold lowercase text-peach xl:text-3xl'>
-                Project File
+// Define the layout for the page
+const Page_JobPosting = ({ slug, source, frontMatter }: PageJobPostingProps): ReactElement => {
+  const coverImage = frontMatter.coverImage || '/img/pixel-bakery-samee-dan-1200x900.png'
+  const datePostedISO = dayjs(frontMatter.date).toISOString()
+  const dateExpiredISO = dayjs(datePostedISO).add(2, 'month').toISOString()
+
+  return (
+    <>
+      <Careers_SEO
+        datePostedISO={datePostedISO}
+        dateExpiredISO={dateExpiredISO}
+        title={frontMatter.title}
+        commitment={frontMatter.commitment}
+        coverImage={coverImage}
+        slug={slug}
+      />
+
+      <PageSection className='min-h-screen mt-32' id='job-posting'>
+        <article>
+          <InnerWrapper>
+            <header className='max-w-2xl mx-auto'>
+              <div className='pb-12'>
+                <Link
+                  hrefLang='en-US'
+                  href='/careers'
+                  className='pb-1 border-b-2 border-b-blue text-blue'
+                >
+                  ← back to all careers
+                </Link>
               </div>
-              <H1
-                color='blue-dark'
-                className='text-6xl md:text-4xl sm:text-xl lg:text-xl xl:text-6xl md:my-0'
-              >
+              <p className='py-0 my-0 text-4xl font-extrabold leading-none text-peach'>
+                job position
+              </p>
+              <H1 color='blue' className='text-6xl text-blue'>
                 {frontMatter.title}
               </H1>
-            </div>
+              <div className='mx-auto md:max-w-6xl'>
+                <div className='w-full mx-auto mb-24 aspect-w-4 aspect-h-3 bg-peach'>
+                  <Image
+                    fill={true}
+                    className='object-cover object-center w-full h-full'
+                    src={coverImage}
+                    alt={`Pixel Bakery is hiring a ${frontMatter.commitment} ${frontMatter.title}`}
+                  />
+                </div>
+              </div>
+              {!frontMatter.active && (
+                <p className='text-2xl italic font-bold'>Sorry, this position has been filled.</p>
+              )}
+              <p className='pt-0 mt-0 text-sm italic'>
+                posted on <DateFormatter dateString={frontMatter.date} />
+              </p>
+            </header>
+          </InnerWrapper>
 
-            <div>
-              <ul className='text-sm text-opacity-50 list-none text-wine xl:my-10'>
-                <li>Application: {frontMatter.category}</li>
-                <li>File Name: {frontMatter.fileName}</li>
-                <li>File Size: {frontMatter.fileSize}</li>
-                <li>File Type: {frontMatter.fileType}</li>
-                <li>
-                  Upload Date: <DateFormatter dateString={frontMatter.uploadDate} />
-                </li>
-              </ul>
-              <div className={markdownStyles['markdown']}>
-                <MDXRemote {...source} components={components} />
+          <InnerWrapper>
+            <div className='max-w-2xl mx-auto'>
+              <div className={markdownStyles.markdown}>
+                <MDXRemote {...source} />
               </div>
-              <div className='mt-8'>
-                <Button_Filled
-                  center={false}
-                  text='download'
-                  chevronDirection='download'
-                  link={`${frontMatter.downloadLink}`}
-                  bgColor='blue'
-                  textColor='cream'
-                />
+              {frontMatter.active && (
+                <div className='flex flex-col justify-center mt-32'>
+                  <H2AndLead
+                    headerColor='blue-dark'
+                    leadColor='peach'
+                    headerText='Does that sound like you?'
+                    leadText='great, get at it.'
+                  />
+                  <Button_Filled
+                    text='apply for position'
+                    bgColor='pink'
+                    textColor='pink-lighter'
+                    chevronDirection='right'
+                    link='/careers/application'
+                    center={false}
+                  />
+                </div>
+              )}
+              <div className='pt-12'>
+                <Link
+                  hrefLang='en-US'
+                  href='/careers'
+                  className='pb-1 border-b-2 text-blue border-b-blue'
+                >
+                  ← back to all careers
+                </Link>
               </div>
-              <Link
-                hrefLang={'en-US'}
-                href={'/education#projectFiles'}
-                className='inline-block px-1 pb-1 border-b  text-blue border-blue'
-              >
-                <span> ← all project files</span>
-              </Link>
             </div>
-          </div>
-            )
+          </InnerWrapper>
+        </article>
+      </PageSection>
+    </>
+  )
 }
 
-//Set page layout
-Page_Education_ProjectFiles.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
+// Set layout for the page
+Page_JobPosting.getLayout = function getLayout(page: ReactElement) {
+  return <Layout_Default>{page}</Layout_Default>
 }
-export default Page_Education_ProjectFiles
 
-export const getStaticProps = async ({ params }) => {
-  //MDX Stuff
-  const temp = path.join(PROJECTFILE_PATH, `${params.slug}.mdx`.toString())
-  const source = fs.readFileSync(temp)
+export default Page_JobPosting
+
+// Static Props
+export const getStaticProps: GetStaticProps<PageJobPostingProps> = async ({ params }) => {
+  const slug = Array.isArray(params?.slug) ? params.slug[0] : params?.slug
+
+  if (!slug) {
+    return {
+      notFound: true,
+    }
+  }
+
+  const jobsFilePath = path.join(JOBS_PATH, `${slug}.mdx`)
+  const source = fs.readFileSync(jobsFilePath, 'utf8')
   const { content, data } = matter(source)
 
-  //Back to MDX Stuff
+  // Validate and ensure all required fields in frontMatter
+  const frontMatter: FrontMatter = {
+    title: data.title || 'Untitled',
+    date: data.date || new Date().toISOString(),
+    commitment: data.commitment || 'Unknown commitment',
+    active: data.active !== undefined ? data.active : true,
+    coverImage: data.coverImage || undefined,
+  }
+
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [],
@@ -172,21 +176,20 @@ export const getStaticProps = async ({ params }) => {
     },
     scope: data,
   })
-  data.date = JSON.parse(JSON.stringify(data.date))
+
   return {
     props: {
+      slug,
       source: mdxSource,
-      frontMatter: data,
-      slug: params.slug,
+      frontMatter,
     },
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = projectFilesFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    // Map the path into the static paths object required by Next.js
+// Static Paths
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = jobFilePaths
+    .map((filePath) => filePath.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }))
 
   return {
