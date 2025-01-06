@@ -3,7 +3,10 @@ import { dempsey, poppins, geologica } from '@styles/fonts'
 
 const MyDocument = () => {
   return (
-    <Html lang='en-US' className={`${geologica.variable} ${dempsey.variable} ${poppins.variable}`}>
+    <Html
+      lang='en-US'
+      className={`${geologica.variable} ${dempsey.variable} ${poppins.variable} font-poppins font-poppins font-dempsey`}
+    >
       <Head />
       <body className='px-4 overflow-x-hidden bg-egg max-w-screen'>
         <Main />
