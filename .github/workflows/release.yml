@@ -14,30 +14,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Set up Node.js and Install pnpm
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install pnpm
-        run: |
-          npm install -g pnpm
-          pnpm --version
-
-      # 3. Cache pnpm dependencies
-      - name: Setup pnpm Cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-
-      # 4. Install Dependencies
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
       # 5. Run Semantic Release
       - name: Run Semantic Release
         uses: cycjimmy/semantic-release-action@v4
