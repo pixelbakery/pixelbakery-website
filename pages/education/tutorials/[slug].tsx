@@ -51,7 +51,7 @@ function Page_Education_Tutorials({
       />
 
       <div className='max-w-6xl mx-auto'>
-        <div className=' w-full aspect-w-16 aspect-h-9  mx-auto bg-peach'>
+        <div className='w-full mx-auto  aspect-w-16 aspect-h-9 bg-peach'>
           <Video
             url={frontMatter.video}
             poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
@@ -59,7 +59,7 @@ function Page_Education_Tutorials({
           />
         </div>
       </div>
-      <PageSection className='px-6 lg:py-16 md:max-w-3xl mx-auto mb-8 lg:mb-8' id='tutorial-body'>
+      <PageSection className='px-6 mx-auto mb-8 lg:py-16 md:max-w-3xl lg:mb-8' id='tutorial-body'>
         <article id='blog-body-guts'>
           <div className={markdownStyles['markdown']}>
             <MDXRemote {...source} components={components} />
