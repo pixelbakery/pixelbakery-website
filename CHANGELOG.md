@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.4...v8.1.0) (2025-01-06)
+
+
+### Features
+
+* added plausible error tracking helper ([9538021](https://github.com/pixelbakery/pixelbakery-website/commits/95380214fe1ef3a9b2d89b88675a6e6bdfc481cb))
+
 ### [8.0.4](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.3...v8.0.4) (2025-01-06)
 
 ### [8.0.3](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.2...v8.0.3) (2025-01-06)
