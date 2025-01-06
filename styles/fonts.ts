@@ -2,6 +2,7 @@ import localFont from 'next/font/local'
 import { Geologica } from 'next/font/google'
 
 const geologica = Geologica({
+  subsets: ['latin'],
   variable: '--font-geologica',
   display: 'swap',
 })
