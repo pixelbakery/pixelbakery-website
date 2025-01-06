@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.2.0...v8.3.0) (2025-01-06)
+
+
+### Bug Fixes
+
+* missing barrel file ([d9d09c2](https://github.com/pixelbakery/pixelbakery-website/commits/d9d09c21527f204c66c604f32c01bf7fead77328))
+
+
+### Chores
+
+* removed dead code ([80b3959](https://github.com/pixelbakery/pixelbakery-website/commits/80b395956a84079dc8524770379c8f7daa378f0c))
+
 ## [8.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.1.0...v8.2.0) (2025-01-06)
 
 
