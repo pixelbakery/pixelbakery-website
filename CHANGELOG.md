@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.6.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.5.0...v8.6.0) (2025-01-07)
+
+
+### Features
+
+* new type files ([1614543](https://github.com/pixelbakery/pixelbakery-website/commits/1614543d2303a7d2484aee77ad6ea2a608043ae7))
+
 ## [8.5.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.4.0...v8.5.0) (2025-01-07)
 
 
