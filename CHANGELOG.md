@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.3.0...v8.4.0) (2025-01-07)
+
+
+### Bug Fixes
+
+* date formatter ([ac862e3](https://github.com/pixelbakery/pixelbakery-website/commits/ac862e3a44e5bdb8f628bc1b59e0ae4027cf1701))
+* date formatter 2 ([d6a6450](https://github.com/pixelbakery/pixelbakery-website/commits/d6a645066f5dfd213f48b956dea56e9b9d0bbf09))
+* date formatter 3 ([12804dd](https://github.com/pixelbakery/pixelbakery-website/commits/12804dd5d064f57ff9453cfb8f0c66675bf0a92b))
+
+
+### Styling
+
+* added blue-darker to color theme ([e367073](https://github.com/pixelbakery/pixelbakery-website/commits/e36707331788ef9fab867359c5609b5e9bc95f23))
+* font size changes ([c45a5db](https://github.com/pixelbakery/pixelbakery-website/commits/c45a5db82f116ebde603cb288d27f6de244e6e50))
+
 ## [8.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.2.0...v8.3.0) (2025-01-06)
 
 
