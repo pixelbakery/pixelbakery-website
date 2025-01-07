@@ -1,10 +1,11 @@
-import { CamelCaseToSentence } from '@lib/helpers'
-import { InnerWrapper, PageSection } from '@parts'
-import Lead from '@typography/Lead'
-import Loading from '@utility/Loading'
-
 import dynamic from 'next/dynamic'
 
+import { CamelCaseToSentence } from '@lib'
+import { InnerWrapper, PageSection } from '@parts'
+import { H3, Lead } from '@typography'
+import { Loading } from '@utility'
+
+// Dynamic import for Spotify playlist
 const About_Team_SpotifyPlaylist = dynamic(() => import('@about/About_Team_SpotifyPlaylist'), {
   ssr: false,
   loading: () => (
@@ -14,46 +15,63 @@ const About_Team_SpotifyPlaylist = dynamic(() => import('@about/About_Team_Spoti
   ),
 })
 
-const About_Team_Details = ({ frontMatter }) => {
-  const details = frontMatter.details
+// Define the structure for the frontMatter prop
+interface TeamDetails {
+  [key: string]: string
+}
+
+interface Signs {
+  sun: string
+  rising: string
+  moon: string
+}
+
+interface FrontMatter {
+  details: TeamDetails[]
+  signs?: Signs
+  spotifyPlaylist?: string
+}
+
+interface Props {
+  frontMatter: FrontMatter
+}
+
+const About_Team_Details =({ frontMatter }: Props) => {
+  const { details, signs, spotifyPlaylist } = frontMatter
+
   return (
     <PageSection id={'bio-details'}>
       <InnerWrapper>
-        <div className='grid grid-cols-2 2xl:grid-cols-5 gap-y-6 gap-12 lg:gap-x-24 w-fit mx-auto'>
-          {details.map((s, index) => {
+        <div className='grid grid-cols-2 gap-12 mx-auto 2xl:grid-cols-4 gap-y-6 lg:gap-x-8 w-fit'>
+          {details.map((detail, index) => {
+            const key = Object.keys(detail)[0]
+            const value = detail[key]
             return (
               <div className='col-span-1 w-fit' key={index}>
-                <Lead className='mb-1 lg:mb-1 lg:pb-0' color='peach'>
-                  {CamelCaseToSentence(Object.keys(s).toString())}
-                </Lead>
-                <p className='text-md text-wine'>{Object.values(s).toString()}</p>
+                <H3 className='mb-1 lg:mb-1 lg:pb-0 text-xl xs:text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-x2l 2xl:text-3xl' color='peach'>
+                  {CamelCaseToSentence(key)}
+                </H3>
+                <p className='mt-0 pt-0 text-md text-wine'>{value}</p>
               </div>
             )
           })}
-          {frontMatter.signs != undefined ? (
+          {signs && (
             <div className='col-span-1 w-fit'>
-              <Lead className='mb-1 lg:mb-1 lg:pb-0' color='peach'>
+              <H3 className='mb-1 lg:mb-1 lg:pb-0 text-xl xs:text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-x2l 2xl:text-3xl' color='peach'>
                 Signs
-              </Lead>
-              <ul className='flex flex-col gap-x-4 text-md text-wine'>
-                <li>☉ {frontMatter.signs.sun}</li>
-                <li>↑ {frontMatter.signs.rising}</li>
-                <li>☽ {frontMatter.signs.moon}</li>
+              </H3>
+              <ul className='mt-0 flex flex-col gap-x-4 text-lg text-wine'>
+                <li>☉ {signs.sun}</li>
+                <li>↑ {signs.rising}</li>
+                <li>☽ {signs.moon}</li>
               </ul>
             </div>
-          ) : (
-            ''
           )}
         </div>
-        <div>
-          {frontMatter.spotifyPlaylist != undefined ? (
-            <About_Team_SpotifyPlaylist playlistID={frontMatter.spotifyPlaylist} />
-          ) : (
-            ''
-          )}
-        </div>
+        <div>{spotifyPlaylist && <About_Team_SpotifyPlaylist playlistID={spotifyPlaylist} />}</div>
       </InnerWrapper>
     </PageSection>
   )
 }
+
 export default About_Team_Details
