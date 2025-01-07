@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.8.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.7.0...v8.8.0) (2025-01-07)
+
+
+### Chores
+
+* barrel file updates ([1d15f8d](https://github.com/pixelbakery/pixelbakery-website/commits/1d15f8dd1c31e494551805b16d68b4e051fcaafb))
+* removed date formatter ([619464c](https://github.com/pixelbakery/pixelbakery-website/commits/619464c57f6e28f0c521f4af0a0b57771f540110))
+* still hunting down danny name changes ([71e55c3](https://github.com/pixelbakery/pixelbakery-website/commits/71e55c341fb026db8109a51f6ced1841c2d64350))
+
 ## [8.7.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.6.0...v8.7.0) (2025-01-07)
 
 
