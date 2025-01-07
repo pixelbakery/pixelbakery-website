@@ -11,49 +11,48 @@ import {
   CASESTUDIES_PATH,
 } from '@lib/mdxUtils'
 import { serialize } from 'next-mdx-remote/serialize'
+
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import type { PersonWithFilePath, Awards } from '@/types/people'
+import type { Post } from '@/types/posts'
+import type { CaseStudy } from '@/types/caseStudies'
 
 //Utilities & Components imports
 import remarkGfm from 'remark-gfm'
+
+
+
 
 import {
   About_Team_Header,
   About_Team_PrevNext,
   About_Team_SEO,
   About_Team_Details,
+  About_Team_Awards,
 } from '@about/index'
 
-import { GetStaticPaths, GetStaticProps, GetStaticPropsResult } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
+import Layout_Default from 'components/layouts/Layout_Default'
 import About_Team_MatchingPosts from '@about/About_Team_MatchingPosts'
 import About_Team_MatchingCaseStudies from '@about/About_Team_MatchingCaseStudies'
+import { Credit } from '@types'
+
 // -- Types ---------------------------------------------------------------------
 
-interface FrontMatterProps {
-  active?: boolean
-  name?: string
-  [key: string]: any
-}
-
-interface ParamsProps {
-  params: {
-    slug: string
-  }
-}
-interface FileData {
-  filePath: string
-  data: FrontMatterProps & { [key: string]: any }
+interface PersonWithBioLink extends PersonWithFilePath {
+  bioLink: string 
 }
 
 interface PagePeopleProps {
-  matchingCaseStudies: FileData[]
+  matchingCaseStudies: CaseStudy[]
   slug: string
   source: MDXRemoteSerializeResult
-  frontMatter: FrontMatterProps
-  matchingAuthorPosts: FileData[]
-  prevIndex: FileData | null
-  nextIndex: FileData | null
+  frontMatter: PersonWithFilePath
+  matchingAuthorPosts: Post[]
+  prevIndex: PersonWithFilePath
+  nextIndex: PersonWithFilePath
+  awards: Awards
 }
 
 function Page_People({
@@ -64,6 +63,7 @@ function Page_People({
   matchingAuthorPosts,
   prevIndex,
   nextIndex,
+  awards,
 }: PagePeopleProps) {
   return (
     <>
@@ -71,111 +71,157 @@ function Page_People({
       <About_Team_Header source={source} frontMatter={frontMatter} />
       <About_Team_Details frontMatter={frontMatter} />
       <About_Team_MatchingPosts matchingAuthorPosts={matchingAuthorPosts} name={frontMatter.name} />
+      <About_Team_Awards awards={awards} name={frontMatter.name}/>
       <About_Team_MatchingCaseStudies
         matchingCaseStudies={matchingCaseStudies}
         name={frontMatter.name}
       />
       <About_Team_PrevNext
-        active={frontMatter.active as boolean}
+        active={frontMatter.active}
         prev={prevIndex}
         next={nextIndex}
-        name={frontMatter.name || ''}
+        name={frontMatter.name}
       />
     </>
   )
 }
+
 // -- getStaticProps -----------------------------------------------------------
 
 export const getStaticProps: GetStaticProps<PagePeopleProps, { slug: string }> = async ({
   params,
 }) => {
-  if (!params?.slug) {
-    return { notFound: true }
+  if (!params?.slug) return { notFound: true }
+
+  const personFilePath = path.join(PEOPLE_PATH, `${params.slug}.mdx`)
+  if (!fs.existsSync(personFilePath)) return { notFound: true }
+
+  const { content, data: rawFrontMatter } = matter(fs.readFileSync(personFilePath, 'utf8'))
+  const mdxSource = await serialize(content, { scope: rawFrontMatter })
+
+  const frontMatter: PersonWithFilePath = {
+    ...rawFrontMatter,
+    filePath: personFilePath,
+    bioLink: `/about/${params.slug}`,
+    name: rawFrontMatter.name || 'Unnamed Person',
+    active: rawFrontMatter.active ?? false,
+    slug: params.slug,
   }
 
-  const temp = path.join(PEOPLE_PATH, `${params.slug}.mdx`)
-  const fileContent = fs.readFileSync(temp)
-  const { content, data } = matter(fileContent)
+  const loadFiles = async (filePaths: string[], basePath: string) =>
+    Promise.all(
+      filePaths.map(async (filePath) => {
+        const source = await fs.promises.readFile(path.join(basePath, filePath), 'utf8')
+        const { data } = matter(source)
+        return { data, filePath }
+      })
+    )
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [],
-      development: process.env.NODE_ENV === 'development',
-    },
-    scope: data,
-  })
+  const [allPosts, allPeople, allCaseStudies] = await Promise.all([
+    loadFiles(postFilePaths, POSTS_PATH),
+    loadFiles(peopleFilePaths, PEOPLE_PATH),
+    loadFiles(caseStudyFilePaths, CASESTUDIES_PATH),
+  ])
 
-  const matchingAuthorPosts = postFilePaths
-    .map((filePath) => {
-      const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-      const { data } = matter(source)
-      data.date = JSON.parse(JSON.stringify(data.date))
-      return { data, filePath }
-    })
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-    .filter((p) => p.data.author?.name?.toUpperCase() === data.name.toUpperCase())
+  const matchingAuthorPosts: Post[] = allPosts
+    .filter(
+      (post): post is Post =>
+        post.data.title &&
+        post.data.author &&
+        post.data.categories &&
+        post.data.date &&
+        post.data.coverImage &&
+        post.data.excerpt &&
+        post.data.author?.name?.toUpperCase() === frontMatter.name.toUpperCase() &&
+        post.data.active
+    )
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
     .slice(0, 11)
 
-  const allPeople = peopleFilePaths
-    .map((filePath) => {
-      const source = fs.readFileSync(path.join(PEOPLE_PATH, filePath))
-      const { data } = matter(source)
-      return { filePath, data }
-    })
-    .filter((cs) => cs.data.active === true)
-    .sort((cs1, cs2) => (cs1.data.name < cs2.data.name ? -1 : 1))
+const activePeople: PersonWithBioLink[] = allPeople
+  .filter((person) => person.data.active) // Filter active people
+  .map((person) => ({
+    name: person.data.name, // Extract the name
+    active: person.data.active, // Extract the active status
+    slug: person.data.slug, // Extract the slug
+    bioLink: `/about/${person.filePath.replace(/\.mdx?$/, '')}`, // Construct the bioLink
+    filePath: person.filePath, // Retain the filePath
+    ...person.data, // Spread other properties from `data`
+  }))
 
-  let thisIndex: number | undefined
-  let prevIndex: FileData | null = null
-  let nextIndex: FileData | null = null
-
-  if (data.active !== false) {
-    allPeople.forEach((p, index) => {
-      if (p.data.name === data.name) {
-        thisIndex = index
-      }
-    })
-
-    if (thisIndex !== undefined && thisIndex === 0) {
-      prevIndex = allPeople[Object.keys(allPeople).length - 1]
-    } else if (thisIndex !== undefined) {
-      prevIndex = allPeople[thisIndex - 1]
-    }
-
-    if (thisIndex !== undefined && thisIndex === Object.keys(allPeople).length - 1) {
-      nextIndex = allPeople[0]
-    } else if (thisIndex !== undefined) {
-      nextIndex = allPeople[thisIndex + 1]
-    }
+  if (activePeople.length === 0) {
+    throw new Error('No active people found')
   }
 
-  const matchingCaseStudies = caseStudyFilePaths
-    .map((filePath) => {
-      const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
-      const { data } = matter(source)
-      data.date = JSON.parse(JSON.stringify(data.date))
-      return { data, filePath }
-    })
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1))
-    .filter((cs) => cs.data.active === true)
-    .filter((c) => {
-      let bool = false
-      c.data.credits?.forEach((credit: { name: string }) => {
-        if (credit.name.toLowerCase() === data.name.toLowerCase()) bool = true
-      })
-      return bool
-    })
+  const currentIndex = activePeople.findIndex((person) => person.name === frontMatter.name)
+
+  const prevIndex = (currentIndex - 1 + activePeople.length) % activePeople.length
+  const nextIndex = (currentIndex + 1) % activePeople.length
+
+  const PreviousPerson = activePeople[prevIndex]
+  const NextPerson = activePeople[nextIndex]
+
+const matchingCaseStudies: CaseStudy[] = allCaseStudies
+  .filter((caseStudy) => {
+    const isActive = caseStudy.data.active
+    const hasMatchingCredit = caseStudy.data.credits?.some((credit: Credit) =>
+      credit.website?.includes(params.slug)
+    )
+    return isActive && hasMatchingCredit
+  })
+  .map((caseStudy) => ({
+    filePath: caseStudy.filePath,
+    data: {
+      client: caseStudy.data.client || 'Unknown Client', // Default value
+      title: caseStudy.data.title || 'Untitled Case Study', // Ensure title is set
+      tags: caseStudy.data.tags || [], // Default to an empty array
+      vimeoPreview: caseStudy.data.vimeoPreview || '', // Default to an empty string
+      date: caseStudy.data.date ? new Date(caseStudy.data.date).toISOString() : undefined,
+      credits: caseStudy.data.credits?.map((credit: Credit) => ({
+        name: credit.name || 'Unknown Name',
+        title: credit.title || 'Unknown Title',
+        website: credit.website || '',
+      })) || [],
+      active: caseStudy.data.active,
+      quickfacts: {
+        awards: caseStudy.data.quickfacts?.awards || [], // Process awards properly
+        industry: caseStudy.data.quickfacts?.industry || '',
+        service_types: caseStudy.data.quickfacts?.service_types || [], // Process service types properly
+      },
+    },
+  }))
+  .sort((a, b) => {
+    const dateA = new Date(a.data.date || 0).getTime()
+    const dateB = new Date(b.data.date || 0).getTime()
+    return dateB - dateA
+  })
+
+const awards: Awards = matchingCaseStudies.flatMap((caseStudy) =>
+  (caseStudy.data.quickfacts?.awards || []).map((award) => {
+    // Find the person's role in the credits
+    const personCredit = caseStudy.data.credits?.find(
+      (credit: Credit) => credit.website?.includes(params.slug)
+    )
+    return {
+      name: award, // Award name
+      link: `/case-studies/${caseStudy.filePath.replace(/\.mdx?$/, '')}`, // Link to the project
+      client: caseStudy.data.client || 'Unknown Client', // Client name
+      project: caseStudy.data.title || 'Unknown Project', // Project name
+      role: personCredit?.title || 'No Role Specified', // Role from credits, fallback if none
+    }
+  })
+)
 
   return {
     props: {
       matchingCaseStudies,
       matchingAuthorPosts,
-      nextIndex,
-      prevIndex,
+      prevIndex: PreviousPerson,
+      nextIndex: NextPerson,
       slug: params.slug,
       source: mdxSource,
-      frontMatter: data,
+      frontMatter,
+      awards
     },
   }
 }
@@ -190,9 +236,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   }
 }
-//Set page layout
+
 Page_People.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
+  return <Layout_Default>{page}</Layout_Default>
 }
 
 export default Page_People

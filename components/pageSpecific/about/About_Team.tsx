@@ -2,15 +2,15 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 import { H2, Lead } from '@typography'
 import About_Team_Headshot from '@about/About_Team_Headshot'
-import type { Person } from '@types'
+import { PersonWithFilePath } from '@/types/people'
 
 interface AboutTeamProps {
-  allPeople: Person[]
+  allPeople: PersonWithFilePath[] // Array of all people to display
 }
 
 interface PeopleCardProps {
-  allPeople: Person[]
-  leadIndex2: number
+  allPeople: PersonWithFilePath[] // Array of people passed to the card component
+  leadIndex2: number // Index for the second lead person
 }
 
 const Header = () => {

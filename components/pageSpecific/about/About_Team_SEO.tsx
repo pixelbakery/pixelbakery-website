@@ -1,30 +1,23 @@
 import { NextSeo, BreadcrumbJsonLd, SocialProfileJsonLd } from 'next-seo'
+import type { PersonWithFilePath } from '@/types/people'
 
-const About_Team_SEO = ({ frontMatter, slug }) => {
+
+
+
+interface Props {
+  frontMatter: PersonWithFilePath
+  slug: string
+}
+
+const About_Team_SEO = ({ frontMatter, slug }: Props) => {
   const [firstName, lastName] = frontMatter.name.split(' ')
-  let list = []
-  if (frontMatter.socials != undefined) {
-    frontMatter.socials.forEach((s) => {
-      list.push(Object.values(s).toString())
-    })
-  }
 
-  const objectArray = Object.entries(frontMatter.details)
-  let details = [] as any
-  // eslint-disable-next-line no-unused-vars
-  objectArray.forEach(([key, value]) => {
-    details[Object.keys(value).toString()] = Object.values(value).toString()
-  })
-  let desc = `${frontMatter.excerpt}`
-  // let desc = `The amazing ${frontMatter.name}. ${firstName} is Pixel Bakery's`
-  // if (details.personalAesthetic != undefined) {
-  //   desc = `${desc} ${details.personalAesthetic}`
-  // }
-  // desc = `${desc} ${frontMatter.title}`
-  // if (details.leastFavoriteThing != undefined)
-  //   desc += `, and they really hate ${details.leastFavoriteThing.toLowerCase()}`
-  // else desc += `, and they're one of our favorite people ever`
-  // desc += '.'
+  // Collect social URLs
+  const socialUrls = frontMatter.socials?.map((s) => s.url) ?? []
+
+  // Prepare the description
+  const description = frontMatter.excerpt
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -36,30 +29,30 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
           },
           {
             position: 2,
-            name: `${frontMatter.name}`,
+            name: frontMatter.name,
             item: `https://pixelbakery.com/about/${slug}`,
           },
         ]}
       />
       <SocialProfileJsonLd
         type='Person'
-        name={`${frontMatter.name}`}
+        name={frontMatter.name}
         url={`https://pixelbakery.com/about/${slug}`}
-        sameAs={list}
+        sameAs={socialUrls}
       />
       <NextSeo
         title={`${frontMatter.name} – ${frontMatter.title} | Team`}
-        description={desc}
+        description={description}
         canonical={`https://pixelbakery.com/about/${slug}`}
         openGraph={{
           title: `${frontMatter.name} – ${frontMatter.title}`,
-          description: `${desc}`,
+          description,
           url: `https://pixelbakery.com/about/${slug}`,
           type: 'profile',
           profile: {
-            firstName: firstName,
-            lastName: lastName,
-            gender: `${frontMatter.pronoun}`,
+            firstName,
+            lastName,
+            gender: frontMatter.pronoun,
           },
           images: [
             {
@@ -86,4 +79,5 @@ const About_Team_SEO = ({ frontMatter, slug }) => {
     </>
   )
 }
+
 export default About_Team_SEO

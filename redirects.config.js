@@ -274,7 +274,7 @@ const redirectsArray = [
   },
   {
     source: '/about/daniel-hinz',
-    destination: '/about/dan-hinz',
+    destination: '/about/danny-hinz',
     permanent: true,
   },
   {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ChevronRightIcon, DownloadIcon } from 'components/icons/Icons_UI/index'
+import { ChevronRightIcon, DownloadIcon } from '@icons'
 import cn from 'classnames'
 
 type Props = {

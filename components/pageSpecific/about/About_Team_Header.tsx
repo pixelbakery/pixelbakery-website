@@ -1,17 +1,27 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H1 from '@typography/H1'
-import Lead from '@typography/Lead'
+import { H1, Lead } from '@typography'
+
 import { MDXRemote } from 'next-mdx-remote'
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { SocialIcon } from '@SocialIcons/SocialIcon'
 import Image from 'next/image'
 import Head from 'next/head'
-import Shimmer from '@lib/Shimmer'
-//CSS imports
+import { Shimmer } from '@lib'
+import { Person } from '@/types/people'
 import markdownStyles from '@styles/markdown-styles.module.css'
-import Loading from '@utility/Loading'
+import { Loading } from '@utility'
 import Link from 'next/link'
 
-const About_Team_Header = ({ source, frontMatter }) => {
+
+interface AboutTeamHeaderProps {
+  source: MDXRemoteSerializeResult
+  frontMatter: Pick<
+    Person,
+    'name' | 'title' | 'headshotFun' | 'email' | 'phone' | 'socials'
+  >
+}
+
+const About_Team_Header = ({ source, frontMatter }: AboutTeamHeaderProps) => {
   const socialList = frontMatter.socials
 
   const components = {
@@ -21,8 +31,8 @@ const About_Team_Header = ({ source, frontMatter }) => {
   return (
     <PageSection color='cream' id={'bio-header'}>
       <InnerWrapper className='mt-24'>
-        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 xl:gap-x-24  gap-y-8'>
-          <div className='col-span-1 relative w-full aspect-3/4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-12 xl:gap-x-24 gap-y-8'>
+          <div className='relative w-full col-span-1 aspect-3/4'>
             <div className='relative max-w-lg aspect-w-3 aspect-h-4'>
               <Image
                 placeholder='blur'
@@ -32,17 +42,16 @@ const About_Team_Header = ({ source, frontMatter }) => {
                 src={`${ImgPrefix}${frontMatter.headshotFun}`}
                 className={'object-cover w-full h-full'}
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}
-                // className={'bg-blue'}
               />
             </div>
             <Loading />
           </div>
           <div className='col-span-1'>
             <div>
-              <H1 color='blue' className='mb-2 pb-0 2xl:mb-2'>
+              <H1 color='blue' className='pb-0 mb-2 2xl:mb-2'>
                 {frontMatter.name}
               </H1>
-              <Lead color='wine' className='mb-2 lg:mb-4 pb-0'>
+              <Lead color='wine' className='pb-0 mb-2 lg:mb-4'>
                 {frontMatter.title}
               </Lead>
             </div>
@@ -60,7 +69,7 @@ const About_Team_Header = ({ source, frontMatter }) => {
               {frontMatter.phone ? (
                 <a
                   href={`tel:${frontMatter.phone}`}
-                  className='block italic text-peach cursor-pointer'
+                  className='block italic cursor-pointer text-peach'
                 >
                   {frontMatter.phone}
                 </a>

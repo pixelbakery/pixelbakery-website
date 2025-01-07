@@ -2,9 +2,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import cn from 'classnames'
-const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
-import type { AboutTeamHeadshotProps } from '@types'
+// const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
+import type { PersonWithFilePath } from '@/types/people'
 
+type AboutTeamHeadshotProps = {
+  person: PersonWithFilePath
+}
 const About_Team_Headshot = ({ person }: AboutTeamHeadshotProps) => {
   const [hover, setHover] = useState(false)
   const handleHover = () => setHover(!hover)
@@ -20,24 +23,25 @@ const About_Team_Headshot = ({ person }: AboutTeamHeadshotProps) => {
     >
       <>
         <Image
-          src={`${ImgPrefix}${person.data.headshotSerious}`}
+          src={`${person.headshotSerious}`}
           width={720}
           height={980}
           className={cn('absolute top-0 left-0 w-full h-full object-cover z-20', {
             ['opacity-0']: hover,
           })}
-          alt={'pixel bakery ' + person.data.name + ', ' + person.data.title}
+          alt={'pixel bakery ' + person.name + ', ' + person.title}
           placeholder={'blur'}
-          blurDataURL={`${ImgPrefix}${person.data.headshotSerious}`}
+          blurDataURL={`${person.headshotSerious}`}
         />
         <Image
-          src={`${ImgPrefix}${person.data.headshotSmiling}`}
+          // src={`${ImgPrefix}${person.headshotSmiling}`}
+          src={`${person.headshotSmiling}`}
           width={720}
           height={980}
           className='absolute top-0 left-0 z-10 object-cover w-full h-full'
-          alt={'pixel bakery ' + person.data.name + ', ' + person.data.title + ' company headshot'}
+          alt={'pixel bakery ' + person.name + ', ' + person.title + ' company headshot'}
           placeholder={'blur'}
-          blurDataURL={`${ImgPrefix}${person.data.headshotSmiling}`}
+          blurDataURL={`${person.headshotSmiling}`}
         />
       </>
     </Link>
