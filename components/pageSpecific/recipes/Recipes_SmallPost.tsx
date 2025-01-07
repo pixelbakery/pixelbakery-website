@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Pill from '@parts/Pill'
-import DateFormatter from '@lib/date-formatter'
+import { Pill } from '@parts'
 
 type Props = {
   title: string
@@ -46,7 +45,6 @@ const Recipes_SmallPost = ({
           <div className='flex justify-start '>
             <span className='self-center text-xs md:text-base text-wine-300 lg:order-1'>
               {`${author}`} <br className=' md:hidden' />
-              {/* <span className='hidden md:inline'> – </span> <DateFormatter dateString={date} /> */}
             </span>
           </div>
           <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} aria-label={title}>
