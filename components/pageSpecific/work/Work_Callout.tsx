@@ -1,12 +1,9 @@
 import dynamic from 'next/dynamic'
+
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), { ssr: false })
+
 import { InnerWrapper, PageSection } from '@parts'
 import { H2 } from '@typography'
-
-interface LottiePlayerProps {
-  anim: any
-  preserveAspectRatio?: boolean
-}
 
 function Work_Callout() {
   return (

@@ -1,12 +1,10 @@
-import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-
-import Image_VarH from '@parts/Image_VarH'
+import { InnerWrapper, PageSection, Image_VarH } from '@parts'
+import { H2 } from '@typography'
 
 const CaseStudies_Gallery_Email = () => {
   return (
     <>
-      <PageSection color='pink-lighter' className='z-20 relative' id={'gallery-emails'}>
+      <PageSection color='pink-lighter' className='relative z-20' id={'gallery-emails'}>
         <InnerWrapper>
           <H2>Emails</H2>
           <p>

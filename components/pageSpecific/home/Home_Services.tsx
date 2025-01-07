@@ -1,9 +1,7 @@
 import { InnerWrapper, PageSection } from '@parts'
-import { H2, Lead } from '@typography'
+import { H2, Lead, H3 } from '@typography'
 import services from '@data/services'
-import Services_AllServices_Card_Filled from '@services/Services_AllServices_Card_Filled'
-import H3 from '@typography/H3'
-import Services_AllServices_Card_Outlined from '@services/Services_AllServices_Card_Outlined'
+import {Services_AllServices_Card_Outlined, Services_AllServices_Card_Filled} from '@services'
 const Home_Services = () => {
   const all = {
     service: 'Overview of All Services',
@@ -12,9 +10,9 @@ const Home_Services = () => {
   }
   return (
     <PageSection color='blue' id='home-services'>
-      <InnerWrapper className='md:max-w-3xl lg:max-w-6xl 2xl:max-w-10xl lg:px-6 2xl:px-12 mx-auto'>
-        <div className=' w-full flex flex-col '>
-          <div className=' mb-16'>
+      <InnerWrapper className='mx-auto md:max-w-3xl lg:max-w-6xl 2xl:max-w-10xl lg:px-6 2xl:px-12'>
+        <div className='flex flex-col w-full '>
+          <div className='mb-16 '>
             <H2 color='blue-dark' className='text-blue-dark '>
               We are builders and this is our craft.
             </H2>
@@ -25,7 +23,7 @@ const Home_Services = () => {
           </div>
         </div>
 
-        <div className='w-full flex flex-col lg:flex-row gap-x-12 '>
+        <div className='flex flex-col w-full lg:flex-row gap-x-12 '>
           <div className='w-full lg:w-1/3 xl:w-1/4'>
             <H3 color='cream'>Capabilities</H3>
             <div className='max-w-sm'>
@@ -37,12 +35,12 @@ const Home_Services = () => {
                 YouTube pre-roll enhances your campaign messaging, your brand finds balance in the
                 universe.
               </p>
-              <p className='text-sm italic  leading-tight text-blue-dark'>
+              <p className='text-sm italic leading-tight text-blue-dark'>
                 Kinda like when they reintroduced wolves into Yellowstone 🍃
               </p>
             </div>
           </div>
-          <div className='w-full lg:w-3/4 mt-12 lg:mt-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 lg:gap-x-8 lg:gap-y-12'>
+          <div className='grid w-full grid-cols-1 mt-12 lg:w-3/4 lg:mt-0 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 lg:gap-x-8 lg:gap-y-12'>
             {services.map((services) => (
               <Services_AllServices_Card_Filled
                 service={services}

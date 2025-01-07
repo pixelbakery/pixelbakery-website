@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player/lazy'
-import Loading from '@utility/Loading'
+import { Loading } from '@utility'
 
 interface Card {
   video: string
@@ -8,7 +8,7 @@ interface Card {
 function LogoAnimation_PastClients_Card({ video, client }: Card) {
   return (
     <article>
-      <div className='relative  w-full aspect-h-1 aspect-w-1 overflow-hidden'>
+      <div className='relative w-full overflow-hidden aspect-h-1 aspect-w-1'>
         <ReactPlayer
           url={`${video}`}
           autoPlay={true}
@@ -20,7 +20,7 @@ function LogoAnimation_PastClients_Card({ video, client }: Card) {
           width='100%'
           height='100%'
           controls={false}
-          className='absolute block top-0 left-0 right-0 bottom-0 scale-101'
+          className='absolute top-0 bottom-0 left-0 right-0 block scale-101'
         />
         <Loading />
         {/* <Vimeo
@@ -33,10 +33,10 @@ function LogoAnimation_PastClients_Card({ video, client }: Card) {
           dnt
           controls={false}
           responsive={true}
-          className=' object-cover w-full h-full'
+          className='object-cover w-full h-full '
         /> */}
       </div>
-      <h3 className='text-wine text-lg mt-3 font-normal italic'>{client}</h3>
+      <h3 className='mt-3 text-lg italic font-normal text-wine'>{client}</h3>
     </article>
   )
 }

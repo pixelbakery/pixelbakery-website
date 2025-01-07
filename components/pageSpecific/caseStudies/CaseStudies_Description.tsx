@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { ReactNode } from 'react'
 import cn from 'classnames'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import { InnerWrapper, PageSection } from '@parts'
 import type { TextColorVariant } from '@lib/colorHelper'
 

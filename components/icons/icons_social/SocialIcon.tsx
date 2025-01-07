@@ -1,9 +1,12 @@
 import Link from 'next/link'
-
 import cn from 'classnames'
-import { CapitalizeWord } from '@lib/helpers'
-import { textColorVariants, TextColorVariant } from '@lib/colorHelper'
-import { textSizeHelper, textSizeProps } from '@lib/textSizeHelper'
+import {
+  CapitalizeWord,
+  textSizeHelper,
+  textSizeProps,
+  textColorVariants,
+  type TextColorVariant,
+} from '@lib'
 
 import IconMap from './IconMap' // Adjust the import path as necessary
 interface IconRendererProps {
@@ -22,8 +25,6 @@ const IconRenderer = ({ iconName }: IconRendererProps) => {
     console.error(`Icon ${formattedIconName} not found.`)
     return null
   }
-
-  // Render the icon component
   return <IconComponent />
 }
 
@@ -35,10 +36,9 @@ interface SocialIconProps {
 }
 
 const SocialIcon = ({ iconName, href, color, size }: SocialIconProps) => {
-  // const link = getLinks[iconID]
   return (
     <div>
-      <Link hrefLang={'en-US'} href={`${href}`} className='mx-1 block'>
+      <Link hrefLang={'en-US'} href={`${href}`} className='block mx-1'>
         <>
           <i
             className={cn(

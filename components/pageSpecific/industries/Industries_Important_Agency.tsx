@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 
 const Industries_Important_Agency = () => {
   return (
@@ -23,7 +23,7 @@ const Industries_Important_Agency = () => {
               the heirarchy that you establish.
             </p>
             <p>We love working with:</p>
-            <ul className='list-disc list-inside mt-0 pt-0 pl-4 text-lg text-wine'>
+            <ul className='pt-0 pl-4 mt-0 text-lg list-disc list-inside text-wine'>
               <li>SEO agencies</li>
               <li>Marketing companies</li>
               <li>Advertising agencies</li>

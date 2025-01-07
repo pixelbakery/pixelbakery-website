@@ -1,7 +1,7 @@
 // components/pageSpecific/recipes/Recipes_FeaturedPost.tsx
 import Link from 'next/link'
 import Pill from '@parts/Pill'
-import type { PostData } from '@types'
+import type { PostData } from '@/types/general'
 import Image from 'next/image'
 
 const Recipes_FeaturedPost = ({
@@ -50,8 +50,7 @@ const Recipes_FeaturedPost = ({
             <div className='text-sm text-opacity-75 text-wine'>
               <span className='hidden md:inline'>
                 {typeof author === 'string' ? author : author.name} –{' '}
-              </span>{' '}
-              {/* <DateFormatter dateString={date} /> */}
+              </span>
             </div>
             <h3 className='font-semibold leading-none font-geologica text-md md:text-xl text-wine line-clamp-3'>
               {title}

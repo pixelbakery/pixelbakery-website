@@ -1,9 +1,9 @@
-import PageSection from '@parts/PageSection'
-import H1 from '@typography/H1'
-import Lead from '@typography/Lead'
 import dynamic from 'next/dynamic'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+
+import { PageSection } from '@parts'
+import { H1, Lead } from '@typography'
 
 function Home_WhoTheHeck() {
   const IMAGE_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX || ''
@@ -16,7 +16,7 @@ function Home_WhoTheHeck() {
       <div className={' w-full h-full top-0 md:bg-blue'}>
         <div className='sticky z-20 px-8 md:px-0'>
           <div className='relative z-20 mx-auto bg-pink-lighter md:inline-block md:py-4 md:pr-8 lg:pr-16 md:pl-16'>
-            <H1 className='w-full pr-0 my-8 mr-0  2xl:text-8xl text-peach'>
+            <H1 className='w-full pr-0 my-8 mr-0 2xl:text-8xl text-peach'>
               We Are <br /> Pixel Bakery
             </H1>
             <div className='my-8 text-4xl font-bold leading-none lowercase text-pink'>

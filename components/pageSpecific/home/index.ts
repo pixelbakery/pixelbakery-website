@@ -1,4 +1,6 @@
 export { default as Home_Landing } from './Home_Landing'
+export { default as Home_Landing_December } from './Home_Landing_December'
+export { default as Home_Landing_Normal } from './Home_Landing_Normal'
 export { default as Home_Landing_SideNav } from './Home_Landing_SideNav'
 export { default as Home_Portfolio } from './Home_Portfolio'
 export { default as Home_Portfolio_Card } from './Home_Portfolio_Card'

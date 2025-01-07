@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from 'components/icons/Icons_UI/index'
+import { ChevronRightIcon } from '@icons'
 import cn from 'classnames'
 interface ServicesCard {
   service: any

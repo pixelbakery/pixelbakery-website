@@ -1,17 +1,18 @@
+import dynamic from 'next/dynamic'
+
+import { PageSection_FullWidth } from '@parts'
+import { H2 } from '@typography'
+
 const Button_Outlined = dynamic(() => import('@parts/Button_Outlined'), {
   ssr: false,
 })
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-import { H2 } from '@typography/index'
-import dynamic from 'next/dynamic'
-
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 const ServicesOverview_AnimatedExplainers = () => {
   return (
     <PageSection_FullWidth id='animation'>
-      <div className='grid lg:grid-cols-2 gap-4 '>
-        <div className='bg-pink h-full max-h-screen order-last'>
+      <div className='grid gap-4 lg:grid-cols-2 '>
+        <div className='order-last h-full max-h-screen bg-pink'>
           <ReactPlayer
             muted={true}
             playsInline={true}
@@ -35,7 +36,7 @@ const ServicesOverview_AnimatedExplainers = () => {
             }}
           />
         </div>
-        <div className='flex flex-col justify-center px-12 py-12 order-1'>
+        <div className='flex flex-col justify-center order-1 px-12 py-12'>
           <H2 color='pink' className='mb-6 2xl:mb-10 '>
             Product Photography
           </H2>

@@ -1,14 +1,13 @@
 import LogoAnimation_Descriptions_Card from './LogoAnimation_Descriptions_Card'
-import InnerWrapper from '@parts/InnerWrapper'
-import H2 from '@typography/H2'
-import PageSection from '@parts/PageSection'
+import { InnerWrapper, PageSection } from '@parts'
+import { H2 } from '@typography'
 
 function LogoAnimation_Descriptions() {
   return (
     <PageSection id='logo-animation-descriptions'>
       <InnerWrapper>
         <H2 className='pb-6'>Package Details</H2>
-        <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-8 gap-y-16'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-3 xl:grid-cols-3 gap-y-16'>
           <LogoAnimation_Descriptions_Card
             header='Concepts'
             desc="The number of ideas we'll present to you to choose from"

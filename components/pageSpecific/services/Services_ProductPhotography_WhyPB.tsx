@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import { Lead } from '@typography/index'
+import { H2, Lead } from '@typography'
 
 //TODO: Add section filled with examples of work
 const Services_AnimatedExplainers_GreatFor = () => {

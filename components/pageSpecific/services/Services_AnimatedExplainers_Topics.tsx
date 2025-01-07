@@ -1,6 +1,6 @@
 import { m, Variants, LazyMotion, domAnimation } from 'framer-motion'
 import Image from 'next/image'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import { InnerWrapper, PageSection } from '@parts'
 
 const card1: Variants = {
@@ -76,7 +76,7 @@ const Services_AnimatedExplainers_Topics = () => {
     <PageSection id={'topics'} color='egg'>
       <InnerWrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-12'>
-          <div className='col-span-1 relative block w-64 lg:w-full lg:max-w-md my-12 lg:mt-32 mx-auto justify-center h-full'>
+          <div className='relative justify-center block w-64 h-full col-span-1 mx-auto my-12 lg:w-full lg:max-w-md lg:mt-32'>
             <LazyMotion features={domAnimation}>
               <m.div
                 variants={motionWrapper}

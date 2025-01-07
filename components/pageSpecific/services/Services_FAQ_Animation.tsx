@@ -1,7 +1,7 @@
 import { PageSection, InnerWrapper } from '@parts'
 import { FAQPageJsonLd } from 'next-seo'
 import faqData from '@data/faq_animation'
-import Services_FAQ_Card from '@services/Services_FAQ_Card'
+import { Services_FAQ_Card } from '@services'
 import { H2, Lead } from '@typography'
 
 const Services_FAQ_Animation = () => {

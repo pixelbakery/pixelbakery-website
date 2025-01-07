@@ -100,7 +100,7 @@ function AnimationFile() {
       loop
       play
       animationData={animationData}
-      segments={segmentsEnabled ? segments : undefined}
+      segments={segmentsEnabled ? (segments as any) : undefined}
       style={{
         alignSelf: 'center',
         width: '100%',

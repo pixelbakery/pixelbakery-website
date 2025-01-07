@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { H2, H3 } from '@typography'
 
 const Industries_Reasons_Education = () => {
   return (
@@ -9,7 +8,7 @@ const Industries_Reasons_Education = () => {
         <H2>Key Advantages</H2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6'>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Visualizing Abstract Concepts</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Visualizing Abstract Concepts</H3>
             <p>
               Animation can effectively visualize abstract concepts that are difficult to
               demonstrate through traditional teaching methods. By using animations, educators can
@@ -18,7 +17,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Engaging Educational Content</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Engaging Educational Content</H3>
             <p>
               Animation and video production can bring educational concepts to life, making them
               more engaging and easier to understand for students. Complex ideas can be simplified
@@ -27,7 +26,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Personalized Learning</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Personalized Learning</H3>
             <p>
               With animation and video production, educational content can be tailored to meet the
               specific needs of individual students. Customized videos can address different
@@ -36,7 +35,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Remote Learning Support</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Remote Learning Support</H3>
             <p>
               Animation and video production are particularly valuable in remote learning
               environments. These mediums allow educators to create pre-recorded lessons, tutorials,
@@ -45,7 +44,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Collaborative Learning</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Collaborative Learning</H3>
             <p>
               Videos and animations can facilitate collaborative learning experiences by enabling
               students to watch, analyze, and discuss content together. Group activities,
@@ -54,7 +53,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Real-World Application</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Real-World Application</H3>
             <p>
               Animation and video production enable educators to present real-world scenarios, case
               studies, or practical demonstrations that connect theoretical concepts to real-life
@@ -64,7 +63,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Accessible and Inclusive</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Accessible and Inclusive</H3>
             <p>
               Video and animation-based educational content can be made accessible to a diverse
               range of learners, including those with different abilities or learning challenges.
@@ -75,7 +74,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Multimodal Learning</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Multimodal Learning</H3>
             <p>
               Animation and video production cater to various learning preferences, offering a
               multimodal learning experience. Students with different learning styles, such as
@@ -85,7 +84,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Increased Retention</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Increased Retention</H3>
             <p>
               Videos and animations enhance the learning experience by stimulating multiple senses
               simultaneously. The combination of visuals, audio, and motion appeals to different
@@ -95,7 +94,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Simplification of Complex Ideas</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Simplification of Complex Ideas</H3>
             <p>
               Animation and video production allow educators to simplify and break down complex
               ideas into more digestible and relatable forms. Abstract or challenging topics can be
@@ -105,7 +104,7 @@ const Industries_Reasons_Education = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Cultural and Global Understanding</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Cultural and Global Understanding</H3>
             <p>
               Animation and video production allow educators to showcase diverse cultures,
               traditions, and perspectives from around the world. Through animated documentaries,

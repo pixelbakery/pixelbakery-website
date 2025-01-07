@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { H2, H3 } from '@typography'
 
 const Industries_Reasons_Agency = () => {
   return (
@@ -9,7 +8,7 @@ const Industries_Reasons_Agency = () => {
         <H2>Key Advantages</H2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6'>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Cost Efficiency</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Cost Efficiency</H3>
             <p>
               Outsourcing can be cost-effective compared to hiring in-house resources for video
               production. Specialized equipment, software, and skilled professionals are required
@@ -23,7 +22,7 @@ const Industries_Reasons_Agency = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Access to Expertise</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Access to Expertise</H3>
             <p>
               Outsourcing allows video production companies to tap into a broader talent pool and
               access specialized expertise. They can collaborate with experienced professionals who
@@ -36,7 +35,7 @@ const Industries_Reasons_Agency = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Scalability & Flexibility</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Scalability & Flexibility</H3>
             <p>
               Outsourcing provides video production companies with the flexibility to scale their
               operations according to project requirements. During peak periods or when faced with
@@ -51,7 +50,7 @@ const Industries_Reasons_Agency = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Focus on Core Competencies</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Focus on Core Competencies</H3>
             <p>
               Outsourcing non-core activities frees up the video production company's resources and
               allows them to focus on their core competencies.
@@ -64,7 +63,7 @@ const Industries_Reasons_Agency = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Time Saving</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Time Saving</H3>
             <p>
               Outsourcing non-core activities frees up the video production company's resources and
               allows them to focus on their core competencies.
@@ -77,7 +76,7 @@ const Industries_Reasons_Agency = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Access to Advanced Technologies</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Access to Advanced Technologies</H3>
             <p>
               Outsourcing can significantly reduce project turnaround times. Video production
               companies can delegate specific tasks to external partners who specialize in those

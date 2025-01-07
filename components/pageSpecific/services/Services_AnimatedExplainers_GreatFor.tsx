@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 
 const Services_AnimatedExplainers_GreatFor = () => {
   return (
@@ -15,7 +15,7 @@ const Services_AnimatedExplainers_GreatFor = () => {
           </p>
         </InnerWrapper>
         <InnerWrapper>
-          <div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8'>
+          <div className='grid grid-cols-1 mt-12 md:grid-cols-2 gap-x-8'>
             <div></div>
             <div className=''>
               <H2 color='blue'>Why Choose Pixel Bakery?</H2>

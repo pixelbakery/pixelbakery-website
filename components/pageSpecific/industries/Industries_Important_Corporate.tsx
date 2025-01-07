@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Link from 'next/link'
 
 const Industries_Important_Corporate = () => {

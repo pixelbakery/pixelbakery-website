@@ -1,6 +1,5 @@
-import Button_Outlined from '@parts/Button_Outlined'
-import { InnerWrapper, PageSection } from '@parts'
-import H2AndLead from '@typography/H2AndLead'
+import { InnerWrapper, PageSection, Button_Outlined } from '@parts'
+import { H2AndLead } from '@typography'
 
 function ServicesOverview_MotionMixer() {
   return (
@@ -9,7 +8,7 @@ function ServicesOverview_MotionMixer() {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-24'>
           <H2AndLead
             headerColor='blue'
-            className='mb-6 2xl:mb-10 px-8'
+            className='px-8 mb-6 2xl:mb-10'
             headerText={'🥣 Motion Mixer'}
             leadText={'bring your logo to life with an eye-catching and memorable animation'}
           ></H2AndLead>

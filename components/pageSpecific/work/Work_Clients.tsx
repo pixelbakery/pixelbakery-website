@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import clientList from '@data/work_clientList'
-import { InnerWrapper, PageSection } from '@parts'
-import Lead from '@typography/Lead'
-import H2 from '@typography/H2'
 import Link from 'next/link'
+
+import clientList from '@data/work_clientList'
+
+import { InnerWrapper, PageSection } from '@parts'
+import { H2, Lead } from '@typography'
 
 function Work_Clients() {
   const activeClients = clientList.filter((client) => client.active)
@@ -21,17 +22,17 @@ function Work_Clients() {
             client’s vision to life. Check out some of our past and present clients below.
           </p>
         </div>
-        <div className='mt-3 grid grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-x-12 lg:gap-x-0'>
+        <div className='grid grid-cols-3 mt-3 lg:grid-cols-4 2xl:grid-cols-6 gap-x-12 lg:gap-x-0'>
           {activeClients.map((client, index) => (
             <div key={index} className='col-span-1'>
               <Link hrefLang={'en-US'} href={client.url}>
-                <div className='cursor-pointer duration-300 hover:scale-99 ease-in-out relative w-full h-32'>
+                <div className='relative w-full h-32 duration-300 ease-in-out cursor-pointer hover:scale-99'>
                   <Image
                     width={256}
                     height={256}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
                     alt={client.client}
-                    className='h-full object-contain w-full'
+                    className='object-contain w-full h-full'
                     quality={75}
                     placeholder='blur'
                     blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}

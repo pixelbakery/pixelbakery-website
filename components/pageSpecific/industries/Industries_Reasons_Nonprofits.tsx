@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { H2, H3 } from '@typography'
 
 const Industries_Reasons_Nonprofits = () => {
   return (
@@ -9,7 +8,7 @@ const Industries_Reasons_Nonprofits = () => {
         <H2>Key Advantages</H2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6'>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Enhanced Storytelling</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Enhanced Storytelling</H3>
             <p>
               Animation and video production allow nonprofits to tell their stories in a visually
               captivating and emotionally engaging way. By leveraging animation and videos,
@@ -18,7 +17,7 @@ const Industries_Reasons_Nonprofits = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Increased Awareness and Engagement</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Increased Awareness and Engagement</H3>
             <p>
               Animated videos and visual content have a higher chance of capturing attention and
               generating engagement on digital platforms. By incorporating animation and video
@@ -27,7 +26,7 @@ const Industries_Reasons_Nonprofits = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Simplified Complex Concepts</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Simplified Complex Concepts</H3>
             <p>
               Nonprofits often deal with complex social, environmental, or humanitarian issues.
               Animation and video production can simplify these concepts, making them more
@@ -39,7 +38,7 @@ const Industries_Reasons_Nonprofits = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Emotional Connection</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Emotional Connection</H3>
             <p>
               Animation and videos have the power to evoke emotions and create a lasting impact. By
               incorporating these mediums, nonprofits can tap into the emotional aspect of
@@ -49,7 +48,7 @@ const Industries_Reasons_Nonprofits = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Accessible Communication</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Accessible Communication</H3>
             <p>
               Animation and video content can be made accessible to a wider audience by adding
               closed captions, subtitles, or audio descriptions. Nonprofits can ensure that their
@@ -59,7 +58,7 @@ const Industries_Reasons_Nonprofits = () => {
             </p>
           </div>
           <div>
-            <H3 className='text-wine mt-0 pt-0'>Memorable Branding</H3>
+            <H3 className='pt-0 mt-0 text-wine'>Memorable Branding</H3>
             <p>
               Animation and video production offer nonprofits an opportunity to create a distinctive
               brand identity. By incorporating animated logos, characters, or branded elements in

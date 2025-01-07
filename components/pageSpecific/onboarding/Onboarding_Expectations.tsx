@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Onboarding_ExpectationsRow from './Onboarding_Expectations_Row'
 
 function Onboarding_Expectations() {

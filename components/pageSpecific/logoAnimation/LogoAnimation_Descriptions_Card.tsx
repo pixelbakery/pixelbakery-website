@@ -1,4 +1,4 @@
-import H3 from '@typography/H3'
+import { H3 } from '@typography'
 
 interface Props {
   header: string
@@ -9,7 +9,7 @@ function LogoAnimation_Descriptions_Card({ header, desc }: Props) {
   return (
     <div className=''>
       <H3 color='blue'>{header}</H3>
-      <p className='text-wine-400 text-lg max-w-xs pr-3'>{desc}</p>
+      <p className='max-w-xs pr-3 text-lg text-wine-400'>{desc}</p>
     </div>
   )
 }

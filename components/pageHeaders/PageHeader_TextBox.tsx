@@ -7,7 +7,7 @@ import {
   backgroundColorVariant,
   textColorVariants,
   TextColorVariant,
-} from '@lib/colorHelper'
+} from '@lib'
 
 interface Props {
   backgroundColor: backgroundColorVariant

@@ -1,4 +1,3 @@
-// components/pageSpecific/home/Home_Landing.tsx
 import dynamic from 'next/dynamic'
 import Home_Landing_SideNav from './Home_Landing_SideNav'
 

@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 
 const Industries_Important_SaaS = () => {
   return (

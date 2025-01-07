@@ -1,10 +1,10 @@
 // components/pageSpecific/home/Home_Recipes.tsx
 
-import ButtonFilled from '@parts/Button_Filled'
+import { Button_Filled } from '@parts'
 import RecipesFeaturedPost from '@recipes/Recipes_FeaturedPost'
 import { InnerWrapper, PageSection } from '@parts'
 import { H2 } from '@typography'
-import type { PostData } from '@types'
+import type { PostData } from '@/types/general'
 
 interface Post {
   filePath: string
@@ -52,7 +52,7 @@ const HomeRecipes = ({ allPosts }: HomeRecipesProps) => {
         <div className='grid grid-cols-2 gap-4 my-16 sm:grid-cols-4 md:gap-y-20 md:gap-5'>
           <SecondaryPosts allPosts={allPosts} />
         </div>
-        <ButtonFilled
+        <Button_Filled
           text='we got more'
           link='/recipes'
           chevronDirection='right'

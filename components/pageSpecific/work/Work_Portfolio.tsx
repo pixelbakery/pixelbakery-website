@@ -1,9 +1,7 @@
-import Work_Portfolio_Card from './Work_Portfolio_Card'
+import { Work_Portfolio_Card } from '@work'
 import cn from 'classnames'
 import { PageSection, InnerWrapper } from '@parts'
-import { H2 } from '@typography'
-
-import Lead from '@typography/Lead'
+import { H2, Lead } from '@typography'
 
 interface CaseStudy {
   filePath: string

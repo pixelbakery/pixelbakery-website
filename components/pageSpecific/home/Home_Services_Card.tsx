@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from 'components/icons/Icons_UI/index'
+import { ChevronRightIcon } from '@icons'
 
 interface Props {
   service: any

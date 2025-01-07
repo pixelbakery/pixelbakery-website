@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { H2, H3 } from '@typography'
 
 const Industries_Reasons_Corporate = () => {
   return (
@@ -23,7 +22,7 @@ const Industries_Reasons_Corporate = () => {
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12'>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Effective Communication</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Effective Communication</H3>
               <p>
                 Videos are a highly engaging and effective medium for communicating complex ideas,
                 concepts, and messages.

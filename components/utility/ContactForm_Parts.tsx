@@ -14,7 +14,7 @@ import type {
   SubmitProps,
   SolicitationProps,
   MultiSelectProps,
-} from 'types'
+} from '@/types/general'
 
 // --------------------------------------------------------------------------------------
 // NOT INTERESTED + THANK YOU

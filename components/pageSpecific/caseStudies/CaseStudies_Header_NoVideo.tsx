@@ -1,6 +1,6 @@
-import H1 from '@typography/H1'
+import { H1 } from '@typography'
 import Image from 'next/image'
-import Pill from '@parts/Pill'
+import { Pill } from '@parts'
 
 function CaseStudies_Header_Alt() {
   const tags = ['copywriting', 'email campaigns', 'motion design', 'other things', 'more things']
@@ -9,9 +9,9 @@ function CaseStudies_Header_Alt() {
       className='pb-12 px-6 md:px-8 pt-40 pt-lg:pt-48 relative my-4 min-h-[75vh] max-h-screen bg-pink'
       id='topOfPage'
     >
-      <div className='mx-auto max-w-6xl'>
+      <div className='max-w-6xl mx-auto'>
         <div className='mb-6'>
-          <div className='relative  h-16 w-16 self-center mb-2 overflow-hidden'>
+          <div className='relative self-center w-16 h-16 mb-2 overflow-hidden'>
             <Image
               fill={true}
               className='relative object-cover object-center w-full h-full'
@@ -22,7 +22,7 @@ function CaseStudies_Header_Alt() {
             />
           </div>
 
-          <div className='font-extrabold text-cream text-2xl mb-0 pb-0'>
+          <div className='pb-0 mb-0 text-2xl font-extrabold text-cream'>
             SNACKLINS
             {/* {props.client} */}
           </div>
@@ -30,7 +30,7 @@ function CaseStudies_Header_Alt() {
             Monthly Retainer
           </H1>
           <div className='mt-12'>
-            <div className='flex flex-row justify-left gap-3 flex-wrap max-w-3xl'>
+            <div className='flex flex-row flex-wrap max-w-3xl gap-3 justify-left'>
               {Object.values(tags).map((tag, index) => {
                 return (
                   <Pill

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Button_Filled from '@parts/Button_Filled'
+import { Button_Filled } from '@parts'
 import nav_main from '@data/nav_main'
 import Logo_Primary from '@images/logo_primary'
 import Nav_SocialLinks from '@nav/Nav_SocialLinks'

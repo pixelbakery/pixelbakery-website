@@ -1,6 +1,6 @@
 // components/pageSpecific/home/Home_Portfolio_Card.tsx
-import { HomePortfolioCardProps } from '@types'
-import Pill from '@parts/Pill'
+import { HomePortfolioCardProps } from '@/types/general'
+import { Pill } from '@parts'
 import Link from 'next/link'
 import cn from 'classnames'
 import { H3 } from '@typography'

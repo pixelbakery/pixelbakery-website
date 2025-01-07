@@ -1,5 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Link from 'next/link'
 
 const Industries_MoreIndustries = () => {
@@ -11,42 +11,42 @@ const Industries_MoreIndustries = () => {
           <Link
             href={'/industries/corporate-video-production'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             Corporate Video Production →
           </Link>
           <Link
             href={'/industries/cpg-video-production'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             Consumer Packaged Goods →
           </Link>
           <Link
             href={'/industries/nonprofit-video'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             Nonprofit Video Production →
           </Link>
           <Link
             href={'/industries/saas-video-production'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             SaaS/Startup Video Production →
           </Link>
           <Link
             href={'/industries/agency-video-production'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             Agency Video Production →
           </Link>
           <Link
             href={'/industries/education-video-production'}
             hrefLang='en-us'
-            className='bg-cream py-6 px-4 rounded-lg text-blue font-semibold text-xl hover-99 hover-shadow-none text-center'
+            className='px-4 py-6 text-xl font-semibold text-center rounded-lg bg-cream text-blue hover-99 hover-shadow-none'
           >
             Education Video Production →
           </Link>

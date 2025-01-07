@@ -9,6 +9,7 @@ const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerL
 
 interface Props {
   anim: any
+  preserveAspectRatio?: boolean
 }
 
 // If needed, define a minimal type for the player (rendererSettings, etc.)

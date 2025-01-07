@@ -1,17 +1,19 @@
-import Lottie_VideoProduction from '@data/lottie_services/lottie_services_videoProduction.json' assert { type: 'json' }
 import dynamic from 'next/dynamic'
+
+import Lottie_VideoProduction from '@data/lottie_services/lottie_services_videoProduction.json' assert { type: 'json' }
+
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
   ssr: false,
 })
-import Button_Outlined from '@parts/Button_Outlined'
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-import H2 from '@typography/H2'
+
+import { Button_Outlined, PageSection_FullWidth } from '@parts'
+import { H2 } from '@typography'
 
 function ServicesOverview_VideoProduction() {
   return (
     <PageSection_FullWidth id='video-production'>
-      <div className='grid lg:grid-cols-2 gap-4 '>
-        <div className='flex flex-col justify-center px-12  py-12'>
+      <div className='grid gap-4 lg:grid-cols-2 '>
+        <div className='flex flex-col justify-center px-12 py-12'>
           <H2 color='pink' className='mb-6 2xl:mb-10 '>
             Commercial Video Production
           </H2>
@@ -28,7 +30,7 @@ function ServicesOverview_VideoProduction() {
             chevronDirection='right'
           />
         </div>
-        <div className='bg-pink h-full max-h-screen order-first lg:order-last'>
+        <div className='order-first h-full max-h-screen bg-pink lg:order-last'>
           <LottiePlayer anim={Lottie_VideoProduction} />
         </div>
       </div>

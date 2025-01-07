@@ -1,7 +1,7 @@
 import { InnerWrapper, PageSection } from '@parts'
 import Carousel from '@parts/carousel/Carousel'
 import { H2 } from '@typography'
-import type { TextColorVariant } from '@lib/colorHelper'
+import type { TextColorVariant } from '@lib'
 
 import { usePlausible } from 'next-plausible'
 type CarouselProps = {

@@ -1,4 +1,4 @@
-import Work_Services_Card from './Work_Services_Card'
+import { Work_Services_Card } from '@work'
 import services from '@data/services'
 import { InnerWrapper, PageSection } from '@parts'
 import { H2, Lead } from '@typography'
@@ -20,7 +20,7 @@ function Work_Services() {
               <Lead color='pink'>But, like, keyframes instead of open heart surgery.</Lead>
             </div>
           </div>
-          <div className='grid grid-cols-1 col-span-2 gap-3  xl:col-span-1 sm:grid-cols-2'>
+          <div className='grid grid-cols-1 col-span-2 gap-3 xl:col-span-1 sm:grid-cols-2'>
             {services.map((service) => (
               <Work_Services_Card
                 service={service.service}

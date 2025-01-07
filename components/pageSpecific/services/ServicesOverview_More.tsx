@@ -1,24 +1,26 @@
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-
-import H2AndLead from '@typography/H2AndLead'
-import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
+
+import { PageSection_FullWidth } from '@parts'
+import { H2AndLead } from '@typography'
+
 const Button_Outlined = dynamic(() => import('@parts/Button_Outlined'), {
   ssr: false,
 })
+
 const ServicesOverview_More = () => {
   return (
     <PageSection_FullWidth id='more-services'>
-      <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>
+      <div className='grid grid-cols-1 gap-4 lg:grid-cols-1'>
         <Link hrefLang={'en-US'} href={'/services/web-hosting'}>
-          <div className='bg-cream flex flex-col justify-center'>
+          <div className='flex flex-col justify-center bg-cream'>
             <div
-              className='px-12 py-12 cursor-pointer mx-auto max-w-2xl grid grid-cols-1 lg:grid-cols-2 gap-x-24'
+              className='grid max-w-2xl grid-cols-1 px-12 py-12 mx-auto cursor-pointer lg:grid-cols-2 gap-x-24'
               id='web-hosting'
             >
               <H2AndLead
                 headerColor='blue'
-                className='mb-6 2xl:mb-10 self-center  '
+                className='self-center mb-6 2xl:mb-10 '
                 headerText={'Web Hosting'}
                 leadText={'Pay what you want'}
               ></H2AndLead>

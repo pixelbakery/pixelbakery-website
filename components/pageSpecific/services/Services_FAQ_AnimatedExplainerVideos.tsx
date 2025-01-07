@@ -3,7 +3,7 @@ import { FAQPageJsonLd } from 'next-seo'
 import faqData from '@data/faq_animatedExplainerVideos'
 
 import { H2, Lead } from '@typography'
-import Services_FAQ_Card from '@services/Services_FAQ_Card'
+import { Services_FAQ_Card } from '@services'
 
 const Services_FAQ_AnimatedExplainerVideos = () => {
   return (

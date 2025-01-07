@@ -7,7 +7,7 @@ interface Props {
   prevTitle: string
   prevFilePath: any
   prevAuthor: string
-  nextTitle
+  nextTitle: string
   nextFilePath: any
   nextAuthor: string
   as: string
@@ -33,19 +33,19 @@ function Recipes_Post_GetPrevNextPost({
               href={`/${as}/[slug]`}
             >
               <div className='flex'>
-                <div className='w-12 self-center text-peach rotate-180 h-full flex flex-col justify-center'>
-                  <i className='text-3xl p-2'>
+                <div className='flex flex-col self-center justify-center w-12 h-full rotate-180 text-peach'>
+                  <i className='p-2 text-3xl'>
                     <ChevronRightIcon />
                   </i>
                 </div>
                 <div className='self-center'>
                   <Lead
-                    className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
+                    className='h-full py-0 my-0 text-lg font-semibold leading-none text-peach md:text-md '
                     noMargins={true}
                   >
                     {prevTitle}
                   </Lead>
-                  <p className='text-wine-400 font-medium text-xs md:text-sm italic leading-none mb-0 py-0 mt-1'>
+                  <p className='py-0 mt-1 mb-0 text-xs italic font-medium leading-none text-wine-400 md:text-sm'>
                     {prevAuthor}
                   </p>
                 </div>
@@ -62,18 +62,18 @@ function Recipes_Post_GetPrevNextPost({
               <div className='flex'>
                 <div className='self-center w-fit'>
                   <Lead
-                    className='text-peach font-semibold text-lg md:text-md leading-none  my-0 py-0 h-full '
+                    className='h-full py-0 my-0 text-lg font-semibold leading-none text-peach md:text-md '
                     noMargins={true}
                   >
                     {nextTitle}
                   </Lead>
-                  <p className='text-wine-400 font-medium text-xs md:text-sm italic leading-none mb-0 py-0 mt-1'>
+                  <p className='py-0 mt-1 mb-0 text-xs italic font-medium leading-none text-wine-400 md:text-sm'>
                     {nextAuthor}
                   </p>
                 </div>
-                <div className=' text-peach self-center h-full flex flex-col justify-center'>
+                <div className='flex flex-col self-center justify-center h-full text-peach'>
                   {' '}
-                  <i className='text-3xl p-2'>
+                  <i className='p-2 text-3xl'>
                     <ChevronRightIcon />
                   </i>
                 </div>

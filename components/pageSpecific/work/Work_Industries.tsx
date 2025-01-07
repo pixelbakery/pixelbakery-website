@@ -1,6 +1,8 @@
+import Link from 'next/link'
+
 import { InnerWrapper, PageSection } from '@parts'
 import { H2 } from '@typography'
-import Link from 'next/link'
+
 interface Props {
   header?: string
 }

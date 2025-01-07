@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import H3 from '@typography/H3'
+import { H2, H3 } from '@typography'
 
 const Industries_Reasons_CPG = () => {
   return (
@@ -23,7 +22,7 @@ const Industries_Reasons_CPG = () => {
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12'>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Stand Out from the Crowd</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Stand Out from the Crowd</H3>
               <p>
                 Video allows CPG brands to showcase their unique personality and differentiate
                 themselves from competitors. Through custom animated characters, branded elements,
@@ -32,7 +31,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Boost Reach and Engagement</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Boost Reach and Engagement</H3>
               <p>
                 Videos grabs attention in busy social media feeds, enticing viewers to interact with
                 your content. The dynamic and visually captivating nature of animated visuals
@@ -41,7 +40,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Effective Product Demonstrations</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Effective Product Demonstrations</H3>
               <p>
                 CPG products often require demonstrations or explanations to showcase their
                 features, benefits, or usage. Animation provides a versatile and captivating means
@@ -51,7 +50,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Compelling Storytelling</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Compelling Storytelling</H3>
               <p>
                 Animation/video is a powerful medium for storytelling, capable of evoking emotions
                 and creating narratives that resonate with consumers.
@@ -67,7 +66,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Increased Shareability</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Increased Shareability</H3>
               <p>
                 Animated content has a higher potential for social media sharing. Its visual appeal,
                 entertainment value, and ability to convey information quickly make it more likely
@@ -76,7 +75,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Flexibility and Adaptability</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Flexibility and Adaptability</H3>
               <p>
                 Animation offers versatility in terms of style, format, and content. Whether it's 2D
                 or 3D animation, motion graphics, or stop motion, CPG brands can choose the
@@ -90,7 +89,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Memorable Brand Experiences</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Memorable Brand Experiences</H3>
               <p>
                 Video content leaves a lasting and positive impression on viewers. By harnessing
                 creativity, humor, or storytelling, CPG brands can create memorable brand
@@ -99,7 +98,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Increased Conversion Rates</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Increased Conversion Rates</H3>
               <p>
                 Vidoes have proven to be highly effective in driving conversions. By using
                 captivating visuals, compelling narratives, and strategic calls-to-action, you can
@@ -112,7 +111,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Improved Brand Perception</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Improved Brand Perception</H3>
               <p>
                 Videos allow CPG brands to convey their brand values, personality, and quality in a
                 visually engaging manner. By using high-quality animations, you can elevate your
@@ -122,7 +121,7 @@ const Industries_Reasons_CPG = () => {
               </p>
             </div>
             <div>
-              <H3 className='text-wine mt-0 pt-0'>Enhanced Accessibility and Inclusivity</H3>
+              <H3 className='pt-0 mt-0 text-wine'>Enhanced Accessibility and Inclusivity</H3>
               <p>
                 Animation can be a powerful tool in making your content accessible to a wider
                 audience. Through animated visuals, you can overcome language barriers, simplify

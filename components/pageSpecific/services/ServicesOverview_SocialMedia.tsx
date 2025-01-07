@@ -1,14 +1,15 @@
-import Button_Outlined from '@parts/Button_Outlined'
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-import H2 from '@typography/H2'
 import dynamic from 'next/dynamic'
+
+import { PageSection_FullWidth, Button_Outlined } from '@parts'
+import { H2 } from '@typography'
+
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 function ServicesOverview_SocialMedia() {
   return (
     <PageSection_FullWidth id='social-media'>
-      <div className='grid lg:grid-cols-2 gap-4 '>
-        <div className='bg-yellow h-full max-h-screen'>
+      <div className='grid gap-4 lg:grid-cols-2 '>
+        <div className='h-full max-h-screen bg-yellow'>
           <ReactPlayer
             muted={true}
             playsInline={true}
@@ -33,7 +34,7 @@ function ServicesOverview_SocialMedia() {
             }}
           />
         </div>
-        <div className='flex flex-col justify-center px-12  py-12'>
+        <div className='flex flex-col justify-center px-12 py-12'>
           <H2 color='blue-dark' className='mb-6 2xl:mb-10 '>
             Social Media Video Content
           </H2>

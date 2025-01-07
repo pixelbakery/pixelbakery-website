@@ -1,13 +1,14 @@
-/* eslint-disable no-unused-vars */
+import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Pill } from '@parts'
+
 import cn from 'classnames'
-import dynamic from 'next/dynamic'
-import Shimmer from '@lib/Shimmer'
 import { domAnimation, LazyMotion, m, Variants } from 'framer-motion'
-import Loading from '@utility/Loading'
+
+import { Pill } from '@parts'
+import { Shimmer } from '@lib'
+import { Loading } from '@utility'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   ssr: false,

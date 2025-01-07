@@ -1,7 +1,6 @@
 import Lottie_Animation from '@data/lottie_services/lottie_services_animation.json' assert { type: 'json' }
-import Button_Outlined from '@parts/Button_Outlined'
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-import H2 from '@typography/H2'
+import { PageSection_FullWidth, Button_Outlined } from '@parts'
+import { H2 } from '@typography'
 import dynamic from 'next/dynamic'
 const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
   ssr: false,
@@ -10,8 +9,8 @@ const LottiePlayer = dynamic(() => import('@parts/LottiePlayer'), {
 function ServicesOverview_Animation() {
   return (
     <PageSection_FullWidth id='animation'>
-      <div className='grid lg:grid-cols-2 gap-4 '>
-        <div className='bg-blue-dark h-full max-h-screen'>
+      <div className='grid gap-4 lg:grid-cols-2 '>
+        <div className='h-full max-h-screen bg-blue-dark'>
           <LottiePlayer anim={Lottie_Animation} />
         </div>
         <div className='flex flex-col justify-center px-12 py-12'>

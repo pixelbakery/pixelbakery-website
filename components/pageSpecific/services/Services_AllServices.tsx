@@ -1,8 +1,8 @@
 import Services_AllServices_Card_Filled from './Services_AllServices_Card_Filled'
 import services from '@data/services'
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
-import BackLink from '@parts/BackLink'
+import { H2 } from '@typography'
+import { BackLink } from '@parts'
 import Link from 'next/link'
 
 function Services_AllServices() {

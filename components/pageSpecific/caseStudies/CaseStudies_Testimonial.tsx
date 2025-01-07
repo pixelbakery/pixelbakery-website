@@ -1,11 +1,12 @@
+import { type ReactNode } from 'react'
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Image from 'next/image'
-import Shimmer from '@lib/Shimmer'
+import { Shimmer } from '@lib'
 import cn from 'classnames'
 import Link from 'next/link'
 import { Icon_LinkedIn } from '@SocialIcons'
-import { type ReactNode } from 'react'
+
 interface Props {
   children: ReactNode
   name: string

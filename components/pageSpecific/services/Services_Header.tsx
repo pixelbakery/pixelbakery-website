@@ -1,8 +1,7 @@
 import { ReactNode, PropsWithChildren } from 'react'
 import cn from 'classnames'
-import H1 from '@typography/H1'
-import BackLink from '@parts/BackLink'
-import Lead from '@typography/Lead'
+import { H1, Lead } from '@typography'
+import { BackLink } from '@parts'
 
 import dynamic from 'next/dynamic'
 import Loading from '@utility/Loading'

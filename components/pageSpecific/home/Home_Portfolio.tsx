@@ -1,7 +1,7 @@
 import { Button_Filled, InnerWrapper, PageSection } from '@parts'
 import { H2AndLead } from '@typography'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
-import type { CaseStudyProject } from '@types'
+import type { CaseStudyProject } from '@/types/general'
 
 interface FeaturedProjects {
   allCaseStudies: CaseStudyProject[]

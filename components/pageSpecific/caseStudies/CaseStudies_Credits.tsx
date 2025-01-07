@@ -1,7 +1,7 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Link from 'next/link'
-import type { CaseStudiesCreditsProps } from '@types'
+import type { CaseStudiesCreditsProps } from '@/types/general'
 
 function CaseStudies_Credits({ credits }: CaseStudiesCreditsProps) {
   const firstcolumn = Math.floor(credits.length / 2)

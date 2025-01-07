@@ -1,15 +1,14 @@
-import Button_Outlined from '@parts/Button_Outlined'
-import PageSection_FullWidth from '@parts/PageSection_FullWidth'
-import H2 from '@typography/H2'
+import { PageSection_FullWidth, Button_Outlined } from '@parts'
+import { H2 } from '@typography'
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 function ServicesOverview_CreativeStrategy() {
   return (
     <PageSection_FullWidth id='creative-strategy'>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 '>
-        <div className='col-span-1 bg-blue h-full max-h-screen order-first'>
-          <div className='relative h-full w-full'>
+      <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 '>
+        <div className='order-first h-full max-h-screen col-span-1 bg-blue'>
+          <div className='relative w-full h-full'>
             <ReactPlayer
               muted={true}
               playsInline={true}
@@ -34,7 +33,7 @@ function ServicesOverview_CreativeStrategy() {
             />
           </div>
         </div>
-        <div className='col-span-1 flex flex-col justify-center px-12  py-12 order-last'>
+        <div className='flex flex-col justify-center order-last col-span-1 px-12 py-12'>
           <H2 color='blue' className='mb-6 2xl:mb-10 '>
             Creative Concepting &amp; Strategy
           </H2>

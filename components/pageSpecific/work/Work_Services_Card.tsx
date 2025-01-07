@@ -1,5 +1,5 @@
-import { ChevronRightIcon } from 'components/icons/Icons_UI/index'
-import { H3 } from '@typography'
+import { ChevronRightIcon } from '@icons'
+
 import Link from 'next/link'
 type Props = {
   service: string
