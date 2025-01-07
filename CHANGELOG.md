@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.5.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.4.0...v8.5.0) (2025-01-07)
+
+
+### Features
+
+* added awards section to employee bios ([4ddc961](https://github.com/pixelbakery/pixelbakery-website/commits/4ddc9616a8087d837c5f697e454c60198e7d1de0))
+* added slug fm var ([a16e205](https://github.com/pixelbakery/pixelbakery-website/commits/a16e2055f8924f73d99c50a169d8a95bf3e46bbf))
+* completely redesigned bio codebase. New types ([3165a15](https://github.com/pixelbakery/pixelbakery-website/commits/3165a152e7baf3c22f0efec365f88bde8df20a35))
+
+
+### Bug Fixes
+
+* spelling error ([0f83bd3](https://github.com/pixelbakery/pixelbakery-website/commits/0f83bd379196e3e4d26c4ff10bed0aa903213605))
+
+
+### Chores
+
+* changed danny's name ([bb947da](https://github.com/pixelbakery/pixelbakery-website/commits/bb947da1c8452f4ab21bba84856d130497a25f83))
+* changelog ([dfa3747](https://github.com/pixelbakery/pixelbakery-website/commits/dfa3747f4a10a53dd9219d2ab761e25dd8fcd3ed))
+* **main:** release 8.1.0 ([db121d1](https://github.com/pixelbakery/pixelbakery-website/commits/db121d1872481d5966ad8e6af2da738216e2ed82))
+
 ## [8.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.2...v8.1.0) (2025-01-06)
 
 
