@@ -3,13 +3,15 @@ const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
-// const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`
-// const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks`
+
 const PLAYLISTS_ENDPOINT = `https://api.spotify.com/v1/playlists/`
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`
 
 // https://leerob.io/blog/spotify-api-nextjs
 const getAccessToken = async () => {
+  if (!refresh_token) {
+    throw new Error('Spotify refresh token is missing. Please check your environment variables.')
+  }
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -24,16 +26,6 @@ const getAccessToken = async () => {
 
   return response.json()
 }
-
-// export const getTopTracks = async () => {
-//   const { access_token } = await getAccessToken()
-
-//   return fetch(TOP_TRACKS_ENDPOINT, {
-//     headers: {
-//       Authorization: `Bearer ${access_token}`,
-//     },
-//   })
-// }
 
 export const getPlaylist = async () => {
   const { access_token } = await getAccessToken()

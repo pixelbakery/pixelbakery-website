@@ -17,19 +17,13 @@ import type { PersonWithFilePath, Awards } from '@/types/people'
 import type { Post } from '@/types/posts'
 import type { CaseStudy } from '@/types/caseStudies'
 
-//Utilities & Components imports
-import remarkGfm from 'remark-gfm'
-
-
-
-
 import {
   About_Team_Header,
   About_Team_PrevNext,
   About_Team_SEO,
   About_Team_Details,
   About_Team_Awards,
-} from '@about/index'
+} from '@about'
 
 import { GetStaticPaths, GetStaticProps } from 'next'
 import type { ReactElement } from 'react'
@@ -41,7 +35,7 @@ import { Credit } from '@types'
 // -- Types ---------------------------------------------------------------------
 
 interface PersonWithBioLink extends PersonWithFilePath {
-  bioLink: string 
+  bioLink: string
 }
 
 interface PagePeopleProps {

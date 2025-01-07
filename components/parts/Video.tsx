@@ -13,7 +13,7 @@ import { usePlausible } from 'next-plausible'
 import { Lead } from '@typography'
 import { Loading } from '@utility'
 import { useTrackError } from '@lib/trackErrors'
-import type {BaseVideoProps} from '@types'
+import type {BaseVideoProps} from '@/types/video'
 
 //  ––––––––––––––––––––––––––––––––––––––––––
 //               PROP DEFINITIONS
@@ -82,8 +82,10 @@ type VideoProps = BaseVideoProps & (TrackingDisabled | TrackingEnabled)
  * @param {boolean} [props.light] - Enables light mode for the video player.
  * @param {string} [props.className] - Additional CSS classes for styling the video container.
  * @param {boolean} [props.dummy=false] - If `true`, renders a placeholder for testing/debugging.
+ * @param {boolean} [props.enableCaption=false] - If `true`, a caption will be displayed below the video
  * @param {boolean|string} [props.useCDN] - If `true`, prefixes the video URL with a CDN path; custom string for custom prefixes.
  * @param {boolean} [props.enableTracking=false] - If `true`, tracks video interactions via Plausible analytics.
+ * @param {boolean} [props.enableVideoTitle=false] - If `true`, add a title above the video. Defaults to false.
  * @param {string} [props.title] - Title of the video, required when `enableTracking` is `true`.
  * @param {string} [props.eventName] - Custom event name for tracking, applicable when `enableTracking` is `true`.
  *
@@ -116,6 +118,8 @@ export default function Video({
   enableTracking = false,
   eventName,
   useCDN,
+  enableCaption,
+  enableVideoTitle,
   dummy = false,
   title,
 }: VideoProps) {
@@ -144,7 +148,7 @@ export default function Video({
           <div className='relative w-full bg-black aspect-video'>
             <Image
               src={placeholderPoster}
-              alt='Loading placeholder'
+              alt={caption || 'video loading placeholder'}
               fill
               className='object-cover'
             />
@@ -193,16 +197,17 @@ export default function Video({
 
   // Render Component
   return (
-    <div className='w-full h-full'>
-      {videoTitle && (
-        <div className='mt-12'>
-          <Lead color='blue-dark' noMargins className='pb-2 mb-2'>
-            {videoTitle}
-          </Lead>
+    <>
+      {title && enableVideoTitle && (
+        <div className='w-full h-full'>
+          <div className='mt-12'>
+            <Lead color='blue-dark' noMargins className='pb-2 mb-2'>
+              {videoTitle}
+            </Lead>
+          </div>
         </div>
       )}
-
-      <div className={cn(className || 'w-full aspect-w-16 aspect-h-9')}>
+      <div className={cn('w-full aspect-video', className)}>
         <ReactPlayer
           url={useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url}
           playing={autoPlay}
@@ -222,12 +227,12 @@ export default function Video({
           onEnded={handleEnded}
           onError={handleError}
         />
-        {caption && (
+        {caption && enableCaption && (
           <em className='max-w-md pt-1 mx-auto text-sm font-medium leading-none -mt-7 mb-14 text-blue-dark'>
             {caption}
           </em>
         )}
       </div>
-    </div>
+    </>
   )
 }
