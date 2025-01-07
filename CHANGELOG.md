@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.0.2...v8.1.0) (2025-01-06)
+
+
+### Features
+
+* added more plausible tracking ([a74946c](https://github.com/pixelbakery/pixelbakery-website/commit/a74946cd50b22908bbb3a5c066881bf6a534ee95))
+* added plausible error tracking helper ([9538021](https://github.com/pixelbakery/pixelbakery-website/commit/95380214fe1ef3a9b2d89b88675a6e6bdfc481cb))
+* added plausible tracking on videos ([553bd92](https://github.com/pixelbakery/pixelbakery-website/commit/553bd92b4eaebe8e5d0b0040d92aa17a7649668e))
+
+
+### Bug Fixes
+
+* date formatter ([ac862e3](https://github.com/pixelbakery/pixelbakery-website/commit/ac862e3a44e5bdb8f628bc1b59e0ae4027cf1701))
+* date formatter 2 ([d6a6450](https://github.com/pixelbakery/pixelbakery-website/commit/d6a645066f5dfd213f48b956dea56e9b9d0bbf09))
+* date formatter 3 ([12804dd](https://github.com/pixelbakery/pixelbakery-website/commit/12804dd5d064f57ff9453cfb8f0c66675bf0a92b))
+* missing barrel file ([d9d09c2](https://github.com/pixelbakery/pixelbakery-website/commit/d9d09c21527f204c66c604f32c01bf7fead77328))
+
 ## [8.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.2.0...v8.3.0) (2025-01-06)
 
 
