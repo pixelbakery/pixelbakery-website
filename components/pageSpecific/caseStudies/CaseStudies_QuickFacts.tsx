@@ -135,14 +135,14 @@ export default function CaseStudies_QuickFacts({ client, website, quickfacts }: 
                 <Link
                   href={website}
                   target='_blank'
-                  className='w-full py-2 text-lg duration-300 ease-in-out opacity-100 text-wrap lg:text-xl font-geologica hover:opacity-50'
+                  className='w-full py-2 text-lg duration-300 ease-in-out opacity-100 text-wrap lg:text-xl font-geologica hover:opacity-50 text-blue-darker'
                 >
                   <span className='inline-block'>
                     {client} <NorthEastArrowIcon className='inline ml-1' />
                   </span>
                 </Link>
               ) : (
-                <p className='py-2 text-2xl font-geologica'>{client}</p>
+                <p className='py-2 text-2xl font-geologica text-blue-darker'>{client}</p>
               )}
             </div>
           )}
@@ -156,16 +156,16 @@ export default function CaseStudies_QuickFacts({ client, website, quickfacts }: 
               {industryEntry.link ? (
                 <Link
                   href={industryEntry.link}
-                  className='flex flex-row justify-start max-w-lg py-2 text-lg duration-300 ease-in-out lg:text-xl xl:justify-between font-geologica hover:opacity-60'
+                  className='flex flex-row justify-start max-w-lg py-2 text-lg duration-300 ease-in-out lg:text-xl xl:justify-between font-geologica hover:opacity-60 text-blue-darker'
                 >
-                  <span className='hidden pr-2 md:block'>{industryEntry.emoji}</span>
-                  <span className='flex-grow inline'> {industryEntry.label}</span>
-                  <span className='self-center inline ml-1 text-sm leading-tight lg:-mb-1 lg:ml-0 justify-self-start'>
+                  <span className='hidden pr-2 md:block text-blue-darker'>{industryEntry.emoji}</span>
+                  <span className='flex-grow inline text-blue-darker'> {industryEntry.label}</span>
+                  <span className='self-center inline ml-1 text-sm leading-tight lg:-mb-1 lg:ml-0 justify-self-start text-blue-darker'>
                     <ChevronRightIcon />
                   </span>
                 </Link>
               ) : (
-                <p className='py-2 text-xl font-geologica'>
+                <p className='py-2 text-xl font-geologica text-blue-darker'>
                   {industryEntry.emoji} {industryEntry.label}
                 </p>
               )}
@@ -174,13 +174,13 @@ export default function CaseStudies_QuickFacts({ client, website, quickfacts }: 
 
           {/* SERVICES */}
           {serviceTypes.length > 0 && (
-            <div className='col-span-6 md:col-span-3 xl:col-span-3 2xl:pl-12'>
+            <div className='col-span-6 md:col-span-3 xl:col-span-3 2xl:pl-12 '>
               <H3 className='text-lg uppercase lg:mb-4' color='cream' overrideSizes>
                 Service(s)
               </H3>
               <ul
                 className={cn(
-                  'justify-between w-full flex flex-col py-2 my-0 text-lg lg:text-xl list-none list-outside divide-y divide-solid divide-blue-darker font-geologica',
+                  'justify-between w-full flex flex-col py-2 my-0 text-lg lg:text-xl list-none list-outside divide-y divide-solid divide-blue-darker font-geologica text-blue-darker',
                 )}
               >
                 {serviceTypes.map((serviceID) => {
@@ -188,21 +188,21 @@ export default function CaseStudies_QuickFacts({ client, website, quickfacts }: 
                   return (
                     <li
                       key={serviceID}
-                      className='w-full pt-1 mb-1 lg:pt-3 lg:mb-3 first:pt-0 last:mb-0'
+                      className='w-full pt-1 mb-1 lg:pt-3 lg:mb-3 first:pt-0 last:mb-0 text-blue-darker'
                     >
                       {srv.link ? (
                         <Link
                           href={srv.link}
-                          className='flex flex-row justify-between w-full my-0 duration-300 ease-in-out hover:opacity-60 '
+                          className='flex flex-row justify-between w-full my-0 duration-300 ease-in-out hover:opacity-60 text-blue-darker'
                         >
-                          <span className='hidden mr-2 md:block'>{srv.emoji}</span>
-                          <span className='flex-grow inline'> {srv.label}</span>
-                          <span className='self-center text-sm justify-self-end place-self-end'>
+                          <span className='hidden mr-2 md:block text-blue-darker'>{srv.emoji}</span>
+                          <span className='flex-grow inline text-blue-darker'> {srv.label}</span>
+                          <span className='self-center text-sm justify-self-end place-self-end text-blue-darker'>
                             <ChevronRightIcon />
                           </span>
                         </Link>
                       ) : (
-                        <span className='flex flex-row align-start gap-x-4 lg:gap-x-12'>
+                        <span className='flex flex-row align-start gap-x-4 lg:gap-x-12 text-blue-darker'>
                           {srv.emoji} {srv.label}
                         </span>
                       )}
@@ -220,11 +220,11 @@ export default function CaseStudies_QuickFacts({ client, website, quickfacts }: 
               </H3>
               <ul
                 className={cn(
-                  'w-full flex flex-col py-0 my-0 text-xl list-none list-outside divide-y divide-solid divide-blue-darker font-geologica',
+                  'w-full flex flex-col py-0 my-0 text-xl list-none list-outside divide-y divide-solid divide-blue-darker font-geologica text-blue-darker',
                 )}
               >
                 {awardsList.map((award, idx) => (
-                  <li key={idx} className='w-full pt-1 mb-1 lg:pt-3 lg:mb-3 first:pt-0 last:mb-0'>
+                  <li key={idx} className='w-full pt-1 mb-1 lg:pt-3 lg:mb-3 first:pt-0 last:mb-0 text-blue-darker'>
                     {award}
                   </li>
                 ))}

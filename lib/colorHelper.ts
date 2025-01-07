@@ -3,6 +3,7 @@ export const textColorVariants = {
   white: 'text-white',
   egg: 'text-egg',
   cream: 'text-cream',
+  'blue-darker': 'text-blue-darker',
   blue: 'text-blue',
   'blue-light': 'text-blue-light',
   'blue-dark': 'text-blue-dark',
@@ -17,7 +18,6 @@ export const textColorVariants = {
   wine: 'text-wine',
   banana: 'text-banana',
   'banana-light': 'text-banana-light',
-
   pinkLight: 'text-pinkLight',
   'wine-100': 'text-wine-100',
   'wine-200': 'text-wine-200',
@@ -33,6 +33,7 @@ export const backgroundColorVariants = {
   transparent: 'bg-transparent',
   white: 'bg-white',
   egg: 'bg-egg',
+  'blue-darker': 'bg-blue-darker',
   blue: 'bg-blue',
   'blue-light': 'bg-blue-light',
   'blue-dark': 'bg-blue-dark',

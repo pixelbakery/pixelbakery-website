@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config,  } from 'tailwindcss'
 
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -17,6 +17,7 @@ module.exports = {
         light: 'rgb(204, 238, 255)',
         DEFAULT: 'rgb(56, 204, 255)',
         dark: 'rgb(0, 81, 116)',
+        darker: 'rgb(0, 25, 36)',
       },
       peach: 'rgb(255, 94, 100)',
       error: 'rgb(255,0,51)',
@@ -36,9 +37,8 @@ module.exports = {
       current: 'currentColor',
       none: 'none',
     },
-
-    stroke: (theme) => theme('colors'),
-    fill: (theme) => theme('colors'),
+  stroke: ({ theme }:any) => theme('colors'), //Sloppy, I know :(
+  fill: ({ theme}: any) => theme('colors'),
 
     extend: {
       animation: {
