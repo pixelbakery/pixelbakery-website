@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.7.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.6.0...v8.7.0) (2025-01-07)
+
+
+### Features
+
+* brand new video capabilities ([b94aa58](https://github.com/pixelbakery/pixelbakery-website/commits/b94aa5824b29c8ff2152bc2eb44dece055fa35e8))
+
 ## [8.6.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.5.0...v8.6.0) (2025-01-07)
 
 
