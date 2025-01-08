@@ -40,28 +40,28 @@ export interface EducationPageProps {
 
 export type Song = {
   songUrl: string
+  albumArt: string
   artist: string
   title: string
+  album: string
 }
 
 export type Playlist = {
-  album: string
-  albumImageUrl: string
-  albumCoverImage: string
-  name: string
-  artist: string
-  isPlaying: boolean
-  total: number
-  tracks: any
-  external_urls: string
-  followers: any
-  albumLength: string
-  spotify: string
-  description: string
-  tracksSelected: any
-  songUrl: string
-  title: string
-  id: string
+  id: string // Playlist ID
+  name: string // Playlist name
+  description: string // Playlist description
+  albumCoverImage: string // Cover image URL
+  albumLength: string // Duration of the playlist
+  external_urls: {
+    spotify: string // Spotify playlist link
+  }
+  followers: {
+    total: number // Number of followers
+  }
+  tracks: {
+    total: number // Total number of tracks
+  }
+  tracksSelected: Song[] // Selected tracks for the playlist
 }
 
 // ────────────────────────────────────────────────────────────────────────────
