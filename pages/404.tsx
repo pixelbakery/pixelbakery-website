@@ -1,5 +1,5 @@
 import { ReactElement, useEffect } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
+import {Layout_Default} from '@layouts'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import { H1 } from '@typography'
@@ -26,11 +26,11 @@ function Page_FourOhFour() {
             404: Page Not Found
           </H1>
           <Image
-            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
+            src={`/img/imindanger.webp`}
             width={480}
             height={269}
             placeholder='blur'
-            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/imindanger.webp`}
+            blurDataURL={`/img/imindanger.webp`}
             className='object-contain w-full'
             alt={"I'm in danger"}
           />
@@ -42,6 +42,6 @@ function Page_FourOhFour() {
 
 //Set page layout
 Page_FourOhFour.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
+  return <Layout_Default>{page}</Layout_Default>
 }
 export default Page_FourOhFour

@@ -4,8 +4,8 @@ import { AnimatePresence, m, LazyMotion, domAnimation } from 'framer-motion'
 import Nav_FullScreenMenu_RightCol from './Nav_FullScreenMenu_RightCol'
 import Nav_FullScreenMenu_MiddleCol from './Nav_FullScreenMenu_MiddleCol'
 import Nav_FullScreenMenu_LeftCol from './Nav_FullScreenMenu_LeftCol'
-import { useIsomorphicLayoutEffect } from '@lib/useIsomorphicLayoutEffect'
-import type { FullscreenMenuProps } from '@types'
+import { useIsomorphicLayoutEffect } from '@lib'
+import type { FullscreenMenuProps } from '@/types/general'
 
 const toggleBodyScroll = (isActive: boolean) => {
   document.body.classList.toggle('overflow-y-hidden', isActive)

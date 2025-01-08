@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import style from '@styles/HamburgerMenu.module.css'
 import cn from 'classnames'
 
-import type { FullscreenMenuProps } from '@types'
+import type { FullscreenMenuProps } from '@/types/general'
 
 export default function Nav_HamburgerMenu({ isActive, onModalUpdate }: FullscreenMenuProps) {
   const hamRef = useRef<HTMLDivElement>(null)

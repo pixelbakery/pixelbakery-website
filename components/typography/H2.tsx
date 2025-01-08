@@ -22,7 +22,7 @@ const H2 = ({
     <h2
       itemProp='name'
       className={cn(
-        'font-dempsey mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-none ',
+        'text-balance font-dempsey mt-0 text-5xl sm:text-5xl md:text-6xl 2xl:text-7xl leading-none ',
         { [`max-w-md 2xl:max-w-3xl `]: !noMaxWidth },
         { [`mb-12 2xl:mb-20 `]: !noMargins },
         [`${textColorVariants[color]}`],

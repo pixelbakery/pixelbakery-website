@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import cn from 'classnames'
-import H2 from './H2'
+import { H2 } from '@typography'
 import { textColorVariants, TextColorVariant } from '@lib/colorHelper'
 
 type Props = {

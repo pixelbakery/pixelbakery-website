@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -71,8 +71,8 @@ function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
     setIsHovered((prev) => !prev)
   }
 
-  const previewImageUrl = `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${vimeoPreview}.jpg`
-
+  // const previewImageUrl = `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${vimeoPreview}.jpg`
+  const previewImageUrl = `/img/work/${vimeoPreview}.jpg`
   // Remove failed video sources
   const handleError = () => {
     setFilteredSources((prevSources) =>
@@ -190,9 +190,9 @@ function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
         </div>
 
         <span className='hidden lg:sr-only'>{`Project for ${client} - ${title}`}</span>
-        <div className='absolute bottom-0 left-0 z-40 px-4 py-2 mb-1 ml-1 lg:hidden bg-cream'>
-          <div className='text-xs leading-none text-wine'>{client}</div>
-          <h3 className='leading-none text-md text-wine'>{title}</h3>
+        <div className='absolute bottom-0 left-0 z-40 px-4 py-2 mb-1 ml-1 lg:hidden bg-cream bg-opacity-75 backdrop-blur-md'>
+          <div className='text-xs leading-none text-peach'>{client}</div>
+          <h3 className='pt-1 font-geologica font-medium leading-none text-md text-blue-darker'>{title}</h3>
         </div>
       </div>
     </Link>

@@ -51,7 +51,7 @@ function CaseStudies_Testimonial({
                 <div className='w-16'>
                   <div className='relative flex-grow w-16 h-16 overflow-hidden rounded-full'>
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${headshot}`}
+                      src={`${headshot}`}
                       alt={`${name} is the ${title} of Pixel Bakery's client, ${client}.`}
                       width={64}
                       height={64}
@@ -86,7 +86,7 @@ function CaseStudies_Testimonial({
             <div className='order-first block col-span-5 md:col-span-2 xl:col-span-2 xl:order-last md:block 2xl:block'>
               <div className='w-full overflow-hidden aspect-h-1 aspect-w-1'>
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${image}`}
+                  src={`${image}`}
                   fill={true}
                   className='object-cover object-center w-full h-full'
                   placeholder='blur'

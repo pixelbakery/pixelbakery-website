@@ -1,10 +1,10 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 
 function Careers_Intro() {
   return (
     <PageSection className='' color='white' id='careers-intro'>
-      <InnerWrapper className='lg:pb-0 grid grid-cols-1 xl:grid-cols-2 gap-x-12'>
+      <InnerWrapper className='grid grid-cols-1 lg:pb-0 xl:grid-cols-2 gap-x-12'>
         <H2 color='pink'>Think you got what it takes?</H2>
         <div className='max-w-3xl'>
           <p>

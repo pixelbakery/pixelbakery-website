@@ -54,29 +54,14 @@ const CaseStudies_ProjectIntro_Alt = () => {
 
       <div className='absolute bottom-0 hidden object-bottom w-1/4 h-full origin-bottom scale-150 lg:block 2xl:w-1/5 right-10'>
         <Image
-          src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
+          src={`/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
           placeholder='blur'
           alt='Product Photography created for SNACKLINS'
-          blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
+          blurDataURL={`/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
           fill={true}
           className={' object-bottom origin-bottom bottom-0 h-full object-contain'}
         />
       </div>
-
-      {/* <div className='relative hidden h-full mx-auto lg:block lg:w-1/4'>
-        <div className='absolute left-0 right-0 -mt-20 -mb-20 origin-bottom -bottom-5 -top-40 xl:top-0'>
-          <div className='relative max-h-[125vh]  h-[130%] xl:h-[120%] bottom-0  -top-40 xl:-top-40 scale-[130%] 2xl:scale-100 overflow-hidden'>
-            <Image
-              src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
-              placeholder='blur'
-              alt='Product Photography created for SNACKLINS'
-              blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_Q3-Photos_Shot-06.png`}
-              fill={true}
-              className={'relative origin-bottom bottom-0 h-full object-contain'}
-            />
-          </div>
-        </div>
-      </div> */}
     </section>
   )
 }

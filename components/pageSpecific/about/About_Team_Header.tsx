@@ -27,7 +27,7 @@ const About_Team_Header = ({ source, frontMatter }: AboutTeamHeaderProps) => {
   const components = {
     Head,
   }
-  const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
+  // const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
   return (
     <PageSection color='cream' id={'bio-header'}>
       <InnerWrapper className='mt-24'>
@@ -39,7 +39,7 @@ const About_Team_Header = ({ source, frontMatter }: AboutTeamHeaderProps) => {
                 width={1280}
                 height={1920}
                 blurDataURL={`${Shimmer(1280, 1920)}`}
-                src={`${ImgPrefix}${frontMatter.headshotFun}`}
+                src={`${frontMatter.headshotFun}`}
                 className={'object-cover w-full h-full'}
                 alt={`${frontMatter.name}, ${frontMatter.title} at Pixel Bakery Design Studio`}
               />

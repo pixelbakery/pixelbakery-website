@@ -30,12 +30,12 @@ function Work_Clients() {
                   <Image
                     width={256}
                     height={256}
-                    src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
+                    src={`${client.logo}`}
                     alt={client.client}
                     className='object-contain w-full h-full'
                     quality={75}
                     placeholder='blur'
-                    blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${client.logo}`}
+                    blurDataURL={`${client.logo}`}
                   />
                 </div>
               </Link>

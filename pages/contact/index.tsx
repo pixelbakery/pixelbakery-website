@@ -10,7 +10,6 @@ import {
 import type { ReactElement } from 'react'
 import Layout_Defaualt from '@/components/layouts/Layout_Default'
 import { PageHeader_VarH } from '@pageHeaders/index'
-console.log(Contact_SEO)
 
 function Page_Contact() {
   return (

@@ -1,5 +1,4 @@
-import Button_Filled from '@parts/Button_Filled'
-import { InnerWrapper, PageSection } from '@parts'
+import { InnerWrapper, PageSection, Button_Filled } from '@parts'
 import { H2, Lead } from '@typography'
 
 function Careers_Breadwinners() {
@@ -7,7 +6,7 @@ function Careers_Breadwinners() {
     <PageSection id='brand-ambassador' color='blue-dark'>
       <InnerWrapper>
         <H2 color='cream'>Brand Ambassadors Program</H2>
-        <Lead className='text-pink text-xl'>
+        <Lead className='text-xl text-pink'>
           If you’re looking for some extra cash in your pocket and a really fun and fulfilling side
           hustle with little commitment, this opportunity is for you.
         </Lead>

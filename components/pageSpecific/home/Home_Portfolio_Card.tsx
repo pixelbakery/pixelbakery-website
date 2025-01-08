@@ -34,7 +34,7 @@ function Home_Portfolio_Card({ bgColor, bgPosition, project }: HomePortfolioCard
               preload='true'
               loop
               autoPlay
-              poster={`${IMAGE_PREFIX}/img/work/${project.data.vimeoPreview}.jpg`}
+              poster={`/img/work/${project.data.vimeoPreview}.jpg`}
               className='relative block object-cover w-full h-full overflow-hidden shadow-xl scale-101'
             >
               <source

@@ -1,6 +1,5 @@
 import { SocialIcon } from '@SocialIcons/SocialIcon'
-import { TextColorVariant } from '@lib/colorHelper'
-import { textSizeProps } from '@lib/textSizeHelper'
+import { TextColorVariant, textSizeProps } from '@lib'
 
 interface SocialLinksProps {
   color: TextColorVariant
