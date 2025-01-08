@@ -1,5 +1,5 @@
 import Nav_FullScreenMenu_CTA from './Nav_FullScreenMenu_CTA'
-import type { MenuComponentBaseProps } from '@types'
+import type { MenuComponentBaseProps } from '@/types/general'
 import { StudioInfo, MoreLinks } from './menu'
 
 export function Nav_FullScreenMenu_RightCol({ update }: MenuComponentBaseProps) {

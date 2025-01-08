@@ -1,7 +1,7 @@
 import nav_main from '@data/nav_main'
 import Link from 'next/link'
 import Nav_FullScreenMenu_CTA from './Nav_FullScreenMenu_CTA'
-import type { MenuComponentBaseProps } from '@types'
+import type { MenuComponentBaseProps } from '@/types/general'
 
 function Nav_FullScreenMenu_MiddleCol({ update }: MenuComponentBaseProps) {
   return (

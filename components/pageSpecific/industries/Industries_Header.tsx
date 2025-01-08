@@ -1,5 +1,5 @@
-import LottiePatternPlayer from '@parts/LottiePatternPlayer'
-import H1 from '@typography/H1'
+import { LottiePatternPlayer } from '@parts'
+import { H1 } from '@typography'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 

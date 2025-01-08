@@ -1,8 +1,28 @@
 import { InnerWrapper, PageSection } from '@parts'
 import Careers_Card from './Careers_Card'
 import Link from 'next/link'
-import H2AndLead from '@typography/H2AndLead'
-function Careers_OpenPositions({ jobs, header, subheader }) {
+import { H2AndLead } from '@typography'
+
+interface Job {
+  id: string
+  title: string
+  description: string
+  location?: string
+  internship?: boolean
+  link: string
+  filePath: string
+  data: any
+
+  [key: string]: any
+}
+
+interface CareersOpenPositionsProps {
+  jobs: Job[]
+  header: string
+  subheader: string
+}
+
+function Careers_OpenPositions({ jobs, header, subheader }: CareersOpenPositionsProps) {
   return (
     <PageSection className='lg:py-12' id={'open-positions'} disableSpacing={true}>
       <InnerWrapper>
@@ -25,16 +45,12 @@ function Careers_OpenPositions({ jobs, header, subheader }) {
             on a regular basis to find out when we do.
           </p>
         ) : (
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4'>
-            {jobs
-              // .filter((job) => !job.internship)
-              .map((job, i) => {
-                return (
-                  <div key={i}>
-                    <Careers_Card job={job} />
-                  </div>
-                )
-              })}
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
+            {jobs.map((job, i) => (
+              <div key={i}>
+                <Careers_Card job={job} />
+              </div>
+            ))}
           </div>
         )}
       </InnerWrapper>

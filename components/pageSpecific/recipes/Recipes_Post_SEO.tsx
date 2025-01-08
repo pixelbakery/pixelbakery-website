@@ -1,6 +1,26 @@
 import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
 
-function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
+interface Author {
+  name: string
+  slug: string
+}
+
+interface FrontMatter {
+  title: string
+  excerpt: string
+  categories: string[]
+  tags: string[]
+  coverImage: string
+  author: Author
+}
+
+interface RecipesPostSEOProps {
+  datePostedISO: string
+  frontMatter: FrontMatter
+  slug: string
+}
+
+function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }: RecipesPostSEOProps) {
   const title = `${frontMatter.title}`
   const author = `${frontMatter.author.name}`
   const cat = frontMatter.categories[0]
@@ -12,11 +32,6 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
   if (title.length + 5 + author.length + 3 + cat.length <= 60) {
     metaTitle = `${title} by ${author} - ${cat}`
   }
-
-  // console.log(metaTitle)
-  // console.log(title, ' ', title.length)
-  // console.log(author, ' ', author.length)
-  // console.log(frontMatter.categories[0], ' ', frontMatter.categories[0].length)
 
   return (
     <>
@@ -75,4 +90,5 @@ function Recipes_Post_SEO({ datePostedISO, frontMatter, slug }) {
     </>
   )
 }
+
 export default Recipes_Post_SEO

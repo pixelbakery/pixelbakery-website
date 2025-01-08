@@ -1,11 +1,14 @@
-function Onboarding_ExpectationNumbers({ number }) {
+interface Props {
+  number: number
+}
+function Onboarding_ExpectationNumbers({ number }: Props) {
   return (
-    <div className='lg:w-2/5 hidden lg:flex flex-col justify-center '>
+    <div className='flex-col justify-center hidden lg:w-2/5 lg:flex '>
       <div
         id={'expectation-' + number}
-        className='relative h-full w-full text-18xl font-black text-cream expectations-number-wrapper inset-x-1/4 '
+        className='relative w-full h-full font-black text-18xl text-cream expectations-number-wrapper inset-x-1/4 '
       >
-        <div className='text-blue absolute l-50 z-50 expect-numb opacity-80'>{number}</div>
+        <div className='absolute z-50 text-blue l-50 expect-numb opacity-80'>{number}</div>
       </div>
     </div>
   )

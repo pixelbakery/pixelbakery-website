@@ -59,7 +59,7 @@ function Page_Careers_Application({ allJobs }: CareersApplicationProps) {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/pixel-bakery-samee-dan-1200x900.png`,
               width: 1080,
               height: 810,
-              alt: 'Daniel Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
+              alt: 'Danny Hinz and Samee Callahan, two Pixel Bakery employees in Lincoln, Nebraska',
             },
           ],
         }}

@@ -1,7 +1,7 @@
 import { InnerWrapper, PageSection } from '@parts'
 import H2 from '@typography/H2'
 import Image from 'next/image'
-import Shimmer from '@lib/Shimmer'
+import { Shimmer } from '@lib'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment } from 'react'
 

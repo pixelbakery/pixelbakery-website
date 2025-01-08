@@ -1,22 +1,30 @@
-import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { InnerWrapper, PageSection, Image_VarH } from '@parts'
+import { H2 } from '@typography'
 
 import Image from 'next/image'
-import Image_VarH from '@parts/Image_VarH'
-import Shimmer from '@lib/Shimmer'
+import { Shimmer } from '@lib'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment } from 'react'
 
-const Carousel = ({ slides }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [viewportRef, embla] = useEmblaCarousel({
+interface Slide {
+  src: string
+  width: number
+  height: number
+}
+
+interface CarouselProps {
+  slides: Slide[]
+}
+
+const Carousel = ({ slides }: CarouselProps) => {
+  const [viewportRef] = useEmblaCarousel({
     align: 'start',
     loop: true,
     skipSnaps: true,
   })
   return (
     <div className='w-full overflow-hidden' ref={viewportRef}>
-      <div className='embla__container flex w-full'>
+      <div className='flex w-full embla__container'>
         {slides.map((slide, i) => (
           <Fragment key={i}>
             <ImageSlide slide={slide} />
@@ -26,7 +34,7 @@ const Carousel = ({ slides }) => {
     </div>
   )
 }
-const ImageSlide = ({ slide }) => {
+const ImageSlide = ({ slide }: { slide: Slide }) => {
   return (
     <div className='overflow-hidden cursor-grab ml-1 mr-2 relative  grow-0 shrink-0  w-[86%]  sm:w-[45%] lg:w-[30%] aspect-1 h-full'>
       <Image
@@ -70,25 +78,25 @@ function CaseStudies_Gallery() {
           <div className='lg:hidden'>
             <Carousel slides={slides} />
           </div>
-          <div className='hidden lg:grid grid-cols-2 gap-x-6'>
+          <div className='hidden grid-cols-2 lg:grid gap-x-6'>
             {/* Left Images */}
             <div className='col-span-1'>
               <div className='grid grid-cols-2 gap-6'>
-                <div className='col-span-2 relative'>
+                <div className='relative col-span-2'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_01.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1 relative'>
+                <div className='relative col-span-1'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_02.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1  relative'>
+                <div className='relative col-span-1'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_03.jpg`}
@@ -97,7 +105,7 @@ function CaseStudies_Gallery() {
                 </div>
               </div>
             </div>
-            <div className='col-span-1 relative'>
+            <div className='relative col-span-1'>
               <div className='grid grid-cols-2 gap-6'>
                 <div className='col-span-1'>
                   <Image_VarH
@@ -106,14 +114,14 @@ function CaseStudies_Gallery() {
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-1  relative'>
+                <div className='relative col-span-1'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_04.jpg`}
                     alt={'Snacklins food photography and social media design'}
                   />
                 </div>
-                <div className='col-span-2 relative'>
+                <div className='relative col-span-2'>
                   <Image_VarH
                     openInNewWindow={true}
                     src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/case-studies/snacklins/SNACK_06.jpg`}

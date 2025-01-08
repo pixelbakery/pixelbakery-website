@@ -1,5 +1,5 @@
 import Logo_Primary from '@images/logo_primary'
-import type { MenuComponentBaseProps } from '@types'
+import type { MenuComponentBaseProps } from '@/types/general'
 import Link from 'next/link'
 
 function Nav_FullScreenMenu_LeftCol({ update }: MenuComponentBaseProps) {

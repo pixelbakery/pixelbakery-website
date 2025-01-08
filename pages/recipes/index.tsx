@@ -13,7 +13,7 @@ import Layout_Defaualt from 'components/layouts/Layout_Default'
 import InnerWrapper from '@parts/InnerWrapper'
 import Recipes_SEO from '@recipes/Recipes_SEO'
 
-import { Post, PostData } from '@/types'
+import { Post, PostData } from '@/types/general'
 
 const FEATURED_POSTS_COUNT = 4
 const SECONDARY_POSTS_COUNT = 8

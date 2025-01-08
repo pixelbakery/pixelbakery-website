@@ -1,14 +1,20 @@
-import Work_Services from '@work/Work_Services'
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
 import fs from 'fs'
 import path from 'path'
 
 import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
+import { Layout_Default } from '@layouts'
 import matter from 'gray-matter'
 
 import PageHeader_VarH from '@pageHeaders/PageHeader_VarH'
-import { Work_SEO, Work_Callout, Work_Portfolio, Work_Clients, Work_Industries } from '@work/index'
+import {
+  Work_SEO,
+  Work_Callout,
+  Work_Portfolio,
+  Work_Clients,
+  Work_Industries,
+  Work_Services,
+} from '@work'
 
 const Page_Work = ({ allCaseStudies }: any) => {
   return (
@@ -36,7 +42,7 @@ interface CaseStudy {
 
 // Set page layout
 Page_Work.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
+  return <Layout_Default>{page}</Layout_Default>
 }
 
 export default Page_Work

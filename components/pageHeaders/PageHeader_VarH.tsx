@@ -7,7 +7,7 @@ import cn from 'classnames'
 import patternsMaster from 'public/lottie/Patterns_Master.json'
 
 import PageHeader_TextBox from '@pageHeaders/PageHeader_TextBox'
-import { backgroundColorVariant, TextColorVariant } from '@lib/colorHelper'
+import { backgroundColorVariant, TextColorVariant } from '@lib'
 
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
   ssr: false,

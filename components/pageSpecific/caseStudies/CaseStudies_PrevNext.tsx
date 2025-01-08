@@ -1,21 +1,25 @@
-import PageSection from '@parts/PageSection'
+import { PageSection, InnerWrapper } from '@parts'
 
-import InnerWrapper from '@parts/InnerWrapper'
 import Link from 'next/link'
-import { ChevronRightIcon } from 'components/icons/Icons_UI'
-function CaseStudies_PrevNext({ prev, next }) {
-  // const temp = allCaseStudies.sort((post1, post2) => (post1.data.title > post2.data.date ? -1 : 1))
-  // temp.forEach((cs, index) => {
-  //   console.log(index, cs.data.client, cs.data.title)
-  // })
+import { ChevronRightIcon } from '@icons'
 
-  // allActiveCaseStudies.forEach((cs, index) => {
-  //   console.log(index, ':', cs.data.title, cs.data.date)
-  // })
-  // console.log('index: ', index)
+interface CaseStudyData {
+  client: string
+  title: string
+}
 
+interface CaseStudyProps {
+  filePath: string
+  data: CaseStudyData
+}
+
+interface CaseStudiesPrevNextProps {
+  prev: CaseStudyProps
+  next: CaseStudyProps
+}
+function CaseStudies_PrevNext({ prev, next }: CaseStudiesPrevNextProps) {
   return (
-    <PageSection className='bg-pink-lighter py-2' id={'prev-next'}>
+    <PageSection className='py-2 bg-pink-lighter' id={'prev-next'}>
       <InnerWrapper className='py-2 my-2'>
         <div className='flex justify-between'>
           <Link
@@ -25,15 +29,15 @@ function CaseStudies_PrevNext({ prev, next }) {
             aria-label={`${prev.data.client} –  ${prev.data.title}`}
           >
             <div className='flex'>
-              <div className='w-20 self-center text-peach rotate-180'>
+              <div className='self-center w-20 rotate-180 text-peach'>
                 <ChevronRightIcon />
               </div>
               <div className='self-center'>
-                <p className='text-wine-400 font-medium text-md leading-none mb-1 mt-0 pt-0'>
+                <p className='pt-0 mt-0 mb-1 font-medium leading-none text-wine-400 text-md'>
                   {prev.data.client}
                 </p>
 
-                <p className='text-peach font-semibold text-xl leading-none mt-1 mb-0 pb-0'>
+                <p className='pb-0 mt-1 mb-0 text-xl font-semibold leading-none text-peach'>
                   {prev.data.title}
                 </p>
               </div>
@@ -47,15 +51,15 @@ function CaseStudies_PrevNext({ prev, next }) {
           >
             <div className='flex justify-end'>
               <div className='self-center'>
-                <p className='text-wine-400 font-medium text-md leading-none mb-1 mt-0 pt-0'>
+                <p className='pt-0 mt-0 mb-1 font-medium leading-none text-wine-400 text-md'>
                   {next.data.client}
                 </p>
 
-                <p className='text-peach font-semibold text-xl leading-none mt-1 mb-0 pb-0'>
+                <p className='pb-0 mt-1 mb-0 text-xl font-semibold leading-none text-peach'>
                   {next.data.title}
                 </p>
               </div>
-              <div className='w-20 text-peach self-center'>
+              <div className='self-center w-20 text-peach'>
                 <ChevronRightIcon />
               </div>
             </div>

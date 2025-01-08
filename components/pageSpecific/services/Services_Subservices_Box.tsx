@@ -1,11 +1,20 @@
-function Services_Subservices_Box({ subservice }) {
+interface Subservice {
+  desc: string
+  service: string
+  icon: any
+}
+interface Props {
+  subservice: Subservice
+}
+
+function Services_Subservices_Box({ subservice }: Props) {
   return (
-    <article className=' border-4 border-blue rounded-lg   w-full py-6 px-4'>
-      <div className='text-center px-6 flex flex-row md:flex-col justify-center'>
-        <span className='text-left pb-2 text-6xl'>{subservice.icon}</span>
+    <article className='w-full px-4 py-6 border-4 rounded-lg  border-blue'>
+      <div className='flex flex-row justify-center px-6 text-center md:flex-col'>
+        <span className='pb-2 text-6xl text-left'>{subservice.icon}</span>
       </div>
       <div className='px-4'>
-        <h3 className='text-peach text-3xl font-semibold'>{subservice.service}</h3>
+        <h3 className='text-3xl font-semibold text-peach'>{subservice.service}</h3>
         <p className='opacity-90 text-wine'>{subservice.desc}</p>
       </div>
     </article>

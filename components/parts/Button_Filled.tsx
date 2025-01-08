@@ -7,7 +7,7 @@ import {
   TextColorVariant,
   backgroundColorVariants,
   backgroundColorVariant,
-} from '@lib/colorHelper'
+} from '@lib'
 import { Chevron, ChevronType } from '@lib/chevronHelper'
 
 interface CustomEvents {

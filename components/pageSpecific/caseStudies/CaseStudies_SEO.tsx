@@ -1,6 +1,21 @@
 import { BreadcrumbJsonLd, NextSeo, VideoJsonLd } from 'next-seo'
 
-function CaseStudies_SEO({ frontMatter, slug }) {
+interface FrontMatter {
+  date: string
+  client: string
+  title: string
+  tags: string[]
+  excerpt: string
+  vimeoID: string
+  vimeoPreview: string
+}
+
+interface CaseStudiesSEOProps {
+  frontMatter: FrontMatter
+  slug: string
+}
+
+function CaseStudies_SEO({ frontMatter, slug }: CaseStudiesSEOProps) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
   const tag1 = frontMatter.tags[0]
   const tag2 = frontMatter.tags[1]
@@ -14,6 +29,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
   if (projTitle.length + 3 + tag1.length + 3 + tag2.length <= 60) {
     metaTitle = `${projTitle} - ${tag1} & ${tag2}`
   }
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -25,7 +41,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
           },
           {
             position: 2,
-            name: `${frontMatter.title}`,
+            name: frontMatter.title,
             item: `https://pixelbakery.com/work/case-studies/${slug}`,
           },
         ]}
@@ -33,7 +49,6 @@ function CaseStudies_SEO({ frontMatter, slug }) {
       <VideoJsonLd
         name={`${frontMatter.client}: ${frontMatter.title}`}
         description={frontMatter.excerpt}
-        // contentUrl='http://player.vimeo.com/video123.mp4'
         embedUrl={`http://player.vimeo.com/video/${frontMatter.vimeoID}`}
         uploadDate={`${datePostedISO}−06:00`}
         thumbnailUrls={[
@@ -41,7 +56,7 @@ function CaseStudies_SEO({ frontMatter, slug }) {
         ]}
       />
       <NextSeo
-        title={`${metaTitle}`}
+        title={metaTitle}
         description={frontMatter.excerpt}
         canonical={`https://pixelbakery.com/work/case-studies/${slug}`}
         openGraph={{
@@ -68,4 +83,5 @@ function CaseStudies_SEO({ frontMatter, slug }) {
     </>
   )
 }
+
 export default CaseStudies_SEO

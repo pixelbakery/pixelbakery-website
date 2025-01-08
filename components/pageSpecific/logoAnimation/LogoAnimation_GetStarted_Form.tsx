@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
-import { SendToMonday_LogoAnimation } from '@lib/api_sendToMonday'
+import { SendToMonday_LogoAnimation } from '@lib'
 import { usePlausible } from 'next-plausible'
 
 export default function LogoAnimation_GetStarted_Form() {

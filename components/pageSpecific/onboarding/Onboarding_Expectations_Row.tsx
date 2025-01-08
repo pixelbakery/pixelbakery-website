@@ -1,7 +1,14 @@
-import Lead from '@typography/Lead'
+import { Lead } from '@typography'
 import Onboarding_ExpectationNumbers from './Onboarding_Expectations_Row_Numbers'
 
-function ExpectationsRow({ flip, number, header, bodyCopy }) {
+interface ExpectationsRowProps {
+  flip: boolean
+  number: string | number
+  header: string
+  bodyCopy: string
+}
+
+function ExpectationsRow({ flip, number, header, bodyCopy }: ExpectationsRowProps) {
   let order = 'order-first'
   let textDir = 'right'
   const TextClasses = 'w-full lg:w-3/5 flex flex-row  justify-center py-4 lg:py-16 text-lg self-'
@@ -12,10 +19,10 @@ function ExpectationsRow({ flip, number, header, bodyCopy }) {
   }
   let DirTextClasses = TextClasses + textDir + ' ' + order
   return (
-    <div className='relative max-w-6xl mx-auto flex flex-wrap lg:py-8 lg:my-8 '>
-      <Onboarding_ExpectationNumbers number={number} />
+    <div className='relative flex flex-wrap max-w-6xl mx-auto lg:py-8 lg:my-8 '>
+      <Onboarding_ExpectationNumbers number={number as number} />
       <div className={DirTextClasses}>
-        <div className='max-w-md flex flex-col justify-center px-8'>
+        <div className='flex flex-col justify-center max-w-md px-8'>
           <Lead className={'mb-1 lg:mb-4 pb-0 mt-0'} color={'blue'}>
             {header}
           </Lead>

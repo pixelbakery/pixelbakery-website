@@ -1,6 +1,6 @@
 import Button_Filled from '@parts/Button_Filled'
 import Nav_SocialLinks from './Nav_SocialLinks'
-import type { MenuComponentBaseProps } from '@types'
+import type { MenuComponentBaseProps } from '@/types/general'
 
 const Nav_FullScreenMenu_CTA = ({ update }: MenuComponentBaseProps) => {
   return (
