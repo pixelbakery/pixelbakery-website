@@ -31,7 +31,7 @@ const Recipes_FeaturedPost = ({
           }
         >
           <Image
-            src={`${coverImage}`}
+            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${coverImage}`}
             placeholder='blur'
             width={width}
             height={height}
