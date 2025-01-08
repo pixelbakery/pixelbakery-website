@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.9.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.8.0...v8.9.0) (2025-01-08)
+
+
+### Bug Fixes
+
+* switched back to cdn for blog images ([dbc7e4d](https://github.com/pixelbakery/pixelbakery-website/commits/dbc7e4d6f4ec486f2f355c1ff2220475345e024f))
+
+
+### Chores
+
+* **release:** 8.4.0 ([8252a66](https://github.com/pixelbakery/pixelbakery-website/commits/8252a662d7d7aa41c5b971a9ff62f73f39971576))
+* removed cdn from several image locations ([eff82ee](https://github.com/pixelbakery/pixelbakery-website/commits/eff82ee0b1c938da6c0749424d64bfbfcafe48dc))
+* type defs and barrel file updates ([41b4114](https://github.com/pixelbakery/pixelbakery-website/commits/41b411413f65bb42e0a7dcf35a5ad83cc8ea9320))
+
 ## [8.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.8.0...v8.4.0) (2025-01-08)
 
 
