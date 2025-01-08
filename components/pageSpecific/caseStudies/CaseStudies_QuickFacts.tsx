@@ -5,16 +5,14 @@ import { NorthEastArrowIcon, ChevronRightIcon } from '@icons'
 import { PageSection, InnerWrapper } from '@parts'
 import { H2, H3 } from '@typography'
 import cn from 'classnames'
+import type { QuickFacts } from '@/types/caseStudies'
 
 interface QuickFactsProps {
   client: string
   website?: string
-  quickfacts?: {
-    awards?: string[]
-    service_types?: string[]
-    industry?: string
+  quickfacts?: QuickFacts
   }
-}
+
 
 export default function CaseStudies_QuickFacts({ client, website, quickfacts }: QuickFactsProps) {
   // 1. Prepare Industry Data

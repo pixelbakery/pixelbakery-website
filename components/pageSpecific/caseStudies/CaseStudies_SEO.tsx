@@ -1,17 +1,9 @@
 import { BreadcrumbJsonLd, NextSeo, VideoJsonLd } from 'next-seo'
+import type {CaseStudyData} from '@/types/caseStudies'
 
-interface FrontMatter {
-  date: string
-  client: string
-  title: string
-  tags: string[]
-  excerpt: string
-  vimeoID: string
-  vimeoPreview: string
-}
 
 interface CaseStudiesSEOProps {
-  frontMatter: FrontMatter
+  frontMatter: CaseStudyData
   slug: string
 }
 
@@ -65,7 +57,7 @@ function CaseStudies_SEO({ frontMatter, slug }: CaseStudiesSEOProps) {
           description: `${frontMatter.excerpt} created for ${frontMatter.client}`,
           images: [
             {
-              url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${frontMatter.vimeoPreview}.jpg`,
+              url: `/img/work/${frontMatter.vimeoPreview}.jpg`,
               alt: frontMatter.excerpt,
               type: 'image/jpeg',
               width: 854,

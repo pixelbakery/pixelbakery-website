@@ -6,6 +6,7 @@ function NextSEO_DefaultSEO() {
     <>
       <DefaultSeo
         defaultTitle='Pixel Bakery Design Studio'
+        themeColor='rgb(255, 94, 100)'
         description={
           'Pixel Bakery is a production studio focused on animation, animated explainer videos, motion design, video production, and product photography in Lincoln, Nebraska.'
         }

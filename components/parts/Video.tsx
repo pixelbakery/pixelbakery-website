@@ -170,7 +170,7 @@ export default function Video({
       props: {
         action,
         title: videoTitle,
-        url: useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url,
+        url: useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : `https://pixelbakery.com${url}`,
         ...extraProps,
       },
     })

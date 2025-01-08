@@ -2,15 +2,17 @@ import { H1 } from '@typography'
 import { Pill } from '@parts'
 import Link from 'next/link'
 import { Video } from '@parts'
+import {CaseStudyData} from '@/types/caseStudies'
 
 interface CaseStudiesHeaderProps {
-  client: string
-  website: string
-  projectName: string
-  tags: string[]
-  heroVideo: string
+  client: CaseStudyData['client']
+  website?: CaseStudyData['website']
+  projectName: CaseStudyData['title']
+  tags: CaseStudyData['tags']
+  heroVideo?: CaseStudyData['vimeoID']
   poster?: string
 }
+
 
 function CaseStudies_Header({
   client,
