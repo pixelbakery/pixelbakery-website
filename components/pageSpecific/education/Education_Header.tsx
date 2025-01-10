@@ -23,11 +23,7 @@ function Education_Header() {
               subheader={'open-source work we’ve made'}
               inpageLink={'#projectFiles'}
             />
-            <Education_Header_Link
-              header={'from scratch'}
-              subheader={'complete a to z tutorials'}
-              inpageLink={'#fromScratch'}
-            />
+
             <Education_Header_Link
               header={'made to order'}
               subheader={'one-off tutorials on specific somethings'}
