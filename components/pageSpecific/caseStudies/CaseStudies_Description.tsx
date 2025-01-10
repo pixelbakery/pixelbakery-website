@@ -24,8 +24,8 @@ function CaseStudies_Description({ children, ...props }: Props) {
   return (
     <PageSection color={bgColor} id={'description'}>
       <InnerWrapper>
-        <div className='grid grid-cols-1 lg:grid-cols-5'>
-          <div className='col-span-1 lg:col-span-2'>
+        <div className='w-full grid grid-cols-5 md:grid-cols-5'>
+          <div className='col-span-1 md:col-span-2'>
             <H2
               className={cn('text-left mt-0 pt-0 text-4xl max-w-md')}
               color={headerColor as TextColorVariant}
@@ -33,7 +33,7 @@ function CaseStudies_Description({ children, ...props }: Props) {
               {props.header}
             </H2>
           </div>
-          <div className='col-span-1 lg:grid-cols-3'>
+          <div className='col-span-1 md:col-span-3'>
             <div className={cn(`max-w-lg text-${textColor}`)}>{children}</div>
           </div>
         </div>
