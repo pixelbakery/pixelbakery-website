@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Close from '@images/Close'
 import cn from 'classnames'
-import { SendToMonday_Croissants, SendToMailchimp, SendEmail_Croissants } from '@lib'
+import { SendToMonday_Croissants, SendEmail_Croissants } from '@lib'
 import { usePlausible } from 'next-plausible'
 
 interface FooterObjectCroissantProps {
@@ -16,7 +16,6 @@ interface CroissantFormData {
 }
 
 export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectCroissantProps) {
-  const [checked, setChecked] = useState<boolean>(true)
   const [submitted, setSubmitted] = useState<boolean>(false)
   const [message, setMessage] = useState<string>('')
   const plausible = usePlausible()
@@ -26,15 +25,10 @@ export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectC
     setMessage('a delicious surprise on us.')
   }
 
-  const handleCheck = () => {
-    setChecked((prev) => !prev)
-  }
-
   const { register, handleSubmit, resetField } = useForm<CroissantFormData>()
 
   const onSubmit = (data: CroissantFormData) => {
     SendToMonday_Croissants(data)
-    SendToMailchimp(data, 'Croissants')
     SendEmail_Croissants(data)
     resetField('email')
     plausible('Custom Event', { props: { source: 'croissant-submit' } })
@@ -85,23 +79,6 @@ export default function Footer_Object_Croissant({ onModalUpdate }: FooterObjectC
                 placeholder='email'
                 {...register('email', { required: true })}
               />
-
-              <div className='flex justify-start my-2 '>
-                <input
-                  className='p-1 my-2 rounded-lg shadow-2xl cursor-pointer bg-cream border-6 border-cream xl:p-2 text-blue-dark drop-shadow-xl'
-                  type='checkbox'
-                  checked={checked}
-                  onClick={handleCheck}
-                  {...register('check')}
-                />
-                <label
-                  className='self-center py-0 my-0 ml-3 font-medium leading-none cursor-pointer text-cream xl:font-bold font-lg xl:font-2xl'
-                  htmlFor='check'
-                  onClick={handleCheck}
-                >
-                  Also sign up for the newsletter that we always forget to send out
-                </label>
-              </div>
 
               <button
                 type='submit'

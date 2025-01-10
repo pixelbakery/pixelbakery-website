@@ -8,339 +8,209 @@ const MondayBoard_Croissants = process.env.NEXT_PUBLIC_MONDAY_BOARD_CROISSANT
 const MondayBoard_Tutorials = process.env.NEXT_PUBLIC_MONDAY_BOARD_TUTORIALS
 const MondayBoard_Logos = process.env.NEXT_PUBLIC_MONDAY_BOARD_LOGOS
 const MondayBoard_Contact = process.env.NEXT_PUBLIC_MONDAY_BOARD_CONTACTFORM
-const MondayBoard_InstagramMerchCampaign = process.env.NEXT_PUBLIC_MONDAY_BOARD_INSTAMERCHCAMPAIGN
 const MondayBoard_Freelancers = process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM
 const MondayAuth = process.env.NEXT_PUBLIC_MONDAY_AUTH
 
-// Job Application
-export async function SendToMonday_JobApplication(data) {
-  const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_JobApplication}, item_name:$applicant, column_values:$columnVals) { id } }`
+////////////
+// TYPES
+////////////
 
-  const vars = {
-    applicant: `${data.first_name} ${data.middle_name} ${data.last_name}`,
-    columnVals: JSON.stringify({
-      pronouns9: data.pronoun,
-      text: data.position,
-      status1: data.commitment,
-      portfolio: data.website,
-      link4: { url: data.social, text: data.social },
-      phone: data.phone,
-      text31: data.email,
-      dropdown5: data.zodiac,
-      files: data.resume,
-    }),
+type MondayColumnValues = Record<string, any>
+
+interface MondayData {
+  name?: string
+  email?: string
+  phone?: string
+  [key: string]: any
+}
+
+////////////
+// HELPERS
+////////////
+
+async function sendToMonday(boardId: string, itemName: string, columnValues: MondayColumnValues) {
+  const query = `mutation ($itemName: String!, $columnValues: JSON!) {
+    create_item(board_id: ${boardId}, item_name: $itemName, column_values: $columnValues) {
+      id
+    }
+  }`
+
+  const variables = {
+    itemName,
+    columnValues: JSON.stringify(columnValues),
   }
+
   try {
-    fetch('https://api.monday.com/v2', {
-      method: 'post',
+    const response = await fetch('https://api.monday.com/v2', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `${MondayAuth}`,
       },
-      body: JSON.stringify({
-        query: query,
-        variables: JSON.stringify(vars),
-      }),
-    }).then((res) => {
-      res.json()
-      console.log(res)
+      body: JSON.stringify({ query, variables }),
     })
+
+    return await response.json()
   } catch (error) {
-    console.log(error)
+    console.error('Error sending data to Monday:', error)
+    throw error
   }
-  // .then((res) => console.log(JSON.stringify(res, null, 2)))
 }
 
-//Job Shadow
-export async function SendToMonday_JobShadow(data) {
-  const query = `mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_JobShadow}, item_name:$name, column_values:$columnVals) { id } }`
-  const vars = {
-    name: data.name,
-    columnVals: JSON.stringify({
-      text: data.school,
-      email: { email: data.email, text: data.email },
-      long_text: { text: data.message },
-      checkbox: { checked: data.newsletter.toString() },
-      checkbox9: { checked: data.noParents.toString() },
-      checkbox2: { checked: data.threePeople.toString() },
-    }),
+////////////
+// EXPORT FUNCTIONS
+////////////
+
+export async function SendToMonday_JobApplication(data: MondayData) {
+  if (!MondayBoard_JobApplication) {
+    throw new Error('MondayBoard_JobApplication ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  const columnValues: MondayColumnValues = {
+    pronouns9: data.pronoun,
+    text: data.position,
+    status1: data.commitment,
+    portfolio: data.website,
+    link4: { url: data.social, text: data.social },
+    phone: data.phone,
+    text31: data.email,
+    dropdown5: data.zodiac,
+    files: data.resume,
+  }
+
+  return sendToMonday(
+    MondayBoard_JobApplication,
+    `${data.first_name} ${data.middle_name} ${data.last_name}`,
+    columnValues,
+  )
 }
 
-//onboarding form
-export async function SendToMonday_Onboarding(data) {
-  const query = `mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Onboarding}, item_name:$name, column_values:$columnVals) { id } }`
-  const vars = {
-    name: data.name,
-    columnVals: JSON.stringify({
-      text: data.company,
-      text1: data.website,
-      email: { email: data.email, text: data.email },
-      text6: data.subject,
-      long_text: { text: data.message },
-      text7: data.referral,
-      // checkbox: { checked: data.check.toString() },
-    }),
+export async function SendToMonday_JobShadow(data: MondayData) {
+  if (!MondayBoard_JobShadow) {
+    throw new Error('MondayBoard_JobShadow ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_FreelancerForm')
+  }
+
+  const columnValues: MondayColumnValues = {
+    text: data.school ?? '', // Provide a default value if undefined
+    email: { email: data.email ?? '', text: data.email ?? '' }, // Handle undefined values
+    long_text: { text: data.message ?? '' },
+    checkbox9: { checked: data.noParents?.toString() || 'false' },
+    checkbox2: { checked: data.threePeople?.toString() || 'false' },
+  }
+
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_JobShadow')
+  }
+
+  return sendToMonday(MondayBoard_JobShadow, data.name, columnValues)
 }
 
-//Croissants
-export async function SendToMonday_Croissants(data) {
-  data.tag = 'Croissants'
-  const query = `mutation ($email: String!) { create_item (board_id:${MondayBoard_Croissants}, item_name:$email) { id } }`
-  const vars = {
-    email: data.email,
+export async function SendToMonday_Onboarding(data: MondayData) {
+  if (!MondayBoard_Onboarding) {
+    throw new Error('MondayBoard_Onboarding ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_FreelancerForm')
+  }
+
+  const columnValues: MondayColumnValues = {
+    text: data.company,
+    text1: data.website,
+    email: { email: data.email, text: data.email },
+    text6: data.subject,
+    long_text: { text: data.message },
+    text7: data.referral,
+  }
+
+  return sendToMonday(MondayBoard_Onboarding, data.name, columnValues)
 }
 
-//Contact Form
-export async function SendToMonday_ContactForm(data) {
-  let strippedPhone = ''
-  if (data.phone != undefined) strippedPhone = data.phone.replace(/[^+\d]+/g, '')
-  const query5 = `mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Contact}, item_name:$subject, column_values:$columnVals) { id } }`
-  const vars = {
-    subject: data.subject,
-    columnVals: JSON.stringify({
-      text: data.name,
-      text0: data.entity,
-      //  date4: { date: getDate(), time: getTime() },
-      long_text: { text: data.message },
-      text6: data.name,
-      phone: { phone: strippedPhone, countryShortName: 'US' },
-      //  text6: { text: data.name },
-      email: { email: data.email, text: data.email },
-      status0: data.soliciting,
-    }),
+export async function SendToMonday_Croissants(data: MondayData) {
+  if (!MondayBoard_Croissants) {
+    throw new Error('MondayBoard_Croissants ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query5,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  if (!data.email) {
+    throw new Error('Email is required for SendToMonday_Croissants')
+  }
+
+  const columnValues: MondayColumnValues = { email: data.email }
+  return sendToMonday(MondayBoard_Croissants, data.email, columnValues)
 }
 
-//Logo Animation
-export async function SendToMonday_LogoAnimation(data) {
-  let logoPackage = data.package
-  if (data.package == 'kitchenSink') {
-    logoPackage = 'Kitchen Sink'
+export async function SendToMonday_ContactForm(data: MondayData) {
+  if (!MondayBoard_Contact) {
+    throw new Error('MondayBoard_Contact ENV variable is not defined.')
   }
-  const query = `mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Logos}, item_name:$name, column_values:$columnVals) { id } }`
-  const vars = {
-    name: data.name,
-    columnVals: JSON.stringify({
-      status: logoPackage,
-      text: data.phone,
-      email: { email: data.email, text: data.email },
-      text6: data.entity,
-      long_text: { text: data.message },
-      checkbox: { checked: data.check.toString() },
-    }),
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_ContactForm')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+
+  const strippedPhone = data.phone?.replace(/[^+\d]+/g, '') || ''
+  const columnValues: MondayColumnValues = {
+    text: data.name,
+    text0: data.entity,
+    long_text: { text: data.message },
+    text6: data.name,
+    phone: { phone: strippedPhone, countryShortName: 'US' },
+    email: { email: data.email, text: data.email },
+    status0: data.soliciting,
+  }
+
+  return sendToMonday(MondayBoard_Contact, data.subject, columnValues)
 }
 
-//Tutorial Requests
-export async function SendToMonday_Tutorials(data) {
-  const strippedPhone = data.phone.replace(/[^+\d]+/g, '')
-  const query5 = `mutation ($subject: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Tutorials}, item_name:$subject, column_values:$columnVals) { id } }`
-  const vars = {
-    subject: data.subject,
-    columnVals: JSON.stringify({
-      status: { label: 'Done' },
-      //  date4: { date: getDate(), time: getTime() },
-      long_text: { text: data.message },
-      text6: data.name,
-      phone: { phone: strippedPhone, countryShortName: 'US' },
-      //  text6: { text: data.name },
-      email: { email: data.email, text: data.email },
-    }),
+export async function SendToMonday_LogoAnimation(data: MondayData) {
+  if (!MondayBoard_Logos) {
+    throw new Error('MondayBoard_Logos ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query5,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_LogoAnimation')
+  }
+
+  const columnValues: MondayColumnValues = {
+    status: data.package === 'kitchenSink' ? 'Kitchen Sink' : data.package,
+    text: data.phone,
+    email: { email: data.email, text: data.email },
+    text6: data.entity,
+    long_text: { text: data.message },
+    checkbox: { checked: data.check?.toString() || 'false' },
+  }
+
+  return sendToMonday(MondayBoard_Logos, data.name, columnValues)
 }
 
-// 2022 Instagram Merch Campaign
-
-export async function SendToMonday_InstagramMerchCampaign(data) {
-  const query5 = `mutation ($name: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_InstagramMerchCampaign}, item_name:$name, column_values:$columnVals) { id } }`
-  const vars = {
-    name: data.name,
-    columnVals: JSON.stringify({
-      text: data.address,
-      dropdown5: data.size,
-      people0: data.instagram,
-      long_text: { text: data.message },
-      checkbox: { checked: data.check.toString() },
-    }),
+export async function SendToMonday_Tutorials(data: MondayData) {
+  if (!MondayBoard_Tutorials) {
+    throw new Error('MondayBoard_Tutorials ENV variable is not defined.')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-    },
-    body: JSON.stringify({
-      query: query5,
-      variables: JSON.stringify(vars),
-    }),
-  }).then((res) => res.json())
+  const strippedPhone = data.phone?.replace(/[^+\d]+/g, '') || ''
+  const columnValues: MondayColumnValues = {
+    status: { label: 'Done' },
+    long_text: { text: data.message },
+    text6: data.name,
+    phone: { phone: strippedPhone, countryShortName: 'US' },
+    email: { email: data.email, text: data.email },
+  }
+
+  return sendToMonday(MondayBoard_Tutorials, data.subject, columnValues)
 }
 
-// Freelancer Form
-export async function SendToMonday_FreelancerForm(data) {
-  const query = `mutation ($applicant: String!, $columnVals: JSON!) { create_item (board_id:${MondayBoard_Freelancers}, item_name:$applicant, column_values:$columnVals) { id } }`
-  let skills = ''
-  if (data.skills) {
-    skills = data.skills.map((c) => c.value).join(', ')
+export async function SendToMonday_FreelancerForm(data: MondayData) {
+  if (!MondayBoard_Freelancers) {
+    throw new Error('MondayBoard_Freelancers ENV variable is not defined.')
   }
-  const vars = {
-    applicant: data.name,
-    columnVals: JSON.stringify({
-      text: data.title,
-      dropdown: `${skills}`,
-      email: { email: data.email, text: data.email },
-      link: `${data.website} ${data.website}`,
-      link6: { url: data.social, text: data.social },
-    }),
+  if (!data.name) {
+    throw new Error('Name is required for SendToMonday_FreelancerForm')
   }
-  fetch('https://api.monday.com/v2', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${MondayAuth}`,
-      'API-Version': '2023-10',
-    },
-    body: JSON.stringify({
-      query: query,
-      variables: JSON.stringify(vars),
-    }),
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      let id = res.data.create_item.id
 
-      let str = JSON.stringify(data, (k, v) => (v === '' || v === undefined ? '–' : v))
-      const d = JSON.parse(str)
-
-      let message = ''
-      message += `<b><em>${d.title}</em></b><br>––––––––<br><br>`
-      message += `<h3>Details:</h3><br>`
-      message += `<b>Pronouns:</b> ${d.pronoun}<br>`
-      message += `<b>Hourly Rate:</b> ${d.rate}<br>`
-      message += `<b>Address:</b> ${d.address}<br>`
-      message += `<b>Phone:</b> ${d.phone}<br>`
-      message += `<b>Years of Prof Experience:</b> ${d.experience}<br>`
-      message += `<b>Most Hated Bird:</b> ${d.bird}<br>`
-      message += `<b>Newsletter Signup:</b> ${d.newsletter.toString()}<br>`
-      message += `<b>How Did You Hear About Us:</b> ${d.referral}<br>`
-      message += `<br>`
-      message += `<h3>About:</h3><br>${d.about}<br><br><br>`
-
-      message += `<h3>Links:</h3><br>`
-      message += `<b>Social Link:</b> <a href='${d.social}'>${d.social}</a><br>`
-      message += `<b>Portfolio Link:</b> <a href='${d.website}'>${d.website}</a><br>`
-      message += `<b>Email:</b> <a href='mailto:${d.email}'>${d.email}</a><br><br><br>`
-      message += `<h3>Skills:</h3><br>`
-      message += `<em>${skills}</em>`
-      const cleanedText = message.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
-
-      let updateQuery = `mutation {create_update (item_id: ${id}, body: "${cleanedText}") { id }}`
-      // console.log(cleanedText)
-      fetch('https://api.monday.com/v2', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `${MondayAuth}`,
-          'API-Version': '2023-10',
-        },
-        body: JSON.stringify({
-          query: updateQuery,
-        }),
-      }).then((res) => res.json())
-      // .then((res) => console.log(JSON.stringify(res, null, 2)))
-    })
-}
-// <br>Address: ${data.address}<br>Phone: ${data.phone}<br>Years of Professional Experience: ${data.experience}<br>Social Link: ${data.social}<br>Most Hated Bird: ${data.bird}<br>Newsletter: ${data.newsletter}<br>How Did You Hear About Us: ${data.referral}<br><br>Tell Us About Yourself:<br>${data.about}
-export function SendToMonday_FreelancerForm_GetSkills() {
-  const query = `query { boards (ids: ${process.env.NEXT_PUBLIC_MONDAY_BOARD_FREELANCERFORM}) {columns(ids:"dropdown"){settings_str}}}`
-  try {
-    return fetch('https://api.monday.com/v2', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: process.env.NEXT_PUBLIC_MONDAY_AUTH,
-        'API-Version': '2023-10',
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
-    })
-      .then((res) => res.json())
-      .then((responseData) => {
-        // console.log(responseData)
-        return responseData
-      })
-  } catch (error) {
-    console.log(error)
+  const columnValues: MondayColumnValues = {
+    text: data.title,
+    email: { email: data.email, text: data.email },
+    link: `${data.website} ${data.website}`,
+    link6: { url: data.social, text: data.social },
   }
-  // .then((res) => console.log(JSON.stringify(res, null, 2)))
+
+  return sendToMonday(MondayBoard_Freelancers, data.name, columnValues)
 }

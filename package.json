@@ -28,14 +28,10 @@
     "jsxSingleQuote": true,
     "bracketSpacing": true,
     "arrowParens": "always",
-    "printWidth": 100,
-    "plugins": [
-      "prettier-plugin-jsdoc"
-    ]
+    "printWidth": 100
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/third-parties": "^15.1.2",
     "@sendgrid/mail": "^8.1.4",
     "@vercel/speed-insights": "^1.1.0",

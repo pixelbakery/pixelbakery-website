@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/role-supports-aria-props */
-import Lead from '@typography/Lead'
+import { Lead } from '@typography'
 
 import cn from 'classnames'
 import { useState } from 'react'
@@ -10,7 +9,6 @@ import type {
   ErrorsProps,
   PhoneInputProps,
   BaseFieldProps,
-  NewsletterProps,
   SubmitProps,
   SolicitationProps,
   MultiSelectProps,
@@ -51,33 +49,6 @@ export const ContactForm_NotInterested = () => {
 
 export const ContactForm_ThankYou = () => {
   return <Lead>Thanks for your message 😉. We&apos;ll get back to you asap.</Lead>
-}
-
-// --------------------------------------------------------------------------------------
-// NEWSLETTER CHECKBOX
-// --------------------------------------------------------------------------------------
-
-export const ContactForm_Newsletter = ({ register }: NewsletterProps) => {
-  const [isChecked, setChecked] = useState(true)
-
-  return (
-    <div className='flex col-span-2 my-4'>
-      <input
-        className='p-3 my-0 duration-300 border-2 rounded-lg shadow-2xl cursor-pointer bg-cream border-blue-dark text-blue-dark drop-shadow-lg hover:scale-97'
-        type='checkbox'
-        id='newsletter'
-        checked={isChecked}
-        onClick={() => setChecked(!isChecked)}
-        {...register('newsletter')}
-      />
-      <label
-        className='self-center py-0 my-0 ml-4 font-semibold leading-none cursor-pointer text-blue-dark'
-        htmlFor='newsletter'
-      >
-        Also sign up for the newsletter that we always forget to send out
-      </label>
-    </div>
-  )
 }
 
 // --------------------------------------------------------------------------------------
@@ -188,13 +159,13 @@ export const ContactForm_PhoneInput = ({
   className,
   register,
 }: PhoneInputProps) => {
-  // 1. Must ensure `fieldName` is *never* undefined
-  // If it might be undefined, handle that
-  if (!fieldName) return null
-
   const [value, setValue] = useState('')
 
-  const formatPhoneNumber = (input: string) => {
+  // Exit early if `fieldName` is not provided
+  if (!fieldName) return null
+
+  // Helper function to format phone number
+  const formatPhoneNumber = (input: string): string => {
     const numericInput = input.replace(/\D/g, '')
     if (numericInput.length <= 3) {
       return numericInput
@@ -208,19 +179,14 @@ export const ContactForm_PhoneInput = ({
     }
   }
 
-  // 2. If we’re relying on `register` to handle `onChange`, remove handleChange
-  //   since it’s unused. Or rename it and pass it to `onChange` yourself.
-
   return (
     <input
-      className={cn('form-input', className, {
-        error: errors[fieldName],
-      })}
+      className={cn('form-input', className, { error: !!errors[fieldName] })}
       type='tel'
       placeholder={placeHolder}
-      id={fieldName}
+      id={fieldName.toString()}
       value={value}
-      aria-invalid={errors[fieldName] ? 'true' : 'false'}
+      aria-invalid={!!errors[fieldName]}
       {...register(fieldName, {
         onChange: (e) => setValue(formatPhoneNumber(e.target.value)),
       })}
@@ -303,7 +269,6 @@ export const ContactForm_Solicitation = ({ register, errors }: SolicitationProps
             value={'true'}
             id='soliciting-yes'
             className='hidden peer'
-            aria-invalid={errors['soliciting'] ? 'true' : 'false'}
           />
           <label htmlFor='soliciting-yes' className='radio-button'>
             <span>Yes</span>
@@ -317,7 +282,6 @@ export const ContactForm_Solicitation = ({ register, errors }: SolicitationProps
             value={'false'}
             id='soliciting-no'
             className='hidden peer'
-            aria-invalid={errors['soliciting'] ? 'true' : 'false'}
           />
           <label htmlFor='soliciting-no' className='radio-button'>
             <span>No</span>

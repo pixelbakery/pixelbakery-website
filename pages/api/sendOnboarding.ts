@@ -1,5 +1,5 @@
 import mail from '@sendgrid/mail'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest } from 'next'
 
 const apiKey = process.env.NEXT_PUBLIC_SENDGRID_API_KEY
 if (!apiKey) {
@@ -8,9 +8,7 @@ if (!apiKey) {
 
 mail.setApiKey(apiKey)
 
-// eslint-disable-next-line no-unused-vars
-
-export default async function sendOnboarding(req: NextApiRequest, res: NextApiResponse) {
+export default async function sendOnboarding(req: NextApiRequest) {
   let sendTo
   if (process.env.NODE_ENV === 'development') sendTo = 'jordan@pixelbakery.com'
   else sendTo = 'hello@pixelbakery.com'

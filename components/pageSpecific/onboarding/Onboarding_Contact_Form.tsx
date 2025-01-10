@@ -8,7 +8,6 @@ import {
   ContactForm_TextInput,
   ContactForm_EmailInput,
   ContactForm_TextAreaInput,
-  ContactForm_Newsletter,
   ContactForm_Errors,
   ContactForm_Solicitation,
   ContactForm_Submit,
@@ -18,19 +17,17 @@ import {
   ContactForm_PhoneInput,
 } from '@utility/ContactForm_Parts'
 import {
-  SendToMailchimp,
   SendEmail_Onboarding,
   SendEmail_OnboardingConfirmation,
-} from '@lib/helpers'
-import { SendToMonday_ContactForm } from '@lib/api_sendToMonday'
+  SendToMonday_ContactForm,
+} from '@lib'
 
-import type { FormProps } from '@types'
+import type { FormProps } from '@/types/general'
 
 interface BaseFormInputs {
   name: string
   entity?: string
   multipleErrorInput?: string
-  newsletter?: boolean
   message: string
   soliciting: string | null
   subject: string
@@ -38,6 +35,7 @@ interface BaseFormInputs {
   phone?: string
   email: string
   website?: string | undefined
+  tag?: string
 }
 
 // Extended interface (entity required)
@@ -100,7 +98,7 @@ function Form({
       SendEmail_OnboardingConfirmation(data)
       SendToMonday_ContactForm(data)
       plausible('Custom Event', { props: { source: 'onboarding-form-submit' } })
-      SendToMailchimp(data, 'onboarding')
+
       setSubmitted(true)
     }
   }
@@ -170,7 +168,6 @@ function Form({
         placeHolder='How did you hear about us?'
         className='col-span-2'
       />
-      <ContactForm_Newsletter register={register} />
       <ContactForm_Solicitation register={register} errors={errors} />
       <ContactForm_Submit valueText='Submit' disabled={hideForm} />
       <ContactForm_Errors className='col-span-2' errors={errors} />

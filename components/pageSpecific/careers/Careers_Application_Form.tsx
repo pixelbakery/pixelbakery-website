@@ -1,28 +1,57 @@
-/* eslint-disable no-unused-vars */
-// 👇️ ts-nocheck ignores all ts errors in the file
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { SendToMonday_JobApplication } from '@lib/api_sendToMonday'
-import { SendToMailchimp } from '@lib/helpers'
+import { SendToMonday_JobApplication } from '@lib'
+
 import router from 'next/router'
 import Link from 'next/link'
 import { usePlausible } from 'next-plausible'
-type FormInputs = {
-  test: string
+
+interface JobData {
+  title: string
+  active: boolean
 }
 
-export default function Careers_Application_Form({ allJobs }) {
-  const [file, setFile] = useState(null)
-  const [fileName, setFileName] = useState('')
+interface CareersApplicationFormProps {
+  allJobs: { data: JobData }[]
+}
+
+interface FormInputs {
+  [key: string]: string | number | FileList | boolean | undefined
+  first_name: string
+  middle_name?: string
+  last_name: string
+  pronoun?: string
+  email: string
+  phone_number: string
+  social?: string
+  zodiac?: string
+  position: string
+  commitment: string
+  education: string
+  hours?: number
+  pay?: string
+  address_line_1: string
+  address_line_2: string
+  about_personal: string
+  about_professional: string
+  why: string
+  band?: string
+  website?: string
+  resume: FileList
+  hear?: string
+  authorized: boolean
+  tag: string
+}
+
+export default function Careers_Application_Form({ allJobs }: CareersApplicationFormProps) {
+  // const [file, setFile] = useState(null)
+  const [fileName] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const {
     register,
     handleSubmit,
 
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm<FormInputs>({
     defaultValues: {},
   })
@@ -40,7 +69,6 @@ export default function Careers_Application_Form({ allJobs }) {
 
     await SendtosSendgridconfirmation(data)
 
-    await SendToMailchimp(data, 'Job Application')
     await router.push('/careers/submitted')
     await setIsLoading(false)
   }
@@ -51,22 +79,17 @@ export default function Careers_Application_Form({ allJobs }) {
   const handleAuthorized = () => {
     setAuthorized(!authorized)
   }
-  //     mailchimp checkbox
-  const [mailchimp, setMailchimp] = useState(true)
-  const handleMailchimp = () => {
-    setMailchimp(!mailchimp)
-  }
 
   ///////////
   // SENDGRID
   ///////////
-  async function SendToSendgrid(data) {
+  async function SendToSendgrid(data: FormInputs) {
     const formData = new FormData()
     Object.keys(data).forEach((key) => {
       if (key === 'resume') {
         formData.append(key, data[key][0], 'resume.pdf')
       } else {
-        formData.append(key, data[key])
+        formData.append(key, (data as Record<string, any>)[key])
       }
     })
 
@@ -78,13 +101,13 @@ export default function Careers_Application_Form({ allJobs }) {
       },
     }).then((res) => res.json())
   }
-  async function SendtosSendgridconfirmation(data) {
+  async function SendtosSendgridconfirmation(data: FormInputs) {
     const formData = new FormData()
     Object.keys(data).forEach((key) => {
       if (key === 'resume') {
         formData.append(key, data[key][0], 'resume.pdf')
       } else {
-        formData.append(key, data[key])
+        formData.append(key, (data as Record<string, any>)[key])
       }
     })
 
@@ -389,13 +412,13 @@ export default function Careers_Application_Form({ allJobs }) {
               className='w-full px-6 text-lg border-0 rounded-md text-wine focus:ring-2 focus:border-blue-dark focus:ring-blue-dark'
               type='file'
               id='resume'
-              onChange={setFile}
               placeholder='Upload Your Resume'
-              {...register('resume' as never, {
+              {...register('resume', {
                 required: true,
                 validate: {
-                  lessThan10MB: (files: any) => files[0]?.size < 10000000 || 'Max 10MB',
-                  acceptedFormats: (files: any) => files[0].type === 'application/pdf',
+                  lessThan10MB: (files: FileList) => files[0]?.size < 10000000 || 'Max 10MB',
+                  acceptedFormats: (files: FileList) =>
+                    files[0]?.type === 'application/pdf' || 'Must be a PDF',
                 },
               })}
             />
@@ -468,27 +491,6 @@ export default function Careers_Application_Form({ allJobs }) {
             </button>
           </div>
 
-          <div className='col-span-2'>
-            <div className='flex gap-4'>
-              <input
-                className={
-                  'rounded-lg bg-white  border-1  p-3 my-2 text-blue-dark cursor-pointer  drop-shadow-2xl'
-                }
-                type='checkbox'
-                id='handleMailchimp'
-                checked={mailchimp}
-                onClick={handleMailchimp}
-                {...register('mailchimp' as never)}
-              />
-              <label
-                className={'cursor-pointer self-center text-sm font-medium leading-none my-0 py-0'}
-                htmlFor='handleMailchimp'
-                onClick={handleMailchimp}
-              >
-                Also sign up for the newsletter that we always forget to send out
-              </label>
-            </div>
-          </div>
           <p className='col-span-2 mt-12 text-sm italic text-wine-300'>
             PS: Pixel Bakery Motion Studio is an equal opportunity employer. By submitting this
             application you agree to allow us to check references and verify former employment.
