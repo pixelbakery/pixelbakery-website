@@ -1,13 +1,18 @@
 // components/pageSpecific/home/Home_Portfolio_Card.tsx
-import { HomePortfolioCardProps } from '@/types/general'
+
 import { Pill } from '@parts'
 import Link from 'next/link'
 import cn from 'classnames'
 import { H3 } from '@typography'
 import { VideoJsonLd } from 'next-seo'
-
+import type { CaseStudy } from '@/types/caseStudies'
 const IMAGE_PREFIX = process.env.NEXT_PUBLIC_IMG_PREFIX || ''
 
+interface HomePortfolioCardProps {
+  bgColor: string
+  bgPosition: string
+  project: CaseStudy
+}
 function Home_Portfolio_Card({ bgColor, bgPosition, project }: HomePortfolioCardProps) {
   const datePostedISO = new Date(project.data.date).toISOString()
 
