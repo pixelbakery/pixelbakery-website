@@ -38,9 +38,7 @@ const Page_Careers = ({ allJobs }) => {
         }
       />
       <Careers_PastCareers jobs={closedPositions} />
-      {/* <Careers_Breadwinners /> */}
       <Careers_Benefits />
-      {/* <Careers_JobShadow /> */}
     </>
   )
 }

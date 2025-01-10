@@ -25,7 +25,6 @@ export {
   pluralize,
   getTodaysDate,
   shuffleArray,
-  SendToMailchimp,
   SendEmail_JobShadow,
   SendEmail_Contact,
   SendEmail_Onboarding,
