@@ -48,6 +48,9 @@ const cardOverlayItem_Title: Variants = {
 }
 
 function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
+  const [isHovered, setIsHovered] = useState(false)
+  const [filteredSources, setFilteredSources] = useState(project?.data?.sources || [])
+
   if (!project || !project.data) {
     return (
       <div className='p-4 bg-gray-200'>
@@ -56,24 +59,20 @@ function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
       </div>
     )
   }
-  const { filePath, data } = project
+
   const {
     client = 'Unknown Client',
     title = 'Untitled',
     tags = [],
-    sources = [],
     vimeoPreview = '',
-  } = data
+  } = project.data
 
-  const [isHovered, setIsHovered] = useState(false)
-  const [filteredSources, setFilteredSources] = useState(sources)
-  function toggleHover() {
+  const toggleHover = () => {
     setIsHovered((prev) => !prev)
   }
 
-  // const previewImageUrl = `${process.env.NEXT_PUBLIC_IMG_PREFIX}/img/work/${vimeoPreview}.jpg`
   const previewImageUrl = `/img/work/${vimeoPreview}.jpg`
-  // Remove failed video sources
+
   const handleError = () => {
     setFilteredSources((prevSources) =>
       prevSources.filter((source) => source.type !== 'video/webm'),
@@ -192,7 +191,9 @@ function Work_Portfolio_Card({ project }: WorkPortfolioCardProps) {
         <span className='hidden lg:sr-only'>{`Project for ${client} - ${title}`}</span>
         <div className='absolute bottom-0 left-0 z-40 px-4 py-2 mb-1 ml-1 lg:hidden bg-cream bg-opacity-75 backdrop-blur-md'>
           <div className='text-xs leading-none text-peach'>{client}</div>
-          <h3 className='pt-1 font-geologica font-medium leading-none text-md text-blue-darker'>{title}</h3>
+          <h3 className='pt-1 font-geologica font-medium leading-none text-md text-blue-darker'>
+            {title}
+          </h3>
         </div>
       </div>
     </Link>
