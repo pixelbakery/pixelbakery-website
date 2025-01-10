@@ -96,9 +96,9 @@ const StrokeText = ({
         className={cn(
           // Dynamic text styling with customization options
           'font-poppins w-full tracking-wider',
-          fontSize,
           fontWeight,
           strokeWidth,
+          fontSize,
           `hover:fill-${color}`,
         )}
       >

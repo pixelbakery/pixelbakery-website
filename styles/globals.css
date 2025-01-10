@@ -498,3 +498,36 @@
 .lottie-pink-lighte svg {
   @apply fill-pink-lighter stroke-pink-lighter !important;
 }
+
+.text-effect {
+  @apply tracking-wide;
+
+  font-weight: 900;
+  font-family: 'geologica', sans-serif;
+  @apply text-yellow;
+
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.text-effect::before {
+  @apply text-blue;
+  content: attr(data-text); /* Dynamically use the text */
+  position: absolute;
+  top: -4%; /* Offset for the blue shadow */
+  left: -1.5%;
+  z-index: -1; /* Behind the yellow text */
+}
+
+.text-effect::after {
+  content: attr(data-text); /* Dynamically use the text */
+  position: absolute;
+  @apply: text-wine-400;
+  top: 0px;
+  /* top: -1px; Slight offset for the black stroke */
+  left: -1%; /* Slight offset for the black stroke */
+  z-index: 2; /* On top of the yellow and blue */
+  color: transparent; /* Make the text itself invisible */
+  -webkit-text-stroke: 3px rgb(0, 81, 116); /* Black stroke outline */
+}

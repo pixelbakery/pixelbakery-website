@@ -14,7 +14,6 @@ import { PageHeader_VarH } from '@pageHeaders/index'
 function Page_Contact() {
   return (
     <>
-      test
       <Contact_SEO />
       <PageHeader_VarH header='Contact Us' subheader="Please don't ask us about catering" />
       <Contact_Clients />
