@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.1...v9.0.2) (2025-01-10)
+
+
+### Bug Fixes
+
+* lincoln calling music rights issue. video in case study now accepts a local file ([bcc1b2c](https://github.com/pixelbakery/pixelbakery-website/commit/bcc1b2ce581f6054d33c5c0e36e5f9a53578d454))
+* nvm I need react dom ([d04bd0b](https://github.com/pixelbakery/pixelbakery-website/commit/d04bd0bb27e1c34c27e717c82af2ef0066514daf))
+
 ### [9.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v9.1.0...v9.0.2) (2025-01-10)
 
 
