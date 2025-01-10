@@ -2,9 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<<<<<<< HEAD
-## [8.9.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.8.0...v8.9.0) (2025-01-08)
-=======
+## [9.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.9.0...v9.0.0) (2025-01-10)
+
+
+### Features
+
+* add CaseStudies_Header with dynamic video and tag support ([6fcb4fb](https://github.com/pixelbakery/pixelbakery-website/commits/6fcb4fb40d86a22bb95ee770b13e070c64fb0726))
+* centralized people type defs ([235ba14](https://github.com/pixelbakery/pixelbakery-website/commits/235ba14d90cd50868d893af572b916b8d7e0a8f7))
+* centralized project files type defs ([22d5151](https://github.com/pixelbakery/pixelbakery-website/commits/22d5151eb05bb451f3519841da1dfd62fd5eff18))
+* centralized tutorial prop types ([73f21ef](https://github.com/pixelbakery/pixelbakery-website/commits/73f21eff01953704f1267f7e83349f87c916e1b6))
+* enhanced blog post static props logic ([b709213](https://github.com/pixelbakery/pixelbakery-website/commits/b709213102e4069895a0e54a2d61c68c595fd63d))
+
+
+### Bug Fixes
+
+* added missing author slugs ([780935b](https://github.com/pixelbakery/pixelbakery-website/commits/780935b7c84e2d86bd5ad4b899adea55345816c0))
+* added missing excerpt ([3846ef4](https://github.com/pixelbakery/pixelbakery-website/commits/3846ef41900447824709f4aa4f130463e4942091))
+* invalid file name ([ba9bbf8](https://github.com/pixelbakery/pixelbakery-website/commits/ba9bbf85b9fd6e7512802e59d5121508554ad801))
+* removed dynamic import for Video ([af072d2](https://github.com/pixelbakery/pixelbakery-website/commits/af072d27979be05a4e080362533fa4bf9ed18be3))
+
+
+### Chores
+
+* banished abandoned 'from scratch' idea ([01d2f68](https://github.com/pixelbakery/pixelbakery-website/commits/01d2f68ae0a8cab28806bbaec9c99501619667f5))
+* banished job shadows ([b5a8189](https://github.com/pixelbakery/pixelbakery-website/commits/b5a818921473eb578cf03e05b27f7ea17d9da081))
+* banished job shadows ([16e26c7](https://github.com/pixelbakery/pixelbakery-website/commits/16e26c750557f55af11882ea9ed2502f30b416bd))
+* banished job shadows ([fe2ce73](https://github.com/pixelbakery/pixelbakery-website/commits/fe2ce739e48a6547775c56ea6cdab82bd813c543))
+* banished Mailchimp/newsletter signups ([d161eed](https://github.com/pixelbakery/pixelbakery-website/commits/d161eed97b1bfd30dc8c62390a40545f37914894))
+* change jsx to tsx ([5efa578](https://github.com/pixelbakery/pixelbakery-website/commits/5efa5784b6dff85550c3d1511a588aecd7318bc0))
+* changed jpeg to jpg in several spots ([cb9d877](https://github.com/pixelbakery/pixelbakery-website/commits/cb9d8772c4391b46d9478ac6795f37eb0903c487))
+* changelog ([ba45719](https://github.com/pixelbakery/pixelbakery-website/commits/ba457192250a7fedeb41685a3f731047ff77dca6))
+* **main:** release 8.2.0 ([19a30c7](https://github.com/pixelbakery/pixelbakery-website/commits/19a30c7a23d8eb24f79852bfb9236deed9edc400))
+* **main:** release 8.3.0 ([8479b32](https://github.com/pixelbakery/pixelbakery-website/commits/8479b32619c727a0072688e6c39e747b751c81a7))
+* minor barrel file updates ([604442c](https://github.com/pixelbakery/pixelbakery-website/commits/604442cff52e68b6228870c479a92206160713fc))
+* minor code cleanup ([2fd6597](https://github.com/pixelbakery/pixelbakery-website/commits/2fd65979663dd5ad6c7b9f61febdc6e2a642f8cb))
+* minor code cleanup ([3d26ebd](https://github.com/pixelbakery/pixelbakery-website/commits/3d26ebd6a30724c0c64956c2b63908720d128c81))
+* removed abandoned components ([47ff740](https://github.com/pixelbakery/pixelbakery-website/commits/47ff740fadcd042092995953277b7cd5d4834ec9))
+* removed unused code ([276e73c](https://github.com/pixelbakery/pixelbakery-website/commits/276e73c5473952dd9240ddd58fe95e8268d8b02c))
+* simplify imports and improve carousel reactivity ([a98c0d4](https://github.com/pixelbakery/pixelbakery-website/commits/a98c0d48faa3004b0b500111ff971f80312a74a7))
+* type def fixes ([3d62252](https://github.com/pixelbakery/pixelbakery-website/commits/3d6225274a625873abb46f02decfc7b407840972))
+* type def fixes and barrel file updates ([5566b6a](https://github.com/pixelbakery/pixelbakery-website/commits/5566b6a8131b0af05f831415eaec3781801b5518))
+* type def fixes for spotify ([b50da60](https://github.com/pixelbakery/pixelbakery-website/commits/b50da6085d2e55548d0df07f16961c29b0b56b0e))
+* type def safety ([5e6213a](https://github.com/pixelbakery/pixelbakery-website/commits/5e6213a7d08fdb72d03fe38907ca1b675e98fcb4))
+* type def updates for case studies, other minor tweaks ([454b506](https://github.com/pixelbakery/pixelbakery-website/commits/454b50664bda8fc07adb6bae41a86ec41f9eb156))
+* updated sitemap ([4cbf1a8](https://github.com/pixelbakery/pixelbakery-website/commits/4cbf1a8717c24b6eb505216a38a6752a1fe7cd30))
+
 ## [8.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.2.0...v8.3.0) (2025-01-08)
 
 
@@ -15,23 +57,10 @@ All notable changes to this project will be documented in this file. See [standa
 * brand new video capabilities ([b94aa58](https://github.com/pixelbakery/pixelbakery-website/commit/b94aa5824b29c8ff2152bc2eb44dece055fa35e8))
 * completely redesigned bio codebase. New types ([3165a15](https://github.com/pixelbakery/pixelbakery-website/commit/3165a152e7baf3c22f0efec365f88bde8df20a35))
 * new type files ([1614543](https://github.com/pixelbakery/pixelbakery-website/commit/1614543d2303a7d2484aee77ad6ea2a608043ae7))
->>>>>>> 86871d6b1816b321962df4e115a27c2ab9167f55
 
 
 ### Bug Fixes
 
-<<<<<<< HEAD
-* switched back to cdn for blog images ([dbc7e4d](https://github.com/pixelbakery/pixelbakery-website/commits/dbc7e4d6f4ec486f2f355c1ff2220475345e024f))
-
-
-### Chores
-
-* **release:** 8.4.0 ([8252a66](https://github.com/pixelbakery/pixelbakery-website/commits/8252a662d7d7aa41c5b971a9ff62f73f39971576))
-* removed cdn from several image locations ([eff82ee](https://github.com/pixelbakery/pixelbakery-website/commits/eff82ee0b1c938da6c0749424d64bfbfcafe48dc))
-* type defs and barrel file updates ([41b4114](https://github.com/pixelbakery/pixelbakery-website/commits/41b411413f65bb42e0a7dcf35a5ad83cc8ea9320))
-
-## [8.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.8.0...v8.4.0) (2025-01-08)
-=======
 * date formatter ([ac862e3](https://github.com/pixelbakery/pixelbakery-website/commit/ac862e3a44e5bdb8f628bc1b59e0ae4027cf1701))
 * date formatter 2 ([d6a6450](https://github.com/pixelbakery/pixelbakery-website/commit/d6a645066f5dfd213f48b956dea56e9b9d0bbf09))
 * date formatter 3 ([12804dd](https://github.com/pixelbakery/pixelbakery-website/commit/12804dd5d064f57ff9453cfb8f0c66675bf0a92b))
@@ -49,26 +78,15 @@ All notable changes to this project will be documented in this file. See [standa
 * brand new video capabilities ([b94aa58](https://github.com/pixelbakery/pixelbakery-website/commit/b94aa5824b29c8ff2152bc2eb44dece055fa35e8))
 * completely redesigned bio codebase. New types ([3165a15](https://github.com/pixelbakery/pixelbakery-website/commit/3165a152e7baf3c22f0efec365f88bde8df20a35))
 * new type files ([1614543](https://github.com/pixelbakery/pixelbakery-website/commit/1614543d2303a7d2484aee77ad6ea2a608043ae7))
->>>>>>> 86871d6b1816b321962df4e115a27c2ab9167f55
 
 
 ### Bug Fixes
 
-<<<<<<< HEAD
-* switched back to cdn for blog images ([dbc7e4d](https://github.com/pixelbakery/pixelbakery-website/commits/dbc7e4d6f4ec486f2f355c1ff2220475345e024f))
-
-
-### Chores
-
-* removed cdn from several image locations ([eff82ee](https://github.com/pixelbakery/pixelbakery-website/commits/eff82ee0b1c938da6c0749424d64bfbfcafe48dc))
-* type defs and barrel file updates ([41b4114](https://github.com/pixelbakery/pixelbakery-website/commits/41b411413f65bb42e0a7dcf35a5ad83cc8ea9320))
-=======
 * date formatter ([ac862e3](https://github.com/pixelbakery/pixelbakery-website/commit/ac862e3a44e5bdb8f628bc1b59e0ae4027cf1701))
 * date formatter 2 ([d6a6450](https://github.com/pixelbakery/pixelbakery-website/commit/d6a645066f5dfd213f48b956dea56e9b9d0bbf09))
 * date formatter 3 ([12804dd](https://github.com/pixelbakery/pixelbakery-website/commit/12804dd5d064f57ff9453cfb8f0c66675bf0a92b))
 * missing barrel file ([d9d09c2](https://github.com/pixelbakery/pixelbakery-website/commit/d9d09c21527f204c66c604f32c01bf7fead77328))
 * spelling error ([0f83bd3](https://github.com/pixelbakery/pixelbakery-website/commit/0f83bd379196e3e4d26c4ff10bed0aa903213605))
->>>>>>> 86871d6b1816b321962df4e115a27c2ab9167f55
 
 ## [8.8.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.7.0...v8.8.0) (2025-01-07)
 
