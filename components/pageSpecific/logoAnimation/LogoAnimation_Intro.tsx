@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
 
-import { InnerWrapper, PageSection } from '@parts'
+import { InnerWrapper, PageSection, Video } from '@parts'
 import { H2 } from '@typography'
 
 const LogoAnimation_Descriptions = () => {
