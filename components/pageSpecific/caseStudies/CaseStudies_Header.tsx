@@ -25,6 +25,11 @@ function CaseStudies_Header({
   if (poster) {
     videoPoster = `/img/work/${poster}.jpg`
   }
+  const preprocessHeroVideo = (heroVideo?: string) => {
+    if (!heroVideo) return ''
+    return /^\d+$/.test(heroVideo) ? `https://vimeo.com/${heroVideo}` : heroVideo
+  }
+  console.log('Prepended video: ', preprocessHeroVideo(heroVideo))
   return (
     <section
       className='relative px-6 pt-40 pb-12 my-4 lg:pb-24 md:px-8 pt-lg:pt-48 bg-cream'
@@ -60,7 +65,7 @@ function CaseStudies_Header({
       <div className='w-full mx-auto mt-20 2xl:px-24 max-w-8xl'>
         <div className='w-full aspect-w-16 aspect-h-9'>
           <Video
-            url={`https://vimeo.com/${heroVideo}`}
+            url={preprocessHeroVideo(heroVideo)}
             autoPlay={false}
             poster={videoPoster}
             posterAsPlaceholderOnly={true}
