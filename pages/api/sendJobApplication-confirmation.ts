@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import mail from '@sendgrid/mail'
 import { getTodaysDate } from '@lib/helpers'
 import busboy from 'busboy'
+import type { Readable } from 'node:stream'
 
 export const config = {
   api: {
@@ -113,7 +114,7 @@ function parseReq(req: NextApiRequest): Promise<ParsedRequest> {
     const files: Record<string, ParsedFile> = {}
 
     const bb = busboy({ headers: req.headers })
-    bb.on('file', (name: string, file: NodeJS.ReadableStream, info: any) => {
+    bb.on('file', (name: string, file: Readable, info: any) => {
       const { filename, encoding, mimeType } = info
       let fileData: Buffer | null = null
 
