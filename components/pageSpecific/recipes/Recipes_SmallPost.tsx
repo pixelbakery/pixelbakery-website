@@ -5,23 +5,13 @@ import { Pill } from '@parts'
 type Props = {
   title: string
   coverImage: string
-  date: string
   excerpt: string
   categories: Array<string>
   author: any
   href: string
   as: string
 }
-const Recipes_SmallPost = ({
-  title,
-  categories,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  as,
-  href,
-}: Props) => {
+const Recipes_SmallPost = ({ title, categories, coverImage, excerpt, author, as, href }: Props) => {
   return (
     <article className='pt-8 pb-4 my-2 border-t cursor-pointer border-wine-100 '>
       <div className='flex flex-row gap-4 md:gap-10'>

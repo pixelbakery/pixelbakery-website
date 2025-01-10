@@ -1,27 +1,30 @@
 // components/pageSpecific/recipes/Recipes_FeaturedPost.tsx
 import Link from 'next/link'
-import Pill from '@parts/Pill'
+import { Pill } from '@parts'
 import type { PostData } from '@/types/general'
 import Image from 'next/image'
 
+interface Recipes_FeaturedPost_Props extends PostData {
+  className?: string
+}
 const Recipes_FeaturedPost = ({
   title,
   coverImage,
-  date,
   categories,
   author,
   as,
   width,
   height,
   href,
+  className,
   onClick,
   ...props
-}: PostData) => {
+}: Recipes_FeaturedPost_Props) => {
   const aspectW = ' aspect-w-' + props.aspectW
   const aspectH = ' aspect-h-' + props.aspectY
 
   return (
-    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`}>
+    <Link hrefLang={'en-US'} as={`${as}`} href={`${href}`} className={className}>
       <article onClick={onClick}>
         <div
           className={

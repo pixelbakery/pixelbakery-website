@@ -2,7 +2,7 @@ import { BreadcrumbJsonLd, NextSeo, ArticleJsonLd } from 'next-seo'
 
 interface Author {
   name: string
-  slug: string
+  slug?: string
 }
 
 interface FrontMatter {
