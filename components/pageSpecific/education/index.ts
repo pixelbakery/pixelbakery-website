@@ -1,4 +1,3 @@
-export { default as Education_FromScratch } from './Education_FromScratch'
 export { default as Education_Header } from './Education_Header'
 export { default as Education_Header_Link } from './Education_Header_Link'
 export { default as Education_MadeToOrder } from './Education_MadeToOrder'

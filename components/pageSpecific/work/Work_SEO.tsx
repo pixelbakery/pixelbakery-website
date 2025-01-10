@@ -29,7 +29,6 @@ function Work_SEO({ allCaseStudies }: Props) {
       arr.push(temp)
     },
   )
-  // console.log(arr)
   return (
     <>
       <CollectionPageJsonLd name='Pixel Bakery Case Studies' hasPart={arr} />

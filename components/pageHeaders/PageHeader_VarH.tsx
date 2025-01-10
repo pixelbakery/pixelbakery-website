@@ -80,8 +80,9 @@ const themes: Theme[] = [
 ]
 
 export default function LottieBg({ header, subheader }: HeaderThemeProps) {
-  const [animationData, setAnimationData] = useState<object | null>(null)
   const [colorData, setColorData] = useState<Theme | null>(null)
+
+  const [animationData, setAnimationData] = useState<object | null>(null)
   const [segmentsEnabled] = useState<boolean>(true)
   const [loopCount, setLoopCount] = useState<number>(0)
   const [segments, setSegments] = useState<[number, number]>([0, 94])
@@ -91,6 +92,7 @@ export default function LottieBg({ header, subheader }: HeaderThemeProps) {
     return animations
   }, [])
 
+  // NOT SURE IF REMOVING WILL BREAK THE UNIVERSE
   const color = useMemo(() => {
     const colors = themes
     setColorData(colors[Math.floor(Math.random() * colors.length)])

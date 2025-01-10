@@ -1,15 +1,14 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { useState } from 'react'
-import { SendToMonday_ContactForm } from '@lib/api_sendToMonday'
-import { SendToMailchimp, SendEmail_Contact } from '@lib/helpers'
+import { useState, type Dispatch, type SetStateAction } from 'react'
+import { SendToMonday_ContactForm } from '@lib'
+import { SendEmail_Contact } from '@lib/helpers'
 import { usePlausible } from 'next-plausible'
 
 import {
   ContactForm_NotInterested,
   ContactForm_ThankYou,
-  ContactForm_Newsletter,
   ContactForm_TextInput,
   ContactForm_TextAreaInput,
   ContactForm_EmailInput,
@@ -19,7 +18,7 @@ import {
   ContactForm_Solicitation,
 } from '@utility/ContactForm_Parts'
 
-import type { FormInputs, FormProps } from '@types'
+import type { FormInputs, FormProps } from '@/types/general'
 
 // -----------------------------------------------------------------------------
 // Yup Schema
@@ -113,7 +112,6 @@ function Form({
         placeHolder='sup?'
         rows={5}
       />
-      <ContactForm_Newsletter register={register} />
       <ContactForm_Solicitation register={register} errors={errors} />
       <ContactForm_Submit valueText='Submit' disabled={hideForm} />
       <ContactForm_Errors className='col-span-2' errors={errors} />
@@ -172,8 +170,8 @@ function Contact_ContactForm_Form() {
 // -----------------------------------------------------------------------------
 function handleFormSubmit(
   data: FormInputs,
-  setHideForm: React.Dispatch<React.SetStateAction<boolean>>,
-  setSubmitted: React.Dispatch<React.SetStateAction<boolean>>,
+  setHideForm: Dispatch<SetStateAction<boolean>>,
+  setSubmitted: Dispatch<SetStateAction<boolean>>,
   plausible?: ReturnType<typeof usePlausible>, // if you want to track inside
 ) {
   SendToMonday_ContactForm(data)
@@ -183,7 +181,6 @@ function handleFormSubmit(
   // If soliciting is false => legit inquiry
   if (data.soliciting === 'false') {
     SendEmail_Contact(data)
-    SendToMailchimp(data, 'Contact Form')
     setSubmitted(true)
   } else {
     // They want to sell us something => hide form

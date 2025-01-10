@@ -1,9 +1,9 @@
 import { InnerWrapper, PageSection } from '@parts'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
 import Image from 'next/image'
 import { Shimmer } from '@lib'
 import useEmblaCarousel from 'embla-carousel-react'
-import { Fragment } from 'react'
+import { Fragment, type ReactElement } from 'react'
 
 // Remove the leading ./ and /public from the paths
 // Just start with /img/... as Next.js knows to look in the public directory
@@ -16,6 +16,10 @@ const SNACK_IMAGES = {
   social6: '/img/case-studies/snacklins/SNACK_Social_6.jpg',
 } as const
 
+interface CarouselProps {
+  slides: ReactElement[]
+}
+
 interface ImageSlideProps {
   slide: string
 }
@@ -26,8 +30,8 @@ interface VideoSlideProps {
   webm: string
 }
 
-const Carousel = ({ slides }: { slides: JSX.Element[] }) => {
-  const [viewportRef, embla] = useEmblaCarousel({
+const Carousel = ({ slides }: CarouselProps) => {
+  const [viewportRef] = useEmblaCarousel({
     align: 'start',
     loop: true,
     skipSnaps: true,

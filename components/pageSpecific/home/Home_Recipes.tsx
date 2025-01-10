@@ -1,8 +1,6 @@
 // components/pageSpecific/home/Home_Recipes.tsx
-
-import { Button_Filled } from '@parts'
-import RecipesFeaturedPost from '@recipes/Recipes_FeaturedPost'
-import { InnerWrapper, PageSection } from '@parts'
+import { Recipes_FeaturedPost } from '@recipes'
+import { InnerWrapper, PageSection, Button_Filled } from '@parts'
 import { H2 } from '@typography'
 import type { PostData } from '@/types/general'
 
@@ -24,7 +22,7 @@ const SecondaryPosts = ({ allPosts }: HomeRecipesProps) => (
         typeof post.data.author === 'string' ? post.data.author : post.data.author.name
 
       return (
-        <RecipesFeaturedPost
+        <Recipes_FeaturedPost
           as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
           href={`/recipes/[slug]`}
           key={post.filePath}

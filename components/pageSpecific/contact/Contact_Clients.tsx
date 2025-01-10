@@ -1,6 +1,5 @@
-import { InnerWrapper, PageSection } from '@parts'
+import { InnerWrapper, PageSection, Button_Filled } from '@parts'
 import { H2, Lead } from '@typography'
-import Button_Filled from '@parts/Button_Filled'
 
 function Contct_Clients() {
   return (

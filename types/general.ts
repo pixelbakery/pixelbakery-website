@@ -1,12 +1,12 @@
-// types/index.ts
+// types/general.ts
 //
 // This file merges previously defined props with existing interfaces for
 // the contact form and general data structures used throughout the app.
 //
 
 import type { ReactNode } from 'react'
-import type { Controller, FieldErrors, UseFormRegister, Control } from 'react-hook-form'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { FieldErrors, UseFormRegister, Control } from 'react-hook-form'
+import type { PostAuthor } from '@/types/people'
 // ────────────────────────────────────────────────────────────────────────────
 // SHARED / GENERIC TYPES
 // ────────────────────────────────────────────────────────────────────────────
@@ -19,21 +19,18 @@ export interface Data {
   date: string
 }
 
-export interface ProjectFile {
-  data: Data
-  filePath: string
+export interface ReadTime {
+  text: string // Human-readable read time, e.g., "5 min read"
+  minutes: number // Number of minutes as a decimal
+  time: number // Total time in milliseconds
+  words: number // Total word count
 }
 
-export interface MadeToOrder {
-  data: Data
-  filePath: string
+export interface PrevNextNavigation {
+  title: string
+  slug: string
+  author?: PostAuthor
 }
-
-export interface EducationPageProps {
-  allMadeToOrders: MadeToOrder[]
-  allProjectFiles: ProjectFile[]
-}
-
 // ────────────────────────────────────────────────────────────────────────────
 // SPOTIFY / PLAYLIST TYPES
 // ────────────────────────────────────────────────────────────────────────────
@@ -62,43 +59,6 @@ export type Playlist = {
     total: number // Total number of tracks
   }
   tracksSelected: Song[] // Selected tracks for the playlist
-}
-
-// ────────────────────────────────────────────────────────────────────────────
-// CASE STUDY TYPES
-// ────────────────────────────────────────────────────────────────────────────
-
-export interface Credit {
-  name: string // Name of the person
-  title: string // Title or role of the person
-  website?: string // Optional website link
-}
-
-export interface CaseStudiesCreditsProps {
-  credits: Credit[] // List of credits
-}
-
-export interface CaseStudyData {
-  date: string
-  active: boolean
-  credits: Credit[]
-  client: string
-  title: string
-  excerpt: string
-  tags: Record<string, string>
-  vimeoPreview: string
-  vimeoID: string
-}
-
-export interface CaseStudyProject {
-  filePath: string
-  data: CaseStudyData
-}
-
-export interface HomePortfolioCardProps {
-  bgColor: string
-  bgPosition: string
-  project: CaseStudyProject
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -164,26 +124,6 @@ export interface MenuComponentBaseProps {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// PEOPLE TYPES
-// ────────────────────────────────────────────────────────────────────────────
-export interface PersonData {
-  name: string
-  title: string
-  headshotSerious: string
-  headshotSmiling: string
-  bio?: string
-}
-
-// Define the structure of the `person` prop
-export interface Person {
-  data: PersonData
-  filePath: string
-}
-
-export interface AboutTeamHeadshotProps {
-  person: Person
-}
-// ────────────────────────────────────────────────────────────────────────────
 // CONTACT FORM TYPES
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -192,7 +132,6 @@ export interface FormInputs {
   name: string
   entity?: string
   multipleErrorInput?: string
-  newsletter?: boolean
   message: string
   soliciting: string | null
   subject: string
@@ -223,9 +162,9 @@ export interface ErrorsProps {
 }
 
 export interface PhoneInputProps {
-  register: UseFormRegister<FormInputs>
-  errors: FieldErrors<FormInputs>
-  fieldName?: keyof FormInputs
+  register: UseFormRegister<any>
+  errors: FieldErrors<any>
+  fieldName?: keyof any // Matches valid keys in FormInputs
   control?: Control<any>
   placeHolder?: string
   className?: string
@@ -239,11 +178,6 @@ export interface BaseFieldProps {
   className?: string
   autoComplete?: string
   rows?: number
-}
-
-// Newsletter checkbox props.
-export interface NewsletterProps {
-  register: UseFormRegister<any>
 }
 
 // Props for the submit button.
@@ -319,4 +253,3 @@ export interface SendMailAttachments {
   type: string
   disposition: string
 }
-

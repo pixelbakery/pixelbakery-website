@@ -1,6 +1,7 @@
 import { useEffect, SVGProps } from 'react'
 import cn from 'classnames'
 
+type Timeout = ReturnType<typeof setTimeout>
 // Define the type for component props
 type Props = {
   index: number
@@ -19,7 +20,7 @@ interface SVGRProps {
 
 // Debounce function to limit the rate at which a function can fire
 function debounce(fn: Function, ms: number) {
-  let timer: NodeJS.Timeout | null
+  let timer: Timeout | null
   return () => {
     if (timer) clearTimeout(timer)
     timer = setTimeout(() => {

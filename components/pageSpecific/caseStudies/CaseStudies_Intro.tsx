@@ -1,8 +1,13 @@
 import { InnerWrapper, PageSection } from '@parts'
 import cn from 'classnames'
-import H2 from '@typography/H2'
+import { H2 } from '@typography'
+import type { ReactNode } from 'react'
 
-export default function CaseStudiesIntro({ children, ...props }) {
+interface CaseStudiesIntro_Props {
+  children: ReactNode
+  title: string
+}
+export default function CaseStudiesIntro({ children, ...props }: CaseStudiesIntro_Props) {
   return (
     <PageSection className={cn('lg:py-12')} id={'intro'}>
       <InnerWrapper className={cn('flex justify-center')}>

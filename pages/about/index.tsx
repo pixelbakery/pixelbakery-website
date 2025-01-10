@@ -18,9 +18,7 @@ import {
 import type { ReactElement } from 'react'
 import Layout_Defaualt from 'components/layouts/Layout_Default'
 
-import type { Person, PersonWithFilePath, PersonWithBioLink } from '@/types/people'
-
-
+import type { Person, PersonWithFilePath } from '@/types/people'
 
 const Page_About = ({ allPeople }: { allPeople: PersonWithFilePath[] }) => {
   return (
@@ -35,7 +33,6 @@ const Page_About = ({ allPeople }: { allPeople: PersonWithFilePath[] }) => {
     </>
   )
 }
-
 
 export async function getStaticProps() {
   const allPeople: PersonWithFilePath[] = peopleFilePaths
@@ -59,8 +56,6 @@ export async function getStaticProps() {
         headshotSmiling: data.headshotSmiling || '',
         headshotFun: data.headshotFun || '',
       }
-
-
 
       return {
         ...personData, // Spread `Person` properties directly into the top level

@@ -7,9 +7,8 @@ import {
 } from '@parts/carousel/Carousel_Buttons'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import { Fragment, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Carousel_Slide from '@parts/carousel/Carousel_Slide'
-import { usePlausible } from 'next-plausible'
 
 type CarouselProps = {
   slides: Array<any>

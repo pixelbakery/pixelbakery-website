@@ -1,10 +1,10 @@
 import { Button_Filled, InnerWrapper, PageSection } from '@parts'
 import { H2AndLead } from '@typography'
 import Home_Portfolio_Card from './Home_Portfolio_Card'
-import type { CaseStudyProject } from '@/types/general'
+import type { CaseStudy } from '@/types/caseStudies'
 
 interface FeaturedProjects {
-  allCaseStudies: CaseStudyProject[]
+  allCaseStudies: CaseStudy[]
   bgPosition?: string
   bgColor?: string
 }

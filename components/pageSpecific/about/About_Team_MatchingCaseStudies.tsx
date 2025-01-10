@@ -1,6 +1,5 @@
 import { InnerWrapper, PageSection } from '@parts'
 import { H2, Lead } from '@typography'
-import { Fragment } from 'react'
 import { CaseStudies_OtherProjects_Card } from '@caseStudies'
 import { CaseStudy } from '@/types/caseStudies'
 
@@ -29,7 +28,15 @@ const About_Team_MatchingCaseStudies = ({
   // Render case study card
   const renderCaseStudyCard = (cs: CaseStudy, index: number) => (
     <div className='p-2 md:p-4 pb-6 bg-egg rounded-lg' key={index}>
-      <CaseStudies_OtherProjects_Card project={{ filePath: cs.filePath, data: cs.data }} />
+      <CaseStudies_OtherProjects_Card
+        project={{
+          filePath: cs.filePath,
+          data: {
+            ...cs.data,
+            vimeoPreview: cs.data.vimeoPreview || '', // Provide a default value
+          },
+        }}
+      />
     </div>
   )
 

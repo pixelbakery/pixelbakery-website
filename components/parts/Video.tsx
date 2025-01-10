@@ -145,12 +145,12 @@ export default function Video({
       }
       if (isLoading && pastDelay && placeholderPoster) {
         return (
-          <div className='relative w-full bg-black aspect-video'>
+          <div className='relative w-full bg-blue-darker aspect-video'>
             <Image
               src={placeholderPoster}
               alt={caption || 'video loading placeholder'}
               fill
-              className='object-cover'
+              className='object-cover w-full h-full'
             />
           </div>
         )
@@ -207,7 +207,7 @@ export default function Video({
           </div>
         </div>
       )}
-      <div className={cn('w-full aspect-video', className)}>
+      <div className={cn('w-full aspect-video aspect-16/9', className)}>
         <ReactPlayer
           url={useCDN ? `${process.env.NEXT_PUBLIC_IMG_PREFIX}${url}` : url}
           playing={autoPlay}
@@ -220,7 +220,7 @@ export default function Video({
           muted={muted}
           playsinline={playsInline}
           controls={controls}
-          className='w-full videoWrapper'
+          className='w-full h-full'
           onStart={handleStart}
           onPause={handlePause}
           onSeek={handleSeek}

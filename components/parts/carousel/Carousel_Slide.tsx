@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Shimmer from '@lib/Shimmer'
+import { Shimmer } from '@lib'
 interface Slide {
   src: string
   alt: string
