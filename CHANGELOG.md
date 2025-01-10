@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.0...v9.0.1) (2025-01-10)
+
+
+### Chores
+
+* removed unused imports for linting ([fa0567e](https://github.com/pixelbakery/pixelbakery-website/commits/fa0567e0f643759ee509e83d294eb9884732a694))
+
 ## [9.0.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.9.0...v9.0.0) (2025-01-10)
 
 
