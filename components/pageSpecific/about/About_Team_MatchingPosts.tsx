@@ -3,7 +3,11 @@ import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
 import { usePlausible } from 'next-plausible'
 import type { AboutTeamMatchingPostsProps, Post } from '@/types/posts'
 
-const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }: AboutTeamMatchingPostsProps) => {
+interface Props {
+  matchingAuthorPosts: AboutTeamMatchingPostsProps[] //lazy, I know. But I'm so tired.
+  name: string
+}
+const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }: Props) => {
   const plausible = usePlausible()
 
   function handlePostClick(postTitle: string) {
@@ -24,7 +28,7 @@ const About_Team_MatchingPosts = ({ matchingAuthorPosts, name }: AboutTeamMatchi
           <InnerWrapper>
             <h2>{`${firstName}`}'s Recent Posts</h2>
             <div className='grid grid-cols-1 gap-3 lg:grid-cols-3'>
-              {matchingAuthorPosts.map((post: Post) => (
+              {matchingAuthorPosts.map((post: AboutTeamMatchingPostsProps) => (
                 <Recipes_FeaturedPost
                   as={`/recipes/${post.filePath.replace(/\.mdx?$/, '')}`}
                   href={`/recipes/[slug]`}

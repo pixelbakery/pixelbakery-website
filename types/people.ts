@@ -5,7 +5,7 @@ export interface Person {
   name: string // Full name of the person
   active: boolean // Whether the person is currently active
   slug: string // URL slug for the person's profile
-  title?: string // Person's role or title
+  title: string // Person's role or title
   excerpt?: string // Brief description of the person
   phone?: string // Contact phone number
   email?: string // Contact email
@@ -52,17 +52,7 @@ export interface PersonWithFilePath extends Person {
   bioLink: string
 }
 export interface PersonWithBioLink extends Person {
-
   bioLink: string
-
-}
-/**
- * Represents a minimal version of a person used in navigation (e.g., next/previous person links).
- */
-export interface MinimalPerson {
-  name: string // Name of the person
-  bioLink: string // Link to the person's bio
-  title?: string // Title or role of the person
 }
 
 /**
@@ -70,6 +60,9 @@ export interface MinimalPerson {
  */
 export interface PostAuthor {
   name: string // Author's name
+  website?: string
+  url?: string
+  slug?: string
 }
 
 /**

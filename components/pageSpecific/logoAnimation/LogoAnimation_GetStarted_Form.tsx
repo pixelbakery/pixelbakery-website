@@ -5,11 +5,6 @@ import { SendToMonday_LogoAnimation } from '@lib'
 import { usePlausible } from 'next-plausible'
 
 export default function LogoAnimation_GetStarted_Form() {
-  const [checked, setChecked] = useState(true)
-  const handleCheck = () => {
-    setChecked(!checked)
-  }
-
   const plausible = usePlausible()
 
   const [submitted, setSubmitted] = useState(false)
@@ -25,37 +20,18 @@ export default function LogoAnimation_GetStarted_Form() {
   const onSubmit = ({ data }: any) => {
     SendToSendgrid(data)
     SendToMonday_LogoAnimation(data)
-    SendToMailchimp(data)
     plausible('Custom Event', { props: { source: 'logo-animation-submit' } })
-    // SendToMailchimp(data)
+
     resetField('email')
     resetField('phone')
     resetField('entity')
     resetField('name')
-    resetField('message ')
+    resetField('message')
     setSuccessMessage(
       "Thanks! Your request has been submitted. We'll be in touch shortly to follow up.",
     )
 
     setSubmitted(true)
-  }
-
-  ////////////
-  // MAILCHIMP
-  ////////////
-  async function SendToMailchimp({ data }: any) {
-    data.tag = 'Logo Animation Form'
-    if (checked) {
-      await fetch('/api/mailchimp', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-    } else {
-      return
-    }
   }
 
   ///////////
@@ -176,26 +152,6 @@ export default function LogoAnimation_GetStarted_Form() {
           className='px-8 py-3 text-lg font-bold rounded-md cursor-pointer bg-blue text-cream '
           type='submit'
         />
-        <div className='flex col-span-2 my-2'>
-          <input
-            className={
-              'rounded-lg bg-cream border-6 border-cream p-2 my-2 text-blue-dark cursor-pointer shadow-2xl drop-shadow-xl'
-            }
-            type='checkbox'
-            checked={checked}
-            onClick={handleCheck}
-            {...register('newsletter')}
-          />
-          <label
-            className={
-              'self-center cursor-pointer ml-3 text-wine font-medium font-md leading-none my-0 py-0'
-            }
-            htmlFor='check  '
-            onClick={handleCheck}
-          >
-            Also sign up for the newsletter that we always forget to send out
-          </label>
-        </div>
       </form>
 
       <div
