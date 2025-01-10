@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic'
-
 import { InnerWrapper, PageSection, Video } from '@parts'
 import { H2 } from '@typography'
 

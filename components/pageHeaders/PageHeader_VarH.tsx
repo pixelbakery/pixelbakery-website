@@ -93,6 +93,7 @@ export default function LottieBg({ header, subheader }: HeaderThemeProps) {
   }, [])
 
   // NOT SURE IF REMOVING WILL BREAK THE UNIVERSE
+  // eslint-disable-next-line no-unused-vars
   const color = useMemo(() => {
     const colors = themes
     setColorData(colors[Math.floor(Math.random() * colors.length)])

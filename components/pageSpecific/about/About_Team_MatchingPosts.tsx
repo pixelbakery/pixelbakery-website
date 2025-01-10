@@ -1,7 +1,7 @@
 import { InnerWrapper, PageSection, Button_Filled } from '@parts'
-import Recipes_FeaturedPost from '@recipes/Recipes_FeaturedPost'
+import { Recipes_FeaturedPost } from '@recipes'
 import { usePlausible } from 'next-plausible'
-import type { AboutTeamMatchingPostsProps, Post } from '@/types/posts'
+import type { AboutTeamMatchingPostsProps } from '@/types/posts'
 
 interface Props {
   matchingAuthorPosts: AboutTeamMatchingPostsProps[] //lazy, I know. But I'm so tired.

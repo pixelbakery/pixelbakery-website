@@ -27,11 +27,10 @@ import type { ReactElement } from 'react'
 import { Layout_Default } from '@layouts'
 
 import type { Credit } from '@types'
-import type { AboutTeamMatchingPostsProps, Post } from '@/types/posts'
+import type { Post } from '@/types/posts'
 import type { CaseStudy } from '@/types/caseStudies'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import type { PersonWithFilePath, Awards } from '@/types/people'
-import { PostAuthor } from '../../types/people'
 // -- Types ---------------------------------------------------------------------
 
 interface PersonWithBioLink extends PersonWithFilePath {
