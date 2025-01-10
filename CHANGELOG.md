@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.3.0...v8.4.0) (2025-01-10)
+
+
+### Features
+
+* add CaseStudies_Header with dynamic video and tag support ([6fcb4fb](https://github.com/pixelbakery/pixelbakery-website/commit/6fcb4fb40d86a22bb95ee770b13e070c64fb0726))
+* added awards section to employee bios ([4ddc961](https://github.com/pixelbakery/pixelbakery-website/commit/4ddc9616a8087d837c5f697e454c60198e7d1de0))
+* added slug fm var ([a16e205](https://github.com/pixelbakery/pixelbakery-website/commit/a16e2055f8924f73d99c50a169d8a95bf3e46bbf))
+* brand new video capabilities ([b94aa58](https://github.com/pixelbakery/pixelbakery-website/commit/b94aa5824b29c8ff2152bc2eb44dece055fa35e8))
+* centralized people type defs ([235ba14](https://github.com/pixelbakery/pixelbakery-website/commit/235ba14d90cd50868d893af572b916b8d7e0a8f7))
+* centralized project files type defs ([22d5151](https://github.com/pixelbakery/pixelbakery-website/commit/22d5151eb05bb451f3519841da1dfd62fd5eff18))
+* centralized tutorial prop types ([73f21ef](https://github.com/pixelbakery/pixelbakery-website/commit/73f21eff01953704f1267f7e83349f87c916e1b6))
+* completely redesigned bio codebase. New types ([3165a15](https://github.com/pixelbakery/pixelbakery-website/commit/3165a152e7baf3c22f0efec365f88bde8df20a35))
+* enhanced blog post static props logic ([b709213](https://github.com/pixelbakery/pixelbakery-website/commit/b709213102e4069895a0e54a2d61c68c595fd63d))
+* new type files ([1614543](https://github.com/pixelbakery/pixelbakery-website/commit/1614543d2303a7d2484aee77ad6ea2a608043ae7))
+
+
+### Bug Fixes
+
+* added missing author slugs ([780935b](https://github.com/pixelbakery/pixelbakery-website/commit/780935b7c84e2d86bd5ad4b899adea55345816c0))
+* added missing excerpt ([3846ef4](https://github.com/pixelbakery/pixelbakery-website/commit/3846ef41900447824709f4aa4f130463e4942091))
+* date formatter ([ac862e3](https://github.com/pixelbakery/pixelbakery-website/commit/ac862e3a44e5bdb8f628bc1b59e0ae4027cf1701))
+* date formatter 2 ([d6a6450](https://github.com/pixelbakery/pixelbakery-website/commit/d6a645066f5dfd213f48b956dea56e9b9d0bbf09))
+* date formatter 3 ([12804dd](https://github.com/pixelbakery/pixelbakery-website/commit/12804dd5d064f57ff9453cfb8f0c66675bf0a92b))
+* invalid file name ([ba9bbf8](https://github.com/pixelbakery/pixelbakery-website/commit/ba9bbf85b9fd6e7512802e59d5121508554ad801))
+* removed dynamic import for Video ([af072d2](https://github.com/pixelbakery/pixelbakery-website/commit/af072d27979be05a4e080362533fa4bf9ed18be3))
+* spelling error ([0f83bd3](https://github.com/pixelbakery/pixelbakery-website/commit/0f83bd379196e3e4d26c4ff10bed0aa903213605))
+* switched back to cdn for blog images ([dbc7e4d](https://github.com/pixelbakery/pixelbakery-website/commit/dbc7e4d6f4ec486f2f355c1ff2220475345e024f))
+
 ### [9.0.1](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.0...v9.0.1) (2025-01-10)
 
 
