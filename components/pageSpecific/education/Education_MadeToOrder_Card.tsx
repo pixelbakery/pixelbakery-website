@@ -2,17 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Pill } from '@parts'
 import cn from 'classnames'
-
-interface TutorialData {
-  coverImage: string
-  title: string
-  category: string
-}
-
-interface Tutorial {
-  filePath: string
-  data: TutorialData
-}
+import type { Tutorial } from '@/types/tutorials'
 
 interface Props {
   tutorial: Tutorial
@@ -29,25 +19,25 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }: Props) => {
       <>
         <div
           className={cn(
-            'bg-blue  cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98  ',
+            'bg-blue cursor-pointer rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-98',
             `aspect-w-${aspectW}`,
             `aspect-h-${aspectH}`,
           )}
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
+            src={`${tutorial.frontMatter.coverImage}`}
             placeholder='blur'
             width={300}
             height={400}
-            blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${tutorial.data.coverImage}`}
+            blurDataURL={`${tutorial.frontMatter.coverImage}`}
             quality={50}
             className='object-cover w-full h-full bg-blue'
-            alt={`cover photo for ${tutorial.data.title}`}
+            alt={`cover photo for ${tutorial.frontMatter.title}`}
           />
 
           <div className='mt-2 ml-2'>
             <Pill
-              text={tutorial.data.category.toString()}
+              text={tutorial.frontMatter.category}
               bgColor={'blue'}
               textColor={'cream'}
               size='xs'
@@ -57,7 +47,7 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }: Props) => {
         <div className='z-20 flex flex-col justify-between p-2 mt-2 cursor-pointer h-100'>
           <div className=''>
             <h3 className='font-semibold leading-none text-md md:text-xl text-wine line-clamp-3'>
-              {tutorial.data.title}
+              {tutorial.frontMatter.title}
             </h3>
           </div>
         </div>
@@ -65,4 +55,5 @@ const Education_MadeToOrder_Card = ({ tutorial, aspectW, aspectH }: Props) => {
     </Link>
   )
 }
+
 export default Education_MadeToOrder_Card

@@ -1,25 +1,24 @@
-import DateFormatter from '@lib/date-formatter'
-
 import Image from 'next/image'
-import Pill from '@parts/Pill'
+import { Pill } from '@parts'
 import cn from 'classnames'
 import Link from 'next/link'
-interface Props {
-  title: string
-  author: string
-  date?: string
-  category: string
-  readTime: any
-  authorUrl: string
-}
+import { TutorialFrontMatter } from '@/types/tutorials'
+import { ReadTime } from '@/types/general'
 
-const Education_PostHeader = ({ title, category, date, author, authorUrl, readTime }: Props) => {
-  // let profilePic
-  // if (person.slug && person.photos.headshotSmiling != typeof undefined) {
-  //   profilePic = person.photos.headshotSmiling
-  // } else {
-  //   profilePic = '/img/placeholder01.png'
-  // }
+interface EducationPostHeaderProps {
+  title: TutorialFrontMatter['title']
+  author: TutorialFrontMatter['author']['name']
+  category: TutorialFrontMatter['category']
+  readTime: ReadTime
+  authorUrl?: TutorialFrontMatter['author']['url']
+}
+const Education_PostHeader = ({
+  title,
+  category,
+  author,
+  authorUrl,
+  readTime,
+}: EducationPostHeaderProps) => {
   return (
     <header className='mt-44'>
       <section className='px-6 mx-auto md:max-w-3xl '>
@@ -28,7 +27,9 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
             <div className='mb-6'>
               <Pill text={category} bgColor={'blue'} textColor={'cream'} size={'md'} />
             </div>
-            <h1 className='mt-3 text-4xl text-blue-dark md:text-6xl'>{title}</h1>
+            <h1 className='font-geologica font-bold text-pretty mt-3 text-4xl text-blue-dark md:text-6xl'>
+              {title}
+            </h1>
           </div>
           <div className='relative flex mt-3 mb-16 gap-x-3'>
             <div className='relative w-12 h-12 overflow-hidden rounded-full animate-spin-slow'>
@@ -45,9 +46,10 @@ const Education_PostHeader = ({ title, category, date, author, authorUrl, readTi
             </div>
             <div className={cn(' flex flex-col justify-center self-center')}>
               <div className='text-sm text-wine'>
-                {/* <DateFormatter dateString={date} /> */}
-                {/* <span className='mx-2'>|</span> */}
-                <span>{readTime.minutes.toString()} min read</span>
+                <span>
+                  {readTime && readTime.minutes != null ? readTime.minutes.toString() : '0'} min
+                  read
+                </span>
               </div>
 
               <div className='text-sm text-wine'>

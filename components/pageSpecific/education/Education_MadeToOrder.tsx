@@ -1,17 +1,7 @@
 import { InnerWrapper, PageSection } from '@parts'
 import { H2, Lead } from '@typography'
-import Education_MadeToOrder_Card from '@education/Education_MadeToOrder_Card'
-
-interface TutorialData {
-  coverImage: string
-  title: string
-  category: string
-}
-
-interface Tutorial {
-  filePath: string
-  data: TutorialData
-}
+import { Education_MadeToOrder_Card } from '@education'
+import type { Tutorial } from '@/types/tutorials'
 
 interface Props {
   allMadeToOrders: Tutorial[]
@@ -19,16 +9,16 @@ interface Props {
 
 function Education_MadeToOrder({ allMadeToOrders }: Props) {
   return (
-    <PageSection className='bg-white' id='madeToOrder'>
+    <PageSection className="bg-white" id="madeToOrder">
       <InnerWrapper>
-        <H2 id={'made-to-order'} color='blue'>
+        <H2 id={'made-to-order'} color="blue">
           Made To Order
         </H2>
 
-        <Lead className='max-w-md my-6 text-xl leading-none text-blue-dark'>
+        <Lead className="max-w-md my-6 text-xl leading-none text-blue-dark">
           One-off tutorials on specific somethings.
         </Lead>
-        <div className='grid grid-cols-2 gap-4 my-16 sm:grid-cols-4 md:gap-y-20 md:gap-5'>
+        <div className="grid grid-cols-2 gap-4 my-16 sm:grid-cols-4 md:gap-y-20 md:gap-5">
           {allMadeToOrders.map((tutorial, index) => {
             return (
               <Education_MadeToOrder_Card

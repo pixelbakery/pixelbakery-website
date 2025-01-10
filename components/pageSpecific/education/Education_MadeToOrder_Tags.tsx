@@ -1,8 +1,9 @@
-import Button_Filled from '@parts/Button_Filled'
-import { InnerWrapper, PageSection } from '@parts'
-import Pill from '@parts/Pill'
+import { InnerWrapper, PageSection, Button_Filled, Pill } from '@parts'
 
-function Education_MadeToOrder_Tags({ tags }) {
+interface Props {
+  tags: string[]
+}
+function Education_MadeToOrder_Tags({ tags }: Props) {
   return (
     <PageSection id={'tutorials-tags'} disableSpacing className='mb-32'>
       <InnerWrapper disableSpacing>

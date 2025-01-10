@@ -1,26 +1,28 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
-import markdownStyles from '@styles/markdown-styles.module.css'
-import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+
 import { madeToOrderFilePaths, MADETOORDER_PATH } from '@lib/mdxUtils'
-import readingTime from '@lib/readingTime'
-
-import Video from '@parts/Video'
-
-import { PageSection } from '@parts/index'
+import markdownStyles from '@styles/markdown-styles.module.css'
+import { readingTime } from '@lib'
+import { Layout_Default } from '@layouts'
 import {
   Education_PostHeader,
-  // Education_MadeToOrder_GetPrevNextPost,
   Education_SupportUs,
   Education_MadeToOrder_SEO,
   Education_MadeToOrder_Tags,
-} from '@education/index'
-import Recipes_Post_GetPrevNextPost from '@recipes/Recipes_Post_GetPrevNextPost'
+} from '@education'
+import { Recipes_Post_GetPrevNextPost } from '@recipes'
+import { PageSection, Video } from '@parts'
+
+import type { GetStaticPropsContext } from 'next'
+import type { ReactElement } from 'react'
+import type { TutorialPageProps, Tutorial, TutorialFrontMatter } from '@/types/tutorials'
+import type { ReadTime } from '@/types/general'
+
 const components = {
   Video: Video,
 }
@@ -30,13 +32,9 @@ function Page_Education_Tutorials({
   source,
   frontMatter,
   readTime,
-  nextAuthor,
-  nextFilePath,
-  nextTitle,
-  prevAuthor,
-  prevFilePath,
-  prevTitle,
-}) {
+  prev,
+  next,
+}: TutorialPageProps) {
   const datePostedISO = new Date(frontMatter.date).toISOString()
 
   return (
@@ -44,17 +42,15 @@ function Page_Education_Tutorials({
       <Education_PostHeader
         title={frontMatter.title}
         category={`${frontMatter.category} Tutorial`}
-        date={frontMatter.date}
         author={frontMatter.author.name}
         authorUrl={frontMatter.author.url}
         readTime={readTime}
       />
-
       <div className='max-w-6xl mx-auto'>
         <div className='w-full mx-auto aspect-w-16 aspect-h-9 bg-peach'>
           <Video
             url={frontMatter.video}
-            poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+            poster={`${frontMatter.coverImage}`}
             controls={true}
             enableTracking={true}
             eventName='Tutorial Video Plays'
@@ -71,12 +67,8 @@ function Page_Education_Tutorials({
       </PageSection>
       <Education_MadeToOrder_Tags tags={frontMatter.tags} />
       <Recipes_Post_GetPrevNextPost
-        prevTitle={prevTitle}
-        prevFilePath={prevFilePath}
-        prevAuthor={prevAuthor}
-        nextTitle={nextTitle}
-        nextFilePath={nextFilePath}
-        nextAuthor={nextAuthor}
+        prev={prev || null}
+        next={next || null}
         as={'education/tutorials'}
       />
       <Education_SupportUs />
@@ -88,87 +80,99 @@ function Page_Education_Tutorials({
     </>
   )
 }
-//Set page layout
+
+// Set page layout
 Page_Education_Tutorials.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
+  return <Layout_Default>{page}</Layout_Default>
 }
+
 export default Page_Education_Tutorials
-export const getStaticProps = async ({ params }) => {
-  //MDX Stuff
-  const tutorialFilePath = path.join(MADETOORDER_PATH, `${params.slug}.mdx`.toString())
+
+export const getStaticProps = async ({
+  params,
+}: GetStaticPropsContext<{ slug: string }>): Promise<{ props: TutorialPageProps }> => {
+  if (!params || !params.slug) {
+    throw new Error('Slug is missing in params')
+  }
+
+  const tutorialFilePath = path.join(MADETOORDER_PATH, `${params.slug}.mdx`)
   const source = fs.readFileSync(tutorialFilePath)
   const { content, data } = matter(source)
+
+  // Ensure `date` is converted to a string
+  const frontMatter = {
+    ...data,
+    date: data.date ? new Date(data.date).toISOString() : null, // Normalize date to ISO string
+  } as TutorialFrontMatter
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [],
-      development: process.env.NODE_ENV === 'development',
     },
-    scope: data,
+    scope: frontMatter, // Ensure scope contains JSON-serializable data
   })
-  const time = readingTime(content)
-  const allTutorials = madeToOrderFilePaths
+
+  const readingTimeResult = readingTime(content)
+  const readTime: ReadTime = {
+    text: readingTimeResult.text,
+    minutes: readingTimeResult.minutes,
+    time: readingTimeResult.time,
+    words:
+      typeof readingTimeResult.words === 'number'
+        ? readingTimeResult.words
+        : readingTimeResult.words.total,
+  }
+
+  // Fetch and process all tutorials
+  const allTutorials: Tutorial[] = madeToOrderFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(MADETOORDER_PATH, filePath))
       const { data } = matter(source)
-      data.date = JSON.parse(JSON.stringify(data.date))
-
-      return { filePath, data }
-    })
-    .filter((cs) => cs.data.active === true)
-    .sort((cs1, cs2) => (cs1.data.date < cs2.data.date ? -1 : 1))
-
-  let thisIndex,
-    prevIndex,
-    nextIndex = null
-
-  if (data.active != false) {
-    allTutorials.map((p, index) => {
-      if (p.data.title === data.title) {
-        thisIndex = index
+      return {
+        filePath,
+        frontMatter: {
+          ...data,
+          date: data.date ? new Date(data.date).toISOString() : null, // Normalize date to ISO string
+        } as Tutorial['frontMatter'],
       }
     })
+    .filter((tut) => tut.frontMatter.active)
+    .sort((a, b) => new Date(a.frontMatter.date).getTime() - new Date(b.frontMatter.date).getTime())
 
-    if (thisIndex != undefined && thisIndex === 0)
-      prevIndex = allTutorials[Object.keys(allTutorials).length - 1]
-    else prevIndex = allTutorials[thisIndex - 1]
+  // Get current, previous, and next tutorials
+  const currentIndex = allTutorials.findIndex((t) => t.frontMatter.slug === params.slug)
+  const prevTutorial = allTutorials[currentIndex - 1]
+  const nextTutorial = allTutorials[currentIndex + 1]
 
-    if (thisIndex != undefined && thisIndex === Object.keys(allTutorials).length - 1)
-      nextIndex = allTutorials[0]
-    else nextIndex = allTutorials[thisIndex + 1]
-  } else (thisIndex = null), (nextIndex = null), (prevIndex = null)
-
-  const nextAuthor = nextIndex.data.author.name
-  const nextFilePath = nextIndex.filePath
-  const nextTitle = nextIndex.data.title
-
-  const prevAuthor = prevIndex.data.author.name
-  const prevFilePath = prevIndex.filePath
-  const prevTitle = prevIndex.data.title
-
-  //End of prev/next search
-
-  data.date = JSON.parse(JSON.stringify(data.date))
   return {
     props: {
-      nextAuthor: nextAuthor,
-      nextFilePath: nextFilePath,
-      readTime: time,
-      nextTitle: nextTitle,
-      prevAuthor: prevAuthor,
-      prevFilePath: prevFilePath,
-      prevTitle: prevTitle,
       slug: params.slug,
       source: mdxSource,
-      frontMatter: data,
+      frontMatter,
+      readTime,
+      prev:
+        prevTutorial && prevTutorial.frontMatter.slug
+          ? {
+              title: prevTutorial.frontMatter.title,
+              slug: prevTutorial.frontMatter.slug,
+              author: prevTutorial.frontMatter.author,
+            }
+          : null,
+      next:
+        nextTutorial && nextTutorial.frontMatter.slug
+          ? {
+              title: nextTutorial.frontMatter.title,
+              slug: nextTutorial.frontMatter.slug,
+              author: nextTutorial.frontMatter.author,
+            }
+          : null,
     },
   }
 }
-
 export const getStaticPaths = async () => {
-  const paths = madeToOrderFilePaths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    .map((slug) => ({ params: { slug } }))
+  const paths = madeToOrderFilePaths.map((filePath) => ({
+    params: { slug: filePath.replace(/\.mdx?$/, '') },
+  }))
 
   return {
     paths,
