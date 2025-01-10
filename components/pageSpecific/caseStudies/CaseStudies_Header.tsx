@@ -2,7 +2,7 @@ import { H1 } from '@typography'
 import { Pill } from '@parts'
 import Link from 'next/link'
 import { Video } from '@parts'
-import {CaseStudyData} from '@/types/caseStudies'
+import { CaseStudyData } from '@/types/caseStudies'
 
 interface CaseStudiesHeaderProps {
   client: CaseStudyData['client']
@@ -12,7 +12,6 @@ interface CaseStudiesHeaderProps {
   heroVideo?: CaseStudyData['vimeoID']
   poster?: string
 }
-
 
 function CaseStudies_Header({
   client,
@@ -63,7 +62,7 @@ function CaseStudies_Header({
           <Video
             url={`https://vimeo.com/${heroVideo}`}
             autoPlay={false}
-            poster={poster}
+            poster={videoPoster}
             posterAsPlaceholderOnly={true}
             enableTracking={true}
             eventName='Case Studies Video Plays'
