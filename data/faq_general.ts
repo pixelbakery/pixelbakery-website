@@ -27,8 +27,7 @@ export default [
   },
   {
     questionName: 'Do you do job shadows?',
-    acceptedAnswerText:
-      "Yes, but we're quite particular. Check out more info on our <a hrefLang={'en-US'} class='text-peach underline' href='careers/job-shadow'>job shadows</a> page.",
+    acceptedAnswerText: 'Sorry, not. Not at this time.',
   },
   {
     questionName: 'How long does it take to make an animation?',
