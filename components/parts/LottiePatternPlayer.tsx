@@ -6,57 +6,6 @@ import dynamic from 'next/dynamic'
 const LottieLight = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), {
   ssr: false,
 })
-interface Theme {
-  objectColor: string
-  backgroundColor: string
-  textboxColor: string
-  headerColor: string
-  subheaderColor: string
-}
-const themes: Theme[] = [
-  {
-    objectColor: 'blue',
-    backgroundColor: 'blue-dark',
-    textboxColor: 'blue',
-    headerColor: 'blue-dark',
-    subheaderColor: 'blue',
-  },
-  {
-    objectColor: 'blue-dark',
-    backgroundColor: 'blue',
-    textboxColor: 'blue-dark',
-    headerColor: 'blue',
-    subheaderColor: 'blue-dark',
-  },
-  {
-    objectColor: 'cream',
-    backgroundColor: 'peach',
-    textboxColor: 'cream',
-    headerColor: 'peach',
-    subheaderColor: 'blue-dark',
-  },
-  {
-    objectColor: 'pink',
-    backgroundColor: 'pink-lighter',
-    textboxColor: 'pink',
-    headerColor: 'pink-lighter',
-    subheaderColor: 'pink-lighter',
-  },
-  {
-    objectColor: 'pink-lighter',
-    backgroundColor: 'pink',
-    textboxColor: 'pink-lighter',
-    headerColor: 'pink',
-    subheaderColor: 'blue-dark',
-  },
-  {
-    objectColor: 'peach',
-    backgroundColor: 'egg',
-    textboxColor: 'peach',
-    headerColor: 'egg',
-    subheaderColor: 'egg',
-  },
-]
 
 function AnimationFile() {
   const [animationData, setAnimationData] = useState<object>()
