@@ -1,108 +1,89 @@
 import fs from 'fs'
-import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
+import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
 import remarkGfm from 'remark-gfm'
-import markdownStyles from '@styles/markdown-styles.module.css'
-import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
-import type { ReactElement } from 'react'
-import Layout_Defaualt from 'components/layouts/Layout_Default'
-const Video = dynamic(() => import('@parts/Video'), { ssr: false })
-import Button_Filled from '@parts/Button_Filled'
+import { MDXRemote } from 'next-mdx-remote'
 
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { projectFilesFilePaths, PROJECTFILE_PATH } from '@lib/mdxUtils'
+
+import { H1 } from '@typography'
+import { Education_SupportUs } from '@education'
+import { Layout_Default } from '@layouts'
+import { Button_Filled, Video } from '@parts'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 
-import H1 from '@typography/H1'
-import Link from 'next/link'
-import Image from 'next/image'
-import Education_SupportUs from '@education/Education_SupportUs'
-import dynamic from 'next/dynamic'
-import DateFormatter from '@lib/dateFormatter'
+import type { ProjectFileFrontMatter, ProjectFilePageProps } from '@/types/projectFiles'
+import type { ReactElement } from 'react'
+import { GetStaticPropsContext } from 'next/types'
 
-const components = {
-  Video: Video,
-}
+const components = { Video }
 
-const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
+const Page_Education_ProjectFiles = ({ slug, source, frontMatter }: ProjectFilePageProps) => {
   return (
     <>
       <NextSeo
         title={`${frontMatter.title} | Project Files`}
-        description={`${frontMatter.excerpt}`}
+        description={frontMatter.excerpt}
         canonical={`https://pixelbakery.com/education/project-files/${slug}`}
         openGraph={{
           url: `https://pixelbakery.com/education/project-files/${slug}`,
           title: `${frontMatter.title} | Project Files`,
-          description: `${frontMatter.excerpt}`,
+          description: frontMatter.excerpt,
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`,
-              alt: `${frontMatter.excerpt}`,
+              alt: frontMatter.excerpt,
             },
           ],
         }}
       />
       <BreadcrumbJsonLd
         itemListElements={[
-          {
-            position: 1,
-            name: 'Education',
-            item: 'https://pixelbakery.com/education',
-          },
-
+          { position: 1, name: 'Education', item: 'https://pixelbakery.com/education' },
           {
             position: 2,
-            name: `${frontMatter.title}`,
+            name: frontMatter.title,
             item: `https://pixelbakery.com/education/project-files/${slug}`,
           },
         ]}
       />
-      <section className='grid grid-cols-1 pt-32 my-4 lg:pt-0 lander-education lg:grid-cols-2 '>
+      <section className='grid grid-cols-1 pt-32 my-4 lg:pt-0 lander-education lg:grid-cols-2'>
         {frontMatter.videoCoverImage ? (
           <div className='relative col-span-1 max-h-[75vh] lg:max-h-full lg:h-full w-full'>
             <div className='relative w-full h-full lg:absolute'>
               <video
-                autoPlay={true}
+                autoPlay
                 playsInline
                 muted
-                controls={false}
                 loop
-                poster={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+                poster={`$${frontMatter.coverImage}`}
                 className='object-cover w-full h-full hideControls'
               >
                 <source
                   src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.video}`}
-                  type={'video/mp4'}
+                  type='video/mp4'
                 />
               </video>
             </div>
           </div>
         ) : (
-          <div>
-            <div className='relative w-full h-full col-span-1  lg:hidden'>
+          frontMatter.coverImage && (
+            <div>
               <Image
                 placeholder='blur'
-                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+                blurDataURL={`${frontMatter.coverImage}`}
                 quality={90}
-                fill={true}
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
+                fill
+                src={`${frontMatter.coverImage}`}
                 className='absolute object-cover object-center w-full h-full'
-                alt='polaroid 3D model made in cinema 4d'
+                alt={frontMatter.title}
               />
             </div>
-            <div className='relative hidden w-full h-full col-span-1 lg:block '>
-              <Image
-                placeholder='blur'
-                blurDataURL={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                quality={90}
-                fill={true}
-                src={`${process.env.NEXT_PUBLIC_IMG_PREFIX}${frontMatter.coverImage}`}
-                className='absolute object-cover object-center w-full h-full'
-                alt={`${frontMatter.title} project file made in ${frontMatter.category}`}
-              />
-            </div>
-          </div>
+          )
         )}
 
         <div className='relative flex flex-col justify-center w-full h-full col-span-1 px-12 md:overflow-hidden'>
@@ -111,7 +92,6 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
               <div className='pb-0 mb-0 text-2xl font-bold lowercase text-peach xl:text-3xl'>
                 Project File
               </div>
-
               <H1
                 color='blue-dark'
                 className='text-6xl md:text-4xl sm:text-xl lg:text-xl xl:text-6xl md:my-0'
@@ -119,37 +99,43 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
                 {frontMatter.title}
               </H1>
             </div>
-
             <div>
               <ul className='text-sm text-opacity-50 list-none text-wine xl:my-10'>
                 <li>Application: {frontMatter.category}</li>
                 <li>File Name: {frontMatter.fileName}</li>
                 <li>File Size: {frontMatter.fileSize}</li>
                 <li>File Type: {frontMatter.fileType}</li>
-                <li>
-                  Upload Date: <DateFormatter dateString={frontMatter.uploadDate} />
-                </li>
+
+                {frontMatter.date && (
+                  <li>
+                    Upload Date: <time dateTime={frontMatter.date}>{frontMatter.date}</time>{' '}
+                  </li>
+                )}
               </ul>
-              <div className={markdownStyles['markdown']}>
+              <div>
                 <MDXRemote {...source} components={components} />
               </div>
-              <div className='mt-8'>
-                <Button_Filled
-                  center={false}
-                  text='download'
-                  chevronDirection='download'
-                  link={`${frontMatter.downloadLink}`}
-                  bgColor='blue'
-                  textColor='cream'
-                />
-              </div>
-
+              {frontMatter.downloadLink && (
+                <div className='mt-8'>
+                  <Button_Filled
+                    center={false}
+                    text='download'
+                    chevronDirection='download'
+                    link={frontMatter.downloadLink}
+                    bgColor='blue'
+                    textColor='cream'
+                    plausibleEventName={'Project File Download'}
+                    plausibleEventProps={{
+                      file: frontMatter.title,
+                    }}
+                  />
+                </div>
+              )}
               <Link
-                hrefLang={'en-US'}
-                href={'/education#projectFiles'}
-                className='inline-block px-1 pb-1 border-b  text-blue border-blue'
+                href='/education#projectFiles'
+                className='inline-block px-1 pb-1 border-b text-blue border-blue'
               >
-                <span> ← all project files</span>
+                <span>← all project files</span>
               </Link>
             </div>
           </div>
@@ -160,48 +146,66 @@ const Page_Education_ProjectFiles = ({ slug, source, frontMatter }) => {
   )
 }
 
-//Set page layout
-Page_Education_ProjectFiles.getLayout = function getLayout(page: ReactElement) {
-  return <Layout_Defaualt>{page}</Layout_Defaualt>
-}
-export default Page_Education_ProjectFiles
+// Ensure all other fields are JSON-serializable
+//   const jsonSerializableData = JSON.parse(JSON.stringify(normalizedData))
 
-export const getStaticProps = async ({ params }) => {
-  //MDX Stuff
-  const temp = path.join(PROJECTFILE_PATH, `${params.slug}.mdx`.toString())
-  const source = fs.readFileSync(temp)
+//   return {
+//     source: await serialize(content, {
+//       mdxOptions: { remarkPlugins: [remarkGfm] },
+//       scope: jsonSerializableData, // Pass the serialized data
+//     }),
+//     frontMatter: jsonSerializableData,
+//   }
+// }
+
+export const getStaticProps = async ({
+  params,
+}: GetStaticPropsContext<{ slug: string }>): Promise<{ props: ProjectFilePageProps }> => {
+  if (!params || !params.slug) {
+    throw new Error('Slug is missing in params')
+  }
+
+  const projectFilePath = path.join(PROJECTFILE_PATH, `${params.slug}.mdx`)
+
+  const source = fs.readFileSync(projectFilePath, 'utf-8')
   const { content, data } = matter(source)
 
-  //Back to MDX Stuff
+  if (!Object.keys(data).length) {
+    throw new Error(`FrontMatter is empty for slug: ${params.slug}`)
+  }
+
+  // Normalize the `frontMatter` to ensure all fields are JSON-serializable
+  const frontMatter = {
+    ...data,
+    date: data.date ? new Date(data.date).toISOString() : null, // Convert `date` to string or set to null
+  } as ProjectFileFrontMatter
+
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [],
-      development: process.env.NODE_ENV === 'development',
     },
-    scope: data,
+    scope: frontMatter, // Ensure scope contains JSON-serializable data
   })
-  data.date = JSON.parse(JSON.stringify(data.date))
+
   return {
     props: {
-      source: mdxSource,
-      frontMatter: data,
       slug: params.slug,
+      source: mdxSource,
+      frontMatter,
     },
   }
 }
 
 export const getStaticPaths = async () => {
-  const paths = projectFilesFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-
-    // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }))
-
-  return {
-    paths,
-    fallback: false,
-  }
+  const paths = projectFilesFilePaths.map((filePath) => ({
+    params: { slug: filePath.replace(/\.mdx?$/, '') },
+  }))
+  return { paths, fallback: false }
 }
+
+// Set page layout
+Page_Education_ProjectFiles.getLayout = (page: ReactElement) => (
+  <Layout_Default>{page}</Layout_Default>
+)
+
+export default Page_Education_ProjectFiles
