@@ -1,6 +1,6 @@
-import PageSection from '@parts/PageSection'
-import H2 from '@typography/H2'
-import InnerWrapper from '@parts/InnerWrapper'
+import { PageSection, InnerWrapper } from '@parts'
+import { H2 } from '@typography'
+
 import dynamic from 'next/dynamic'
 import cn from 'classnames'
 import { PrevButton, NextButton, SlideProgression } from '@parts/carousel/Carousel_Buttons'
@@ -23,59 +23,9 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 const ImgPrefix = process.env.NEXT_PUBLIC_IMG_PREFIX
 
-// Do not put video file extension in the path. Must have TWO versions: an mp4 .h264 and a webm .v8
-const slides = [
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ComeOnBrain',
-    title: 'Come On, Brain',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_DontBeRediculous',
-    title: `Don't Be Rediculous`,
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_EatYourVegetables',
-    title: 'Eat Your Vegetables',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HappySad',
-    title: 'Happy Sad',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HelloYou',
-    title: 'Hello, You',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HotGirlShit',
-    title: 'Hot Girl Shit',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HowBizarre',
-    title: 'How Bizarre',
-  },
-  { videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ItWasMe', title: 'It Was Me' },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NobleQuest',
-    title: 'Noble Quest',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NotIntoShortGuys',
-    title: 'Not Into Short Guys',
-  },
-  { videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Obsessed', title: 'Obsessed' },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_PeopleCanDoHardThings',
-    title: 'People Can Do Hard Things',
-  },
-  {
-    videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Relationships',
-    title: 'People Can Do Hard Things',
-  },
-]
-
 const NewCarousel = ({ slides, className }: CarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const [scrollSnaps, setScrollSnaps] = useState([])
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
   const [emblaRef, embla] = useEmblaCarousel({ loop: false })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
@@ -93,10 +43,10 @@ const NewCarousel = ({ slides, className }: CarouselProps) => {
   }, [embla, setSelectedIndex])
 
   useEffect(() => {
-    if (!embla) return
-    onSelect()
-    setScrollSnaps(embla.scrollSnapList())
-    embla.on('select', onSelect)
+    if (embla) {
+      setScrollSnaps(embla.scrollSnapList())
+      embla.on('select', onSelect)
+    }
   }, [embla, setScrollSnaps, onSelect])
 
   return (
@@ -110,7 +60,7 @@ const NewCarousel = ({ slides, className }: CarouselProps) => {
         )}
         ref={emblaRef}
       >
-        <div className='flex w-full aspect-h-9/16 relative'>
+        <div className='relative flex w-full aspect-h-9/16'>
           {slides.map((slide, i) => {
             return (
               <Fragment key={i}>
@@ -120,7 +70,7 @@ const NewCarousel = ({ slides, className }: CarouselProps) => {
           })}
         </div>
       </div>
-      <div className='flex justify-between mb-8 mt-6'>
+      <div className='flex justify-between mt-6 mb-8'>
         <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} navColor={'cream'} />
 
         <SlideProgression current={selectedIndex} total={scrollSnaps.length} navColor={'cream'} />
@@ -132,25 +82,13 @@ const NewCarousel = ({ slides, className }: CarouselProps) => {
 }
 
 // SLIDE COMPONENT
-const SetSlide = ({ slide }) => {
+const SetSlide = ({ slide }: any) => {
   return (
     <div className=' cursor-grab -mt-2 ml-1 mr-2   grow-0 shrink-0  w-[86%] sm:w-[45%] lg:w-[30%] aspect-9/16'>
-      {/* <ReactPlayer
-        url={[`${ImgPrefix}${slide.videoPath}.webm`, `${ImgPrefix}${slide.videoPath}.mp4`]}
-        src={`${ImgPrefix}${slide.videoPath}.mp4`}
-        poster={`${ImgPrefix}${slide.videoPath}.jpg`}
-        playsInline={true}
-        className={' rounded-lg  cursor-pointer'}
-        controls
-        width={'100%'}
-        height={'100%'}
-        attributes={[{ poster: `${ImgPrefix}${slide.videoPath}.jpg` }]}
-      /> */}
       <ReactPlayer
         url={`${ImgPrefix}${slide.videoPath}.mp4`}
         width='100%'
         poster={`${ImgPrefix}${slide.videoPath}.jpg`}
-        // light={`${ImgPrefix}${slide.videoPath}.jpg`}
         height={'100%'}
         controls={true}
         muted={false}
@@ -162,6 +100,61 @@ const SetSlide = ({ slide }) => {
 }
 
 const CaseStudies_TikTok = () => {
+  const slides = [
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ComeOnBrain',
+      title: 'Come On, Brain',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_DontBeRediculous',
+      title: `Don't Be Rediculous`,
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_EatYourVegetables',
+      title: 'Eat Your Vegetables',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HappySad',
+      title: 'Happy Sad',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HelloYou',
+      title: 'Hello, You',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HotGirlShit',
+      title: 'Hot Girl Shit',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_HowBizarre',
+      title: 'How Bizarre',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_ItWasMe',
+      title: 'It Was Me',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NobleQuest',
+      title: 'Noble Quest',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_NotIntoShortGuys',
+      title: 'Not Into Short Guys',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Obsessed',
+      title: 'Obsessed',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_PeopleCanDoHardThings',
+      title: 'People Can Do Hard Things',
+    },
+    {
+      videoPath: '/img/case-studies/snacklins/tiktoks/SNACKLINS_TikTok_Relationships',
+      title: 'People Can Do Hard Things',
+    },
+  ]
+
   return (
     <PageSection color='wine border-t-32 border-b-32 border-pink' id={'tiktok'}>
       <InnerWrapper>
