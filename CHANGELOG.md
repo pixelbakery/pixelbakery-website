@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v9.1.0...v9.0.2) (2025-01-10)
+
+
+### Bug Fixes
+
+* nvm I need react dom ([d04bd0b](https://github.com/pixelbakery/pixelbakery-website/commits/d04bd0bb27e1c34c27e717c82af2ef0066514daf))
+
 ## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.1...v9.1.0) (2025-01-10)
 
 
