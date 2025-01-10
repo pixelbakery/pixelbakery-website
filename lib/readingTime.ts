@@ -7,129 +7,104 @@
 type Options = {
   wordBound?: (char: string) => boolean
   wordsPerMinute?: number
-  text?: string
 }
 
 type ReadingTimeStats = {
-  time: number
-  minutes: number
-  text?: string
+  time: number // Time in milliseconds
+  minutes: number // Rounded minutes
+  text: string // Formatted time, e.g., "2 min read"
 }
 
 type WordCountStats = {
-  total: number
-  text?: string
+  total: number // Total word count
+  text: string // Formatted word count
 }
 
 type ReadingTimeResult = ReadingTimeStats & {
   words: WordCountStats
-  text?: string
-}
-type WordBoundFunction = Options['wordBound']
-
-function codeIsInRanges(number: number, arrayOfRanges: number[][]) {
-  return arrayOfRanges.some(
-    ([lowerBound, upperBound]) => lowerBound <= number && number <= upperBound,
-  )
 }
 
-const isCJK: WordBoundFunction = (c) => {
-  const charCode = c.charCodeAt(0)
-  // Help wanted!
-  // This should be good for most cases, but if you find it unsatisfactory
-  // (e.g. some other language where each character should be standalone words),
-  // contributions welcome!
+type WordBoundFunction = (char: string) => boolean
+
+// Utility to check if a character code is within specified ranges
+function codeIsInRanges(number: number, ranges: [number, number][]): boolean {
+  return ranges.some(([start, end]) => number >= start && number <= end)
+}
+
+// Determines if a character is CJK
+const isCJK: WordBoundFunction = (char) => {
+  if (!char) return false
+  const charCode = char.charCodeAt(0)
   return codeIsInRanges(charCode, [
-    // Hiragana (Katakana not included on purpose,
-    // context: https://github.com/ngryman/reading-time/pull/35#issuecomment-853364526)
-    // If you think Katakana should be included and have solid reasons, improvement is welcomed
-    [0x3040, 0x309f],
-    // CJK Unified ideographs
-    [0x4e00, 0x9fff],
-    // Hangul
-    [0xac00, 0xd7a3],
-    // CJK extensions
-    [0x20000, 0x2ebe0],
+    [0x3040, 0x309f], // Hiragana
+    [0x4e00, 0x9fff], // CJK Unified Ideographs
+    [0xac00, 0xd7a3], // Hangul
+    [0x20000, 0x2ebe0], // CJK Extensions
   ])
 }
 
-const isAnsiWordBound: WordBoundFunction = (c) => {
-  return ' \n\r\t'.includes(c)
-}
+// Determines if a character is a word boundary (ANSI standard)
+const isAnsiWordBound: WordBoundFunction = (char) => ' \n\r\t'.includes(char)
 
-const isPunctuation: WordBoundFunction = (c) => {
-  const charCode = c.charCodeAt(0)
-  return codeIsInRanges(charCode, [
-    [0x21, 0x2f],
-    [0x3a, 0x40],
-    [0x5b, 0x60],
-    [0x7b, 0x7e],
-    // CJK Symbols and Punctuation
-    [0x3000, 0x303f],
-    // Full-width ASCII punctuation variants
-    [0xff00, 0xffef],
-  ])
-}
+// Counts the number of words in a given text
+function countWords(text: string, options: Options = {}): WordCountStats {
+  let words = 0
+  const { wordBound = isAnsiWordBound } = options
 
-export function countWords(text: string, options: Options = {}): WordCountStats {
-  let words = 0,
-    start = 0,
-    end = text.length - 1
-  const { wordBound: isWordBound = isAnsiWordBound } = options
-
-  // fetch bounds
-  while (isWordBound(text[start])) start++
-  while (isWordBound(text[end])) end--
-
-  // Add a trailing word bound to make handling edges more convenient
+  // Normalize text and add a trailing word boundary
   const normalizedText = `${text}\n`
+  let start = 0
 
-  // calculate the number of words
-  for (let i = start; i <= end; i++) {
-    // A CJK character is a always word;
-    // A non-word bound followed by a word bound / CJK is the end of a word.
+  while (start < normalizedText.length) {
+    // Skip non-word characters
+    while (start < normalizedText.length && wordBound(normalizedText[start])) {
+      start++
+    }
+
+    // Count words
     if (
-      isCJK(normalizedText[i]) ||
-      (!isWordBound(normalizedText[i]) &&
-        (isWordBound(normalizedText[i + 1]) || isCJK(normalizedText[i + 1])))
+      start < normalizedText.length &&
+      (isCJK(normalizedText[start]) || !wordBound(normalizedText[start]))
     ) {
       words++
     }
-    // In case of CJK followed by punctuations, those characters have to be eaten as well
-    if (isCJK(normalizedText[i])) {
-      while (
-        i <= end &&
-        (isPunctuation(normalizedText[i + 1]) || isWordBound(normalizedText[i + 1]))
-      ) {
-        i++
-      }
+
+    // Move to the next potential word
+    while (
+      start < normalizedText.length &&
+      !wordBound(normalizedText[start]) &&
+      !isCJK(normalizedText[start])
+    ) {
+      start++
     }
   }
-  return { total: words }
-}
-
-export function readingTimeWithCount(
-  words: WordCountStats,
-  options: Options = {},
-): ReadingTimeStats {
-  const { wordsPerMinute = 200 } = options
-  // reading time stats
-  const minutes = words.total / wordsPerMinute
-  // Math.round used to resolve floating point funkiness
-  //   http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
-  const time = Math.round(minutes * 60 * 1000)
-  const displayed = Math.ceil(parseFloat(minutes.toFixed(2)))
 
   return {
-    minutes: displayed,
-    time,
+    total: words,
+    text: `${words} words`,
   }
 }
 
+// Calculates reading time based on word count
+function readingTimeWithCount(words: WordCountStats, options: Options = {}): ReadingTimeStats {
+  const { wordsPerMinute = 200 } = options
+  const minutes = words.total / wordsPerMinute
+  const time = Math.ceil(minutes * 60 * 1000)
+
+  return {
+    minutes: Math.ceil(minutes),
+    time,
+    text: `${Math.ceil(minutes)} min read`,
+  }
+}
+
+// Main function to calculate reading time
 export default function readingTime(text: string, options: Options = {}): ReadingTimeResult {
   const words = countWords(text, options)
+  const stats = readingTimeWithCount(words, options)
+
   return {
-    ...readingTimeWithCount(words, options),
+    ...stats,
     words,
   }
 }

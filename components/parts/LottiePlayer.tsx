@@ -13,20 +13,20 @@ interface Props {
 }
 
 // If needed, define a minimal type for the player (rendererSettings, etc.)
-interface LottieLightProps {
-  rendererSettings?: {
-    preserveAspectRatio?: string
-    [key: string]: any
-  }
-  animationData: any
-  loop?: boolean
-  play?: boolean
-  // Accept either a single [start, end] pair, multiple segment pairs, or a boolean:
-  segments?: [number, number] | [number, number][] | boolean
-  style?: React.CSSProperties
-  useSubframes?: boolean
-  onLoopComplete?: () => void
-}
+// interface LottieLightProps {
+//   rendererSettings?: {
+//     preserveAspectRatio?: string
+//     [key: string]: any
+//   }
+//   animationData: any
+//   loop?: boolean
+//   play?: boolean
+//   // Accept either a single [start, end] pair, multiple segment pairs, or a boolean:
+//   segments?: [number, number] | [number, number][] | boolean
+//   style?: React.CSSProperties
+//   useSubframes?: boolean
+//   onLoopComplete?: () => void
+// }
 
 function AnimationFile({ anim }: Props) {
   const [segments, setSegments] = useState<[number, number] | [number, number][] | undefined>([

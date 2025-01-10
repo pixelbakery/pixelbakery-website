@@ -1,6 +1,6 @@
 // components/pageHeaders/PageHeader_TextBox.tsx
 import cn from 'classnames'
-import H1 from '@typography/H1'
+import { H1 } from '@typography'
 
 import {
   backgroundColorVariants,
