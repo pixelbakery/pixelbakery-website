@@ -6,10 +6,10 @@ import { serialize } from 'next-mdx-remote/serialize'
 import dynamic from 'next/dynamic'
 import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
-
+// import { Carousel } from '@parts'
 
 import { caseStudyFilePaths, CASESTUDIES_PATH } from '@lib/mdxUtils'
-import {Layout_Default} from '@layouts'
+import { Layout_Default } from '@layouts'
 import { PageSection, InnerWrapper, Image_VarH, Video } from '@parts'
 import { H2 } from '@typography'
 import { shuffleArray } from '@lib'
@@ -39,7 +39,6 @@ const CaseStudies_Storyboards = dynamic(() => import('@caseStudies/CaseStudies_S
   ssr: false,
 })
 
-
 import type { ReactElement, ReactNode } from 'react'
 import type { Credit, CaseStudyData } from '@/types/caseStudies'
 
@@ -63,9 +62,6 @@ interface CaseStudyProps {
 }
 function Page_Work_CaseStudy({ otherCaseStudies, source, slug, frontMatter }: CaseStudyProps) {
   const components = {
-    // It also works with dynamically-imported components, which is especially
-    // useful for conditionally loading components for certain routes.
-    // See the notes in README.md for more details.
     CaseStudies_Storyboards: CaseStudies_Storyboards,
     Video: Video,
     //Stuff built for Marq
@@ -168,7 +164,7 @@ export const getStaticProps = async ({ params }: any) => {
   const allCaseStudies = caseStudyFilePaths
     .map((filePath) => {
       const source = fs.readFileSync(path.join(CASESTUDIES_PATH, filePath))
-      const { content, data } = matter(source)
+      const { data } = matter(source)
       data.date = JSON.parse(JSON.stringify(data.date))
       return {
         data,
