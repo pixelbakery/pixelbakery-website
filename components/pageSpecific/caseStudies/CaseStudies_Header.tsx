@@ -29,7 +29,6 @@ function CaseStudies_Header({
     if (!heroVideo) return ''
     return /^\d+$/.test(heroVideo) ? `https://vimeo.com/${heroVideo}` : heroVideo
   }
-  console.log('Prepended video: ', preprocessHeroVideo(heroVideo))
   return (
     <section
       className='relative px-6 pt-40 pb-12 my-4 lg:pb-24 md:px-8 pt-lg:pt-48 bg-cream'
