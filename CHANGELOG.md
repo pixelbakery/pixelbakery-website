@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.1...v9.1.0) (2025-01-10)
+
+
+### Bug Fixes
+
+* lincoln calling music rights issue. video in case study now accepts a local file ([bcc1b2c](https://github.com/pixelbakery/pixelbakery-website/commits/bcc1b2ce581f6054d33c5c0e36e5f9a53578d454))
+
+
+### Styling
+
+* fixed col span issue ([eaf92cc](https://github.com/pixelbakery/pixelbakery-website/commits/eaf92cca971b1d0f90d7e2c10f126e83d6c0a79b))
+* optimized how text is displayed. no more svgs ([99150eb](https://github.com/pixelbakery/pixelbakery-website/commits/99150ebb6a5b1a7ef0700e5c865416a8558e3624))
+
+
+### Chores
+
+* **main:** release 8.4.0 ([6df1c9a](https://github.com/pixelbakery/pixelbakery-website/commits/6df1c9a50e3b780267aaf6f656f0b9aff180f395))
+* removed console.log ([b49133b](https://github.com/pixelbakery/pixelbakery-website/commits/b49133bf5c8998c297d0d26ee0e5c11c28e0925e))
+* removed react-dom ([00e29fd](https://github.com/pixelbakery/pixelbakery-website/commits/00e29fd5891a3111bffa5d4ca9ec3cfb9c13da98))
+
 ## [8.4.0](https://github.com/pixelbakery/pixelbakery-website/compare/v8.3.0...v8.4.0) (2025-01-10)
 
 
