@@ -211,7 +211,7 @@ export const getStaticProps: GetStaticProps<PagePeopleProps, { slug: string }> =
       )
       return {
         name: award, // Award name
-        link: `/case-studies/${caseStudy.filePath.replace(/\.mdx?$/, '')}`, // Link to the project
+        link: `/work/case-studies/${caseStudy.filePath.replace(/\.mdx?$/, '')}`, // Link to the project
         client: caseStudy.data.client || 'Unknown Client', // Client name
         project: caseStudy.data.title || 'Unknown Project', // Project name
         role: personCredit?.title || 'No Role Specified', // Role from credits, fallback if none
