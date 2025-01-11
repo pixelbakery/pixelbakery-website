@@ -11,9 +11,9 @@ function Contact_HangOut() {
       <InnerWrapper>
         <div className='w-full flex flex-col justify-center  overflow-visible animate-horizontal'>
           <div className=' text-center self-center mx-auto'>
-            <h1 className='l text-effect text-x' data-text="LET'S HANG OUT">
+            <h2 className='l text-effect text-x' data-text="LET'S HANG OUT">
               LET'S HANG OUT
-            </h1>
+            </h2>
           </div>
 
           <div className='self-center'>
