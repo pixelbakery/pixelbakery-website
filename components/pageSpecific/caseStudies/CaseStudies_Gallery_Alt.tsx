@@ -5,10 +5,8 @@ import { Shimmer } from '@lib'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Fragment, type ReactElement } from 'react'
 
-// Remove the leading ./ and /public from the paths
-// Just start with /img/... as Next.js knows to look in the public directory
 const SNACK_IMAGES = {
-  social0: '/img/case-studies/snacklins/SNACK_Social_0.jpg',
+  social0: '/img/case-studies/snacklins/SNACK_Social_1.jpg',
   social2: '/img/case-studies/snacklins/SNACK_Social_2.jpg',
   social3: '/img/case-studies/snacklins/SNACK_Social_3.jpg',
   social4: '/img/case-studies/snacklins/SNACK_Social_4.jpg',
@@ -31,7 +29,7 @@ interface VideoSlideProps {
 }
 
 const Carousel = ({ slides }: CarouselProps) => {
-  const [viewportRef] = useEmblaCarousel({
+  const [viewportRef, embla] = useEmblaCarousel({
     align: 'start',
     loop: true,
     skipSnaps: true,
