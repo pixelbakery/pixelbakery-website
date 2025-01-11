@@ -1,9 +1,10 @@
 import { ReactElement, useEffect } from 'react'
-import {Layout_Default} from '@layouts'
+import { Layout_Default } from '@layouts'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import { H1 } from '@typography'
 import { usePlausible } from 'next-plausible'
+import { Button_Outlined } from '@parts'
 
 function Page_FourOhFour() {
   const plausible = usePlausible()
@@ -35,6 +36,7 @@ function Page_FourOhFour() {
             alt={"I'm in danger"}
           />
         </div>
+        <Button_Outlined color='blue' link='/' className='mt-8' text='Go Home' />
       </section>
     </>
   )
