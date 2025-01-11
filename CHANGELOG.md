@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.1.0) (2025-01-11)
+
+
+### Features
+
+* added home button to 404 page ([3c4ff49](https://github.com/pixelbakery/pixelbakery-website/commit/3c4ff499d8c6140903595aa773f10f394674366b))
+
+
+### Bug Fixes
+
+* broken case study awards links ([3f9ac1e](https://github.com/pixelbakery/pixelbakery-website/commit/3f9ac1e7ad8018bf062e759e44e1688225a99872))
+* broken image link ([2189eed](https://github.com/pixelbakery/pixelbakery-website/commit/2189eed6203e196861544ccd678bc04c060a1750))
+* jpeg -&gt; jpg ([877cacb](https://github.com/pixelbakery/pixelbakery-website/commit/877cacbfbb9e6ba858a2a39d6ac01f985dd7543d))
+
 ## [9.3.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.3.0) (2025-01-11)
 
 
