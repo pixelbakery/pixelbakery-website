@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.1.0) (2025-01-11)
+## [9.2.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.2.0) (2025-01-11)
 
 
 ### Features
@@ -12,6 +12,37 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* broken case study awards links ([3f9ac1e](https://github.com/pixelbakery/pixelbakery-website/commits/3f9ac1e7ad8018bf062e759e44e1688225a99872))
+* broken image link ([2189eed](https://github.com/pixelbakery/pixelbakery-website/commits/2189eed6203e196861544ccd678bc04c060a1750))
+* jpeg -> jpg ([877cacb](https://github.com/pixelbakery/pixelbakery-website/commits/877cacbfbb9e6ba858a2a39d6ac01f985dd7543d))
+
+
+### Styling
+
+* h1 to h2 ([85cb781](https://github.com/pixelbakery/pixelbakery-website/commits/85cb781fd9349b8239392f0f334a7a4ea1259a5f))
+* modified page excerpt ([afffd48](https://github.com/pixelbakery/pixelbakery-website/commits/afffd4841091cb51b3a56a8cec8c5bfe6bfd98cc))
+* shortened case study title ([cdd55eb](https://github.com/pixelbakery/pixelbakery-website/commits/cdd55eb9f0cb5ed9b8c0d427b37221ad10910305))
+
+
+### Chores
+
+* no robots ([8068f67](https://github.com/pixelbakery/pixelbakery-website/commits/8068f67d053653a8ff75377f0ce4aa770bd1f1db))
+* **release:** 9.1.0 ([e9d2b33](https://github.com/pixelbakery/pixelbakery-website/commits/e9d2b33acc3fd6971dccd6f311ec5db54d29afef))
+
+## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.1.0) (2025-01-11)
+
+
+### Features
+
+* added home button to 404 page ([3c4ff49](https://github.com/pixelbakery/pixelbakery-website/commits/3c4ff499d8c6140903595aa773f10f394674366b))
+=======
+## [9.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.1...v9.0.2) (2025-01-10)
+>>>>>>> b6177a267bad5edd02eeee214fe908b8c7e32111
+
+
+### Bug Fixes
+
+<<<<<<< HEAD
 * broken case study awards links ([3f9ac1e](https://github.com/pixelbakery/pixelbakery-website/commits/3f9ac1e7ad8018bf062e759e44e1688225a99872))
 * broken image link ([2189eed](https://github.com/pixelbakery/pixelbakery-website/commits/2189eed6203e196861544ccd678bc04c060a1750))
 * jpeg -> jpg ([877cacb](https://github.com/pixelbakery/pixelbakery-website/commits/877cacbfbb9e6ba858a2a39d6ac01f985dd7543d))
@@ -27,6 +58,10 @@ All notable changes to this project will be documented in this file. See [standa
 * h1 to h2 ([85cb781](https://github.com/pixelbakery/pixelbakery-website/commits/85cb781fd9349b8239392f0f334a7a4ea1259a5f))
 * modified page excerpt ([afffd48](https://github.com/pixelbakery/pixelbakery-website/commits/afffd4841091cb51b3a56a8cec8c5bfe6bfd98cc))
 * shortened case study title ([cdd55eb](https://github.com/pixelbakery/pixelbakery-website/commits/cdd55eb9f0cb5ed9b8c0d427b37221ad10910305))
+=======
+* lincoln calling music rights issue. video in case study now accepts a local file ([bcc1b2c](https://github.com/pixelbakery/pixelbakery-website/commit/bcc1b2ce581f6054d33c5c0e36e5f9a53578d454))
+* nvm I need react dom ([d04bd0b](https://github.com/pixelbakery/pixelbakery-website/commit/d04bd0bb27e1c34c27e717c82af2ef0066514daf))
+>>>>>>> b6177a267bad5edd02eeee214fe908b8c7e32111
 
 ### [9.0.2](https://github.com/pixelbakery/pixelbakery-website/compare/v9.1.0...v9.0.2) (2025-01-10)
 
