@@ -9,6 +9,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   bundlePagesRouterDependencies: true,
+  transpilePackages: ['next-mdx-remote'],
   experimental: {
     optimizePackageImports: [
       'react-lottie-player',
