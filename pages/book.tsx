@@ -7,8 +7,6 @@ const Page_Book = () => {
     <>
       <Onboarding_Book className='pt-48 lg:pt-56' h1={true} />
       <NextSeo
-        noindex={true}
-        nofollow={true}
         title={`Schedule A Meeting. Let's Get That Video Project Going`}
         description={`Let's talk about you and your project. Schedule either an in-person or virtual meeting with our leadership team.`}
         canonical={`https://pixelbakery.com/book`}
