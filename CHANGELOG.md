@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.3.1](https://github.com/pixelbakery/pixelbakery-website/compare/v9.3.0...v9.3.1) (2025-01-12)
+
+
+### Bug Fixes
+
+* changed mind about no-robots ([1fc5383](https://github.com/pixelbakery/pixelbakery-website/commits/1fc5383949e33b7bc506321dda8017d4aaadf2c2))
+
+
+### Chores
+
+* **main:** release 9.1.0 ([af31bea](https://github.com/pixelbakery/pixelbakery-website/commits/af31bea04853b21bdbb21d4e37c20dd536046f64))
+* package updates ([c73cecd](https://github.com/pixelbakery/pixelbakery-website/commits/c73cecd1dbfb6e97def34c217f46fad43e9a3acf))
+
 ## [9.1.0](https://github.com/pixelbakery/pixelbakery-website/compare/v9.0.2...v9.1.0) (2025-01-11)
 
 
